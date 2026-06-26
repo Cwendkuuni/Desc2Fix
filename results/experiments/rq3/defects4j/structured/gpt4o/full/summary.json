@@ -1,0 +1,19 @@
+{
+  "instances": 10,
+  "with_report_text": 10,
+  "with_patch_text": 10,
+  "avg_rouge_l": 0.12104,
+  "avg_jaccard": 0.094566,
+  "avg_identifier_jaccard": 0.040884,
+  "avg_pos_overlap": 0.691667,
+  "avg_structured_macro_jaccard": 0.034833,
+  "avg_structured_all_jaccard": 0.094566,
+  "avg_sbert": 0.469235,
+  "avg_codebert": 0.956696,
+  "avg_openai_embedding": 0.498172,
+  "dataset": "defects4j",
+  "scenario": "structured",
+  "model": "gpt4o",
+  "artifact_pair": "report_patch",
+  "patch_view": "full"
+}

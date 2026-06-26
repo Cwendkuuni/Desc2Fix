@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-15902",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "deprecation warning"
+    ],
+    "api_involved": [
+      "ManagementForm"
+    ],
+    "input_conditions": [
+      "formset management form production"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "No deprecation warning for management forms"
+    ],
+    "actual": [
+      "Deprecation warning raised due to formset management form production"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "deprecation warning"
+    ],
+    "api_involved": [
+      "ManagementForm"
+    ],
+    "input_conditions": [
+      "formset management form production"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "No deprecation warning for management forms"
+    ],
+    "actual": [
+      "Deprecation warning raised due to formset management form production"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"deprecation warning\",\n  \"api_involved\": [\"ManagementForm\"],\n  \"input_conditions\": [\"formset management form production\"],\n  \"expected\": \"No deprecation warning for management forms\",\n  \"actual\": \"Deprecation warning raised due to formset management form production\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"deprecation warning\",\n  \"api_involved\": [\"ManagementForm\"],\n  \"input_conditions\": [\"formset management form production\"],\n  \"expected\": \"No deprecation warning for management forms\",\n  \"actual\": \"Deprecation warning raised due to formset management form production\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

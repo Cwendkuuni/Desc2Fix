@@ -1,0 +1,49 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-13619",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "is_number"
+    ],
+    "input_conditions": [
+      "Undefined functions with number arguments"
+    ],
+    "reproduction_steps": [
+      "Create an undefined function with a number argument",
+      "Check the value of its is_number attribute"
+    ],
+    "expected": [
+      "is_number should be False"
+    ],
+    "actual": [
+      "is_number is likely True or not correctly False"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "is_number"
+    ],
+    "input_conditions": [
+      "Undefined functions with number arguments"
+    ],
+    "reproduction_steps": [
+      "Create an undefined function with a number argument",
+      "Check the value of its is_number attribute"
+    ],
+    "expected": [
+      "is_number should be False"
+    ],
+    "actual": [
+      "is_number is likely True or not correctly False"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"is_number\"],\n\"input_conditions\": [\"Undefined functions with number arguments\"],\n\"expected\": \"is_number should be False\",\n\"actual\": \"is_number is likely True or not correctly False\",\n\"reproduction_steps\": [\"Create an undefined function with a number argument\", \"Check the value of its is_number attribute\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"is_number\"],\n\"input_conditions\": [\"Undefined functions with number arguments\"],\n\"expected\": \"is_number should be False\",\n\"actual\": \"is_number is likely True or not correctly False\",\n\"reproduction_steps\": [\"Create an undefined function with a number argument\", \"Check the value of its is_number attribute\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

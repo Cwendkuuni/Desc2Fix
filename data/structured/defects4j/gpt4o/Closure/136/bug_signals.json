@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-136",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "MakeDeclaredNamesUnique.java",
+      "DefaultCodingConvention",
+      "prototype.js"
+    ],
+    "input_conditions": [
+      "Using prototype's $super",
+      "Compile with advanced_optimizations"
+    ],
+    "reproduction_steps": [
+      "Have javascript using prototype's $super",
+      "Compile with advanced_optimizations",
+      "Observe $super is replaced by a renamed version such as $super$$4"
+    ],
+    "expected": [
+      "$super should not be renamed as it is used by prototype."
+    ],
+    "actual": [
+      "$super is replaced by a renamed version like $super$$4"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "MakeDeclaredNamesUnique.java",
+      "DefaultCodingConvention",
+      "prototype.js"
+    ],
+    "input_conditions": [
+      "Using prototype's $super",
+      "Compile with advanced_optimizations"
+    ],
+    "reproduction_steps": [
+      "Have javascript using prototype's $super",
+      "Compile with advanced_optimizations",
+      "Observe $super is replaced by a renamed version such as $super$$4"
+    ],
+    "expected": [
+      "$super should not be renamed as it is used by prototype."
+    ],
+    "actual": [
+      "$super is replaced by a renamed version like $super$$4"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"MakeDeclaredNamesUnique.java\", \"DefaultCodingConvention\", \"prototype.js\"],\n  \"input_conditions\": [\"Using prototype's $super\", \"Compile with advanced_optimizations\"],\n  \"expected\": \"$super should not be renamed as it is used by prototype.\",\n  \"actual\": \"$super is replaced by a renamed version like $super$$4\",\n  \"reproduction_steps\": [\n    \"Have javascript using prototype's $super\",\n    \"Compile with advanced_optimizations\",\n    \"Observe $super is replaced by a renamed version such as $super$$4\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"MakeDeclaredNamesUnique.java\", \"DefaultCodingConvention\", \"prototype.js\"],\n  \"input_conditions\": [\"Using prototype's $super\", \"Compile with advanced_optimizations\"],\n  \"expected\": \"$super should not be renamed as it is used by prototype.\",\n  \"actual\": \"$super is replaced by a renamed version like $super$$4\",\n  \"reproduction_steps\": [\n    \"Have javascript using prototype's $super\",\n    \"Compile with advanced_optimizations\",\n    \"Observe $super is replaced by a renamed version such as $super$$4\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

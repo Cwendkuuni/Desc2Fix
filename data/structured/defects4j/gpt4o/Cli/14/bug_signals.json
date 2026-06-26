@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Cli-14",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.ClassCastException: java.io.File cannot be cast to java.lang.String"
+    ],
+    "api_involved": [
+      "org.apache.commons.cli2.validation.FileValidator.validate",
+      "org.apache.commons.cli2.option.GroupImpl.validate"
+    ],
+    "input_conditions": [
+      "FileValidator used on an Argument",
+      "Argument provided with an existing file path"
+    ],
+    "reproduction_steps": [
+      "Add a FileValidator to an Argument.",
+      "Execute java org.apache.commons.cli2.issues.CLI2Sample with options -classpath, commons-cli-2.0-SNAPSHOT.jar, --file-name, and path-to-an-existing-file."
+    ],
+    "expected": [
+      "The FileValidator should successfully validate the file path and convert it without exceptions."
+    ],
+    "actual": [
+      "A ClassCastException occurs during validation when the value cannot be cast to a String."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.ClassCastException: java.io.File cannot be cast to java.lang.String"
+    ],
+    "api_involved": [
+      "org.apache.commons.cli2.validation.FileValidator.validate",
+      "org.apache.commons.cli2.option.GroupImpl.validate"
+    ],
+    "input_conditions": [
+      "FileValidator used on an Argument",
+      "Argument provided with an existing file path"
+    ],
+    "reproduction_steps": [
+      "Add a FileValidator to an Argument.",
+      "Execute java org.apache.commons.cli2.issues.CLI2Sample with options -classpath, commons-cli-2.0-SNAPSHOT.jar, --file-name, and path-to-an-existing-file."
+    ],
+    "expected": [
+      "The FileValidator should successfully validate the file path and convert it without exceptions."
+    ],
+    "actual": [
+      "A ClassCastException occurs during validation when the value cannot be cast to a String."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"java.lang.ClassCastException: java.io.File cannot be cast to java.lang.String\",\n  \"api_involved\": [\"org.apache.commons.cli2.validation.FileValidator.validate\", \"org.apache.commons.cli2.option.GroupImpl.validate\"],\n  \"input_conditions\": [\"FileValidator used on an Argument\", \"Argument provided with an existing file path\"],\n  \"expected\": \"The FileValidator should successfully validate the file path and convert it without exceptions.\",\n  \"actual\": \"A ClassCastException occurs during validation when the value cannot be cast to a String.\",\n  \"reproduction_steps\": [\n    \"Add a FileValidator to an Argument.\",\n    \"Execute java org.apache.commons.cli2.issues.CLI2Sample with options -classpath, commons-cli-2.0-SNAPSHOT.jar, --file-name, and path-to-an-existing-file.\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"java.lang.ClassCastException: java.io.File cannot be cast to java.lang.String\",\n  \"api_involved\": [\"org.apache.commons.cli2.validation.FileValidator.validate\", \"org.apache.commons.cli2.option.GroupImpl.validate\"],\n  \"input_conditions\": [\"FileValidator used on an Argument\", \"Argument provided with an existing file path\"],\n  \"expected\": \"The FileValidator should successfully validate the file path and convert it without exceptions.\",\n  \"actual\": \"A ClassCastException occurs during validation when the value cannot be cast to a String.\",\n  \"reproduction_steps\": [\n    \"Add a FileValidator to an Argument.\",\n    \"Execute java org.apache.commons.cli2.issues.CLI2Sample with options -classpath, commons-cli-2.0-SNAPSHOT.jar, --file-name, and path-to-an-existing-file.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

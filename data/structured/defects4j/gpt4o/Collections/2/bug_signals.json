@@ -1,0 +1,39 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Collections-2",
+  "project": "Collections",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "ExtendedProperties"
+    ],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [
+      "The field 'include' should be a private, non-static instance variable."
+    ],
+    "actual": [
+      "The field 'include' is static and protected with instance get/set accessors."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "ExtendedProperties"
+    ],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [
+      "The field 'include' should be a private, non-static instance variable."
+    ],
+    "actual": [
+      "The field 'include' is static and protected with instance get/set accessors."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"ExtendedProperties\"],\n  \"input_conditions\": null,\n  \"expected\": \"The field 'include' should be a private, non-static instance variable.\",\n  \"actual\": \"The field 'include' is static and protected with instance get/set accessors.\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"ExtendedProperties\"],\n  \"input_conditions\": null,\n  \"expected\": \"The field 'include' should be a private, non-static instance variable.\",\n  \"actual\": \"The field 'include' is static and protected with instance get/set accessors.\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

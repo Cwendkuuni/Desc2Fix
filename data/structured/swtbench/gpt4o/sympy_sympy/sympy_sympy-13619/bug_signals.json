@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-13619",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Undefined functions",
+      "is_number"
+    ],
+    "input_conditions": [
+      "number arguments"
+    ],
+    "reproduction_steps": [
+      "Create or use an undefined function with number arguments",
+      "Check the is_number attribute of the function"
+    ],
+    "expected": [
+      "is_number should be False"
+    ],
+    "actual": [
+      "is_number is not False"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Undefined functions",
+      "is_number"
+    ],
+    "input_conditions": [
+      "number arguments"
+    ],
+    "reproduction_steps": [
+      "Create or use an undefined function with number arguments",
+      "Check the is_number attribute of the function"
+    ],
+    "expected": [
+      "is_number should be False"
+    ],
+    "actual": [
+      "is_number is not False"
+    ]
+  },
+  "raw_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": [\"Undefined functions\", \"is_number\"],\n    \"input_conditions\": [\"number arguments\"],\n    \"expected\": \"is_number should be False\",\n    \"actual\": \"is_number is not False\",\n    \"reproduction_steps\": [\n        \"Create or use an undefined function with number arguments\",\n        \"Check the is_number attribute of the function\"\n    ]\n}\n```",
+  "llm_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": [\"Undefined functions\", \"is_number\"],\n    \"input_conditions\": [\"number arguments\"],\n    \"expected\": \"is_number should be False\",\n    \"actual\": \"is_number is not False\",\n    \"reproduction_steps\": [\n        \"Create or use an undefined function with number arguments\",\n        \"Check the is_number attribute of the function\"\n    ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

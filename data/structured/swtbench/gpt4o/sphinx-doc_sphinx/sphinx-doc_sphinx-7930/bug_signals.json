@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sphinx-doc__sphinx-7930",
+  "project": null,
+  "repo": "sphinx-doc/sphinx",
+  "signals": {
+    "exception": [
+      "Regression: autodoc Dataclass variables reference target not found"
+    ],
+    "api_involved": [
+      "Sphinx",
+      "dataclass"
+    ],
+    "input_conditions": [
+      "macOS latest",
+      "Python 3.7.7",
+      "Sphinx 3.1.2"
+    ],
+    "reproduction_steps": [
+      "Open the attached project",
+      "Install Sphinx",
+      "Run the code"
+    ],
+    "expected": [
+      "No warning or a clear message saying how to avoid this warning."
+    ],
+    "actual": [
+      "Warning appears with a dataclass variable of a custom type."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Regression: autodoc Dataclass variables reference target not found"
+    ],
+    "api_involved": [
+      "Sphinx",
+      "dataclass"
+    ],
+    "input_conditions": [
+      "macOS latest",
+      "Python 3.7.7",
+      "Sphinx 3.1.2"
+    ],
+    "reproduction_steps": [
+      "Open the attached project",
+      "Install Sphinx",
+      "Run the code"
+    ],
+    "expected": [
+      "No warning or a clear message saying how to avoid this warning."
+    ],
+    "actual": [
+      "Warning appears with a dataclass variable of a custom type."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"Regression: autodoc Dataclass variables reference target not found\",\n  \"api_involved\": [\"Sphinx\", \"dataclass\"],\n  \"input_conditions\": [\"macOS latest\", \"Python 3.7.7\", \"Sphinx 3.1.2\"],\n  \"expected\": \"No warning or a clear message saying how to avoid this warning.\",\n  \"actual\": \"Warning appears with a dataclass variable of a custom type.\",\n  \"reproduction_steps\": [\"Open the attached project\", \"Install Sphinx\", \"Run the code\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"Regression: autodoc Dataclass variables reference target not found\",\n  \"api_involved\": [\"Sphinx\", \"dataclass\"],\n  \"input_conditions\": [\"macOS latest\", \"Python 3.7.7\", \"Sphinx 3.1.2\"],\n  \"expected\": \"No warning or a clear message saying how to avoid this warning.\",\n  \"actual\": \"Warning appears with a dataclass variable of a custom type.\",\n  \"reproduction_steps\": [\"Open the attached project\", \"Install Sphinx\", \"Run the code\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

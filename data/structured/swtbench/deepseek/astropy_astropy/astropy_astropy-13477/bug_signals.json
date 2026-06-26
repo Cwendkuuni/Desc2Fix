@@ -1,0 +1,65 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "astropy__astropy-13477",
+  "project": null,
+  "repo": "astropy/astropy",
+  "signals": {
+    "exception": [
+      "TypeError: Tried to do is_equivalent_frame on something that isn't a frame"
+    ],
+    "api_involved": [
+      "astropy.coordinates.SkyCoord",
+      "astropy.coordinates.ICRS",
+      "BaseCoordinateFrame.__eq__",
+      "BaseCoordinateFrame.is_equivalent_frame"
+    ],
+    "input_conditions": [
+      "frame is an ICRS instance with data ('0d', '0d')",
+      "coord is a SkyCoord instance created from the same ICRS frame"
+    ],
+    "reproduction_steps": [
+      "from astropy.coordinates import SkyCoord, ICRS",
+      "frame = ICRS('0d', '0d')",
+      "coord = SkyCoord(frame)",
+      "frame == coord"
+    ],
+    "expected": [
+      "Comparison should return True or False depending on whether the data are equal"
+    ],
+    "actual": [
+      "A TypeError exception is raised instead of a boolean result"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "TypeError: Tried to do is_equivalent_frame on something that isn't a frame"
+    ],
+    "api_involved": [
+      "astropy.coordinates.SkyCoord",
+      "astropy.coordinates.ICRS",
+      "BaseCoordinateFrame.__eq__",
+      "BaseCoordinateFrame.is_equivalent_frame"
+    ],
+    "input_conditions": [
+      "frame is an ICRS instance with data ('0d', '0d')",
+      "coord is a SkyCoord instance created from the same ICRS frame"
+    ],
+    "reproduction_steps": [
+      "from astropy.coordinates import SkyCoord, ICRS",
+      "frame = ICRS('0d', '0d')",
+      "coord = SkyCoord(frame)",
+      "frame == coord"
+    ],
+    "expected": [
+      "Comparison should return True or False depending on whether the data are equal"
+    ],
+    "actual": [
+      "A TypeError exception is raised instead of a boolean result"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"TypeError: Tried to do is_equivalent_frame on something that isn't a frame\",\n\"api_involved\": [\"astropy.coordinates.SkyCoord\", \"astropy.coordinates.ICRS\", \"BaseCoordinateFrame.__eq__\", \"BaseCoordinateFrame.is_equivalent_frame\"],\n\"input_conditions\": [\"frame is an ICRS instance with data ('0d', '0d')\", \"coord is a SkyCoord instance created from the same ICRS frame\"],\n\"expected\": \"Comparison should return True or False depending on whether the data are equal\",\n\"actual\": \"A TypeError exception is raised instead of a boolean result\",\n\"reproduction_steps\": [\n    \"from astropy.coordinates import SkyCoord, ICRS\",\n    \"frame = ICRS('0d', '0d')\",\n    \"coord = SkyCoord(frame)\",\n    \"frame == coord\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"TypeError: Tried to do is_equivalent_frame on something that isn't a frame\",\n\"api_involved\": [\"astropy.coordinates.SkyCoord\", \"astropy.coordinates.ICRS\", \"BaseCoordinateFrame.__eq__\", \"BaseCoordinateFrame.is_equivalent_frame\"],\n\"input_conditions\": [\"frame is an ICRS instance with data ('0d', '0d')\", \"coord is a SkyCoord instance created from the same ICRS frame\"],\n\"expected\": \"Comparison should return True or False depending on whether the data are equal\",\n\"actual\": \"A TypeError exception is raised instead of a boolean result\",\n\"reproduction_steps\": [\n    \"from astropy.coordinates import SkyCoord, ICRS\",\n    \"frame = ICRS('0d', '0d')\",\n    \"coord = SkyCoord(frame)\",\n    \"frame == coord\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

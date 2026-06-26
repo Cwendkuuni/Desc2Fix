@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-18191",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [
+      "Recursion error"
+    ],
+    "api_involved": [
+      "sympy.core.power"
+    ],
+    "input_conditions": [
+      "1 / tan(1 + I)"
+    ],
+    "reproduction_steps": [
+      "Compute sqrt(1 / tan(1 + I))"
+    ],
+    "expected": [
+      "No recursion error; correct computation of sqrt(1 / tan(1 + I))"
+    ],
+    "actual": [
+      "Recursion error occurred"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Recursion error"
+    ],
+    "api_involved": [
+      "sympy.core.power"
+    ],
+    "input_conditions": [
+      "1 / tan(1 + I)"
+    ],
+    "reproduction_steps": [
+      "Compute sqrt(1 / tan(1 + I))"
+    ],
+    "expected": [
+      "No recursion error; correct computation of sqrt(1 / tan(1 + I))"
+    ],
+    "actual": [
+      "Recursion error occurred"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"Recursion error\",\n  \"api_involved\": [\"sympy.core.power\"],\n  \"input_conditions\": [\"1 / tan(1 + I)\"],\n  \"expected\": \"No recursion error; correct computation of sqrt(1 / tan(1 + I))\",\n  \"actual\": \"Recursion error occurred\",\n  \"reproduction_steps\": [\"Compute sqrt(1 / tan(1 + I))\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"Recursion error\",\n  \"api_involved\": [\"sympy.core.power\"],\n  \"input_conditions\": [\"1 / tan(1 + I)\"],\n  \"expected\": \"No recursion error; correct computation of sqrt(1 / tan(1 + I))\",\n  \"actual\": \"Recursion error occurred\",\n  \"reproduction_steps\": [\"Compute sqrt(1 / tan(1 + I))\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

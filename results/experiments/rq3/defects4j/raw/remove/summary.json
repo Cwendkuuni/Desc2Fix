@@ -1,0 +1,17 @@
+{
+  "instances": 10,
+  "with_report_text": 10,
+  "with_patch_text": 10,
+  "avg_rouge_l": 0.058471,
+  "avg_jaccard": 0.054903,
+  "avg_identifier_jaccard": 0.018089,
+  "avg_pos_overlap": 0.75,
+  "avg_sbert": 0.424179,
+  "avg_codebert": 0.916245,
+  "avg_openai_embedding": 0.399724,
+  "dataset": "defects4j",
+  "scenario": "raw",
+  "model": "none",
+  "artifact_pair": "report_patch",
+  "patch_view": "remove"
+}

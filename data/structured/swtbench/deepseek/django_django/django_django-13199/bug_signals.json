@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-13199",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "HttpResponseBase.delete_cookie",
+      "HttpResponse.set_cookie"
+    ],
+    "input_conditions": [
+      "Cookie has SameSite attribute set to 'Lax'",
+      "Cookie name does not begin with '__Secure-' or '__Host-'"
+    ],
+    "reproduction_steps": [
+      "1. Set a cookie with SameSite='Lax' attribute",
+      "2. Call HttpResponseBase.delete_cookie() to expire the cookie",
+      "3. Observe the Set-Cookie header in the response",
+      "4. Note that SameSite attribute is missing and Secure is not set unless cookie name starts with '__Secure-' or '__Host-'"
+    ],
+    "expected": [
+      "delete_cookie should preserve the cookie's SameSite attribute and set the Secure flag appropriately"
+    ],
+    "actual": [
+      "delete_cookie does not set the SameSite attribute and only sets Secure if the cookie name begins with '__Secure-' or '__Host-'"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "HttpResponseBase.delete_cookie",
+      "HttpResponse.set_cookie"
+    ],
+    "input_conditions": [
+      "Cookie has SameSite attribute set to 'Lax'",
+      "Cookie name does not begin with '__Secure-' or '__Host-'"
+    ],
+    "reproduction_steps": [
+      "1. Set a cookie with SameSite='Lax' attribute",
+      "2. Call HttpResponseBase.delete_cookie() to expire the cookie",
+      "3. Observe the Set-Cookie header in the response",
+      "4. Note that SameSite attribute is missing and Secure is not set unless cookie name starts with '__Secure-' or '__Host-'"
+    ],
+    "expected": [
+      "delete_cookie should preserve the cookie's SameSite attribute and set the Secure flag appropriately"
+    ],
+    "actual": [
+      "delete_cookie does not set the SameSite attribute and only sets Secure if the cookie name begins with '__Secure-' or '__Host-'"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"HttpResponseBase.delete_cookie\", \"HttpResponse.set_cookie\"],\n\"input_conditions\": [\"Cookie has SameSite attribute set to 'Lax'\", \"Cookie name does not begin with '__Secure-' or '__Host-'\"],\n\"expected\": \"delete_cookie should preserve the cookie's SameSite attribute and set the Secure flag appropriately\",\n\"actual\": \"delete_cookie does not set the SameSite attribute and only sets Secure if the cookie name begins with '__Secure-' or '__Host-'\",\n\"reproduction_steps\": [\n\"1. Set a cookie with SameSite='Lax' attribute\",\n\"2. Call HttpResponseBase.delete_cookie() to expire the cookie\",\n\"3. Observe the Set-Cookie header in the response\",\n\"4. Note that SameSite attribute is missing and Secure is not set unless cookie name starts with '__Secure-' or '__Host-'\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"HttpResponseBase.delete_cookie\", \"HttpResponse.set_cookie\"],\n\"input_conditions\": [\"Cookie has SameSite attribute set to 'Lax'\", \"Cookie name does not begin with '__Secure-' or '__Host-'\"],\n\"expected\": \"delete_cookie should preserve the cookie's SameSite attribute and set the Secure flag appropriately\",\n\"actual\": \"delete_cookie does not set the SameSite attribute and only sets Secure if the cookie name begins with '__Secure-' or '__Host-'\",\n\"reproduction_steps\": [\n\"1. Set a cookie with SameSite='Lax' attribute\",\n\"2. Call HttpResponseBase.delete_cookie() to expire the cookie\",\n\"3. Observe the Set-Cookie header in the response\",\n\"4. Note that SameSite attribute is missing and Secure is not set unless cookie name starts with '__Secure-' or '__Host-'\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

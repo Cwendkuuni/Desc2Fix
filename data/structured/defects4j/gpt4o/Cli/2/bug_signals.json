@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Cli-2",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "ParseException"
+    ],
+    "api_involved": [
+      "PosixParser",
+      "parse",
+      "buildCommandLineOptions"
+    ],
+    "input_conditions": [
+      "parameter value starts with a hyphen",
+      "uses nightly build dated 20050503"
+    ],
+    "reproduction_steps": [
+      "Use PosixParser to parse command line options.",
+      "Pass a parameter value with a leading hyphen.",
+      "Observe the parser treating it as a separate option."
+    ],
+    "expected": [
+      "Hyphen-prefixed string should be treated as a parameter value, not as an option."
+    ],
+    "actual": [
+      "The parser interprets hyphen-prefixed strings as options, resulting in an invalid parameter."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ParseException"
+    ],
+    "api_involved": [
+      "PosixParser",
+      "parse",
+      "buildCommandLineOptions"
+    ],
+    "input_conditions": [
+      "parameter value starts with a hyphen",
+      "uses nightly build dated 20050503"
+    ],
+    "reproduction_steps": [
+      "Use PosixParser to parse command line options.",
+      "Pass a parameter value with a leading hyphen.",
+      "Observe the parser treating it as a separate option."
+    ],
+    "expected": [
+      "Hyphen-prefixed string should be treated as a parameter value, not as an option."
+    ],
+    "actual": [
+      "The parser interprets hyphen-prefixed strings as options, resulting in an invalid parameter."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"ParseException\",\n  \"api_involved\": [\"PosixParser\", \"parse\", \"buildCommandLineOptions\"],\n  \"input_conditions\": [\"parameter value starts with a hyphen\", \"uses nightly build dated 20050503\"],\n  \"expected\": \"Hyphen-prefixed string should be treated as a parameter value, not as an option.\",\n  \"actual\": \"The parser interprets hyphen-prefixed strings as options, resulting in an invalid parameter.\",\n  \"reproduction_steps\": [\n    \"Use PosixParser to parse command line options.\",\n    \"Pass a parameter value with a leading hyphen.\",\n    \"Observe the parser treating it as a separate option.\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"ParseException\",\n  \"api_involved\": [\"PosixParser\", \"parse\", \"buildCommandLineOptions\"],\n  \"input_conditions\": [\"parameter value starts with a hyphen\", \"uses nightly build dated 20050503\"],\n  \"expected\": \"Hyphen-prefixed string should be treated as a parameter value, not as an option.\",\n  \"actual\": \"The parser interprets hyphen-prefixed strings as options, resulting in an invalid parameter.\",\n  \"reproduction_steps\": [\n    \"Use PosixParser to parse command line options.\",\n    \"Pass a parameter value with a leading hyphen.\",\n    \"Observe the parser treating it as a separate option.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

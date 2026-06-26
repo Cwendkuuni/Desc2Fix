@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Codec-17",
+  "project": "Codec",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NullPointerException (NPE)"
+    ],
+    "api_involved": [
+      "StringUtils.newStringIso8859_1",
+      "StringUtils.newString"
+    ],
+    "input_conditions": [
+      "null input"
+    ],
+    "reproduction_steps": [
+      "Call StringUtils.newStringIso8859_1 with null as the argument."
+    ],
+    "expected": [
+      "Method should return null when input is null."
+    ],
+    "actual": [
+      "Method throws NullPointerException (NPE) when input is null."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NullPointerException (NPE)"
+    ],
+    "api_involved": [
+      "StringUtils.newStringIso8859_1",
+      "StringUtils.newString"
+    ],
+    "input_conditions": [
+      "null input"
+    ],
+    "reproduction_steps": [
+      "Call StringUtils.newStringIso8859_1 with null as the argument."
+    ],
+    "expected": [
+      "Method should return null when input is null."
+    ],
+    "actual": [
+      "Method throws NullPointerException (NPE) when input is null."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"NullPointerException (NPE)\",\n  \"api_involved\": [\"StringUtils.newStringIso8859_1\", \"StringUtils.newString\"],\n  \"input_conditions\": [\"null input\"],\n  \"expected\": \"Method should return null when input is null.\",\n  \"actual\": \"Method throws NullPointerException (NPE) when input is null.\",\n  \"reproduction_steps\": [\n    \"Call StringUtils.newStringIso8859_1 with null as the argument.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"NullPointerException (NPE)\",\n  \"api_involved\": [\"StringUtils.newStringIso8859_1\", \"StringUtils.newString\"],\n  \"input_conditions\": [\"null input\"],\n  \"expected\": \"Method should return null when input is null.\",\n  \"actual\": \"Method throws NullPointerException (NPE) when input is null.\",\n  \"reproduction_steps\": [\n    \"Call StringUtils.newStringIso8859_1 with null as the argument.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

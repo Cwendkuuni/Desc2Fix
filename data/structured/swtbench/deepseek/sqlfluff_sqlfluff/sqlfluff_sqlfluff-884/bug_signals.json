@@ -1,0 +1,49 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sqlfluff__sqlfluff-884",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "segment.is_whitespace"
+    ],
+    "input_conditions": [
+      "token is a whitespace token"
+    ],
+    "reproduction_steps": [
+      "Create a whitespace token",
+      "Check segment.is_whitespace property"
+    ],
+    "expected": [
+      "segment.is_whitespace returns True for a whitespace token"
+    ],
+    "actual": [
+      "segment.is_whitespace returns False for a whitespace token"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "segment.is_whitespace"
+    ],
+    "input_conditions": [
+      "token is a whitespace token"
+    ],
+    "reproduction_steps": [
+      "Create a whitespace token",
+      "Check segment.is_whitespace property"
+    ],
+    "expected": [
+      "segment.is_whitespace returns True for a whitespace token"
+    ],
+    "actual": [
+      "segment.is_whitespace returns False for a whitespace token"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"segment.is_whitespace\"],\n\"input_conditions\": [\"token is a whitespace token\"],\n\"expected\": \"segment.is_whitespace returns True for a whitespace token\",\n\"actual\": \"segment.is_whitespace returns False for a whitespace token\",\n\"reproduction_steps\": [\"Create a whitespace token\", \"Check segment.is_whitespace property\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"segment.is_whitespace\"],\n\"input_conditions\": [\"token is a whitespace token\"],\n\"expected\": \"segment.is_whitespace returns True for a whitespace token\",\n\"actual\": \"segment.is_whitespace returns False for a whitespace token\",\n\"reproduction_steps\": [\"Create a whitespace token\", \"Check segment.is_whitespace property\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

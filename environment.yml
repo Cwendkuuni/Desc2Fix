@@ -1,0 +1,33 @@
+name: desc2fix
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - pyyaml
+  - tqdm
+  - requests
+  - pip:
+      - python-dotenv
+      - datasets
+      - huggingface-hub
+      - openai
+      - tiktoken
+      - rouge-score
+      - nltk
+      - spacy
+      - torch
+      - transformers
+      - sentence-transformers
+      - plotly
+      - kaleido
+      - streamlit
+      - altair
+      - krippendorff
+      - statsmodels
+      - pytest

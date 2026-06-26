@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-145",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Closure Compiler"
+    ],
+    "input_conditions": [
+      "labeled do-while loop with break statements",
+      "compilation without PRETTY_PRINT option"
+    ],
+    "reproduction_steps": [
+      "Use the Closure Compiler (version of Jun 16) on ubuntu 10.",
+      "Compile the following code without PRETTY_PRINT formatting: var i = 0; lab1: do{ lab2: do{ i++; if (1) { break lab2; } else { break lab1; } } while(false); } while(false); console.log(i);",
+      "Observe the generated output and test in Internet Explorer."
+    ],
+    "expected": [
+      "Generated JavaScript code that is syntactically correct and runs in all browsers, including IE."
+    ],
+    "actual": [
+      "Generated code with missing brackets after the first 'do' instruction (produced: 'var a=0;do b:do{a++;break b}while(0);while(0);console.log(a);'), which fails in Internet Explorer."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Closure Compiler"
+    ],
+    "input_conditions": [
+      "labeled do-while loop with break statements",
+      "compilation without PRETTY_PRINT option"
+    ],
+    "reproduction_steps": [
+      "Use the Closure Compiler (version of Jun 16) on ubuntu 10.",
+      "Compile the following code without PRETTY_PRINT formatting: var i = 0; lab1: do{ lab2: do{ i++; if (1) { break lab2; } else { break lab1; } } while(false); } while(false); console.log(i);",
+      "Observe the generated output and test in Internet Explorer."
+    ],
+    "expected": [
+      "Generated JavaScript code that is syntactically correct and runs in all browsers, including IE."
+    ],
+    "actual": [
+      "Generated code with missing brackets after the first 'do' instruction (produced: 'var a=0;do b:do{a++;break b}while(0);while(0);console.log(a);'), which fails in Internet Explorer."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Closure Compiler\"],\n\"input_conditions\": [\"labeled do-while loop with break statements\", \"compilation without PRETTY_PRINT option\"],\n\"expected\": \"Generated JavaScript code that is syntactically correct and runs in all browsers, including IE.\",\n\"actual\": \"Generated code with missing brackets after the first 'do' instruction (produced: 'var a=0;do b:do{a++;break b}while(0);while(0);console.log(a);'), which fails in Internet Explorer.\",\n\"reproduction_steps\": [\n\"Use the Closure Compiler (version of Jun 16) on ubuntu 10.\",\n\"Compile the following code without PRETTY_PRINT formatting: var i = 0; lab1: do{ lab2: do{ i++; if (1) { break lab2; } else { break lab1; } } while(false); } while(false); console.log(i);\",\n\"Observe the generated output and test in Internet Explorer.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Closure Compiler\"],\n\"input_conditions\": [\"labeled do-while loop with break statements\", \"compilation without PRETTY_PRINT option\"],\n\"expected\": \"Generated JavaScript code that is syntactically correct and runs in all browsers, including IE.\",\n\"actual\": \"Generated code with missing brackets after the first 'do' instruction (produced: 'var a=0;do b:do{a++;break b}while(0);while(0);console.log(a);'), which fails in Internet Explorer.\",\n\"reproduction_steps\": [\n\"Use the Closure Compiler (version of Jun 16) on ubuntu 10.\",\n\"Compile the following code without PRETTY_PRINT formatting: var i = 0; lab1: do{ lab2: do{ i++; if (1) { break lab2; } else { break lab1; } } while(false); } while(false); console.log(i);\",\n\"Observe the generated output and test in Internet Explorer.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

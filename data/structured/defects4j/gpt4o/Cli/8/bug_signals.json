@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Cli-8",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "OutOfMemoryExceptions"
+    ],
+    "api_involved": [
+      "HelpFormatter.findWrapPos",
+      "HelpFormatter.renderWrappedText",
+      "HelpFormatterTest.testFindWrapPos"
+    ],
+    "input_conditions": [
+      "long description option"
+    ],
+    "reproduction_steps": [
+      "Create an option with a long description.",
+      "Use the HelpFormatter to print the description.",
+      "Observe the length of lines after the first one."
+    ],
+    "expected": [
+      "HelpFormatter should format lines within the specified width after the first line."
+    ],
+    "actual": [
+      "Every line beyond the first is formatted to many characters beyond the specified width."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "OutOfMemoryExceptions"
+    ],
+    "api_involved": [
+      "HelpFormatter.findWrapPos",
+      "HelpFormatter.renderWrappedText",
+      "HelpFormatterTest.testFindWrapPos"
+    ],
+    "input_conditions": [
+      "long description option"
+    ],
+    "reproduction_steps": [
+      "Create an option with a long description.",
+      "Use the HelpFormatter to print the description.",
+      "Observe the length of lines after the first one."
+    ],
+    "expected": [
+      "HelpFormatter should format lines within the specified width after the first line."
+    ],
+    "actual": [
+      "Every line beyond the first is formatted to many characters beyond the specified width."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"OutOfMemoryExceptions\",\n  \"api_involved\": [\"HelpFormatter.findWrapPos\", \"HelpFormatter.renderWrappedText\", \"HelpFormatterTest.testFindWrapPos\"],\n  \"input_conditions\": [\"long description option\"],\n  \"expected\": \"HelpFormatter should format lines within the specified width after the first line.\",\n  \"actual\": \"Every line beyond the first is formatted to many characters beyond the specified width.\",\n  \"reproduction_steps\": [\n    \"Create an option with a long description.\",\n    \"Use the HelpFormatter to print the description.\",\n    \"Observe the length of lines after the first one.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"OutOfMemoryExceptions\",\n  \"api_involved\": [\"HelpFormatter.findWrapPos\", \"HelpFormatter.renderWrappedText\", \"HelpFormatterTest.testFindWrapPos\"],\n  \"input_conditions\": [\"long description option\"],\n  \"expected\": \"HelpFormatter should format lines within the specified width after the first line.\",\n  \"actual\": \"Every line beyond the first is formatted to many characters beyond the specified width.\",\n  \"reproduction_steps\": [\n    \"Create an option with a long description.\",\n    \"Use the HelpFormatter to print the description.\",\n    \"Observe the length of lines after the first one.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

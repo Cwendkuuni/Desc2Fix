@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-14919",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "RuntimeError"
+    ],
+    "api_involved": [
+      "TransactionTestCase",
+      "TestCase"
+    ],
+    "input_conditions": [
+      "durable atomic blocks",
+      "nested durable atomic blocks"
+    ],
+    "reproduction_steps": [
+      "Use TestCase with nested durable atomic blocks",
+      "Run the tests that should trigger durability errors"
+    ],
+    "expected": [
+      "RuntimeError should be raised for nested durable atomic blocks."
+    ],
+    "actual": [
+      "Durability errors do not surface in TestCase as the durability check is turned off."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "RuntimeError"
+    ],
+    "api_involved": [
+      "TransactionTestCase",
+      "TestCase"
+    ],
+    "input_conditions": [
+      "durable atomic blocks",
+      "nested durable atomic blocks"
+    ],
+    "reproduction_steps": [
+      "Use TestCase with nested durable atomic blocks",
+      "Run the tests that should trigger durability errors"
+    ],
+    "expected": [
+      "RuntimeError should be raised for nested durable atomic blocks."
+    ],
+    "actual": [
+      "Durability errors do not surface in TestCase as the durability check is turned off."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"RuntimeError\",\n  \"api_involved\": [\"TransactionTestCase\", \"TestCase\"],\n  \"input_conditions\": [\"durable atomic blocks\", \"nested durable atomic blocks\"],\n  \"expected\": \"RuntimeError should be raised for nested durable atomic blocks.\",\n  \"actual\": \"Durability errors do not surface in TestCase as the durability check is turned off.\",\n  \"reproduction_steps\": [\"Use TestCase with nested durable atomic blocks\", \"Run the tests that should trigger durability errors\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"RuntimeError\",\n  \"api_involved\": [\"TransactionTestCase\", \"TestCase\"],\n  \"input_conditions\": [\"durable atomic blocks\", \"nested durable atomic blocks\"],\n  \"expected\": \"RuntimeError should be raised for nested durable atomic blocks.\",\n  \"actual\": \"Durability errors do not surface in TestCase as the durability check is turned off.\",\n  \"reproduction_steps\": [\"Use TestCase with nested durable atomic blocks\", \"Run the tests that should trigger durability errors\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

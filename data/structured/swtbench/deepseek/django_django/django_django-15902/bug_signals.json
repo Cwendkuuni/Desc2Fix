@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-15902",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "DeprecationWarning"
+    ],
+    "api_involved": [
+      "ManagementForm",
+      "formset management form"
+    ],
+    "input_conditions": [
+      "User never renders forms with {{ form }} expression",
+      "Only hidden inputs are produced"
+    ],
+    "reproduction_steps": [
+      "Set up a project that never renders forms using the {{ form }} expression.",
+      "Include a formset in the project.",
+      "Observe that the deprecation warning for 'default.html' is raised during management form production."
+    ],
+    "expected": [
+      "No deprecation warning should be raised for management forms since the template used is insignificant and only hidden inputs are produced."
+    ],
+    "actual": [
+      "Deprecation warning about 'default.html' is raised for the formset management form production."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "DeprecationWarning"
+    ],
+    "api_involved": [
+      "ManagementForm",
+      "formset management form"
+    ],
+    "input_conditions": [
+      "User never renders forms with {{ form }} expression",
+      "Only hidden inputs are produced"
+    ],
+    "reproduction_steps": [
+      "Set up a project that never renders forms using the {{ form }} expression.",
+      "Include a formset in the project.",
+      "Observe that the deprecation warning for 'default.html' is raised during management form production."
+    ],
+    "expected": [
+      "No deprecation warning should be raised for management forms since the template used is insignificant and only hidden inputs are produced."
+    ],
+    "actual": [
+      "Deprecation warning about 'default.html' is raised for the formset management form production."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"DeprecationWarning\",\n\"api_involved\": [\"ManagementForm\", \"formset management form\"],\n\"input_conditions\": [\"User never renders forms with {{ form }} expression\", \"Only hidden inputs are produced\"],\n\"expected\": \"No deprecation warning should be raised for management forms since the template used is insignificant and only hidden inputs are produced.\",\n\"actual\": \"Deprecation warning about 'default.html' is raised for the formset management form production.\",\n\"reproduction_steps\": [\n\"Set up a project that never renders forms using the {{ form }} expression.\",\n\"Include a formset in the project.\",\n\"Observe that the deprecation warning for 'default.html' is raised during management form production.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"DeprecationWarning\",\n\"api_involved\": [\"ManagementForm\", \"formset management form\"],\n\"input_conditions\": [\"User never renders forms with {{ form }} expression\", \"Only hidden inputs are produced\"],\n\"expected\": \"No deprecation warning should be raised for management forms since the template used is insignificant and only hidden inputs are produced.\",\n\"actual\": \"Deprecation warning about 'default.html' is raised for the formset management form production.\",\n\"reproduction_steps\": [\n\"Set up a project that never renders forms using the {{ form }} expression.\",\n\"Include a formset in the project.\",\n\"Observe that the deprecation warning for 'default.html' is raised during management form production.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,18 @@
+{
+  "instances": 10,
+  "with_report_text": 10,
+  "with_test_text": 10,
+  "avg_rouge_l": 0.011817,
+  "avg_jaccard": 0.047392,
+  "avg_identifier_jaccard": 0.027999,
+  "avg_pos_overlap": 0.675,
+  "avg_structured_macro_jaccard": 0.013327,
+  "avg_structured_all_jaccard": 0.047392,
+  "avg_sbert": 0.424677,
+  "avg_codebert": 0.904527,
+  "avg_openai_embedding": 0.443763,
+  "dataset": "swtbench",
+  "scenario": "structured",
+  "model": "gpt4o",
+  "artifact_pair": "report_test"
+}

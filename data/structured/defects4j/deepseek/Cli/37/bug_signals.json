@@ -1,0 +1,65 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-37",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Option.builder",
+      "DefaultParser",
+      "GnuParser",
+      "CommandLine",
+      "Options.addOption"
+    ],
+    "input_conditions": [
+      "optionalArg(true)",
+      "numberOfArgs(1)",
+      "hasArg(false)"
+    ],
+    "reproduction_steps": [
+      "Create options: Option.TYPE1 with hasArg().optionalArg(true).numberOfArgs(1), Option.LAST with hasArg(false)",
+      "Parse command line arguments: new String[] { \"-t1\", \"-last\" } using DefaultParser",
+      "Observe that '-last' is treated as the value of -t1 instead of as a separate option",
+      "Alternatively, use '-t1 -ab' with short options a and b (both without arguments) to see concatenation issue"
+    ],
+    "expected": [
+      "When an option with an optional argument is followed by another option (e.g., '-t1 -last' or '-t1 -ab'), the second token should be recognized as a separate option, not as the argument to the first option."
+    ],
+    "actual": [
+      "The DefaultParser incorrectly treats the subsequent option (e.g., '-last' or '-ab') as the argument to the option with the optional argument, causing a parse error or wrong behavior."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Option.builder",
+      "DefaultParser",
+      "GnuParser",
+      "CommandLine",
+      "Options.addOption"
+    ],
+    "input_conditions": [
+      "optionalArg(true)",
+      "numberOfArgs(1)",
+      "hasArg(false)"
+    ],
+    "reproduction_steps": [
+      "Create options: Option.TYPE1 with hasArg().optionalArg(true).numberOfArgs(1), Option.LAST with hasArg(false)",
+      "Parse command line arguments: new String[] { \"-t1\", \"-last\" } using DefaultParser",
+      "Observe that '-last' is treated as the value of -t1 instead of as a separate option",
+      "Alternatively, use '-t1 -ab' with short options a and b (both without arguments) to see concatenation issue"
+    ],
+    "expected": [
+      "When an option with an optional argument is followed by another option (e.g., '-t1 -last' or '-t1 -ab'), the second token should be recognized as a separate option, not as the argument to the first option."
+    ],
+    "actual": [
+      "The DefaultParser incorrectly treats the subsequent option (e.g., '-last' or '-ab') as the argument to the option with the optional argument, causing a parse error or wrong behavior."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Option.builder\", \"DefaultParser\", \"GnuParser\", \"CommandLine\", \"Options.addOption\"],\n\"input_conditions\": [\"optionalArg(true)\", \"numberOfArgs(1)\", \"hasArg(false)\"],\n\"expected\": \"When an option with an optional argument is followed by another option (e.g., '-t1 -last' or '-t1 -ab'), the second token should be recognized as a separate option, not as the argument to the first option.\",\n\"actual\": \"The DefaultParser incorrectly treats the subsequent option (e.g., '-last' or '-ab') as the argument to the option with the optional argument, causing a parse error or wrong behavior.\",\n\"reproduction_steps\": [\"Create options: Option.TYPE1 with hasArg().optionalArg(true).numberOfArgs(1), Option.LAST with hasArg(false)\", \"Parse command line arguments: new String[] { \\\"-t1\\\", \\\"-last\\\" } using DefaultParser\", \"Observe that '-last' is treated as the value of -t1 instead of as a separate option\", \"Alternatively, use '-t1 -ab' with short options a and b (both without arguments) to see concatenation issue\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Option.builder\", \"DefaultParser\", \"GnuParser\", \"CommandLine\", \"Options.addOption\"],\n\"input_conditions\": [\"optionalArg(true)\", \"numberOfArgs(1)\", \"hasArg(false)\"],\n\"expected\": \"When an option with an optional argument is followed by another option (e.g., '-t1 -last' or '-t1 -ab'), the second token should be recognized as a separate option, not as the argument to the first option.\",\n\"actual\": \"The DefaultParser incorrectly treats the subsequent option (e.g., '-last' or '-ab') as the argument to the option with the optional argument, causing a parse error or wrong behavior.\",\n\"reproduction_steps\": [\"Create options: Option.TYPE1 with hasArg().optionalArg(true).numberOfArgs(1), Option.LAST with hasArg(false)\", \"Parse command line arguments: new String[] { \\\"-t1\\\", \\\"-last\\\" } using DefaultParser\", \"Observe that '-last' is treated as the value of -t1 instead of as a separate option\", \"Alternatively, use '-t1 -ab' with short options a and b (both without arguments) to see concatenation issue\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "psf__requests-1689",
+  "project": null,
+  "repo": "psf/requests",
+  "signals": {
+    "exception": [
+      "UnicodeError"
+    ],
+    "api_involved": [
+      "requests",
+      "requests/models.py",
+      "compat.py"
+    ],
+    "input_conditions": [
+      "POST request with a PNG file",
+      "content-length header is a unicode object"
+    ],
+    "reproduction_steps": [
+      "Send a POST request with a PNG file using the requests library",
+      "Observe UnicodeError being raised"
+    ],
+    "expected": [
+      "POST request with PNG file should succeed without UnicodeError"
+    ],
+    "actual": [
+      "UnicodeError is raised due to content-length header being a unicode object causing a decode error when constructing the request body"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "UnicodeError"
+    ],
+    "api_involved": [
+      "requests",
+      "requests/models.py",
+      "compat.py"
+    ],
+    "input_conditions": [
+      "POST request with a PNG file",
+      "content-length header is a unicode object"
+    ],
+    "reproduction_steps": [
+      "Send a POST request with a PNG file using the requests library",
+      "Observe UnicodeError being raised"
+    ],
+    "expected": [
+      "POST request with PNG file should succeed without UnicodeError"
+    ],
+    "actual": [
+      "UnicodeError is raised due to content-length header being a unicode object causing a decode error when constructing the request body"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"UnicodeError\",\n\"api_involved\": [\"requests\", \"requests/models.py\", \"compat.py\"],\n\"input_conditions\": [\"POST request with a PNG file\", \"content-length header is a unicode object\"],\n\"expected\": \"POST request with PNG file should succeed without UnicodeError\",\n\"actual\": \"UnicodeError is raised due to content-length header being a unicode object causing a decode error when constructing the request body\",\n\"reproduction_steps\": [\n    \"Send a POST request with a PNG file using the requests library\",\n    \"Observe UnicodeError being raised\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"UnicodeError\",\n\"api_involved\": [\"requests\", \"requests/models.py\", \"compat.py\"],\n\"input_conditions\": [\"POST request with a PNG file\", \"content-length header is a unicode object\"],\n\"expected\": \"POST request with PNG file should succeed without UnicodeError\",\n\"actual\": \"UnicodeError is raised due to content-length header being a unicode object causing a decode error when constructing the request body\",\n\"reproduction_steps\": [\n    \"Send a POST request with a PNG file using the requests library\",\n    \"Observe UnicodeError being raised\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

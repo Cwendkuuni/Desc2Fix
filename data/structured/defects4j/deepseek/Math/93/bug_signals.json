@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-93",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "wrong result (rounding error)"
+    ],
+    "api_involved": [
+      "MathUtils.factorial(int)"
+    ],
+    "input_conditions": [
+      "n >= 17",
+      "n = 17, 18, 19"
+    ],
+    "reproduction_steps": [
+      "Modify MathUtilsTest.testFactorial() to loop i from 1 to 20",
+      "Call MathUtils.factorial(i) for each i",
+      "Observe incorrect results for i >= 17"
+    ],
+    "expected": [
+      "correct long factorial result for n up to 20"
+    ],
+    "actual": [
+      "wrong result for n = 17, 18, 19 due to double rounding errors"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "wrong result (rounding error)"
+    ],
+    "api_involved": [
+      "MathUtils.factorial(int)"
+    ],
+    "input_conditions": [
+      "n >= 17",
+      "n = 17, 18, 19"
+    ],
+    "reproduction_steps": [
+      "Modify MathUtilsTest.testFactorial() to loop i from 1 to 20",
+      "Call MathUtils.factorial(i) for each i",
+      "Observe incorrect results for i >= 17"
+    ],
+    "expected": [
+      "correct long factorial result for n up to 20"
+    ],
+    "actual": [
+      "wrong result for n = 17, 18, 19 due to double rounding errors"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"wrong result (rounding error)\",\n\"api_involved\": [\"MathUtils.factorial(int)\"],\n\"input_conditions\": [\"n >= 17\", \"n = 17, 18, 19\"],\n\"expected\": \"correct long factorial result for n up to 20\",\n\"actual\": \"wrong result for n = 17, 18, 19 due to double rounding errors\",\n\"reproduction_steps\": [\n    \"Modify MathUtilsTest.testFactorial() to loop i from 1 to 20\",\n    \"Call MathUtils.factorial(i) for each i\",\n    \"Observe incorrect results for i >= 17\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"wrong result (rounding error)\",\n\"api_involved\": [\"MathUtils.factorial(int)\"],\n\"input_conditions\": [\"n >= 17\", \"n = 17, 18, 19\"],\n\"expected\": \"correct long factorial result for n up to 20\",\n\"actual\": \"wrong result for n = 17, 18, 19 due to double rounding errors\",\n\"reproduction_steps\": [\n    \"Modify MathUtilsTest.testFactorial() to loop i from 1 to 20\",\n    \"Call MathUtils.factorial(i) for each i\",\n    \"Observe incorrect results for i >= 17\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

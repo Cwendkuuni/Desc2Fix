@@ -1,0 +1,70 @@
+datasets:
+  - defects4j
+  - swtbench
+
+models:
+  - gpt4o
+  - deepseek
+
+official_rqs:
+  rq1:
+    name: "Structured bug signal extraction"
+    steps:
+      - completeness
+      - accuracy
+      - consistency
+      - plots
+
+  rq2:
+    name: "Bug report to test alignment"
+    artifact_pair: "report_test"
+    steps:
+      - metric_alignment
+      - llm_alignment
+      - human_llm
+      - correlations
+      - plots
+
+  rq3:
+    name: "Bug report to patch alignment"
+    artifact_pair: "report_patch"
+    steps:
+      - metric_alignment
+      - llm_alignment
+      - human_llm
+      - correlations
+      - plots
+
+internal_rqs:
+  rq4_internal:
+    name: "Test to patch alignment"
+    artifact_pair: "test_patch"
+    steps:
+      - metric_alignment
+      - llm_alignment
+      - human_llm
+      - correlations
+      - plots
+
+scenarios:
+  - raw
+  - structured
+
+patch_views:
+  - full
+  - add
+  - remove
+
+llm_judge_axes:
+  - alignment_score
+  - coverage
+  - correctness
+  - specificity
+
+signal_fields:
+  - exception
+  - api_involved
+  - input_conditions
+  - reproduction_steps
+  - expected
+  - actual

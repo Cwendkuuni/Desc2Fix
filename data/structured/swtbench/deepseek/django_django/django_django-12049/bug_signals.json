@@ -1,0 +1,65 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-12049",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "django.db.utils.OperationalError: (1050, \"Table 'city' already exists\")"
+    ],
+    "api_involved": [
+      "django.db.migrations.executor.MigrationExecutor",
+      "django.db.migrations.state.ProjectState"
+    ],
+    "input_conditions": [
+      "case-insensitive database collation",
+      "MySQL with lower_case_table_names=0",
+      "migration file using db_column='countryCode'",
+      "using --fake-initial option with a legacy database"
+    ],
+    "reproduction_steps": [
+      "Set up a Django project with a legacy MySQL database using case-insensitive collation and lower_case_table_names=0.",
+      "Create a migration that adds a foreign key field with a db_column having camelCase (e.g., 'countryCode').",
+      "Run 'python3 manage.py migrate --database my_DB --fake-initial my_first_app'.",
+      "Observe the OperationalError: (1050, \"Table 'city' already exists\")."
+    ],
+    "expected": [
+      "The fake-initial migration should succeed without error when the table already exists."
+    ],
+    "actual": [
+      "A case-sensitive comparison of column names causes a failure, raising django.db.utils.OperationalError (Table already exists)."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "django.db.utils.OperationalError: (1050, \"Table 'city' already exists\")"
+    ],
+    "api_involved": [
+      "django.db.migrations.executor.MigrationExecutor",
+      "django.db.migrations.state.ProjectState"
+    ],
+    "input_conditions": [
+      "case-insensitive database collation",
+      "MySQL with lower_case_table_names=0",
+      "migration file using db_column='countryCode'",
+      "using --fake-initial option with a legacy database"
+    ],
+    "reproduction_steps": [
+      "Set up a Django project with a legacy MySQL database using case-insensitive collation and lower_case_table_names=0.",
+      "Create a migration that adds a foreign key field with a db_column having camelCase (e.g., 'countryCode').",
+      "Run 'python3 manage.py migrate --database my_DB --fake-initial my_first_app'.",
+      "Observe the OperationalError: (1050, \"Table 'city' already exists\")."
+    ],
+    "expected": [
+      "The fake-initial migration should succeed without error when the table already exists."
+    ],
+    "actual": [
+      "A case-sensitive comparison of column names causes a failure, raising django.db.utils.OperationalError (Table already exists)."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"django.db.utils.OperationalError: (1050, \\\"Table 'city' already exists\\\")\",\n\"api_involved\": [\"django.db.migrations.executor.MigrationExecutor\", \"django.db.migrations.state.ProjectState\"],\n\"input_conditions\": [\"case-insensitive database collation\", \"MySQL with lower_case_table_names=0\", \"migration file using db_column='countryCode'\", \"using --fake-initial option with a legacy database\"],\n\"expected\": \"The fake-initial migration should succeed without error when the table already exists.\",\n\"actual\": \"A case-sensitive comparison of column names causes a failure, raising django.db.utils.OperationalError (Table already exists).\",\n\"reproduction_steps\": [\n    \"Set up a Django project with a legacy MySQL database using case-insensitive collation and lower_case_table_names=0.\",\n    \"Create a migration that adds a foreign key field with a db_column having camelCase (e.g., 'countryCode').\",\n    \"Run 'python3 manage.py migrate --database my_DB --fake-initial my_first_app'.\",\n    \"Observe the OperationalError: (1050, \\\"Table 'city' already exists\\\").\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"django.db.utils.OperationalError: (1050, \\\"Table 'city' already exists\\\")\",\n\"api_involved\": [\"django.db.migrations.executor.MigrationExecutor\", \"django.db.migrations.state.ProjectState\"],\n\"input_conditions\": [\"case-insensitive database collation\", \"MySQL with lower_case_table_names=0\", \"migration file using db_column='countryCode'\", \"using --fake-initial option with a legacy database\"],\n\"expected\": \"The fake-initial migration should succeed without error when the table already exists.\",\n\"actual\": \"A case-sensitive comparison of column names causes a failure, raising django.db.utils.OperationalError (Table already exists).\",\n\"reproduction_steps\": [\n    \"Set up a Django project with a legacy MySQL database using case-insensitive collation and lower_case_table_names=0.\",\n    \"Create a migration that adds a foreign key field with a db_column having camelCase (e.g., 'countryCode').\",\n    \"Run 'python3 manage.py migrate --database my_DB --fake-initial my_first_app'.\",\n    \"Observe the OperationalError: (1050, \\\"Table 'city' already exists\\\").\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

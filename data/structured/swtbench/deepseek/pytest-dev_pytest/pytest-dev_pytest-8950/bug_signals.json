@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "pytest-dev__pytest-8950",
+  "project": null,
+  "repo": "pytest-dev/pytest",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "pytest.skip",
+      "pytest.mark.skip",
+      "pytest.mark.xfail"
+    ],
+    "input_conditions": [
+      "argument name inconsistency between pytest.skip and pytest.mark.skip/xfail"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "The argument name in pytest.skip should be 'reason' for consistency with pytest.mark.skip and pytest.mark.xfail."
+    ],
+    "actual": [
+      "The argument in pytest.skip is named 'msg', which is inconsistent with the 'reason' argument used in pytest.mark.skip and pytest.mark.xfail."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "pytest.skip",
+      "pytest.mark.skip",
+      "pytest.mark.xfail"
+    ],
+    "input_conditions": [
+      "argument name inconsistency between pytest.skip and pytest.mark.skip/xfail"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "The argument name in pytest.skip should be 'reason' for consistency with pytest.mark.skip and pytest.mark.xfail."
+    ],
+    "actual": [
+      "The argument in pytest.skip is named 'msg', which is inconsistent with the 'reason' argument used in pytest.mark.skip and pytest.mark.xfail."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"pytest.skip\", \"pytest.mark.skip\", \"pytest.mark.xfail\"],\n\"input_conditions\": [\"argument name inconsistency between pytest.skip and pytest.mark.skip/xfail\"],\n\"expected\": \"The argument name in pytest.skip should be 'reason' for consistency with pytest.mark.skip and pytest.mark.xfail.\",\n\"actual\": \"The argument in pytest.skip is named 'msg', which is inconsistent with the 'reason' argument used in pytest.mark.skip and pytest.mark.xfail.\",\n\"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"pytest.skip\", \"pytest.mark.skip\", \"pytest.mark.xfail\"],\n\"input_conditions\": [\"argument name inconsistency between pytest.skip and pytest.mark.skip/xfail\"],\n\"expected\": \"The argument name in pytest.skip should be 'reason' for consistency with pytest.mark.skip and pytest.mark.xfail.\",\n\"actual\": \"The argument in pytest.skip is named 'msg', which is inconsistent with the 'reason' argument used in pytest.mark.skip and pytest.mark.xfail.\",\n\"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

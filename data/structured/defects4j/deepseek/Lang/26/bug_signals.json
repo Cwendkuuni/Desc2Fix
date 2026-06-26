@@ -1,0 +1,67 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Lang-26",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "FastDateFormat.format()",
+      "FastDateFormat.getInstance()",
+      "SimpleDateFormat"
+    ],
+    "input_conditions": [
+      "locale set to sv_SE",
+      "firstDayOfWeek and minimalDaysInFirstWeek depend on locale",
+      "system locale initially set to en_US",
+      "date: January 1, 2010 (week 53 for sv_SE)"
+    ],
+    "reproduction_steps": [
+      "Set the system default locale to en_US",
+      "Create a FastDateFormat instance with locale 'sv_SE' and pattern \"EEEE', week 'ww\"",
+      "Create a Calendar instance set to January 1, 2010, 12:00:00",
+      "Get the Date from the Calendar",
+      "Format the Date using FastDateFormat and SimpleDateFormat with the same locale",
+      "Observe that FastDateFormat outputs week 01 while SimpleDateFormat outputs week 53"
+    ],
+    "expected": [
+      "FastDateFormat should output the same week number as SimpleDateFormat for the given locale, i.e., 'fredag, week 53'"
+    ],
+    "actual": [
+      "FastDateFormat outputs 'fredag, week 01' because it uses system locale settings instead of the specified locale"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "FastDateFormat.format()",
+      "FastDateFormat.getInstance()",
+      "SimpleDateFormat"
+    ],
+    "input_conditions": [
+      "locale set to sv_SE",
+      "firstDayOfWeek and minimalDaysInFirstWeek depend on locale",
+      "system locale initially set to en_US",
+      "date: January 1, 2010 (week 53 for sv_SE)"
+    ],
+    "reproduction_steps": [
+      "Set the system default locale to en_US",
+      "Create a FastDateFormat instance with locale 'sv_SE' and pattern \"EEEE', week 'ww\"",
+      "Create a Calendar instance set to January 1, 2010, 12:00:00",
+      "Get the Date from the Calendar",
+      "Format the Date using FastDateFormat and SimpleDateFormat with the same locale",
+      "Observe that FastDateFormat outputs week 01 while SimpleDateFormat outputs week 53"
+    ],
+    "expected": [
+      "FastDateFormat should output the same week number as SimpleDateFormat for the given locale, i.e., 'fredag, week 53'"
+    ],
+    "actual": [
+      "FastDateFormat outputs 'fredag, week 01' because it uses system locale settings instead of the specified locale"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"FastDateFormat.format()\", \"FastDateFormat.getInstance()\", \"SimpleDateFormat\"],\n\"input_conditions\": [\"locale set to sv_SE\", \"firstDayOfWeek and minimalDaysInFirstWeek depend on locale\", \"system locale initially set to en_US\", \"date: January 1, 2010 (week 53 for sv_SE)\"],\n\"expected\": \"FastDateFormat should output the same week number as SimpleDateFormat for the given locale, i.e., 'fredag, week 53'\",\n\"actual\": \"FastDateFormat outputs 'fredag, week 01' because it uses system locale settings instead of the specified locale\",\n\"reproduction_steps\": [\n\"Set the system default locale to en_US\",\n\"Create a FastDateFormat instance with locale 'sv_SE' and pattern \\\"EEEE', week 'ww\\\"\",\n\"Create a Calendar instance set to January 1, 2010, 12:00:00\",\n\"Get the Date from the Calendar\",\n\"Format the Date using FastDateFormat and SimpleDateFormat with the same locale\",\n\"Observe that FastDateFormat outputs week 01 while SimpleDateFormat outputs week 53\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"FastDateFormat.format()\", \"FastDateFormat.getInstance()\", \"SimpleDateFormat\"],\n\"input_conditions\": [\"locale set to sv_SE\", \"firstDayOfWeek and minimalDaysInFirstWeek depend on locale\", \"system locale initially set to en_US\", \"date: January 1, 2010 (week 53 for sv_SE)\"],\n\"expected\": \"FastDateFormat should output the same week number as SimpleDateFormat for the given locale, i.e., 'fredag, week 53'\",\n\"actual\": \"FastDateFormat outputs 'fredag, week 01' because it uses system locale settings instead of the specified locale\",\n\"reproduction_steps\": [\n\"Set the system default locale to en_US\",\n\"Create a FastDateFormat instance with locale 'sv_SE' and pattern \\\"EEEE', week 'ww\\\"\",\n\"Create a Calendar instance set to January 1, 2010, 12:00:00\",\n\"Get the Date from the Calendar\",\n\"Format the Date using FastDateFormat and SimpleDateFormat with the same locale\",\n\"Observe that FastDateFormat outputs week 01 while SimpleDateFormat outputs week 53\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

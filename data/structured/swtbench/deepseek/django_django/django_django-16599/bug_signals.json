@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-16599",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "OverflowError: Python int too large to convert to SQLite INTEGER"
+    ],
+    "api_involved": [
+      "/admin/auth/user/{id}/change/",
+      "django.db.backends.sqlite3.operations._quote_params_for_last_executed_query"
+    ],
+    "input_conditions": [
+      "Integer value 1111111111111111111111 exceeds SQLite INTEGER range",
+      "Django 1.10.2",
+      "Python 2.7.11",
+      "SQLite backend"
+    ],
+    "reproduction_steps": [
+      "Set up Django admin with SQLite backend",
+      "Navigate to /admin/auth/user/1111111111111111111111/change/ via GET request"
+    ],
+    "expected": [
+      "The request should either return a 404 error for a non-existent user ID or handle the integer overflow gracefully"
+    ],
+    "actual": [
+      "OverflowError exception is raised and the request crashes with HTTP 500"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "OverflowError: Python int too large to convert to SQLite INTEGER"
+    ],
+    "api_involved": [
+      "/admin/auth/user/{id}/change/",
+      "django.db.backends.sqlite3.operations._quote_params_for_last_executed_query"
+    ],
+    "input_conditions": [
+      "Integer value 1111111111111111111111 exceeds SQLite INTEGER range",
+      "Django 1.10.2",
+      "Python 2.7.11",
+      "SQLite backend"
+    ],
+    "reproduction_steps": [
+      "Set up Django admin with SQLite backend",
+      "Navigate to /admin/auth/user/1111111111111111111111/change/ via GET request"
+    ],
+    "expected": [
+      "The request should either return a 404 error for a non-existent user ID or handle the integer overflow gracefully"
+    ],
+    "actual": [
+      "OverflowError exception is raised and the request crashes with HTTP 500"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"OverflowError: Python int too large to convert to SQLite INTEGER\",\n\"api_involved\": [\"/admin/auth/user/{id}/change/\", \"django.db.backends.sqlite3.operations._quote_params_for_last_executed_query\"],\n\"input_conditions\": [\"Integer value 1111111111111111111111 exceeds SQLite INTEGER range\", \"Django 1.10.2\", \"Python 2.7.11\", \"SQLite backend\"],\n\"expected\": \"The request should either return a 404 error for a non-existent user ID or handle the integer overflow gracefully\",\n\"actual\": \"OverflowError exception is raised and the request crashes with HTTP 500\",\n\"reproduction_steps\": [\"Set up Django admin with SQLite backend\", \"Navigate to /admin/auth/user/1111111111111111111111/change/ via GET request\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"OverflowError: Python int too large to convert to SQLite INTEGER\",\n\"api_involved\": [\"/admin/auth/user/{id}/change/\", \"django.db.backends.sqlite3.operations._quote_params_for_last_executed_query\"],\n\"input_conditions\": [\"Integer value 1111111111111111111111 exceeds SQLite INTEGER range\", \"Django 1.10.2\", \"Python 2.7.11\", \"SQLite backend\"],\n\"expected\": \"The request should either return a 404 error for a non-existent user ID or handle the integer overflow gracefully\",\n\"actual\": \"OverflowError exception is raised and the request crashes with HTTP 500\",\n\"reproduction_steps\": [\"Set up Django admin with SQLite backend\", \"Navigate to /admin/auth/user/1111111111111111111111/change/ via GET request\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

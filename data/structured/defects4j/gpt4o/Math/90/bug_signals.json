@@ -1,0 +1,65 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-90",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "IllegalArgumentException"
+    ],
+    "api_involved": [
+      "addValue(Object v)",
+      "getCumFreq(Object)",
+      "getCumPct(Object)",
+      "getCount(Object)",
+      "getPct(Object)"
+    ],
+    "input_conditions": [
+      "Object not implementing Comparable added"
+    ],
+    "reproduction_steps": [
+      "Create an Object that does not implement Comparable.",
+      "Add this Object to Frequency instance using addValue(Object).",
+      "Invoke getCount(Object) and getPct(Object) which return 0.",
+      "Try adding another object which triggers IllegalArgumentException."
+    ],
+    "expected": [
+      "Methods should accept only Comparable objects and return valid statistics."
+    ],
+    "actual": [
+      "Non-Comparable objects can be added, leading to IllegalArgumentException or incorrect statistics like 0."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "IllegalArgumentException"
+    ],
+    "api_involved": [
+      "addValue(Object v)",
+      "getCumFreq(Object)",
+      "getCumPct(Object)",
+      "getCount(Object)",
+      "getPct(Object)"
+    ],
+    "input_conditions": [
+      "Object not implementing Comparable added"
+    ],
+    "reproduction_steps": [
+      "Create an Object that does not implement Comparable.",
+      "Add this Object to Frequency instance using addValue(Object).",
+      "Invoke getCount(Object) and getPct(Object) which return 0.",
+      "Try adding another object which triggers IllegalArgumentException."
+    ],
+    "expected": [
+      "Methods should accept only Comparable objects and return valid statistics."
+    ],
+    "actual": [
+      "Non-Comparable objects can be added, leading to IllegalArgumentException or incorrect statistics like 0."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"IllegalArgumentException\",\n  \"api_involved\": [\"addValue(Object v)\", \"getCumFreq(Object)\", \"getCumPct(Object)\", \"getCount(Object)\", \"getPct(Object)\"],\n  \"input_conditions\": [\"Object not implementing Comparable added\"],\n  \"expected\": \"Methods should accept only Comparable objects and return valid statistics.\",\n  \"actual\": \"Non-Comparable objects can be added, leading to IllegalArgumentException or incorrect statistics like 0.\",\n  \"reproduction_steps\": [\n    \"Create an Object that does not implement Comparable.\",\n    \"Add this Object to Frequency instance using addValue(Object).\",\n    \"Invoke getCount(Object) and getPct(Object) which return 0.\",\n    \"Try adding another object which triggers IllegalArgumentException.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"IllegalArgumentException\",\n  \"api_involved\": [\"addValue(Object v)\", \"getCumFreq(Object)\", \"getCumPct(Object)\", \"getCount(Object)\", \"getPct(Object)\"],\n  \"input_conditions\": [\"Object not implementing Comparable added\"],\n  \"expected\": \"Methods should accept only Comparable objects and return valid statistics.\",\n  \"actual\": \"Non-Comparable objects can be added, leading to IllegalArgumentException or incorrect statistics like 0.\",\n  \"reproduction_steps\": [\n    \"Create an Object that does not implement Comparable.\",\n    \"Add this Object to Frequency instance using addValue(Object).\",\n    \"Invoke getCount(Object) and getPct(Object) which return 0.\",\n    \"Try adding another object which triggers IllegalArgumentException.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

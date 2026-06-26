@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-8",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "ClassCastException"
+    ],
+    "api_involved": [
+      "DiscreteDistribution.sample(int)",
+      "Array.newInstance",
+      "DiscreteDistribution<T>"
+    ],
+    "input_conditions": [
+      "singletons.get(0) is of type T1, a subclass of T",
+      "DiscreteDistribution.sample() returns an object of type T, not of type T1"
+    ],
+    "reproduction_steps": [
+      "Create a list of pairs with different doubles",
+      "Add pairs with objects of type T1 to the list",
+      "Call new DiscreteDistribution<Object>(list).sample(1)"
+    ],
+    "expected": [
+      "Return an array of type T1[] without throwing a ClassCastException"
+    ],
+    "actual": [
+      "A ClassCastException is thrown when the sample() returns an object of type T, not of type T1"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ClassCastException"
+    ],
+    "api_involved": [
+      "DiscreteDistribution.sample(int)",
+      "Array.newInstance",
+      "DiscreteDistribution<T>"
+    ],
+    "input_conditions": [
+      "singletons.get(0) is of type T1, a subclass of T",
+      "DiscreteDistribution.sample() returns an object of type T, not of type T1"
+    ],
+    "reproduction_steps": [
+      "Create a list of pairs with different doubles",
+      "Add pairs with objects of type T1 to the list",
+      "Call new DiscreteDistribution<Object>(list).sample(1)"
+    ],
+    "expected": [
+      "Return an array of type T1[] without throwing a ClassCastException"
+    ],
+    "actual": [
+      "A ClassCastException is thrown when the sample() returns an object of type T, not of type T1"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"ClassCastException\",\n  \"api_involved\": [\"DiscreteDistribution.sample(int)\", \"Array.newInstance\", \"DiscreteDistribution<T>\"],\n  \"input_conditions\": [\n    \"singletons.get(0) is of type T1, a subclass of T\",\n    \"DiscreteDistribution.sample() returns an object of type T, not of type T1\"\n  ],\n  \"expected\": \"Return an array of type T1[] without throwing a ClassCastException\",\n  \"actual\": \"A ClassCastException is thrown when the sample() returns an object of type T, not of type T1\",\n  \"reproduction_steps\": [\n    \"Create a list of pairs with different doubles\",\n    \"Add pairs with objects of type T1 to the list\",\n    \"Call new DiscreteDistribution<Object>(list).sample(1)\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"ClassCastException\",\n  \"api_involved\": [\"DiscreteDistribution.sample(int)\", \"Array.newInstance\", \"DiscreteDistribution<T>\"],\n  \"input_conditions\": [\n    \"singletons.get(0) is of type T1, a subclass of T\",\n    \"DiscreteDistribution.sample() returns an object of type T, not of type T1\"\n  ],\n  \"expected\": \"Return an array of type T1[] without throwing a ClassCastException\",\n  \"actual\": \"A ClassCastException is thrown when the sample() returns an object of type T, not of type T1\",\n  \"reproduction_steps\": [\n    \"Create a list of pairs with different doubles\",\n    \"Add pairs with objects of type T1 to the list\",\n    \"Call new DiscreteDistribution<Object>(list).sample(1)\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

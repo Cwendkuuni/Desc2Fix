@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-45",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Array.push",
+      "closure-compiler",
+      "RemoveUnusedVariables"
+    ],
+    "input_conditions": [
+      "use of assignment expression as argument to Array.push",
+      "variable 'b' assigned inside function call"
+    ],
+    "reproduction_steps": [
+      "Open online closure-compiler",
+      "Input code: function f() { var a = [], b; a.push(b = []); b[0] = 1; return a; }",
+      "Press [Compile]"
+    ],
+    "expected": [
+      "function f(){var a=[],b;a.push(b=[]);b[0]=1;return a}"
+    ],
+    "actual": [
+      "function f(){var a=[];a.push([]);return a}"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Array.push",
+      "closure-compiler",
+      "RemoveUnusedVariables"
+    ],
+    "input_conditions": [
+      "use of assignment expression as argument to Array.push",
+      "variable 'b' assigned inside function call"
+    ],
+    "reproduction_steps": [
+      "Open online closure-compiler",
+      "Input code: function f() { var a = [], b; a.push(b = []); b[0] = 1; return a; }",
+      "Press [Compile]"
+    ],
+    "expected": [
+      "function f(){var a=[],b;a.push(b=[]);b[0]=1;return a}"
+    ],
+    "actual": [
+      "function f(){var a=[];a.push([]);return a}"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Array.push\", \"closure-compiler\", \"RemoveUnusedVariables\"],\n\"input_conditions\": [\"use of assignment expression as argument to Array.push\", \"variable 'b' assigned inside function call\"],\n\"expected\": \"function f(){var a=[],b;a.push(b=[]);b[0]=1;return a}\",\n\"actual\": \"function f(){var a=[];a.push([]);return a}\",\n\"reproduction_steps\": [\n\"Open online closure-compiler\",\n\"Input code: function f() { var a = [], b; a.push(b = []); b[0] = 1; return a; }\",\n\"Press [Compile]\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Array.push\", \"closure-compiler\", \"RemoveUnusedVariables\"],\n\"input_conditions\": [\"use of assignment expression as argument to Array.push\", \"variable 'b' assigned inside function call\"],\n\"expected\": \"function f(){var a=[],b;a.push(b=[]);b[0]=1;return a}\",\n\"actual\": \"function f(){var a=[];a.push([]);return a}\",\n\"reproduction_steps\": [\n\"Open online closure-compiler\",\n\"Input code: function f() { var a = [], b; a.push(b = []); b[0] = 1; return a; }\",\n\"Press [Compile]\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-14248",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "MatrixSymbol",
+      "str",
+      "pretty",
+      "latex"
+    ],
+    "input_conditions": [
+      "MatrixSymbol difference expression"
+    ],
+    "reproduction_steps": [
+      "Create a difference of two MatrixSymbols, e.g., a - b",
+      "Print using str, pretty, and latex printers",
+      "Observe that output shows a + (-1)*b instead of a - b"
+    ],
+    "expected": [
+      "Difference of MatrixSymbols should print as a-b"
+    ],
+    "actual": [
+      "Difference of MatrixSymbols prints as a sum with (-1) coefficient"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "MatrixSymbol",
+      "str",
+      "pretty",
+      "latex"
+    ],
+    "input_conditions": [
+      "MatrixSymbol difference expression"
+    ],
+    "reproduction_steps": [
+      "Create a difference of two MatrixSymbols, e.g., a - b",
+      "Print using str, pretty, and latex printers",
+      "Observe that output shows a + (-1)*b instead of a - b"
+    ],
+    "expected": [
+      "Difference of MatrixSymbols should print as a-b"
+    ],
+    "actual": [
+      "Difference of MatrixSymbols prints as a sum with (-1) coefficient"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"MatrixSymbol\", \"str\", \"pretty\", \"latex\"],\n\"input_conditions\": [\"MatrixSymbol difference expression\"],\n\"expected\": \"Difference of MatrixSymbols should print as a-b\",\n\"actual\": \"Difference of MatrixSymbols prints as a sum with (-1) coefficient\",\n\"reproduction_steps\": [\n\"Create a difference of two MatrixSymbols, e.g., a - b\",\n\"Print using str, pretty, and latex printers\",\n\"Observe that output shows a + (-1)*b instead of a - b\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"MatrixSymbol\", \"str\", \"pretty\", \"latex\"],\n\"input_conditions\": [\"MatrixSymbol difference expression\"],\n\"expected\": \"Difference of MatrixSymbols should print as a-b\",\n\"actual\": \"Difference of MatrixSymbols prints as a sum with (-1) coefficient\",\n\"reproduction_steps\": [\n\"Create a difference of two MatrixSymbols, e.g., a - b\",\n\"Print using str, pretty, and latex printers\",\n\"Observe that output shows a + (-1)*b instead of a - b\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

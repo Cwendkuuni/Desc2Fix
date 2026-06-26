@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sqlfluff__sqlfluff-3220",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "@click.option decorator",
+      "fix command"
+    ],
+    "input_conditions": [
+      "any config file set",
+      "fix_even_unparsable config option"
+    ],
+    "reproduction_steps": [
+      "Create a config file",
+      "Include 'fix_even_unparsable' in the config",
+      "Run the fix command",
+      "Note that 'fix_even_unparsable' is set to False at runtime"
+    ],
+    "expected": [
+      "When setting the config, it should be captured by the fix command as well."
+    ],
+    "actual": [
+      "The command is not being captured by the fix command; the config get's overridden by the default (or lack thereof) on the @click.option decorator."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "@click.option decorator",
+      "fix command"
+    ],
+    "input_conditions": [
+      "any config file set",
+      "fix_even_unparsable config option"
+    ],
+    "reproduction_steps": [
+      "Create a config file",
+      "Include 'fix_even_unparsable' in the config",
+      "Run the fix command",
+      "Note that 'fix_even_unparsable' is set to False at runtime"
+    ],
+    "expected": [
+      "When setting the config, it should be captured by the fix command as well."
+    ],
+    "actual": [
+      "The command is not being captured by the fix command; the config get's overridden by the default (or lack thereof) on the @click.option decorator."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"@click.option decorator\", \"fix command\"],\n\"input_conditions\": [\"any config file set\", \"fix_even_unparsable config option\"],\n\"expected\": \"When setting the config, it should be captured by the fix command as well.\",\n\"actual\": \"The command is not being captured by the fix command; the config get's overridden by the default (or lack thereof) on the @click.option decorator.\",\n\"reproduction_steps\": [\"Create a config file\", \"Include 'fix_even_unparsable' in the config\", \"Run the fix command\", \"Note that 'fix_even_unparsable' is set to False at runtime\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"@click.option decorator\", \"fix command\"],\n\"input_conditions\": [\"any config file set\", \"fix_even_unparsable config option\"],\n\"expected\": \"When setting the config, it should be captured by the fix command as well.\",\n\"actual\": \"The command is not being captured by the fix command; the config get's overridden by the default (or lack thereof) on the @click.option decorator.\",\n\"reproduction_steps\": [\"Create a config file\", \"Include 'fix_even_unparsable' in the config\", \"Run the fix command\", \"Note that 'fix_even_unparsable' is set to False at runtime\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

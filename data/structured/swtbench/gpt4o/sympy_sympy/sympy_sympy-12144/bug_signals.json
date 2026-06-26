@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-12144",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Dummy",
+      "srepr",
+      "eval"
+    ],
+    "input_conditions": [
+      "Dummy function used",
+      "expression evaluation with srepr"
+    ],
+    "reproduction_steps": [
+      "Use Dummy in an expression",
+      "Get the expression with srepr",
+      "Re-evaluate the expression"
+    ],
+    "expected": [
+      "The evaluated expression should treat Dummy symbols consistently."
+    ],
+    "actual": [
+      "Each Dummy instance is treated as a different entity causing evaluation failure."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Dummy",
+      "srepr",
+      "eval"
+    ],
+    "input_conditions": [
+      "Dummy function used",
+      "expression evaluation with srepr"
+    ],
+    "reproduction_steps": [
+      "Use Dummy in an expression",
+      "Get the expression with srepr",
+      "Re-evaluate the expression"
+    ],
+    "expected": [
+      "The evaluated expression should treat Dummy symbols consistently."
+    ],
+    "actual": [
+      "Each Dummy instance is treated as a different entity causing evaluation failure."
+    ]
+  },
+  "raw_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"Dummy\", \"srepr\", \"eval\"],\n\"input_conditions\": [\"Dummy function used\", \"expression evaluation with srepr\"],\n\"expected\": \"The evaluated expression should treat Dummy symbols consistently.\",\n\"actual\": \"Each Dummy instance is treated as a different entity causing evaluation failure.\",\n\"reproduction_steps\": [\"Use Dummy in an expression\", \"Get the expression with srepr\", \"Re-evaluate the expression\"]\n}\n```",
+  "llm_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"Dummy\", \"srepr\", \"eval\"],\n\"input_conditions\": [\"Dummy function used\", \"expression evaluation with srepr\"],\n\"expected\": \"The evaluated expression should treat Dummy symbols consistently.\",\n\"actual\": \"Each Dummy instance is treated as a different entity causing evaluation failure.\",\n\"reproduction_steps\": [\"Use Dummy in an expression\", \"Get the expression with srepr\", \"Re-evaluate the expression\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

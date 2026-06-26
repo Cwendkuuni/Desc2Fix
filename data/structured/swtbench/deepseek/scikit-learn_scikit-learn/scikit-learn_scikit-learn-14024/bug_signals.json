@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "scikit-learn__scikit-learn-14024",
+  "project": null,
+  "repo": "scikit-learn/scikit-learn",
+  "signals": {
+    "exception": [
+      "ZeroDivisionError"
+    ],
+    "api_involved": [
+      "HistGradientBoosting"
+    ],
+    "input_conditions": [
+      "dataset with 100 classes",
+      "16 samples per class",
+      "default parameters"
+    ],
+    "reproduction_steps": [
+      "Create a dataset with 100 classes and 16 samples per class",
+      "Use HistGradientBoosting with default parameters",
+      "Run training"
+    ],
+    "expected": [
+      "fail gracefully or handle the case without crashing"
+    ],
+    "actual": [
+      "raises a ZeroDivisionError"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ZeroDivisionError"
+    ],
+    "api_involved": [
+      "HistGradientBoosting"
+    ],
+    "input_conditions": [
+      "dataset with 100 classes",
+      "16 samples per class",
+      "default parameters"
+    ],
+    "reproduction_steps": [
+      "Create a dataset with 100 classes and 16 samples per class",
+      "Use HistGradientBoosting with default parameters",
+      "Run training"
+    ],
+    "expected": [
+      "fail gracefully or handle the case without crashing"
+    ],
+    "actual": [
+      "raises a ZeroDivisionError"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"ZeroDivisionError\",\n\"api_involved\": [\"HistGradientBoosting\"],\n\"input_conditions\": [\"dataset with 100 classes\", \"16 samples per class\", \"default parameters\"],\n\"expected\": \"fail gracefully or handle the case without crashing\",\n\"actual\": \"raises a ZeroDivisionError\",\n\"reproduction_steps\": [\"Create a dataset with 100 classes and 16 samples per class\", \"Use HistGradientBoosting with default parameters\", \"Run training\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"ZeroDivisionError\",\n\"api_involved\": [\"HistGradientBoosting\"],\n\"input_conditions\": [\"dataset with 100 classes\", \"16 samples per class\", \"default parameters\"],\n\"expected\": \"fail gracefully or handle the case without crashing\",\n\"actual\": \"raises a ZeroDivisionError\",\n\"reproduction_steps\": [\"Create a dataset with 100 classes and 16 samples per class\", \"Use HistGradientBoosting with default parameters\", \"Run training\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

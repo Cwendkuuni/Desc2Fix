@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "pyvista__pyvista-4808",
+  "project": null,
+  "repo": "pyvista/pyvista",
+  "signals": {
+    "exception": [
+      "crash/freeze"
+    ],
+    "api_involved": [
+      "BoolOp",
+      "pyvista"
+    ],
+    "input_conditions": [
+      "Two polyData objects with the exact same shape"
+    ],
+    "reproduction_steps": [
+      "Create two polyData objects with identical shapes",
+      "Perform a boolean operation (e.g., union, intersection, difference) on them",
+      "Observe the application freeze or crash"
+    ],
+    "expected": [
+      "Boolean operation should complete successfully without freezing or crashing"
+    ],
+    "actual": [
+      "Boolean operation freezes or crashes the application"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "crash/freeze"
+    ],
+    "api_involved": [
+      "BoolOp",
+      "pyvista"
+    ],
+    "input_conditions": [
+      "Two polyData objects with the exact same shape"
+    ],
+    "reproduction_steps": [
+      "Create two polyData objects with identical shapes",
+      "Perform a boolean operation (e.g., union, intersection, difference) on them",
+      "Observe the application freeze or crash"
+    ],
+    "expected": [
+      "Boolean operation should complete successfully without freezing or crashing"
+    ],
+    "actual": [
+      "Boolean operation freezes or crashes the application"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"crash/freeze\",\n\"api_involved\": [\"BoolOp\", \"pyvista\"],\n\"input_conditions\": [\"Two polyData objects with the exact same shape\"],\n\"expected\": \"Boolean operation should complete successfully without freezing or crashing\",\n\"actual\": \"Boolean operation freezes or crashes the application\",\n\"reproduction_steps\": [\"Create two polyData objects with identical shapes\", \"Perform a boolean operation (e.g., union, intersection, difference) on them\", \"Observe the application freeze or crash\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"crash/freeze\",\n\"api_involved\": [\"BoolOp\", \"pyvista\"],\n\"input_conditions\": [\"Two polyData objects with the exact same shape\"],\n\"expected\": \"Boolean operation should complete successfully without freezing or crashing\",\n\"actual\": \"Boolean operation freezes or crashes the application\",\n\"reproduction_steps\": [\"Create two polyData objects with identical shapes\", \"Perform a boolean operation (e.g., union, intersection, difference) on them\", \"Observe the application freeze or crash\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

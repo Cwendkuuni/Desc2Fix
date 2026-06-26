@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-147",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "JSC_USED_GLOBAL_THIS"
+    ],
+    "input_conditions": [
+      "JavaScript code where 'this' is used inside an object literal method",
+      "Inline vs. non-inline function assignment in object"
+    ],
+    "reproduction_steps": [
+      "1. Create a JavaScript object using inline notation with methods that reference 'this' (e.g., 'read' and 'write' functions inside an object literal).",
+      "2. Also create a method using non-inline notation (e.g., 'NS.write2 = function() { this.foo = 123; }').",
+      "3. Run the code through the tool that issues JSC_USED_GLOBAL_THIS warnings in release 0616.",
+      "4. Observe that only the non-inline method warns, while the inline methods do not."
+    ],
+    "expected": [
+      "Both 'read' and 'write' methods should produce a JSC_USED_GLOBAL_THIS warning when using 'this.foo'."
+    ],
+    "actual": [
+      "In release 0616, none of the inline-notation methods produce the warning; only the non-inline method 'NS.write2' triggers the warning."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "JSC_USED_GLOBAL_THIS"
+    ],
+    "input_conditions": [
+      "JavaScript code where 'this' is used inside an object literal method",
+      "Inline vs. non-inline function assignment in object"
+    ],
+    "reproduction_steps": [
+      "1. Create a JavaScript object using inline notation with methods that reference 'this' (e.g., 'read' and 'write' functions inside an object literal).",
+      "2. Also create a method using non-inline notation (e.g., 'NS.write2 = function() { this.foo = 123; }').",
+      "3. Run the code through the tool that issues JSC_USED_GLOBAL_THIS warnings in release 0616.",
+      "4. Observe that only the non-inline method warns, while the inline methods do not."
+    ],
+    "expected": [
+      "Both 'read' and 'write' methods should produce a JSC_USED_GLOBAL_THIS warning when using 'this.foo'."
+    ],
+    "actual": [
+      "In release 0616, none of the inline-notation methods produce the warning; only the non-inline method 'NS.write2' triggers the warning."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"JSC_USED_GLOBAL_THIS\"],\n\"input_conditions\": [\"JavaScript code where 'this' is used inside an object literal method\", \"Inline vs. non-inline function assignment in object\"],\n\"expected\": \"Both 'read' and 'write' methods should produce a JSC_USED_GLOBAL_THIS warning when using 'this.foo'.\",\n\"actual\": \"In release 0616, none of the inline-notation methods produce the warning; only the non-inline method 'NS.write2' triggers the warning.\",\n\"reproduction_steps\": [\n\"1. Create a JavaScript object using inline notation with methods that reference 'this' (e.g., 'read' and 'write' functions inside an object literal).\",\n\"2. Also create a method using non-inline notation (e.g., 'NS.write2 = function() { this.foo = 123; }').\",\n\"3. Run the code through the tool that issues JSC_USED_GLOBAL_THIS warnings in release 0616.\",\n\"4. Observe that only the non-inline method warns, while the inline methods do not.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"JSC_USED_GLOBAL_THIS\"],\n\"input_conditions\": [\"JavaScript code where 'this' is used inside an object literal method\", \"Inline vs. non-inline function assignment in object\"],\n\"expected\": \"Both 'read' and 'write' methods should produce a JSC_USED_GLOBAL_THIS warning when using 'this.foo'.\",\n\"actual\": \"In release 0616, none of the inline-notation methods produce the warning; only the non-inline method 'NS.write2' triggers the warning.\",\n\"reproduction_steps\": [\n\"1. Create a JavaScript object using inline notation with methods that reference 'this' (e.g., 'read' and 'write' functions inside an object literal).\",\n\"2. Also create a method using non-inline notation (e.g., 'NS.write2 = function() { this.foo = 123; }').\",\n\"3. Run the code through the tool that issues JSC_USED_GLOBAL_THIS warnings in release 0616.\",\n\"4. Observe that only the non-inline method warns, while the inline methods do not.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Lang-4",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "org.apache.commons.lang3.text.translate.LookupTranslator",
+      "StringEscapeUtils.ESCAPE_HTML4.translate"
+    ],
+    "input_conditions": [
+      "CharSequence implementations other than String",
+      "Use of CharBuffer with StringEscapeUtils.ESCAPE_HTML4"
+    ],
+    "reproduction_steps": [
+      "Create CharSequence cs1 as a String with value '1 < 2'",
+      "Create CharSequence cs2 as a CharBuffer with value '1 < 2'",
+      "Call StringEscapeUtils.ESCAPE_HTML4.translate(cs1) and observe '1 &lt; 2'",
+      "Call StringEscapeUtils.ESCAPE_HTML4.translate(cs2) and observe '1 < 2'"
+    ],
+    "expected": [
+      "Both CharSequence inputs should be translated to '1 &lt; 2'"
+    ],
+    "actual": [
+      "StringEscapeUtils.ESCAPE_HTML4.translate produces different results for CharSequence types 'String' and 'CharBuffer'"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "org.apache.commons.lang3.text.translate.LookupTranslator",
+      "StringEscapeUtils.ESCAPE_HTML4.translate"
+    ],
+    "input_conditions": [
+      "CharSequence implementations other than String",
+      "Use of CharBuffer with StringEscapeUtils.ESCAPE_HTML4"
+    ],
+    "reproduction_steps": [
+      "Create CharSequence cs1 as a String with value '1 < 2'",
+      "Create CharSequence cs2 as a CharBuffer with value '1 < 2'",
+      "Call StringEscapeUtils.ESCAPE_HTML4.translate(cs1) and observe '1 &lt; 2'",
+      "Call StringEscapeUtils.ESCAPE_HTML4.translate(cs2) and observe '1 < 2'"
+    ],
+    "expected": [
+      "Both CharSequence inputs should be translated to '1 &lt; 2'"
+    ],
+    "actual": [
+      "StringEscapeUtils.ESCAPE_HTML4.translate produces different results for CharSequence types 'String' and 'CharBuffer'"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"org.apache.commons.lang3.text.translate.LookupTranslator\", \"StringEscapeUtils.ESCAPE_HTML4.translate\"],\n  \"input_conditions\": [\"CharSequence implementations other than String\", \"Use of CharBuffer with StringEscapeUtils.ESCAPE_HTML4\"],\n  \"expected\": \"Both CharSequence inputs should be translated to '1 &lt; 2'\",\n  \"actual\": \"StringEscapeUtils.ESCAPE_HTML4.translate produces different results for CharSequence types 'String' and 'CharBuffer'\",\n  \"reproduction_steps\": [\n    \"Create CharSequence cs1 as a String with value '1 < 2'\",\n    \"Create CharSequence cs2 as a CharBuffer with value '1 < 2'\",\n    \"Call StringEscapeUtils.ESCAPE_HTML4.translate(cs1) and observe '1 &lt; 2'\",\n    \"Call StringEscapeUtils.ESCAPE_HTML4.translate(cs2) and observe '1 < 2'\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"org.apache.commons.lang3.text.translate.LookupTranslator\", \"StringEscapeUtils.ESCAPE_HTML4.translate\"],\n  \"input_conditions\": [\"CharSequence implementations other than String\", \"Use of CharBuffer with StringEscapeUtils.ESCAPE_HTML4\"],\n  \"expected\": \"Both CharSequence inputs should be translated to '1 &lt; 2'\",\n  \"actual\": \"StringEscapeUtils.ESCAPE_HTML4.translate produces different results for CharSequence types 'String' and 'CharBuffer'\",\n  \"reproduction_steps\": [\n    \"Create CharSequence cs1 as a String with value '1 < 2'\",\n    \"Create CharSequence cs2 as a CharBuffer with value '1 < 2'\",\n    \"Call StringEscapeUtils.ESCAPE_HTML4.translate(cs1) and observe '1 &lt; 2'\",\n    \"Call StringEscapeUtils.ESCAPE_HTML4.translate(cs2) and observe '1 < 2'\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

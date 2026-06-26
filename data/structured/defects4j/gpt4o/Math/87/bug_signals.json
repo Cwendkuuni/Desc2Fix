@@ -1,0 +1,49 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-87",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "SimplexTableau"
+    ],
+    "input_conditions": [
+      "entry in the tableau is nonzero"
+    ],
+    "reproduction_steps": [
+      "Apply the last patch to SimplexTableau",
+      "Run the automated test suite and observe the execution of the new code path"
+    ],
+    "expected": [
+      "entry in the tableau should have a value equal to 1 to indicate a basic variable"
+    ],
+    "actual": [
+      "entry in the tableau had a nonzero value to indicate a basic variable"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "SimplexTableau"
+    ],
+    "input_conditions": [
+      "entry in the tableau is nonzero"
+    ],
+    "reproduction_steps": [
+      "Apply the last patch to SimplexTableau",
+      "Run the automated test suite and observe the execution of the new code path"
+    ],
+    "expected": [
+      "entry in the tableau should have a value equal to 1 to indicate a basic variable"
+    ],
+    "actual": [
+      "entry in the tableau had a nonzero value to indicate a basic variable"
+    ]
+  },
+  "raw_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"SimplexTableau\"],\n\"input_conditions\": [\"entry in the tableau is nonzero\"],\n\"expected\": \"entry in the tableau should have a value equal to 1 to indicate a basic variable\",\n\"actual\": \"entry in the tableau had a nonzero value to indicate a basic variable\",\n\"reproduction_steps\": [\"Apply the last patch to SimplexTableau\", \"Run the automated test suite and observe the execution of the new code path\"]\n}\n```",
+  "llm_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"SimplexTableau\"],\n\"input_conditions\": [\"entry in the tableau is nonzero\"],\n\"expected\": \"entry in the tableau should have a value equal to 1 to indicate a basic variable\",\n\"actual\": \"entry in the tableau had a nonzero value to indicate a basic variable\",\n\"reproduction_steps\": [\"Apply the last patch to SimplexTableau\", \"Run the automated test suite and observe the execution of the new code path\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

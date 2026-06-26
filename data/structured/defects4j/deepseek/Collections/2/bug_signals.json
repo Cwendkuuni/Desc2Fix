@@ -1,0 +1,49 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Collections-2",
+  "project": "Collections",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "ExtendedProperties",
+      "getInclude",
+      "setInclude"
+    ],
+    "input_conditions": [
+      "include field is static and protected",
+      "field accessed via instance get/set accessors"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "The 'include' field should be non-static and private, with instance get/set accessors using the instance variable, falling back to the static variable as a default."
+    ],
+    "actual": [
+      "The 'include' field is static and protected, with instance get/set accessors that do not use the instance variable correctly."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "ExtendedProperties",
+      "getInclude",
+      "setInclude"
+    ],
+    "input_conditions": [
+      "include field is static and protected",
+      "field accessed via instance get/set accessors"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "The 'include' field should be non-static and private, with instance get/set accessors using the instance variable, falling back to the static variable as a default."
+    ],
+    "actual": [
+      "The 'include' field is static and protected, with instance get/set accessors that do not use the instance variable correctly."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"ExtendedProperties\", \"getInclude\", \"setInclude\"],\n\"input_conditions\": [\"include field is static and protected\", \"field accessed via instance get/set accessors\"],\n\"expected\": \"The 'include' field should be non-static and private, with instance get/set accessors using the instance variable, falling back to the static variable as a default.\",\n\"actual\": \"The 'include' field is static and protected, with instance get/set accessors that do not use the instance variable correctly.\",\n\"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"ExtendedProperties\", \"getInclude\", \"setInclude\"],\n\"input_conditions\": [\"include field is static and protected\", \"field accessed via instance get/set accessors\"],\n\"expected\": \"The 'include' field should be non-static and private, with instance get/set accessors using the instance variable, falling back to the static variable as a default.\",\n\"actual\": \"The 'include' field is static and protected, with instance get/set accessors that do not use the instance variable correctly.\",\n\"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

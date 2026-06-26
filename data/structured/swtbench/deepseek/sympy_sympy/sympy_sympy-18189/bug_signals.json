@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-18189",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "diophantine"
+    ],
+    "input_conditions": [
+      "permute=True",
+      "varying order of syms"
+    ],
+    "reproduction_steps": [
+      "Call diophantine with permute=True and a specific set of symbols",
+      "Observe the results",
+      "Change the order of symbols in syms",
+      "Call diophantine again with permute=True",
+      "Compare the results; the second call yields fewer or different results than the first"
+    ],
+    "expected": [
+      "Complete results for the diophantine equation regardless of symbol order"
+    ],
+    "actual": [
+      "Incomplete results are returned when the order of symbols is changed with permute=True"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "diophantine"
+    ],
+    "input_conditions": [
+      "permute=True",
+      "varying order of syms"
+    ],
+    "reproduction_steps": [
+      "Call diophantine with permute=True and a specific set of symbols",
+      "Observe the results",
+      "Change the order of symbols in syms",
+      "Call diophantine again with permute=True",
+      "Compare the results; the second call yields fewer or different results than the first"
+    ],
+    "expected": [
+      "Complete results for the diophantine equation regardless of symbol order"
+    ],
+    "actual": [
+      "Incomplete results are returned when the order of symbols is changed with permute=True"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"diophantine\"],\n\"input_conditions\": [\"permute=True\", \"varying order of syms\"],\n\"expected\": \"Complete results for the diophantine equation regardless of symbol order\",\n\"actual\": \"Incomplete results are returned when the order of symbols is changed with permute=True\",\n\"reproduction_steps\": [\n\"Call diophantine with permute=True and a specific set of symbols\",\n\"Observe the results\",\n\"Change the order of symbols in syms\",\n\"Call diophantine again with permute=True\",\n\"Compare the results; the second call yields fewer or different results than the first\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"diophantine\"],\n\"input_conditions\": [\"permute=True\", \"varying order of syms\"],\n\"expected\": \"Complete results for the diophantine equation regardless of symbol order\",\n\"actual\": \"Incomplete results are returned when the order of symbols is changed with permute=True\",\n\"reproduction_steps\": [\n\"Call diophantine with permute=True and a specific set of symbols\",\n\"Observe the results\",\n\"Change the order of symbols in syms\",\n\"Call diophantine again with permute=True\",\n\"Compare the results; the second call yields fewer or different results than the first\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "astropy__astropy-13803",
+  "project": null,
+  "repo": "astropy/astropy",
+  "signals": {
+    "exception": [
+      "Astropy checks using float64 precision, rejecting 'valid' alt values"
+    ],
+    "api_involved": [
+      "Astropy"
+    ],
+    "input_conditions": [
+      "float32 representation of pi/2",
+      "float32 values read from files"
+    ],
+    "reproduction_steps": [
+      "See snippet above"
+    ],
+    "expected": [
+      "Comparison up to float32 precision"
+    ],
+    "actual": [
+      "Rejection of valid alt values due to float64 precision check"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Astropy checks using float64 precision, rejecting 'valid' alt values"
+    ],
+    "api_involved": [
+      "Astropy"
+    ],
+    "input_conditions": [
+      "float32 representation of pi/2",
+      "float32 values read from files"
+    ],
+    "reproduction_steps": [
+      "See snippet above"
+    ],
+    "expected": [
+      "Comparison up to float32 precision"
+    ],
+    "actual": [
+      "Rejection of valid alt values due to float64 precision check"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"Astropy checks using float64 precision, rejecting 'valid' alt values\",\n  \"api_involved\": [\"Astropy\"],\n  \"input_conditions\": [\"float32 representation of pi/2\", \"float32 values read from files\"],\n  \"expected\": \"Comparison up to float32 precision\",\n  \"actual\": \"Rejection of valid alt values due to float64 precision check\",\n  \"reproduction_steps\": [\"See snippet above\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"Astropy checks using float64 precision, rejecting 'valid' alt values\",\n  \"api_involved\": [\"Astropy\"],\n  \"input_conditions\": [\"float32 representation of pi/2\", \"float32 values read from files\"],\n  \"expected\": \"Comparison up to float32 precision\",\n  \"actual\": \"Rejection of valid alt values due to float64 precision check\",\n  \"reproduction_steps\": [\"See snippet above\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

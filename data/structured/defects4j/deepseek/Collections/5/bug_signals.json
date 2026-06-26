@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Collections-5",
+  "project": "Collections",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "expected:<2> but was:<1>"
+    ],
+    "api_involved": [
+      "SetUniqueList.addAll(int index, Collection coll)"
+    ],
+    "input_conditions": [
+      "calling addAll with an index and a collection containing unique elements"
+    ],
+    "reproduction_steps": [
+      "Call SetUniqueList.addAll(int index, Collection coll)",
+      "Check the position of the first new element; it should be at the specified index"
+    ],
+    "expected": [
+      "New elements should be inserted at the specified index"
+    ],
+    "actual": [
+      "New elements are added to the end of the list instead of at the specified index"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "expected:<2> but was:<1>"
+    ],
+    "api_involved": [
+      "SetUniqueList.addAll(int index, Collection coll)"
+    ],
+    "input_conditions": [
+      "calling addAll with an index and a collection containing unique elements"
+    ],
+    "reproduction_steps": [
+      "Call SetUniqueList.addAll(int index, Collection coll)",
+      "Check the position of the first new element; it should be at the specified index"
+    ],
+    "expected": [
+      "New elements should be inserted at the specified index"
+    ],
+    "actual": [
+      "New elements are added to the end of the list instead of at the specified index"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"expected:<2> but was:<1>\",\n\"api_involved\": [\"SetUniqueList.addAll(int index, Collection coll)\"],\n\"input_conditions\": [\"calling addAll with an index and a collection containing unique elements\"],\n\"expected\": \"New elements should be inserted at the specified index\",\n\"actual\": \"New elements are added to the end of the list instead of at the specified index\",\n\"reproduction_steps\": [\"Call SetUniqueList.addAll(int index, Collection coll)\", \"Check the position of the first new element; it should be at the specified index\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"expected:<2> but was:<1>\",\n\"api_involved\": [\"SetUniqueList.addAll(int index, Collection coll)\"],\n\"input_conditions\": [\"calling addAll with an index and a collection containing unique elements\"],\n\"expected\": \"New elements should be inserted at the specified index\",\n\"actual\": \"New elements are added to the end of the list instead of at the specified index\",\n\"reproduction_steps\": [\"Call SetUniqueList.addAll(int index, Collection coll)\", \"Check the position of the first new element; it should be at the specified index\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

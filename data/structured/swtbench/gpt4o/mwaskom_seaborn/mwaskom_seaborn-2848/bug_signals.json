@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "mwaskom__seaborn-2848",
+  "project": null,
+  "repo": "mwaskom/seaborn",
+  "signals": {
+    "exception": [
+      "Error message occurs when updating to seaborn 0.11.1"
+    ],
+    "api_involved": [
+      "PairGrid",
+      "regplot"
+    ],
+    "input_conditions": [
+      "categorical hue without using 'hue' keyword",
+      "seaborn version 0.11.1"
+    ],
+    "reproduction_steps": [
+      "Use seaborn version 0.11.1",
+      "Attempt to plot using PairGrid and regplot with categorical hue without 'hue' keyword"
+    ],
+    "expected": [
+      "Ability to plot scatterplots across PairGrid with categorical hue without error, using a single regression line"
+    ],
+    "actual": [
+      "Error occurs when plotting with categorical hue without 'hue' keyword in seaborn 0.11.1"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Error message occurs when updating to seaborn 0.11.1"
+    ],
+    "api_involved": [
+      "PairGrid",
+      "regplot"
+    ],
+    "input_conditions": [
+      "categorical hue without using 'hue' keyword",
+      "seaborn version 0.11.1"
+    ],
+    "reproduction_steps": [
+      "Use seaborn version 0.11.1",
+      "Attempt to plot using PairGrid and regplot with categorical hue without 'hue' keyword"
+    ],
+    "expected": [
+      "Ability to plot scatterplots across PairGrid with categorical hue without error, using a single regression line"
+    ],
+    "actual": [
+      "Error occurs when plotting with categorical hue without 'hue' keyword in seaborn 0.11.1"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"Error message occurs when updating to seaborn 0.11.1\",\n  \"api_involved\": [\"PairGrid\", \"regplot\"],\n  \"input_conditions\": [\"categorical hue without using 'hue' keyword\", \"seaborn version 0.11.1\"],\n  \"expected\": \"Ability to plot scatterplots across PairGrid with categorical hue without error, using a single regression line\",\n  \"actual\": \"Error occurs when plotting with categorical hue without 'hue' keyword in seaborn 0.11.1\",\n  \"reproduction_steps\": [\n    \"Use seaborn version 0.11.1\",\n    \"Attempt to plot using PairGrid and regplot with categorical hue without 'hue' keyword\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"Error message occurs when updating to seaborn 0.11.1\",\n  \"api_involved\": [\"PairGrid\", \"regplot\"],\n  \"input_conditions\": [\"categorical hue without using 'hue' keyword\", \"seaborn version 0.11.1\"],\n  \"expected\": \"Ability to plot scatterplots across PairGrid with categorical hue without error, using a single regression line\",\n  \"actual\": \"Error occurs when plotting with categorical hue without 'hue' keyword in seaborn 0.11.1\",\n  \"reproduction_steps\": [\n    \"Use seaborn version 0.11.1\",\n    \"Attempt to plot using PairGrid and regplot with categorical hue without 'hue' keyword\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

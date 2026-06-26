@@ -1,0 +1,47 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-77",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "string constant parsing"
+    ],
+    "input_conditions": [
+      "string constant containing \\0 or \\x00 or \\u0000"
+    ],
+    "reproduction_steps": [
+      "write script with string constant \"\\0\" or \"\\x00\" or \"\\u0000\""
+    ],
+    "expected": [
+      "string literal with the escaped sequence (\\0 or similar) preserved"
+    ],
+    "actual": [
+      "string literal with three null character values instead of the escape sequence"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "string constant parsing"
+    ],
+    "input_conditions": [
+      "string constant containing \\0 or \\x00 or \\u0000"
+    ],
+    "reproduction_steps": [
+      "write script with string constant \"\\0\" or \"\\x00\" or \"\\u0000\""
+    ],
+    "expected": [
+      "string literal with the escaped sequence (\\0 or similar) preserved"
+    ],
+    "actual": [
+      "string literal with three null character values instead of the escape sequence"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"string constant parsing\"],\n\"input_conditions\": [\"string constant containing \\\\0 or \\\\x00 or \\\\u0000\"],\n\"expected\": \"string literal with the escaped sequence (\\\\0 or similar) preserved\",\n\"actual\": \"string literal with three null character values instead of the escape sequence\",\n\"reproduction_steps\": [\"write script with string constant \\\"\\\\0\\\" or \\\"\\\\x00\\\" or \\\"\\\\u0000\\\"\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"string constant parsing\"],\n\"input_conditions\": [\"string constant containing \\\\0 or \\\\x00 or \\\\u0000\"],\n\"expected\": \"string literal with the escaped sequence (\\\\0 or similar) preserved\",\n\"actual\": \"string literal with three null character values instead of the escape sequence\",\n\"reproduction_steps\": [\"write script with string constant \\\"\\\\0\\\" or \\\"\\\\x00\\\" or \\\"\\\\u0000\\\"\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-19885",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "linsolve",
+      "solve"
+    ],
+    "input_conditions": [
+      "system of linear equations"
+    ],
+    "reproduction_steps": [
+      "Create a system of linear equations",
+      "Call linsolve to solve it",
+      "Observe the returned solution is incorrect"
+    ],
+    "expected": [
+      "correct solution to the system of linear equations"
+    ],
+    "actual": [
+      "wrong answer returned by linsolve"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "linsolve",
+      "solve"
+    ],
+    "input_conditions": [
+      "system of linear equations"
+    ],
+    "reproduction_steps": [
+      "Create a system of linear equations",
+      "Call linsolve to solve it",
+      "Observe the returned solution is incorrect"
+    ],
+    "expected": [
+      "correct solution to the system of linear equations"
+    ],
+    "actual": [
+      "wrong answer returned by linsolve"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"linsolve\", \"solve\"],\n\"input_conditions\": [\"system of linear equations\"],\n\"expected\": \"correct solution to the system of linear equations\",\n\"actual\": \"wrong answer returned by linsolve\",\n\"reproduction_steps\": [\"Create a system of linear equations\", \"Call linsolve to solve it\", \"Observe the returned solution is incorrect\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"linsolve\", \"solve\"],\n\"input_conditions\": [\"system of linear equations\"],\n\"expected\": \"correct solution to the system of linear equations\",\n\"actual\": \"wrong answer returned by linsolve\",\n\"reproduction_steps\": [\"Create a system of linear equations\", \"Call linsolve to solve it\", \"Observe the returned solution is incorrect\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

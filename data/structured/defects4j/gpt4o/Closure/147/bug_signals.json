@@ -1,0 +1,51 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-147",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "JSC_USED_GLOBAL_THIS: dangerous use of the global this object"
+    ],
+    "api_involved": [],
+    "input_conditions": [
+      "Using methods within the global 'this' context",
+      "Inline vs non-inline notation"
+    ],
+    "reproduction_steps": [
+      "Define a namespace object NS with methods using 'this' reference",
+      "Call these methods and observe behavior in 20100616 vs 20100514 releases"
+    ],
+    "expected": [
+      "Warnings appear for the use of 'this' in both 'write' method variations in the 0616 release"
+    ],
+    "actual": [
+      "Warning only appears for non-inline 'write2' method in 0616 release, not for 'write' method"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "JSC_USED_GLOBAL_THIS: dangerous use of the global this object"
+    ],
+    "api_involved": [],
+    "input_conditions": [
+      "Using methods within the global 'this' context",
+      "Inline vs non-inline notation"
+    ],
+    "reproduction_steps": [
+      "Define a namespace object NS with methods using 'this' reference",
+      "Call these methods and observe behavior in 20100616 vs 20100514 releases"
+    ],
+    "expected": [
+      "Warnings appear for the use of 'this' in both 'write' method variations in the 0616 release"
+    ],
+    "actual": [
+      "Warning only appears for non-inline 'write2' method in 0616 release, not for 'write' method"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"JSC_USED_GLOBAL_THIS: dangerous use of the global this object\",\n  \"api_involved\": [],\n  \"input_conditions\": [\"Using methods within the global 'this' context\", \"Inline vs non-inline notation\"],\n  \"expected\": \"Warnings appear for the use of 'this' in both 'write' method variations in the 0616 release\",\n  \"actual\": \"Warning only appears for non-inline 'write2' method in 0616 release, not for 'write' method\",\n  \"reproduction_steps\": [\n    \"Define a namespace object NS with methods using 'this' reference\",\n    \"Call these methods and observe behavior in 20100616 vs 20100514 releases\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"JSC_USED_GLOBAL_THIS: dangerous use of the global this object\",\n  \"api_involved\": [],\n  \"input_conditions\": [\"Using methods within the global 'this' context\", \"Inline vs non-inline notation\"],\n  \"expected\": \"Warnings appear for the use of 'this' in both 'write' method variations in the 0616 release\",\n  \"actual\": \"Warning only appears for non-inline 'write2' method in 0616 release, not for 'write' method\",\n  \"reproduction_steps\": [\n    \"Define a namespace object NS with methods using 'this' reference\",\n    \"Call these methods and observe behavior in 20100616 vs 20100514 releases\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

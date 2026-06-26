@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sqlfluff__sqlfluff-5074",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "--processes",
+      "--ignore"
+    ],
+    "input_conditions": [
+      "Use of --processes flag",
+      "--ignore linting"
+    ],
+    "reproduction_steps": [
+      "Create a file with content that violates SQLFluff rules.",
+      "Run SQLFluff with --ignore linting and varying --processes flags.",
+      "Observe and compare exit codes and outputs."
+    ],
+    "expected": [
+      "The same exit code should be generated, independently of the --processes flag, expected exit codes should be either 0 or 1."
+    ],
+    "actual": [
+      "Different output with different exit codes are generated depending on the --processes flag."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "--processes",
+      "--ignore"
+    ],
+    "input_conditions": [
+      "Use of --processes flag",
+      "--ignore linting"
+    ],
+    "reproduction_steps": [
+      "Create a file with content that violates SQLFluff rules.",
+      "Run SQLFluff with --ignore linting and varying --processes flags.",
+      "Observe and compare exit codes and outputs."
+    ],
+    "expected": [
+      "The same exit code should be generated, independently of the --processes flag, expected exit codes should be either 0 or 1."
+    ],
+    "actual": [
+      "Different output with different exit codes are generated depending on the --processes flag."
+    ]
+  },
+  "raw_response": "```json\n{\n    \"exception\": null,\n    \"api_involved\": [\"--processes\", \"--ignore\"],\n    \"input_conditions\": [\"Use of --processes flag\", \"--ignore linting\"],\n    \"expected\": \"The same exit code should be generated, independently of the --processes flag, expected exit codes should be either 0 or 1.\",\n    \"actual\": \"Different output with different exit codes are generated depending on the --processes flag.\",\n    \"reproduction_steps\": [\n        \"Create a file with content that violates SQLFluff rules.\",\n        \"Run SQLFluff with --ignore linting and varying --processes flags.\",\n        \"Observe and compare exit codes and outputs.\"\n    ]\n}\n```",
+  "llm_response": "```json\n{\n    \"exception\": null,\n    \"api_involved\": [\"--processes\", \"--ignore\"],\n    \"input_conditions\": [\"Use of --processes flag\", \"--ignore linting\"],\n    \"expected\": \"The same exit code should be generated, independently of the --processes flag, expected exit codes should be either 0 or 1.\",\n    \"actual\": \"Different output with different exit codes are generated depending on the --processes flag.\",\n    \"reproduction_steps\": [\n        \"Create a file with content that violates SQLFluff rules.\",\n        \"Run SQLFluff with --ignore linting and varying --processes flags.\",\n        \"Observe and compare exit codes and outputs.\"\n    ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

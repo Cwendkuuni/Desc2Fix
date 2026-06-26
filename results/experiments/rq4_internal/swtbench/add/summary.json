@@ -1,0 +1,18 @@
+{
+  "instances": 10,
+  "with_test_text": 10,
+  "with_patch_text": 10,
+  "avg_rouge_l": 0.105952,
+  "avg_jaccard": 0.132619,
+  "avg_identifier_jaccard": 0.066363,
+  "avg_pos_overlap": 0.8,
+  "avg_sbert": 0.610518,
+  "avg_codebert": 0.954978,
+  "avg_openai_embedding": 0.537007,
+  "dataset": "swtbench",
+  "scenario": "raw",
+  "artifact_pair": "test_patch",
+  "patch_view": "add",
+  "internal": true,
+  "paper_rq": false
+}

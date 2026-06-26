@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-103",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "ConvergenceException"
+    ],
+    "api_involved": [
+      "NormalDistributionImpl::cumulativeProbability"
+    ],
+    "input_conditions": [
+      "x deviates too much from the mean",
+      "x=+/-100, mean=0, sd=1"
+    ],
+    "reproduction_steps": [
+      "Call NormalDistributionImpl::cumulativeProbability with x=+/-100, mean=0, sd=1"
+    ],
+    "expected": [
+      "CDF value should be either zero or one"
+    ],
+    "actual": [
+      "ConvergenceException is thrown"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ConvergenceException"
+    ],
+    "api_involved": [
+      "NormalDistributionImpl::cumulativeProbability"
+    ],
+    "input_conditions": [
+      "x deviates too much from the mean",
+      "x=+/-100, mean=0, sd=1"
+    ],
+    "reproduction_steps": [
+      "Call NormalDistributionImpl::cumulativeProbability with x=+/-100, mean=0, sd=1"
+    ],
+    "expected": [
+      "CDF value should be either zero or one"
+    ],
+    "actual": [
+      "ConvergenceException is thrown"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"ConvergenceException\",\n  \"api_involved\": [\"NormalDistributionImpl::cumulativeProbability\"],\n  \"input_conditions\": [\"x deviates too much from the mean\", \"x=+/-100, mean=0, sd=1\"],\n  \"expected\": \"CDF value should be either zero or one\",\n  \"actual\": \"ConvergenceException is thrown\",\n  \"reproduction_steps\": [\n    \"Call NormalDistributionImpl::cumulativeProbability with x=+/-100, mean=0, sd=1\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"ConvergenceException\",\n  \"api_involved\": [\"NormalDistributionImpl::cumulativeProbability\"],\n  \"input_conditions\": [\"x deviates too much from the mean\", \"x=+/-100, mean=0, sd=1\"],\n  \"expected\": \"CDF value should be either zero or one\",\n  \"actual\": \"ConvergenceException is thrown\",\n  \"reproduction_steps\": [\n    \"Call NormalDistributionImpl::cumulativeProbability with x=+/-100, mean=0, sd=1\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

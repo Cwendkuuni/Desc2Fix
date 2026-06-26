@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "astropy__astropy-7008",
+  "project": null,
+  "repo": "astropy/astropy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "context manager",
+      "constant versions",
+      "constants"
+    ],
+    "input_conditions": [
+      "use of context manager to set version set of constants"
+    ],
+    "reproduction_steps": [
+      "Attempt to use a context manager to set constant versions",
+      "Observe that no such context manager exists"
+    ],
+    "expected": [
+      "The context manager should allow setting the version set of constants within a specific context."
+    ],
+    "actual": [
+      "The feature is not implemented; only a request or description is provided."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "context manager",
+      "constant versions",
+      "constants"
+    ],
+    "input_conditions": [
+      "use of context manager to set version set of constants"
+    ],
+    "reproduction_steps": [
+      "Attempt to use a context manager to set constant versions",
+      "Observe that no such context manager exists"
+    ],
+    "expected": [
+      "The context manager should allow setting the version set of constants within a specific context."
+    ],
+    "actual": [
+      "The feature is not implemented; only a request or description is provided."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"context manager\", \"constant versions\", \"constants\"],\n\"input_conditions\": [\"use of context manager to set version set of constants\"],\n\"expected\": \"The context manager should allow setting the version set of constants within a specific context.\",\n\"actual\": \"The feature is not implemented; only a request or description is provided.\",\n\"reproduction_steps\": [\"Attempt to use a context manager to set constant versions\", \"Observe that no such context manager exists\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"context manager\", \"constant versions\", \"constants\"],\n\"input_conditions\": [\"use of context manager to set version set of constants\"],\n\"expected\": \"The context manager should allow setting the version set of constants within a specific context.\",\n\"actual\": \"The feature is not implemented; only a request or description is provided.\",\n\"reproduction_steps\": [\"Attempt to use a context manager to set constant versions\", \"Observe that no such context manager exists\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

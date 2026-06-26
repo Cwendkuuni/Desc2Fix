@@ -1,0 +1,51 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-145",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "closure compiler"
+    ],
+    "input_conditions": [
+      "code with labeled loops and breaks",
+      "using closure compiler"
+    ],
+    "reproduction_steps": [
+      "Compile code with labeled loops and breaks using closure compiler",
+      "Try running the resulting code on Internet Explorer"
+    ],
+    "expected": [
+      "Generated code should work on all browsers"
+    ],
+    "actual": [
+      "Generated code works on all browsers except IE due to missing brackets after 'do' instruction"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "closure compiler"
+    ],
+    "input_conditions": [
+      "code with labeled loops and breaks",
+      "using closure compiler"
+    ],
+    "reproduction_steps": [
+      "Compile code with labeled loops and breaks using closure compiler",
+      "Try running the resulting code on Internet Explorer"
+    ],
+    "expected": [
+      "Generated code should work on all browsers"
+    ],
+    "actual": [
+      "Generated code works on all browsers except IE due to missing brackets after 'do' instruction"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"closure compiler\"],\n  \"input_conditions\": [\"code with labeled loops and breaks\", \"using closure compiler\"],\n  \"expected\": \"Generated code should work on all browsers\",\n  \"actual\": \"Generated code works on all browsers except IE due to missing brackets after 'do' instruction\",\n  \"reproduction_steps\": [\n    \"Compile code with labeled loops and breaks using closure compiler\",\n    \"Try running the resulting code on Internet Explorer\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"closure compiler\"],\n  \"input_conditions\": [\"code with labeled loops and breaks\", \"using closure compiler\"],\n  \"expected\": \"Generated code should work on all browsers\",\n  \"actual\": \"Generated code works on all browsers except IE due to missing brackets after 'do' instruction\",\n  \"reproduction_steps\": [\n    \"Compile code with labeled loops and breaks using closure compiler\",\n    \"Try running the resulting code on Internet Explorer\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

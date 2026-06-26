@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sqlfluff__sqlfluff-3700",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [
+      "L042 loop limit on fixes reached"
+    ],
+    "api_involved": [],
+    "input_conditions": [
+      "sql file contains a CTE with a subquery"
+    ],
+    "reproduction_steps": [
+      "Generate a sql file that reproduces the issue"
+    ],
+    "expected": [
+      "should be able to fix the violations"
+    ],
+    "actual": [
+      "Even if I try to fix the violations manually, it still shows the same error."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "L042 loop limit on fixes reached"
+    ],
+    "api_involved": [],
+    "input_conditions": [
+      "sql file contains a CTE with a subquery"
+    ],
+    "reproduction_steps": [
+      "Generate a sql file that reproduces the issue"
+    ],
+    "expected": [
+      "should be able to fix the violations"
+    ],
+    "actual": [
+      "Even if I try to fix the violations manually, it still shows the same error."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"L042 loop limit on fixes reached\",\n  \"api_involved\": null,\n  \"input_conditions\": [\"sql file contains a CTE with a subquery\"],\n  \"expected\": \"should be able to fix the violations\",\n  \"actual\": \"Even if I try to fix the violations manually, it still shows the same error.\",\n  \"reproduction_steps\": [\"Generate a sql file that reproduces the issue\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"L042 loop limit on fixes reached\",\n  \"api_involved\": null,\n  \"input_conditions\": [\"sql file contains a CTE with a subquery\"],\n  \"expected\": \"should be able to fix the violations\",\n  \"actual\": \"Even if I try to fix the violations manually, it still shows the same error.\",\n  \"reproduction_steps\": [\"Generate a sql file that reproduces the issue\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

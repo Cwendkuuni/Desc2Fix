@@ -1,0 +1,49 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "scikit-learn__scikit-learn-24769",
+  "project": null,
+  "repo": "scikit-learn/scikit-learn",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "mean_average_precision"
+    ],
+    "input_conditions": [
+      "multi-class classification",
+      "OVR (one-vs-rest) evaluation"
+    ],
+    "reproduction_steps": [
+      "Request to implement a new metric function mean_average_precision."
+    ],
+    "expected": [
+      "Add a function to compute mean average precision (mAP) as a standard multi-class extension of average precision using OVR."
+    ],
+    "actual": [
+      "The feature is not yet implemented."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "mean_average_precision"
+    ],
+    "input_conditions": [
+      "multi-class classification",
+      "OVR (one-vs-rest) evaluation"
+    ],
+    "reproduction_steps": [
+      "Request to implement a new metric function mean_average_precision."
+    ],
+    "expected": [
+      "Add a function to compute mean average precision (mAP) as a standard multi-class extension of average precision using OVR."
+    ],
+    "actual": [
+      "The feature is not yet implemented."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"mean_average_precision\"],\n\"input_conditions\": [\"multi-class classification\", \"OVR (one-vs-rest) evaluation\"],\n\"expected\": \"Add a function to compute mean average precision (mAP) as a standard multi-class extension of average precision using OVR.\",\n\"actual\": \"The feature is not yet implemented.\",\n\"reproduction_steps\": [\"Request to implement a new metric function mean_average_precision.\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"mean_average_precision\"],\n\"input_conditions\": [\"multi-class classification\", \"OVR (one-vs-rest) evaluation\"],\n\"expected\": \"Add a function to compute mean average precision (mAP) as a standard multi-class extension of average precision using OVR.\",\n\"actual\": \"The feature is not yet implemented.\",\n\"reproduction_steps\": [\"Request to implement a new metric function mean_average_precision.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

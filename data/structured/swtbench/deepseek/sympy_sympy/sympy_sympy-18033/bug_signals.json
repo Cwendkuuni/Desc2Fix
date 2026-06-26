@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-18033",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Permutation.print_cyclic",
+      "SymPy printers",
+      "pprint",
+      "latex"
+    ],
+    "input_conditions": [
+      "Permutation.print_cyclic flag is set",
+      "doctest context where printing behavior is changed"
+    ],
+    "reproduction_steps": [
+      "Check current Permutation printing behavior via print()",
+      "Observe that the print_cyclic flag on the Permutation object alters output",
+      "Attempt to set flag in printer rather than object",
+      "Verify that default printing returns Python valid representation"
+    ],
+    "expected": [
+      "The Permutation printing should be handled by SymPy printers, with a Python valid representation as default, and only pretty printers (pprint/latex) should print in cyclic notation like (1 2 3); the flag should be deprecated according to policy."
+    ],
+    "actual": [
+      "The Permutation.print_cyclic flag currently controls printing on the object itself, which should be removed and handled by printers instead."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Permutation.print_cyclic",
+      "SymPy printers",
+      "pprint",
+      "latex"
+    ],
+    "input_conditions": [
+      "Permutation.print_cyclic flag is set",
+      "doctest context where printing behavior is changed"
+    ],
+    "reproduction_steps": [
+      "Check current Permutation printing behavior via print()",
+      "Observe that the print_cyclic flag on the Permutation object alters output",
+      "Attempt to set flag in printer rather than object",
+      "Verify that default printing returns Python valid representation"
+    ],
+    "expected": [
+      "The Permutation printing should be handled by SymPy printers, with a Python valid representation as default, and only pretty printers (pprint/latex) should print in cyclic notation like (1 2 3); the flag should be deprecated according to policy."
+    ],
+    "actual": [
+      "The Permutation.print_cyclic flag currently controls printing on the object itself, which should be removed and handled by printers instead."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Permutation.print_cyclic\", \"SymPy printers\", \"pprint\", \"latex\"],\n\"input_conditions\": [\"Permutation.print_cyclic flag is set\", \"doctest context where printing behavior is changed\"],\n\"expected\": \"The Permutation printing should be handled by SymPy printers, with a Python valid representation as default, and only pretty printers (pprint/latex) should print in cyclic notation like (1 2 3); the flag should be deprecated according to policy.\",\n\"actual\": \"The Permutation.print_cyclic flag currently controls printing on the object itself, which should be removed and handled by printers instead.\",\n\"reproduction_steps\": [\"Check current Permutation printing behavior via print()\", \"Observe that the print_cyclic flag on the Permutation object alters output\", \"Attempt to set flag in printer rather than object\", \"Verify that default printing returns Python valid representation\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Permutation.print_cyclic\", \"SymPy printers\", \"pprint\", \"latex\"],\n\"input_conditions\": [\"Permutation.print_cyclic flag is set\", \"doctest context where printing behavior is changed\"],\n\"expected\": \"The Permutation printing should be handled by SymPy printers, with a Python valid representation as default, and only pretty printers (pprint/latex) should print in cyclic notation like (1 2 3); the flag should be deprecated according to policy.\",\n\"actual\": \"The Permutation.print_cyclic flag currently controls printing on the object itself, which should be removed and handled by printers instead.\",\n\"reproduction_steps\": [\"Check current Permutation printing behavior via print()\", \"Observe that the print_cyclic flag on the Permutation object alters output\", \"Attempt to set flag in printer rather than object\", \"Verify that default printing returns Python valid representation\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

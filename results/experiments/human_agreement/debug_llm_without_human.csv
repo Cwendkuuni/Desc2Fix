@@ -1,0 +1,5 @@
+rq,dataset,representation,patch_view,pair_id
+rq4_internal,SWTBench,RAW,full,sqlfluff__sqlfluff-4764
+rq4_internal,SWTBench,RAW,full,sqlfluff__sqlfluff-2336
+rq4_internal,SWTBench,STRUCTURED,full,sqlfluff__sqlfluff-4764
+rq4_internal,SWTBench,STRUCTURED,full,sqlfluff__sqlfluff-2336

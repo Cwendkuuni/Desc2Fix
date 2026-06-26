@@ -1,0 +1,63 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-13033",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "TwoModel.objects.filter",
+      "TwoModel.objects.order_by",
+      "TwoModel.objects.annotate",
+      "ForeignKey"
+    ],
+    "input_conditions": [
+      "Self-referencing foreign key (OneModel.root to OneModel)",
+      "Queryset ordering by relation '_id' field (record__root_id)",
+      "Model OneModel has default ordering = ('-id',)"
+    ],
+    "reproduction_steps": [
+      "Define models: OneModel with ordering=('-id',), a self-referencing ForeignKey 'root', and BigIntegerField 'oneval'; TwoModel with ForeignKey to OneModel 'record' and BigIntegerField 'twoval'.",
+      "Create queryset: TwoModel.objects.filter(record__oneval__in=[1,2,3]).order_by('record__root_id')",
+      "Print query SQL with .query.",
+      "Observe unexpected DESC sort and two JOINs instead of one."
+    ],
+    "expected": [
+      "ORDER BY should use ASC sorting and generate only one JOIN when ordering by record__root_id, following the order_by() specified in the queryset."
+    ],
+    "actual": [
+      "ORDER BY uses DESC sorting (inheriting from OneModel's default ordering) and generates an unnecessary second LEFT OUTER JOIN when ordering by record__root_id."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "TwoModel.objects.filter",
+      "TwoModel.objects.order_by",
+      "TwoModel.objects.annotate",
+      "ForeignKey"
+    ],
+    "input_conditions": [
+      "Self-referencing foreign key (OneModel.root to OneModel)",
+      "Queryset ordering by relation '_id' field (record__root_id)",
+      "Model OneModel has default ordering = ('-id',)"
+    ],
+    "reproduction_steps": [
+      "Define models: OneModel with ordering=('-id',), a self-referencing ForeignKey 'root', and BigIntegerField 'oneval'; TwoModel with ForeignKey to OneModel 'record' and BigIntegerField 'twoval'.",
+      "Create queryset: TwoModel.objects.filter(record__oneval__in=[1,2,3]).order_by('record__root_id')",
+      "Print query SQL with .query.",
+      "Observe unexpected DESC sort and two JOINs instead of one."
+    ],
+    "expected": [
+      "ORDER BY should use ASC sorting and generate only one JOIN when ordering by record__root_id, following the order_by() specified in the queryset."
+    ],
+    "actual": [
+      "ORDER BY uses DESC sorting (inheriting from OneModel's default ordering) and generates an unnecessary second LEFT OUTER JOIN when ordering by record__root_id."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"TwoModel.objects.filter\", \"TwoModel.objects.order_by\", \"TwoModel.objects.annotate\", \"ForeignKey\"],\n\"input_conditions\": [\"Self-referencing foreign key (OneModel.root to OneModel)\", \"Queryset ordering by relation '_id' field (record__root_id)\", \"Model OneModel has default ordering = ('-id',)\"],\n\"expected\": \"ORDER BY should use ASC sorting and generate only one JOIN when ordering by record__root_id, following the order_by() specified in the queryset.\",\n\"actual\": \"ORDER BY uses DESC sorting (inheriting from OneModel's default ordering) and generates an unnecessary second LEFT OUTER JOIN when ordering by record__root_id.\",\n\"reproduction_steps\": [\n\"Define models: OneModel with ordering=('-id',), a self-referencing ForeignKey 'root', and BigIntegerField 'oneval'; TwoModel with ForeignKey to OneModel 'record' and BigIntegerField 'twoval'.\",\n\"Create queryset: TwoModel.objects.filter(record__oneval__in=[1,2,3]).order_by('record__root_id')\",\n\"Print query SQL with .query.\",\n\"Observe unexpected DESC sort and two JOINs instead of one.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"TwoModel.objects.filter\", \"TwoModel.objects.order_by\", \"TwoModel.objects.annotate\", \"ForeignKey\"],\n\"input_conditions\": [\"Self-referencing foreign key (OneModel.root to OneModel)\", \"Queryset ordering by relation '_id' field (record__root_id)\", \"Model OneModel has default ordering = ('-id',)\"],\n\"expected\": \"ORDER BY should use ASC sorting and generate only one JOIN when ordering by record__root_id, following the order_by() specified in the queryset.\",\n\"actual\": \"ORDER BY uses DESC sorting (inheriting from OneModel's default ordering) and generates an unnecessary second LEFT OUTER JOIN when ordering by record__root_id.\",\n\"reproduction_steps\": [\n\"Define models: OneModel with ordering=('-id',), a self-referencing ForeignKey 'root', and BigIntegerField 'oneval'; TwoModel with ForeignKey to OneModel 'record' and BigIntegerField 'twoval'.\",\n\"Create queryset: TwoModel.objects.filter(record__oneval__in=[1,2,3]).order_by('record__root_id')\",\n\"Print query SQL with .query.\",\n\"Observe unexpected DESC sort and two JOINs instead of one.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

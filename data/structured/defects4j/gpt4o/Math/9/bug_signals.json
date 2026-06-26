@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-9",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Line.revert()",
+      "Vector3D.negate()",
+      "Line.getDirection()"
+    ],
+    "input_conditions": [
+      "Line position is far from the origin"
+    ],
+    "reproduction_steps": [
+      "Create a Line instance with specified Vector3D values.",
+      "Call Line.revert() on the instance.",
+      "Verify direction is correctly negated using assertArrayEquals."
+    ],
+    "expected": [
+      "Direction of the line should be negated with precision maintained."
+    ],
+    "actual": [
+      "Direction of the line is imprecisely negated, maintaining ~10 digits."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Line.revert()",
+      "Vector3D.negate()",
+      "Line.getDirection()"
+    ],
+    "input_conditions": [
+      "Line position is far from the origin"
+    ],
+    "reproduction_steps": [
+      "Create a Line instance with specified Vector3D values.",
+      "Call Line.revert() on the instance.",
+      "Verify direction is correctly negated using assertArrayEquals."
+    ],
+    "expected": [
+      "Direction of the line should be negated with precision maintained."
+    ],
+    "actual": [
+      "Direction of the line is imprecisely negated, maintaining ~10 digits."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"Line.revert()\", \"Vector3D.negate()\", \"Line.getDirection()\"],\n  \"input_conditions\": [\"Line position is far from the origin\"],\n  \"expected\": \"Direction of the line should be negated with precision maintained.\",\n  \"actual\": \"Direction of the line is imprecisely negated, maintaining ~10 digits.\",\n  \"reproduction_steps\": [\"Create a Line instance with specified Vector3D values.\", \"Call Line.revert() on the instance.\", \"Verify direction is correctly negated using assertArrayEquals.\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"Line.revert()\", \"Vector3D.negate()\", \"Line.getDirection()\"],\n  \"input_conditions\": [\"Line position is far from the origin\"],\n  \"expected\": \"Direction of the line should be negated with precision maintained.\",\n  \"actual\": \"Direction of the line is imprecisely negated, maintaining ~10 digits.\",\n  \"reproduction_steps\": [\"Create a Line instance with specified Vector3D values.\", \"Call Line.revert() on the instance.\", \"Verify direction is correctly negated using assertArrayEquals.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

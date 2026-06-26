@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-13033",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "TwoModel.objects.filter",
+      "order_by"
+    ],
+    "input_conditions": [
+      "OneModel self-referencing foreign key",
+      "Ordering by 'record__root_id'"
+    ],
+    "reproduction_steps": [
+      "Define the OneModel and TwoModel as described.",
+      "Create a queryset using TwoModel.objects.filter(record__oneval__in=[1,2,3]).",
+      "Apply order_by('record__root_id') to the queryset.",
+      "Execute and print the resulting SQL query."
+    ],
+    "expected": [
+      "The query should have a single INNER JOIN and correctly apply the specified ordering to override the default class order."
+    ],
+    "actual": [
+      "The query has two JOINS, including an unnecessary LEFT OUTER JOIN, and applies the default class ordering instead of the specified order_by."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "TwoModel.objects.filter",
+      "order_by"
+    ],
+    "input_conditions": [
+      "OneModel self-referencing foreign key",
+      "Ordering by 'record__root_id'"
+    ],
+    "reproduction_steps": [
+      "Define the OneModel and TwoModel as described.",
+      "Create a queryset using TwoModel.objects.filter(record__oneval__in=[1,2,3]).",
+      "Apply order_by('record__root_id') to the queryset.",
+      "Execute and print the resulting SQL query."
+    ],
+    "expected": [
+      "The query should have a single INNER JOIN and correctly apply the specified ordering to override the default class order."
+    ],
+    "actual": [
+      "The query has two JOINS, including an unnecessary LEFT OUTER JOIN, and applies the default class ordering instead of the specified order_by."
+    ]
+  },
+  "raw_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": [\"TwoModel.objects.filter\", \"order_by\"],\n    \"input_conditions\": [\"OneModel self-referencing foreign key\", \"Ordering by 'record__root_id'\"],\n    \"expected\": \"The query should have a single INNER JOIN and correctly apply the specified ordering to override the default class order.\",\n    \"actual\": \"The query has two JOINS, including an unnecessary LEFT OUTER JOIN, and applies the default class ordering instead of the specified order_by.\",\n    \"reproduction_steps\": [\n        \"Define the OneModel and TwoModel as described.\",\n        \"Create a queryset using TwoModel.objects.filter(record__oneval__in=[1,2,3]).\",\n        \"Apply order_by('record__root_id') to the queryset.\",\n        \"Execute and print the resulting SQL query.\"\n    ]\n}\n```",
+  "llm_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": [\"TwoModel.objects.filter\", \"order_by\"],\n    \"input_conditions\": [\"OneModel self-referencing foreign key\", \"Ordering by 'record__root_id'\"],\n    \"expected\": \"The query should have a single INNER JOIN and correctly apply the specified ordering to override the default class order.\",\n    \"actual\": \"The query has two JOINS, including an unnecessary LEFT OUTER JOIN, and applies the default class ordering instead of the specified order_by.\",\n    \"reproduction_steps\": [\n        \"Define the OneModel and TwoModel as described.\",\n        \"Create a queryset using TwoModel.objects.filter(record__oneval__in=[1,2,3]).\",\n        \"Apply order_by('record__root_id') to the queryset.\",\n        \"Execute and print the resulting SQL query.\"\n    ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

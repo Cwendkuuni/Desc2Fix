@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-103",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "ConvergenceException"
+    ],
+    "api_involved": [
+      "NormalDistributionImpl.cumulativeProbability(double x)"
+    ],
+    "input_conditions": [
+      "x deviates too much from the mean",
+      "example: x=+/-100, mean=0, sd=1"
+    ],
+    "reproduction_steps": [
+      "Create a NormalDistributionImpl with mean=0, sd=1",
+      "Call cumulativeProbability(100) or cumulativeProbability(-100)"
+    ],
+    "expected": [
+      "The method should return either 0 or 1 for extreme values of x far from the mean."
+    ],
+    "actual": [
+      "The method throws ConvergenceException when x deviates too much from the mean."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ConvergenceException"
+    ],
+    "api_involved": [
+      "NormalDistributionImpl.cumulativeProbability(double x)"
+    ],
+    "input_conditions": [
+      "x deviates too much from the mean",
+      "example: x=+/-100, mean=0, sd=1"
+    ],
+    "reproduction_steps": [
+      "Create a NormalDistributionImpl with mean=0, sd=1",
+      "Call cumulativeProbability(100) or cumulativeProbability(-100)"
+    ],
+    "expected": [
+      "The method should return either 0 or 1 for extreme values of x far from the mean."
+    ],
+    "actual": [
+      "The method throws ConvergenceException when x deviates too much from the mean."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"ConvergenceException\",\n\"api_involved\": [\"NormalDistributionImpl.cumulativeProbability(double x)\"],\n\"input_conditions\": [\"x deviates too much from the mean\", \"example: x=+/-100, mean=0, sd=1\"],\n\"expected\": \"The method should return either 0 or 1 for extreme values of x far from the mean.\",\n\"actual\": \"The method throws ConvergenceException when x deviates too much from the mean.\",\n\"reproduction_steps\": [\n  \"Create a NormalDistributionImpl with mean=0, sd=1\",\n  \"Call cumulativeProbability(100) or cumulativeProbability(-100)\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"ConvergenceException\",\n\"api_involved\": [\"NormalDistributionImpl.cumulativeProbability(double x)\"],\n\"input_conditions\": [\"x deviates too much from the mean\", \"example: x=+/-100, mean=0, sd=1\"],\n\"expected\": \"The method should return either 0 or 1 for extreme values of x far from the mean.\",\n\"actual\": \"The method throws ConvergenceException when x deviates too much from the mean.\",\n\"reproduction_steps\": [\n  \"Create a NormalDistributionImpl with mean=0, sd=1\",\n  \"Call cumulativeProbability(100) or cumulativeProbability(-100)\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

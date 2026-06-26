@@ -1,0 +1,26 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "expected_instances": 10,
+  "available_instances": 10,
+  "missing_instances": 0,
+  "availability_rate": 1.0,
+  "avg_signal_items_per_instance": 7.3,
+  "avg_field_completeness": 0.85,
+  "field_non_empty_counts": {
+    "exception": 5,
+    "api_involved": 8,
+    "input_conditions": 9,
+    "reproduction_steps": 9,
+    "expected": 10,
+    "actual": 10
+  },
+  "field_non_empty_rates": {
+    "exception": 0.5,
+    "api_involved": 0.8,
+    "input_conditions": 0.9,
+    "reproduction_steps": 0.9,
+    "expected": 1.0,
+    "actual": 1.0
+  }
+}

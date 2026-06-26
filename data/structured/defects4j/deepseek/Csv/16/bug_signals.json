@@ -1,0 +1,67 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Csv-16",
+  "project": "Csv",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "CSVParser",
+      "Iterator.hasNext()",
+      "Iterator.next()",
+      "CSVParser.Iterator()",
+      "CSVRecord"
+    ],
+    "input_conditions": [
+      "CSVParser with BufferedReader and StringReader as input",
+      "CSVFormat.DEFAULT"
+    ],
+    "reproduction_steps": [
+      "Create a CSVParser with a BufferedReader wrapping a StringReader (e.g., '1\\n2\\n3\\n4\\n5\\n').",
+      "Iterate over the parser in an enhanced for loop, breaking after two records.",
+      "Create a new iterator by calling parser.iterator() and call hasNext() on it.",
+      "Iterate again using the same parser in an enhanced for loop.",
+      "Observe that the second iteration skips a record (e.g., outputs 3 -> 4 instead of 3 -> 3).",
+      "Alternatively, using a single iterator for peeking works correctly."
+    ],
+    "expected": [
+      "Multiple iterators from CSVParser should remain in sequence with the underlying lexer, and peeking via hasNext() should not cause elements to become inaccessible to subsequent iterators."
+    ],
+    "actual": [
+      "When a new Iterator is created and hasNext() is called on it before next(), the underlying lexer advances, consuming an element that is then lost and cannot be accessed by subsequent iterators, causing records to be skipped."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "CSVParser",
+      "Iterator.hasNext()",
+      "Iterator.next()",
+      "CSVParser.Iterator()",
+      "CSVRecord"
+    ],
+    "input_conditions": [
+      "CSVParser with BufferedReader and StringReader as input",
+      "CSVFormat.DEFAULT"
+    ],
+    "reproduction_steps": [
+      "Create a CSVParser with a BufferedReader wrapping a StringReader (e.g., '1\\n2\\n3\\n4\\n5\\n').",
+      "Iterate over the parser in an enhanced for loop, breaking after two records.",
+      "Create a new iterator by calling parser.iterator() and call hasNext() on it.",
+      "Iterate again using the same parser in an enhanced for loop.",
+      "Observe that the second iteration skips a record (e.g., outputs 3 -> 4 instead of 3 -> 3).",
+      "Alternatively, using a single iterator for peeking works correctly."
+    ],
+    "expected": [
+      "Multiple iterators from CSVParser should remain in sequence with the underlying lexer, and peeking via hasNext() should not cause elements to become inaccessible to subsequent iterators."
+    ],
+    "actual": [
+      "When a new Iterator is created and hasNext() is called on it before next(), the underlying lexer advances, consuming an element that is then lost and cannot be accessed by subsequent iterators, causing records to be skipped."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"CSVParser\", \"Iterator.hasNext()\", \"Iterator.next()\", \"CSVParser.Iterator()\", \"CSVRecord\"],\n  \"input_conditions\": [\"CSVParser with BufferedReader and StringReader as input\", \"CSVFormat.DEFAULT\"],\n  \"expected\": \"Multiple iterators from CSVParser should remain in sequence with the underlying lexer, and peeking via hasNext() should not cause elements to become inaccessible to subsequent iterators.\",\n  \"actual\": \"When a new Iterator is created and hasNext() is called on it before next(), the underlying lexer advances, consuming an element that is then lost and cannot be accessed by subsequent iterators, causing records to be skipped.\",\n  \"reproduction_steps\": [\n    \"Create a CSVParser with a BufferedReader wrapping a StringReader (e.g., '1\\\\n2\\\\n3\\\\n4\\\\n5\\\\n').\",\n    \"Iterate over the parser in an enhanced for loop, breaking after two records.\",\n    \"Create a new iterator by calling parser.iterator() and call hasNext() on it.\",\n    \"Iterate again using the same parser in an enhanced for loop.\",\n    \"Observe that the second iteration skips a record (e.g., outputs 3 -> 4 instead of 3 -> 3).\",\n    \"Alternatively, using a single iterator for peeking works correctly.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"CSVParser\", \"Iterator.hasNext()\", \"Iterator.next()\", \"CSVParser.Iterator()\", \"CSVRecord\"],\n  \"input_conditions\": [\"CSVParser with BufferedReader and StringReader as input\", \"CSVFormat.DEFAULT\"],\n  \"expected\": \"Multiple iterators from CSVParser should remain in sequence with the underlying lexer, and peeking via hasNext() should not cause elements to become inaccessible to subsequent iterators.\",\n  \"actual\": \"When a new Iterator is created and hasNext() is called on it before next(), the underlying lexer advances, consuming an element that is then lost and cannot be accessed by subsequent iterators, causing records to be skipped.\",\n  \"reproduction_steps\": [\n    \"Create a CSVParser with a BufferedReader wrapping a StringReader (e.g., '1\\\\n2\\\\n3\\\\n4\\\\n5\\\\n').\",\n    \"Iterate over the parser in an enhanced for loop, breaking after two records.\",\n    \"Create a new iterator by calling parser.iterator() and call hasNext() on it.\",\n    \"Iterate again using the same parser in an enhanced for loop.\",\n    \"Observe that the second iteration skips a record (e.g., outputs 3 -> 4 instead of 3 -> 3).\",\n    \"Alternatively, using a single iterator for peeking works correctly.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sqlfluff__sqlfluff-2907",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [
+      "Undefined jinja template variable"
+    ],
+    "api_involved": [
+      "sqlfluff",
+      "jinja"
+    ],
+    "input_conditions": [
+      "jinja variable defined inside an 'if' statement",
+      "snowflake dialect",
+      "jinja templater"
+    ],
+    "reproduction_steps": [
+      "Create a 'temp.sql' file with a jinja variable set inside an 'if' statement",
+      "Run sqlfluff lint on the file"
+    ],
+    "expected": [
+      "No linting issue when a jinja variable is set inside an 'if' statement"
+    ],
+    "actual": [
+      "sqlfluff lint gives an error: 'Undefined jinja template variable'"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Undefined jinja template variable"
+    ],
+    "api_involved": [
+      "sqlfluff",
+      "jinja"
+    ],
+    "input_conditions": [
+      "jinja variable defined inside an 'if' statement",
+      "snowflake dialect",
+      "jinja templater"
+    ],
+    "reproduction_steps": [
+      "Create a 'temp.sql' file with a jinja variable set inside an 'if' statement",
+      "Run sqlfluff lint on the file"
+    ],
+    "expected": [
+      "No linting issue when a jinja variable is set inside an 'if' statement"
+    ],
+    "actual": [
+      "sqlfluff lint gives an error: 'Undefined jinja template variable'"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"Undefined jinja template variable\",\n\"api_involved\": [\"sqlfluff\", \"jinja\"],\n\"input_conditions\": [\"jinja variable defined inside an 'if' statement\", \"snowflake dialect\", \"jinja templater\"],\n\"expected\": \"No linting issue when a jinja variable is set inside an 'if' statement\",\n\"actual\": \"sqlfluff lint gives an error: 'Undefined jinja template variable'\",\n\"reproduction_steps\": [\"Create a 'temp.sql' file with a jinja variable set inside an 'if' statement\", \"Run sqlfluff lint on the file\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"Undefined jinja template variable\",\n\"api_involved\": [\"sqlfluff\", \"jinja\"],\n\"input_conditions\": [\"jinja variable defined inside an 'if' statement\", \"snowflake dialect\", \"jinja templater\"],\n\"expected\": \"No linting issue when a jinja variable is set inside an 'if' statement\",\n\"actual\": \"sqlfluff lint gives an error: 'Undefined jinja template variable'\",\n\"reproduction_steps\": [\"Create a 'temp.sql' file with a jinja variable set inside an 'if' statement\", \"Run sqlfluff lint on the file\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

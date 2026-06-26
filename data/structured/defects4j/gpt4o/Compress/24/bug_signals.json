@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Compress-24",
+  "project": "Compress",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.IllegalArgumentException: Invalid byte 52 at offset 7 in '62410554' len=8"
+    ],
+    "api_involved": [
+      "TarArchiveInputStream.getNextTarEntry",
+      "TarArchiveEntry.parseTarHeader",
+      "TarUtils.parseOctal",
+      "TarUtils.parseOctalOrBinary"
+    ],
+    "input_conditions": [
+      "tar entry with big user-id value",
+      "user-id of the second entry contains '62410554' not NULL-terminated"
+    ],
+    "reproduction_steps": [
+      "Attempt to read a tar entry with a non-NULL-terminated user-id field using TarArchiveInputStream"
+    ],
+    "expected": [
+      "The tar entry user-id should be a NULL-terminated string representing an octal number <= 07777777"
+    ],
+    "actual": [
+      "Exception thrown when trying to parse non-NULL-terminated user-id string in tar entry"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.IllegalArgumentException: Invalid byte 52 at offset 7 in '62410554' len=8"
+    ],
+    "api_involved": [
+      "TarArchiveInputStream.getNextTarEntry",
+      "TarArchiveEntry.parseTarHeader",
+      "TarUtils.parseOctal",
+      "TarUtils.parseOctalOrBinary"
+    ],
+    "input_conditions": [
+      "tar entry with big user-id value",
+      "user-id of the second entry contains '62410554' not NULL-terminated"
+    ],
+    "reproduction_steps": [
+      "Attempt to read a tar entry with a non-NULL-terminated user-id field using TarArchiveInputStream"
+    ],
+    "expected": [
+      "The tar entry user-id should be a NULL-terminated string representing an octal number <= 07777777"
+    ],
+    "actual": [
+      "Exception thrown when trying to parse non-NULL-terminated user-id string in tar entry"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"java.lang.IllegalArgumentException: Invalid byte 52 at offset 7 in '62410554' len=8\",\n  \"api_involved\": [\n    \"TarArchiveInputStream.getNextTarEntry\",\n    \"TarArchiveEntry.parseTarHeader\",\n    \"TarUtils.parseOctal\",\n    \"TarUtils.parseOctalOrBinary\"\n  ],\n  \"input_conditions\": [\n    \"tar entry with big user-id value\",\n    \"user-id of the second entry contains '62410554' not NULL-terminated\"\n  ],\n  \"expected\": \"The tar entry user-id should be a NULL-terminated string representing an octal number <= 07777777\",\n  \"actual\": \"Exception thrown when trying to parse non-NULL-terminated user-id string in tar entry\",\n  \"reproduction_steps\": [\n    \"Attempt to read a tar entry with a non-NULL-terminated user-id field using TarArchiveInputStream\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"java.lang.IllegalArgumentException: Invalid byte 52 at offset 7 in '62410554' len=8\",\n  \"api_involved\": [\n    \"TarArchiveInputStream.getNextTarEntry\",\n    \"TarArchiveEntry.parseTarHeader\",\n    \"TarUtils.parseOctal\",\n    \"TarUtils.parseOctalOrBinary\"\n  ],\n  \"input_conditions\": [\n    \"tar entry with big user-id value\",\n    \"user-id of the second entry contains '62410554' not NULL-terminated\"\n  ],\n  \"expected\": \"The tar entry user-id should be a NULL-terminated string representing an octal number <= 07777777\",\n  \"actual\": \"Exception thrown when trying to parse non-NULL-terminated user-id string in tar entry\",\n  \"reproduction_steps\": [\n    \"Attempt to read a tar entry with a non-NULL-terminated user-id field using TarArchiveInputStream\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,51 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Lang-33",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "ClassUtils.toClass"
+    ],
+    "input_conditions": [
+      "null array element"
+    ],
+    "reproduction_steps": [
+      "Pass an array with a null element to ClassUtils.toClass method"
+    ],
+    "expected": [
+      "Method should handle null array elements gracefully"
+    ],
+    "actual": [
+      "Throws NullPointerException when encountering null array element"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "ClassUtils.toClass"
+    ],
+    "input_conditions": [
+      "null array element"
+    ],
+    "reproduction_steps": [
+      "Pass an array with a null element to ClassUtils.toClass method"
+    ],
+    "expected": [
+      "Method should handle null array elements gracefully"
+    ],
+    "actual": [
+      "Throws NullPointerException when encountering null array element"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"NullPointerException\",\n  \"api_involved\": [\"ClassUtils.toClass\"],\n  \"input_conditions\": [\"null array element\"],\n  \"expected\": \"Method should handle null array elements gracefully\",\n  \"actual\": \"Throws NullPointerException when encountering null array element\",\n  \"reproduction_steps\": [\"Pass an array with a null element to ClassUtils.toClass method\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"NullPointerException\",\n  \"api_involved\": [\"ClassUtils.toClass\"],\n  \"input_conditions\": [\"null array element\"],\n  \"expected\": \"Method should handle null array elements gracefully\",\n  \"actual\": \"Throws NullPointerException when encountering null array element\",\n  \"reproduction_steps\": [\"Pass an array with a null element to ClassUtils.toClass method\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

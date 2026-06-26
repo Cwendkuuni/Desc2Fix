@@ -1,0 +1,49 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-19885",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "linsolve",
+      "solve"
+    ],
+    "input_conditions": [
+      "system of linear equations"
+    ],
+    "reproduction_steps": [
+      "Use linsolve to solve a system of linear equations"
+    ],
+    "expected": [
+      "Correct answer from linsolve similar to solve"
+    ],
+    "actual": [
+      "Wrong answer from linsolve"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "linsolve",
+      "solve"
+    ],
+    "input_conditions": [
+      "system of linear equations"
+    ],
+    "reproduction_steps": [
+      "Use linsolve to solve a system of linear equations"
+    ],
+    "expected": [
+      "Correct answer from linsolve similar to solve"
+    ],
+    "actual": [
+      "Wrong answer from linsolve"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"linsolve\", \"solve\"],\n  \"input_conditions\": [\"system of linear equations\"],\n  \"expected\": \"Correct answer from linsolve similar to solve\",\n  \"actual\": \"Wrong answer from linsolve\",\n  \"reproduction_steps\": [\"Use linsolve to solve a system of linear equations\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"linsolve\", \"solve\"],\n  \"input_conditions\": [\"system of linear equations\"],\n  \"expected\": \"Correct answer from linsolve similar to solve\",\n  \"actual\": \"Wrong answer from linsolve\",\n  \"reproduction_steps\": [\"Use linsolve to solve a system of linear equations\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

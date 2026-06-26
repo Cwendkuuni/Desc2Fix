@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-77",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "jQuery.getScript"
+    ],
+    "input_conditions": [
+      "string constant with '\\0'",
+      "string constant with '\\x00'",
+      "string constant with '\\u0000'"
+    ],
+    "reproduction_steps": [
+      "Write script with string constant '\\0'",
+      "Write script with string constant '\\x00'",
+      "Write script with string constant '\\u0000'"
+    ],
+    "expected": [
+      "A string literal with '\\0' (or something like that)"
+    ],
+    "actual": [
+      "A string literal with three null character values"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "jQuery.getScript"
+    ],
+    "input_conditions": [
+      "string constant with '\\0'",
+      "string constant with '\\x00'",
+      "string constant with '\\u0000'"
+    ],
+    "reproduction_steps": [
+      "Write script with string constant '\\0'",
+      "Write script with string constant '\\x00'",
+      "Write script with string constant '\\u0000'"
+    ],
+    "expected": [
+      "A string literal with '\\0' (or something like that)"
+    ],
+    "actual": [
+      "A string literal with three null character values"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"jQuery.getScript\"],\n  \"input_conditions\": [\"string constant with '\\\\0'\", \"string constant with '\\\\x00'\", \"string constant with '\\\\u0000'\"],\n  \"expected\": \"A string literal with '\\\\0' (or something like that)\",\n  \"actual\": \"A string literal with three null character values\",\n  \"reproduction_steps\": [\n    \"Write script with string constant '\\\\0'\",\n    \"Write script with string constant '\\\\x00'\",\n    \"Write script with string constant '\\\\u0000'\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"jQuery.getScript\"],\n  \"input_conditions\": [\"string constant with '\\\\0'\", \"string constant with '\\\\x00'\", \"string constant with '\\\\u0000'\"],\n  \"expected\": \"A string literal with '\\\\0' (or something like that)\",\n  \"actual\": \"A string literal with three null character values\",\n  \"reproduction_steps\": [\n    \"Write script with string constant '\\\\0'\",\n    \"Write script with string constant '\\\\x00'\",\n    \"Write script with string constant '\\\\u0000'\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,43 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-18168",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [
+      "exception"
+    ],
+    "api_involved": [],
+    "input_conditions": [
+      "properties aren't initialized"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "should return whether Q(S.Rationals) is open or closed set in R (S.Reals)"
+    ],
+    "actual": [
+      "should return an exception if properties are used as undefined"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "exception"
+    ],
+    "api_involved": [],
+    "input_conditions": [
+      "properties aren't initialized"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "should return whether Q(S.Rationals) is open or closed set in R (S.Reals)"
+    ],
+    "actual": [
+      "should return an exception if properties are used as undefined"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"exception\",\n  \"api_involved\": [],\n  \"input_conditions\": [\"properties aren't initialized\"],\n  \"expected\": \"should return whether Q(S.Rationals) is open or closed set in R (S.Reals)\",\n  \"actual\": \"should return an exception if properties are used as undefined\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"exception\",\n  \"api_involved\": [],\n  \"input_conditions\": [\"properties aren't initialized\"],\n  \"expected\": \"should return whether Q(S.Rationals) is open or closed set in R (S.Reals)\",\n  \"actual\": \"should return an exception if properties are used as undefined\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

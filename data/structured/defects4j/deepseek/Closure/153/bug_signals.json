@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-153",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "IE8 error message: 'Node - definition is missing'"
+    ],
+    "api_involved": [
+      "Closure Compiler command line tool"
+    ],
+    "input_conditions": [
+      "Prototype library source code with namespace pattern 'if (!Node) var Node = { };'",
+      "Latest command line compiler (Version: 20100917, revision 440)",
+      "Default compilation options",
+      "IE8 browser"
+    ],
+    "reproduction_steps": [
+      "Use prototype.js code: if (!Node) var Node = { };",
+      "Compile with command line compiler (Version: 20100917, revision 440) using default options",
+      "Open the compiled script in an HTML page on IE8"
+    ],
+    "expected": [
+      "if(!Node)var Node={};"
+    ],
+    "actual": [
+      "Node||(Node={});"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "IE8 error message: 'Node - definition is missing'"
+    ],
+    "api_involved": [
+      "Closure Compiler command line tool"
+    ],
+    "input_conditions": [
+      "Prototype library source code with namespace pattern 'if (!Node) var Node = { };'",
+      "Latest command line compiler (Version: 20100917, revision 440)",
+      "Default compilation options",
+      "IE8 browser"
+    ],
+    "reproduction_steps": [
+      "Use prototype.js code: if (!Node) var Node = { };",
+      "Compile with command line compiler (Version: 20100917, revision 440) using default options",
+      "Open the compiled script in an HTML page on IE8"
+    ],
+    "expected": [
+      "if(!Node)var Node={};"
+    ],
+    "actual": [
+      "Node||(Node={});"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"IE8 error message: 'Node - definition is missing'\",\n\"api_involved\": [\"Closure Compiler command line tool\"],\n\"input_conditions\": [\"Prototype library source code with namespace pattern 'if (!Node) var Node = { };'\", \"Latest command line compiler (Version: 20100917, revision 440)\", \"Default compilation options\", \"IE8 browser\"],\n\"expected\": \"if(!Node)var Node={};\",\n\"actual\": \"Node||(Node={});\",\n\"reproduction_steps\": [\n\"Use prototype.js code: if (!Node) var Node = { };\",\n\"Compile with command line compiler (Version: 20100917, revision 440) using default options\",\n\"Open the compiled script in an HTML page on IE8\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"IE8 error message: 'Node - definition is missing'\",\n\"api_involved\": [\"Closure Compiler command line tool\"],\n\"input_conditions\": [\"Prototype library source code with namespace pattern 'if (!Node) var Node = { };'\", \"Latest command line compiler (Version: 20100917, revision 440)\", \"Default compilation options\", \"IE8 browser\"],\n\"expected\": \"if(!Node)var Node={};\",\n\"actual\": \"Node||(Node={});\",\n\"reproduction_steps\": [\n\"Use prototype.js code: if (!Node) var Node = { };\",\n\"Compile with command line compiler (Version: 20100917, revision 440) using default options\",\n\"Open the compiled script in an HTML page on IE8\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

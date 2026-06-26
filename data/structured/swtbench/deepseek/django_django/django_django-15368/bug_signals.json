@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-15368",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "bulk_update",
+      "F",
+      "refresh_from_db"
+    ],
+    "input_conditions": [
+      "assign plain F('...') to a model instance field",
+      "call bulk_update with that field in the update list"
+    ],
+    "reproduction_steps": [
+      "Create a model instance with char fields, e.g., 'c8' and 'name'.",
+      "Set a field on that instance to a plain F expression referencing another field, e.g., o.c8 = F('name').",
+      "Call bulk_update with the instance and specify that field, e.g., SelfRef.objects.bulk_update([o], ['c8']).",
+      "Refresh the instance from the database and observe the field value is the string 'F(name)' instead of the actual column value."
+    ],
+    "expected": [
+      "The F expression should be resolved to the actual column name in the SQL update statement."
+    ],
+    "actual": [
+      "The string representation of the F expression (e.g., 'F(name)') is used instead of the column name, causing incorrect update behavior."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "bulk_update",
+      "F",
+      "refresh_from_db"
+    ],
+    "input_conditions": [
+      "assign plain F('...') to a model instance field",
+      "call bulk_update with that field in the update list"
+    ],
+    "reproduction_steps": [
+      "Create a model instance with char fields, e.g., 'c8' and 'name'.",
+      "Set a field on that instance to a plain F expression referencing another field, e.g., o.c8 = F('name').",
+      "Call bulk_update with the instance and specify that field, e.g., SelfRef.objects.bulk_update([o], ['c8']).",
+      "Refresh the instance from the database and observe the field value is the string 'F(name)' instead of the actual column value."
+    ],
+    "expected": [
+      "The F expression should be resolved to the actual column name in the SQL update statement."
+    ],
+    "actual": [
+      "The string representation of the F expression (e.g., 'F(name)') is used instead of the column name, causing incorrect update behavior."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"bulk_update\", \"F\", \"refresh_from_db\"],\n\"input_conditions\": [\"assign plain F('...') to a model instance field\", \"call bulk_update with that field in the update list\"],\n\"expected\": \"The F expression should be resolved to the actual column name in the SQL update statement.\",\n\"actual\": \"The string representation of the F expression (e.g., 'F(name)') is used instead of the column name, causing incorrect update behavior.\",\n\"reproduction_steps\": [\n    \"Create a model instance with char fields, e.g., 'c8' and 'name'.\",\n    \"Set a field on that instance to a plain F expression referencing another field, e.g., o.c8 = F('name').\",\n    \"Call bulk_update with the instance and specify that field, e.g., SelfRef.objects.bulk_update([o], ['c8']).\",\n    \"Refresh the instance from the database and observe the field value is the string 'F(name)' instead of the actual column value.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"bulk_update\", \"F\", \"refresh_from_db\"],\n\"input_conditions\": [\"assign plain F('...') to a model instance field\", \"call bulk_update with that field in the update list\"],\n\"expected\": \"The F expression should be resolved to the actual column name in the SQL update statement.\",\n\"actual\": \"The string representation of the F expression (e.g., 'F(name)') is used instead of the column name, causing incorrect update behavior.\",\n\"reproduction_steps\": [\n    \"Create a model instance with char fields, e.g., 'c8' and 'name'.\",\n    \"Set a field on that instance to a plain F expression referencing another field, e.g., o.c8 = F('name').\",\n    \"Call bulk_update with the instance and specify that field, e.g., SelfRef.objects.bulk_update([o], ['c8']).\",\n    \"Refresh the instance from the database and observe the field value is the string 'F(name)' instead of the actual column value.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

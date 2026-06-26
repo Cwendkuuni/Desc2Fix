@@ -1,0 +1,45 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-12161",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "through_defaults",
+      "get_or_create"
+    ],
+    "input_conditions": [
+      "callable values in through_defaults"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Callable values should be evaluated before being assigned to fields."
+    ],
+    "actual": [
+      "Callable values are passed through without being evaluated, and their repr() is saved."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "through_defaults",
+      "get_or_create"
+    ],
+    "input_conditions": [
+      "callable values in through_defaults"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Callable values should be evaluated before being assigned to fields."
+    ],
+    "actual": [
+      "Callable values are passed through without being evaluated, and their repr() is saved."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"through_defaults\", \"get_or_create\"],\n  \"input_conditions\": [\"callable values in through_defaults\"],\n  \"expected\": \"Callable values should be evaluated before being assigned to fields.\",\n  \"actual\": \"Callable values are passed through without being evaluated, and their repr() is saved.\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"through_defaults\", \"get_or_create\"],\n  \"input_conditions\": [\"callable values in through_defaults\"],\n  \"expected\": \"Callable values should be evaluated before being assigned to fields.\",\n  \"actual\": \"Callable values are passed through without being evaluated, and their repr() is saved.\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

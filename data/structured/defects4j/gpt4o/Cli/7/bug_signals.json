@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Cli-7",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "javax.xml.transform.TransformerFactoryConfigurationError: Provider for javax.xml.transform.TransformerFactory cannot be found"
+    ],
+    "api_involved": [
+      "org.apache.commons.cli2.bug.Bug27575Test.testRequiredOptions",
+      "javax.xml.transform.TransformerFactory.newInstance"
+    ],
+    "input_conditions": [
+      "Tests failing under JDK 1.6 due to order of options returned by PatternBuilder",
+      "JDK version 1.6 causes different order"
+    ],
+    "reproduction_steps": [
+      "Run the Bug27575Test with JDK 1.6",
+      "Observe the ComparisonFailure due to option order mismatch"
+    ],
+    "expected": [
+      "The test should pass by correctly identifying the required option -h"
+    ],
+    "actual": [
+      "Test failed as expected <[-h]> but was <[-c <arg>]>; an XML configuration error also encountered"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "javax.xml.transform.TransformerFactoryConfigurationError: Provider for javax.xml.transform.TransformerFactory cannot be found"
+    ],
+    "api_involved": [
+      "org.apache.commons.cli2.bug.Bug27575Test.testRequiredOptions",
+      "javax.xml.transform.TransformerFactory.newInstance"
+    ],
+    "input_conditions": [
+      "Tests failing under JDK 1.6 due to order of options returned by PatternBuilder",
+      "JDK version 1.6 causes different order"
+    ],
+    "reproduction_steps": [
+      "Run the Bug27575Test with JDK 1.6",
+      "Observe the ComparisonFailure due to option order mismatch"
+    ],
+    "expected": [
+      "The test should pass by correctly identifying the required option -h"
+    ],
+    "actual": [
+      "Test failed as expected <[-h]> but was <[-c <arg>]>; an XML configuration error also encountered"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"javax.xml.transform.TransformerFactoryConfigurationError: Provider for javax.xml.transform.TransformerFactory cannot be found\",\n  \"api_involved\": [\n    \"org.apache.commons.cli2.bug.Bug27575Test.testRequiredOptions\",\n    \"javax.xml.transform.TransformerFactory.newInstance\"\n  ],\n  \"input_conditions\": [\n    \"Tests failing under JDK 1.6 due to order of options returned by PatternBuilder\",\n    \"JDK version 1.6 causes different order\"\n  ],\n  \"expected\": \"The test should pass by correctly identifying the required option -h\",\n  \"actual\": \"Test failed as expected <[-h]> but was <[-c <arg>]>; an XML configuration error also encountered\",\n  \"reproduction_steps\": [\n    \"Run the Bug27575Test with JDK 1.6\",\n    \"Observe the ComparisonFailure due to option order mismatch\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"javax.xml.transform.TransformerFactoryConfigurationError: Provider for javax.xml.transform.TransformerFactory cannot be found\",\n  \"api_involved\": [\n    \"org.apache.commons.cli2.bug.Bug27575Test.testRequiredOptions\",\n    \"javax.xml.transform.TransformerFactory.newInstance\"\n  ],\n  \"input_conditions\": [\n    \"Tests failing under JDK 1.6 due to order of options returned by PatternBuilder\",\n    \"JDK version 1.6 causes different order\"\n  ],\n  \"expected\": \"The test should pass by correctly identifying the required option -h\",\n  \"actual\": \"Test failed as expected <[-h]> but was <[-c <arg>]>; an XML configuration error also encountered\",\n  \"reproduction_steps\": [\n    \"Run the Bug27575Test with JDK 1.6\",\n    \"Observe the ComparisonFailure due to option order mismatch\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

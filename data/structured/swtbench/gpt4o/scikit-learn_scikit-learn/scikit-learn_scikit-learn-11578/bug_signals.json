@@ -1,0 +1,65 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "scikit-learn__scikit-learn-11578",
+  "project": null,
+  "repo": "scikit-learn/scikit-learn",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "LogisticRegressionCV",
+      "LogisticRegression",
+      "_log_reg_scoring_path"
+    ],
+    "input_conditions": [
+      "multi_class='multinomial'",
+      "Linux-4.4.0-72-generic-x86_64-with-Ubuntu-14.04-trusty",
+      "Python 2.7.6",
+      "NumPy 1.12.0",
+      "SciPy 0.18.1",
+      "Scikit-learn 0.18.1"
+    ],
+    "reproduction_steps": [
+      "Instantiate LogisticRegressionCV with multi_class='multinomial'.",
+      "Use the model to obtain probability estimates and observe the scoring method.",
+      "Check the instance creation at line 922 of logistic.py and the scoring function call at line 955."
+    ],
+    "expected": [
+      "LogisticRegressionCV should use the same prediction method (softmax function) as specified by multi_class='multinomial'."
+    ],
+    "actual": [
+      "LogisticRegressionCV uses one-vs-rest approach for scoring, ignoring the 'multinomial' setting."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "LogisticRegressionCV",
+      "LogisticRegression",
+      "_log_reg_scoring_path"
+    ],
+    "input_conditions": [
+      "multi_class='multinomial'",
+      "Linux-4.4.0-72-generic-x86_64-with-Ubuntu-14.04-trusty",
+      "Python 2.7.6",
+      "NumPy 1.12.0",
+      "SciPy 0.18.1",
+      "Scikit-learn 0.18.1"
+    ],
+    "reproduction_steps": [
+      "Instantiate LogisticRegressionCV with multi_class='multinomial'.",
+      "Use the model to obtain probability estimates and observe the scoring method.",
+      "Check the instance creation at line 922 of logistic.py and the scoring function call at line 955."
+    ],
+    "expected": [
+      "LogisticRegressionCV should use the same prediction method (softmax function) as specified by multi_class='multinomial'."
+    ],
+    "actual": [
+      "LogisticRegressionCV uses one-vs-rest approach for scoring, ignoring the 'multinomial' setting."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"LogisticRegressionCV\", \"LogisticRegression\", \"_log_reg_scoring_path\"],\n  \"input_conditions\": [\"multi_class='multinomial'\", \"Linux-4.4.0-72-generic-x86_64-with-Ubuntu-14.04-trusty\", \"Python 2.7.6\", \"NumPy 1.12.0\", \"SciPy 0.18.1\", \"Scikit-learn 0.18.1\"],\n  \"expected\": \"LogisticRegressionCV should use the same prediction method (softmax function) as specified by multi_class='multinomial'.\",\n  \"actual\": \"LogisticRegressionCV uses one-vs-rest approach for scoring, ignoring the 'multinomial' setting.\",\n  \"reproduction_steps\": [\n    \"Instantiate LogisticRegressionCV with multi_class='multinomial'.\",\n    \"Use the model to obtain probability estimates and observe the scoring method.\",\n    \"Check the instance creation at line 922 of logistic.py and the scoring function call at line 955.\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"LogisticRegressionCV\", \"LogisticRegression\", \"_log_reg_scoring_path\"],\n  \"input_conditions\": [\"multi_class='multinomial'\", \"Linux-4.4.0-72-generic-x86_64-with-Ubuntu-14.04-trusty\", \"Python 2.7.6\", \"NumPy 1.12.0\", \"SciPy 0.18.1\", \"Scikit-learn 0.18.1\"],\n  \"expected\": \"LogisticRegressionCV should use the same prediction method (softmax function) as specified by multi_class='multinomial'.\",\n  \"actual\": \"LogisticRegressionCV uses one-vs-rest approach for scoring, ignoring the 'multinomial' setting.\",\n  \"reproduction_steps\": [\n    \"Instantiate LogisticRegressionCV with multi_class='multinomial'.\",\n    \"Use the model to obtain probability estimates and observe the scoring method.\",\n    \"Check the instance creation at line 922 of logistic.py and the scoring function call at line 955.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

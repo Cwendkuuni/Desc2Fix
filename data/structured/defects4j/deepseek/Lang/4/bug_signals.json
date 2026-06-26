@@ -1,0 +1,67 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Lang-4",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "org.apache.commons.lang3.text.translate.LookupTranslator",
+      "HashMap<CharSequence, CharSequence>",
+      "CharSequence",
+      "CharBuffer",
+      "StringEscapeUtils.ESCAPE_HTML4.translate",
+      "StringEscapeUtils.escapeHtml4"
+    ],
+    "input_conditions": [
+      "CharSequence implementations other than String (e.g., CharBuffer) used as input to LookupTranslator",
+      "LookupTranslator uses HashMap with CharSequence keys which rely on equals/hashCode implementations"
+    ],
+    "reproduction_steps": [
+      "Create a CharSequence cs1 = \"1 < 2\";",
+      "Create a CharSequence cs2 = CharBuffer.wrap(\"1 < 2\".toCharArray());",
+      "Call StringEscapeUtils.ESCAPE_HTML4.translate(cs1) and print result",
+      "Call StringEscapeUtils.ESCAPE_HTML4.translate(cs2) and print result",
+      "Observe that cs1 is correctly escaped to '1 &lt; 2' but cs2 remains unchanged as '1 < 2'"
+    ],
+    "expected": [
+      "translate method should produce the same escaped output for any CharSequence implementation (e.g., CharBuffer) as it does for String when the underlying character content is identical"
+    ],
+    "actual": [
+      "translate method fails to escape characters for CharSequence implementations other than String (e.g., CharBuffer), returning the original unescaped text"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "org.apache.commons.lang3.text.translate.LookupTranslator",
+      "HashMap<CharSequence, CharSequence>",
+      "CharSequence",
+      "CharBuffer",
+      "StringEscapeUtils.ESCAPE_HTML4.translate",
+      "StringEscapeUtils.escapeHtml4"
+    ],
+    "input_conditions": [
+      "CharSequence implementations other than String (e.g., CharBuffer) used as input to LookupTranslator",
+      "LookupTranslator uses HashMap with CharSequence keys which rely on equals/hashCode implementations"
+    ],
+    "reproduction_steps": [
+      "Create a CharSequence cs1 = \"1 < 2\";",
+      "Create a CharSequence cs2 = CharBuffer.wrap(\"1 < 2\".toCharArray());",
+      "Call StringEscapeUtils.ESCAPE_HTML4.translate(cs1) and print result",
+      "Call StringEscapeUtils.ESCAPE_HTML4.translate(cs2) and print result",
+      "Observe that cs1 is correctly escaped to '1 &lt; 2' but cs2 remains unchanged as '1 < 2'"
+    ],
+    "expected": [
+      "translate method should produce the same escaped output for any CharSequence implementation (e.g., CharBuffer) as it does for String when the underlying character content is identical"
+    ],
+    "actual": [
+      "translate method fails to escape characters for CharSequence implementations other than String (e.g., CharBuffer), returning the original unescaped text"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"org.apache.commons.lang3.text.translate.LookupTranslator\", \"HashMap<CharSequence, CharSequence>\", \"CharSequence\", \"CharBuffer\", \"StringEscapeUtils.ESCAPE_HTML4.translate\", \"StringEscapeUtils.escapeHtml4\"],\n\"input_conditions\": [\"CharSequence implementations other than String (e.g., CharBuffer) used as input to LookupTranslator\", \"LookupTranslator uses HashMap with CharSequence keys which rely on equals/hashCode implementations\"],\n\"expected\": \"translate method should produce the same escaped output for any CharSequence implementation (e.g., CharBuffer) as it does for String when the underlying character content is identical\",\n\"actual\": \"translate method fails to escape characters for CharSequence implementations other than String (e.g., CharBuffer), returning the original unescaped text\",\n\"reproduction_steps\": [\n\"Create a CharSequence cs1 = \\\"1 < 2\\\";\",\n\"Create a CharSequence cs2 = CharBuffer.wrap(\\\"1 < 2\\\".toCharArray());\",\n\"Call StringEscapeUtils.ESCAPE_HTML4.translate(cs1) and print result\",\n\"Call StringEscapeUtils.ESCAPE_HTML4.translate(cs2) and print result\",\n\"Observe that cs1 is correctly escaped to '1 &lt; 2' but cs2 remains unchanged as '1 < 2'\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"org.apache.commons.lang3.text.translate.LookupTranslator\", \"HashMap<CharSequence, CharSequence>\", \"CharSequence\", \"CharBuffer\", \"StringEscapeUtils.ESCAPE_HTML4.translate\", \"StringEscapeUtils.escapeHtml4\"],\n\"input_conditions\": [\"CharSequence implementations other than String (e.g., CharBuffer) used as input to LookupTranslator\", \"LookupTranslator uses HashMap with CharSequence keys which rely on equals/hashCode implementations\"],\n\"expected\": \"translate method should produce the same escaped output for any CharSequence implementation (e.g., CharBuffer) as it does for String when the underlying character content is identical\",\n\"actual\": \"translate method fails to escape characters for CharSequence implementations other than String (e.g., CharBuffer), returning the original unescaped text\",\n\"reproduction_steps\": [\n\"Create a CharSequence cs1 = \\\"1 < 2\\\";\",\n\"Create a CharSequence cs2 = CharBuffer.wrap(\\\"1 < 2\\\".toCharArray());\",\n\"Call StringEscapeUtils.ESCAPE_HTML4.translate(cs1) and print result\",\n\"Call StringEscapeUtils.ESCAPE_HTML4.translate(cs2) and print result\",\n\"Observe that cs1 is correctly escaped to '1 &lt; 2' but cs2 remains unchanged as '1 < 2'\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

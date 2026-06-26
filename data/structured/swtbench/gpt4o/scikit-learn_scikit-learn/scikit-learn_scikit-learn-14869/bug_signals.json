@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "scikit-learn__scikit-learn-14869",
+  "project": null,
+  "repo": "scikit-learn/scikit-learn",
+  "signals": {
+    "exception": [
+      "fails silently"
+    ],
+    "api_involved": [
+      "categorical_crossentropy"
+    ],
+    "input_conditions": [
+      "binary classification"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "should either generalize or raise an error on binary classification"
+    ],
+    "actual": [
+      "works fine"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "fails silently"
+    ],
+    "api_involved": [
+      "categorical_crossentropy"
+    ],
+    "input_conditions": [
+      "binary classification"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "should either generalize or raise an error on binary classification"
+    ],
+    "actual": [
+      "works fine"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"fails silently\",\n  \"api_involved\": [\"categorical_crossentropy\"],\n  \"input_conditions\": [\"binary classification\"],\n  \"expected\": \"should either generalize or raise an error on binary classification\",\n  \"actual\": \"works fine\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"fails silently\",\n  \"api_involved\": [\"categorical_crossentropy\"],\n  \"input_conditions\": [\"binary classification\"],\n  \"expected\": \"should either generalize or raise an error on binary classification\",\n  \"actual\": \"works fine\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

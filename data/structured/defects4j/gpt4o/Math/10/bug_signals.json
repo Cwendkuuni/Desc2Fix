@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-10",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "DerivativeStructure.atan2",
+      "Math.atan2",
+      "FastMath.atan2"
+    ],
+    "input_conditions": [
+      "y=+0",
+      "y=-0",
+      "x=+0",
+      "x=-0"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Should match the values of Math.atan2 and FastMath.atan2 for the special cases"
+    ],
+    "actual": [
+      "Returns NaN for all cases"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "DerivativeStructure.atan2",
+      "Math.atan2",
+      "FastMath.atan2"
+    ],
+    "input_conditions": [
+      "y=+0",
+      "y=-0",
+      "x=+0",
+      "x=-0"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Should match the values of Math.atan2 and FastMath.atan2 for the special cases"
+    ],
+    "actual": [
+      "Returns NaN for all cases"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"DerivativeStructure.atan2\", \"Math.atan2\", \"FastMath.atan2\"],\n  \"input_conditions\": [\"y=+0\", \"y=-0\", \"x=+0\", \"x=-0\"],\n  \"expected\": \"Should match the values of Math.atan2 and FastMath.atan2 for the special cases\",\n  \"actual\": \"Returns NaN for all cases\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"DerivativeStructure.atan2\", \"Math.atan2\", \"FastMath.atan2\"],\n  \"input_conditions\": [\"y=+0\", \"y=-0\", \"x=+0\", \"x=-0\"],\n  \"expected\": \"Should match the values of Math.atan2 and FastMath.atan2 for the special cases\",\n  \"actual\": \"Returns NaN for all cases\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

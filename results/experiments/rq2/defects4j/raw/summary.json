@@ -1,0 +1,16 @@
+{
+  "instances": 10,
+  "with_report_text": 10,
+  "with_test_text": 10,
+  "avg_rouge_l": 0.129263,
+  "avg_jaccard": 0.13044,
+  "avg_identifier_jaccard": 0.08354,
+  "avg_pos_overlap": 0.85,
+  "avg_sbert": 0.46526,
+  "avg_codebert": 0.940943,
+  "avg_openai_embedding": 0.631543,
+  "dataset": "defects4j",
+  "scenario": "raw",
+  "model": "none",
+  "artifact_pair": "report_test"
+}

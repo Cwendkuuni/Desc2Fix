@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Cli-17",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "PosixParser"
+    ],
+    "input_conditions": [
+      "stopAtNonOption=true",
+      "options are defined as a and b"
+    ],
+    "reproduction_steps": [
+      "define options a and b",
+      "enable stopAtNonOption",
+      "run the command with '-azb'"
+    ],
+    "expected": [
+      "-a zb"
+    ],
+    "actual": [
+      "-a zb -b"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "PosixParser"
+    ],
+    "input_conditions": [
+      "stopAtNonOption=true",
+      "options are defined as a and b"
+    ],
+    "reproduction_steps": [
+      "define options a and b",
+      "enable stopAtNonOption",
+      "run the command with '-azb'"
+    ],
+    "expected": [
+      "-a zb"
+    ],
+    "actual": [
+      "-a zb -b"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"PosixParser\"],\n  \"input_conditions\": [\"stopAtNonOption=true\", \"options are defined as a and b\"],\n  \"expected\": \"-a zb\",\n  \"actual\": \"-a zb -b\",\n  \"reproduction_steps\": [\"define options a and b\", \"enable stopAtNonOption\", \"run the command with '-azb'\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"PosixParser\"],\n  \"input_conditions\": [\"stopAtNonOption=true\", \"options are defined as a and b\"],\n  \"expected\": \"-a zb\",\n  \"actual\": \"-a zb -b\",\n  \"reproduction_steps\": [\"define options a and b\", \"enable stopAtNonOption\", \"run the command with '-azb'\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

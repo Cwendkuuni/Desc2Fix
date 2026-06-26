@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-13198",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "simplify"
+    ],
+    "input_conditions": [
+      "Sympy version 1.0",
+      "Python version 3.52",
+      "Ubuntu 16.04"
+    ],
+    "reproduction_steps": [
+      "Use the simplify function on a mass matrix for a 3-DOF robot",
+      "Compare results when using the matrix directly versus after simplification"
+    ],
+    "expected": [
+      "Correct simplification of w as part of the mass matrix for a simple 3-DOF robot."
+    ],
+    "actual": [
+      "Incorrect simplification result where the order of x is 10^-8 instead of 10^-4."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "simplify"
+    ],
+    "input_conditions": [
+      "Sympy version 1.0",
+      "Python version 3.52",
+      "Ubuntu 16.04"
+    ],
+    "reproduction_steps": [
+      "Use the simplify function on a mass matrix for a 3-DOF robot",
+      "Compare results when using the matrix directly versus after simplification"
+    ],
+    "expected": [
+      "Correct simplification of w as part of the mass matrix for a simple 3-DOF robot."
+    ],
+    "actual": [
+      "Incorrect simplification result where the order of x is 10^-8 instead of 10^-4."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"simplify\"],\n  \"input_conditions\": [\"Sympy version 1.0\", \"Python version 3.52\", \"Ubuntu 16.04\"],\n  \"expected\": \"Correct simplification of w as part of the mass matrix for a simple 3-DOF robot.\",\n  \"actual\": \"Incorrect simplification result where the order of x is 10^-8 instead of 10^-4.\",\n  \"reproduction_steps\": [\"Use the simplify function on a mass matrix for a 3-DOF robot\", \"Compare results when using the matrix directly versus after simplification\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"simplify\"],\n  \"input_conditions\": [\"Sympy version 1.0\", \"Python version 3.52\", \"Ubuntu 16.04\"],\n  \"expected\": \"Correct simplification of w as part of the mass matrix for a simple 3-DOF robot.\",\n  \"actual\": \"Incorrect simplification result where the order of x is 10^-8 instead of 10^-4.\",\n  \"reproduction_steps\": [\"Use the simplify function on a mass matrix for a 3-DOF robot\", \"Compare results when using the matrix directly versus after simplification\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

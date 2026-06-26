@@ -1,0 +1,69 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-33",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "ERROR - actual parameter 1 of temp3 does not match formal parameter"
+    ],
+    "api_involved": [
+      "temp1",
+      "temp2",
+      "temp3",
+      "callee"
+    ],
+    "input_conditions": [
+      "Compilation level ADVANCED_OPTIMIZATIONS or SIMPLE_OPTIMIZATIONS",
+      "Flags: --jscomp_error=accessControls --jscomp_error=checkTypes --jscomp_error=checkVars",
+      "temp2's opt_data.activity type defined as (boolean|number|string|null|Object)",
+      "Use of @notypecheck in inner function"
+    ],
+    "reproduction_steps": [
+      "Create a file repro.js with functions temp1, temp2, temp3, and callee as described.",
+      "Compile using: java -jar build/compiler.jar --compilation_level=ADVANCED_OPTIMIZATIONS --jscomp_error=accessControls --jscomp_error=checkTypes --jscomp_error=checkVars --js repro.js",
+      "Observe the error at line 30 regarding temp3 parameter mismatch.",
+      "Optionally, repro with SIMPLE_OPTIMIZATIONS also fails."
+    ],
+    "expected": [
+      "temp3 should accept the call with object {n: 0, text: 'a string', b: true} without type error, as text property is provided as string."
+    ],
+    "actual": [
+      "The closure compiler reports an error that the text property is (string|undefined) instead of string, due to influence from unrelated functions temp1 and temp2."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ERROR - actual parameter 1 of temp3 does not match formal parameter"
+    ],
+    "api_involved": [
+      "temp1",
+      "temp2",
+      "temp3",
+      "callee"
+    ],
+    "input_conditions": [
+      "Compilation level ADVANCED_OPTIMIZATIONS or SIMPLE_OPTIMIZATIONS",
+      "Flags: --jscomp_error=accessControls --jscomp_error=checkTypes --jscomp_error=checkVars",
+      "temp2's opt_data.activity type defined as (boolean|number|string|null|Object)",
+      "Use of @notypecheck in inner function"
+    ],
+    "reproduction_steps": [
+      "Create a file repro.js with functions temp1, temp2, temp3, and callee as described.",
+      "Compile using: java -jar build/compiler.jar --compilation_level=ADVANCED_OPTIMIZATIONS --jscomp_error=accessControls --jscomp_error=checkTypes --jscomp_error=checkVars --js repro.js",
+      "Observe the error at line 30 regarding temp3 parameter mismatch.",
+      "Optionally, repro with SIMPLE_OPTIMIZATIONS also fails."
+    ],
+    "expected": [
+      "temp3 should accept the call with object {n: 0, text: 'a string', b: true} without type error, as text property is provided as string."
+    ],
+    "actual": [
+      "The closure compiler reports an error that the text property is (string|undefined) instead of string, due to influence from unrelated functions temp1 and temp2."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"ERROR - actual parameter 1 of temp3 does not match formal parameter\",\n\"api_involved\": [\"temp1\", \"temp2\", \"temp3\", \"callee\"],\n\"input_conditions\": [\"Compilation level ADVANCED_OPTIMIZATIONS or SIMPLE_OPTIMIZATIONS\", \"Flags: --jscomp_error=accessControls --jscomp_error=checkTypes --jscomp_error=checkVars\", \"temp2's opt_data.activity type defined as (boolean|number|string|null|Object)\", \"Use of @notypecheck in inner function\"],\n\"expected\": \"temp3 should accept the call with object {n: 0, text: 'a string', b: true} without type error, as text property is provided as string.\",\n\"actual\": \"The closure compiler reports an error that the text property is (string|undefined) instead of string, due to influence from unrelated functions temp1 and temp2.\",\n\"reproduction_steps\": [\n\"Create a file repro.js with functions temp1, temp2, temp3, and callee as described.\",\n\"Compile using: java -jar build/compiler.jar --compilation_level=ADVANCED_OPTIMIZATIONS --jscomp_error=accessControls --jscomp_error=checkTypes --jscomp_error=checkVars --js repro.js\",\n\"Observe the error at line 30 regarding temp3 parameter mismatch.\",\n\"Optionally, repro with SIMPLE_OPTIMIZATIONS also fails.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"ERROR - actual parameter 1 of temp3 does not match formal parameter\",\n\"api_involved\": [\"temp1\", \"temp2\", \"temp3\", \"callee\"],\n\"input_conditions\": [\"Compilation level ADVANCED_OPTIMIZATIONS or SIMPLE_OPTIMIZATIONS\", \"Flags: --jscomp_error=accessControls --jscomp_error=checkTypes --jscomp_error=checkVars\", \"temp2's opt_data.activity type defined as (boolean|number|string|null|Object)\", \"Use of @notypecheck in inner function\"],\n\"expected\": \"temp3 should accept the call with object {n: 0, text: 'a string', b: true} without type error, as text property is provided as string.\",\n\"actual\": \"The closure compiler reports an error that the text property is (string|undefined) instead of string, due to influence from unrelated functions temp1 and temp2.\",\n\"reproduction_steps\": [\n\"Create a file repro.js with functions temp1, temp2, temp3, and callee as described.\",\n\"Compile using: java -jar build/compiler.jar --compilation_level=ADVANCED_OPTIMIZATIONS --jscomp_error=accessControls --jscomp_error=checkTypes --jscomp_error=checkVars --js repro.js\",\n\"Observe the error at line 30 regarding temp3 parameter mismatch.\",\n\"Optionally, repro with SIMPLE_OPTIMIZATIONS also fails.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

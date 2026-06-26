@@ -1,0 +1,17 @@
+{
+  "rq": "rq3",
+  "dataset": "defects4j",
+  "scenario": "raw",
+  "model": "gpt4o",
+  "patch_view": "remove",
+  "instances": 98,
+  "written": 95,
+  "skipped": 2,
+  "errors": 1,
+  "scores_path": "/home/e113/Documents/FROM-DESCRIPTION-TO-FIX/For_GitHub/Desc2Fix/Desc2Fix/results/experiments/llm_judges/rq3/defects4j/raw/gpt4o/remove/scores.jsonl",
+  "errors_path": "/home/e113/Documents/FROM-DESCRIPTION-TO-FIX/For_GitHub/Desc2Fix/Desc2Fix/results/experiments/llm_judges/rq3/defects4j/raw/gpt4o/remove/errors.jsonl",
+  "prompt_path": "prompts/report_patch_alignment/raw_prompt.txt",
+  "reserved_response_tokens": 4000,
+  "temperature": 1.0,
+  "top_p": 1.0
+}

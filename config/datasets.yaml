@@ -1,0 +1,39 @@
+datasets:
+  defects4j:
+    display_name: "Defects4J"
+    language: "java"
+    external_root: "external/defects4j"
+    projects_root: "external/defects4j/framework/projects"
+    triplets_path: "data/processed/defects4j/triplets.json"
+    stats_path: "data/processed/defects4j/stats.json"
+    raw_root: "data/raw/defects4j"
+    cache_dir: "data/cache/defects4j_bug_reports"
+    projects:
+      - Cli
+      - Closure
+      - Codec
+      - Collections
+      - Compress
+      - Csv
+      - Gson
+      - JacksonCore
+      - JacksonDatabind
+      - JacksonXml
+      - Jsoup
+      - JxPath
+      - Lang
+      - Math
+      - Mockito
+      - Time
+
+  swtbench:
+    display_name: "SWT-Bench"
+    language: "python"
+    hf_dataset: "eth-sri/SWT-bench_bm25_27k_zsp"
+    splits:
+      - dev
+      - test
+    triplets_path: "data/processed/swtbench/triplets.json"
+    full_path: "data/processed/swtbench/full.json"
+    stats_path: "data/processed/swtbench/stats.json"
+    raw_root: "data/raw/swtbench"

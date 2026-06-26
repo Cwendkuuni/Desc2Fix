@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-14241",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "QuerySet.values()",
+      "QuerySet.values_list()",
+      "QuerySet.union()",
+      "QuerySet.first()"
+    ],
+    "input_conditions": [
+      "combined querysets (union) with unannotated columns",
+      "order by an implicit or unannotated column"
+    ],
+    "reproduction_steps": [
+      "Create two models, e.g., Celebrity and ReservedName.",
+      "Define querysets: qs1 = Celebrity.objects.all(); qs2 = ReservedName.objects.all()",
+      "Perform: qs1.union(qs2).values_list('name').first()",
+      "Observe the crash or wrong SQL query."
+    ],
+    "expected": [
+      "The query should correctly refer to the second table's column in the ORDER BY and SELECT clauses when using union and fetching values."
+    ],
+    "actual": [
+      "The generated SQL incorrectly uses the first table's column (queries_celebrity.id) in the ORDER BY and SELECT of the second UNION branch instead of the second table's column (queries_reservedname.id), causing a crash or incorrect results."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "QuerySet.values()",
+      "QuerySet.values_list()",
+      "QuerySet.union()",
+      "QuerySet.first()"
+    ],
+    "input_conditions": [
+      "combined querysets (union) with unannotated columns",
+      "order by an implicit or unannotated column"
+    ],
+    "reproduction_steps": [
+      "Create two models, e.g., Celebrity and ReservedName.",
+      "Define querysets: qs1 = Celebrity.objects.all(); qs2 = ReservedName.objects.all()",
+      "Perform: qs1.union(qs2).values_list('name').first()",
+      "Observe the crash or wrong SQL query."
+    ],
+    "expected": [
+      "The query should correctly refer to the second table's column in the ORDER BY and SELECT clauses when using union and fetching values."
+    ],
+    "actual": [
+      "The generated SQL incorrectly uses the first table's column (queries_celebrity.id) in the ORDER BY and SELECT of the second UNION branch instead of the second table's column (queries_reservedname.id), causing a crash or incorrect results."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"QuerySet.values()\", \"QuerySet.values_list()\", \"QuerySet.union()\", \"QuerySet.first()\"],\n\"input_conditions\": [\"combined querysets (union) with unannotated columns\", \"order by an implicit or unannotated column\"],\n\"expected\": \"The query should correctly refer to the second table's column in the ORDER BY and SELECT clauses when using union and fetching values.\",\n\"actual\": \"The generated SQL incorrectly uses the first table's column (queries_celebrity.id) in the ORDER BY and SELECT of the second UNION branch instead of the second table's column (queries_reservedname.id), causing a crash or incorrect results.\",\n\"reproduction_steps\": [\n    \"Create two models, e.g., Celebrity and ReservedName.\",\n    \"Define querysets: qs1 = Celebrity.objects.all(); qs2 = ReservedName.objects.all()\",\n    \"Perform: qs1.union(qs2).values_list('name').first()\",\n    \"Observe the crash or wrong SQL query.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"QuerySet.values()\", \"QuerySet.values_list()\", \"QuerySet.union()\", \"QuerySet.first()\"],\n\"input_conditions\": [\"combined querysets (union) with unannotated columns\", \"order by an implicit or unannotated column\"],\n\"expected\": \"The query should correctly refer to the second table's column in the ORDER BY and SELECT clauses when using union and fetching values.\",\n\"actual\": \"The generated SQL incorrectly uses the first table's column (queries_celebrity.id) in the ORDER BY and SELECT of the second UNION branch instead of the second table's column (queries_reservedname.id), causing a crash or incorrect results.\",\n\"reproduction_steps\": [\n    \"Create two models, e.g., Celebrity and ReservedName.\",\n    \"Define querysets: qs1 = Celebrity.objects.all(); qs2 = ReservedName.objects.all()\",\n    \"Perform: qs1.union(qs2).values_list('name').first()\",\n    \"Observe the crash or wrong SQL query.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

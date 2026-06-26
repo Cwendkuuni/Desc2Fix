@@ -1,0 +1,11 @@
+dataset,instance_id,project,repo,scenario,artifact_pair,patch_view,has_report_text,has_patch_text,a_chars,b_chars,a_tokens,b_tokens,a_identifiers,b_identifiers,rouge_l,jaccard,identifier_jaccard,pos_overlap,sbert,codebert,openai_embedding,model
+swtbench,sqlfluff__sqlfluff-4764,,sqlfluff/sqlfluff,raw,report_patch,full,True,True,578,3432,121,939,107,356,0.04717,0.153439,0.117647,0.75,0.447784,0.922942,0.415095,none
+swtbench,sqlfluff__sqlfluff-2336,,sqlfluff/sqlfluff,raw,report_patch,full,True,True,531,9371,105,2114,79,1052,0.042361,0.093085,0.066998,0.75,0.551975,0.873983,0.483123,none
+swtbench,sqlfluff__sqlfluff-5074,,sqlfluff/sqlfluff,raw,report_patch,full,True,True,1199,1578,289,473,193,176,0.12336,0.098901,0.053254,0.75,0.554512,0.865807,0.328371,none
+swtbench,sqlfluff__sqlfluff-2849,,sqlfluff/sqlfluff,raw,report_patch,full,True,True,1490,3999,313,941,196,460,0.114833,0.125,0.076923,1.0,0.505166,0.967174,0.475964,none
+swtbench,sqlfluff__sqlfluff-884,,sqlfluff/sqlfluff,raw,report_patch,full,True,True,346,1332,63,455,44,136,0.03861,0.084507,0.052632,0.666667,0.372254,0.90965,0.382198,none
+swtbench,sqlfluff__sqlfluff-4151,,sqlfluff/sqlfluff,raw,report_patch,full,True,True,1659,188,420,53,252,13,0.07611,0.098214,0.021978,0.5,0.352836,0.918822,0.409041,none
+swtbench,sqlfluff__sqlfluff-3700,,sqlfluff/sqlfluff,raw,report_patch,full,True,True,736,17696,183,3917,129,1853,0.037073,0.086066,0.054348,1.0,0.54342,0.883856,0.390456,none
+swtbench,sqlfluff__sqlfluff-3608,,sqlfluff/sqlfluff,raw,report_patch,full,True,True,1664,1278,407,327,278,128,0.149864,0.103261,0.0375,1.0,0.450023,0.860869,0.513315,none
+swtbench,sqlfluff__sqlfluff-3904,,sqlfluff/sqlfluff,raw,report_patch,full,True,True,767,3297,194,821,126,399,0.084729,0.140152,0.086066,0.75,0.425197,0.963128,0.355314,none
+swtbench,sqlfluff__sqlfluff-2907,,sqlfluff/sqlfluff,raw,report_patch,full,True,True,1471,1149,317,257,188,125,0.121951,0.101523,0.065476,0.75,0.486502,0.927055,0.454359,none

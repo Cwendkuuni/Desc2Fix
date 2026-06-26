@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-21864",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "multiset_permutations"
+    ],
+    "input_conditions": [
+      "empty list [] as input"
+    ],
+    "reproduction_steps": [
+      "Call multiset_permutations([])"
+    ],
+    "expected": [
+      "should return a list containing one empty permutation (e.g., [[]] )"
+    ],
+    "actual": [
+      "likely crashes or returns unexpected result"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "multiset_permutations"
+    ],
+    "input_conditions": [
+      "empty list [] as input"
+    ],
+    "reproduction_steps": [
+      "Call multiset_permutations([])"
+    ],
+    "expected": [
+      "should return a list containing one empty permutation (e.g., [[]] )"
+    ],
+    "actual": [
+      "likely crashes or returns unexpected result"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"multiset_permutations\"],\n\"input_conditions\": [\"empty list [] as input\"],\n\"expected\": \"should return a list containing one empty permutation (e.g., [[]] )\",\n\"actual\": \"likely crashes or returns unexpected result\",\n\"reproduction_steps\": [\"Call multiset_permutations([])\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"multiset_permutations\"],\n\"input_conditions\": [\"empty list [] as input\"],\n\"expected\": \"should return a list containing one empty permutation (e.g., [[]] )\",\n\"actual\": \"likely crashes or returns unexpected result\",\n\"reproduction_steps\": [\"Call multiset_permutations([])\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "pytest-dev__pytest-10081",
+  "project": null,
+  "repo": "pytest-dev/pytest",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "unittest.TestCase.tearDown",
+      "pytest",
+      "--pdb"
+    ],
+    "input_conditions": [
+      "running pytest with --pdb flag",
+      "unittest.TestCase subclass decorated with @pytest.mark.skip at class level"
+    ],
+    "reproduction_steps": [
+      "Create a unittest.TestCase subclass decorated with @pytest.mark.skip at class level",
+      "Add a tearDown method to the class",
+      "Run pytest with the --pdb flag",
+      "Observe that tearDown is executed despite the class being skipped"
+    ],
+    "expected": [
+      "tearDown should not be executed for skipped test classes"
+    ],
+    "actual": [
+      "tearDown is executed for skipped test classes when running with --pdb"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "unittest.TestCase.tearDown",
+      "pytest",
+      "--pdb"
+    ],
+    "input_conditions": [
+      "running pytest with --pdb flag",
+      "unittest.TestCase subclass decorated with @pytest.mark.skip at class level"
+    ],
+    "reproduction_steps": [
+      "Create a unittest.TestCase subclass decorated with @pytest.mark.skip at class level",
+      "Add a tearDown method to the class",
+      "Run pytest with the --pdb flag",
+      "Observe that tearDown is executed despite the class being skipped"
+    ],
+    "expected": [
+      "tearDown should not be executed for skipped test classes"
+    ],
+    "actual": [
+      "tearDown is executed for skipped test classes when running with --pdb"
+    ]
+  },
+  "raw_response": "{\n\"exception\": null,\n\"api_involved\": [\"unittest.TestCase.tearDown\", \"pytest\", \"--pdb\"],\n\"input_conditions\": [\"running pytest with --pdb flag\", \"unittest.TestCase subclass decorated with @pytest.mark.skip at class level\"],\n\"expected\": \"tearDown should not be executed for skipped test classes\",\n\"actual\": \"tearDown is executed for skipped test classes when running with --pdb\",\n\"reproduction_steps\": [\n  \"Create a unittest.TestCase subclass decorated with @pytest.mark.skip at class level\",\n  \"Add a tearDown method to the class\",\n  \"Run pytest with the --pdb flag\",\n  \"Observe that tearDown is executed despite the class being skipped\"\n]\n}",
+  "llm_response": "{\n\"exception\": null,\n\"api_involved\": [\"unittest.TestCase.tearDown\", \"pytest\", \"--pdb\"],\n\"input_conditions\": [\"running pytest with --pdb flag\", \"unittest.TestCase subclass decorated with @pytest.mark.skip at class level\"],\n\"expected\": \"tearDown should not be executed for skipped test classes\",\n\"actual\": \"tearDown is executed for skipped test classes when running with --pdb\",\n\"reproduction_steps\": [\n  \"Create a unittest.TestCase subclass decorated with @pytest.mark.skip at class level\",\n  \"Add a tearDown method to the class\",\n  \"Run pytest with the --pdb flag\",\n  \"Observe that tearDown is executed despite the class being skipped\"\n]\n}",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

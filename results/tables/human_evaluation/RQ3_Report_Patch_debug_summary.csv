@@ -1,0 +1,7 @@
+source,status,rq,dataset,representation,patch_view,rows
+RQ3_Report_Patch_human_without_llm,non_empty,rq3,Defects4J,RAW,add,2
+RQ3_Report_Patch_human_without_llm,non_empty,rq3,Defects4J,RAW,remove,2
+RQ3_Report_Patch_human_without_llm,non_empty,rq3,Defects4J,STRUCTURED,add,2
+RQ3_Report_Patch_human_without_llm,non_empty,rq3,Defects4J,STRUCTURED,remove,2
+RQ3_Report_Patch_llm_without_human,non_empty,rq3,Defects4J,RAW,full,2
+RQ3_Report_Patch_llm_without_human,non_empty,rq3,Defects4J,STRUCTURED,full,2

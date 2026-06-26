@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-15576",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      ".exists()",
+      ".distinct()"
+    ],
+    "input_conditions": [
+      "distinct queryset",
+      "non-sliced queryset",
+      "high_mark is None",
+      "low_mark is None"
+    ],
+    "reproduction_steps": [
+      "Create a distinct queryset without slicing (no high_mark or low_mark)",
+      "Call .exists() on the queryset",
+      "Observe that all fields are selected instead of only necessary fields"
+    ],
+    "expected": [
+      "exists() on distinct, non-sliced querysets should not select all fields for efficiency"
+    ],
+    "actual": [
+      "exists() on distinct, non-sliced querysets selects all fields, causing an inefficiency"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      ".exists()",
+      ".distinct()"
+    ],
+    "input_conditions": [
+      "distinct queryset",
+      "non-sliced queryset",
+      "high_mark is None",
+      "low_mark is None"
+    ],
+    "reproduction_steps": [
+      "Create a distinct queryset without slicing (no high_mark or low_mark)",
+      "Call .exists() on the queryset",
+      "Observe that all fields are selected instead of only necessary fields"
+    ],
+    "expected": [
+      "exists() on distinct, non-sliced querysets should not select all fields for efficiency"
+    ],
+    "actual": [
+      "exists() on distinct, non-sliced querysets selects all fields, causing an inefficiency"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\".exists()\", \".distinct()\"],\n\"input_conditions\": [\"distinct queryset\", \"non-sliced queryset\", \"high_mark is None\", \"low_mark is None\"],\n\"expected\": \"exists() on distinct, non-sliced querysets should not select all fields for efficiency\",\n\"actual\": \"exists() on distinct, non-sliced querysets selects all fields, causing an inefficiency\",\n\"reproduction_steps\": [\"Create a distinct queryset without slicing (no high_mark or low_mark)\", \"Call .exists() on the queryset\", \"Observe that all fields are selected instead of only necessary fields\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\".exists()\", \".distinct()\"],\n\"input_conditions\": [\"distinct queryset\", \"non-sliced queryset\", \"high_mark is None\", \"low_mark is None\"],\n\"expected\": \"exists() on distinct, non-sliced querysets should not select all fields for efficiency\",\n\"actual\": \"exists() on distinct, non-sliced querysets selects all fields, causing an inefficiency\",\n\"reproduction_steps\": [\"Create a distinct queryset without slicing (no high_mark or low_mark)\", \"Call .exists() on the queryset\", \"Observe that all fields are selected instead of only necessary fields\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,51 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Cli-1",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "CommandLine.getOptionValue",
+      "OptionBuilder"
+    ],
+    "input_conditions": [
+      "Option created with long and short option names"
+    ],
+    "reproduction_steps": [
+      "Create an OptionBuilder with a long option name and a short option character",
+      "Call getOptionValue with the long option name"
+    ],
+    "expected": [
+      "Calling getOptionValue with full string name should return the option value"
+    ],
+    "actual": [
+      "Calling getOptionValue with full string name returns null"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "CommandLine.getOptionValue",
+      "OptionBuilder"
+    ],
+    "input_conditions": [
+      "Option created with long and short option names"
+    ],
+    "reproduction_steps": [
+      "Create an OptionBuilder with a long option name and a short option character",
+      "Call getOptionValue with the long option name"
+    ],
+    "expected": [
+      "Calling getOptionValue with full string name should return the option value"
+    ],
+    "actual": [
+      "Calling getOptionValue with full string name returns null"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"CommandLine.getOptionValue\", \"OptionBuilder\"],\n  \"input_conditions\": [\"Option created with long and short option names\"],\n  \"expected\": \"Calling getOptionValue with full string name should return the option value\",\n  \"actual\": \"Calling getOptionValue with full string name returns null\",\n  \"reproduction_steps\": [\n    \"Create an OptionBuilder with a long option name and a short option character\",\n    \"Call getOptionValue with the long option name\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"CommandLine.getOptionValue\", \"OptionBuilder\"],\n  \"input_conditions\": [\"Option created with long and short option names\"],\n  \"expected\": \"Calling getOptionValue with full string name should return the option value\",\n  \"actual\": \"Calling getOptionValue with full string name returns null\",\n  \"reproduction_steps\": [\n    \"Create an OptionBuilder with a long option name and a short option character\",\n    \"Call getOptionValue with the long option name\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

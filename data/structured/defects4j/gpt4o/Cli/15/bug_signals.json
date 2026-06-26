@@ -1,0 +1,65 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Cli-15",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "OptionException"
+    ],
+    "api_involved": [
+      "DefaultOptionBuilder",
+      "ArgumentBuilder",
+      "GroupBuilder",
+      "Parser"
+    ],
+    "input_conditions": [
+      "argument -b passed",
+      "minimum argument count set with defaults"
+    ],
+    "reproduction_steps": [
+      "Set up DefaultOption with minimum and maximum argument count",
+      "Provide one argument for an Option expected to have defaults",
+      "Parse arguments with Parser",
+      "Check returned values against expected defaults"
+    ],
+    "expected": [
+      "Default values should be used when not all arguments are provided"
+    ],
+    "actual": [
+      "Default values are not used when fewer arguments than maximum are provided"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "OptionException"
+    ],
+    "api_involved": [
+      "DefaultOptionBuilder",
+      "ArgumentBuilder",
+      "GroupBuilder",
+      "Parser"
+    ],
+    "input_conditions": [
+      "argument -b passed",
+      "minimum argument count set with defaults"
+    ],
+    "reproduction_steps": [
+      "Set up DefaultOption with minimum and maximum argument count",
+      "Provide one argument for an Option expected to have defaults",
+      "Parse arguments with Parser",
+      "Check returned values against expected defaults"
+    ],
+    "expected": [
+      "Default values should be used when not all arguments are provided"
+    ],
+    "actual": [
+      "Default values are not used when fewer arguments than maximum are provided"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"OptionException\",\n  \"api_involved\": [\"DefaultOptionBuilder\", \"ArgumentBuilder\", \"GroupBuilder\", \"Parser\"],\n  \"input_conditions\": [\"argument -b passed\", \"minimum argument count set with defaults\"],\n  \"expected\": \"Default values should be used when not all arguments are provided\",\n  \"actual\": \"Default values are not used when fewer arguments than maximum are provided\",\n  \"reproduction_steps\": [\n    \"Set up DefaultOption with minimum and maximum argument count\",\n    \"Provide one argument for an Option expected to have defaults\",\n    \"Parse arguments with Parser\",\n    \"Check returned values against expected defaults\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"OptionException\",\n  \"api_involved\": [\"DefaultOptionBuilder\", \"ArgumentBuilder\", \"GroupBuilder\", \"Parser\"],\n  \"input_conditions\": [\"argument -b passed\", \"minimum argument count set with defaults\"],\n  \"expected\": \"Default values should be used when not all arguments are provided\",\n  \"actual\": \"Default values are not used when fewer arguments than maximum are provided\",\n  \"reproduction_steps\": [\n    \"Set up DefaultOption with minimum and maximum argument count\",\n    \"Provide one argument for an Option expected to have defaults\",\n    \"Parse arguments with Parser\",\n    \"Check returned values against expected defaults\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

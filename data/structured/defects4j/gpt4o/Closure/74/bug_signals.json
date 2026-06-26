@@ -1,0 +1,51 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-74",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [],
+    "input_conditions": [
+      "true == null",
+      "true == false",
+      "a == true"
+    ],
+    "reproduction_steps": [
+      "Run alert(true == null ? a() : b())",
+      "Run alert(true == false ? a() : b())",
+      "Define function sum(a, b) { return (a == true ? 2 : a) + b; } and call alert(sum(true, 1))"
+    ],
+    "expected": [
+      "Correct evaluation of inline if statements resulting in correct alert outputs"
+    ],
+    "actual": [
+      "Incorrect evaluation of inline if statements leading to unexpected alert outputs"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [],
+    "input_conditions": [
+      "true == null",
+      "true == false",
+      "a == true"
+    ],
+    "reproduction_steps": [
+      "Run alert(true == null ? a() : b())",
+      "Run alert(true == false ? a() : b())",
+      "Define function sum(a, b) { return (a == true ? 2 : a) + b; } and call alert(sum(true, 1))"
+    ],
+    "expected": [
+      "Correct evaluation of inline if statements resulting in correct alert outputs"
+    ],
+    "actual": [
+      "Incorrect evaluation of inline if statements leading to unexpected alert outputs"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [],\n  \"input_conditions\": [\"true == null\", \"true == false\", \"a == true\"],\n  \"expected\": \"Correct evaluation of inline if statements resulting in correct alert outputs\",\n  \"actual\": \"Incorrect evaluation of inline if statements leading to unexpected alert outputs\",\n  \"reproduction_steps\": [\n    \"Run alert(true == null ? a() : b())\",\n    \"Run alert(true == false ? a() : b())\",\n    \"Define function sum(a, b) { return (a == true ? 2 : a) + b; } and call alert(sum(true, 1))\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [],\n  \"input_conditions\": [\"true == null\", \"true == false\", \"a == true\"],\n  \"expected\": \"Correct evaluation of inline if statements resulting in correct alert outputs\",\n  \"actual\": \"Incorrect evaluation of inline if statements leading to unexpected alert outputs\",\n  \"reproduction_steps\": [\n    \"Run alert(true == null ? a() : b())\",\n    \"Run alert(true == false ? a() : b())\",\n    \"Define function sum(a, b) { return (a == true ? 2 : a) + b; } and call alert(sum(true, 1))\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

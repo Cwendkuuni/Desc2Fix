@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-12419",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "M.T * M",
+      "SymPy identity matrix recognition",
+      "sum",
+      "diagonal sum"
+    ],
+    "input_conditions": [
+      "M is assumed to be orthogonal",
+      "M.T * M results in an identity matrix"
+    ],
+    "reproduction_steps": [
+      "Create a matrix M assumed to be orthogonal",
+      "Compute M.T * M to get an identity matrix",
+      "Verify the result is identity using element-wise queries, queries, and sum of diagonal elements (all pass)",
+      "Compute the total sum of all elements of the matrix"
+    ],
+    "expected": [
+      "Sum of all elements of the identity matrix equals n (the dimension)"
+    ],
+    "actual": [
+      "Sum of all elements is 0"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "M.T * M",
+      "SymPy identity matrix recognition",
+      "sum",
+      "diagonal sum"
+    ],
+    "input_conditions": [
+      "M is assumed to be orthogonal",
+      "M.T * M results in an identity matrix"
+    ],
+    "reproduction_steps": [
+      "Create a matrix M assumed to be orthogonal",
+      "Compute M.T * M to get an identity matrix",
+      "Verify the result is identity using element-wise queries, queries, and sum of diagonal elements (all pass)",
+      "Compute the total sum of all elements of the matrix"
+    ],
+    "expected": [
+      "Sum of all elements of the identity matrix equals n (the dimension)"
+    ],
+    "actual": [
+      "Sum of all elements is 0"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"M.T * M\", \"SymPy identity matrix recognition\", \"sum\", \"diagonal sum\"],\n\"input_conditions\": [\"M is assumed to be orthogonal\", \"M.T * M results in an identity matrix\"],\n\"expected\": \"Sum of all elements of the identity matrix equals n (the dimension)\",\n\"actual\": \"Sum of all elements is 0\",\n\"reproduction_steps\": [\n    \"Create a matrix M assumed to be orthogonal\",\n    \"Compute M.T * M to get an identity matrix\",\n    \"Verify the result is identity using element-wise queries, queries, and sum of diagonal elements (all pass)\",\n    \"Compute the total sum of all elements of the matrix\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"M.T * M\", \"SymPy identity matrix recognition\", \"sum\", \"diagonal sum\"],\n\"input_conditions\": [\"M is assumed to be orthogonal\", \"M.T * M results in an identity matrix\"],\n\"expected\": \"Sum of all elements of the identity matrix equals n (the dimension)\",\n\"actual\": \"Sum of all elements is 0\",\n\"reproduction_steps\": [\n    \"Create a matrix M assumed to be orthogonal\",\n    \"Compute M.T * M to get an identity matrix\",\n    \"Verify the result is identity using element-wise queries, queries, and sum of diagonal elements (all pass)\",\n    \"Compute the total sum of all elements of the matrix\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

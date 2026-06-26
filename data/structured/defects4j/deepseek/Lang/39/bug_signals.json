@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Lang-39",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "StringUtils.replaceEach"
+    ],
+    "input_conditions": [
+      "replacementList contains null element",
+      "searchList is non-null",
+      "original string is non-null"
+    ],
+    "reproduction_steps": [
+      "Create a String original = \"Hello World!\";",
+      "Create String[] searchList = {\"Hello\", \"World\"};",
+      "Create String[] replacementList = {\"Greetings\", null};",
+      "Call StringUtils.replaceEach(original, searchList, replacementList);",
+      "Observe NullPointerException."
+    ],
+    "expected": [
+      "The method should handle null elements in the replacementList gracefully, either by ignoring them, replacing with the string 'null', or skipping the replacement."
+    ],
+    "actual": [
+      "NullPointerException is thrown when null appears in the replacementList array."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "StringUtils.replaceEach"
+    ],
+    "input_conditions": [
+      "replacementList contains null element",
+      "searchList is non-null",
+      "original string is non-null"
+    ],
+    "reproduction_steps": [
+      "Create a String original = \"Hello World!\";",
+      "Create String[] searchList = {\"Hello\", \"World\"};",
+      "Create String[] replacementList = {\"Greetings\", null};",
+      "Call StringUtils.replaceEach(original, searchList, replacementList);",
+      "Observe NullPointerException."
+    ],
+    "expected": [
+      "The method should handle null elements in the replacementList gracefully, either by ignoring them, replacing with the string 'null', or skipping the replacement."
+    ],
+    "actual": [
+      "NullPointerException is thrown when null appears in the replacementList array."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"NullPointerException\",\n\"api_involved\": [\"StringUtils.replaceEach\"],\n\"input_conditions\": [\"replacementList contains null element\", \"searchList is non-null\", \"original string is non-null\"],\n\"expected\": \"The method should handle null elements in the replacementList gracefully, either by ignoring them, replacing with the string 'null', or skipping the replacement.\",\n\"actual\": \"NullPointerException is thrown when null appears in the replacementList array.\",\n\"reproduction_steps\": [\n\"Create a String original = \\\"Hello World!\\\";\",\n\"Create String[] searchList = {\\\"Hello\\\", \\\"World\\\"};\",\n\"Create String[] replacementList = {\\\"Greetings\\\", null};\",\n\"Call StringUtils.replaceEach(original, searchList, replacementList);\",\n\"Observe NullPointerException.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"NullPointerException\",\n\"api_involved\": [\"StringUtils.replaceEach\"],\n\"input_conditions\": [\"replacementList contains null element\", \"searchList is non-null\", \"original string is non-null\"],\n\"expected\": \"The method should handle null elements in the replacementList gracefully, either by ignoring them, replacing with the string 'null', or skipping the replacement.\",\n\"actual\": \"NullPointerException is thrown when null appears in the replacementList array.\",\n\"reproduction_steps\": [\n\"Create a String original = \\\"Hello World!\\\";\",\n\"Create String[] searchList = {\\\"Hello\\\", \\\"World\\\"};\",\n\"Create String[] replacementList = {\\\"Greetings\\\", null};\",\n\"Call StringUtils.replaceEach(original, searchList, replacementList);\",\n\"Observe NullPointerException.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

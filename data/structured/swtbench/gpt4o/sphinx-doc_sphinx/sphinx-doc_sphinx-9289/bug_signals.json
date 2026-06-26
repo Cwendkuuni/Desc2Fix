@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sphinx-doc__sphinx-9289",
+  "project": null,
+  "repo": "sphinx-doc/sphinx",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Sphinx v4.0.2"
+    ],
+    "input_conditions": [
+      "Python 3.9",
+      "new configuration 'python_use_unqualified_type_names'"
+    ],
+    "reproduction_steps": [
+      "Use Sphinx 4.0.2 with Python 3.9",
+      "Combine with new configuration"
+    ],
+    "expected": [
+      "The link to be shortened as it is supposed to."
+    ],
+    "actual": [
+      "The type names are not shortened even though links are created."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Sphinx v4.0.2"
+    ],
+    "input_conditions": [
+      "Python 3.9",
+      "new configuration 'python_use_unqualified_type_names'"
+    ],
+    "reproduction_steps": [
+      "Use Sphinx 4.0.2 with Python 3.9",
+      "Combine with new configuration"
+    ],
+    "expected": [
+      "The link to be shortened as it is supposed to."
+    ],
+    "actual": [
+      "The type names are not shortened even though links are created."
+    ]
+  },
+  "raw_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"Sphinx v4.0.2\"],\n\"input_conditions\": [\"Python 3.9\", \"new configuration 'python_use_unqualified_type_names'\"],\n\"expected\": \"The link to be shortened as it is supposed to.\",\n\"actual\": \"The type names are not shortened even though links are created.\",\n\"reproduction_steps\": [\"Use Sphinx 4.0.2 with Python 3.9\", \"Combine with new configuration\"]\n}\n```",
+  "llm_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"Sphinx v4.0.2\"],\n\"input_conditions\": [\"Python 3.9\", \"new configuration 'python_use_unqualified_type_names'\"],\n\"expected\": \"The link to be shortened as it is supposed to.\",\n\"actual\": \"The type names are not shortened even though links are created.\",\n\"reproduction_steps\": [\"Use Sphinx 4.0.2 with Python 3.9\", \"Combine with new configuration\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

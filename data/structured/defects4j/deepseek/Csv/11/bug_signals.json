@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Csv-11",
+  "project": "Csv",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "CSVParser",
+      "CSVParserTest"
+    ],
+    "input_conditions": [
+      "empty header string",
+      "nullString set to \"\""
+    ],
+    "reproduction_steps": [
+      "Set the format to have a nullString of \"\"",
+      "Use an empty header string",
+      "Parse the CSV input"
+    ],
+    "expected": [
+      "No exception thrown"
+    ],
+    "actual": [
+      "NullPointerException thrown"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "CSVParser",
+      "CSVParserTest"
+    ],
+    "input_conditions": [
+      "empty header string",
+      "nullString set to \"\""
+    ],
+    "reproduction_steps": [
+      "Set the format to have a nullString of \"\"",
+      "Use an empty header string",
+      "Parse the CSV input"
+    ],
+    "expected": [
+      "No exception thrown"
+    ],
+    "actual": [
+      "NullPointerException thrown"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"NullPointerException\",\n\"api_involved\": [\"CSVParser\", \"CSVParserTest\"],\n\"input_conditions\": [\"empty header string\", \"nullString set to \\\"\\\"\"],\n\"expected\": \"No exception thrown\",\n\"actual\": \"NullPointerException thrown\",\n\"reproduction_steps\": [\"Set the format to have a nullString of \\\"\\\"\", \"Use an empty header string\", \"Parse the CSV input\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"NullPointerException\",\n\"api_involved\": [\"CSVParser\", \"CSVParserTest\"],\n\"input_conditions\": [\"empty header string\", \"nullString set to \\\"\\\"\"],\n\"expected\": \"No exception thrown\",\n\"actual\": \"NullPointerException thrown\",\n\"reproduction_steps\": [\"Set the format to have a nullString of \\\"\\\"\", \"Use an empty header string\", \"Parse the CSV input\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

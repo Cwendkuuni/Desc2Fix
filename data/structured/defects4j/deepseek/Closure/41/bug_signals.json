@@ -1,0 +1,71 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-41",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Compiler",
+      "Bar.prototype.add",
+      "Bar.prototype.sub",
+      "Foo.prototype.add",
+      "Foo.prototype.sub"
+    ],
+    "input_conditions": [
+      "ADVANCED_OPTIMIZATIONS compilation level",
+      "@use_closure_library true",
+      "@inheritDoc on overriding methods",
+      "overridden method has different signature (fewer parameters) than superclass method"
+    ],
+    "reproduction_steps": [
+      "Create a superclass Foo with methods add(a,b) and sub(a,b).",
+      "Create a subclass Bar that inherits from Foo.",
+      "Override Foo.prototype.add in Bar with a method that takes one parameter (one) and use @inheritDoc.",
+      "Override Foo.prototype.sub in Bar with a method that takes one parameter (one) and use @inheritDoc.",
+      "Compile the code with ADVANCED_OPTIMIZATIONS and @use_closure_library true.",
+      "Observe that no warning is issued for the overridden method declarations, only when calling bar.add(3,4) at runtime."
+    ],
+    "expected": [
+      "Compiler should warn about both Bar.prototype.add and Bar.prototype.sub because they have @inheritDoc but their signatures differ from the superclass methods they override."
+    ],
+    "actual": [
+      "Compiler only warns in one instance (JSC_WRONG_ARGUMENT_COUNT when calling bar.add(3,4)) but does not warn about the declarations of Bar.prototype.add and Bar.prototype.sub themselves."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Compiler",
+      "Bar.prototype.add",
+      "Bar.prototype.sub",
+      "Foo.prototype.add",
+      "Foo.prototype.sub"
+    ],
+    "input_conditions": [
+      "ADVANCED_OPTIMIZATIONS compilation level",
+      "@use_closure_library true",
+      "@inheritDoc on overriding methods",
+      "overridden method has different signature (fewer parameters) than superclass method"
+    ],
+    "reproduction_steps": [
+      "Create a superclass Foo with methods add(a,b) and sub(a,b).",
+      "Create a subclass Bar that inherits from Foo.",
+      "Override Foo.prototype.add in Bar with a method that takes one parameter (one) and use @inheritDoc.",
+      "Override Foo.prototype.sub in Bar with a method that takes one parameter (one) and use @inheritDoc.",
+      "Compile the code with ADVANCED_OPTIMIZATIONS and @use_closure_library true.",
+      "Observe that no warning is issued for the overridden method declarations, only when calling bar.add(3,4) at runtime."
+    ],
+    "expected": [
+      "Compiler should warn about both Bar.prototype.add and Bar.prototype.sub because they have @inheritDoc but their signatures differ from the superclass methods they override."
+    ],
+    "actual": [
+      "Compiler only warns in one instance (JSC_WRONG_ARGUMENT_COUNT when calling bar.add(3,4)) but does not warn about the declarations of Bar.prototype.add and Bar.prototype.sub themselves."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Compiler\", \"Bar.prototype.add\", \"Bar.prototype.sub\", \"Foo.prototype.add\", \"Foo.prototype.sub\"],\n\"input_conditions\": [\"ADVANCED_OPTIMIZATIONS compilation level\", \"@use_closure_library true\", \"@inheritDoc on overriding methods\", \"overridden method has different signature (fewer parameters) than superclass method\"],\n\"expected\": \"Compiler should warn about both Bar.prototype.add and Bar.prototype.sub because they have @inheritDoc but their signatures differ from the superclass methods they override.\",\n\"actual\": \"Compiler only warns in one instance (JSC_WRONG_ARGUMENT_COUNT when calling bar.add(3,4)) but does not warn about the declarations of Bar.prototype.add and Bar.prototype.sub themselves.\",\n\"reproduction_steps\": [\n  \"Create a superclass Foo with methods add(a,b) and sub(a,b).\",\n  \"Create a subclass Bar that inherits from Foo.\",\n  \"Override Foo.prototype.add in Bar with a method that takes one parameter (one) and use @inheritDoc.\",\n  \"Override Foo.prototype.sub in Bar with a method that takes one parameter (one) and use @inheritDoc.\",\n  \"Compile the code with ADVANCED_OPTIMIZATIONS and @use_closure_library true.\",\n  \"Observe that no warning is issued for the overridden method declarations, only when calling bar.add(3,4) at runtime.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Compiler\", \"Bar.prototype.add\", \"Bar.prototype.sub\", \"Foo.prototype.add\", \"Foo.prototype.sub\"],\n\"input_conditions\": [\"ADVANCED_OPTIMIZATIONS compilation level\", \"@use_closure_library true\", \"@inheritDoc on overriding methods\", \"overridden method has different signature (fewer parameters) than superclass method\"],\n\"expected\": \"Compiler should warn about both Bar.prototype.add and Bar.prototype.sub because they have @inheritDoc but their signatures differ from the superclass methods they override.\",\n\"actual\": \"Compiler only warns in one instance (JSC_WRONG_ARGUMENT_COUNT when calling bar.add(3,4)) but does not warn about the declarations of Bar.prototype.add and Bar.prototype.sub themselves.\",\n\"reproduction_steps\": [\n  \"Create a superclass Foo with methods add(a,b) and sub(a,b).\",\n  \"Create a subclass Bar that inherits from Foo.\",\n  \"Override Foo.prototype.add in Bar with a method that takes one parameter (one) and use @inheritDoc.\",\n  \"Override Foo.prototype.sub in Bar with a method that takes one parameter (one) and use @inheritDoc.\",\n  \"Compile the code with ADVANCED_OPTIMIZATIONS and @use_closure_library true.\",\n  \"Observe that no warning is issued for the overridden method declarations, only when calling bar.add(3,4) at runtime.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

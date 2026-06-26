@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-15380",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "KeyError: ('test_one', 'mymodel')"
+    ],
+    "api_involved": [
+      "autodetector.changes",
+      "execute_from_command_line",
+      "makemigrations"
+    ],
+    "input_conditions": [
+      "Renaming a model from test_one.MyModel to MyModel2"
+    ],
+    "reproduction_steps": [
+      "Run the command: python manage.py makemigrations",
+      "Rename a model and field in a single step when prompted"
+    ],
+    "expected": [
+      "Migration changes should be detected and executed without error."
+    ],
+    "actual": [
+      "Migration autodetector crashes with a KeyError."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "KeyError: ('test_one', 'mymodel')"
+    ],
+    "api_involved": [
+      "autodetector.changes",
+      "execute_from_command_line",
+      "makemigrations"
+    ],
+    "input_conditions": [
+      "Renaming a model from test_one.MyModel to MyModel2"
+    ],
+    "reproduction_steps": [
+      "Run the command: python manage.py makemigrations",
+      "Rename a model and field in a single step when prompted"
+    ],
+    "expected": [
+      "Migration changes should be detected and executed without error."
+    ],
+    "actual": [
+      "Migration autodetector crashes with a KeyError."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"KeyError: ('test_one', 'mymodel')\",\n  \"api_involved\": [\"autodetector.changes\", \"execute_from_command_line\", \"makemigrations\"],\n  \"input_conditions\": [\"Renaming a model from test_one.MyModel to MyModel2\"],\n  \"expected\": \"Migration changes should be detected and executed without error.\",\n  \"actual\": \"Migration autodetector crashes with a KeyError.\",\n  \"reproduction_steps\": [\n    \"Run the command: python manage.py makemigrations\",\n    \"Rename a model and field in a single step when prompted\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"KeyError: ('test_one', 'mymodel')\",\n  \"api_involved\": [\"autodetector.changes\", \"execute_from_command_line\", \"makemigrations\"],\n  \"input_conditions\": [\"Renaming a model from test_one.MyModel to MyModel2\"],\n  \"expected\": \"Migration changes should be detected and executed without error.\",\n  \"actual\": \"Migration autodetector crashes with a KeyError.\",\n  \"reproduction_steps\": [\n    \"Run the command: python manage.py makemigrations\",\n    \"Rename a model and field in a single step when prompted\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

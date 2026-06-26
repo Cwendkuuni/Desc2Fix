@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Lang-39",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "null pointer exception"
+    ],
+    "api_involved": [
+      "StringUtils.replaceEach"
+    ],
+    "input_conditions": [
+      "original string: 'Hello World!'",
+      "searchList: ['Hello', 'World']",
+      "replacementList: ['Greetings', null]"
+    ],
+    "reproduction_steps": [
+      "Create a test with original: 'Hello World!', searchList: ['Hello', 'World'], replacementList: ['Greetings', null]",
+      "Call StringUtils.replaceEach with these parameters",
+      "Observe the null pointer exception"
+    ],
+    "expected": [
+      "result should equal 'Greetings !'"
+    ],
+    "actual": [
+      "null pointer exception occurs"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "null pointer exception"
+    ],
+    "api_involved": [
+      "StringUtils.replaceEach"
+    ],
+    "input_conditions": [
+      "original string: 'Hello World!'",
+      "searchList: ['Hello', 'World']",
+      "replacementList: ['Greetings', null]"
+    ],
+    "reproduction_steps": [
+      "Create a test with original: 'Hello World!', searchList: ['Hello', 'World'], replacementList: ['Greetings', null]",
+      "Call StringUtils.replaceEach with these parameters",
+      "Observe the null pointer exception"
+    ],
+    "expected": [
+      "result should equal 'Greetings !'"
+    ],
+    "actual": [
+      "null pointer exception occurs"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"null pointer exception\",\n  \"api_involved\": [\"StringUtils.replaceEach\"],\n  \"input_conditions\": [\"original string: 'Hello World!'\", \"searchList: ['Hello', 'World']\", \"replacementList: ['Greetings', null]\"],\n  \"expected\": \"result should equal 'Greetings !'\",\n  \"actual\": \"null pointer exception occurs\",\n  \"reproduction_steps\": [\"Create a test with original: 'Hello World!', searchList: ['Hello', 'World'], replacementList: ['Greetings', null]\", \"Call StringUtils.replaceEach with these parameters\", \"Observe the null pointer exception\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"null pointer exception\",\n  \"api_involved\": [\"StringUtils.replaceEach\"],\n  \"input_conditions\": [\"original string: 'Hello World!'\", \"searchList: ['Hello', 'World']\", \"replacementList: ['Greetings', null]\"],\n  \"expected\": \"result should equal 'Greetings !'\",\n  \"actual\": \"null pointer exception occurs\",\n  \"reproduction_steps\": [\"Create a test with original: 'Hello World!', searchList: ['Hello', 'World'], replacementList: ['Greetings', null]\", \"Call StringUtils.replaceEach with these parameters\", \"Observe the null pointer exception\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,51 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-93",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "MathUtils.factorial",
+      "MathUtilsTest.testFactorial"
+    ],
+    "input_conditions": [
+      "n >= 17"
+    ],
+    "reproduction_steps": [
+      "Replace the first line of MathUtilsTest.testFactorial() with 'for (int i = 1; i <= 20; i++) {'",
+      "Run the test to check all valid arguments for the long result"
+    ],
+    "expected": [
+      "Correct factorial result for n >= 17"
+    ],
+    "actual": [
+      "Incorrect factorial result due to rounding errors in double calculations"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "MathUtils.factorial",
+      "MathUtilsTest.testFactorial"
+    ],
+    "input_conditions": [
+      "n >= 17"
+    ],
+    "reproduction_steps": [
+      "Replace the first line of MathUtilsTest.testFactorial() with 'for (int i = 1; i <= 20; i++) {'",
+      "Run the test to check all valid arguments for the long result"
+    ],
+    "expected": [
+      "Correct factorial result for n >= 17"
+    ],
+    "actual": [
+      "Incorrect factorial result due to rounding errors in double calculations"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"MathUtils.factorial\", \"MathUtilsTest.testFactorial\"],\n  \"input_conditions\": [\"n >= 17\"],\n  \"expected\": \"Correct factorial result for n >= 17\",\n  \"actual\": \"Incorrect factorial result due to rounding errors in double calculations\",\n  \"reproduction_steps\": [\"Replace the first line of MathUtilsTest.testFactorial() with 'for (int i = 1; i <= 20; i++) {'\", \"Run the test to check all valid arguments for the long result\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"MathUtils.factorial\", \"MathUtilsTest.testFactorial\"],\n  \"input_conditions\": [\"n >= 17\"],\n  \"expected\": \"Correct factorial result for n >= 17\",\n  \"actual\": \"Incorrect factorial result due to rounding errors in double calculations\",\n  \"reproduction_steps\": [\"Replace the first line of MathUtilsTest.testFactorial() with 'for (int i = 1; i <= 20; i++) {'\", \"Run the test to check all valid arguments for the long result\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

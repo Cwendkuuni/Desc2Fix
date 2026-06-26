@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-12161",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "through_defaults",
+      "get_or_create"
+    ],
+    "input_conditions": [
+      "callable values passed to through_defaults"
+    ],
+    "reproduction_steps": [
+      "Create a model with a through_defaults argument that includes a callable value",
+      "Call the appropriate API (e.g., related manager add or create) that uses through_defaults",
+      "Observe that the callable is not evaluated and its string representation is saved to the database"
+    ],
+    "expected": [
+      "callable values in through_defaults should be evaluated (called) before being saved to the database"
+    ],
+    "actual": [
+      "callable values are passed through without being evaluated, causing the repr() of the function (e.g., with CharField) to be saved instead of the computed value"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "through_defaults",
+      "get_or_create"
+    ],
+    "input_conditions": [
+      "callable values passed to through_defaults"
+    ],
+    "reproduction_steps": [
+      "Create a model with a through_defaults argument that includes a callable value",
+      "Call the appropriate API (e.g., related manager add or create) that uses through_defaults",
+      "Observe that the callable is not evaluated and its string representation is saved to the database"
+    ],
+    "expected": [
+      "callable values in through_defaults should be evaluated (called) before being saved to the database"
+    ],
+    "actual": [
+      "callable values are passed through without being evaluated, causing the repr() of the function (e.g., with CharField) to be saved instead of the computed value"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"through_defaults\", \"get_or_create\"],\n\"input_conditions\": [\"callable values passed to through_defaults\"],\n\"expected\": \"callable values in through_defaults should be evaluated (called) before being saved to the database\",\n\"actual\": \"callable values are passed through without being evaluated, causing the repr() of the function (e.g., with CharField) to be saved instead of the computed value\",\n\"reproduction_steps\": [\"Create a model with a through_defaults argument that includes a callable value\", \"Call the appropriate API (e.g., related manager add or create) that uses through_defaults\", \"Observe that the callable is not evaluated and its string representation is saved to the database\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"through_defaults\", \"get_or_create\"],\n\"input_conditions\": [\"callable values passed to through_defaults\"],\n\"expected\": \"callable values in through_defaults should be evaluated (called) before being saved to the database\",\n\"actual\": \"callable values are passed through without being evaluated, causing the repr() of the function (e.g., with CharField) to be saved instead of the computed value\",\n\"reproduction_steps\": [\"Create a model with a through_defaults argument that includes a callable value\", \"Call the appropriate API (e.g., related manager add or create) that uses through_defaults\", \"Observe that the callable is not evaluated and its string representation is saved to the database\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

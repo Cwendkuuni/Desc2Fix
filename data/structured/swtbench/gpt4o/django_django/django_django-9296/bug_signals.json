@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-9296",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Paginator",
+      "__iter__",
+      "page_range",
+      "page"
+    ],
+    "input_conditions": [
+      "use of Paginator object"
+    ],
+    "reproduction_steps": [
+      "Attempt to iterate through Paginator object using a for loop in Python."
+    ],
+    "expected": [
+      "Ability to iterate through all pages of a Paginator object using the __iter__ method."
+    ],
+    "actual": [
+      "Iteration through pages of a Paginator object requires using the page_range function."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Paginator",
+      "__iter__",
+      "page_range",
+      "page"
+    ],
+    "input_conditions": [
+      "use of Paginator object"
+    ],
+    "reproduction_steps": [
+      "Attempt to iterate through Paginator object using a for loop in Python."
+    ],
+    "expected": [
+      "Ability to iterate through all pages of a Paginator object using the __iter__ method."
+    ],
+    "actual": [
+      "Iteration through pages of a Paginator object requires using the page_range function."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"Paginator\", \"__iter__\", \"page_range\", \"page\"],\n  \"input_conditions\": [\"use of Paginator object\"],\n  \"expected\": \"Ability to iterate through all pages of a Paginator object using the __iter__ method.\",\n  \"actual\": \"Iteration through pages of a Paginator object requires using the page_range function.\",\n  \"reproduction_steps\": [\"Attempt to iterate through Paginator object using a for loop in Python.\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"Paginator\", \"__iter__\", \"page_range\", \"page\"],\n  \"input_conditions\": [\"use of Paginator object\"],\n  \"expected\": \"Ability to iterate through all pages of a Paginator object using the __iter__ method.\",\n  \"actual\": \"Iteration through pages of a Paginator object requires using the page_range function.\",\n  \"reproduction_steps\": [\"Attempt to iterate through Paginator object using a for loop in Python.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

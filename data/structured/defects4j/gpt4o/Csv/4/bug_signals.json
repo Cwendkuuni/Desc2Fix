@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Csv-4",
+  "project": "Csv",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.NullPointerException"
+    ],
+    "api_involved": [
+      "CSVParser.getHeaderMap"
+    ],
+    "input_conditions": [
+      "format doesn't have a headerMap"
+    ],
+    "reproduction_steps": [
+      "Create a CSVParser without headers",
+      "Call getHeaderMap method on the parser"
+    ],
+    "expected": [
+      "Return a map of CSV headers"
+    ],
+    "actual": [
+      "NullPointerException is thrown"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.NullPointerException"
+    ],
+    "api_involved": [
+      "CSVParser.getHeaderMap"
+    ],
+    "input_conditions": [
+      "format doesn't have a headerMap"
+    ],
+    "reproduction_steps": [
+      "Create a CSVParser without headers",
+      "Call getHeaderMap method on the parser"
+    ],
+    "expected": [
+      "Return a map of CSV headers"
+    ],
+    "actual": [
+      "NullPointerException is thrown"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"java.lang.NullPointerException\",\n  \"api_involved\": [\"CSVParser.getHeaderMap\"],\n  \"input_conditions\": [\"format doesn't have a headerMap\"],\n  \"expected\": \"Return a map of CSV headers\",\n  \"actual\": \"NullPointerException is thrown\",\n  \"reproduction_steps\": [\"Create a CSVParser without headers\", \"Call getHeaderMap method on the parser\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"java.lang.NullPointerException\",\n  \"api_involved\": [\"CSVParser.getHeaderMap\"],\n  \"input_conditions\": [\"format doesn't have a headerMap\"],\n  \"expected\": \"Return a map of CSV headers\",\n  \"actual\": \"NullPointerException is thrown\",\n  \"reproduction_steps\": [\"Create a CSVParser without headers\", \"Call getHeaderMap method on the parser\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

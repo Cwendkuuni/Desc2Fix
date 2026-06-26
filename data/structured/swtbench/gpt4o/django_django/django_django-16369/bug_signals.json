@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-16369",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "url may not exist or raise an error"
+    ],
+    "api_involved": [
+      "i18n",
+      "Sitemap"
+    ],
+    "input_conditions": [
+      "use i18n",
+      "translated urls"
+    ],
+    "reproduction_steps": [
+      "Enable i18n for the Sitemap",
+      "Try to display items specific to a language"
+    ],
+    "expected": [
+      "Display items depending on the language using i18n automation"
+    ],
+    "actual": [
+      "Cartesian product between some items and some languages is displayed"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "url may not exist or raise an error"
+    ],
+    "api_involved": [
+      "i18n",
+      "Sitemap"
+    ],
+    "input_conditions": [
+      "use i18n",
+      "translated urls"
+    ],
+    "reproduction_steps": [
+      "Enable i18n for the Sitemap",
+      "Try to display items specific to a language"
+    ],
+    "expected": [
+      "Display items depending on the language using i18n automation"
+    ],
+    "actual": [
+      "Cartesian product between some items and some languages is displayed"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"url may not exist or raise an error\",\n  \"api_involved\": [\"i18n\", \"Sitemap\"],\n  \"input_conditions\": [\"use i18n\", \"translated urls\"],\n  \"expected\": \"Display items depending on the language using i18n automation\",\n  \"actual\": \"Cartesian product between some items and some languages is displayed\",\n  \"reproduction_steps\": [\n    \"Enable i18n for the Sitemap\",\n    \"Try to display items specific to a language\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"url may not exist or raise an error\",\n  \"api_involved\": [\"i18n\", \"Sitemap\"],\n  \"input_conditions\": [\"use i18n\", \"translated urls\"],\n  \"expected\": \"Display items depending on the language using i18n automation\",\n  \"actual\": \"Cartesian product between some items and some languages is displayed\",\n  \"reproduction_steps\": [\n    \"Enable i18n for the Sitemap\",\n    \"Try to display items specific to a language\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

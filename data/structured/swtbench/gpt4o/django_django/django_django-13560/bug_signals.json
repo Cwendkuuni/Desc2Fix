@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-13560",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "ProtectedError/RestrictedError"
+    ],
+    "api_involved": [
+      "Collector.collect"
+    ],
+    "input_conditions": [
+      "instances of model 'A'",
+      "referenced through protected foreign keys"
+    ],
+    "reproduction_steps": [
+      "Attempt to delete instances of model 'A' that are referenced through protected foreign keys 'A.protect', 'B.protect'."
+    ],
+    "expected": [
+      "Exception message in Sentry should be informative."
+    ],
+    "actual": [
+      "repr of exception in Sentry is not informative."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ProtectedError/RestrictedError"
+    ],
+    "api_involved": [
+      "Collector.collect"
+    ],
+    "input_conditions": [
+      "instances of model 'A'",
+      "referenced through protected foreign keys"
+    ],
+    "reproduction_steps": [
+      "Attempt to delete instances of model 'A' that are referenced through protected foreign keys 'A.protect', 'B.protect'."
+    ],
+    "expected": [
+      "Exception message in Sentry should be informative."
+    ],
+    "actual": [
+      "repr of exception in Sentry is not informative."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"ProtectedError/RestrictedError\",\n  \"api_involved\": [\"Collector.collect\"],\n  \"input_conditions\": [\"instances of model 'A'\", \"referenced through protected foreign keys\"],\n  \"expected\": \"Exception message in Sentry should be informative.\",\n  \"actual\": \"repr of exception in Sentry is not informative.\",\n  \"reproduction_steps\": [\"Attempt to delete instances of model 'A' that are referenced through protected foreign keys 'A.protect', 'B.protect'.\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"ProtectedError/RestrictedError\",\n  \"api_involved\": [\"Collector.collect\"],\n  \"input_conditions\": [\"instances of model 'A'\", \"referenced through protected foreign keys\"],\n  \"expected\": \"Exception message in Sentry should be informative.\",\n  \"actual\": \"repr of exception in Sentry is not informative.\",\n  \"reproduction_steps\": [\"Attempt to delete instances of model 'A' that are referenced through protected foreign keys 'A.protect', 'B.protect'.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

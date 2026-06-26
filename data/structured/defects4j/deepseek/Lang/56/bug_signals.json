@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Lang-56",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "FindBugs reported non-transient or non-serializable mRules"
+    ],
+    "api_involved": [
+      "FastDateFormat",
+      "FastDateFormat.readObject",
+      "FastDateFormat.init",
+      "java.text.Format"
+    ],
+    "input_conditions": [
+      "FastDateFormat object has been serialized and deserialized",
+      "mPattern is serialized"
+    ],
+    "reproduction_steps": [
+      "Serialize a FastDateFormat instance",
+      "Deserialize the FastDateFormat instance",
+      "Attempt to format a date using the deserialized instance - the formatting fails or works incorrectly because mRules is missing or invalid"
+    ],
+    "expected": [
+      "After deserialization, FastDateFormat should correctly reinitialize mRules and mMaxLengthEstimate via the init() method so that formatting works properly."
+    ],
+    "actual": [
+      "mRules was not transient or serializable, causing potential serialization issues; after fix, mRules and mMaxLengthEstimate are made transient and readObject calls init() to restore them."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "FindBugs reported non-transient or non-serializable mRules"
+    ],
+    "api_involved": [
+      "FastDateFormat",
+      "FastDateFormat.readObject",
+      "FastDateFormat.init",
+      "java.text.Format"
+    ],
+    "input_conditions": [
+      "FastDateFormat object has been serialized and deserialized",
+      "mPattern is serialized"
+    ],
+    "reproduction_steps": [
+      "Serialize a FastDateFormat instance",
+      "Deserialize the FastDateFormat instance",
+      "Attempt to format a date using the deserialized instance - the formatting fails or works incorrectly because mRules is missing or invalid"
+    ],
+    "expected": [
+      "After deserialization, FastDateFormat should correctly reinitialize mRules and mMaxLengthEstimate via the init() method so that formatting works properly."
+    ],
+    "actual": [
+      "mRules was not transient or serializable, causing potential serialization issues; after fix, mRules and mMaxLengthEstimate are made transient and readObject calls init() to restore them."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"FindBugs reported non-transient or non-serializable mRules\",\n\"api_involved\": [\"FastDateFormat\", \"FastDateFormat.readObject\", \"FastDateFormat.init\", \"java.text.Format\"],\n\"input_conditions\": [\"FastDateFormat object has been serialized and deserialized\", \"mPattern is serialized\"],\n\"expected\": \"After deserialization, FastDateFormat should correctly reinitialize mRules and mMaxLengthEstimate via the init() method so that formatting works properly.\",\n\"actual\": \"mRules was not transient or serializable, causing potential serialization issues; after fix, mRules and mMaxLengthEstimate are made transient and readObject calls init() to restore them.\",\n\"reproduction_steps\": [\"Serialize a FastDateFormat instance\", \"Deserialize the FastDateFormat instance\", \"Attempt to format a date using the deserialized instance - the formatting fails or works incorrectly because mRules is missing or invalid\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"FindBugs reported non-transient or non-serializable mRules\",\n\"api_involved\": [\"FastDateFormat\", \"FastDateFormat.readObject\", \"FastDateFormat.init\", \"java.text.Format\"],\n\"input_conditions\": [\"FastDateFormat object has been serialized and deserialized\", \"mPattern is serialized\"],\n\"expected\": \"After deserialization, FastDateFormat should correctly reinitialize mRules and mMaxLengthEstimate via the init() method so that formatting works properly.\",\n\"actual\": \"mRules was not transient or serializable, causing potential serialization issues; after fix, mRules and mMaxLengthEstimate are made transient and readObject calls init() to restore them.\",\n\"reproduction_steps\": [\"Serialize a FastDateFormat instance\", \"Deserialize the FastDateFormat instance\", \"Attempt to format a date using the deserialized instance - the formatting fails or works incorrectly because mRules is missing or invalid\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,49 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-14575",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "binomial"
+    ],
+    "input_conditions": [
+      "negative k for binomial coefficient"
+    ],
+    "reproduction_steps": [
+      "Call binomial function with a negative value for k",
+      "Observe that the result is not zero as documented"
+    ],
+    "expected": [
+      "For negative 'k', the function should return zero regardless of the other argument."
+    ],
+    "actual": [
+      "The implementation returns a non-zero value for negative 'k', contrary to the documented behavior."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "binomial"
+    ],
+    "input_conditions": [
+      "negative k for binomial coefficient"
+    ],
+    "reproduction_steps": [
+      "Call binomial function with a negative value for k",
+      "Observe that the result is not zero as documented"
+    ],
+    "expected": [
+      "For negative 'k', the function should return zero regardless of the other argument."
+    ],
+    "actual": [
+      "The implementation returns a non-zero value for negative 'k', contrary to the documented behavior."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"binomial\"],\n\"input_conditions\": [\"negative k for binomial coefficient\"],\n\"expected\": \"For negative 'k', the function should return zero regardless of the other argument.\",\n\"actual\": \"The implementation returns a non-zero value for negative 'k', contrary to the documented behavior.\",\n\"reproduction_steps\": [\"Call binomial function with a negative value for k\", \"Observe that the result is not zero as documented\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"binomial\"],\n\"input_conditions\": [\"negative k for binomial coefficient\"],\n\"expected\": \"For negative 'k', the function should return zero regardless of the other argument.\",\n\"actual\": \"The implementation returns a non-zero value for negative 'k', contrary to the documented behavior.\",\n\"reproduction_steps\": [\"Call binomial function with a negative value for k\", \"Observe that the result is not zero as documented\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

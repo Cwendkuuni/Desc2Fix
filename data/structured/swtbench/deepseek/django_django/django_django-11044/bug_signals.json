@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-11044",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "django.forms.forms",
+      "MultiValueDict",
+      "QueryDict"
+    ],
+    "input_conditions": [
+      "Form is initialized with None for data/files",
+      "Form data is expected to be a QueryDict or MultiValueDict"
+    ],
+    "reproduction_steps": [
+      "Initialize a Django Form with data=None or files=None.",
+      "Attempt to call methods such as 'iterlists' or 'getlist' on the form's data or files attribute.",
+      "Observe AttributeError due to missing methods."
+    ],
+    "expected": [
+      "Form data/files should be initialized with an empty MultiValueDict if None is provided."
+    ],
+    "actual": [
+      "Form data/files are initialized with a regular dict when None is passed, which lacks methods like 'iterlists' or 'getlist' that QueryDict provides."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "django.forms.forms",
+      "MultiValueDict",
+      "QueryDict"
+    ],
+    "input_conditions": [
+      "Form is initialized with None for data/files",
+      "Form data is expected to be a QueryDict or MultiValueDict"
+    ],
+    "reproduction_steps": [
+      "Initialize a Django Form with data=None or files=None.",
+      "Attempt to call methods such as 'iterlists' or 'getlist' on the form's data or files attribute.",
+      "Observe AttributeError due to missing methods."
+    ],
+    "expected": [
+      "Form data/files should be initialized with an empty MultiValueDict if None is provided."
+    ],
+    "actual": [
+      "Form data/files are initialized with a regular dict when None is passed, which lacks methods like 'iterlists' or 'getlist' that QueryDict provides."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"django.forms.forms\", \"MultiValueDict\", \"QueryDict\"],\n\"input_conditions\": [\"Form is initialized with None for data/files\", \"Form data is expected to be a QueryDict or MultiValueDict\"],\n\"expected\": \"Form data/files should be initialized with an empty MultiValueDict if None is provided.\",\n\"actual\": \"Form data/files are initialized with a regular dict when None is passed, which lacks methods like 'iterlists' or 'getlist' that QueryDict provides.\",\n\"reproduction_steps\": [\"Initialize a Django Form with data=None or files=None.\", \"Attempt to call methods such as 'iterlists' or 'getlist' on the form's data or files attribute.\", \"Observe AttributeError due to missing methods.\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"django.forms.forms\", \"MultiValueDict\", \"QueryDict\"],\n\"input_conditions\": [\"Form is initialized with None for data/files\", \"Form data is expected to be a QueryDict or MultiValueDict\"],\n\"expected\": \"Form data/files should be initialized with an empty MultiValueDict if None is provided.\",\n\"actual\": \"Form data/files are initialized with a regular dict when None is passed, which lacks methods like 'iterlists' or 'getlist' that QueryDict provides.\",\n\"reproduction_steps\": [\"Initialize a Django Form with data=None or files=None.\", \"Attempt to call methods such as 'iterlists' or 'getlist' on the form's data or files attribute.\", \"Observe AttributeError due to missing methods.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

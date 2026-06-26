@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-17150",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "log",
+      "evaluates"
+    ],
+    "input_conditions": [
+      "arg.is_Integer",
+      "den.is_Integer"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "log function should evaluate correctly, producing the expected result"
+    ],
+    "actual": [
+      "log function evaluates incorrectly, producing an unexpected result"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "log",
+      "evaluates"
+    ],
+    "input_conditions": [
+      "arg.is_Integer",
+      "den.is_Integer"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "log function should evaluate correctly, producing the expected result"
+    ],
+    "actual": [
+      "log function evaluates incorrectly, producing an unexpected result"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"log\", \"evaluates\"],\n\"input_conditions\": [\"arg.is_Integer\", \"den.is_Integer\"],\n\"expected\": \"log function should evaluate correctly, producing the expected result\",\n\"actual\": \"log function evaluates incorrectly, producing an unexpected result\",\n\"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"log\", \"evaluates\"],\n\"input_conditions\": [\"arg.is_Integer\", \"den.is_Integer\"],\n\"expected\": \"log function should evaluate correctly, producing the expected result\",\n\"actual\": \"log function evaluates incorrectly, producing an unexpected result\",\n\"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

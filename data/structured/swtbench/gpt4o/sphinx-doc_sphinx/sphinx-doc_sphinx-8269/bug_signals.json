@@ -1,0 +1,45 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sphinx-doc__sphinx-8269",
+  "project": null,
+  "repo": "sphinx-doc/sphinx",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "linkcheck"
+    ],
+    "input_conditions": [
+      "server replied with an error status code 404",
+      "server replied with an error status code 500"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Report HTTP error status code instead of anchor not found"
+    ],
+    "actual": [
+      "Reports that it was unable to find the anchor even when the server replied with an error status code"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "linkcheck"
+    ],
+    "input_conditions": [
+      "server replied with an error status code 404",
+      "server replied with an error status code 500"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Report HTTP error status code instead of anchor not found"
+    ],
+    "actual": [
+      "Reports that it was unable to find the anchor even when the server replied with an error status code"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"linkcheck\"],\n  \"input_conditions\": [\"server replied with an error status code 404\", \"server replied with an error status code 500\"],\n  \"expected\": \"Report HTTP error status code instead of anchor not found\",\n  \"actual\": \"Reports that it was unable to find the anchor even when the server replied with an error status code\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"linkcheck\"],\n  \"input_conditions\": [\"server replied with an error status code 404\", \"server replied with an error status code 500\"],\n  \"expected\": \"Report HTTP error status code instead of anchor not found\",\n  \"actual\": \"Reports that it was unable to find the anchor even when the server replied with an error status code\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

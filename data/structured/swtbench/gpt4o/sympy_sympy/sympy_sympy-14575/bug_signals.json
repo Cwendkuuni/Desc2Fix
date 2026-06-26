@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-14575",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "binomial"
+    ],
+    "input_conditions": [
+      "negative 'k'"
+    ],
+    "reproduction_steps": [
+      "Call the binomial function with a negative value for 'k'."
+    ],
+    "expected": [
+      "For negative 'k', the function will return zero no matter what the other argument value is."
+    ],
+    "actual": [
+      "The function returns a non-zero value for negative 'k'."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "binomial"
+    ],
+    "input_conditions": [
+      "negative 'k'"
+    ],
+    "reproduction_steps": [
+      "Call the binomial function with a negative value for 'k'."
+    ],
+    "expected": [
+      "For negative 'k', the function will return zero no matter what the other argument value is."
+    ],
+    "actual": [
+      "The function returns a non-zero value for negative 'k'."
+    ]
+  },
+  "raw_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"binomial\"],\n\"input_conditions\": [\"negative 'k'\"],\n\"expected\": \"For negative 'k', the function will return zero no matter what the other argument value is.\",\n\"actual\": \"The function returns a non-zero value for negative 'k'.\",\n\"reproduction_steps\": [\"Call the binomial function with a negative value for 'k'.\"]\n}\n```",
+  "llm_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"binomial\"],\n\"input_conditions\": [\"negative 'k'\"],\n\"expected\": \"For negative 'k', the function will return zero no matter what the other argument value is.\",\n\"actual\": \"The function returns a non-zero value for negative 'k'.\",\n\"reproduction_steps\": [\"Call the binomial function with a negative value for 'k'.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

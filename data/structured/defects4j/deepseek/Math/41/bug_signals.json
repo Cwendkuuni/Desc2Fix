@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-41",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Variance.evaluate(double[], double[], double, int, int)",
+      "Mean.evaluate"
+    ],
+    "input_conditions": [
+      "array sub-range specified by begin and length parameters",
+      "weight array and data array"
+    ],
+    "reproduction_steps": [
+      "Call Variance.evaluate(double[] values, double[] weights, double mean, int begin, int length)",
+      "Pass a values array and weights array with begin and length specifying a sub-array",
+      "Observe that the calculation uses the full arrays instead of the specified sub-array"
+    ],
+    "expected": [
+      "compute variance over the specified sub-array [begin, begin + length)"
+    ],
+    "actual": [
+      "computes variance over the entire dataset, ignoring the length parameter; sum of weights is calculated on the whole weight array rather than the sub-array"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Variance.evaluate(double[], double[], double, int, int)",
+      "Mean.evaluate"
+    ],
+    "input_conditions": [
+      "array sub-range specified by begin and length parameters",
+      "weight array and data array"
+    ],
+    "reproduction_steps": [
+      "Call Variance.evaluate(double[] values, double[] weights, double mean, int begin, int length)",
+      "Pass a values array and weights array with begin and length specifying a sub-array",
+      "Observe that the calculation uses the full arrays instead of the specified sub-array"
+    ],
+    "expected": [
+      "compute variance over the specified sub-array [begin, begin + length)"
+    ],
+    "actual": [
+      "computes variance over the entire dataset, ignoring the length parameter; sum of weights is calculated on the whole weight array rather than the sub-array"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Variance.evaluate(double[], double[], double, int, int)\", \"Mean.evaluate\"],\n\"input_conditions\": [\"array sub-range specified by begin and length parameters\", \"weight array and data array\"],\n\"expected\": \"compute variance over the specified sub-array [begin, begin + length)\",\n\"actual\": \"computes variance over the entire dataset, ignoring the length parameter; sum of weights is calculated on the whole weight array rather than the sub-array\",\n\"reproduction_steps\": [\n\"Call Variance.evaluate(double[] values, double[] weights, double mean, int begin, int length)\",\n\"Pass a values array and weights array with begin and length specifying a sub-array\",\n\"Observe that the calculation uses the full arrays instead of the specified sub-array\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Variance.evaluate(double[], double[], double, int, int)\", \"Mean.evaluate\"],\n\"input_conditions\": [\"array sub-range specified by begin and length parameters\", \"weight array and data array\"],\n\"expected\": \"compute variance over the specified sub-array [begin, begin + length)\",\n\"actual\": \"computes variance over the entire dataset, ignoring the length parameter; sum of weights is calculated on the whole weight array rather than the sub-array\",\n\"reproduction_steps\": [\n\"Call Variance.evaluate(double[] values, double[] weights, double mean, int begin, int length)\",\n\"Pass a values array and weights array with begin and length specifying a sub-array\",\n\"Observe that the calculation uses the full arrays instead of the specified sub-array\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

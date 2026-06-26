@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-13768",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "Exceptions raised in receivers of Signal.send_robust()"
+    ],
+    "api_involved": [
+      "Signal.send_robust()"
+    ],
+    "input_conditions": [
+      "Receivers that raise exceptions during signal handling"
+    ],
+    "reproduction_steps": [
+      "1. Define a Django signal with a receiver that raises an exception.",
+      "2. Call Signal.send_robust() to send the signal.",
+      "3. Observe that no exception log is output."
+    ],
+    "expected": [
+      "Django should log exceptions raised in receivers of send_robust() using logger.exception(), similar to other Django error logging scenarios."
+    ],
+    "actual": [
+      "Exceptions in receivers are silently swallowed without any log messages, making them invisible to error handling tools like Sentry."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Exceptions raised in receivers of Signal.send_robust()"
+    ],
+    "api_involved": [
+      "Signal.send_robust()"
+    ],
+    "input_conditions": [
+      "Receivers that raise exceptions during signal handling"
+    ],
+    "reproduction_steps": [
+      "1. Define a Django signal with a receiver that raises an exception.",
+      "2. Call Signal.send_robust() to send the signal.",
+      "3. Observe that no exception log is output."
+    ],
+    "expected": [
+      "Django should log exceptions raised in receivers of send_robust() using logger.exception(), similar to other Django error logging scenarios."
+    ],
+    "actual": [
+      "Exceptions in receivers are silently swallowed without any log messages, making them invisible to error handling tools like Sentry."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"Exceptions raised in receivers of Signal.send_robust()\",\n\"api_involved\": [\"Signal.send_robust()\"],\n\"input_conditions\": [\"Receivers that raise exceptions during signal handling\"],\n\"expected\": \"Django should log exceptions raised in receivers of send_robust() using logger.exception(), similar to other Django error logging scenarios.\",\n\"actual\": \"Exceptions in receivers are silently swallowed without any log messages, making them invisible to error handling tools like Sentry.\",\n\"reproduction_steps\": [\"1. Define a Django signal with a receiver that raises an exception.\", \"2. Call Signal.send_robust() to send the signal.\", \"3. Observe that no exception log is output.\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"Exceptions raised in receivers of Signal.send_robust()\",\n\"api_involved\": [\"Signal.send_robust()\"],\n\"input_conditions\": [\"Receivers that raise exceptions during signal handling\"],\n\"expected\": \"Django should log exceptions raised in receivers of send_robust() using logger.exception(), similar to other Django error logging scenarios.\",\n\"actual\": \"Exceptions in receivers are silently swallowed without any log messages, making them invisible to error handling tools like Sentry.\",\n\"reproduction_steps\": [\"1. Define a Django signal with a receiver that raises an exception.\", \"2. Call Signal.send_robust() to send the signal.\", \"3. Observe that no exception log is output.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

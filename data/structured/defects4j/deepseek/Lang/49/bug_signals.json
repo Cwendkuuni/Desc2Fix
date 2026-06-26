@@ -1,0 +1,49 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Lang-49",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Fraction.reduce"
+    ],
+    "input_conditions": [
+      "numerator == 0"
+    ],
+    "reproduction_steps": [
+      "Create a Fraction with numerator == 0",
+      "Call the reduce method on that Fraction"
+    ],
+    "expected": [
+      "The reduce method should return or terminate normally without looping indefinitely."
+    ],
+    "actual": [
+      "The reduce method enters an infinite loop when numerator is zero."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Fraction.reduce"
+    ],
+    "input_conditions": [
+      "numerator == 0"
+    ],
+    "reproduction_steps": [
+      "Create a Fraction with numerator == 0",
+      "Call the reduce method on that Fraction"
+    ],
+    "expected": [
+      "The reduce method should return or terminate normally without looping indefinitely."
+    ],
+    "actual": [
+      "The reduce method enters an infinite loop when numerator is zero."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Fraction.reduce\"],\n\"input_conditions\": [\"numerator == 0\"],\n\"expected\": \"The reduce method should return or terminate normally without looping indefinitely.\",\n\"actual\": \"The reduce method enters an infinite loop when numerator is zero.\",\n\"reproduction_steps\": [\"Create a Fraction with numerator == 0\", \"Call the reduce method on that Fraction\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Fraction.reduce\"],\n\"input_conditions\": [\"numerator == 0\"],\n\"expected\": \"The reduce method should return or terminate normally without looping indefinitely.\",\n\"actual\": \"The reduce method enters an infinite loop when numerator is zero.\",\n\"reproduction_steps\": [\"Create a Fraction with numerator == 0\", \"Call the reduce method on that Fraction\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

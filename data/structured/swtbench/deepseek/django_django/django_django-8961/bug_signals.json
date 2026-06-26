@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-8961",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "django-admin",
+      "manage.py",
+      "python -m django",
+      "__main__.py"
+    ],
+    "input_conditions": [
+      "executing help command",
+      "non-Windows platforms",
+      "Windows platforms"
+    ],
+    "reproduction_steps": [
+      "Run '$ python -m django help' and observe the help output shows '__main__.py help'.",
+      "Run '$ manage.py help' on a non-Windows platform and observe a 'command not found' error.",
+      "Run '$ ./manage.py help' and observe correct behavior."
+    ],
+    "expected": [
+      "The program name shown in help output should accurately reflect the command used to invoke the utility, e.g., 'python -m django' instead of '__main__.py', and 'manage.py' should not be used as a default unless appropriate for the platform."
+    ],
+    "actual": [
+      "The help command displays '__main__.py' when using 'python -m django', and suggests using 'manage.py help' which may not work on non-Windows platforms without './' prefix."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "django-admin",
+      "manage.py",
+      "python -m django",
+      "__main__.py"
+    ],
+    "input_conditions": [
+      "executing help command",
+      "non-Windows platforms",
+      "Windows platforms"
+    ],
+    "reproduction_steps": [
+      "Run '$ python -m django help' and observe the help output shows '__main__.py help'.",
+      "Run '$ manage.py help' on a non-Windows platform and observe a 'command not found' error.",
+      "Run '$ ./manage.py help' and observe correct behavior."
+    ],
+    "expected": [
+      "The program name shown in help output should accurately reflect the command used to invoke the utility, e.g., 'python -m django' instead of '__main__.py', and 'manage.py' should not be used as a default unless appropriate for the platform."
+    ],
+    "actual": [
+      "The help command displays '__main__.py' when using 'python -m django', and suggests using 'manage.py help' which may not work on non-Windows platforms without './' prefix."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"django-admin\", \"manage.py\", \"python -m django\", \"__main__.py\"],\n\"input_conditions\": [\"executing help command\", \"non-Windows platforms\", \"Windows platforms\"],\n\"expected\": \"The program name shown in help output should accurately reflect the command used to invoke the utility, e.g., 'python -m django' instead of '__main__.py', and 'manage.py' should not be used as a default unless appropriate for the platform.\",\n\"actual\": \"The help command displays '__main__.py' when using 'python -m django', and suggests using 'manage.py help' which may not work on non-Windows platforms without './' prefix.\",\n\"reproduction_steps\": [\n    \"Run '$ python -m django help' and observe the help output shows '__main__.py help'.\",\n    \"Run '$ manage.py help' on a non-Windows platform and observe a 'command not found' error.\",\n    \"Run '$ ./manage.py help' and observe correct behavior.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"django-admin\", \"manage.py\", \"python -m django\", \"__main__.py\"],\n\"input_conditions\": [\"executing help command\", \"non-Windows platforms\", \"Windows platforms\"],\n\"expected\": \"The program name shown in help output should accurately reflect the command used to invoke the utility, e.g., 'python -m django' instead of '__main__.py', and 'manage.py' should not be used as a default unless appropriate for the platform.\",\n\"actual\": \"The help command displays '__main__.py' when using 'python -m django', and suggests using 'manage.py help' which may not work on non-Windows platforms without './' prefix.\",\n\"reproduction_steps\": [\n    \"Run '$ python -m django help' and observe the help output shows '__main__.py help'.\",\n    \"Run '$ manage.py help' on a non-Windows platform and observe a 'command not found' error.\",\n    \"Run '$ ./manage.py help' and observe correct behavior.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

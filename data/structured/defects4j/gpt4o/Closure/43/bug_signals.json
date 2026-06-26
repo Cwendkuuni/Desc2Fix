@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-43",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "ERROR - Variable Person.prototype not declared before @lends annotation."
+    ],
+    "api_involved": [
+      "makeClass",
+      "John Resig's simple JavaScript inheritance"
+    ],
+    "input_conditions": [
+      "advanced optimizations enabled",
+      "type checking (--jscomp_error=checkTypes)"
+    ],
+    "reproduction_steps": [
+      "Use @lends in the same way as on the jsdoc page at http://code.google.com/p/jsdoc-toolkit/wiki/TagLends.",
+      "Use a utility method called 'makeClass' or John Resig's method of class constructing (http://ejohn.org/blog/simple-javascript-inheritance/).",
+      "Enable advanced optimizations and type checking (--jscomp_error=checkTypes)."
+    ],
+    "expected": [
+      "The code should be compiled successfully."
+    ],
+    "actual": [
+      "Compile error due to Variable Person.prototype not declared before @lends annotation."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ERROR - Variable Person.prototype not declared before @lends annotation."
+    ],
+    "api_involved": [
+      "makeClass",
+      "John Resig's simple JavaScript inheritance"
+    ],
+    "input_conditions": [
+      "advanced optimizations enabled",
+      "type checking (--jscomp_error=checkTypes)"
+    ],
+    "reproduction_steps": [
+      "Use @lends in the same way as on the jsdoc page at http://code.google.com/p/jsdoc-toolkit/wiki/TagLends.",
+      "Use a utility method called 'makeClass' or John Resig's method of class constructing (http://ejohn.org/blog/simple-javascript-inheritance/).",
+      "Enable advanced optimizations and type checking (--jscomp_error=checkTypes)."
+    ],
+    "expected": [
+      "The code should be compiled successfully."
+    ],
+    "actual": [
+      "Compile error due to Variable Person.prototype not declared before @lends annotation."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"ERROR - Variable Person.prototype not declared before @lends annotation.\",\n  \"api_involved\": [\"makeClass\", \"John Resig's simple JavaScript inheritance\"],\n  \"input_conditions\": [\"advanced optimizations enabled\", \"type checking (--jscomp_error=checkTypes)\"],\n  \"expected\": \"The code should be compiled successfully.\",\n  \"actual\": \"Compile error due to Variable Person.prototype not declared before @lends annotation.\",\n  \"reproduction_steps\": [\n    \"Use @lends in the same way as on the jsdoc page at http://code.google.com/p/jsdoc-toolkit/wiki/TagLends.\",\n    \"Use a utility method called 'makeClass' or John Resig's method of class constructing (http://ejohn.org/blog/simple-javascript-inheritance/).\",\n    \"Enable advanced optimizations and type checking (--jscomp_error=checkTypes).\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"ERROR - Variable Person.prototype not declared before @lends annotation.\",\n  \"api_involved\": [\"makeClass\", \"John Resig's simple JavaScript inheritance\"],\n  \"input_conditions\": [\"advanced optimizations enabled\", \"type checking (--jscomp_error=checkTypes)\"],\n  \"expected\": \"The code should be compiled successfully.\",\n  \"actual\": \"Compile error due to Variable Person.prototype not declared before @lends annotation.\",\n  \"reproduction_steps\": [\n    \"Use @lends in the same way as on the jsdoc page at http://code.google.com/p/jsdoc-toolkit/wiki/TagLends.\",\n    \"Use a utility method called 'makeClass' or John Resig's method of class constructing (http://ejohn.org/blog/simple-javascript-inheritance/).\",\n    \"Enable advanced optimizations and type checking (--jscomp_error=checkTypes).\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

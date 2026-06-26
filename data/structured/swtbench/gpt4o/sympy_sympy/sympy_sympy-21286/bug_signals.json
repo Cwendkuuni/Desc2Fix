@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-21286",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Range"
+    ],
+    "input_conditions": [
+      "Range with symbolic arguments"
+    ],
+    "reproduction_steps": [
+      "Instantiate a Range with symbolic arguments."
+    ],
+    "expected": [
+      "Range with symbolic arguments should be canonical."
+    ],
+    "actual": [
+      "Range with symbolic arguments is not canonical."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Range"
+    ],
+    "input_conditions": [
+      "Range with symbolic arguments"
+    ],
+    "reproduction_steps": [
+      "Instantiate a Range with symbolic arguments."
+    ],
+    "expected": [
+      "Range with symbolic arguments should be canonical."
+    ],
+    "actual": [
+      "Range with symbolic arguments is not canonical."
+    ]
+  },
+  "raw_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"Range\"],\n\"input_conditions\": [\"Range with symbolic arguments\"],\n\"expected\": \"Range with symbolic arguments should be canonical.\",\n\"actual\": \"Range with symbolic arguments is not canonical.\",\n\"reproduction_steps\": [\"Instantiate a Range with symbolic arguments.\"]\n}\n```",
+  "llm_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"Range\"],\n\"input_conditions\": [\"Range with symbolic arguments\"],\n\"expected\": \"Range with symbolic arguments should be canonical.\",\n\"actual\": \"Range with symbolic arguments is not canonical.\",\n\"reproduction_steps\": [\"Instantiate a Range with symbolic arguments.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,17 @@
+{
+  "rq": "rq3",
+  "dataset": "swtbench",
+  "scenario": "structured",
+  "model": "deepseek",
+  "patch_view": "full",
+  "instances": 100,
+  "written": 98,
+  "skipped": 0,
+  "errors": 2,
+  "scores_path": "/home/e113/Documents/FROM-DESCRIPTION-TO-FIX/For_GitHub/Desc2Fix/Desc2Fix/results/experiments/llm_judges/rq3/swtbench/structured/deepseek/full/scores.jsonl",
+  "errors_path": "/home/e113/Documents/FROM-DESCRIPTION-TO-FIX/For_GitHub/Desc2Fix/Desc2Fix/results/experiments/llm_judges/rq3/swtbench/structured/deepseek/full/errors.jsonl",
+  "prompt_path": "prompts/report_patch_alignment/structured_prompt.txt",
+  "reserved_response_tokens": 4000,
+  "temperature": 1.0,
+  "top_p": 1.0
+}

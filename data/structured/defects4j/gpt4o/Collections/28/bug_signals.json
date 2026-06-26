@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Collections-28",
+  "project": "Collections",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.NullPointerException"
+    ],
+    "api_involved": [
+      "PatriciaTrie",
+      "prefixMap",
+      "clear",
+      "remove"
+    ],
+    "input_conditions": [
+      "trie with prefix 'And' entries"
+    ],
+    "reproduction_steps": [
+      "Initialize PatriciaTrie and add entries.",
+      "Retrieve a prefixMap with the prefix 'And'.",
+      "Attempt to clear the prefixMap using the clear method."
+    ],
+    "expected": [
+      "The prefixMap should be cleared without throwing an exception."
+    ],
+    "actual": [
+      "A NullPointerException is thrown when attempting to clear the prefixMap."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.NullPointerException"
+    ],
+    "api_involved": [
+      "PatriciaTrie",
+      "prefixMap",
+      "clear",
+      "remove"
+    ],
+    "input_conditions": [
+      "trie with prefix 'And' entries"
+    ],
+    "reproduction_steps": [
+      "Initialize PatriciaTrie and add entries.",
+      "Retrieve a prefixMap with the prefix 'And'.",
+      "Attempt to clear the prefixMap using the clear method."
+    ],
+    "expected": [
+      "The prefixMap should be cleared without throwing an exception."
+    ],
+    "actual": [
+      "A NullPointerException is thrown when attempting to clear the prefixMap."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"java.lang.NullPointerException\",\n  \"api_involved\": [\"PatriciaTrie\", \"prefixMap\", \"clear\", \"remove\"],\n  \"input_conditions\": [\"trie with prefix 'And' entries\"],\n  \"expected\": \"The prefixMap should be cleared without throwing an exception.\",\n  \"actual\": \"A NullPointerException is thrown when attempting to clear the prefixMap.\",\n  \"reproduction_steps\": [\n    \"Initialize PatriciaTrie and add entries.\",\n    \"Retrieve a prefixMap with the prefix 'And'.\",\n    \"Attempt to clear the prefixMap using the clear method.\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"java.lang.NullPointerException\",\n  \"api_involved\": [\"PatriciaTrie\", \"prefixMap\", \"clear\", \"remove\"],\n  \"input_conditions\": [\"trie with prefix 'And' entries\"],\n  \"expected\": \"The prefixMap should be cleared without throwing an exception.\",\n  \"actual\": \"A NullPointerException is thrown when attempting to clear the prefixMap.\",\n  \"reproduction_steps\": [\n    \"Initialize PatriciaTrie and add entries.\",\n    \"Retrieve a prefixMap with the prefix 'And'.\",\n    \"Attempt to clear the prefixMap using the clear method.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

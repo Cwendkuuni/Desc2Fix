@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-15572",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "django/template/autoreload.py::template_changed",
+      "pathlib.Path",
+      "TEMPLATES DIRS"
+    ],
+    "input_conditions": [
+      "empty string '' in TEMPLATES DIRS",
+      "TEMPLATES_DIRS environment variable set to empty string, splitted to ['']"
+    ],
+    "reproduction_steps": [
+      "Set TEMPLATES DIRS to [''] e.g. via 'DIRS': os.getenv(\"TEMPLATES_DIRS\", \"\").split(\",\")",
+      "Run Django development server with autoreload",
+      "Observe that autoreload triggers on every code change or never stops"
+    ],
+    "expected": [
+      "autoreload should ignore empty string in DIRS and not trigger reload for it"
+    ],
+    "actual": [
+      "normalization of empty string to project root causes template_changed() to always return True, breaking autoreload"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "django/template/autoreload.py::template_changed",
+      "pathlib.Path",
+      "TEMPLATES DIRS"
+    ],
+    "input_conditions": [
+      "empty string '' in TEMPLATES DIRS",
+      "TEMPLATES_DIRS environment variable set to empty string, splitted to ['']"
+    ],
+    "reproduction_steps": [
+      "Set TEMPLATES DIRS to [''] e.g. via 'DIRS': os.getenv(\"TEMPLATES_DIRS\", \"\").split(\",\")",
+      "Run Django development server with autoreload",
+      "Observe that autoreload triggers on every code change or never stops"
+    ],
+    "expected": [
+      "autoreload should ignore empty string in DIRS and not trigger reload for it"
+    ],
+    "actual": [
+      "normalization of empty string to project root causes template_changed() to always return True, breaking autoreload"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"django/template/autoreload.py::template_changed\", \"pathlib.Path\", \"TEMPLATES DIRS\"],\n\"input_conditions\": [\"empty string '' in TEMPLATES DIRS\", \"TEMPLATES_DIRS environment variable set to empty string, splitted to ['']\"],\n\"expected\": \"autoreload should ignore empty string in DIRS and not trigger reload for it\",\n\"actual\": \"normalization of empty string to project root causes template_changed() to always return True, breaking autoreload\",\n\"reproduction_steps\": [\n\"Set TEMPLATES DIRS to [''] e.g. via 'DIRS': os.getenv(\\\"TEMPLATES_DIRS\\\", \\\"\\\").split(\\\",\\\")\",\n\"Run Django development server with autoreload\",\n\"Observe that autoreload triggers on every code change or never stops\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"django/template/autoreload.py::template_changed\", \"pathlib.Path\", \"TEMPLATES DIRS\"],\n\"input_conditions\": [\"empty string '' in TEMPLATES DIRS\", \"TEMPLATES_DIRS environment variable set to empty string, splitted to ['']\"],\n\"expected\": \"autoreload should ignore empty string in DIRS and not trigger reload for it\",\n\"actual\": \"normalization of empty string to project root causes template_changed() to always return True, breaking autoreload\",\n\"reproduction_steps\": [\n\"Set TEMPLATES DIRS to [''] e.g. via 'DIRS': os.getenv(\\\"TEMPLATES_DIRS\\\", \\\"\\\").split(\\\",\\\")\",\n\"Run Django development server with autoreload\",\n\"Observe that autoreload triggers on every code change or never stops\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

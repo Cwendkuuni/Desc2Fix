@@ -1,0 +1,65 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-97",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.IllegalArgumentException: Function values at endpoints do not have different signs.  Endpoints: [-100000.0,1.7976931348623157E308]  Values: [0.0,-101945.04630982173]"
+    ],
+    "api_involved": [
+      "BrentSolver.solve(double min, double max)",
+      "BrentSolver.solve(double min, double yMin, double max, double yMax, double initial, double yInitial)"
+    ],
+    "input_conditions": [
+      "min = -100000.0",
+      "max = 1.7976931348623157E308",
+      "yMin = 0.0",
+      "yMax = -101945.04630982173"
+    ],
+    "reproduction_steps": [
+      "Call BrentSolver.solve(-100000.0, 1.7976931348623157E308) for a function where f(-100000.0) = 0.0 and f(1.7976931348623157E308) = -101945.04630982173.",
+      "The solver computes yMin = f(min) and yMax = f(max).",
+      "It checks if yMin * yMax >= 0, which is true (0.0 * negative = 0).",
+      "It throws IllegalArgumentException instead of returning 0."
+    ],
+    "expected": [
+      "The solver should return 0 as the root when one endpoint's function value is exactly 0, instead of throwing an exception."
+    ],
+    "actual": [
+      "IllegalArgumentException is thrown because the function values at endpoints (0.0 and -101945.04630982173) do not have different signs (0.0 * negative = 0, which is not < 0)."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.IllegalArgumentException: Function values at endpoints do not have different signs.  Endpoints: [-100000.0,1.7976931348623157E308]  Values: [0.0,-101945.04630982173]"
+    ],
+    "api_involved": [
+      "BrentSolver.solve(double min, double max)",
+      "BrentSolver.solve(double min, double yMin, double max, double yMax, double initial, double yInitial)"
+    ],
+    "input_conditions": [
+      "min = -100000.0",
+      "max = 1.7976931348623157E308",
+      "yMin = 0.0",
+      "yMax = -101945.04630982173"
+    ],
+    "reproduction_steps": [
+      "Call BrentSolver.solve(-100000.0, 1.7976931348623157E308) for a function where f(-100000.0) = 0.0 and f(1.7976931348623157E308) = -101945.04630982173.",
+      "The solver computes yMin = f(min) and yMax = f(max).",
+      "It checks if yMin * yMax >= 0, which is true (0.0 * negative = 0).",
+      "It throws IllegalArgumentException instead of returning 0."
+    ],
+    "expected": [
+      "The solver should return 0 as the root when one endpoint's function value is exactly 0, instead of throwing an exception."
+    ],
+    "actual": [
+      "IllegalArgumentException is thrown because the function values at endpoints (0.0 and -101945.04630982173) do not have different signs (0.0 * negative = 0, which is not < 0)."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"java.lang.IllegalArgumentException: Function values at endpoints do not have different signs.  Endpoints: [-100000.0,1.7976931348623157E308]  Values: [0.0,-101945.04630982173]\",\n\"api_involved\": [\"BrentSolver.solve(double min, double max)\", \"BrentSolver.solve(double min, double yMin, double max, double yMax, double initial, double yInitial)\"],\n\"input_conditions\": [\"min = -100000.0\", \"max = 1.7976931348623157E308\", \"yMin = 0.0\", \"yMax = -101945.04630982173\"],\n\"expected\": \"The solver should return 0 as the root when one endpoint's function value is exactly 0, instead of throwing an exception.\",\n\"actual\": \"IllegalArgumentException is thrown because the function values at endpoints (0.0 and -101945.04630982173) do not have different signs (0.0 * negative = 0, which is not < 0).\",\n\"reproduction_steps\": [\n    \"Call BrentSolver.solve(-100000.0, 1.7976931348623157E308) for a function where f(-100000.0) = 0.0 and f(1.7976931348623157E308) = -101945.04630982173.\",\n    \"The solver computes yMin = f(min) and yMax = f(max).\",\n    \"It checks if yMin * yMax >= 0, which is true (0.0 * negative = 0).\",\n    \"It throws IllegalArgumentException instead of returning 0.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"java.lang.IllegalArgumentException: Function values at endpoints do not have different signs.  Endpoints: [-100000.0,1.7976931348623157E308]  Values: [0.0,-101945.04630982173]\",\n\"api_involved\": [\"BrentSolver.solve(double min, double max)\", \"BrentSolver.solve(double min, double yMin, double max, double yMax, double initial, double yInitial)\"],\n\"input_conditions\": [\"min = -100000.0\", \"max = 1.7976931348623157E308\", \"yMin = 0.0\", \"yMax = -101945.04630982173\"],\n\"expected\": \"The solver should return 0 as the root when one endpoint's function value is exactly 0, instead of throwing an exception.\",\n\"actual\": \"IllegalArgumentException is thrown because the function values at endpoints (0.0 and -101945.04630982173) do not have different signs (0.0 * negative = 0, which is not < 0).\",\n\"reproduction_steps\": [\n    \"Call BrentSolver.solve(-100000.0, 1.7976931348623157E308) for a function where f(-100000.0) = 0.0 and f(1.7976931348623157E308) = -101945.04630982173.\",\n    \"The solver computes yMin = f(min) and yMax = f(max).\",\n    \"It checks if yMin * yMax >= 0, which is true (0.0 * negative = 0).\",\n    \"It throws IllegalArgumentException instead of returning 0.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-12419",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "SymPy"
+    ],
+    "input_conditions": [
+      "M is an orthogonal matrix",
+      "M.T * M results in an identity matrix"
+    ],
+    "reproduction_steps": [
+      "Create an orthogonal matrix M",
+      "Compute M.T * M",
+      "Verify it results in an identity matrix",
+      "Calculate the sum of the elements of the resulting matrix"
+    ],
+    "expected": [
+      "The sum of the elements of the identity matrix should be n"
+    ],
+    "actual": [
+      "The sum of the elements of the identity matrix is 0"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "SymPy"
+    ],
+    "input_conditions": [
+      "M is an orthogonal matrix",
+      "M.T * M results in an identity matrix"
+    ],
+    "reproduction_steps": [
+      "Create an orthogonal matrix M",
+      "Compute M.T * M",
+      "Verify it results in an identity matrix",
+      "Calculate the sum of the elements of the resulting matrix"
+    ],
+    "expected": [
+      "The sum of the elements of the identity matrix should be n"
+    ],
+    "actual": [
+      "The sum of the elements of the identity matrix is 0"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"SymPy\"],\n  \"input_conditions\": [\"M is an orthogonal matrix\", \"M.T * M results in an identity matrix\"],\n  \"expected\": \"The sum of the elements of the identity matrix should be n\",\n  \"actual\": \"The sum of the elements of the identity matrix is 0\",\n  \"reproduction_steps\": [\n    \"Create an orthogonal matrix M\",\n    \"Compute M.T * M\",\n    \"Verify it results in an identity matrix\",\n    \"Calculate the sum of the elements of the resulting matrix\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"SymPy\"],\n  \"input_conditions\": [\"M is an orthogonal matrix\", \"M.T * M results in an identity matrix\"],\n  \"expected\": \"The sum of the elements of the identity matrix should be n\",\n  \"actual\": \"The sum of the elements of the identity matrix is 0\",\n  \"reproduction_steps\": [\n    \"Create an orthogonal matrix M\",\n    \"Compute M.T * M\",\n    \"Verify it results in an identity matrix\",\n    \"Calculate the sum of the elements of the resulting matrix\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

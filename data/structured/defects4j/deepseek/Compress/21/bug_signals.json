@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Compress-21",
+  "project": "Compress",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "7z archive writing",
+      "bitset writing method"
+    ],
+    "input_conditions": [
+      "7 or more empty files in folder",
+      "files with mixed content",
+      "7z compression method (any, not just LZMA2)"
+    ],
+    "reproduction_steps": [
+      "1. Create a folder containing 7 or more files, with some or all files empty.",
+      "2. Archive the folder into a .7z file.",
+      "3. Observe that with 7 empty files, the archive contains a single folder entry with the archive name.",
+      "4. With 7 files (some empty, some with content), the archive contains folder entry with archive name and file entries also with archive name equal to number of non-empty files.",
+      "5. With 8 empty files, 7zip Manager cannot open archive and crashes.",
+      "6. With 8 files (some empty, some with content, last file empty), archive is corrupt with error 'Cannot open file ... as archive'."
+    ],
+    "expected": [
+      "7z archive should be correctly created and openable without corruption"
+    ],
+    "actual": [
+      "archive is corrupt or incorrect: contains wrong entries (folder/file entries with archive name), or fails to open (7zip Manager crashes or shows error)"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "7z archive writing",
+      "bitset writing method"
+    ],
+    "input_conditions": [
+      "7 or more empty files in folder",
+      "files with mixed content",
+      "7z compression method (any, not just LZMA2)"
+    ],
+    "reproduction_steps": [
+      "1. Create a folder containing 7 or more files, with some or all files empty.",
+      "2. Archive the folder into a .7z file.",
+      "3. Observe that with 7 empty files, the archive contains a single folder entry with the archive name.",
+      "4. With 7 files (some empty, some with content), the archive contains folder entry with archive name and file entries also with archive name equal to number of non-empty files.",
+      "5. With 8 empty files, 7zip Manager cannot open archive and crashes.",
+      "6. With 8 files (some empty, some with content, last file empty), archive is corrupt with error 'Cannot open file ... as archive'."
+    ],
+    "expected": [
+      "7z archive should be correctly created and openable without corruption"
+    ],
+    "actual": [
+      "archive is corrupt or incorrect: contains wrong entries (folder/file entries with archive name), or fails to open (7zip Manager crashes or shows error)"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"7z archive writing\", \"bitset writing method\"],\n\"input_conditions\": [\"7 or more empty files in folder\", \"files with mixed content\", \"7z compression method (any, not just LZMA2)\"],\n\"expected\": \"7z archive should be correctly created and openable without corruption\",\n\"actual\": \"archive is corrupt or incorrect: contains wrong entries (folder/file entries with archive name), or fails to open (7zip Manager crashes or shows error)\",\n\"reproduction_steps\": [\n\"1. Create a folder containing 7 or more files, with some or all files empty.\",\n\"2. Archive the folder into a .7z file.\",\n\"3. Observe that with 7 empty files, the archive contains a single folder entry with the archive name.\",\n\"4. With 7 files (some empty, some with content), the archive contains folder entry with archive name and file entries also with archive name equal to number of non-empty files.\",\n\"5. With 8 empty files, 7zip Manager cannot open archive and crashes.\",\n\"6. With 8 files (some empty, some with content, last file empty), archive is corrupt with error 'Cannot open file ... as archive'.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"7z archive writing\", \"bitset writing method\"],\n\"input_conditions\": [\"7 or more empty files in folder\", \"files with mixed content\", \"7z compression method (any, not just LZMA2)\"],\n\"expected\": \"7z archive should be correctly created and openable without corruption\",\n\"actual\": \"archive is corrupt or incorrect: contains wrong entries (folder/file entries with archive name), or fails to open (7zip Manager crashes or shows error)\",\n\"reproduction_steps\": [\n\"1. Create a folder containing 7 or more files, with some or all files empty.\",\n\"2. Archive the folder into a .7z file.\",\n\"3. Observe that with 7 empty files, the archive contains a single folder entry with the archive name.\",\n\"4. With 7 files (some empty, some with content), the archive contains folder entry with archive name and file entries also with archive name equal to number of non-empty files.\",\n\"5. With 8 empty files, 7zip Manager cannot open archive and crashes.\",\n\"6. With 8 files (some empty, some with content, last file empty), archive is corrupt with error 'Cannot open file ... as archive'.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

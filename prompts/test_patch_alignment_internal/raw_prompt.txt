@@ -1,0 +1,30 @@
+You are an expert software engineer specialized in program repair and testing.
+
+Given the following triggering test and the patch (code diff) that fixes the bug,
+evaluate how effectively the test validates the behavioral change introduced by the patch.
+
+Criteria (rate each 1–5):
+1) Coverage: Does the test exercise code paths and entities/APIs affected by the patch?
+2) Correctness: Does the test meaningfully verify the expected behavior after the fix (fail-before, pass-after semantics)?
+3) Specificity: Are the assertions focused on the fix (not overly generic or unrelated)?
+
+Provide a concise justification (2–4 sentences), then output scores as JSON between triple backticks.
+
+Test:
+---
+{TEST_CODE}
+---
+
+Patch ({PATCH_TYPE}):
+---
+{PATCH_CODE}
+---
+
+Output only JSON between triple backticks:
+{{
+"alignment_score": <1-5>,
+"coverage": <1-5>,
+"correctness": <1-5>,
+"specificity": <1-5>,
+"justification": "..."
+}}

@@ -1,0 +1,65 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-114",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.RuntimeException: INTERNAL COMPILER ERROR. Please report this problem. Unexpected variable l"
+    ],
+    "api_involved": [
+      "com.google.javascript.jscomp.VarCheck.visit",
+      "com.google.javascript.jscomp.NodeTraversal.traverseBranch",
+      "com.google.javascript.jscomp.VarCheck.process",
+      "com.google.javascript.jscomp.Compiler.compile"
+    ],
+    "input_conditions": [
+      "Compilation level: ADVANCED_OPTIMIZATIONS",
+      "JavaScript code with variable l assigned a function"
+    ],
+    "reproduction_steps": [
+      "Use the closure compiler web application",
+      "Set compilation level to ADVANCED_OPTIMIZATIONS",
+      "Provide the JavaScript code snippet with variable l",
+      "Execute the compilation process"
+    ],
+    "expected": [
+      "The code should compile without errors and execute normally."
+    ],
+    "actual": [
+      "INTERNAL COMPILER ERROR with message 'Unexpected variable l'"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.RuntimeException: INTERNAL COMPILER ERROR. Please report this problem. Unexpected variable l"
+    ],
+    "api_involved": [
+      "com.google.javascript.jscomp.VarCheck.visit",
+      "com.google.javascript.jscomp.NodeTraversal.traverseBranch",
+      "com.google.javascript.jscomp.VarCheck.process",
+      "com.google.javascript.jscomp.Compiler.compile"
+    ],
+    "input_conditions": [
+      "Compilation level: ADVANCED_OPTIMIZATIONS",
+      "JavaScript code with variable l assigned a function"
+    ],
+    "reproduction_steps": [
+      "Use the closure compiler web application",
+      "Set compilation level to ADVANCED_OPTIMIZATIONS",
+      "Provide the JavaScript code snippet with variable l",
+      "Execute the compilation process"
+    ],
+    "expected": [
+      "The code should compile without errors and execute normally."
+    ],
+    "actual": [
+      "INTERNAL COMPILER ERROR with message 'Unexpected variable l'"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"java.lang.RuntimeException: INTERNAL COMPILER ERROR. Please report this problem. Unexpected variable l\",\n  \"api_involved\": [\n    \"com.google.javascript.jscomp.VarCheck.visit\",\n    \"com.google.javascript.jscomp.NodeTraversal.traverseBranch\",\n    \"com.google.javascript.jscomp.VarCheck.process\",\n    \"com.google.javascript.jscomp.Compiler.compile\"\n  ],\n  \"input_conditions\": [\n    \"Compilation level: ADVANCED_OPTIMIZATIONS\",\n    \"JavaScript code with variable l assigned a function\"\n  ],\n  \"expected\": \"The code should compile without errors and execute normally.\",\n  \"actual\": \"INTERNAL COMPILER ERROR with message 'Unexpected variable l'\",\n  \"reproduction_steps\": [\n    \"Use the closure compiler web application\",\n    \"Set compilation level to ADVANCED_OPTIMIZATIONS\",\n    \"Provide the JavaScript code snippet with variable l\",\n    \"Execute the compilation process\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"java.lang.RuntimeException: INTERNAL COMPILER ERROR. Please report this problem. Unexpected variable l\",\n  \"api_involved\": [\n    \"com.google.javascript.jscomp.VarCheck.visit\",\n    \"com.google.javascript.jscomp.NodeTraversal.traverseBranch\",\n    \"com.google.javascript.jscomp.VarCheck.process\",\n    \"com.google.javascript.jscomp.Compiler.compile\"\n  ],\n  \"input_conditions\": [\n    \"Compilation level: ADVANCED_OPTIMIZATIONS\",\n    \"JavaScript code with variable l assigned a function\"\n  ],\n  \"expected\": \"The code should compile without errors and execute normally.\",\n  \"actual\": \"INTERNAL COMPILER ERROR with message 'Unexpected variable l'\",\n  \"reproduction_steps\": [\n    \"Use the closure compiler web application\",\n    \"Set compilation level to ADVANCED_OPTIMIZATIONS\",\n    \"Provide the JavaScript code snippet with variable l\",\n    \"Execute the compilation process\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

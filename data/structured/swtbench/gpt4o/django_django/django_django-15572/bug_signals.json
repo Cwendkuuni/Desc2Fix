@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-15572",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "autoreload stops working"
+    ],
+    "api_involved": [
+      "django/template/autoreload.py::template_changed"
+    ],
+    "input_conditions": [
+      "TEMPLATES_DIRS environment variable is an empty string"
+    ],
+    "reproduction_steps": [
+      "Set TEMPLATES_DIRS environment variable to an empty string.",
+      "Run application with Django version > 3.2.3."
+    ],
+    "expected": [
+      "The autoreload feature should work correctly, ignoring empty directory strings."
+    ],
+    "actual": [
+      "The autoreload feature stops working because the empty string is transformed to the root directory."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "autoreload stops working"
+    ],
+    "api_involved": [
+      "django/template/autoreload.py::template_changed"
+    ],
+    "input_conditions": [
+      "TEMPLATES_DIRS environment variable is an empty string"
+    ],
+    "reproduction_steps": [
+      "Set TEMPLATES_DIRS environment variable to an empty string.",
+      "Run application with Django version > 3.2.3."
+    ],
+    "expected": [
+      "The autoreload feature should work correctly, ignoring empty directory strings."
+    ],
+    "actual": [
+      "The autoreload feature stops working because the empty string is transformed to the root directory."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"autoreload stops working\",\n  \"api_involved\": [\"django/template/autoreload.py::template_changed\"],\n  \"input_conditions\": [\"TEMPLATES_DIRS environment variable is an empty string\"],\n  \"expected\": \"The autoreload feature should work correctly, ignoring empty directory strings.\",\n  \"actual\": \"The autoreload feature stops working because the empty string is transformed to the root directory.\",\n  \"reproduction_steps\": [\n    \"Set TEMPLATES_DIRS environment variable to an empty string.\",\n    \"Run application with Django version > 3.2.3.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"autoreload stops working\",\n  \"api_involved\": [\"django/template/autoreload.py::template_changed\"],\n  \"input_conditions\": [\"TEMPLATES_DIRS environment variable is an empty string\"],\n  \"expected\": \"The autoreload feature should work correctly, ignoring empty directory strings.\",\n  \"actual\": \"The autoreload feature stops working because the empty string is transformed to the root directory.\",\n  \"reproduction_steps\": [\n    \"Set TEMPLATES_DIRS environment variable to an empty string.\",\n    \"Run application with Django version > 3.2.3.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

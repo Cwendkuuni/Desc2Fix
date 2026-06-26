@@ -1,0 +1,65 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-25",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "ERROR - actual parameter 1 of callz does not match formal parameter"
+    ],
+    "api_involved": [
+      "callz",
+      "new callz"
+    ],
+    "input_conditions": [
+      "compilation_level=ADVANCED_OPTIMIZATIONS",
+      "jscomp_error=accessControls",
+      "jscomp_error=checkTypes",
+      "jscomp_error=checkVars"
+    ],
+    "reproduction_steps": [
+      "Create a file reverse.js with a constructor function `callz` that has @param {{prop1: string, prop2: (number|undefined)}} parry and @constructor",
+      "Add `new callz({prop1: 'hi'});` line",
+      "Run the Closure Compiler with flags --compilation_level=ADVANCED_OPTIMIZATIONS --jscomp_error=accessControls --jscomp_error=checkTypes --jscomp_error=checkVars",
+      "Observe the type mismatch error"
+    ],
+    "expected": [
+      "Both calling with `callz({prop1: 'hi'})` and `new callz({prop1: 'hi'})` should compile without error, as the parameter type allows `prop2` to be undefined."
+    ],
+    "actual": [
+      "`new callz({prop1: 'hi'})` triggers a type mismatch error, while `callz({prop1: 'hi'})` does not."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ERROR - actual parameter 1 of callz does not match formal parameter"
+    ],
+    "api_involved": [
+      "callz",
+      "new callz"
+    ],
+    "input_conditions": [
+      "compilation_level=ADVANCED_OPTIMIZATIONS",
+      "jscomp_error=accessControls",
+      "jscomp_error=checkTypes",
+      "jscomp_error=checkVars"
+    ],
+    "reproduction_steps": [
+      "Create a file reverse.js with a constructor function `callz` that has @param {{prop1: string, prop2: (number|undefined)}} parry and @constructor",
+      "Add `new callz({prop1: 'hi'});` line",
+      "Run the Closure Compiler with flags --compilation_level=ADVANCED_OPTIMIZATIONS --jscomp_error=accessControls --jscomp_error=checkTypes --jscomp_error=checkVars",
+      "Observe the type mismatch error"
+    ],
+    "expected": [
+      "Both calling with `callz({prop1: 'hi'})` and `new callz({prop1: 'hi'})` should compile without error, as the parameter type allows `prop2` to be undefined."
+    ],
+    "actual": [
+      "`new callz({prop1: 'hi'})` triggers a type mismatch error, while `callz({prop1: 'hi'})` does not."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"ERROR - actual parameter 1 of callz does not match formal parameter\",\n\"api_involved\": [\"callz\", \"new callz\"],\n\"input_conditions\": [\"compilation_level=ADVANCED_OPTIMIZATIONS\", \"jscomp_error=accessControls\", \"jscomp_error=checkTypes\", \"jscomp_error=checkVars\"],\n\"expected\": \"Both calling with `callz({prop1: 'hi'})` and `new callz({prop1: 'hi'})` should compile without error, as the parameter type allows `prop2` to be undefined.\",\n\"actual\": \"`new callz({prop1: 'hi'})` triggers a type mismatch error, while `callz({prop1: 'hi'})` does not.\",\n\"reproduction_steps\": [\n\"Create a file reverse.js with a constructor function `callz` that has @param {{prop1: string, prop2: (number|undefined)}} parry and @constructor\",\n\"Add `new callz({prop1: 'hi'});` line\",\n\"Run the Closure Compiler with flags --compilation_level=ADVANCED_OPTIMIZATIONS --jscomp_error=accessControls --jscomp_error=checkTypes --jscomp_error=checkVars\",\n\"Observe the type mismatch error\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"ERROR - actual parameter 1 of callz does not match formal parameter\",\n\"api_involved\": [\"callz\", \"new callz\"],\n\"input_conditions\": [\"compilation_level=ADVANCED_OPTIMIZATIONS\", \"jscomp_error=accessControls\", \"jscomp_error=checkTypes\", \"jscomp_error=checkVars\"],\n\"expected\": \"Both calling with `callz({prop1: 'hi'})` and `new callz({prop1: 'hi'})` should compile without error, as the parameter type allows `prop2` to be undefined.\",\n\"actual\": \"`new callz({prop1: 'hi'})` triggers a type mismatch error, while `callz({prop1: 'hi'})` does not.\",\n\"reproduction_steps\": [\n\"Create a file reverse.js with a constructor function `callz` that has @param {{prop1: string, prop2: (number|undefined)}} parry and @constructor\",\n\"Add `new callz({prop1: 'hi'});` line\",\n\"Run the Closure Compiler with flags --compilation_level=ADVANCED_OPTIMIZATIONS --jscomp_error=accessControls --jscomp_error=checkTypes --jscomp_error=checkVars\",\n\"Observe the type mismatch error\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

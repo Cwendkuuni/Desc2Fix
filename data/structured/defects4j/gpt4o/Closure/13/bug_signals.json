@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-13",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "some_function",
+      "method1",
+      "method2"
+    ],
+    "input_conditions": [
+      "any_expression",
+      "external_ref"
+    ],
+    "reproduction_steps": [
+      "Define function some_function",
+      "Initialize var fn1 and fn2",
+      "Check any_expression condition",
+      "Assign fn2 to external_ref and fn1 to a function",
+      "Call method1 and method2"
+    ],
+    "expected": [
+      "true/false will be replaced by !0/!1"
+    ],
+    "actual": [
+      "true/false are not replaced by !0/!1"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "some_function",
+      "method1",
+      "method2"
+    ],
+    "input_conditions": [
+      "any_expression",
+      "external_ref"
+    ],
+    "reproduction_steps": [
+      "Define function some_function",
+      "Initialize var fn1 and fn2",
+      "Check any_expression condition",
+      "Assign fn2 to external_ref and fn1 to a function",
+      "Call method1 and method2"
+    ],
+    "expected": [
+      "true/false will be replaced by !0/!1"
+    ],
+    "actual": [
+      "true/false are not replaced by !0/!1"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"some_function\", \"method1\", \"method2\"],\n  \"input_conditions\": [\"any_expression\", \"external_ref\"],\n  \"expected\": \"true/false will be replaced by !0/!1\",\n  \"actual\": \"true/false are not replaced by !0/!1\",\n  \"reproduction_steps\": [\n    \"Define function some_function\",\n    \"Initialize var fn1 and fn2\",\n    \"Check any_expression condition\",\n    \"Assign fn2 to external_ref and fn1 to a function\",\n    \"Call method1 and method2\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"some_function\", \"method1\", \"method2\"],\n  \"input_conditions\": [\"any_expression\", \"external_ref\"],\n  \"expected\": \"true/false will be replaced by !0/!1\",\n  \"actual\": \"true/false are not replaced by !0/!1\",\n  \"reproduction_steps\": [\n    \"Define function some_function\",\n    \"Initialize var fn1 and fn2\",\n    \"Check any_expression condition\",\n    \"Assign fn2 to external_ref and fn1 to a function\",\n    \"Call method1 and method2\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

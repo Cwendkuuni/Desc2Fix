@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-9",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "ERROR - required entry point \"module$lib$Foo\" never provided"
+    ],
+    "api_involved": [
+      "compiler.jar"
+    ],
+    "input_conditions": [
+      "AMD module in lib/Foo.js",
+      "AMD module in Bar.js depending on lib/Foo.js",
+      "compilation level set to ADVANCED_OPTIMIZATIONS"
+    ],
+    "reproduction_steps": [
+      "Create 1st AMD module in lib/Foo.js",
+      "Create 2nd AMD module in Bar.js depending on lib/Foo.js",
+      "Try to compile both files with Bar.js as main module"
+    ],
+    "expected": [
+      "Successful compilation with out.js generated"
+    ],
+    "actual": [
+      "Compilation failed with error message: required entry point \"module$lib$Foo\" never provided"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ERROR - required entry point \"module$lib$Foo\" never provided"
+    ],
+    "api_involved": [
+      "compiler.jar"
+    ],
+    "input_conditions": [
+      "AMD module in lib/Foo.js",
+      "AMD module in Bar.js depending on lib/Foo.js",
+      "compilation level set to ADVANCED_OPTIMIZATIONS"
+    ],
+    "reproduction_steps": [
+      "Create 1st AMD module in lib/Foo.js",
+      "Create 2nd AMD module in Bar.js depending on lib/Foo.js",
+      "Try to compile both files with Bar.js as main module"
+    ],
+    "expected": [
+      "Successful compilation with out.js generated"
+    ],
+    "actual": [
+      "Compilation failed with error message: required entry point \"module$lib$Foo\" never provided"
+    ]
+  },
+  "raw_response": "```\n{\n    \"exception\": \"ERROR - required entry point \\\"module$lib$Foo\\\" never provided\",\n    \"api_involved\": [\"compiler.jar\"],\n    \"input_conditions\": [\"AMD module in lib/Foo.js\", \"AMD module in Bar.js depending on lib/Foo.js\", \"compilation level set to ADVANCED_OPTIMIZATIONS\"],\n    \"expected\": \"Successful compilation with out.js generated\",\n    \"actual\": \"Compilation failed with error message: required entry point \\\"module$lib$Foo\\\" never provided\",\n    \"reproduction_steps\": [\n        \"Create 1st AMD module in lib/Foo.js\",\n        \"Create 2nd AMD module in Bar.js depending on lib/Foo.js\",\n        \"Try to compile both files with Bar.js as main module\"\n    ]\n}\n```",
+  "llm_response": "```\n{\n    \"exception\": \"ERROR - required entry point \\\"module$lib$Foo\\\" never provided\",\n    \"api_involved\": [\"compiler.jar\"],\n    \"input_conditions\": [\"AMD module in lib/Foo.js\", \"AMD module in Bar.js depending on lib/Foo.js\", \"compilation level set to ADVANCED_OPTIMIZATIONS\"],\n    \"expected\": \"Successful compilation with out.js generated\",\n    \"actual\": \"Compilation failed with error message: required entry point \\\"module$lib$Foo\\\" never provided\",\n    \"reproduction_steps\": [\n        \"Create 1st AMD module in lib/Foo.js\",\n        \"Create 2nd AMD module in Bar.js depending on lib/Foo.js\",\n        \"Try to compile both files with Bar.js as main module\"\n    ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

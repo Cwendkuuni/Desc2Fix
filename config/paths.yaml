@@ -1,0 +1,25 @@
+project:
+  root: "."
+
+data:
+  raw: "data/raw"
+  processed: "data/processed"
+  structured: "data/structured"
+  human_annotations: "data/human_annotations"
+  cache: "data/cache"
+
+results:
+  experiments: "results/experiments"
+  tables: "results/tables"
+  figures: "results/figures"
+  dashboard: "results/dashboard"
+
+prompts:
+  extraction: "prompts/extraction"
+  report_test_alignment: "prompts/report_test_alignment"
+  report_patch_alignment: "prompts/report_patch_alignment"
+  test_patch_alignment_internal: "prompts/test_patch_alignment_internal"
+
+external:
+  root: "external"
+  defects4j: "external/defects4j"

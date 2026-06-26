@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-8",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "OutOfMemoryException (implied by OutOfMemoryExceptions mentioned)"
+    ],
+    "api_involved": [
+      "HelpFormatter.findWrapPos",
+      "HelpFormatter.renderWrappedText"
+    ],
+    "input_conditions": [
+      "option with long description",
+      "startPos used incorrectly in findWrapPos calls",
+      "nextLineTabStop passed as startPos instead of 0"
+    ],
+    "reproduction_steps": [
+      "Create an option with a long description.",
+      "Use the help formatter to print the description.",
+      "Observe that the first line is correctly formatted, but the second, third, etc. lines are too long."
+    ],
+    "expected": [
+      "All lines of wrapped text should be within the specified width, with first line and subsequent lines formatted correctly."
+    ],
+    "actual": [
+      "Lines beyond the first are wrapped at a position that is 'startPos' characters too long, exceeding the specified width."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "OutOfMemoryException (implied by OutOfMemoryExceptions mentioned)"
+    ],
+    "api_involved": [
+      "HelpFormatter.findWrapPos",
+      "HelpFormatter.renderWrappedText"
+    ],
+    "input_conditions": [
+      "option with long description",
+      "startPos used incorrectly in findWrapPos calls",
+      "nextLineTabStop passed as startPos instead of 0"
+    ],
+    "reproduction_steps": [
+      "Create an option with a long description.",
+      "Use the help formatter to print the description.",
+      "Observe that the first line is correctly formatted, but the second, third, etc. lines are too long."
+    ],
+    "expected": [
+      "All lines of wrapped text should be within the specified width, with first line and subsequent lines formatted correctly."
+    ],
+    "actual": [
+      "Lines beyond the first are wrapped at a position that is 'startPos' characters too long, exceeding the specified width."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"OutOfMemoryException (implied by OutOfMemoryExceptions mentioned)\",\n\"api_involved\": [\"HelpFormatter.findWrapPos\", \"HelpFormatter.renderWrappedText\"],\n\"input_conditions\": [\"option with long description\", \"startPos used incorrectly in findWrapPos calls\", \"nextLineTabStop passed as startPos instead of 0\"],\n\"expected\": \"All lines of wrapped text should be within the specified width, with first line and subsequent lines formatted correctly.\",\n\"actual\": \"Lines beyond the first are wrapped at a position that is 'startPos' characters too long, exceeding the specified width.\",\n\"reproduction_steps\": [\n\"Create an option with a long description.\",\n\"Use the help formatter to print the description.\",\n\"Observe that the first line is correctly formatted, but the second, third, etc. lines are too long.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"OutOfMemoryException (implied by OutOfMemoryExceptions mentioned)\",\n\"api_involved\": [\"HelpFormatter.findWrapPos\", \"HelpFormatter.renderWrappedText\"],\n\"input_conditions\": [\"option with long description\", \"startPos used incorrectly in findWrapPos calls\", \"nextLineTabStop passed as startPos instead of 0\"],\n\"expected\": \"All lines of wrapped text should be within the specified width, with first line and subsequent lines formatted correctly.\",\n\"actual\": \"Lines beyond the first are wrapped at a position that is 'startPos' characters too long, exceeding the specified width.\",\n\"reproduction_steps\": [\n\"Create an option with a long description.\",\n\"Use the help formatter to print the description.\",\n\"Observe that the first line is correctly formatted, but the second, third, etc. lines are too long.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

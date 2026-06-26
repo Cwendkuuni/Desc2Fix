@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-149",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Closure Compiler",
+      "Closure Compiler Service",
+      "Closure Compiler API",
+      "Ant task"
+    ],
+    "input_conditions": [
+      "Large files with non-ASCII strings",
+      "UTF-8 input encoding",
+      "Pattern files (e.g., ru.js with Unicode characters)"
+    ],
+    "reproduction_steps": [
+      "1. Use a large JavaScript file containing strings with non-ASCII characters (e.g., hyphenation patterns).",
+      "2. Minify the file using Closure Compiler.",
+      "3. Observe that the output file is larger than the original due to Unicode escaping."
+    ],
+    "expected": [
+      "Ability to turn off string escaping of non-ASCII characters so output remains as UTF-8 and file size does not increase."
+    ],
+    "actual": [
+      "The compiler escapes all non-ASCII characters (e.g., \\u0431) into US-ASCII representation, causing output file size to increase significantly even after gzip compression."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Closure Compiler",
+      "Closure Compiler Service",
+      "Closure Compiler API",
+      "Ant task"
+    ],
+    "input_conditions": [
+      "Large files with non-ASCII strings",
+      "UTF-8 input encoding",
+      "Pattern files (e.g., ru.js with Unicode characters)"
+    ],
+    "reproduction_steps": [
+      "1. Use a large JavaScript file containing strings with non-ASCII characters (e.g., hyphenation patterns).",
+      "2. Minify the file using Closure Compiler.",
+      "3. Observe that the output file is larger than the original due to Unicode escaping."
+    ],
+    "expected": [
+      "Ability to turn off string escaping of non-ASCII characters so output remains as UTF-8 and file size does not increase."
+    ],
+    "actual": [
+      "The compiler escapes all non-ASCII characters (e.g., \\u0431) into US-ASCII representation, causing output file size to increase significantly even after gzip compression."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Closure Compiler\", \"Closure Compiler Service\", \"Closure Compiler API\", \"Ant task\"],\n\"input_conditions\": [\"Large files with non-ASCII strings\", \"UTF-8 input encoding\", \"Pattern files (e.g., ru.js with Unicode characters)\"],\n\"expected\": \"Ability to turn off string escaping of non-ASCII characters so output remains as UTF-8 and file size does not increase.\",\n\"actual\": \"The compiler escapes all non-ASCII characters (e.g., \\\\u0431) into US-ASCII representation, causing output file size to increase significantly even after gzip compression.\",\n\"reproduction_steps\": [\"1. Use a large JavaScript file containing strings with non-ASCII characters (e.g., hyphenation patterns).\", \"2. Minify the file using Closure Compiler.\", \"3. Observe that the output file is larger than the original due to Unicode escaping.\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Closure Compiler\", \"Closure Compiler Service\", \"Closure Compiler API\", \"Ant task\"],\n\"input_conditions\": [\"Large files with non-ASCII strings\", \"UTF-8 input encoding\", \"Pattern files (e.g., ru.js with Unicode characters)\"],\n\"expected\": \"Ability to turn off string escaping of non-ASCII characters so output remains as UTF-8 and file size does not increase.\",\n\"actual\": \"The compiler escapes all non-ASCII characters (e.g., \\\\u0431) into US-ASCII representation, causing output file size to increase significantly even after gzip compression.\",\n\"reproduction_steps\": [\"1. Use a large JavaScript file containing strings with non-ASCII characters (e.g., hyphenation patterns).\", \"2. Minify the file using Closure Compiler.\", \"3. Observe that the output file is larger than the original due to Unicode escaping.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Cli-25",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "OutOfMemoryError"
+    ],
+    "api_involved": [
+      "HelpFormatter",
+      "Options"
+    ],
+    "input_conditions": [
+      "setWidth(20)",
+      "word longer than width"
+    ],
+    "reproduction_steps": [
+      "Create Options instance",
+      "Add long description option",
+      "Create HelpFormatter instance",
+      "Set width to 20",
+      "Call printHelp with options"
+    ],
+    "expected": [
+      "Helpful exception indicating the insufficient width"
+    ],
+    "actual": [
+      "Infinite loop leading to JVM crash with OutOfMemoryError"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "OutOfMemoryError"
+    ],
+    "api_involved": [
+      "HelpFormatter",
+      "Options"
+    ],
+    "input_conditions": [
+      "setWidth(20)",
+      "word longer than width"
+    ],
+    "reproduction_steps": [
+      "Create Options instance",
+      "Add long description option",
+      "Create HelpFormatter instance",
+      "Set width to 20",
+      "Call printHelp with options"
+    ],
+    "expected": [
+      "Helpful exception indicating the insufficient width"
+    ],
+    "actual": [
+      "Infinite loop leading to JVM crash with OutOfMemoryError"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"OutOfMemoryError\",\n  \"api_involved\": [\"HelpFormatter\", \"Options\"],\n  \"input_conditions\": [\"setWidth(20)\", \"word longer than width\"],\n  \"expected\": \"Helpful exception indicating the insufficient width\",\n  \"actual\": \"Infinite loop leading to JVM crash with OutOfMemoryError\",\n  \"reproduction_steps\": [\"Create Options instance\", \"Add long description option\", \"Create HelpFormatter instance\", \"Set width to 20\", \"Call printHelp with options\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"OutOfMemoryError\",\n  \"api_involved\": [\"HelpFormatter\", \"Options\"],\n  \"input_conditions\": [\"setWidth(20)\", \"word longer than width\"],\n  \"expected\": \"Helpful exception indicating the insufficient width\",\n  \"actual\": \"Infinite loop leading to JVM crash with OutOfMemoryError\",\n  \"reproduction_steps\": [\"Create Options instance\", \"Add long description option\", \"Create HelpFormatter instance\", \"Set width to 20\", \"Call printHelp with options\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

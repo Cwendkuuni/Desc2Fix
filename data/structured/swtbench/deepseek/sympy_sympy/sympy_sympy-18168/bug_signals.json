@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-18168",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [
+      "exception"
+    ],
+    "api_involved": [
+      "Q(S.Rationals)",
+      "S.Reals",
+      "S.Rationals"
+    ],
+    "input_conditions": [
+      "properties are not initialized",
+      "checking if Q(S.Rationals) is open or closed in R (S.Reals)"
+    ],
+    "reproduction_steps": [
+      "Call Q(S.Rationals) properties",
+      "Check if Q(S.Rationals) is open or closed in R (S.Reals)",
+      "Observe that properties are not initialized"
+    ],
+    "expected": [
+      "should return and"
+    ],
+    "actual": [
+      "properties aren't initialized"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "exception"
+    ],
+    "api_involved": [
+      "Q(S.Rationals)",
+      "S.Reals",
+      "S.Rationals"
+    ],
+    "input_conditions": [
+      "properties are not initialized",
+      "checking if Q(S.Rationals) is open or closed in R (S.Reals)"
+    ],
+    "reproduction_steps": [
+      "Call Q(S.Rationals) properties",
+      "Check if Q(S.Rationals) is open or closed in R (S.Reals)",
+      "Observe that properties are not initialized"
+    ],
+    "expected": [
+      "should return and"
+    ],
+    "actual": [
+      "properties aren't initialized"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"exception\",\n\"api_involved\": [\"Q(S.Rationals)\", \"S.Reals\", \"S.Rationals\"],\n\"input_conditions\": [\"properties are not initialized\", \"checking if Q(S.Rationals) is open or closed in R (S.Reals)\"],\n\"expected\": \"should return and \",\n\"actual\": \"properties aren't initialized\",\n\"reproduction_steps\": [\"Call Q(S.Rationals) properties\", \"Check if Q(S.Rationals) is open or closed in R (S.Reals)\", \"Observe that properties are not initialized\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"exception\",\n\"api_involved\": [\"Q(S.Rationals)\", \"S.Reals\", \"S.Rationals\"],\n\"input_conditions\": [\"properties are not initialized\", \"checking if Q(S.Rationals) is open or closed in R (S.Reals)\"],\n\"expected\": \"should return and \",\n\"actual\": \"properties aren't initialized\",\n\"reproduction_steps\": [\"Call Q(S.Rationals) properties\", \"Check if Q(S.Rationals) is open or closed in R (S.Reals)\", \"Observe that properties are not initialized\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

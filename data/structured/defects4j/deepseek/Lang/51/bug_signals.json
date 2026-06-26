@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Lang-51",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "StringIndexOutOfBoundsException"
+    ],
+    "api_involved": [
+      "BooleanUtils.toBoolean()"
+    ],
+    "input_conditions": [
+      "input string length is 3",
+      "case 3 in switch statement drops through to case 4"
+    ],
+    "reproduction_steps": [
+      "Call BooleanUtils.toBoolean() with the string \"tru\"",
+      "Observe StringIndexOutOfBoundsException instead of false"
+    ],
+    "expected": [
+      "assertEquals(false, BooleanUtils.toBoolean(\"tru\")) should return false"
+    ],
+    "actual": [
+      "StringIndexOutOfBoundsException thrown due to invalid drop-through from case 3 to case 4"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "StringIndexOutOfBoundsException"
+    ],
+    "api_involved": [
+      "BooleanUtils.toBoolean()"
+    ],
+    "input_conditions": [
+      "input string length is 3",
+      "case 3 in switch statement drops through to case 4"
+    ],
+    "reproduction_steps": [
+      "Call BooleanUtils.toBoolean() with the string \"tru\"",
+      "Observe StringIndexOutOfBoundsException instead of false"
+    ],
+    "expected": [
+      "assertEquals(false, BooleanUtils.toBoolean(\"tru\")) should return false"
+    ],
+    "actual": [
+      "StringIndexOutOfBoundsException thrown due to invalid drop-through from case 3 to case 4"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"StringIndexOutOfBoundsException\",\n\"api_involved\": [\"BooleanUtils.toBoolean()\"],\n\"input_conditions\": [\"input string length is 3\", \"case 3 in switch statement drops through to case 4\"],\n\"expected\": \"assertEquals(false, BooleanUtils.toBoolean(\\\"tru\\\")) should return false\",\n\"actual\": \"StringIndexOutOfBoundsException thrown due to invalid drop-through from case 3 to case 4\",\n\"reproduction_steps\": [\"Call BooleanUtils.toBoolean() with the string \\\"tru\\\"\", \"Observe StringIndexOutOfBoundsException instead of false\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"StringIndexOutOfBoundsException\",\n\"api_involved\": [\"BooleanUtils.toBoolean()\"],\n\"input_conditions\": [\"input string length is 3\", \"case 3 in switch statement drops through to case 4\"],\n\"expected\": \"assertEquals(false, BooleanUtils.toBoolean(\\\"tru\\\")) should return false\",\n\"actual\": \"StringIndexOutOfBoundsException thrown due to invalid drop-through from case 3 to case 4\",\n\"reproduction_steps\": [\"Call BooleanUtils.toBoolean() with the string \\\"tru\\\"\", \"Observe StringIndexOutOfBoundsException instead of false\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

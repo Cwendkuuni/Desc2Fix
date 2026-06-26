@@ -1,0 +1,49 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-13768",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "exceptions raised in receivers"
+    ],
+    "api_involved": [
+      "Signal.send_robust()",
+      "logger.exception()"
+    ],
+    "input_conditions": [
+      "exceptions occur in Signal.send_robust()"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Exceptions in Signal.send_robust() should be logged using logger.exception()"
+    ],
+    "actual": [
+      "Exceptions in Signal.send_robust() are not logged"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "exceptions raised in receivers"
+    ],
+    "api_involved": [
+      "Signal.send_robust()",
+      "logger.exception()"
+    ],
+    "input_conditions": [
+      "exceptions occur in Signal.send_robust()"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Exceptions in Signal.send_robust() should be logged using logger.exception()"
+    ],
+    "actual": [
+      "Exceptions in Signal.send_robust() are not logged"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"exceptions raised in receivers\",\n  \"api_involved\": [\"Signal.send_robust()\", \"logger.exception()\"],\n  \"input_conditions\": [\"exceptions occur in Signal.send_robust()\"],\n  \"expected\": \"Exceptions in Signal.send_robust() should be logged using logger.exception()\",\n  \"actual\": \"Exceptions in Signal.send_robust() are not logged\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"exceptions raised in receivers\",\n  \"api_involved\": [\"Signal.send_robust()\", \"logger.exception()\"],\n  \"input_conditions\": [\"exceptions occur in Signal.send_robust()\"],\n  \"expected\": \"Exceptions in Signal.send_robust() should be logged using logger.exception()\",\n  \"actual\": \"Exceptions in Signal.send_robust() are not logged\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

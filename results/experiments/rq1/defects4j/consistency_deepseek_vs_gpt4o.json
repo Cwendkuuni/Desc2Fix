@@ -1,0 +1,15 @@
+{
+  "dataset": "defects4j",
+  "model_a": "deepseek",
+  "model_b": "gpt4o",
+  "common_instances": 10,
+  "avg_macro_jaccard": 0.300495,
+  "avg_field_jaccard": {
+    "exception": 0.52,
+    "api_involved": 0.353333,
+    "input_conditions": 0.23307,
+    "reproduction_steps": 0.256857,
+    "expected": 0.243936,
+    "actual": 0.195771
+  }
+}

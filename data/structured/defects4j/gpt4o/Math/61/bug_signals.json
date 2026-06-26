@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-61",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "PoissonDistributionImpl",
+      "NormalDistribution",
+      "setNormal",
+      "setMean"
+    ],
+    "input_conditions": [
+      "double p",
+      "NormalDistribution z"
+    ],
+    "reproduction_steps": [
+      "Create an instance of PoissonDistributionImpl with a double 'p' and a NormalDistribution 'z'.",
+      "Observe that the 'setMean' and 'setNormal' methods are called within the constructor, modifying the 'z' instance."
+    ],
+    "expected": [
+      "The class should ensure consistency between the 'mean' of the PoissonDistributionImpl and the 'mean' of the NormalDistribution object. The 'NormalDistribution' should not be modified unexpectedly."
+    ],
+    "actual": [
+      "Overridable methods (setNormal and setMean) are called within the constructor, potentially leading to unsafe behavior. The 'NormalDistribution' reference is modified within the class without assurances of maintaining consistency."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "PoissonDistributionImpl",
+      "NormalDistribution",
+      "setNormal",
+      "setMean"
+    ],
+    "input_conditions": [
+      "double p",
+      "NormalDistribution z"
+    ],
+    "reproduction_steps": [
+      "Create an instance of PoissonDistributionImpl with a double 'p' and a NormalDistribution 'z'.",
+      "Observe that the 'setMean' and 'setNormal' methods are called within the constructor, modifying the 'z' instance."
+    ],
+    "expected": [
+      "The class should ensure consistency between the 'mean' of the PoissonDistributionImpl and the 'mean' of the NormalDistribution object. The 'NormalDistribution' should not be modified unexpectedly."
+    ],
+    "actual": [
+      "Overridable methods (setNormal and setMean) are called within the constructor, potentially leading to unsafe behavior. The 'NormalDistribution' reference is modified within the class without assurances of maintaining consistency."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"PoissonDistributionImpl\", \"NormalDistribution\", \"setNormal\", \"setMean\"],\n  \"input_conditions\": [\"double p\", \"NormalDistribution z\"],\n  \"expected\": \"The class should ensure consistency between the 'mean' of the PoissonDistributionImpl and the 'mean' of the NormalDistribution object. The 'NormalDistribution' should not be modified unexpectedly.\",\n  \"actual\": \"Overridable methods (setNormal and setMean) are called within the constructor, potentially leading to unsafe behavior. The 'NormalDistribution' reference is modified within the class without assurances of maintaining consistency.\",\n  \"reproduction_steps\": [\n    \"Create an instance of PoissonDistributionImpl with a double 'p' and a NormalDistribution 'z'.\",\n    \"Observe that the 'setMean' and 'setNormal' methods are called within the constructor, modifying the 'z' instance.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"PoissonDistributionImpl\", \"NormalDistribution\", \"setNormal\", \"setMean\"],\n  \"input_conditions\": [\"double p\", \"NormalDistribution z\"],\n  \"expected\": \"The class should ensure consistency between the 'mean' of the PoissonDistributionImpl and the 'mean' of the NormalDistribution object. The 'NormalDistribution' should not be modified unexpectedly.\",\n  \"actual\": \"Overridable methods (setNormal and setMean) are called within the constructor, potentially leading to unsafe behavior. The 'NormalDistribution' reference is modified within the class without assurances of maintaining consistency.\",\n  \"reproduction_steps\": [\n    \"Create an instance of PoissonDistributionImpl with a double 'p' and a NormalDistribution 'z'.\",\n    \"Observe that the 'setMean' and 'setNormal' methods are called within the constructor, modifying the 'z' instance.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

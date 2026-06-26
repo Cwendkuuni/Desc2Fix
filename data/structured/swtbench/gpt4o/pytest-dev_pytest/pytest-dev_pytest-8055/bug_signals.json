@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "pytest-dev__pytest-8055",
+  "project": null,
+  "repo": "pytest-dev/pytest",
+  "signals": {
+    "exception": [
+      "unraisable exceptions"
+    ],
+    "api_involved": [
+      "sys.unraisablehook",
+      "Pytest"
+    ],
+    "input_conditions": [
+      "Python 3.8 environment"
+    ],
+    "reproduction_steps": [
+      "Setup a Python 3.8 environment",
+      "Run tests with Pytest",
+      "Observe handling of unraisable exceptions"
+    ],
+    "expected": [
+      "Pytest sets sys.unraisablehook to associate unraisable exceptions with tests"
+    ],
+    "actual": [
+      "Pytest does not set sys.unraisablehook, leading to unraisable exceptions not being associated with tests"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "unraisable exceptions"
+    ],
+    "api_involved": [
+      "sys.unraisablehook",
+      "Pytest"
+    ],
+    "input_conditions": [
+      "Python 3.8 environment"
+    ],
+    "reproduction_steps": [
+      "Setup a Python 3.8 environment",
+      "Run tests with Pytest",
+      "Observe handling of unraisable exceptions"
+    ],
+    "expected": [
+      "Pytest sets sys.unraisablehook to associate unraisable exceptions with tests"
+    ],
+    "actual": [
+      "Pytest does not set sys.unraisablehook, leading to unraisable exceptions not being associated with tests"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"unraisable exceptions\",\n  \"api_involved\": [\"sys.unraisablehook\", \"Pytest\"],\n  \"input_conditions\": [\"Python 3.8 environment\"],\n  \"expected\": \"Pytest sets sys.unraisablehook to associate unraisable exceptions with tests\",\n  \"actual\": \"Pytest does not set sys.unraisablehook, leading to unraisable exceptions not being associated with tests\",\n  \"reproduction_steps\": [\"Setup a Python 3.8 environment\", \"Run tests with Pytest\", \"Observe handling of unraisable exceptions\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"unraisable exceptions\",\n  \"api_involved\": [\"sys.unraisablehook\", \"Pytest\"],\n  \"input_conditions\": [\"Python 3.8 environment\"],\n  \"expected\": \"Pytest sets sys.unraisablehook to associate unraisable exceptions with tests\",\n  \"actual\": \"Pytest does not set sys.unraisablehook, leading to unraisable exceptions not being associated with tests\",\n  \"reproduction_steps\": [\"Setup a Python 3.8 environment\", \"Run tests with Pytest\", \"Observe handling of unraisable exceptions\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Lang-26",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "FastDateFormat",
+      "SimpleDateFormat",
+      "Calendar"
+    ],
+    "input_conditions": [
+      "Locale set to 'sv-SE'",
+      "Date set to January 1, 2010"
+    ],
+    "reproduction_steps": [
+      "Set the default locale to en-US",
+      "Create a Locale object with 'sv-SE'",
+      "Create a Calendar instance and set date to January 1, 2010",
+      "Create a FastDateFormat instance with the locale 'sv-SE'",
+      "Format the date with the FastDateFormat instance",
+      "Compare the output with a SimpleDateFormat instance using the same locale"
+    ],
+    "expected": [
+      "Week number should reflect the specified locale setting"
+    ],
+    "actual": [
+      "FastDateFormat outputs the week number using system locale settings instead of the specified locale"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "FastDateFormat",
+      "SimpleDateFormat",
+      "Calendar"
+    ],
+    "input_conditions": [
+      "Locale set to 'sv-SE'",
+      "Date set to January 1, 2010"
+    ],
+    "reproduction_steps": [
+      "Set the default locale to en-US",
+      "Create a Locale object with 'sv-SE'",
+      "Create a Calendar instance and set date to January 1, 2010",
+      "Create a FastDateFormat instance with the locale 'sv-SE'",
+      "Format the date with the FastDateFormat instance",
+      "Compare the output with a SimpleDateFormat instance using the same locale"
+    ],
+    "expected": [
+      "Week number should reflect the specified locale setting"
+    ],
+    "actual": [
+      "FastDateFormat outputs the week number using system locale settings instead of the specified locale"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"FastDateFormat\", \"SimpleDateFormat\", \"Calendar\"],\n  \"input_conditions\": [\"Locale set to 'sv-SE'\", \"Date set to January 1, 2010\"],\n  \"expected\": \"Week number should reflect the specified locale setting\",\n  \"actual\": \"FastDateFormat outputs the week number using system locale settings instead of the specified locale\",\n  \"reproduction_steps\": [\n    \"Set the default locale to en-US\",\n    \"Create a Locale object with 'sv-SE'\",\n    \"Create a Calendar instance and set date to January 1, 2010\",\n    \"Create a FastDateFormat instance with the locale 'sv-SE'\",\n    \"Format the date with the FastDateFormat instance\",\n    \"Compare the output with a SimpleDateFormat instance using the same locale\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"FastDateFormat\", \"SimpleDateFormat\", \"Calendar\"],\n  \"input_conditions\": [\"Locale set to 'sv-SE'\", \"Date set to January 1, 2010\"],\n  \"expected\": \"Week number should reflect the specified locale setting\",\n  \"actual\": \"FastDateFormat outputs the week number using system locale settings instead of the specified locale\",\n  \"reproduction_steps\": [\n    \"Set the default locale to en-US\",\n    \"Create a Locale object with 'sv-SE'\",\n    \"Create a Calendar instance and set date to January 1, 2010\",\n    \"Create a FastDateFormat instance with the locale 'sv-SE'\",\n    \"Format the date with the FastDateFormat instance\",\n    \"Compare the output with a SimpleDateFormat instance using the same locale\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

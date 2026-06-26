@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-20",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "CMAESOptimizer",
+      "isFeasible",
+      "doOptimize",
+      "FitnessFunction.value",
+      "computeObjectiveValue"
+    ],
+    "input_conditions": [
+      "checkFeasableCount set to zero (default)",
+      "optimizer parameters leading outside bounds"
+    ],
+    "reproduction_steps": [
+      "Run optimizer with checkFeasableCount set to zero",
+      "Observe optimizer storing unrepaired parameter values"
+    ],
+    "expected": [
+      "Optimizer should keep solutions within prescribed bounds."
+    ],
+    "actual": [
+      "Optimizer ends up with a fit outside the prescribed bounds."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "CMAESOptimizer",
+      "isFeasible",
+      "doOptimize",
+      "FitnessFunction.value",
+      "computeObjectiveValue"
+    ],
+    "input_conditions": [
+      "checkFeasableCount set to zero (default)",
+      "optimizer parameters leading outside bounds"
+    ],
+    "reproduction_steps": [
+      "Run optimizer with checkFeasableCount set to zero",
+      "Observe optimizer storing unrepaired parameter values"
+    ],
+    "expected": [
+      "Optimizer should keep solutions within prescribed bounds."
+    ],
+    "actual": [
+      "Optimizer ends up with a fit outside the prescribed bounds."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"CMAESOptimizer\", \"isFeasible\", \"doOptimize\", \"FitnessFunction.value\", \"computeObjectiveValue\"],\n  \"input_conditions\": [\"checkFeasableCount set to zero (default)\", \"optimizer parameters leading outside bounds\"],\n  \"expected\": \"Optimizer should keep solutions within prescribed bounds.\",\n  \"actual\": \"Optimizer ends up with a fit outside the prescribed bounds.\",\n  \"reproduction_steps\": [\"Run optimizer with checkFeasableCount set to zero\", \"Observe optimizer storing unrepaired parameter values\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"CMAESOptimizer\", \"isFeasible\", \"doOptimize\", \"FitnessFunction.value\", \"computeObjectiveValue\"],\n  \"input_conditions\": [\"checkFeasableCount set to zero (default)\", \"optimizer parameters leading outside bounds\"],\n  \"expected\": \"Optimizer should keep solutions within prescribed bounds.\",\n  \"actual\": \"Optimizer ends up with a fit outside the prescribed bounds.\",\n  \"reproduction_steps\": [\"Run optimizer with checkFeasableCount set to zero\", \"Observe optimizer storing unrepaired parameter values\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

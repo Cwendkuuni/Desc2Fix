@@ -1,0 +1,63 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-11964",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "AssertionError: 'MyChoice.FIRST_CHOICE' != 'first'"
+    ],
+    "api_involved": [
+      "models.CharField",
+      "models.TextChoices",
+      "models.IntegerChoices",
+      "enum.Enum",
+      "__str__"
+    ],
+    "input_conditions": [
+      "Creating an instance of a model having a CharField with choices pointing to TextChoices"
+    ],
+    "reproduction_steps": [
+      "Create a Django model with a CharField or IntegerField using choices pointing to IntegerChoices or TextChoices.",
+      "Create an instance of this model with a choice value.",
+      "Run a test to assert the type of the field's value is string using TestCase."
+    ],
+    "expected": [
+      "The value returned by the getter of the field should be of the same type as the one created by enum.Enum (enum value), specifically a string."
+    ],
+    "actual": [
+      "The value returned by the getter of the field is 'MyChoice.FIRST_CHOICE', which is not a string."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "AssertionError: 'MyChoice.FIRST_CHOICE' != 'first'"
+    ],
+    "api_involved": [
+      "models.CharField",
+      "models.TextChoices",
+      "models.IntegerChoices",
+      "enum.Enum",
+      "__str__"
+    ],
+    "input_conditions": [
+      "Creating an instance of a model having a CharField with choices pointing to TextChoices"
+    ],
+    "reproduction_steps": [
+      "Create a Django model with a CharField or IntegerField using choices pointing to IntegerChoices or TextChoices.",
+      "Create an instance of this model with a choice value.",
+      "Run a test to assert the type of the field's value is string using TestCase."
+    ],
+    "expected": [
+      "The value returned by the getter of the field should be of the same type as the one created by enum.Enum (enum value), specifically a string."
+    ],
+    "actual": [
+      "The value returned by the getter of the field is 'MyChoice.FIRST_CHOICE', which is not a string."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"AssertionError: 'MyChoice.FIRST_CHOICE' != 'first'\",\n  \"api_involved\": [\"models.CharField\", \"models.TextChoices\", \"models.IntegerChoices\", \"enum.Enum\", \"__str__\"],\n  \"input_conditions\": [\"Creating an instance of a model having a CharField with choices pointing to TextChoices\"],\n  \"expected\": \"The value returned by the getter of the field should be of the same type as the one created by enum.Enum (enum value), specifically a string.\",\n  \"actual\": \"The value returned by the getter of the field is 'MyChoice.FIRST_CHOICE', which is not a string.\",\n  \"reproduction_steps\": [\n    \"Create a Django model with a CharField or IntegerField using choices pointing to IntegerChoices or TextChoices.\",\n    \"Create an instance of this model with a choice value.\",\n    \"Run a test to assert the type of the field's value is string using TestCase.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"AssertionError: 'MyChoice.FIRST_CHOICE' != 'first'\",\n  \"api_involved\": [\"models.CharField\", \"models.TextChoices\", \"models.IntegerChoices\", \"enum.Enum\", \"__str__\"],\n  \"input_conditions\": [\"Creating an instance of a model having a CharField with choices pointing to TextChoices\"],\n  \"expected\": \"The value returned by the getter of the field should be of the same type as the one created by enum.Enum (enum value), specifically a string.\",\n  \"actual\": \"The value returned by the getter of the field is 'MyChoice.FIRST_CHOICE', which is not a string.\",\n  \"reproduction_steps\": [\n    \"Create a Django model with a CharField or IntegerField using choices pointing to IntegerChoices or TextChoices.\",\n    \"Create an instance of this model with a choice value.\",\n    \"Run a test to assert the type of the field's value is string using TestCase.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

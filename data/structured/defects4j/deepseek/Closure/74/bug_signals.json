@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-74",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "inline if",
+      "optimization"
+    ],
+    "input_conditions": [
+      "expression with true compared to null",
+      "expression with true compared to false",
+      "function parameter a equals true"
+    ],
+    "reproduction_steps": [
+      "Enter alert(true == null ? a() : b()) in advanced mode",
+      "Observe unwanted optimization to alert(!0 == null ? a() : b())",
+      "Enter alert(true == false ? a() : b()) and observe similar unwanted optimization",
+      "Define function sum(a, b){ return (a == true ? 2 : a) + b; } and call sum(true, 1)",
+      "Observe result is alert((!0 == !0 ? 2 : 1) + 1) instead of alert(3)"
+    ],
+    "expected": [
+      "alert(true == null ? a() : b()) should produce alert(b()); alert(true == false ? a() : b()) should produce alert(b()); alert(sum(true, 1)) should produce alert(3)"
+    ],
+    "actual": [
+      "alert(!0 == null ? a() : b()) is produced instead; alert((!0 == !0 ? 2 : 1) + 1) is produced instead; incorrect optimization of boolean literal comparisons"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "inline if",
+      "optimization"
+    ],
+    "input_conditions": [
+      "expression with true compared to null",
+      "expression with true compared to false",
+      "function parameter a equals true"
+    ],
+    "reproduction_steps": [
+      "Enter alert(true == null ? a() : b()) in advanced mode",
+      "Observe unwanted optimization to alert(!0 == null ? a() : b())",
+      "Enter alert(true == false ? a() : b()) and observe similar unwanted optimization",
+      "Define function sum(a, b){ return (a == true ? 2 : a) + b; } and call sum(true, 1)",
+      "Observe result is alert((!0 == !0 ? 2 : 1) + 1) instead of alert(3)"
+    ],
+    "expected": [
+      "alert(true == null ? a() : b()) should produce alert(b()); alert(true == false ? a() : b()) should produce alert(b()); alert(sum(true, 1)) should produce alert(3)"
+    ],
+    "actual": [
+      "alert(!0 == null ? a() : b()) is produced instead; alert((!0 == !0 ? 2 : 1) + 1) is produced instead; incorrect optimization of boolean literal comparisons"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"inline if\", \"optimization\"],\n\"input_conditions\": [\"expression with true compared to null\", \"expression with true compared to false\", \"function parameter a equals true\"],\n\"expected\": \"alert(true == null ? a() : b()) should produce alert(b()); alert(true == false ? a() : b()) should produce alert(b()); alert(sum(true, 1)) should produce alert(3)\",\n\"actual\": \"alert(!0 == null ? a() : b()) is produced instead; alert((!0 == !0 ? 2 : 1) + 1) is produced instead; incorrect optimization of boolean literal comparisons\",\n\"reproduction_steps\": [\"Enter alert(true == null ? a() : b()) in advanced mode\", \"Observe unwanted optimization to alert(!0 == null ? a() : b())\", \"Enter alert(true == false ? a() : b()) and observe similar unwanted optimization\", \"Define function sum(a, b){ return (a == true ? 2 : a) + b; } and call sum(true, 1)\", \"Observe result is alert((!0 == !0 ? 2 : 1) + 1) instead of alert(3)\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"inline if\", \"optimization\"],\n\"input_conditions\": [\"expression with true compared to null\", \"expression with true compared to false\", \"function parameter a equals true\"],\n\"expected\": \"alert(true == null ? a() : b()) should produce alert(b()); alert(true == false ? a() : b()) should produce alert(b()); alert(sum(true, 1)) should produce alert(3)\",\n\"actual\": \"alert(!0 == null ? a() : b()) is produced instead; alert((!0 == !0 ? 2 : 1) + 1) is produced instead; incorrect optimization of boolean literal comparisons\",\n\"reproduction_steps\": [\"Enter alert(true == null ? a() : b()) in advanced mode\", \"Observe unwanted optimization to alert(!0 == null ? a() : b())\", \"Enter alert(true == false ? a() : b()) and observe similar unwanted optimization\", \"Define function sum(a, b){ return (a == true ? 2 : a) + b; } and call sum(true, 1)\", \"Observe result is alert((!0 == !0 ? 2 : 1) + 1) instead of alert(3)\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

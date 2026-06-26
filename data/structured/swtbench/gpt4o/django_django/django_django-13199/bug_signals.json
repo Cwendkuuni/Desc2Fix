@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-13199",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "HttpResponse.delete_cookie",
+      "HttpResponseBase.delete_cookie",
+      "set_cookie"
+    ],
+    "input_conditions": [
+      "SameSite attribute set to 'none' or invalid without 'secure'",
+      "cookie's key does not start with 'Secure' or 'Host'"
+    ],
+    "reproduction_steps": [
+      "Use the response's delete_cookie method to expire a cookie with SameSite attribute set to 'Lax'.",
+      "Observe that the Set-Cookie header in the GET request lacks SameSite and 'secure' flags, leading to warnings in Firefox."
+    ],
+    "expected": [
+      "The delete_cookie method should preserve the SameSite attribute and apply the 'secure' flag as necessary to comply with modern browser requirements."
+    ],
+    "actual": [
+      "delete_cookie method does not preserve the SameSite setting and sets 'secure' only if the key starts with 'Secure' or 'Host', leading to potential cookie rejection by browsers."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "HttpResponse.delete_cookie",
+      "HttpResponseBase.delete_cookie",
+      "set_cookie"
+    ],
+    "input_conditions": [
+      "SameSite attribute set to 'none' or invalid without 'secure'",
+      "cookie's key does not start with 'Secure' or 'Host'"
+    ],
+    "reproduction_steps": [
+      "Use the response's delete_cookie method to expire a cookie with SameSite attribute set to 'Lax'.",
+      "Observe that the Set-Cookie header in the GET request lacks SameSite and 'secure' flags, leading to warnings in Firefox."
+    ],
+    "expected": [
+      "The delete_cookie method should preserve the SameSite attribute and apply the 'secure' flag as necessary to comply with modern browser requirements."
+    ],
+    "actual": [
+      "delete_cookie method does not preserve the SameSite setting and sets 'secure' only if the key starts with 'Secure' or 'Host', leading to potential cookie rejection by browsers."
+    ]
+  },
+  "raw_response": "```json\n{\n    \"exception\": null,\n    \"api_involved\": [\"HttpResponse.delete_cookie\", \"HttpResponseBase.delete_cookie\", \"set_cookie\"],\n    \"input_conditions\": [\"SameSite attribute set to 'none' or invalid without 'secure'\", \"cookie's key does not start with 'Secure' or 'Host'\"],\n    \"expected\": \"The delete_cookie method should preserve the SameSite attribute and apply the 'secure' flag as necessary to comply with modern browser requirements.\",\n    \"actual\": \"delete_cookie method does not preserve the SameSite setting and sets 'secure' only if the key starts with 'Secure' or 'Host', leading to potential cookie rejection by browsers.\",\n    \"reproduction_steps\": [\n        \"Use the response's delete_cookie method to expire a cookie with SameSite attribute set to 'Lax'.\",\n        \"Observe that the Set-Cookie header in the GET request lacks SameSite and 'secure' flags, leading to warnings in Firefox.\"\n    ]\n}\n```",
+  "llm_response": "```json\n{\n    \"exception\": null,\n    \"api_involved\": [\"HttpResponse.delete_cookie\", \"HttpResponseBase.delete_cookie\", \"set_cookie\"],\n    \"input_conditions\": [\"SameSite attribute set to 'none' or invalid without 'secure'\", \"cookie's key does not start with 'Secure' or 'Host'\"],\n    \"expected\": \"The delete_cookie method should preserve the SameSite attribute and apply the 'secure' flag as necessary to comply with modern browser requirements.\",\n    \"actual\": \"delete_cookie method does not preserve the SameSite setting and sets 'secure' only if the key starts with 'Secure' or 'Host', leading to potential cookie rejection by browsers.\",\n    \"reproduction_steps\": [\n        \"Use the response's delete_cookie method to expire a cookie with SameSite attribute set to 'Lax'.\",\n        \"Observe that the Set-Cookie header in the GET request lacks SameSite and 'secure' flags, leading to warnings in Firefox.\"\n    ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-13607",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "ValidationError: ManagementForm data is missing or has been tampered with"
+    ],
+    "api_involved": [
+      "BaseFormSet.is_valid()",
+      "self.total_form_count()",
+      "self.management_form.cleaned_data[TOTAL_FORM_COUNT]"
+    ],
+    "input_conditions": [
+      "formset submitted without management form hidden fields"
+    ],
+    "reproduction_steps": [
+      "Submit a formset after removing the management form hidden fields"
+    ],
+    "expected": [
+      "BaseFormSet.is_valid() returns False if management form is not present"
+    ],
+    "actual": [
+      "ValidationError is raised by BaseFormSet.is_valid() when management form is missing"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ValidationError: ManagementForm data is missing or has been tampered with"
+    ],
+    "api_involved": [
+      "BaseFormSet.is_valid()",
+      "self.total_form_count()",
+      "self.management_form.cleaned_data[TOTAL_FORM_COUNT]"
+    ],
+    "input_conditions": [
+      "formset submitted without management form hidden fields"
+    ],
+    "reproduction_steps": [
+      "Submit a formset after removing the management form hidden fields"
+    ],
+    "expected": [
+      "BaseFormSet.is_valid() returns False if management form is not present"
+    ],
+    "actual": [
+      "ValidationError is raised by BaseFormSet.is_valid() when management form is missing"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"ValidationError: ManagementForm data is missing or has been tampered with\",\n  \"api_involved\": [\"BaseFormSet.is_valid()\", \"self.total_form_count()\", \"self.management_form.cleaned_data[TOTAL_FORM_COUNT]\"],\n  \"input_conditions\": [\"formset submitted without management form hidden fields\"],\n  \"expected\": \"BaseFormSet.is_valid() returns False if management form is not present\",\n  \"actual\": \"ValidationError is raised by BaseFormSet.is_valid() when management form is missing\",\n  \"reproduction_steps\": [\"Submit a formset after removing the management form hidden fields\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"ValidationError: ManagementForm data is missing or has been tampered with\",\n  \"api_involved\": [\"BaseFormSet.is_valid()\", \"self.total_form_count()\", \"self.management_form.cleaned_data[TOTAL_FORM_COUNT]\"],\n  \"input_conditions\": [\"formset submitted without management form hidden fields\"],\n  \"expected\": \"BaseFormSet.is_valid() returns False if management form is not present\",\n  \"actual\": \"ValidationError is raised by BaseFormSet.is_valid() when management form is missing\",\n  \"reproduction_steps\": [\"Submit a formset after removing the management form hidden fields\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

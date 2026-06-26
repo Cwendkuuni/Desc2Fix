@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-85",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "org.apache.commons.math.MathException: Number of iterations=1, maximum iterations=2,147,483,647, initial=1, lower bound=0, upper bound=179,769,313,486,231,570,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000, final a value=0, final b value=2, f(a)=-0.477, f(b)=0"
+    ],
+    "api_involved": [
+      "inverseCumulativeProbability",
+      "NormalDistributionImpl",
+      "AbstractContinuousDistribution"
+    ],
+    "input_conditions": [
+      "Standard normal distribution with mean=0, standard deviation=1",
+      "Probability values close to 1 (e.g., 0.9772498680518209, 0.9986501019683698, 0.9999683287581673)"
+    ],
+    "reproduction_steps": [
+      "1. Create a DistributionFactory instance.",
+      "2. Create a NormalDistribution with mean=0 and std=1 using factory.createNormalDistribution(0,1).",
+      "3. Call inverseCumulativeProbability(0.9772498680518209) on the distribution object.",
+      "4. Observe the MathException."
+    ],
+    "expected": [
+      "For probability 0.9772498680518209, return approximately 2.0000; for 0.9986501019683698 return approximately 3.0000; for 0.9999683287581673 return approximately 4.0000"
+    ],
+    "actual": [
+      "MathException thrown with message indicating iteration stopped after only 1 iteration with initial=1, lower bound=0, upper bound=very large (Double.MAX_VALUE), final a=0, final b=2, f(a)=-0.477, f(b)=0"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "org.apache.commons.math.MathException: Number of iterations=1, maximum iterations=2,147,483,647, initial=1, lower bound=0, upper bound=179,769,313,486,231,570,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000, final a value=0, final b value=2, f(a)=-0.477, f(b)=0"
+    ],
+    "api_involved": [
+      "inverseCumulativeProbability",
+      "NormalDistributionImpl",
+      "AbstractContinuousDistribution"
+    ],
+    "input_conditions": [
+      "Standard normal distribution with mean=0, standard deviation=1",
+      "Probability values close to 1 (e.g., 0.9772498680518209, 0.9986501019683698, 0.9999683287581673)"
+    ],
+    "reproduction_steps": [
+      "1. Create a DistributionFactory instance.",
+      "2. Create a NormalDistribution with mean=0 and std=1 using factory.createNormalDistribution(0,1).",
+      "3. Call inverseCumulativeProbability(0.9772498680518209) on the distribution object.",
+      "4. Observe the MathException."
+    ],
+    "expected": [
+      "For probability 0.9772498680518209, return approximately 2.0000; for 0.9986501019683698 return approximately 3.0000; for 0.9999683287581673 return approximately 4.0000"
+    ],
+    "actual": [
+      "MathException thrown with message indicating iteration stopped after only 1 iteration with initial=1, lower bound=0, upper bound=very large (Double.MAX_VALUE), final a=0, final b=2, f(a)=-0.477, f(b)=0"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"org.apache.commons.math.MathException: Number of iterations=1, maximum iterations=2,147,483,647, initial=1, lower bound=0, upper bound=179,769,313,486,231,570,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000, final a value=0, final b value=2, f(a)=-0.477, f(b)=0\",\n\"api_involved\": [\"inverseCumulativeProbability\", \"NormalDistributionImpl\", \"AbstractContinuousDistribution\"],\n\"input_conditions\": [\"Standard normal distribution with mean=0, standard deviation=1\", \"Probability values close to 1 (e.g., 0.9772498680518209, 0.9986501019683698, 0.9999683287581673)\"],\n\"expected\": \"For probability 0.9772498680518209, return approximately 2.0000; for 0.9986501019683698 return approximately 3.0000; for 0.9999683287581673 return approximately 4.0000\",\n\"actual\": \"MathException thrown with message indicating iteration stopped after only 1 iteration with initial=1, lower bound=0, upper bound=very large (Double.MAX_VALUE), final a=0, final b=2, f(a)=-0.477, f(b)=0\",\n\"reproduction_steps\": [\n\"1. Create a DistributionFactory instance.\",\n\"2. Create a NormalDistribution with mean=0 and std=1 using factory.createNormalDistribution(0,1).\",\n\"3. Call inverseCumulativeProbability(0.9772498680518209) on the distribution object.\",\n\"4. Observe the MathException.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"org.apache.commons.math.MathException: Number of iterations=1, maximum iterations=2,147,483,647, initial=1, lower bound=0, upper bound=179,769,313,486,231,570,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000, final a value=0, final b value=2, f(a)=-0.477, f(b)=0\",\n\"api_involved\": [\"inverseCumulativeProbability\", \"NormalDistributionImpl\", \"AbstractContinuousDistribution\"],\n\"input_conditions\": [\"Standard normal distribution with mean=0, standard deviation=1\", \"Probability values close to 1 (e.g., 0.9772498680518209, 0.9986501019683698, 0.9999683287581673)\"],\n\"expected\": \"For probability 0.9772498680518209, return approximately 2.0000; for 0.9986501019683698 return approximately 3.0000; for 0.9999683287581673 return approximately 4.0000\",\n\"actual\": \"MathException thrown with message indicating iteration stopped after only 1 iteration with initial=1, lower bound=0, upper bound=very large (Double.MAX_VALUE), final a=0, final b=2, f(a)=-0.477, f(b)=0\",\n\"reproduction_steps\": [\n\"1. Create a DistributionFactory instance.\",\n\"2. Create a NormalDistribution with mean=0 and std=1 using factory.createNormalDistribution(0,1).\",\n\"3. Call inverseCumulativeProbability(0.9772498680518209) on the distribution object.\",\n\"4. Observe the MathException.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,65 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-14919",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "RuntimeError"
+    ],
+    "api_involved": [
+      "TestCase",
+      "TransactionTestCase",
+      "atomic"
+    ],
+    "input_conditions": [
+      "durable atomic blocks used within TestCase",
+      "tests run with TestCase (database transaction wrapping)"
+    ],
+    "reproduction_steps": [
+      "Use TestCase as base class for a test.",
+      "Include a durable atomic block (`atomic(durable=True)`) inside the test method.",
+      "Run the test (the durable atomic block executes without error).",
+      "Run the same code in staging/production without TestCase's transaction wrapping.",
+      "Observe a RuntimeError due to the durable atomic block not being at the outermost transaction level."
+    ],
+    "expected": [
+      "The durability check should detect durable atomic blocks directly nested in a TestCase-created transaction and skip the durability error only for that specific scenario, allowing the test to pass without throwing a RuntimeError."
+    ],
+    "actual": [
+      "Durable atomic blocks within TestCase do not raise a RuntimeError (the durability check is turned off), so durability errors go unnoticed until staging/production."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "RuntimeError"
+    ],
+    "api_involved": [
+      "TestCase",
+      "TransactionTestCase",
+      "atomic"
+    ],
+    "input_conditions": [
+      "durable atomic blocks used within TestCase",
+      "tests run with TestCase (database transaction wrapping)"
+    ],
+    "reproduction_steps": [
+      "Use TestCase as base class for a test.",
+      "Include a durable atomic block (`atomic(durable=True)`) inside the test method.",
+      "Run the test (the durable atomic block executes without error).",
+      "Run the same code in staging/production without TestCase's transaction wrapping.",
+      "Observe a RuntimeError due to the durable atomic block not being at the outermost transaction level."
+    ],
+    "expected": [
+      "The durability check should detect durable atomic blocks directly nested in a TestCase-created transaction and skip the durability error only for that specific scenario, allowing the test to pass without throwing a RuntimeError."
+    ],
+    "actual": [
+      "Durable atomic blocks within TestCase do not raise a RuntimeError (the durability check is turned off), so durability errors go unnoticed until staging/production."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"RuntimeError\",\n\"api_involved\": [\"TestCase\", \"TransactionTestCase\", \"atomic\"],\n\"input_conditions\": [\"durable atomic blocks used within TestCase\", \"tests run with TestCase (database transaction wrapping)\"],\n\"expected\": \"The durability check should detect durable atomic blocks directly nested in a TestCase-created transaction and skip the durability error only for that specific scenario, allowing the test to pass without throwing a RuntimeError.\",\n\"actual\": \"Durable atomic blocks within TestCase do not raise a RuntimeError (the durability check is turned off), so durability errors go unnoticed until staging/production.\",\n\"reproduction_steps\": [\n    \"Use TestCase as base class for a test.\",\n    \"Include a durable atomic block (`atomic(durable=True)`) inside the test method.\",\n    \"Run the test (the durable atomic block executes without error).\",\n    \"Run the same code in staging/production without TestCase's transaction wrapping.\",\n    \"Observe a RuntimeError due to the durable atomic block not being at the outermost transaction level.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"RuntimeError\",\n\"api_involved\": [\"TestCase\", \"TransactionTestCase\", \"atomic\"],\n\"input_conditions\": [\"durable atomic blocks used within TestCase\", \"tests run with TestCase (database transaction wrapping)\"],\n\"expected\": \"The durability check should detect durable atomic blocks directly nested in a TestCase-created transaction and skip the durability error only for that specific scenario, allowing the test to pass without throwing a RuntimeError.\",\n\"actual\": \"Durable atomic blocks within TestCase do not raise a RuntimeError (the durability check is turned off), so durability errors go unnoticed until staging/production.\",\n\"reproduction_steps\": [\n    \"Use TestCase as base class for a test.\",\n    \"Include a durable atomic block (`atomic(durable=True)`) inside the test method.\",\n    \"Run the test (the durable atomic block executes without error).\",\n    \"Run the same code in staging/production without TestCase's transaction wrapping.\",\n    \"Observe a RuntimeError due to the durable atomic block not being at the outermost transaction level.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Compress-29",
+  "project": "Compress",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "ArchiveStreamFactory",
+      "ArjArchiveInputStream",
+      "CpioArchiveInputStream",
+      "DumpArchiveInputStream",
+      "JarArchiveInputStream",
+      "JarArchiveOutputStream",
+      "createArchiveInputStream(InputStream)",
+      "createArchiveInputStream(String, InputStream)"
+    ],
+    "input_conditions": [],
+    "reproduction_steps": [
+      "Try to extend ArchiveStreamFactory and create streams for ArjArchiveInputStream, CpioArchiveInputStream, DumpArchiveInputStream, JarArchiveInputStream, and JarArchiveOutputStream.",
+      "Notice the encoding is not passed on correctly in some cases."
+    ],
+    "expected": [
+      "ArchiveStreamFactory passes on the encoding correctly when creating streams."
+    ],
+    "actual": [
+      "ArchiveStreamFactory fails to pass on the encoding when creating some streams."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "ArchiveStreamFactory",
+      "ArjArchiveInputStream",
+      "CpioArchiveInputStream",
+      "DumpArchiveInputStream",
+      "JarArchiveInputStream",
+      "JarArchiveOutputStream",
+      "createArchiveInputStream(InputStream)",
+      "createArchiveInputStream(String, InputStream)"
+    ],
+    "input_conditions": [],
+    "reproduction_steps": [
+      "Try to extend ArchiveStreamFactory and create streams for ArjArchiveInputStream, CpioArchiveInputStream, DumpArchiveInputStream, JarArchiveInputStream, and JarArchiveOutputStream.",
+      "Notice the encoding is not passed on correctly in some cases."
+    ],
+    "expected": [
+      "ArchiveStreamFactory passes on the encoding correctly when creating streams."
+    ],
+    "actual": [
+      "ArchiveStreamFactory fails to pass on the encoding when creating some streams."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\n    \"ArchiveStreamFactory\",\n    \"ArjArchiveInputStream\",\n    \"CpioArchiveInputStream\",\n    \"DumpArchiveInputStream\",\n    \"JarArchiveInputStream\",\n    \"JarArchiveOutputStream\",\n    \"createArchiveInputStream(InputStream)\",\n    \"createArchiveInputStream(String, InputStream)\"\n  ],\n  \"input_conditions\": null,\n  \"expected\": \"ArchiveStreamFactory passes on the encoding correctly when creating streams.\",\n  \"actual\": \"ArchiveStreamFactory fails to pass on the encoding when creating some streams.\",\n  \"reproduction_steps\": [\n    \"Try to extend ArchiveStreamFactory and create streams for ArjArchiveInputStream, CpioArchiveInputStream, DumpArchiveInputStream, JarArchiveInputStream, and JarArchiveOutputStream.\",\n    \"Notice the encoding is not passed on correctly in some cases.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\n    \"ArchiveStreamFactory\",\n    \"ArjArchiveInputStream\",\n    \"CpioArchiveInputStream\",\n    \"DumpArchiveInputStream\",\n    \"JarArchiveInputStream\",\n    \"JarArchiveOutputStream\",\n    \"createArchiveInputStream(InputStream)\",\n    \"createArchiveInputStream(String, InputStream)\"\n  ],\n  \"input_conditions\": null,\n  \"expected\": \"ArchiveStreamFactory passes on the encoding correctly when creating streams.\",\n  \"actual\": \"ArchiveStreamFactory fails to pass on the encoding when creating some streams.\",\n  \"reproduction_steps\": [\n    \"Try to extend ArchiveStreamFactory and create streams for ArjArchiveInputStream, CpioArchiveInputStream, DumpArchiveInputStream, JarArchiveInputStream, and JarArchiveOutputStream.\",\n    \"Notice the encoding is not passed on correctly in some cases.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,67 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-12518",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "KeyError: ('testapp', '0001_initial')"
+    ],
+    "api_involved": [
+      "sqlmigrate",
+      "migration loader",
+      "graph.nodes"
+    ],
+    "input_conditions": [
+      "squashed migrations with overlapping prefixes exist in the app",
+      "user specifies migration name '0001' or '0001_initial'",
+      "migration 0001 is a squashed migration that overrides individual migrations"
+    ],
+    "reproduction_steps": [
+      "Clone repository: https://github.com/adamchainz/django-unique-together-bug",
+      "Run: python manage.py sqlmigrate testapp 0001",
+      "Observe CommandError about more than one migration matching '0001'",
+      "Run: python manage.py sqlmigrate testapp 0001_initial",
+      "Observe KeyError traceback"
+    ],
+    "expected": [
+      "sqlmigrate should either allow inspection of individual migrations that were part of a squash, or give a clear error message explaining the issue with squashed migrations."
+    ],
+    "actual": [
+      "sqlmigrate first reports ambiguity when specifying a prefix like '0001', then throws a KeyError (unhandled exception) when a specific migration name like '0001_initial' is provided, instead of showing the SQL or a user-friendly message."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "KeyError: ('testapp', '0001_initial')"
+    ],
+    "api_involved": [
+      "sqlmigrate",
+      "migration loader",
+      "graph.nodes"
+    ],
+    "input_conditions": [
+      "squashed migrations with overlapping prefixes exist in the app",
+      "user specifies migration name '0001' or '0001_initial'",
+      "migration 0001 is a squashed migration that overrides individual migrations"
+    ],
+    "reproduction_steps": [
+      "Clone repository: https://github.com/adamchainz/django-unique-together-bug",
+      "Run: python manage.py sqlmigrate testapp 0001",
+      "Observe CommandError about more than one migration matching '0001'",
+      "Run: python manage.py sqlmigrate testapp 0001_initial",
+      "Observe KeyError traceback"
+    ],
+    "expected": [
+      "sqlmigrate should either allow inspection of individual migrations that were part of a squash, or give a clear error message explaining the issue with squashed migrations."
+    ],
+    "actual": [
+      "sqlmigrate first reports ambiguity when specifying a prefix like '0001', then throws a KeyError (unhandled exception) when a specific migration name like '0001_initial' is provided, instead of showing the SQL or a user-friendly message."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"KeyError: ('testapp', '0001_initial')\",\n\"api_involved\": [\"sqlmigrate\", \"migration loader\", \"graph.nodes\"],\n\"input_conditions\": [\"squashed migrations with overlapping prefixes exist in the app\", \"user specifies migration name '0001' or '0001_initial'\", \"migration 0001 is a squashed migration that overrides individual migrations\"],\n\"expected\": \"sqlmigrate should either allow inspection of individual migrations that were part of a squash, or give a clear error message explaining the issue with squashed migrations.\",\n\"actual\": \"sqlmigrate first reports ambiguity when specifying a prefix like '0001', then throws a KeyError (unhandled exception) when a specific migration name like '0001_initial' is provided, instead of showing the SQL or a user-friendly message.\",\n\"reproduction_steps\": [\n\"Clone repository: https://github.com/adamchainz/django-unique-together-bug\",\n\"Run: python manage.py sqlmigrate testapp 0001\",\n\"Observe CommandError about more than one migration matching '0001'\",\n\"Run: python manage.py sqlmigrate testapp 0001_initial\",\n\"Observe KeyError traceback\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"KeyError: ('testapp', '0001_initial')\",\n\"api_involved\": [\"sqlmigrate\", \"migration loader\", \"graph.nodes\"],\n\"input_conditions\": [\"squashed migrations with overlapping prefixes exist in the app\", \"user specifies migration name '0001' or '0001_initial'\", \"migration 0001 is a squashed migration that overrides individual migrations\"],\n\"expected\": \"sqlmigrate should either allow inspection of individual migrations that were part of a squash, or give a clear error message explaining the issue with squashed migrations.\",\n\"actual\": \"sqlmigrate first reports ambiguity when specifying a prefix like '0001', then throws a KeyError (unhandled exception) when a specific migration name like '0001_initial' is provided, instead of showing the SQL or a user-friendly message.\",\n\"reproduction_steps\": [\n\"Clone repository: https://github.com/adamchainz/django-unique-together-bug\",\n\"Run: python manage.py sqlmigrate testapp 0001\",\n\"Observe CommandError about more than one migration matching '0001'\",\n\"Run: python manage.py sqlmigrate testapp 0001_initial\",\n\"Observe KeyError traceback\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

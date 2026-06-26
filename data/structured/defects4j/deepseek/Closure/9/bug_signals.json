@@ -1,0 +1,65 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-9",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "ERROR - required entry point \"module$lib$Foo\" never provided"
+    ],
+    "api_involved": [
+      "compiler.jar",
+      "transform_amd_modules",
+      "process_common_js_modules",
+      "common_js_entry_module"
+    ],
+    "input_conditions": [
+      "Main module is Bar.js",
+      "Dependency module is lib/Foo.js",
+      "AMD modules in subdirectory"
+    ],
+    "reproduction_steps": [
+      "Create 1st AMD module in lib/Foo.js",
+      "Create 2nd AMD module in Bar.js depending on lib/Foo.js",
+      "Try to compile both files with Bar.js as main module using command: java -jar compiler.jar --transform_amd_modules --process_common_js_modules --common_js_entry_module=Bar.js --compilation_level=ADVANCED_OPTIMIZATIONS --js_output_file=out.js --js=Bar.js --js=lib/Foo.js"
+    ],
+    "expected": [
+      "Compilation should succeed, finding the AMD module in the subdirectory"
+    ],
+    "actual": [
+      "Compilation fails with error indicating the required entry point \"module$lib$Foo\" was never provided"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ERROR - required entry point \"module$lib$Foo\" never provided"
+    ],
+    "api_involved": [
+      "compiler.jar",
+      "transform_amd_modules",
+      "process_common_js_modules",
+      "common_js_entry_module"
+    ],
+    "input_conditions": [
+      "Main module is Bar.js",
+      "Dependency module is lib/Foo.js",
+      "AMD modules in subdirectory"
+    ],
+    "reproduction_steps": [
+      "Create 1st AMD module in lib/Foo.js",
+      "Create 2nd AMD module in Bar.js depending on lib/Foo.js",
+      "Try to compile both files with Bar.js as main module using command: java -jar compiler.jar --transform_amd_modules --process_common_js_modules --common_js_entry_module=Bar.js --compilation_level=ADVANCED_OPTIMIZATIONS --js_output_file=out.js --js=Bar.js --js=lib/Foo.js"
+    ],
+    "expected": [
+      "Compilation should succeed, finding the AMD module in the subdirectory"
+    ],
+    "actual": [
+      "Compilation fails with error indicating the required entry point \"module$lib$Foo\" was never provided"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"ERROR - required entry point \\\"module$lib$Foo\\\" never provided\",\n\"api_involved\": [\"compiler.jar\", \"transform_amd_modules\", \"process_common_js_modules\", \"common_js_entry_module\"],\n\"input_conditions\": [\"Main module is Bar.js\", \"Dependency module is lib/Foo.js\", \"AMD modules in subdirectory\"],\n\"expected\": \"Compilation should succeed, finding the AMD module in the subdirectory\",\n\"actual\": \"Compilation fails with error indicating the required entry point \\\"module$lib$Foo\\\" was never provided\",\n\"reproduction_steps\": [\n\"Create 1st AMD module in lib/Foo.js\",\n\"Create 2nd AMD module in Bar.js depending on lib/Foo.js\",\n\"Try to compile both files with Bar.js as main module using command: java -jar compiler.jar --transform_amd_modules --process_common_js_modules --common_js_entry_module=Bar.js --compilation_level=ADVANCED_OPTIMIZATIONS --js_output_file=out.js --js=Bar.js --js=lib/Foo.js\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"ERROR - required entry point \\\"module$lib$Foo\\\" never provided\",\n\"api_involved\": [\"compiler.jar\", \"transform_amd_modules\", \"process_common_js_modules\", \"common_js_entry_module\"],\n\"input_conditions\": [\"Main module is Bar.js\", \"Dependency module is lib/Foo.js\", \"AMD modules in subdirectory\"],\n\"expected\": \"Compilation should succeed, finding the AMD module in the subdirectory\",\n\"actual\": \"Compilation fails with error indicating the required entry point \\\"module$lib$Foo\\\" was never provided\",\n\"reproduction_steps\": [\n\"Create 1st AMD module in lib/Foo.js\",\n\"Create 2nd AMD module in Bar.js depending on lib/Foo.js\",\n\"Try to compile both files with Bar.js as main module using command: java -jar compiler.jar --transform_amd_modules --process_common_js_modules --common_js_entry_module=Bar.js --compilation_level=ADVANCED_OPTIMIZATIONS --js_output_file=out.js --js=Bar.js --js=lib/Foo.js\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

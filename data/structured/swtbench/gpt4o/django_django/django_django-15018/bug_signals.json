@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-15018",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "errors since the input formats are very different"
+    ],
+    "api_involved": [
+      "call_command",
+      "add_mutually_exclusive_group",
+      "add_argument"
+    ],
+    "input_conditions": [
+      "--for duration",
+      "--until time"
+    ],
+    "reproduction_steps": [
+      "Attempt to call the command using call_command with '--for' duration",
+      "Attempt to call the command using call_command with '--until' time",
+      "Observe the behavior when handling mutually exclusive arguments"
+    ],
+    "expected": [
+      "call_command should correctly handle mutually exclusive arguments similar to command line execution"
+    ],
+    "actual": [
+      "call_command cannot handle both '--for' and '--until' arguments correctly, leading to errors"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "errors since the input formats are very different"
+    ],
+    "api_involved": [
+      "call_command",
+      "add_mutually_exclusive_group",
+      "add_argument"
+    ],
+    "input_conditions": [
+      "--for duration",
+      "--until time"
+    ],
+    "reproduction_steps": [
+      "Attempt to call the command using call_command with '--for' duration",
+      "Attempt to call the command using call_command with '--until' time",
+      "Observe the behavior when handling mutually exclusive arguments"
+    ],
+    "expected": [
+      "call_command should correctly handle mutually exclusive arguments similar to command line execution"
+    ],
+    "actual": [
+      "call_command cannot handle both '--for' and '--until' arguments correctly, leading to errors"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"errors since the input formats are very different\",\n  \"api_involved\": [\"call_command\", \"add_mutually_exclusive_group\", \"add_argument\"],\n  \"input_conditions\": [\"--for duration\", \"--until time\"],\n  \"expected\": \"call_command should correctly handle mutually exclusive arguments similar to command line execution\",\n  \"actual\": \"call_command cannot handle both '--for' and '--until' arguments correctly, leading to errors\",\n  \"reproduction_steps\": [\n    \"Attempt to call the command using call_command with '--for' duration\",\n    \"Attempt to call the command using call_command with '--until' time\",\n    \"Observe the behavior when handling mutually exclusive arguments\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"errors since the input formats are very different\",\n  \"api_involved\": [\"call_command\", \"add_mutually_exclusive_group\", \"add_argument\"],\n  \"input_conditions\": [\"--for duration\", \"--until time\"],\n  \"expected\": \"call_command should correctly handle mutually exclusive arguments similar to command line execution\",\n  \"actual\": \"call_command cannot handle both '--for' and '--until' arguments correctly, leading to errors\",\n  \"reproduction_steps\": [\n    \"Attempt to call the command using call_command with '--for' duration\",\n    \"Attempt to call the command using call_command with '--until' time\",\n    \"Observe the behavior when handling mutually exclusive arguments\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

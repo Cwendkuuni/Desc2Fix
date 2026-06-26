@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-52",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NaN result in rotation creation"
+    ],
+    "api_involved": [
+      "Rotation constructor"
+    ],
+    "input_conditions": [
+      "Vector pairs: u1 = (-4921140.837095533, -2.1512094250440013E7, -890093.279426377), u2 = (-2.7238580938724895E9, -2.169664921341876E9, 6.749688708885301E10)",
+      "Vectors v1 = (1, 0, 0), v2 = (0, 0, 1)"
+    ],
+    "reproduction_steps": [
+      "Initialize rotation using provided vector pairs (u1, u2) and (v1, v2).",
+      "Perform vector operations to compute k and c.",
+      "Compare results with high precision manual computation."
+    ],
+    "expected": [
+      "Quaternion: q0 = 0.62283703596082005783621150, q1 = 0.02577076214564987845778149, q2 = -0.00000000025030122695149900, q3 = -0.78192703908611094998656730"
+    ],
+    "actual": [
+      "Numerical errors leading to incorrect 'c' value: c = -1.2397173627587605E20 in commons math"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NaN result in rotation creation"
+    ],
+    "api_involved": [
+      "Rotation constructor"
+    ],
+    "input_conditions": [
+      "Vector pairs: u1 = (-4921140.837095533, -2.1512094250440013E7, -890093.279426377), u2 = (-2.7238580938724895E9, -2.169664921341876E9, 6.749688708885301E10)",
+      "Vectors v1 = (1, 0, 0), v2 = (0, 0, 1)"
+    ],
+    "reproduction_steps": [
+      "Initialize rotation using provided vector pairs (u1, u2) and (v1, v2).",
+      "Perform vector operations to compute k and c.",
+      "Compare results with high precision manual computation."
+    ],
+    "expected": [
+      "Quaternion: q0 = 0.62283703596082005783621150, q1 = 0.02577076214564987845778149, q2 = -0.00000000025030122695149900, q3 = -0.78192703908611094998656730"
+    ],
+    "actual": [
+      "Numerical errors leading to incorrect 'c' value: c = -1.2397173627587605E20 in commons math"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"NaN result in rotation creation\",\n  \"api_involved\": [\"Rotation constructor\"],\n  \"input_conditions\": [\n    \"Vector pairs: u1 = (-4921140.837095533, -2.1512094250440013E7, -890093.279426377), u2 = (-2.7238580938724895E9, -2.169664921341876E9, 6.749688708885301E10)\",\n    \"Vectors v1 = (1, 0, 0), v2 = (0, 0, 1)\"\n  ],\n  \"expected\": \"Quaternion: q0 = 0.62283703596082005783621150, q1 = 0.02577076214564987845778149, q2 = -0.00000000025030122695149900, q3 = -0.78192703908611094998656730\",\n  \"actual\": \"Numerical errors leading to incorrect 'c' value: c = -1.2397173627587605E20 in commons math\",\n  \"reproduction_steps\": [\n    \"Initialize rotation using provided vector pairs (u1, u2) and (v1, v2).\",\n    \"Perform vector operations to compute k and c.\",\n    \"Compare results with high precision manual computation.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"NaN result in rotation creation\",\n  \"api_involved\": [\"Rotation constructor\"],\n  \"input_conditions\": [\n    \"Vector pairs: u1 = (-4921140.837095533, -2.1512094250440013E7, -890093.279426377), u2 = (-2.7238580938724895E9, -2.169664921341876E9, 6.749688708885301E10)\",\n    \"Vectors v1 = (1, 0, 0), v2 = (0, 0, 1)\"\n  ],\n  \"expected\": \"Quaternion: q0 = 0.62283703596082005783621150, q1 = 0.02577076214564987845778149, q2 = -0.00000000025030122695149900, q3 = -0.78192703908611094998656730\",\n  \"actual\": \"Numerical errors leading to incorrect 'c' value: c = -1.2397173627587605E20 in commons math\",\n  \"reproduction_steps\": [\n    \"Initialize rotation using provided vector pairs (u1, u2) and (v1, v2).\",\n    \"Perform vector operations to compute k and c.\",\n    \"Compare results with high precision manual computation.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

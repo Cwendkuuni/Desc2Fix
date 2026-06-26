@@ -1,0 +1,67 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-79",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.RuntimeException: INTERNAL COMPILER ERROR"
+    ],
+    "api_involved": [
+      "com.google.javascript.jscomp.Compiler",
+      "com.google.javascript.jscomp.CommandLineRunner",
+      "com.google.javascript.jscomp.Normalize$DuplicateDeclarationHandler",
+      "com.google.javascript.jscomp.SyntacticScopeCreator",
+      "com.google.javascript.jscomp.NodeTraversal",
+      "com.google.javascript.jscomp.Normalize"
+    ],
+    "input_conditions": [
+      "compilation_level set to ADVANCED_OPTIMIZATIONS",
+      "prototype.js (or prototype-1.6.1.js) used as --externs parameter",
+      "another JavaScript file (bootloader.js or source.js) compiled with externs"
+    ],
+    "reproduction_steps": [
+      "Run: java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --externs prototype.js --js bootloader.js",
+      "Alternative: java -jar compiler.jar --js source.js --js_output_file output.js --externs prototype-1.6.1.js --compilation_level ADVANCED_OPTIMIZATIONS"
+    ],
+    "expected": [
+      "Successful compilation without errors"
+    ],
+    "actual": [
+      "java.lang.RuntimeException: INTERNAL COMPILER ERROR due to a duplicate declaration (likely a redeclaration of a function like Str or match) during scope normalization"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.RuntimeException: INTERNAL COMPILER ERROR"
+    ],
+    "api_involved": [
+      "com.google.javascript.jscomp.Compiler",
+      "com.google.javascript.jscomp.CommandLineRunner",
+      "com.google.javascript.jscomp.Normalize$DuplicateDeclarationHandler",
+      "com.google.javascript.jscomp.SyntacticScopeCreator",
+      "com.google.javascript.jscomp.NodeTraversal",
+      "com.google.javascript.jscomp.Normalize"
+    ],
+    "input_conditions": [
+      "compilation_level set to ADVANCED_OPTIMIZATIONS",
+      "prototype.js (or prototype-1.6.1.js) used as --externs parameter",
+      "another JavaScript file (bootloader.js or source.js) compiled with externs"
+    ],
+    "reproduction_steps": [
+      "Run: java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --externs prototype.js --js bootloader.js",
+      "Alternative: java -jar compiler.jar --js source.js --js_output_file output.js --externs prototype-1.6.1.js --compilation_level ADVANCED_OPTIMIZATIONS"
+    ],
+    "expected": [
+      "Successful compilation without errors"
+    ],
+    "actual": [
+      "java.lang.RuntimeException: INTERNAL COMPILER ERROR due to a duplicate declaration (likely a redeclaration of a function like Str or match) during scope normalization"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"java.lang.RuntimeException: INTERNAL COMPILER ERROR\",\n\"api_involved\": [\n  \"com.google.javascript.jscomp.Compiler\",\n  \"com.google.javascript.jscomp.CommandLineRunner\",\n  \"com.google.javascript.jscomp.Normalize$DuplicateDeclarationHandler\",\n  \"com.google.javascript.jscomp.SyntacticScopeCreator\",\n  \"com.google.javascript.jscomp.NodeTraversal\",\n  \"com.google.javascript.jscomp.Normalize\"\n],\n\"input_conditions\": [\n  \"compilation_level set to ADVANCED_OPTIMIZATIONS\",\n  \"prototype.js (or prototype-1.6.1.js) used as --externs parameter\",\n  \"another JavaScript file (bootloader.js or source.js) compiled with externs\"\n],\n\"expected\": \"Successful compilation without errors\",\n\"actual\": \"java.lang.RuntimeException: INTERNAL COMPILER ERROR due to a duplicate declaration (likely a redeclaration of a function like Str or match) during scope normalization\",\n\"reproduction_steps\": [\n  \"Run: java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --externs prototype.js --js bootloader.js\",\n  \"Alternative: java -jar compiler.jar --js source.js --js_output_file output.js --externs prototype-1.6.1.js --compilation_level ADVANCED_OPTIMIZATIONS\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"java.lang.RuntimeException: INTERNAL COMPILER ERROR\",\n\"api_involved\": [\n  \"com.google.javascript.jscomp.Compiler\",\n  \"com.google.javascript.jscomp.CommandLineRunner\",\n  \"com.google.javascript.jscomp.Normalize$DuplicateDeclarationHandler\",\n  \"com.google.javascript.jscomp.SyntacticScopeCreator\",\n  \"com.google.javascript.jscomp.NodeTraversal\",\n  \"com.google.javascript.jscomp.Normalize\"\n],\n\"input_conditions\": [\n  \"compilation_level set to ADVANCED_OPTIMIZATIONS\",\n  \"prototype.js (or prototype-1.6.1.js) used as --externs parameter\",\n  \"another JavaScript file (bootloader.js or source.js) compiled with externs\"\n],\n\"expected\": \"Successful compilation without errors\",\n\"actual\": \"java.lang.RuntimeException: INTERNAL COMPILER ERROR due to a duplicate declaration (likely a redeclaration of a function like Str or match) during scope normalization\",\n\"reproduction_steps\": [\n  \"Run: java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --externs prototype.js --js bootloader.js\",\n  \"Alternative: java -jar compiler.jar --js source.js --js_output_file output.js --externs prototype-1.6.1.js --compilation_level ADVANCED_OPTIMIZATIONS\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

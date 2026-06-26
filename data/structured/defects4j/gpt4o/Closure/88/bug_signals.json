@@ -1,0 +1,49 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-88",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [],
+    "input_conditions": [
+      "someNode has an id property",
+      "someNode.id is a string starting with a character"
+    ],
+    "reproduction_steps": [
+      "Write a function using the pattern shown in the bug report",
+      "Compile the function using Closure Compiler in simple mode",
+      "Observe miscompilation in the DeadAssignmentElimination pass"
+    ],
+    "expected": [
+      "\"nodeId=someNode.id\" should be preserved in the compiled output"
+    ],
+    "actual": [
+      "\"nodeId=someNode.id\" is incorrectly replaced with \"b.id\""
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [],
+    "input_conditions": [
+      "someNode has an id property",
+      "someNode.id is a string starting with a character"
+    ],
+    "reproduction_steps": [
+      "Write a function using the pattern shown in the bug report",
+      "Compile the function using Closure Compiler in simple mode",
+      "Observe miscompilation in the DeadAssignmentElimination pass"
+    ],
+    "expected": [
+      "\"nodeId=someNode.id\" should be preserved in the compiled output"
+    ],
+    "actual": [
+      "\"nodeId=someNode.id\" is incorrectly replaced with \"b.id\""
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [],\n  \"input_conditions\": [\"someNode has an id property\", \"someNode.id is a string starting with a character\"],\n  \"expected\": \"\\\"nodeId=someNode.id\\\" should be preserved in the compiled output\",\n  \"actual\": \"\\\"nodeId=someNode.id\\\" is incorrectly replaced with \\\"b.id\\\"\",\n  \"reproduction_steps\": [\n    \"Write a function using the pattern shown in the bug report\",\n    \"Compile the function using Closure Compiler in simple mode\",\n    \"Observe miscompilation in the DeadAssignmentElimination pass\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [],\n  \"input_conditions\": [\"someNode has an id property\", \"someNode.id is a string starting with a character\"],\n  \"expected\": \"\\\"nodeId=someNode.id\\\" should be preserved in the compiled output\",\n  \"actual\": \"\\\"nodeId=someNode.id\\\" is incorrectly replaced with \\\"b.id\\\"\",\n  \"reproduction_steps\": [\n    \"Write a function using the pattern shown in the bug report\",\n    \"Compile the function using Closure Compiler in simple mode\",\n    \"Observe miscompilation in the DeadAssignmentElimination pass\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

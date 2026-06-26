@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Csv-11",
+  "project": "Csv",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "CSVParser"
+    ],
+    "input_conditions": [
+      "nullString set to \"\"",
+      "empty header value"
+    ],
+    "reproduction_steps": [
+      "Set the format to have a nullString of \"\"",
+      "Use an empty header value"
+    ],
+    "expected": [
+      "No exception should be thrown"
+    ],
+    "actual": [
+      "NullPointerException is thrown"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "CSVParser"
+    ],
+    "input_conditions": [
+      "nullString set to \"\"",
+      "empty header value"
+    ],
+    "reproduction_steps": [
+      "Set the format to have a nullString of \"\"",
+      "Use an empty header value"
+    ],
+    "expected": [
+      "No exception should be thrown"
+    ],
+    "actual": [
+      "NullPointerException is thrown"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"NullPointerException\",\n  \"api_involved\": [\"CSVParser\"],\n  \"input_conditions\": [\"nullString set to \\\"\\\"\", \"empty header value\"],\n  \"expected\": \"No exception should be thrown\",\n  \"actual\": \"NullPointerException is thrown\",\n  \"reproduction_steps\": [\"Set the format to have a nullString of \\\"\\\"\", \"Use an empty header value\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"NullPointerException\",\n  \"api_involved\": [\"CSVParser\"],\n  \"input_conditions\": [\"nullString set to \\\"\\\"\", \"empty header value\"],\n  \"expected\": \"No exception should be thrown\",\n  \"actual\": \"NullPointerException is thrown\",\n  \"reproduction_steps\": [\"Set the format to have a nullString of \\\"\\\"\", \"Use an empty header value\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

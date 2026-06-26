@@ -1,0 +1,63 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-11359",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "FieldError: Cannot resolve expression type, unknown output_field"
+    ],
+    "api_involved": [
+      "SearchVector",
+      "Value",
+      "update"
+    ],
+    "input_conditions": [
+      "Value containing a plain string",
+      "SearchVectorField named search_vector",
+      "Model AModel"
+    ],
+    "reproduction_steps": [
+      "Create a model AModel with a SearchVectorField named search_vector",
+      "Attempt to update an instance of AModel using SearchVector(Value('a string to be indexed and inserted to search_vector field'))",
+      "Observe the FieldError"
+    ],
+    "expected": [
+      "The update should succeed, setting search_vector to the result of SearchVector(Value(...))"
+    ],
+    "actual": [
+      "FieldError: Cannot resolve expression type, unknown output_field"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "FieldError: Cannot resolve expression type, unknown output_field"
+    ],
+    "api_involved": [
+      "SearchVector",
+      "Value",
+      "update"
+    ],
+    "input_conditions": [
+      "Value containing a plain string",
+      "SearchVectorField named search_vector",
+      "Model AModel"
+    ],
+    "reproduction_steps": [
+      "Create a model AModel with a SearchVectorField named search_vector",
+      "Attempt to update an instance of AModel using SearchVector(Value('a string to be indexed and inserted to search_vector field'))",
+      "Observe the FieldError"
+    ],
+    "expected": [
+      "The update should succeed, setting search_vector to the result of SearchVector(Value(...))"
+    ],
+    "actual": [
+      "FieldError: Cannot resolve expression type, unknown output_field"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"FieldError: Cannot resolve expression type, unknown output_field\",\n\"api_involved\": [\"SearchVector\", \"Value\", \"update\"],\n\"input_conditions\": [\"Value containing a plain string\", \"SearchVectorField named search_vector\", \"Model AModel\"],\n\"expected\": \"The update should succeed, setting search_vector to the result of SearchVector(Value(...))\",\n\"actual\": \"FieldError: Cannot resolve expression type, unknown output_field\",\n\"reproduction_steps\": [\n    \"Create a model AModel with a SearchVectorField named search_vector\",\n    \"Attempt to update an instance of AModel using SearchVector(Value('a string to be indexed and inserted to search_vector field'))\",\n    \"Observe the FieldError\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"FieldError: Cannot resolve expression type, unknown output_field\",\n\"api_involved\": [\"SearchVector\", \"Value\", \"update\"],\n\"input_conditions\": [\"Value containing a plain string\", \"SearchVectorField named search_vector\", \"Model AModel\"],\n\"expected\": \"The update should succeed, setting search_vector to the result of SearchVector(Value(...))\",\n\"actual\": \"FieldError: Cannot resolve expression type, unknown output_field\",\n\"reproduction_steps\": [\n    \"Create a model AModel with a SearchVectorField named search_vector\",\n    \"Attempt to update an instance of AModel using SearchVector(Value('a string to be indexed and inserted to search_vector field'))\",\n    \"Observe the FieldError\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

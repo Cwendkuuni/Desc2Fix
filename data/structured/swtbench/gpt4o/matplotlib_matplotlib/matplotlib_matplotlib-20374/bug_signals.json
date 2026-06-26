@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "matplotlib__matplotlib-20374",
+  "project": null,
+  "repo": "matplotlib/matplotlib",
+  "signals": {
+    "exception": [
+      "throws an error"
+    ],
+    "api_involved": [
+      "plot_directive",
+      "Sphinx"
+    ],
+    "input_conditions": [
+      "include directives via RST",
+      "context option is set"
+    ],
+    "reproduction_steps": [
+      "Put the four files (conf.py, index.rst, a.rst, b.rst) in a directory.",
+      "Build the docs the first time using Sphinx.",
+      "Modify any file in any way.",
+      "Build the docs again."
+    ],
+    "expected": [
+      "Sphinx re-runs all code snippets which are context-dependent whenever a file is recompiled to avoid any errors."
+    ],
+    "actual": [
+      "The third plot in throws an error due to plot 3 being run again and not seeing the expected context, hence the warning."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "throws an error"
+    ],
+    "api_involved": [
+      "plot_directive",
+      "Sphinx"
+    ],
+    "input_conditions": [
+      "include directives via RST",
+      "context option is set"
+    ],
+    "reproduction_steps": [
+      "Put the four files (conf.py, index.rst, a.rst, b.rst) in a directory.",
+      "Build the docs the first time using Sphinx.",
+      "Modify any file in any way.",
+      "Build the docs again."
+    ],
+    "expected": [
+      "Sphinx re-runs all code snippets which are context-dependent whenever a file is recompiled to avoid any errors."
+    ],
+    "actual": [
+      "The third plot in throws an error due to plot 3 being run again and not seeing the expected context, hence the warning."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"throws an error\",\n  \"api_involved\": [\"plot_directive\", \"Sphinx\"],\n  \"input_conditions\": [\"include directives via RST\", \"context option is set\"],\n  \"expected\": \"Sphinx re-runs all code snippets which are context-dependent whenever a file is recompiled to avoid any errors.\",\n  \"actual\": \"The third plot in throws an error due to plot 3 being run again and not seeing the expected context, hence the warning.\",\n  \"reproduction_steps\": [\n    \"Put the four files (conf.py, index.rst, a.rst, b.rst) in a directory.\",\n    \"Build the docs the first time using Sphinx.\",\n    \"Modify any file in any way.\",\n    \"Build the docs again.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"throws an error\",\n  \"api_involved\": [\"plot_directive\", \"Sphinx\"],\n  \"input_conditions\": [\"include directives via RST\", \"context option is set\"],\n  \"expected\": \"Sphinx re-runs all code snippets which are context-dependent whenever a file is recompiled to avoid any errors.\",\n  \"actual\": \"The third plot in throws an error due to plot 3 being run again and not seeing the expected context, hence the warning.\",\n  \"reproduction_steps\": [\n    \"Put the four files (conf.py, index.rst, a.rst, b.rst) in a directory.\",\n    \"Build the docs the first time using Sphinx.\",\n    \"Modify any file in any way.\",\n    \"Build the docs again.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-13097",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "formsets",
+      "can_delete"
+    ],
+    "input_conditions": [
+      "can_delete=True",
+      "extra forms (add forms)"
+    ],
+    "reproduction_steps": [
+      "Create a formset with can_delete=True",
+      "Add extra forms for new instances",
+      "Observe that delete fields appear on the extra forms"
+    ],
+    "expected": [
+      "Delete field should not appear on extra (add) forms; only on existing forms"
+    ],
+    "actual": [
+      "Delete field is added to every form, including extra (add) forms"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "formsets",
+      "can_delete"
+    ],
+    "input_conditions": [
+      "can_delete=True",
+      "extra forms (add forms)"
+    ],
+    "reproduction_steps": [
+      "Create a formset with can_delete=True",
+      "Add extra forms for new instances",
+      "Observe that delete fields appear on the extra forms"
+    ],
+    "expected": [
+      "Delete field should not appear on extra (add) forms; only on existing forms"
+    ],
+    "actual": [
+      "Delete field is added to every form, including extra (add) forms"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"formsets\", \"can_delete\"],\n\"input_conditions\": [\"can_delete=True\", \"extra forms (add forms)\"],\n\"expected\": \"Delete field should not appear on extra (add) forms; only on existing forms\",\n\"actual\": \"Delete field is added to every form, including extra (add) forms\",\n\"reproduction_steps\": [\"Create a formset with can_delete=True\", \"Add extra forms for new instances\", \"Observe that delete fields appear on the extra forms\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"formsets\", \"can_delete\"],\n\"input_conditions\": [\"can_delete=True\", \"extra forms (add forms)\"],\n\"expected\": \"Delete field should not appear on extra (add) forms; only on existing forms\",\n\"actual\": \"Delete field is added to every form, including extra (add) forms\",\n\"reproduction_steps\": [\"Create a formset with can_delete=True\", \"Add extra forms for new instances\", \"Observe that delete fields appear on the extra forms\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

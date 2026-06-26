@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "astropy__astropy-14578",
+  "project": null,
+  "repo": "astropy/astropy",
+  "signals": {
+    "exception": [
+      "ValueError: The data type of column ... is not supported by FITS"
+    ],
+    "api_involved": [
+      "io/fits/column.py",
+      "Table.write()"
+    ],
+    "input_conditions": [
+      "Table contains an object dtype column"
+    ],
+    "reproduction_steps": [
+      "Create a Table that contains an object dtype column",
+      "Attempt to write the table to a FITS file using the Table.write() method"
+    ],
+    "expected": [
+      "Table with object columns should either be written using string representation or produce a clear error message explaining how to handle object columns"
+    ],
+    "actual": [
+      "Writing a Table with object columns to FITS fails with a ValueError about unsupported data type"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ValueError: The data type of column ... is not supported by FITS"
+    ],
+    "api_involved": [
+      "io/fits/column.py",
+      "Table.write()"
+    ],
+    "input_conditions": [
+      "Table contains an object dtype column"
+    ],
+    "reproduction_steps": [
+      "Create a Table that contains an object dtype column",
+      "Attempt to write the table to a FITS file using the Table.write() method"
+    ],
+    "expected": [
+      "Table with object columns should either be written using string representation or produce a clear error message explaining how to handle object columns"
+    ],
+    "actual": [
+      "Writing a Table with object columns to FITS fails with a ValueError about unsupported data type"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"ValueError: The data type of column ... is not supported by FITS\",\n\"api_involved\": [\"io/fits/column.py\", \"Table.write()\"],\n\"input_conditions\": [\"Table contains an object dtype column\"],\n\"expected\": \"Table with object columns should either be written using string representation or produce a clear error message explaining how to handle object columns\",\n\"actual\": \"Writing a Table with object columns to FITS fails with a ValueError about unsupported data type\",\n\"reproduction_steps\": [\n\"Create a Table that contains an object dtype column\",\n\"Attempt to write the table to a FITS file using the Table.write() method\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"ValueError: The data type of column ... is not supported by FITS\",\n\"api_involved\": [\"io/fits/column.py\", \"Table.write()\"],\n\"input_conditions\": [\"Table contains an object dtype column\"],\n\"expected\": \"Table with object columns should either be written using string representation or produce a clear error message explaining how to handle object columns\",\n\"actual\": \"Writing a Table with object columns to FITS fails with a ValueError about unsupported data type\",\n\"reproduction_steps\": [\n\"Create a Table that contains an object dtype column\",\n\"Attempt to write the table to a FITS file using the Table.write() method\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Lang-19",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "StringIndexOutOfBoundsException: String index out of range: 4"
+    ],
+    "api_involved": [
+      "org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4",
+      "org.apache.commons.lang3.text.translate.NumericEntityUnescaper.translate"
+    ],
+    "input_conditions": [
+      "String containing '&#03' or any string with '&' followed by an invalid escape sequence"
+    ],
+    "reproduction_steps": [
+      "Call the method unescapeHtml4 with the string '&#03'."
+    ],
+    "expected": [
+      "The method should handle the input without throwing an exception, possibly by escaping the unfinished entity or throwing a ParseException for invalid input."
+    ],
+    "actual": [
+      "A StringIndexOutOfBoundsException is thrown due to improper handling of invalid HTML escape sequences."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "StringIndexOutOfBoundsException: String index out of range: 4"
+    ],
+    "api_involved": [
+      "org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4",
+      "org.apache.commons.lang3.text.translate.NumericEntityUnescaper.translate"
+    ],
+    "input_conditions": [
+      "String containing '&#03' or any string with '&' followed by an invalid escape sequence"
+    ],
+    "reproduction_steps": [
+      "Call the method unescapeHtml4 with the string '&#03'."
+    ],
+    "expected": [
+      "The method should handle the input without throwing an exception, possibly by escaping the unfinished entity or throwing a ParseException for invalid input."
+    ],
+    "actual": [
+      "A StringIndexOutOfBoundsException is thrown due to improper handling of invalid HTML escape sequences."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"StringIndexOutOfBoundsException: String index out of range: 4\",\n  \"api_involved\": [\n    \"org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4\",\n    \"org.apache.commons.lang3.text.translate.NumericEntityUnescaper.translate\"\n  ],\n  \"input_conditions\": [\n    \"String containing '&#03' or any string with '&' followed by an invalid escape sequence\"\n  ],\n  \"expected\": \"The method should handle the input without throwing an exception, possibly by escaping the unfinished entity or throwing a ParseException for invalid input.\",\n  \"actual\": \"A StringIndexOutOfBoundsException is thrown due to improper handling of invalid HTML escape sequences.\",\n  \"reproduction_steps\": [\n    \"Call the method unescapeHtml4 with the string '&#03'.\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"StringIndexOutOfBoundsException: String index out of range: 4\",\n  \"api_involved\": [\n    \"org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4\",\n    \"org.apache.commons.lang3.text.translate.NumericEntityUnescaper.translate\"\n  ],\n  \"input_conditions\": [\n    \"String containing '&#03' or any string with '&' followed by an invalid escape sequence\"\n  ],\n  \"expected\": \"The method should handle the input without throwing an exception, possibly by escaping the unfinished entity or throwing a ParseException for invalid input.\",\n  \"actual\": \"A StringIndexOutOfBoundsException is thrown due to improper handling of invalid HTML escape sequences.\",\n  \"reproduction_steps\": [\n    \"Call the method unescapeHtml4 with the string '&#03'.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,45 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "pydata__xarray-2922",
+  "project": null,
+  "repo": "pydata/xarray",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "average function"
+    ],
+    "input_conditions": [
+      "axes must be in a predictable order",
+      "weight per dimension provided"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Ability to compute weighted averages for geo data."
+    ],
+    "actual": [
+      "The average function currently cannot compute weighted averages."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "average function"
+    ],
+    "input_conditions": [
+      "axes must be in a predictable order",
+      "weight per dimension provided"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Ability to compute weighted averages for geo data."
+    ],
+    "actual": [
+      "The average function currently cannot compute weighted averages."
+    ]
+  },
+  "raw_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": [\"average function\"],\n    \"input_conditions\": [\"axes must be in a predictable order\", \"weight per dimension provided\"],\n    \"expected\": \"Ability to compute weighted averages for geo data.\",\n    \"actual\": \"The average function currently cannot compute weighted averages.\",\n    \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": [\"average function\"],\n    \"input_conditions\": [\"axes must be in a predictable order\", \"weight per dimension provided\"],\n    \"expected\": \"Ability to compute weighted averages for geo data.\",\n    \"actual\": \"The average function currently cannot compute weighted averages.\",\n    \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

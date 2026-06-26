@@ -1,0 +1,51 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-13",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [],
+    "input_conditions": [
+      "Presence of functions with `return true` and `return false` statements",
+      "Use of if statement with variable assignment inside a function",
+      "Code structure where true/false values are returned from methods within an object"
+    ],
+    "reproduction_steps": [
+      "Write a JavaScript function that contains `return true` and `return false` statements within methods of a returned object.",
+      "Run the compiler on the code.",
+      "Observe that `true` and `false` remain unchanged in the output instead of being replaced by `!0` and `!1`."
+    ],
+    "expected": [
+      "The compiler should replace `true` with `!0` and `false` with `!1` for shorter output."
+    ],
+    "actual": [
+      "The compiler output retains `true` and `false` literals instead of replacing them with `!0` and `!1`."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [],
+    "input_conditions": [
+      "Presence of functions with `return true` and `return false` statements",
+      "Use of if statement with variable assignment inside a function",
+      "Code structure where true/false values are returned from methods within an object"
+    ],
+    "reproduction_steps": [
+      "Write a JavaScript function that contains `return true` and `return false` statements within methods of a returned object.",
+      "Run the compiler on the code.",
+      "Observe that `true` and `false` remain unchanged in the output instead of being replaced by `!0` and `!1`."
+    ],
+    "expected": [
+      "The compiler should replace `true` with `!0` and `false` with `!1` for shorter output."
+    ],
+    "actual": [
+      "The compiler output retains `true` and `false` literals instead of replacing them with `!0` and `!1`."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [],\n\"input_conditions\": [\n    \"Presence of functions with `return true` and `return false` statements\",\n    \"Use of if statement with variable assignment inside a function\",\n    \"Code structure where true/false values are returned from methods within an object\"\n],\n\"expected\": \"The compiler should replace `true` with `!0` and `false` with `!1` for shorter output.\",\n\"actual\": \"The compiler output retains `true` and `false` literals instead of replacing them with `!0` and `!1`.\",\n\"reproduction_steps\": [\n    \"Write a JavaScript function that contains `return true` and `return false` statements within methods of a returned object.\",\n    \"Run the compiler on the code.\",\n    \"Observe that `true` and `false` remain unchanged in the output instead of being replaced by `!0` and `!1`.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [],\n\"input_conditions\": [\n    \"Presence of functions with `return true` and `return false` statements\",\n    \"Use of if statement with variable assignment inside a function\",\n    \"Code structure where true/false values are returned from methods within an object\"\n],\n\"expected\": \"The compiler should replace `true` with `!0` and `false` with `!1` for shorter output.\",\n\"actual\": \"The compiler output retains `true` and `false` literals instead of replacing them with `!0` and `!1`.\",\n\"reproduction_steps\": [\n    \"Write a JavaScript function that contains `return true` and `return false` statements within methods of a returned object.\",\n    \"Run the compiler on the code.\",\n    \"Observe that `true` and `false` remain unchanged in the output instead of being replaced by `!0` and `!1`.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

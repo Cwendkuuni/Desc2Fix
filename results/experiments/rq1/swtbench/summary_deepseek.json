@@ -1,0 +1,26 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "expected_instances": 10,
+  "available_instances": 10,
+  "missing_instances": 0,
+  "availability_rate": 1.0,
+  "avg_signal_items_per_instance": 10.1,
+  "avg_field_completeness": 0.9,
+  "field_non_empty_counts": {
+    "exception": 5,
+    "api_involved": 10,
+    "input_conditions": 10,
+    "reproduction_steps": 9,
+    "expected": 10,
+    "actual": 10
+  },
+  "field_non_empty_rates": {
+    "exception": 0.5,
+    "api_involved": 1.0,
+    "input_conditions": 1.0,
+    "reproduction_steps": 0.9,
+    "expected": 1.0,
+    "actual": 1.0
+  }
+}

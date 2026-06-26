@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "JxPath-17",
+  "project": "JxPath",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "selectSingleNode returns null"
+    ],
+    "api_involved": [
+      "DOMAttributeIterator",
+      "JDOMAttributeIterator",
+      "selectSingleNode",
+      "assertXPathValueIterator"
+    ],
+    "input_conditions": [
+      "xml with namespaced attributes",
+      "expression using wildcard"
+    ],
+    "reproduction_steps": [
+      "Use expression xml/@* on xml: <xml xmlns:x='foo' x:pop='a'/>",
+      "Observe selectSingleNode returns null instead of selecting the attribute"
+    ],
+    "expected": [
+      "The wildcard attribute should select all attributes regardless of namespace"
+    ],
+    "actual": [
+      "selectSingleNode returns null when wildcard is used with namespaced attributes"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "selectSingleNode returns null"
+    ],
+    "api_involved": [
+      "DOMAttributeIterator",
+      "JDOMAttributeIterator",
+      "selectSingleNode",
+      "assertXPathValueIterator"
+    ],
+    "input_conditions": [
+      "xml with namespaced attributes",
+      "expression using wildcard"
+    ],
+    "reproduction_steps": [
+      "Use expression xml/@* on xml: <xml xmlns:x='foo' x:pop='a'/>",
+      "Observe selectSingleNode returns null instead of selecting the attribute"
+    ],
+    "expected": [
+      "The wildcard attribute should select all attributes regardless of namespace"
+    ],
+    "actual": [
+      "selectSingleNode returns null when wildcard is used with namespaced attributes"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"selectSingleNode returns null\",\n  \"api_involved\": [\"DOMAttributeIterator\", \"JDOMAttributeIterator\", \"selectSingleNode\", \"assertXPathValueIterator\"],\n  \"input_conditions\": [\"xml with namespaced attributes\", \"expression using wildcard\"],\n  \"expected\": \"The wildcard attribute should select all attributes regardless of namespace\",\n  \"actual\": \"selectSingleNode returns null when wildcard is used with namespaced attributes\",\n  \"reproduction_steps\": [\n    \"Use expression xml/@* on xml: <xml xmlns:x='foo' x:pop='a'/>\",\n    \"Observe selectSingleNode returns null instead of selecting the attribute\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"selectSingleNode returns null\",\n  \"api_involved\": [\"DOMAttributeIterator\", \"JDOMAttributeIterator\", \"selectSingleNode\", \"assertXPathValueIterator\"],\n  \"input_conditions\": [\"xml with namespaced attributes\", \"expression using wildcard\"],\n  \"expected\": \"The wildcard attribute should select all attributes regardless of namespace\",\n  \"actual\": \"selectSingleNode returns null when wildcard is used with namespaced attributes\",\n  \"reproduction_steps\": [\n    \"Use expression xml/@* on xml: <xml xmlns:x='foo' x:pop='a'/>\",\n    \"Observe selectSingleNode returns null instead of selecting the attribute\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

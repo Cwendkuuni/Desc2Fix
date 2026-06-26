@@ -1,0 +1,69 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-71",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "AssertionError"
+    ],
+    "api_involved": [
+      "DormandPrince853Integrator.integrate",
+      "FirstOrderDifferentialEquations.computeDerivatives"
+    ],
+    "input_conditions": [
+      "t0 = 1878250320.0000029",
+      "t = 1878250379.9999986",
+      "integration range ~60 seconds",
+      "initial step size = 60.0",
+      "tolerance = 1.0e-10"
+    ],
+    "reproduction_steps": [
+      "Create a first-order ODE with dy/dt = y * 1.0e-6.",
+      "Instantiate DormandPrince853Integrator with max step 100.0 and tolerance 1.0e-10.",
+      "Set initial step size to 60.0.",
+      "Integrate from t0 = 1878250320.0000029 to t = 1878250379.9999986 with initial condition y = 1.0.",
+      "Assert that the final integration time equals the end time t within 1.0e-6."
+    ],
+    "expected": [
+      "Integrator should stop at or very near the specified end time t = 1878250379.9999986, and finalT should equal t within 1.0e-6 tolerance."
+    ],
+    "actual": [
+      "Integration continues past the end time, covering approximately 160 seconds instead of the specified 60 seconds."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "AssertionError"
+    ],
+    "api_involved": [
+      "DormandPrince853Integrator.integrate",
+      "FirstOrderDifferentialEquations.computeDerivatives"
+    ],
+    "input_conditions": [
+      "t0 = 1878250320.0000029",
+      "t = 1878250379.9999986",
+      "integration range ~60 seconds",
+      "initial step size = 60.0",
+      "tolerance = 1.0e-10"
+    ],
+    "reproduction_steps": [
+      "Create a first-order ODE with dy/dt = y * 1.0e-6.",
+      "Instantiate DormandPrince853Integrator with max step 100.0 and tolerance 1.0e-10.",
+      "Set initial step size to 60.0.",
+      "Integrate from t0 = 1878250320.0000029 to t = 1878250379.9999986 with initial condition y = 1.0.",
+      "Assert that the final integration time equals the end time t within 1.0e-6."
+    ],
+    "expected": [
+      "Integrator should stop at or very near the specified end time t = 1878250379.9999986, and finalT should equal t within 1.0e-6 tolerance."
+    ],
+    "actual": [
+      "Integration continues past the end time, covering approximately 160 seconds instead of the specified 60 seconds."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"AssertionError\",\n\"api_involved\": [\"DormandPrince853Integrator.integrate\", \"FirstOrderDifferentialEquations.computeDerivatives\"],\n\"input_conditions\": [\"t0 = 1878250320.0000029\", \"t = 1878250379.9999986\", \"integration range ~60 seconds\", \"initial step size = 60.0\", \"tolerance = 1.0e-10\"],\n\"expected\": \"Integrator should stop at or very near the specified end time t = 1878250379.9999986, and finalT should equal t within 1.0e-6 tolerance.\",\n\"actual\": \"Integration continues past the end time, covering approximately 160 seconds instead of the specified 60 seconds.\",\n\"reproduction_steps\": [\n\"Create a first-order ODE with dy/dt = y * 1.0e-6.\",\n\"Instantiate DormandPrince853Integrator with max step 100.0 and tolerance 1.0e-10.\",\n\"Set initial step size to 60.0.\",\n\"Integrate from t0 = 1878250320.0000029 to t = 1878250379.9999986 with initial condition y = 1.0.\",\n\"Assert that the final integration time equals the end time t within 1.0e-6.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"AssertionError\",\n\"api_involved\": [\"DormandPrince853Integrator.integrate\", \"FirstOrderDifferentialEquations.computeDerivatives\"],\n\"input_conditions\": [\"t0 = 1878250320.0000029\", \"t = 1878250379.9999986\", \"integration range ~60 seconds\", \"initial step size = 60.0\", \"tolerance = 1.0e-10\"],\n\"expected\": \"Integrator should stop at or very near the specified end time t = 1878250379.9999986, and finalT should equal t within 1.0e-6 tolerance.\",\n\"actual\": \"Integration continues past the end time, covering approximately 160 seconds instead of the specified 60 seconds.\",\n\"reproduction_steps\": [\n\"Create a first-order ODE with dy/dt = y * 1.0e-6.\",\n\"Instantiate DormandPrince853Integrator with max step 100.0 and tolerance 1.0e-10.\",\n\"Set initial step size to 60.0.\",\n\"Integrate from t0 = 1878250320.0000029 to t = 1878250379.9999986 with initial condition y = 1.0.\",\n\"Assert that the final integration time equals the end time t within 1.0e-6.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

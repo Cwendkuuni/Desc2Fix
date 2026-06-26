@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-60",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "void operator"
+    ],
+    "input_conditions": [
+      "code pattern: void function() {}();",
+      "function body may have side effects (e.g., my_global = true)",
+      "higher compression levels that remove code marked as having no side effects"
+    ],
+    "reproduction_steps": [
+      "Write code such as: void function () { my_global = true; }();",
+      "Use a JavaScript minifier/compressor that marks expressions as side-effect-free based on the void operator.",
+      "Observe that the function body (e.g., my_global = true) is removed at higher compression levels."
+    ],
+    "expected": [
+      "The void function() {}() expression should not be identified as having no side effects because the function body is executed and may have side effects."
+    ],
+    "actual": [
+      "The expression is incorrectly identified as having no side effects, causing the function body to be removed at higher compression levels."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "void operator"
+    ],
+    "input_conditions": [
+      "code pattern: void function() {}();",
+      "function body may have side effects (e.g., my_global = true)",
+      "higher compression levels that remove code marked as having no side effects"
+    ],
+    "reproduction_steps": [
+      "Write code such as: void function () { my_global = true; }();",
+      "Use a JavaScript minifier/compressor that marks expressions as side-effect-free based on the void operator.",
+      "Observe that the function body (e.g., my_global = true) is removed at higher compression levels."
+    ],
+    "expected": [
+      "The void function() {}() expression should not be identified as having no side effects because the function body is executed and may have side effects."
+    ],
+    "actual": [
+      "The expression is incorrectly identified as having no side effects, causing the function body to be removed at higher compression levels."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"void operator\"],\n\"input_conditions\": [\"code pattern: void function() {}();\", \"function body may have side effects (e.g., my_global = true)\", \"higher compression levels that remove code marked as having no side effects\"],\n\"expected\": \"The void function() {}() expression should not be identified as having no side effects because the function body is executed and may have side effects.\",\n\"actual\": \"The expression is incorrectly identified as having no side effects, causing the function body to be removed at higher compression levels.\",\n\"reproduction_steps\": [\n\"Write code such as: void function () { my_global = true; }();\",\n\"Use a JavaScript minifier/compressor that marks expressions as side-effect-free based on the void operator.\",\n\"Observe that the function body (e.g., my_global = true) is removed at higher compression levels.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"void operator\"],\n\"input_conditions\": [\"code pattern: void function() {}();\", \"function body may have side effects (e.g., my_global = true)\", \"higher compression levels that remove code marked as having no side effects\"],\n\"expected\": \"The void function() {}() expression should not be identified as having no side effects because the function body is executed and may have side effects.\",\n\"actual\": \"The expression is incorrectly identified as having no side effects, causing the function body to be removed at higher compression levels.\",\n\"reproduction_steps\": [\n\"Write code such as: void function () { my_global = true; }();\",\n\"Use a JavaScript minifier/compressor that marks expressions as side-effect-free based on the void operator.\",\n\"Observe that the function body (e.g., my_global = true) is removed at higher compression levels.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "pytest-dev__pytest-7535",
+  "project": null,
+  "repo": "pytest-dev/pytest",
+  "signals": {
+    "exception": [
+      "Traceback in pytest.raises contains repr of py.path.local"
+    ],
+    "api_involved": [
+      "pytest.raises",
+      "py.path.local"
+    ],
+    "input_conditions": [
+      "usage of py.error removed",
+      "format string uses removed element"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "The output should be the same in all cases, showing the repr of a string"
+    ],
+    "actual": [
+      "The repr of the object is shown instead of the repr of a string"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Traceback in pytest.raises contains repr of py.path.local"
+    ],
+    "api_involved": [
+      "pytest.raises",
+      "py.path.local"
+    ],
+    "input_conditions": [
+      "usage of py.error removed",
+      "format string uses removed element"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "The output should be the same in all cases, showing the repr of a string"
+    ],
+    "actual": [
+      "The repr of the object is shown instead of the repr of a string"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"Traceback in pytest.raises contains repr of py.path.local\",\n  \"api_involved\": [\"pytest.raises\", \"py.path.local\"],\n  \"input_conditions\": [\"usage of py.error removed\", \"format string uses removed element\"],\n  \"expected\": \"The output should be the same in all cases, showing the repr of a string\",\n  \"actual\": \"The repr of the object is shown instead of the repr of a string\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"Traceback in pytest.raises contains repr of py.path.local\",\n  \"api_involved\": [\"pytest.raises\", \"py.path.local\"],\n  \"input_conditions\": [\"usage of py.error removed\", \"format string uses removed element\"],\n  \"expected\": \"The output should be the same in all cases, showing the repr of a string\",\n  \"actual\": \"The repr of the object is shown instead of the repr of a string\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,65 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-13665",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "serialize_db_to_string",
+      "base_manager",
+      "_default_manager",
+      "loaddata",
+      "RunPython"
+    ],
+    "input_conditions": [
+      "CustomManagerThatFilterOutSomeRecords as _default_manager",
+      "serialized_rollback = True",
+      "Fixtures loaded via migration using loaddata"
+    ],
+    "reproduction_steps": [
+      "Define a model with a custom manager that filters records (e.g., excludes pk=1) as the _default_manager.",
+      "Add a migration that loads fixtures (e.g., services.json) creating records using loaddata.",
+      "Create a TestService class using TransactionTestCase with serialized_rollback = True.",
+      "Run the test_something test; the test will fail because serialization of database state uses the filtered manager."
+    ],
+    "expected": [
+      "serialize_db_to_string should use base_manager to serialize all database records for rollback serialization."
+    ],
+    "actual": [
+      "serialize_db_to_string uses _default_manager, which filters out some records (excluding pk=1), causing database creation backend to fail during tests because not all records are serialized."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "serialize_db_to_string",
+      "base_manager",
+      "_default_manager",
+      "loaddata",
+      "RunPython"
+    ],
+    "input_conditions": [
+      "CustomManagerThatFilterOutSomeRecords as _default_manager",
+      "serialized_rollback = True",
+      "Fixtures loaded via migration using loaddata"
+    ],
+    "reproduction_steps": [
+      "Define a model with a custom manager that filters records (e.g., excludes pk=1) as the _default_manager.",
+      "Add a migration that loads fixtures (e.g., services.json) creating records using loaddata.",
+      "Create a TestService class using TransactionTestCase with serialized_rollback = True.",
+      "Run the test_something test; the test will fail because serialization of database state uses the filtered manager."
+    ],
+    "expected": [
+      "serialize_db_to_string should use base_manager to serialize all database records for rollback serialization."
+    ],
+    "actual": [
+      "serialize_db_to_string uses _default_manager, which filters out some records (excluding pk=1), causing database creation backend to fail during tests because not all records are serialized."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"serialize_db_to_string\", \"base_manager\", \"_default_manager\", \"loaddata\", \"RunPython\"],\n\"input_conditions\": [\"CustomManagerThatFilterOutSomeRecords as _default_manager\", \"serialized_rollback = True\", \"Fixtures loaded via migration using loaddata\"],\n\"expected\": \"serialize_db_to_string should use base_manager to serialize all database records for rollback serialization.\",\n\"actual\": \"serialize_db_to_string uses _default_manager, which filters out some records (excluding pk=1), causing database creation backend to fail during tests because not all records are serialized.\",\n\"reproduction_steps\": [\n    \"Define a model with a custom manager that filters records (e.g., excludes pk=1) as the _default_manager.\",\n    \"Add a migration that loads fixtures (e.g., services.json) creating records using loaddata.\",\n    \"Create a TestService class using TransactionTestCase with serialized_rollback = True.\",\n    \"Run the test_something test; the test will fail because serialization of database state uses the filtered manager.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"serialize_db_to_string\", \"base_manager\", \"_default_manager\", \"loaddata\", \"RunPython\"],\n\"input_conditions\": [\"CustomManagerThatFilterOutSomeRecords as _default_manager\", \"serialized_rollback = True\", \"Fixtures loaded via migration using loaddata\"],\n\"expected\": \"serialize_db_to_string should use base_manager to serialize all database records for rollback serialization.\",\n\"actual\": \"serialize_db_to_string uses _default_manager, which filters out some records (excluding pk=1), causing database creation backend to fail during tests because not all records are serialized.\",\n\"reproduction_steps\": [\n    \"Define a model with a custom manager that filters records (e.g., excludes pk=1) as the _default_manager.\",\n    \"Add a migration that loads fixtures (e.g., services.json) creating records using loaddata.\",\n    \"Create a TestService class using TransactionTestCase with serialized_rollback = True.\",\n    \"Run the test_something test; the test will fail because serialization of database state uses the filtered manager.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

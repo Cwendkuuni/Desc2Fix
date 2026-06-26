@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-15342",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "KeyError: 'order_with_respect_to'"
+    ],
+    "api_involved": [
+      "django.db.migrations.state.ModelState.get_field",
+      "django.db.migrations.autodetector.changes"
+    ],
+    "input_conditions": [
+      "models with field named _order but not using order_with_respect_to"
+    ],
+    "reproduction_steps": [
+      "Create or generate a Django model with a field named _order.",
+      "Ensure the model does not use the Meta.order_with_respect_to option.",
+      "Run manage.py makemigrations or manage.py migrate."
+    ],
+    "expected": [
+      "Migration autodetector should handle models with _order field without requiring order_with_respect_to option."
+    ],
+    "actual": [
+      "Migration autodetector crashes with a KeyError when encountering a model with a field named _order but without using order_with_respect_to."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "KeyError: 'order_with_respect_to'"
+    ],
+    "api_involved": [
+      "django.db.migrations.state.ModelState.get_field",
+      "django.db.migrations.autodetector.changes"
+    ],
+    "input_conditions": [
+      "models with field named _order but not using order_with_respect_to"
+    ],
+    "reproduction_steps": [
+      "Create or generate a Django model with a field named _order.",
+      "Ensure the model does not use the Meta.order_with_respect_to option.",
+      "Run manage.py makemigrations or manage.py migrate."
+    ],
+    "expected": [
+      "Migration autodetector should handle models with _order field without requiring order_with_respect_to option."
+    ],
+    "actual": [
+      "Migration autodetector crashes with a KeyError when encountering a model with a field named _order but without using order_with_respect_to."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"KeyError: 'order_with_respect_to'\",\n  \"api_involved\": [\"django.db.migrations.state.ModelState.get_field\", \"django.db.migrations.autodetector.changes\"],\n  \"input_conditions\": [\"models with field named _order but not using order_with_respect_to\"],\n  \"expected\": \"Migration autodetector should handle models with _order field without requiring order_with_respect_to option.\",\n  \"actual\": \"Migration autodetector crashes with a KeyError when encountering a model with a field named _order but without using order_with_respect_to.\",\n  \"reproduction_steps\": [\n    \"Create or generate a Django model with a field named _order.\",\n    \"Ensure the model does not use the Meta.order_with_respect_to option.\",\n    \"Run manage.py makemigrations or manage.py migrate.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"KeyError: 'order_with_respect_to'\",\n  \"api_involved\": [\"django.db.migrations.state.ModelState.get_field\", \"django.db.migrations.autodetector.changes\"],\n  \"input_conditions\": [\"models with field named _order but not using order_with_respect_to\"],\n  \"expected\": \"Migration autodetector should handle models with _order field without requiring order_with_respect_to option.\",\n  \"actual\": \"Migration autodetector crashes with a KeyError when encountering a model with a field named _order but without using order_with_respect_to.\",\n  \"reproduction_steps\": [\n    \"Create or generate a Django model with a field named _order.\",\n    \"Ensure the model does not use the Meta.order_with_respect_to option.\",\n    \"Run manage.py makemigrations or manage.py migrate.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

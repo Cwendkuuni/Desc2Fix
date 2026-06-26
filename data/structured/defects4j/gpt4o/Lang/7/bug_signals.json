@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Lang-7",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NumberFormatException"
+    ],
+    "api_involved": [
+      "NumberUtils#createNumber",
+      "NumberUtils#createBigDecimal"
+    ],
+    "input_conditions": [
+      "leading '--' in the string"
+    ],
+    "reproduction_steps": [
+      "Call NumberUtils#createNumber with a string containing leading '--'.",
+      "Observe that null is returned instead of an exception."
+    ],
+    "expected": [
+      "Throw NumberFormatException consistently for leading '--' in a number string."
+    ],
+    "actual": [
+      "Returns null for leading '--' in the string, contrary to other methods."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NumberFormatException"
+    ],
+    "api_involved": [
+      "NumberUtils#createNumber",
+      "NumberUtils#createBigDecimal"
+    ],
+    "input_conditions": [
+      "leading '--' in the string"
+    ],
+    "reproduction_steps": [
+      "Call NumberUtils#createNumber with a string containing leading '--'.",
+      "Observe that null is returned instead of an exception."
+    ],
+    "expected": [
+      "Throw NumberFormatException consistently for leading '--' in a number string."
+    ],
+    "actual": [
+      "Returns null for leading '--' in the string, contrary to other methods."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"NumberFormatException\",\n  \"api_involved\": [\"NumberUtils#createNumber\", \"NumberUtils#createBigDecimal\"],\n  \"input_conditions\": [\"leading '--' in the string\"],\n  \"expected\": \"Throw NumberFormatException consistently for leading '--' in a number string.\",\n  \"actual\": \"Returns null for leading '--' in the string, contrary to other methods.\",\n  \"reproduction_steps\": [\n    \"Call NumberUtils#createNumber with a string containing leading '--'.\",\n    \"Observe that null is returned instead of an exception.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"NumberFormatException\",\n  \"api_involved\": [\"NumberUtils#createNumber\", \"NumberUtils#createBigDecimal\"],\n  \"input_conditions\": [\"leading '--' in the string\"],\n  \"expected\": \"Throw NumberFormatException consistently for leading '--' in a number string.\",\n  \"actual\": \"Returns null for leading '--' in the string, contrary to other methods.\",\n  \"reproduction_steps\": [\n    \"Call NumberUtils#createNumber with a string containing leading '--'.\",\n    \"Observe that null is returned instead of an exception.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

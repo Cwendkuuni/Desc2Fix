@@ -1,0 +1,15 @@
+rq,comparison_type,dataset,left_source,right_source,level,field,n,presence_agreement_mean,presence_agreement_std,similarity_mean,similarity_std,left_signal_count_mean,right_signal_count_mean,signal_count_diff_mean
+rq1,llm_pairwise,Defects4J,deepseek,gpt4o,field,actual,99,0.979798,0.141407,0.329113,0.219687,5.383838,5.363636,0.242424
+rq1,llm_pairwise,Defects4J,deepseek,gpt4o,field,api_involved,99,0.939394,0.239821,0.392151,0.396214,5.383838,5.363636,0.242424
+rq1,llm_pairwise,Defects4J,deepseek,gpt4o,field,exception,99,0.868687,0.339461,0.742372,0.407762,5.383838,5.363636,0.242424
+rq1,llm_pairwise,Defects4J,deepseek,gpt4o,field,expected,99,0.989899,0.100504,0.354709,0.241068,5.383838,5.363636,0.242424
+rq1,llm_pairwise,Defects4J,deepseek,gpt4o,field,input_conditions,99,0.969697,0.172292,0.121212,0.289232,5.383838,5.363636,0.242424
+rq1,llm_pairwise,Defects4J,deepseek,gpt4o,field,reproduction_steps,99,0.969697,0.172292,0.042845,0.181101,5.383838,5.363636,0.242424
+rq1,llm_pairwise,Defects4J,deepseek,gpt4o,macro,ALL,99,0.952862,0.101129,0.3304,0.13704,5.383838,5.363636,0.242424
+rq1,llm_pairwise,SWTBench,deepseek,gpt4o,field,actual,100,0.98,0.140705,0.320816,0.188568,5.28,5.01,0.41
+rq1,llm_pairwise,SWTBench,deepseek,gpt4o,field,api_involved,100,0.96,0.196946,0.463024,0.38474,5.28,5.01,0.41
+rq1,llm_pairwise,SWTBench,deepseek,gpt4o,field,exception,100,0.92,0.27266,0.77976,0.391826,5.28,5.01,0.41
+rq1,llm_pairwise,SWTBench,deepseek,gpt4o,field,expected,100,0.99,0.1,0.341402,0.222321,5.28,5.01,0.41
+rq1,llm_pairwise,SWTBench,deepseek,gpt4o,field,input_conditions,100,0.93,0.256432,0.05519,0.151112,5.28,5.01,0.41
+rq1,llm_pairwise,SWTBench,deepseek,gpt4o,field,reproduction_steps,100,0.77,0.422953,0.060333,0.225566,5.28,5.01,0.41
+rq1,llm_pairwise,SWTBench,deepseek,gpt4o,macro,ALL,100,0.925,0.146747,0.336754,0.121973,5.28,5.01,0.41

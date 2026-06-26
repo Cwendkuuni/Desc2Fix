@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-77",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "getLInfNorm",
+      "ArrayRealVector",
+      "OpenMapRealVector",
+      "AbstractRealVector"
+    ],
+    "input_conditions": [
+      "finite dimensional vector",
+      "negative valued vectors would help detect bug"
+    ],
+    "reproduction_steps": [
+      "Call getLInfNorm() on any ArrayRealVector instance; observe incorrect sum result",
+      "Call getLInfNorm() on any OpenMapRealVector instance with negative entries; observe norm not being positive semi-definite"
+    ],
+    "expected": [
+      "getLInfNorm should return the maximum of the absolute values of the vector entries"
+    ],
+    "actual": [
+      "ArrayRealVector incorrectly uses += instead of =, summing values instead of taking max; OpenMapRealVector sums the raw values (not absolute) and is not positive semi-definite"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "getLInfNorm",
+      "ArrayRealVector",
+      "OpenMapRealVector",
+      "AbstractRealVector"
+    ],
+    "input_conditions": [
+      "finite dimensional vector",
+      "negative valued vectors would help detect bug"
+    ],
+    "reproduction_steps": [
+      "Call getLInfNorm() on any ArrayRealVector instance; observe incorrect sum result",
+      "Call getLInfNorm() on any OpenMapRealVector instance with negative entries; observe norm not being positive semi-definite"
+    ],
+    "expected": [
+      "getLInfNorm should return the maximum of the absolute values of the vector entries"
+    ],
+    "actual": [
+      "ArrayRealVector incorrectly uses += instead of =, summing values instead of taking max; OpenMapRealVector sums the raw values (not absolute) and is not positive semi-definite"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"getLInfNorm\", \"ArrayRealVector\", \"OpenMapRealVector\", \"AbstractRealVector\"],\n\"input_conditions\": [\"finite dimensional vector\", \"negative valued vectors would help detect bug\"],\n\"expected\": \"getLInfNorm should return the maximum of the absolute values of the vector entries\",\n\"actual\": \"ArrayRealVector incorrectly uses += instead of =, summing values instead of taking max; OpenMapRealVector sums the raw values (not absolute) and is not positive semi-definite\",\n\"reproduction_steps\": [\n    \"Call getLInfNorm() on any ArrayRealVector instance; observe incorrect sum result\",\n    \"Call getLInfNorm() on any OpenMapRealVector instance with negative entries; observe norm not being positive semi-definite\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"getLInfNorm\", \"ArrayRealVector\", \"OpenMapRealVector\", \"AbstractRealVector\"],\n\"input_conditions\": [\"finite dimensional vector\", \"negative valued vectors would help detect bug\"],\n\"expected\": \"getLInfNorm should return the maximum of the absolute values of the vector entries\",\n\"actual\": \"ArrayRealVector incorrectly uses += instead of =, summing values instead of taking max; OpenMapRealVector sums the raw values (not absolute) and is not positive semi-definite\",\n\"reproduction_steps\": [\n    \"Call getLInfNorm() on any ArrayRealVector instance; observe incorrect sum result\",\n    \"Call getLInfNorm() on any OpenMapRealVector instance with negative entries; observe norm not being positive semi-definite\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

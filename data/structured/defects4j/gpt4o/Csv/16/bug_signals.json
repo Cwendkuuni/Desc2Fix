@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Csv-16",
+  "project": "Csv",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "CSVParser",
+      "Iterator.hasNext",
+      "Iterator.next"
+    ],
+    "input_conditions": [
+      "Repeated calls to CSVParser Iterable",
+      "Peeking with Iterator.hasNext"
+    ],
+    "reproduction_steps": [
+      "Create a CSVParser instance with input data '1\\n2\\n3\\n4\\n5\\n'.",
+      "Perform iterations using enhanced for loop without peeking.",
+      "Break after reading two records.",
+      "Assign a new iterator and peek with hasNext before calling next."
+    ],
+    "expected": [
+      "The Iterator remains in sequence with the lexer, properly iterating over each element."
+    ],
+    "actual": [
+      "An element is consumed by the iterator on peeking that cannot be accessed by new Iterators, causing the record iterator and lexer to get out of sequence."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "CSVParser",
+      "Iterator.hasNext",
+      "Iterator.next"
+    ],
+    "input_conditions": [
+      "Repeated calls to CSVParser Iterable",
+      "Peeking with Iterator.hasNext"
+    ],
+    "reproduction_steps": [
+      "Create a CSVParser instance with input data '1\\n2\\n3\\n4\\n5\\n'.",
+      "Perform iterations using enhanced for loop without peeking.",
+      "Break after reading two records.",
+      "Assign a new iterator and peek with hasNext before calling next."
+    ],
+    "expected": [
+      "The Iterator remains in sequence with the lexer, properly iterating over each element."
+    ],
+    "actual": [
+      "An element is consumed by the iterator on peeking that cannot be accessed by new Iterators, causing the record iterator and lexer to get out of sequence."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"CSVParser\", \"Iterator.hasNext\", \"Iterator.next\"],\n  \"input_conditions\": [\"Repeated calls to CSVParser Iterable\", \"Peeking with Iterator.hasNext\"],\n  \"expected\": \"The Iterator remains in sequence with the lexer, properly iterating over each element.\",\n  \"actual\": \"An element is consumed by the iterator on peeking that cannot be accessed by new Iterators, causing the record iterator and lexer to get out of sequence.\",\n  \"reproduction_steps\": [\n    \"Create a CSVParser instance with input data '1\\\\n2\\\\n3\\\\n4\\\\n5\\\\n'.\",\n    \"Perform iterations using enhanced for loop without peeking.\",\n    \"Break after reading two records.\",\n    \"Assign a new iterator and peek with hasNext before calling next.\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"CSVParser\", \"Iterator.hasNext\", \"Iterator.next\"],\n  \"input_conditions\": [\"Repeated calls to CSVParser Iterable\", \"Peeking with Iterator.hasNext\"],\n  \"expected\": \"The Iterator remains in sequence with the lexer, properly iterating over each element.\",\n  \"actual\": \"An element is consumed by the iterator on peeking that cannot be accessed by new Iterators, causing the record iterator and lexer to get out of sequence.\",\n  \"reproduction_steps\": [\n    \"Create a CSVParser instance with input data '1\\\\n2\\\\n3\\\\n4\\\\n5\\\\n'.\",\n    \"Perform iterations using enhanced for loop without peeking.\",\n    \"Break after reading two records.\",\n    \"Assign a new iterator and peek with hasNext before calling next.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

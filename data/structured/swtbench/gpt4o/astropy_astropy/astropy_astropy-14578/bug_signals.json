@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "astropy__astropy-14578",
+  "project": null,
+  "repo": "astropy/astropy",
+  "signals": {
+    "exception": [
+      "does not know how to deal with object"
+    ],
+    "api_involved": [
+      "Table",
+      "io/fits/column.py"
+    ],
+    "input_conditions": [
+      "Table contains an object"
+    ],
+    "reproduction_steps": [
+      "Create a Table with an object",
+      "Write the Table to a FITS file"
+    ],
+    "expected": [
+      "Table API writes objects to files by their string representation or provides a meaningful error message"
+    ],
+    "actual": [
+      "Writing a Table to FITS fails if the table contains objects"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "does not know how to deal with object"
+    ],
+    "api_involved": [
+      "Table",
+      "io/fits/column.py"
+    ],
+    "input_conditions": [
+      "Table contains an object"
+    ],
+    "reproduction_steps": [
+      "Create a Table with an object",
+      "Write the Table to a FITS file"
+    ],
+    "expected": [
+      "Table API writes objects to files by their string representation or provides a meaningful error message"
+    ],
+    "actual": [
+      "Writing a Table to FITS fails if the table contains objects"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"does not know how to deal with object\",\n  \"api_involved\": [\"Table\", \"io/fits/column.py\"],\n  \"input_conditions\": [\"Table contains an object\"],\n  \"expected\": \"Table API writes objects to files by their string representation or provides a meaningful error message\",\n  \"actual\": \"Writing a Table to FITS fails if the table contains objects\",\n  \"reproduction_steps\": [\"Create a Table with an object\", \"Write the Table to a FITS file\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"does not know how to deal with object\",\n  \"api_involved\": [\"Table\", \"io/fits/column.py\"],\n  \"input_conditions\": [\"Table contains an object\"],\n  \"expected\": \"Table API writes objects to files by their string representation or provides a meaningful error message\",\n  \"actual\": \"Writing a Table to FITS fails if the table contains objects\",\n  \"reproduction_steps\": [\"Create a Table with an object\", \"Write the Table to a FITS file\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

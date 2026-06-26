@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-87",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "SimplexTableau"
+    ],
+    "input_conditions": [
+      "tableau entry assumed nonzero indicates basic variable",
+      "should check entry value equals 1"
+    ],
+    "reproduction_steps": [
+      "Run automated test suite after applying recent patch to SimplexTableau.",
+      "Observe a newly triggered code path uncovering a bug in basic variable detection.",
+      "Note that basic variable detection incorrectly uses nonzero check instead of value equals 1 check."
+    ],
+    "expected": [
+      "Basic variables should be detected by checking that the entry value equals 1."
+    ],
+    "actual": [
+      "Basic variables were incorrectly detected by checking that the entry value is nonzero."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "SimplexTableau"
+    ],
+    "input_conditions": [
+      "tableau entry assumed nonzero indicates basic variable",
+      "should check entry value equals 1"
+    ],
+    "reproduction_steps": [
+      "Run automated test suite after applying recent patch to SimplexTableau.",
+      "Observe a newly triggered code path uncovering a bug in basic variable detection.",
+      "Note that basic variable detection incorrectly uses nonzero check instead of value equals 1 check."
+    ],
+    "expected": [
+      "Basic variables should be detected by checking that the entry value equals 1."
+    ],
+    "actual": [
+      "Basic variables were incorrectly detected by checking that the entry value is nonzero."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"SimplexTableau\"],\n\"input_conditions\": [\"tableau entry assumed nonzero indicates basic variable\", \"should check entry value equals 1\"],\n\"expected\": \"Basic variables should be detected by checking that the entry value equals 1.\",\n\"actual\": \"Basic variables were incorrectly detected by checking that the entry value is nonzero.\",\n\"reproduction_steps\": [\n    \"Run automated test suite after applying recent patch to SimplexTableau.\",\n    \"Observe a newly triggered code path uncovering a bug in basic variable detection.\",\n    \"Note that basic variable detection incorrectly uses nonzero check instead of value equals 1 check.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"SimplexTableau\"],\n\"input_conditions\": [\"tableau entry assumed nonzero indicates basic variable\", \"should check entry value equals 1\"],\n\"expected\": \"Basic variables should be detected by checking that the entry value equals 1.\",\n\"actual\": \"Basic variables were incorrectly detected by checking that the entry value is nonzero.\",\n\"reproduction_steps\": [\n    \"Run automated test suite after applying recent patch to SimplexTableau.\",\n    \"Observe a newly triggered code path uncovering a bug in basic variable detection.\",\n    \"Note that basic variable detection incorrectly uses nonzero check instead of value equals 1 check.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

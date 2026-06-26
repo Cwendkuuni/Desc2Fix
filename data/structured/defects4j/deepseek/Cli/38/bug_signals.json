@@ -1,0 +1,69 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-38",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Option.builder",
+      "hasArg",
+      "optionalArg",
+      "numberOfArgs",
+      "DefaultParser",
+      "GnuParser"
+    ],
+    "input_conditions": [
+      "optional argument option defined with numberOfArgs(1) and optionalArg(true)",
+      "option with no argument (e.g., -last) appears immediately after the optional argument option",
+      "option order reversed: last option before optional argument option may work around the bug"
+    ],
+    "reproduction_steps": [
+      "Define an option with hasArg().optionalArg(true).numberOfArgs(1) (e.g., -t1 or -db).",
+      "Define a boolean option with no argument (e.g., -last or -a).",
+      "Parse command line arguments like '-t1 -last' or '-db -last' with DefaultParser.",
+      "Observe that -last is interpreted as the value for -t1/-db instead of being a separate option.",
+      "Repeat with GnuParser (deprecated) to see correct behavior."
+    ],
+    "expected": [
+      "When an option with an optional argument is used without providing an argument, the next token should be parsed as a separate option, not as the argument to the preceding option."
+    ],
+    "actual": [
+      "The DefaultParser incorrectly treats the next token (e.g., -last or -ab) as the argument to the optional argument option, causing it to be consumed as a value rather than recognized as a flag."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Option.builder",
+      "hasArg",
+      "optionalArg",
+      "numberOfArgs",
+      "DefaultParser",
+      "GnuParser"
+    ],
+    "input_conditions": [
+      "optional argument option defined with numberOfArgs(1) and optionalArg(true)",
+      "option with no argument (e.g., -last) appears immediately after the optional argument option",
+      "option order reversed: last option before optional argument option may work around the bug"
+    ],
+    "reproduction_steps": [
+      "Define an option with hasArg().optionalArg(true).numberOfArgs(1) (e.g., -t1 or -db).",
+      "Define a boolean option with no argument (e.g., -last or -a).",
+      "Parse command line arguments like '-t1 -last' or '-db -last' with DefaultParser.",
+      "Observe that -last is interpreted as the value for -t1/-db instead of being a separate option.",
+      "Repeat with GnuParser (deprecated) to see correct behavior."
+    ],
+    "expected": [
+      "When an option with an optional argument is used without providing an argument, the next token should be parsed as a separate option, not as the argument to the preceding option."
+    ],
+    "actual": [
+      "The DefaultParser incorrectly treats the next token (e.g., -last or -ab) as the argument to the optional argument option, causing it to be consumed as a value rather than recognized as a flag."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Option.builder\", \"hasArg\", \"optionalArg\", \"numberOfArgs\", \"DefaultParser\", \"GnuParser\"],\n\"input_conditions\": [\"optional argument option defined with numberOfArgs(1) and optionalArg(true)\", \"option with no argument (e.g., -last) appears immediately after the optional argument option\", \"option order reversed: last option before optional argument option may work around the bug\"],\n\"expected\": \"When an option with an optional argument is used without providing an argument, the next token should be parsed as a separate option, not as the argument to the preceding option.\",\n\"actual\": \"The DefaultParser incorrectly treats the next token (e.g., -last or -ab) as the argument to the optional argument option, causing it to be consumed as a value rather than recognized as a flag.\",\n\"reproduction_steps\": [\n\"Define an option with hasArg().optionalArg(true).numberOfArgs(1) (e.g., -t1 or -db).\",\n\"Define a boolean option with no argument (e.g., -last or -a).\",\n\"Parse command line arguments like '-t1 -last' or '-db -last' with DefaultParser.\",\n\"Observe that -last is interpreted as the value for -t1/-db instead of being a separate option.\",\n\"Repeat with GnuParser (deprecated) to see correct behavior.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Option.builder\", \"hasArg\", \"optionalArg\", \"numberOfArgs\", \"DefaultParser\", \"GnuParser\"],\n\"input_conditions\": [\"optional argument option defined with numberOfArgs(1) and optionalArg(true)\", \"option with no argument (e.g., -last) appears immediately after the optional argument option\", \"option order reversed: last option before optional argument option may work around the bug\"],\n\"expected\": \"When an option with an optional argument is used without providing an argument, the next token should be parsed as a separate option, not as the argument to the preceding option.\",\n\"actual\": \"The DefaultParser incorrectly treats the next token (e.g., -last or -ab) as the argument to the optional argument option, causing it to be consumed as a value rather than recognized as a flag.\",\n\"reproduction_steps\": [\n\"Define an option with hasArg().optionalArg(true).numberOfArgs(1) (e.g., -t1 or -db).\",\n\"Define a boolean option with no argument (e.g., -last or -a).\",\n\"Parse command line arguments like '-t1 -last' or '-db -last' with DefaultParser.\",\n\"Observe that -last is interpreted as the value for -t1/-db instead of being a separate option.\",\n\"Repeat with GnuParser (deprecated) to see correct behavior.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

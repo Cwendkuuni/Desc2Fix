@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "scikit-learn__scikit-learn-11310",
+  "project": null,
+  "repo": "scikit-learn/scikit-learn",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "BaseSearchCV",
+      "grid/random search"
+    ],
+    "input_conditions": [
+      "single core",
+      "full data"
+    ],
+    "reproduction_steps": [
+      "Perform grid/random search using BaseSearchCV.",
+      "Attempt to time the whole search procedure and subtract the time it took to fit the single folds during hyperparameter optimization."
+    ],
+    "expected": [
+      "Attribute to retrieve the time it took to refit the best model on the full data."
+    ],
+    "actual": [
+      "Currently unable to retrieve the time taken to refit the best model directly after grid/random search."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "BaseSearchCV",
+      "grid/random search"
+    ],
+    "input_conditions": [
+      "single core",
+      "full data"
+    ],
+    "reproduction_steps": [
+      "Perform grid/random search using BaseSearchCV.",
+      "Attempt to time the whole search procedure and subtract the time it took to fit the single folds during hyperparameter optimization."
+    ],
+    "expected": [
+      "Attribute to retrieve the time it took to refit the best model on the full data."
+    ],
+    "actual": [
+      "Currently unable to retrieve the time taken to refit the best model directly after grid/random search."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"BaseSearchCV\", \"grid/random search\"],\n  \"input_conditions\": [\"single core\", \"full data\"],\n  \"expected\": \"Attribute to retrieve the time it took to refit the best model on the full data.\",\n  \"actual\": \"Currently unable to retrieve the time taken to refit the best model directly after grid/random search.\",\n  \"reproduction_steps\": [\n    \"Perform grid/random search using BaseSearchCV.\",\n    \"Attempt to time the whole search procedure and subtract the time it took to fit the single folds during hyperparameter optimization.\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"BaseSearchCV\", \"grid/random search\"],\n  \"input_conditions\": [\"single core\", \"full data\"],\n  \"expected\": \"Attribute to retrieve the time it took to refit the best model on the full data.\",\n  \"actual\": \"Currently unable to retrieve the time taken to refit the best model directly after grid/random search.\",\n  \"reproduction_steps\": [\n    \"Perform grid/random search using BaseSearchCV.\",\n    \"Attempt to time the whole search procedure and subtract the time it took to fit the single folds during hyperparameter optimization.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-40",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "TooManyEvaluationsException"
+    ],
+    "api_involved": [
+      "BracketingNthOrderBrentSolver",
+      "solve",
+      "UnivariateFunction"
+    ],
+    "input_conditions": [
+      "xA = 12500.0, yA = 3.7e-16, agingA = 0",
+      "xB = 12500.03, yB = -7.0e-5, agingB = 97"
+    ],
+    "reproduction_steps": [
+      "Create a BracketingNthOrderBrentSolver instance with specific accuracy and order values.",
+      "Define a UnivariateFunction sharpTurn.",
+      "Call solve method with given parameters.",
+      "Observe the solver fails with TooManyEvaluationsException."
+    ],
+    "expected": [
+      "The solver should balance the bracketing points and reach the root accurately."
+    ],
+    "actual": [
+      "The right side of the bracketing interval slowly decreases while the left side is stuck, resulting in a TooManyEvaluationsException."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "TooManyEvaluationsException"
+    ],
+    "api_involved": [
+      "BracketingNthOrderBrentSolver",
+      "solve",
+      "UnivariateFunction"
+    ],
+    "input_conditions": [
+      "xA = 12500.0, yA = 3.7e-16, agingA = 0",
+      "xB = 12500.03, yB = -7.0e-5, agingB = 97"
+    ],
+    "reproduction_steps": [
+      "Create a BracketingNthOrderBrentSolver instance with specific accuracy and order values.",
+      "Define a UnivariateFunction sharpTurn.",
+      "Call solve method with given parameters.",
+      "Observe the solver fails with TooManyEvaluationsException."
+    ],
+    "expected": [
+      "The solver should balance the bracketing points and reach the root accurately."
+    ],
+    "actual": [
+      "The right side of the bracketing interval slowly decreases while the left side is stuck, resulting in a TooManyEvaluationsException."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"TooManyEvaluationsException\",\n  \"api_involved\": [\"BracketingNthOrderBrentSolver\", \"solve\", \"UnivariateFunction\"],\n  \"input_conditions\": [\"xA = 12500.0, yA = 3.7e-16, agingA = 0\", \"xB = 12500.03, yB = -7.0e-5, agingB = 97\"],\n  \"expected\": \"The solver should balance the bracketing points and reach the root accurately.\",\n  \"actual\": \"The right side of the bracketing interval slowly decreases while the left side is stuck, resulting in a TooManyEvaluationsException.\",\n  \"reproduction_steps\": [\n    \"Create a BracketingNthOrderBrentSolver instance with specific accuracy and order values.\",\n    \"Define a UnivariateFunction sharpTurn.\",\n    \"Call solve method with given parameters.\",\n    \"Observe the solver fails with TooManyEvaluationsException.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"TooManyEvaluationsException\",\n  \"api_involved\": [\"BracketingNthOrderBrentSolver\", \"solve\", \"UnivariateFunction\"],\n  \"input_conditions\": [\"xA = 12500.0, yA = 3.7e-16, agingA = 0\", \"xB = 12500.03, yB = -7.0e-5, agingB = 97\"],\n  \"expected\": \"The solver should balance the bracketing points and reach the root accurately.\",\n  \"actual\": \"The right side of the bracketing interval slowly decreases while the left side is stuck, resulting in a TooManyEvaluationsException.\",\n  \"reproduction_steps\": [\n    \"Create a BracketingNthOrderBrentSolver instance with specific accuracy and order values.\",\n    \"Define a UnivariateFunction sharpTurn.\",\n    \"Call solve method with given parameters.\",\n    \"Observe the solver fails with TooManyEvaluationsException.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

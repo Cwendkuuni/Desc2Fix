@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "JxPath-4",
+  "project": "JxPath",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "JXPath",
+      "selectSingleNode",
+      "selectNodes",
+      "getStringValueOfNode"
+    ],
+    "input_conditions": [
+      "XML containing string values with leading or trailing spaces",
+      "Use of xml:space attribute set to 'preserve'"
+    ],
+    "reproduction_steps": [
+      "1. Create an XML document with an element like <value>     12324 56</value>.",
+      "2. Use JXPath to retrieve the string value of that element.",
+      "3. Observe that the returned value is trimmed, losing the leading/trailing spaces."
+    ],
+    "expected": [
+      "JXPath should return the string value with leading/trailing spaces preserved, e.g., '     12324 56'."
+    ],
+    "actual": [
+      "JXPath trims string values, returning them without leading/trailing spaces, e.g., '1234 56'."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "JXPath",
+      "selectSingleNode",
+      "selectNodes",
+      "getStringValueOfNode"
+    ],
+    "input_conditions": [
+      "XML containing string values with leading or trailing spaces",
+      "Use of xml:space attribute set to 'preserve'"
+    ],
+    "reproduction_steps": [
+      "1. Create an XML document with an element like <value>     12324 56</value>.",
+      "2. Use JXPath to retrieve the string value of that element.",
+      "3. Observe that the returned value is trimmed, losing the leading/trailing spaces."
+    ],
+    "expected": [
+      "JXPath should return the string value with leading/trailing spaces preserved, e.g., '     12324 56'."
+    ],
+    "actual": [
+      "JXPath trims string values, returning them without leading/trailing spaces, e.g., '1234 56'."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"JXPath\", \"selectSingleNode\", \"selectNodes\", \"getStringValueOfNode\"],\n\"input_conditions\": [\"XML containing string values with leading or trailing spaces\", \"Use of xml:space attribute set to 'preserve'\"],\n\"expected\": \"JXPath should return the string value with leading/trailing spaces preserved, e.g., '     12324 56'.\",\n\"actual\": \"JXPath trims string values, returning them without leading/trailing spaces, e.g., '1234 56'.\",\n\"reproduction_steps\": [\n\"1. Create an XML document with an element like <value>     12324 56</value>.\",\n\"2. Use JXPath to retrieve the string value of that element.\",\n\"3. Observe that the returned value is trimmed, losing the leading/trailing spaces.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"JXPath\", \"selectSingleNode\", \"selectNodes\", \"getStringValueOfNode\"],\n\"input_conditions\": [\"XML containing string values with leading or trailing spaces\", \"Use of xml:space attribute set to 'preserve'\"],\n\"expected\": \"JXPath should return the string value with leading/trailing spaces preserved, e.g., '     12324 56'.\",\n\"actual\": \"JXPath trims string values, returning them without leading/trailing spaces, e.g., '1234 56'.\",\n\"reproduction_steps\": [\n\"1. Create an XML document with an element like <value>     12324 56</value>.\",\n\"2. Use JXPath to retrieve the string value of that element.\",\n\"3. Observe that the returned value is trimmed, losing the leading/trailing spaces.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

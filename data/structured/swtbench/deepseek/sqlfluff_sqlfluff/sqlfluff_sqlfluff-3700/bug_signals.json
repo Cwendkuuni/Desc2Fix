@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sqlfluff__sqlfluff-3700",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [
+      "L042 loop limit on fixes reached"
+    ],
+    "api_involved": [
+      "L002",
+      "L003",
+      "L004"
+    ],
+    "input_conditions": [
+      "CTE contains a subquery",
+      "Snowflake dialect",
+      "version 1.1.0"
+    ],
+    "reproduction_steps": [
+      "Run on a SQL file with a CTE that contains a subquery",
+      "Observe L002, L003, L004 violations and L042 error"
+    ],
+    "expected": [
+      "should be able to fix the violations"
+    ],
+    "actual": [
+      "Even if manually fixing violations, still shows the same error; loop limit on fixes reached"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "L042 loop limit on fixes reached"
+    ],
+    "api_involved": [
+      "L002",
+      "L003",
+      "L004"
+    ],
+    "input_conditions": [
+      "CTE contains a subquery",
+      "Snowflake dialect",
+      "version 1.1.0"
+    ],
+    "reproduction_steps": [
+      "Run on a SQL file with a CTE that contains a subquery",
+      "Observe L002, L003, L004 violations and L042 error"
+    ],
+    "expected": [
+      "should be able to fix the violations"
+    ],
+    "actual": [
+      "Even if manually fixing violations, still shows the same error; loop limit on fixes reached"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"L042 loop limit on fixes reached\",\n\"api_involved\": [\"L002\", \"L003\", \"L004\"],\n\"input_conditions\": [\"CTE contains a subquery\", \"Snowflake dialect\", \"version 1.1.0\"],\n\"expected\": \"should be able to fix the violations\",\n\"actual\": \"Even if manually fixing violations, still shows the same error; loop limit on fixes reached\",\n\"reproduction_steps\": [\"Run on a SQL file with a CTE that contains a subquery\", \"Observe L002, L003, L004 violations and L042 error\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"L042 loop limit on fixes reached\",\n\"api_involved\": [\"L002\", \"L003\", \"L004\"],\n\"input_conditions\": [\"CTE contains a subquery\", \"Snowflake dialect\", \"version 1.1.0\"],\n\"expected\": \"should be able to fix the violations\",\n\"actual\": \"Even if manually fixing violations, still shows the same error; loop limit on fixes reached\",\n\"reproduction_steps\": [\"Run on a SQL file with a CTE that contains a subquery\", \"Observe L002, L003, L004 violations and L042 error\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

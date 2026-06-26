@@ -1,0 +1,43 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sqlfluff__sqlfluff-3904",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "sqlfluff command line interface"
+    ],
+    "input_conditions": [
+      "command line option uses underscores instead of dashes"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "All command line options should be standardised to use dashes"
+    ],
+    "actual": [
+      "Only one command line option uses underscores instead of dashes"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "sqlfluff command line interface"
+    ],
+    "input_conditions": [
+      "command line option uses underscores instead of dashes"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "All command line options should be standardised to use dashes"
+    ],
+    "actual": [
+      "Only one command line option uses underscores instead of dashes"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"sqlfluff command line interface\"],\n\"input_conditions\": [\"command line option uses underscores instead of dashes\"],\n\"expected\": \"All command line options should be standardised to use dashes\",\n\"actual\": \"Only one command line option uses underscores instead of dashes\",\n\"reproduction_steps\": []\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"sqlfluff command line interface\"],\n\"input_conditions\": [\"command line option uses underscores instead of dashes\"],\n\"expected\": \"All command line options should be standardised to use dashes\",\n\"actual\": \"Only one command line option uses underscores instead of dashes\",\n\"reproduction_steps\": []\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

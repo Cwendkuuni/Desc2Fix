@@ -1,0 +1,18 @@
+{
+  "instances": 10,
+  "with_report_text": 10,
+  "with_test_text": 10,
+  "avg_rouge_l": 0.014922,
+  "avg_jaccard": 0.053893,
+  "avg_identifier_jaccard": 0.035816,
+  "avg_pos_overlap": 0.7,
+  "avg_structured_macro_jaccard": 0.016524,
+  "avg_structured_all_jaccard": 0.053893,
+  "avg_sbert": 0.463787,
+  "avg_codebert": 0.908164,
+  "avg_openai_embedding": 0.456753,
+  "dataset": "swtbench",
+  "scenario": "structured",
+  "model": "deepseek",
+  "artifact_pair": "report_test"
+}

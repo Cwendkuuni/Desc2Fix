@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Compress-44",
+  "project": "Compress",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "ChecksumCalculatingInputStream#getValue"
+    ],
+    "input_conditions": [
+      "ChecksumCalculatingInputStream instantiated with null parameters"
+    ],
+    "reproduction_steps": [
+      "Instantiate ChecksumCalculatingInputStream with null for both checksum and input stream parameters",
+      "Call getValue() on the instantiated object"
+    ],
+    "expected": [
+      "getValue() should handle null parameters gracefully"
+    ],
+    "actual": [
+      "getValue() throws NullPointerException when instantiated with null parameters"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "ChecksumCalculatingInputStream#getValue"
+    ],
+    "input_conditions": [
+      "ChecksumCalculatingInputStream instantiated with null parameters"
+    ],
+    "reproduction_steps": [
+      "Instantiate ChecksumCalculatingInputStream with null for both checksum and input stream parameters",
+      "Call getValue() on the instantiated object"
+    ],
+    "expected": [
+      "getValue() should handle null parameters gracefully"
+    ],
+    "actual": [
+      "getValue() throws NullPointerException when instantiated with null parameters"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"NullPointerException\",\n  \"api_involved\": [\"ChecksumCalculatingInputStream#getValue\"],\n  \"input_conditions\": [\"ChecksumCalculatingInputStream instantiated with null parameters\"],\n  \"expected\": \"getValue() should handle null parameters gracefully\",\n  \"actual\": \"getValue() throws NullPointerException when instantiated with null parameters\",\n  \"reproduction_steps\": [\n    \"Instantiate ChecksumCalculatingInputStream with null for both checksum and input stream parameters\",\n    \"Call getValue() on the instantiated object\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"NullPointerException\",\n  \"api_involved\": [\"ChecksumCalculatingInputStream#getValue\"],\n  \"input_conditions\": [\"ChecksumCalculatingInputStream instantiated with null parameters\"],\n  \"expected\": \"getValue() should handle null parameters gracefully\",\n  \"actual\": \"getValue() throws NullPointerException when instantiated with null parameters\",\n  \"reproduction_steps\": [\n    \"Instantiate ChecksumCalculatingInputStream with null for both checksum and input stream parameters\",\n    \"Call getValue() on the instantiated object\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

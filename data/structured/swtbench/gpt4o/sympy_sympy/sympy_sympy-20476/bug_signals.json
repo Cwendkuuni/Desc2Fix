@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-20476",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "simplify"
+    ],
+    "input_conditions": [
+      "trigonometric expression",
+      "Python version: 3.8",
+      "SymPy version: 1.6.2"
+    ],
+    "reproduction_steps": [
+      "apply simplify() to a certain trigonometric expression"
+    ],
+    "expected": [
+      "correct simplification result"
+    ],
+    "actual": [
+      "wrong simplification result"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "simplify"
+    ],
+    "input_conditions": [
+      "trigonometric expression",
+      "Python version: 3.8",
+      "SymPy version: 1.6.2"
+    ],
+    "reproduction_steps": [
+      "apply simplify() to a certain trigonometric expression"
+    ],
+    "expected": [
+      "correct simplification result"
+    ],
+    "actual": [
+      "wrong simplification result"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"simplify\"],\n  \"input_conditions\": [\"trigonometric expression\", \"Python version: 3.8\", \"SymPy version: 1.6.2\"],\n  \"expected\": \"correct simplification result\",\n  \"actual\": \"wrong simplification result\",\n  \"reproduction_steps\": [\"apply simplify() to a certain trigonometric expression\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"simplify\"],\n  \"input_conditions\": [\"trigonometric expression\", \"Python version: 3.8\", \"SymPy version: 1.6.2\"],\n  \"expected\": \"correct simplification result\",\n  \"actual\": \"wrong simplification result\",\n  \"reproduction_steps\": [\"apply simplify() to a certain trigonometric expression\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,45 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-11044",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "MultiValueDict",
+      "QueryDict"
+    ],
+    "input_conditions": [
+      "Form data/files initialization"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Methods of the form rely on the API of a QueryDict such as 'iterlists' or 'getlist'."
+    ],
+    "actual": [
+      "None is converted to a regular dict which does not provide the 'iterlists' or 'getlist' methods."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "MultiValueDict",
+      "QueryDict"
+    ],
+    "input_conditions": [
+      "Form data/files initialization"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Methods of the form rely on the API of a QueryDict such as 'iterlists' or 'getlist'."
+    ],
+    "actual": [
+      "None is converted to a regular dict which does not provide the 'iterlists' or 'getlist' methods."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"MultiValueDict\", \"QueryDict\"],\n  \"input_conditions\": [\"Form data/files initialization\"],\n  \"expected\": \"Methods of the form rely on the API of a QueryDict such as 'iterlists' or 'getlist'.\",\n  \"actual\": \"None is converted to a regular dict which does not provide the 'iterlists' or 'getlist' methods.\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"MultiValueDict\", \"QueryDict\"],\n  \"input_conditions\": [\"Form data/files initialization\"],\n  \"expected\": \"Methods of the form rely on the API of a QueryDict such as 'iterlists' or 'getlist'.\",\n  \"actual\": \"None is converted to a regular dict which does not provide the 'iterlists' or 'getlist' methods.\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

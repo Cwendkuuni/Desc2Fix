@@ -1,0 +1,71 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-40",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "TooManyEvaluationsException"
+    ],
+    "api_involved": [
+      "BracketingNthOrderBrentSolver",
+      "UnivariateFunction",
+      "solve"
+    ],
+    "input_conditions": [
+      "maxIterationCount set to 5",
+      "solver tolerance 1.0e-12 and 1.0e-10",
+      "function (2*x+1)/(1.0e9*(x+1))",
+      "start value 15",
+      "allowed solution RIGHT_SIDE",
+      "bracket between -0.9999999 and 30"
+    ],
+    "reproduction_steps": [
+      "Create BracketingNthOrderBrentSolver with absolute accuracy 1.0e-12, function value accuracy 1.0e-10, no relative accuracy, max evaluations 5",
+      "Define UnivariateFunction f(x) = (2*x+1)/(1.0e9*(x+1))",
+      "Call solver.solve(100, sharpTurn, -0.9999999, 30, 15, AllowedSolution.RIGHT_SIDE)",
+      "Assert result equals -0.5 within tolerance and function value at result is >= 0"
+    ],
+    "expected": [
+      "solver finds the root at -0.5 within tolerance, function value at result >= 0, result equals -0.5"
+    ],
+    "actual": [
+      "solver fails with TooManyEvaluationsException, only the right side of the bracket slowly decreases from 15.0 to 14.999677603318897, left side stuck at -0.9999999"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "TooManyEvaluationsException"
+    ],
+    "api_involved": [
+      "BracketingNthOrderBrentSolver",
+      "UnivariateFunction",
+      "solve"
+    ],
+    "input_conditions": [
+      "maxIterationCount set to 5",
+      "solver tolerance 1.0e-12 and 1.0e-10",
+      "function (2*x+1)/(1.0e9*(x+1))",
+      "start value 15",
+      "allowed solution RIGHT_SIDE",
+      "bracket between -0.9999999 and 30"
+    ],
+    "reproduction_steps": [
+      "Create BracketingNthOrderBrentSolver with absolute accuracy 1.0e-12, function value accuracy 1.0e-10, no relative accuracy, max evaluations 5",
+      "Define UnivariateFunction f(x) = (2*x+1)/(1.0e9*(x+1))",
+      "Call solver.solve(100, sharpTurn, -0.9999999, 30, 15, AllowedSolution.RIGHT_SIDE)",
+      "Assert result equals -0.5 within tolerance and function value at result is >= 0"
+    ],
+    "expected": [
+      "solver finds the root at -0.5 within tolerance, function value at result >= 0, result equals -0.5"
+    ],
+    "actual": [
+      "solver fails with TooManyEvaluationsException, only the right side of the bracket slowly decreases from 15.0 to 14.999677603318897, left side stuck at -0.9999999"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"TooManyEvaluationsException\",\n\"api_involved\": [\"BracketingNthOrderBrentSolver\", \"UnivariateFunction\", \"solve\"],\n\"input_conditions\": [\"maxIterationCount set to 5\", \"solver tolerance 1.0e-12 and 1.0e-10\", \"function (2*x+1)/(1.0e9*(x+1))\", \"start value 15\", \"allowed solution RIGHT_SIDE\", \"bracket between -0.9999999 and 30\"],\n\"expected\": \"solver finds the root at -0.5 within tolerance, function value at result >= 0, result equals -0.5\",\n\"actual\": \"solver fails with TooManyEvaluationsException, only the right side of the bracket slowly decreases from 15.0 to 14.999677603318897, left side stuck at -0.9999999\",\n\"reproduction_steps\": [\n    \"Create BracketingNthOrderBrentSolver with absolute accuracy 1.0e-12, function value accuracy 1.0e-10, no relative accuracy, max evaluations 5\",\n    \"Define UnivariateFunction f(x) = (2*x+1)/(1.0e9*(x+1))\",\n    \"Call solver.solve(100, sharpTurn, -0.9999999, 30, 15, AllowedSolution.RIGHT_SIDE)\",\n    \"Assert result equals -0.5 within tolerance and function value at result is >= 0\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"TooManyEvaluationsException\",\n\"api_involved\": [\"BracketingNthOrderBrentSolver\", \"UnivariateFunction\", \"solve\"],\n\"input_conditions\": [\"maxIterationCount set to 5\", \"solver tolerance 1.0e-12 and 1.0e-10\", \"function (2*x+1)/(1.0e9*(x+1))\", \"start value 15\", \"allowed solution RIGHT_SIDE\", \"bracket between -0.9999999 and 30\"],\n\"expected\": \"solver finds the root at -0.5 within tolerance, function value at result >= 0, result equals -0.5\",\n\"actual\": \"solver fails with TooManyEvaluationsException, only the right side of the bracket slowly decreases from 15.0 to 14.999677603318897, left side stuck at -0.9999999\",\n\"reproduction_steps\": [\n    \"Create BracketingNthOrderBrentSolver with absolute accuracy 1.0e-12, function value accuracy 1.0e-10, no relative accuracy, max evaluations 5\",\n    \"Define UnivariateFunction f(x) = (2*x+1)/(1.0e9*(x+1))\",\n    \"Call solver.solve(100, sharpTurn, -0.9999999, 30, 15, AllowedSolution.RIGHT_SIDE)\",\n    \"Assert result equals -0.5 within tolerance and function value at result is >= 0\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

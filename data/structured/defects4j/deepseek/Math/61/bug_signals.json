@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-61",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "PoissonDistributionImpl",
+      "NormalDistribution",
+      "setNormal",
+      "setMean",
+      "ChiSquaredDistributionImpl"
+    ],
+    "input_conditions": [
+      "constructor called with overridable methods",
+      "external NormalDistribution object passed and stored",
+      "setNormal method can be called without consistency guarantee"
+    ],
+    "reproduction_steps": [
+      "Create a PoissonDistributionImpl(double p, NormalDistribution z) instance",
+      "Observe that the constructor calls setNormal(z) and setMean(p) which mutate the passed NormalDistribution",
+      "Call setNormal after construction to see that mean consistency is not enforced"
+    ],
+    "expected": [
+      "Constructor should be safe, not call overridable methods; stored NormalDistribution object should not be unexpectedly modified; class should be immutable."
+    ],
+    "actual": [
+      "Overridable methods called in constructor; stored NormalDistribution object is modified by setMean; setNormal can break consistency between mean and normal parameters."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "PoissonDistributionImpl",
+      "NormalDistribution",
+      "setNormal",
+      "setMean",
+      "ChiSquaredDistributionImpl"
+    ],
+    "input_conditions": [
+      "constructor called with overridable methods",
+      "external NormalDistribution object passed and stored",
+      "setNormal method can be called without consistency guarantee"
+    ],
+    "reproduction_steps": [
+      "Create a PoissonDistributionImpl(double p, NormalDistribution z) instance",
+      "Observe that the constructor calls setNormal(z) and setMean(p) which mutate the passed NormalDistribution",
+      "Call setNormal after construction to see that mean consistency is not enforced"
+    ],
+    "expected": [
+      "Constructor should be safe, not call overridable methods; stored NormalDistribution object should not be unexpectedly modified; class should be immutable."
+    ],
+    "actual": [
+      "Overridable methods called in constructor; stored NormalDistribution object is modified by setMean; setNormal can break consistency between mean and normal parameters."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"PoissonDistributionImpl\", \"NormalDistribution\", \"setNormal\", \"setMean\", \"ChiSquaredDistributionImpl\"],\n\"input_conditions\": [\"constructor called with overridable methods\", \"external NormalDistribution object passed and stored\", \"setNormal method can be called without consistency guarantee\"],\n\"expected\": \"Constructor should be safe, not call overridable methods; stored NormalDistribution object should not be unexpectedly modified; class should be immutable.\",\n\"actual\": \"Overridable methods called in constructor; stored NormalDistribution object is modified by setMean; setNormal can break consistency between mean and normal parameters.\",\n\"reproduction_steps\": [\n\"Create a PoissonDistributionImpl(double p, NormalDistribution z) instance\",\n\"Observe that the constructor calls setNormal(z) and setMean(p) which mutate the passed NormalDistribution\",\n\"Call setNormal after construction to see that mean consistency is not enforced\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"PoissonDistributionImpl\", \"NormalDistribution\", \"setNormal\", \"setMean\", \"ChiSquaredDistributionImpl\"],\n\"input_conditions\": [\"constructor called with overridable methods\", \"external NormalDistribution object passed and stored\", \"setNormal method can be called without consistency guarantee\"],\n\"expected\": \"Constructor should be safe, not call overridable methods; stored NormalDistribution object should not be unexpectedly modified; class should be immutable.\",\n\"actual\": \"Overridable methods called in constructor; stored NormalDistribution object is modified by setMean; setNormal can break consistency between mean and normal parameters.\",\n\"reproduction_steps\": [\n\"Create a PoissonDistributionImpl(double p, NormalDistribution z) instance\",\n\"Observe that the constructor calls setNormal(z) and setMean(p) which mutate the passed NormalDistribution\",\n\"Call setNormal after construction to see that mean consistency is not enforced\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-54",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Dfp.toDouble()",
+      "DfpField.getZero()",
+      "DfpField.newDfp()"
+    ],
+    "input_conditions": [
+      "Dfp value is zero"
+    ],
+    "reproduction_steps": [
+      "Create a DfpField with precision 100",
+      "Call field.getZero().toDouble()",
+      "Observe that the result is negative infinity",
+      "Alternatively, call field.newDfp(0.0).toDouble() for comparison"
+    ],
+    "expected": [
+      "toDouble() should return 0.0 (or -0.0) for a zero Dfp value"
+    ],
+    "actual": [
+      "toDouble() returns negative infinity (-inf) when Dfp value is zero"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Dfp.toDouble()",
+      "DfpField.getZero()",
+      "DfpField.newDfp()"
+    ],
+    "input_conditions": [
+      "Dfp value is zero"
+    ],
+    "reproduction_steps": [
+      "Create a DfpField with precision 100",
+      "Call field.getZero().toDouble()",
+      "Observe that the result is negative infinity",
+      "Alternatively, call field.newDfp(0.0).toDouble() for comparison"
+    ],
+    "expected": [
+      "toDouble() should return 0.0 (or -0.0) for a zero Dfp value"
+    ],
+    "actual": [
+      "toDouble() returns negative infinity (-inf) when Dfp value is zero"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Dfp.toDouble()\", \"DfpField.getZero()\", \"DfpField.newDfp()\"],\n\"input_conditions\": [\"Dfp value is zero\"],\n\"expected\": \"toDouble() should return 0.0 (or -0.0) for a zero Dfp value\",\n\"actual\": \"toDouble() returns negative infinity (-inf) when Dfp value is zero\",\n\"reproduction_steps\": [\n    \"Create a DfpField with precision 100\",\n    \"Call field.getZero().toDouble()\",\n    \"Observe that the result is negative infinity\",\n    \"Alternatively, call field.newDfp(0.0).toDouble() for comparison\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Dfp.toDouble()\", \"DfpField.getZero()\", \"DfpField.newDfp()\"],\n\"input_conditions\": [\"Dfp value is zero\"],\n\"expected\": \"toDouble() should return 0.0 (or -0.0) for a zero Dfp value\",\n\"actual\": \"toDouble() returns negative infinity (-inf) when Dfp value is zero\",\n\"reproduction_steps\": [\n    \"Create a DfpField with precision 100\",\n    \"Call field.getZero().toDouble()\",\n    \"Observe that the result is negative infinity\",\n    \"Alternatively, call field.newDfp(0.0).toDouble() for comparison\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

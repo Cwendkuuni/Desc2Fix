@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-77",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "getLInfNorm",
+      "AbstractRealVector",
+      "ArrayRealVector",
+      "OpenMapRealVector"
+    ],
+    "input_conditions": [
+      "finite dimensional vector",
+      "negative valued vectors"
+    ],
+    "reproduction_steps": [
+      "Call getLInfNorm() on an instance of ArrayRealVector with data containing both positive and negative values.",
+      "Call getLInfNorm() on an instance of OpenMapRealVector with entries containing both positive and negative values."
+    ],
+    "expected": [
+      "The method getLInfNorm() should calculate the max of the absolute value of the entries of the vector."
+    ],
+    "actual": [
+      "The method getLInfNorm() accumulates values incorrectly using += instead of =, leading to incorrect L_infinity norm calculation."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "getLInfNorm",
+      "AbstractRealVector",
+      "ArrayRealVector",
+      "OpenMapRealVector"
+    ],
+    "input_conditions": [
+      "finite dimensional vector",
+      "negative valued vectors"
+    ],
+    "reproduction_steps": [
+      "Call getLInfNorm() on an instance of ArrayRealVector with data containing both positive and negative values.",
+      "Call getLInfNorm() on an instance of OpenMapRealVector with entries containing both positive and negative values."
+    ],
+    "expected": [
+      "The method getLInfNorm() should calculate the max of the absolute value of the entries of the vector."
+    ],
+    "actual": [
+      "The method getLInfNorm() accumulates values incorrectly using += instead of =, leading to incorrect L_infinity norm calculation."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"getLInfNorm\", \"AbstractRealVector\", \"ArrayRealVector\", \"OpenMapRealVector\"],\n  \"input_conditions\": [\"finite dimensional vector\", \"negative valued vectors\"],\n  \"expected\": \"The method getLInfNorm() should calculate the max of the absolute value of the entries of the vector.\",\n  \"actual\": \"The method getLInfNorm() accumulates values incorrectly using += instead of =, leading to incorrect L_infinity norm calculation.\",\n  \"reproduction_steps\": [\n    \"Call getLInfNorm() on an instance of ArrayRealVector with data containing both positive and negative values.\",\n    \"Call getLInfNorm() on an instance of OpenMapRealVector with entries containing both positive and negative values.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"getLInfNorm\", \"AbstractRealVector\", \"ArrayRealVector\", \"OpenMapRealVector\"],\n  \"input_conditions\": [\"finite dimensional vector\", \"negative valued vectors\"],\n  \"expected\": \"The method getLInfNorm() should calculate the max of the absolute value of the entries of the vector.\",\n  \"actual\": \"The method getLInfNorm() accumulates values incorrectly using += instead of =, leading to incorrect L_infinity norm calculation.\",\n  \"reproduction_steps\": [\n    \"Call getLInfNorm() on an instance of ArrayRealVector with data containing both positive and negative values.\",\n    \"Call getLInfNorm() on an instance of OpenMapRealVector with entries containing both positive and negative values.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

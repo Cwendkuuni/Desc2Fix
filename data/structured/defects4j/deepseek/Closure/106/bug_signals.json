@@ -1,0 +1,69 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-106",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.IllegalArgumentException"
+    ],
+    "api_involved": [
+      "com.google.javascript.jscomp.CollapseProperties.addStubsForUndeclaredProperties",
+      "com.google.javascript.jscomp.CollapseProperties.updateObjLitOrFunctionDeclarationAtAssignNode",
+      "com.google.javascript.jscomp.CollapseProperties.updateObjLitOrFunctionDeclaration",
+      "com.google.javascript.jscomp.CollapseProperties.collapseDeclarationOfNameAndDescendants",
+      "com.google.javascript.jscomp.CollapseProperties.process",
+      "goog.exportSymbol"
+    ],
+    "input_conditions": [
+      "Compilation level set to ADVANCED_OPTIMIZATIONS",
+      "JavaScript file contains a minimal pattern: goog.provide('a'); a.b = function(){}, a.b()",
+      "Undeclared properties that are not stubbed before other exportSymbol calls"
+    ],
+    "reproduction_steps": [
+      "Create a JavaScript file containing the minimal code: goog.provide('a'); a.b = function(){}, a.b()",
+      "Compile the file using the Closure Compiler with --compilation_level ADVANCED_OPTIMIZATIONS",
+      "Observe that a RuntimeException is thrown with the stack trace pointing to CollapseProperties.addStubsForUndeclaredProperties"
+    ],
+    "expected": [
+      "The compiler should produce a meaningful warning or error message instead of throwing a RuntimeException when encountering undeclared properties during compilation with ADVANCED_OPTIMIZATIONS."
+    ],
+    "actual": [
+      "A RuntimeException wrapping an IllegalArgumentException is thrown from the addStubsForUndeclaredProperties method in CollapseProperties, causing the compilation to fail without a user-friendly error."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.IllegalArgumentException"
+    ],
+    "api_involved": [
+      "com.google.javascript.jscomp.CollapseProperties.addStubsForUndeclaredProperties",
+      "com.google.javascript.jscomp.CollapseProperties.updateObjLitOrFunctionDeclarationAtAssignNode",
+      "com.google.javascript.jscomp.CollapseProperties.updateObjLitOrFunctionDeclaration",
+      "com.google.javascript.jscomp.CollapseProperties.collapseDeclarationOfNameAndDescendants",
+      "com.google.javascript.jscomp.CollapseProperties.process",
+      "goog.exportSymbol"
+    ],
+    "input_conditions": [
+      "Compilation level set to ADVANCED_OPTIMIZATIONS",
+      "JavaScript file contains a minimal pattern: goog.provide('a'); a.b = function(){}, a.b()",
+      "Undeclared properties that are not stubbed before other exportSymbol calls"
+    ],
+    "reproduction_steps": [
+      "Create a JavaScript file containing the minimal code: goog.provide('a'); a.b = function(){}, a.b()",
+      "Compile the file using the Closure Compiler with --compilation_level ADVANCED_OPTIMIZATIONS",
+      "Observe that a RuntimeException is thrown with the stack trace pointing to CollapseProperties.addStubsForUndeclaredProperties"
+    ],
+    "expected": [
+      "The compiler should produce a meaningful warning or error message instead of throwing a RuntimeException when encountering undeclared properties during compilation with ADVANCED_OPTIMIZATIONS."
+    ],
+    "actual": [
+      "A RuntimeException wrapping an IllegalArgumentException is thrown from the addStubsForUndeclaredProperties method in CollapseProperties, causing the compilation to fail without a user-friendly error."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"java.lang.IllegalArgumentException\",\n\"api_involved\": [\n\"com.google.javascript.jscomp.CollapseProperties.addStubsForUndeclaredProperties\",\n\"com.google.javascript.jscomp.CollapseProperties.updateObjLitOrFunctionDeclarationAtAssignNode\",\n\"com.google.javascript.jscomp.CollapseProperties.updateObjLitOrFunctionDeclaration\",\n\"com.google.javascript.jscomp.CollapseProperties.collapseDeclarationOfNameAndDescendants\",\n\"com.google.javascript.jscomp.CollapseProperties.process\",\n\"goog.exportSymbol\"\n],\n\"input_conditions\": [\n\"Compilation level set to ADVANCED_OPTIMIZATIONS\",\n\"JavaScript file contains a minimal pattern: goog.provide('a'); a.b = function(){}, a.b()\",\n\"Undeclared properties that are not stubbed before other exportSymbol calls\"\n],\n\"expected\": \"The compiler should produce a meaningful warning or error message instead of throwing a RuntimeException when encountering undeclared properties during compilation with ADVANCED_OPTIMIZATIONS.\",\n\"actual\": \"A RuntimeException wrapping an IllegalArgumentException is thrown from the addStubsForUndeclaredProperties method in CollapseProperties, causing the compilation to fail without a user-friendly error.\",\n\"reproduction_steps\": [\n\"Create a JavaScript file containing the minimal code: goog.provide('a'); a.b = function(){}, a.b()\",\n\"Compile the file using the Closure Compiler with --compilation_level ADVANCED_OPTIMIZATIONS\",\n\"Observe that a RuntimeException is thrown with the stack trace pointing to CollapseProperties.addStubsForUndeclaredProperties\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"java.lang.IllegalArgumentException\",\n\"api_involved\": [\n\"com.google.javascript.jscomp.CollapseProperties.addStubsForUndeclaredProperties\",\n\"com.google.javascript.jscomp.CollapseProperties.updateObjLitOrFunctionDeclarationAtAssignNode\",\n\"com.google.javascript.jscomp.CollapseProperties.updateObjLitOrFunctionDeclaration\",\n\"com.google.javascript.jscomp.CollapseProperties.collapseDeclarationOfNameAndDescendants\",\n\"com.google.javascript.jscomp.CollapseProperties.process\",\n\"goog.exportSymbol\"\n],\n\"input_conditions\": [\n\"Compilation level set to ADVANCED_OPTIMIZATIONS\",\n\"JavaScript file contains a minimal pattern: goog.provide('a'); a.b = function(){}, a.b()\",\n\"Undeclared properties that are not stubbed before other exportSymbol calls\"\n],\n\"expected\": \"The compiler should produce a meaningful warning or error message instead of throwing a RuntimeException when encountering undeclared properties during compilation with ADVANCED_OPTIMIZATIONS.\",\n\"actual\": \"A RuntimeException wrapping an IllegalArgumentException is thrown from the addStubsForUndeclaredProperties method in CollapseProperties, causing the compilation to fail without a user-friendly error.\",\n\"reproduction_steps\": [\n\"Create a JavaScript file containing the minimal code: goog.provide('a'); a.b = function(){}, a.b()\",\n\"Compile the file using the Closure Compiler with --compilation_level ADVANCED_OPTIMIZATIONS\",\n\"Observe that a RuntimeException is thrown with the stack trace pointing to CollapseProperties.addStubsForUndeclaredProperties\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

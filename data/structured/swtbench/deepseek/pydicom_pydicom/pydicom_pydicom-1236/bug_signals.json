@@ -1,0 +1,71 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "pydicom__pydicom-1236",
+  "project": null,
+  "repo": "pydicom/pydicom",
+  "signals": {
+    "exception": [
+      "throws an exception (cases of corruption in DICOM meta fields)"
+    ],
+    "api_involved": [
+      "apply_voi_lut",
+      "pydicom.pixel_data_handlers.util"
+    ],
+    "input_conditions": [
+      "Both VOI LUT Sequence (0028,3010) and Window Center/Window Width (0028,1050/0028,1051) with VOILUTFunction (0028,1056) set to SIGMOID are present",
+      "Multiple window/level values present as a sequence rather than single values",
+      "Missing or corrupted DICOM meta information"
+    ],
+    "reproduction_steps": [
+      "Load a DICOM mammography image that contains both VOI LUT Sequence and Window Center/Window Width with VOILUTFunction set to SIGMOID",
+      "Call apply_voi_lut on the pixel data",
+      "Observe which VOI transformation is applied (unclear from documentation)",
+      "Attempt to specify use of WL instead of LUT (no parameter available)",
+      "Load a DICOM with a sequence of WL values (multiple entries in 0028,1050/0028,1051)",
+      "Attempt to select a specific index from the sequence (no mechanism available)",
+      "Load a DICOM with missing or corrupted meta information fields",
+      "Call apply_voi_lut and observe exception thrown"
+    ],
+    "expected": [
+      "Clearly documented behavior specifying which transformation is applied when both LUT and WL/WW are present, ability to specify which to apply, handling of multiple window/level values, and graceful handling of missing/corrupted metadata per DICOM standard"
+    ],
+    "actual": [
+      "Unclear documentation on precedence of LUT vs WL when both present; no parameter to force one over the other; no way to select a specific index from a sequence of WL values; throws exceptions when DICOM meta info is corrupted or missing"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "throws an exception (cases of corruption in DICOM meta fields)"
+    ],
+    "api_involved": [
+      "apply_voi_lut",
+      "pydicom.pixel_data_handlers.util"
+    ],
+    "input_conditions": [
+      "Both VOI LUT Sequence (0028,3010) and Window Center/Window Width (0028,1050/0028,1051) with VOILUTFunction (0028,1056) set to SIGMOID are present",
+      "Multiple window/level values present as a sequence rather than single values",
+      "Missing or corrupted DICOM meta information"
+    ],
+    "reproduction_steps": [
+      "Load a DICOM mammography image that contains both VOI LUT Sequence and Window Center/Window Width with VOILUTFunction set to SIGMOID",
+      "Call apply_voi_lut on the pixel data",
+      "Observe which VOI transformation is applied (unclear from documentation)",
+      "Attempt to specify use of WL instead of LUT (no parameter available)",
+      "Load a DICOM with a sequence of WL values (multiple entries in 0028,1050/0028,1051)",
+      "Attempt to select a specific index from the sequence (no mechanism available)",
+      "Load a DICOM with missing or corrupted meta information fields",
+      "Call apply_voi_lut and observe exception thrown"
+    ],
+    "expected": [
+      "Clearly documented behavior specifying which transformation is applied when both LUT and WL/WW are present, ability to specify which to apply, handling of multiple window/level values, and graceful handling of missing/corrupted metadata per DICOM standard"
+    ],
+    "actual": [
+      "Unclear documentation on precedence of LUT vs WL when both present; no parameter to force one over the other; no way to select a specific index from a sequence of WL values; throws exceptions when DICOM meta info is corrupted or missing"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"throws an exception (cases of corruption in DICOM meta fields)\",\n\"api_involved\": [\"apply_voi_lut\", \"pydicom.pixel_data_handlers.util\"],\n\"input_conditions\": [\n\"Both VOI LUT Sequence (0028,3010) and Window Center/Window Width (0028,1050/0028,1051) with VOILUTFunction (0028,1056) set to SIGMOID are present\",\n\"Multiple window/level values present as a sequence rather than single values\",\n\"Missing or corrupted DICOM meta information\"\n],\n\"expected\": \"Clearly documented behavior specifying which transformation is applied when both LUT and WL/WW are present, ability to specify which to apply, handling of multiple window/level values, and graceful handling of missing/corrupted metadata per DICOM standard\",\n\"actual\": \"Unclear documentation on precedence of LUT vs WL when both present; no parameter to force one over the other; no way to select a specific index from a sequence of WL values; throws exceptions when DICOM meta info is corrupted or missing\",\n\"reproduction_steps\": [\n\"Load a DICOM mammography image that contains both VOI LUT Sequence and Window Center/Window Width with VOILUTFunction set to SIGMOID\",\n\"Call apply_voi_lut on the pixel data\",\n\"Observe which VOI transformation is applied (unclear from documentation)\",\n\"Attempt to specify use of WL instead of LUT (no parameter available)\",\n\"Load a DICOM with a sequence of WL values (multiple entries in 0028,1050/0028,1051)\",\n\"Attempt to select a specific index from the sequence (no mechanism available)\",\n\"Load a DICOM with missing or corrupted meta information fields\",\n\"Call apply_voi_lut and observe exception thrown\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"throws an exception (cases of corruption in DICOM meta fields)\",\n\"api_involved\": [\"apply_voi_lut\", \"pydicom.pixel_data_handlers.util\"],\n\"input_conditions\": [\n\"Both VOI LUT Sequence (0028,3010) and Window Center/Window Width (0028,1050/0028,1051) with VOILUTFunction (0028,1056) set to SIGMOID are present\",\n\"Multiple window/level values present as a sequence rather than single values\",\n\"Missing or corrupted DICOM meta information\"\n],\n\"expected\": \"Clearly documented behavior specifying which transformation is applied when both LUT and WL/WW are present, ability to specify which to apply, handling of multiple window/level values, and graceful handling of missing/corrupted metadata per DICOM standard\",\n\"actual\": \"Unclear documentation on precedence of LUT vs WL when both present; no parameter to force one over the other; no way to select a specific index from a sequence of WL values; throws exceptions when DICOM meta info is corrupted or missing\",\n\"reproduction_steps\": [\n\"Load a DICOM mammography image that contains both VOI LUT Sequence and Window Center/Window Width with VOILUTFunction set to SIGMOID\",\n\"Call apply_voi_lut on the pixel data\",\n\"Observe which VOI transformation is applied (unclear from documentation)\",\n\"Attempt to specify use of WL instead of LUT (no parameter available)\",\n\"Load a DICOM with a sequence of WL values (multiple entries in 0028,1050/0028,1051)\",\n\"Attempt to select a specific index from the sequence (no mechanism available)\",\n\"Load a DICOM with missing or corrupted meta information fields\",\n\"Call apply_voi_lut and observe exception thrown\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

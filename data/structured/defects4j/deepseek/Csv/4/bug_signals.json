@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Csv-4",
+  "project": "Csv",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.NullPointerException"
+    ],
+    "api_involved": [
+      "CSVParser.getHeaderMap()"
+    ],
+    "input_conditions": [
+      "The CSVParser does not have a headerMap (header map is null)"
+    ],
+    "reproduction_steps": [
+      "Create a CSVParser instance with a format that does not include a header map",
+      "Call parser.getHeaderMap()",
+      "Observe a NullPointerException being thrown"
+    ],
+    "expected": [
+      "getHeaderMap() should return null if the parser's header map is null"
+    ],
+    "actual": [
+      "getHeaderMap() throws a NullPointerException because it attempts to create a new LinkedHashMap from a null headerMap"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.NullPointerException"
+    ],
+    "api_involved": [
+      "CSVParser.getHeaderMap()"
+    ],
+    "input_conditions": [
+      "The CSVParser does not have a headerMap (header map is null)"
+    ],
+    "reproduction_steps": [
+      "Create a CSVParser instance with a format that does not include a header map",
+      "Call parser.getHeaderMap()",
+      "Observe a NullPointerException being thrown"
+    ],
+    "expected": [
+      "getHeaderMap() should return null if the parser's header map is null"
+    ],
+    "actual": [
+      "getHeaderMap() throws a NullPointerException because it attempts to create a new LinkedHashMap from a null headerMap"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"java.lang.NullPointerException\",\n\"api_involved\": [\"CSVParser.getHeaderMap()\"],\n\"input_conditions\": [\"The CSVParser does not have a headerMap (header map is null)\"],\n\"expected\": \"getHeaderMap() should return null if the parser's header map is null\",\n\"actual\": \"getHeaderMap() throws a NullPointerException because it attempts to create a new LinkedHashMap from a null headerMap\",\n\"reproduction_steps\": [\n\"Create a CSVParser instance with a format that does not include a header map\",\n\"Call parser.getHeaderMap()\",\n\"Observe a NullPointerException being thrown\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"java.lang.NullPointerException\",\n\"api_involved\": [\"CSVParser.getHeaderMap()\"],\n\"input_conditions\": [\"The CSVParser does not have a headerMap (header map is null)\"],\n\"expected\": \"getHeaderMap() should return null if the parser's header map is null\",\n\"actual\": \"getHeaderMap() throws a NullPointerException because it attempts to create a new LinkedHashMap from a null headerMap\",\n\"reproduction_steps\": [\n\"Create a CSVParser instance with a format that does not include a header map\",\n\"Call parser.getHeaderMap()\",\n\"Observe a NullPointerException being thrown\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

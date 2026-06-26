@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "scikit-learn__scikit-learn-11578",
+  "project": null,
+  "repo": "scikit-learn/scikit-learn",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "LogisticRegressionCV",
+      "LogisticRegression",
+      "_log_reg_scoring_path"
+    ],
+    "input_conditions": [
+      "multi_class='multinomial'",
+      "scorers that use predict_proba"
+    ],
+    "reproduction_steps": [
+      "Use LogisticRegressionCV with multi_class='multinomial'",
+      "Apply a probabilistic scorer that uses predict_proba (e.g., 'neg_log_loss')",
+      "Observe that the scores are calculated using OvR predictions instead of multinomial predictions"
+    ],
+    "expected": [
+      "When multi_class='multinomial' is specified, the LogisticRegression instance used for scoring should use the softmax function (multinomial approach) to generate probability estimates."
+    ],
+    "actual": [
+      "The LogisticRegression instance supplied to the scoring function uses OvR (one-v-rest) approach due to missing multi_class argument, causing probability estimates to be generated with a single logistic function and normalization instead of softmax."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "LogisticRegressionCV",
+      "LogisticRegression",
+      "_log_reg_scoring_path"
+    ],
+    "input_conditions": [
+      "multi_class='multinomial'",
+      "scorers that use predict_proba"
+    ],
+    "reproduction_steps": [
+      "Use LogisticRegressionCV with multi_class='multinomial'",
+      "Apply a probabilistic scorer that uses predict_proba (e.g., 'neg_log_loss')",
+      "Observe that the scores are calculated using OvR predictions instead of multinomial predictions"
+    ],
+    "expected": [
+      "When multi_class='multinomial' is specified, the LogisticRegression instance used for scoring should use the softmax function (multinomial approach) to generate probability estimates."
+    ],
+    "actual": [
+      "The LogisticRegression instance supplied to the scoring function uses OvR (one-v-rest) approach due to missing multi_class argument, causing probability estimates to be generated with a single logistic function and normalization instead of softmax."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"LogisticRegressionCV\", \"LogisticRegression\", \"_log_reg_scoring_path\"],\n\"input_conditions\": [\"multi_class='multinomial'\", \"scorers that use predict_proba\"],\n\"expected\": \"When multi_class='multinomial' is specified, the LogisticRegression instance used for scoring should use the softmax function (multinomial approach) to generate probability estimates.\",\n\"actual\": \"The LogisticRegression instance supplied to the scoring function uses OvR (one-v-rest) approach due to missing multi_class argument, causing probability estimates to be generated with a single logistic function and normalization instead of softmax.\",\n\"reproduction_steps\": [\n\"Use LogisticRegressionCV with multi_class='multinomial'\",\n\"Apply a probabilistic scorer that uses predict_proba (e.g., 'neg_log_loss')\",\n\"Observe that the scores are calculated using OvR predictions instead of multinomial predictions\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"LogisticRegressionCV\", \"LogisticRegression\", \"_log_reg_scoring_path\"],\n\"input_conditions\": [\"multi_class='multinomial'\", \"scorers that use predict_proba\"],\n\"expected\": \"When multi_class='multinomial' is specified, the LogisticRegression instance used for scoring should use the softmax function (multinomial approach) to generate probability estimates.\",\n\"actual\": \"The LogisticRegression instance supplied to the scoring function uses OvR (one-v-rest) approach due to missing multi_class argument, causing probability estimates to be generated with a single logistic function and normalization instead of softmax.\",\n\"reproduction_steps\": [\n\"Use LogisticRegressionCV with multi_class='multinomial'\",\n\"Apply a probabilistic scorer that uses predict_proba (e.g., 'neg_log_loss')\",\n\"Observe that the scores are calculated using OvR predictions instead of multinomial predictions\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

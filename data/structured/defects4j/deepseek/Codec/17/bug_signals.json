@@ -1,0 +1,65 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Codec-17",
+  "project": "Codec",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NullPointerException (NPE)"
+    ],
+    "api_involved": [
+      "StringUtils.newStringIso8859_1",
+      "StringUtils.newString",
+      "StringUtils.newStringUtf8",
+      "StringUtils.newStringUsAscii",
+      "StringUtils.newStringUtf16",
+      "StringUtils.newStringUtf16Be",
+      "StringUtils.newStringUtf16Le"
+    ],
+    "input_conditions": [
+      "null input"
+    ],
+    "reproduction_steps": [
+      "Call StringUtils.newStringIso8859_1(null)",
+      "Observe NullPointerException instead of null return."
+    ],
+    "expected": [
+      "Method calls with null input should return null."
+    ],
+    "actual": [
+      "Method calls with null input throw NullPointerException."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NullPointerException (NPE)"
+    ],
+    "api_involved": [
+      "StringUtils.newStringIso8859_1",
+      "StringUtils.newString",
+      "StringUtils.newStringUtf8",
+      "StringUtils.newStringUsAscii",
+      "StringUtils.newStringUtf16",
+      "StringUtils.newStringUtf16Be",
+      "StringUtils.newStringUtf16Le"
+    ],
+    "input_conditions": [
+      "null input"
+    ],
+    "reproduction_steps": [
+      "Call StringUtils.newStringIso8859_1(null)",
+      "Observe NullPointerException instead of null return."
+    ],
+    "expected": [
+      "Method calls with null input should return null."
+    ],
+    "actual": [
+      "Method calls with null input throw NullPointerException."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"NullPointerException (NPE)\",\n\"api_involved\": [\"StringUtils.newStringIso8859_1\", \"StringUtils.newString\", \"StringUtils.newStringUtf8\", \"StringUtils.newStringUsAscii\", \"StringUtils.newStringUtf16\", \"StringUtils.newStringUtf16Be\", \"StringUtils.newStringUtf16Le\"],\n\"input_conditions\": [\"null input\"],\n\"expected\": \"Method calls with null input should return null.\",\n\"actual\": \"Method calls with null input throw NullPointerException.\",\n\"reproduction_steps\": [\"Call StringUtils.newStringIso8859_1(null)\", \"Observe NullPointerException instead of null return.\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"NullPointerException (NPE)\",\n\"api_involved\": [\"StringUtils.newStringIso8859_1\", \"StringUtils.newString\", \"StringUtils.newStringUtf8\", \"StringUtils.newStringUsAscii\", \"StringUtils.newStringUtf16\", \"StringUtils.newStringUtf16Be\", \"StringUtils.newStringUtf16Le\"],\n\"input_conditions\": [\"null input\"],\n\"expected\": \"Method calls with null input should return null.\",\n\"actual\": \"Method calls with null input throw NullPointerException.\",\n\"reproduction_steps\": [\"Call StringUtils.newStringIso8859_1(null)\", \"Observe NullPointerException instead of null return.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

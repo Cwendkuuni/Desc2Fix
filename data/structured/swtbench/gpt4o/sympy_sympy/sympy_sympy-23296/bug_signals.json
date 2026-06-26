@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-23296",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [
+      "Dimensionless number in exponent not recognized as dimensionless"
+    ],
+    "api_involved": [
+      "_collect_factor_and_dimension"
+    ],
+    "input_conditions": [
+      "expressions containing predefined mathematical functions"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Correct dimensional evaluation for expressions"
+    ],
+    "actual": [
+      "Wrong dimensional evaluation for expressions"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Dimensionless number in exponent not recognized as dimensionless"
+    ],
+    "api_involved": [
+      "_collect_factor_and_dimension"
+    ],
+    "input_conditions": [
+      "expressions containing predefined mathematical functions"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Correct dimensional evaluation for expressions"
+    ],
+    "actual": [
+      "Wrong dimensional evaluation for expressions"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"Dimensionless number in exponent not recognized as dimensionless\",\n  \"api_involved\": [\"_collect_factor_and_dimension\"],\n  \"input_conditions\": [\"expressions containing predefined mathematical functions\"],\n  \"expected\": \"Correct dimensional evaluation for expressions\",\n  \"actual\": \"Wrong dimensional evaluation for expressions\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"Dimensionless number in exponent not recognized as dimensionless\",\n  \"api_involved\": [\"_collect_factor_and_dimension\"],\n  \"input_conditions\": [\"expressions containing predefined mathematical functions\"],\n  \"expected\": \"Correct dimensional evaluation for expressions\",\n  \"actual\": \"Wrong dimensional evaluation for expressions\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "psf__requests-1689",
+  "project": null,
+  "repo": "psf/requests",
+  "signals": {
+    "exception": [
+      "UnicodeError"
+    ],
+    "api_involved": [
+      "requests.post"
+    ],
+    "input_conditions": [
+      "content-length header is a unicode object",
+      "POST'ing png file"
+    ],
+    "reproduction_steps": [
+      "Make a POST request with a png file using the requests library"
+    ],
+    "expected": [
+      "POST request should process the png file without errors"
+    ],
+    "actual": [
+      "Decode error due to coercion of entire request into unicode"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "UnicodeError"
+    ],
+    "api_involved": [
+      "requests.post"
+    ],
+    "input_conditions": [
+      "content-length header is a unicode object",
+      "POST'ing png file"
+    ],
+    "reproduction_steps": [
+      "Make a POST request with a png file using the requests library"
+    ],
+    "expected": [
+      "POST request should process the png file without errors"
+    ],
+    "actual": [
+      "Decode error due to coercion of entire request into unicode"
+    ]
+  },
+  "raw_response": "```\n{\n\"exception\": \"UnicodeError\",\n\"api_involved\": [\"requests.post\"],\n\"input_conditions\": [\"content-length header is a unicode object\", \"POST'ing png file\"],\n\"expected\": \"POST request should process the png file without errors\",\n\"actual\": \"Decode error due to coercion of entire request into unicode\",\n\"reproduction_steps\": [\"Make a POST request with a png file using the requests library\"]\n}\n```",
+  "llm_response": "```\n{\n\"exception\": \"UnicodeError\",\n\"api_involved\": [\"requests.post\"],\n\"input_conditions\": [\"content-length header is a unicode object\", \"POST'ing png file\"],\n\"expected\": \"POST request should process the png file without errors\",\n\"actual\": \"Decode error due to coercion of entire request into unicode\",\n\"reproduction_steps\": [\"Make a POST request with a png file using the requests library\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

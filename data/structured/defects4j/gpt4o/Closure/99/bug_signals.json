@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-99",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "dangerous use of the global this object"
+    ],
+    "api_involved": [
+      "MyClass",
+      "MyMethod",
+      "MyParent"
+    ],
+    "input_conditions": [
+      "advanced optimizations",
+      "VERBOSE warning levels"
+    ],
+    "reproduction_steps": [
+      "Compile code with prototypes declared using quotes in advanced optimizations with VERBOSE warning levels.",
+      "Use an extern interface with an unimplemented method in a class."
+    ],
+    "expected": [
+      "No warnings related to prototype declaration with quotes or interface implementation."
+    ],
+    "actual": [
+      "\"dangerous use of the global this object\" and \"property MyMethod on interface MyParent is not implemented by type MyClass\" warnings are produced."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "dangerous use of the global this object"
+    ],
+    "api_involved": [
+      "MyClass",
+      "MyMethod",
+      "MyParent"
+    ],
+    "input_conditions": [
+      "advanced optimizations",
+      "VERBOSE warning levels"
+    ],
+    "reproduction_steps": [
+      "Compile code with prototypes declared using quotes in advanced optimizations with VERBOSE warning levels.",
+      "Use an extern interface with an unimplemented method in a class."
+    ],
+    "expected": [
+      "No warnings related to prototype declaration with quotes or interface implementation."
+    ],
+    "actual": [
+      "\"dangerous use of the global this object\" and \"property MyMethod on interface MyParent is not implemented by type MyClass\" warnings are produced."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"dangerous use of the global this object\",\n  \"api_involved\": [\"MyClass\", \"MyMethod\", \"MyParent\"],\n  \"input_conditions\": [\"advanced optimizations\", \"VERBOSE warning levels\"],\n  \"expected\": \"No warnings related to prototype declaration with quotes or interface implementation.\",\n  \"actual\": \"\\\"dangerous use of the global this object\\\" and \\\"property MyMethod on interface MyParent is not implemented by type MyClass\\\" warnings are produced.\",\n  \"reproduction_steps\": [\n    \"Compile code with prototypes declared using quotes in advanced optimizations with VERBOSE warning levels.\",\n    \"Use an extern interface with an unimplemented method in a class.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"dangerous use of the global this object\",\n  \"api_involved\": [\"MyClass\", \"MyMethod\", \"MyParent\"],\n  \"input_conditions\": [\"advanced optimizations\", \"VERBOSE warning levels\"],\n  \"expected\": \"No warnings related to prototype declaration with quotes or interface implementation.\",\n  \"actual\": \"\\\"dangerous use of the global this object\\\" and \\\"property MyMethod on interface MyParent is not implemented by type MyClass\\\" warnings are produced.\",\n  \"reproduction_steps\": [\n    \"Compile code with prototypes declared using quotes in advanced optimizations with VERBOSE warning levels.\",\n    \"Use an extern interface with an unimplemented method in a class.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

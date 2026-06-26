@@ -1,0 +1,69 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-15",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "OptionException"
+    ],
+    "api_involved": [
+      "DefaultOptionBuilder",
+      "ArgumentBuilder",
+      "GroupBuilder",
+      "DefaultOption",
+      "Parser",
+      "CommandLine"
+    ],
+    "input_conditions": [
+      "multiple arguments with defaults",
+      "minimum arguments > 0",
+      "some arguments provided but not all"
+    ],
+    "reproduction_steps": [
+      "Create an option with an argument that has minimum=0, maximum=2, with defaults '100' and '1000'.",
+      "Parse command line with one argument ('-b 1').",
+      "Observe that the result list contains only [1] instead of [1, 1000]."
+    ],
+    "expected": [
+      "When some but not all arguments are provided, the missing arguments should take their default values (e.g., for 1 arg with defaults 100 and 1000, values should be [1, 1000])."
+    ],
+    "actual": [
+      "When some arguments are provided, defaults for missing arguments are ignored; only the provided arguments are returned (e.g., for 1 arg, values become [1] instead of [1, 1000])."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "OptionException"
+    ],
+    "api_involved": [
+      "DefaultOptionBuilder",
+      "ArgumentBuilder",
+      "GroupBuilder",
+      "DefaultOption",
+      "Parser",
+      "CommandLine"
+    ],
+    "input_conditions": [
+      "multiple arguments with defaults",
+      "minimum arguments > 0",
+      "some arguments provided but not all"
+    ],
+    "reproduction_steps": [
+      "Create an option with an argument that has minimum=0, maximum=2, with defaults '100' and '1000'.",
+      "Parse command line with one argument ('-b 1').",
+      "Observe that the result list contains only [1] instead of [1, 1000]."
+    ],
+    "expected": [
+      "When some but not all arguments are provided, the missing arguments should take their default values (e.g., for 1 arg with defaults 100 and 1000, values should be [1, 1000])."
+    ],
+    "actual": [
+      "When some arguments are provided, defaults for missing arguments are ignored; only the provided arguments are returned (e.g., for 1 arg, values become [1] instead of [1, 1000])."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"OptionException\",\n\"api_involved\": [\"DefaultOptionBuilder\", \"ArgumentBuilder\", \"GroupBuilder\", \"DefaultOption\", \"Parser\", \"CommandLine\"],\n\"input_conditions\": [\"multiple arguments with defaults\", \"minimum arguments > 0\", \"some arguments provided but not all\"],\n\"expected\": \"When some but not all arguments are provided, the missing arguments should take their default values (e.g., for 1 arg with defaults 100 and 1000, values should be [1, 1000]).\",\n\"actual\": \"When some arguments are provided, defaults for missing arguments are ignored; only the provided arguments are returned (e.g., for 1 arg, values become [1] instead of [1, 1000]).\",\n\"reproduction_steps\": [\n    \"Create an option with an argument that has minimum=0, maximum=2, with defaults '100' and '1000'.\",\n    \"Parse command line with one argument ('-b 1').\",\n    \"Observe that the result list contains only [1] instead of [1, 1000].\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"OptionException\",\n\"api_involved\": [\"DefaultOptionBuilder\", \"ArgumentBuilder\", \"GroupBuilder\", \"DefaultOption\", \"Parser\", \"CommandLine\"],\n\"input_conditions\": [\"multiple arguments with defaults\", \"minimum arguments > 0\", \"some arguments provided but not all\"],\n\"expected\": \"When some but not all arguments are provided, the missing arguments should take their default values (e.g., for 1 arg with defaults 100 and 1000, values should be [1, 1000]).\",\n\"actual\": \"When some arguments are provided, defaults for missing arguments are ignored; only the provided arguments are returned (e.g., for 1 arg, values become [1] instead of [1, 1000]).\",\n\"reproduction_steps\": [\n    \"Create an option with an argument that has minimum=0, maximum=2, with defaults '100' and '1000'.\",\n    \"Parse command line with one argument ('-b 1').\",\n    \"Observe that the result list contains only [1] instead of [1, 1000].\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

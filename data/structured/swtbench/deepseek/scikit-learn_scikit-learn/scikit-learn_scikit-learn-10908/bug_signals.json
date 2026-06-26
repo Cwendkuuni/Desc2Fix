@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "scikit-learn__scikit-learn-10908",
+  "project": null,
+  "repo": "scikit-learn/scikit-learn",
+  "signals": {
+    "exception": [
+      "NotFittedError"
+    ],
+    "api_involved": [
+      "CountVectorizer.get_feature_names",
+      "CountVectorizer.transform",
+      "CountVectorizer.fit"
+    ],
+    "input_conditions": [
+      "vocabulary parameter provided at initialization",
+      "vectorizer not trained"
+    ],
+    "reproduction_steps": [
+      "Initialize CountVectorizer with a vocabulary parameter",
+      "Call get_feature_names without first calling fit",
+      "Observe that NotFittedError is raised"
+    ],
+    "expected": [
+      "get_feature_names should not raise NotFittedError if vocabulary parameter is provided at initialization, even without prior training"
+    ],
+    "actual": [
+      "get_feature_names raises NotFittedError when vocabulary parameter is provided but the vectorizer has not been trained"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NotFittedError"
+    ],
+    "api_involved": [
+      "CountVectorizer.get_feature_names",
+      "CountVectorizer.transform",
+      "CountVectorizer.fit"
+    ],
+    "input_conditions": [
+      "vocabulary parameter provided at initialization",
+      "vectorizer not trained"
+    ],
+    "reproduction_steps": [
+      "Initialize CountVectorizer with a vocabulary parameter",
+      "Call get_feature_names without first calling fit",
+      "Observe that NotFittedError is raised"
+    ],
+    "expected": [
+      "get_feature_names should not raise NotFittedError if vocabulary parameter is provided at initialization, even without prior training"
+    ],
+    "actual": [
+      "get_feature_names raises NotFittedError when vocabulary parameter is provided but the vectorizer has not been trained"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"NotFittedError\",\n\"api_involved\": [\"CountVectorizer.get_feature_names\", \"CountVectorizer.transform\", \"CountVectorizer.fit\"],\n\"input_conditions\": [\"vocabulary parameter provided at initialization\", \"vectorizer not trained\"],\n\"expected\": \"get_feature_names should not raise NotFittedError if vocabulary parameter is provided at initialization, even without prior training\",\n\"actual\": \"get_feature_names raises NotFittedError when vocabulary parameter is provided but the vectorizer has not been trained\",\n\"reproduction_steps\": [\n\"Initialize CountVectorizer with a vocabulary parameter\",\n\"Call get_feature_names without first calling fit\",\n\"Observe that NotFittedError is raised\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"NotFittedError\",\n\"api_involved\": [\"CountVectorizer.get_feature_names\", \"CountVectorizer.transform\", \"CountVectorizer.fit\"],\n\"input_conditions\": [\"vocabulary parameter provided at initialization\", \"vectorizer not trained\"],\n\"expected\": \"get_feature_names should not raise NotFittedError if vocabulary parameter is provided at initialization, even without prior training\",\n\"actual\": \"get_feature_names raises NotFittedError when vocabulary parameter is provided but the vectorizer has not been trained\",\n\"reproduction_steps\": [\n\"Initialize CountVectorizer with a vocabulary parameter\",\n\"Call get_feature_names without first calling fit\",\n\"Observe that NotFittedError is raised\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

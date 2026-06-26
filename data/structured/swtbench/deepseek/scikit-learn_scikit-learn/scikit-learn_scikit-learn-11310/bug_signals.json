@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "scikit-learn__scikit-learn-11310",
+  "project": null,
+  "repo": "scikit-learn/scikit-learn",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "BaseSearchCV",
+      "fit",
+      "refit"
+    ],
+    "input_conditions": [
+      "setting n_jobs > 1",
+      "running grid/random search",
+      "refitting best model on full data"
+    ],
+    "reproduction_steps": [
+      "Perform hyperparameter optimization using BaseSearchCV with n_jobs > 1.",
+      "Attempt to measure the time taken to refit the best model on the full dataset.",
+      "Observe that no built-in attribute exists for this purpose."
+    ],
+    "expected": [
+      "BaseSearchCV should provide an attribute that records the time taken to refit the best model on the full data after hyperparameter optimization."
+    ],
+    "actual": [
+      "There is no such attribute; users can only retrieve the time for fitting and scoring each fold, and timing the whole search on a single core and subtracting fold times is not possible with multi-core execution."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "BaseSearchCV",
+      "fit",
+      "refit"
+    ],
+    "input_conditions": [
+      "setting n_jobs > 1",
+      "running grid/random search",
+      "refitting best model on full data"
+    ],
+    "reproduction_steps": [
+      "Perform hyperparameter optimization using BaseSearchCV with n_jobs > 1.",
+      "Attempt to measure the time taken to refit the best model on the full dataset.",
+      "Observe that no built-in attribute exists for this purpose."
+    ],
+    "expected": [
+      "BaseSearchCV should provide an attribute that records the time taken to refit the best model on the full data after hyperparameter optimization."
+    ],
+    "actual": [
+      "There is no such attribute; users can only retrieve the time for fitting and scoring each fold, and timing the whole search on a single core and subtracting fold times is not possible with multi-core execution."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"BaseSearchCV\", \"fit\", \"refit\"],\n\"input_conditions\": [\"setting n_jobs > 1\", \"running grid/random search\", \"refitting best model on full data\"],\n\"expected\": \"BaseSearchCV should provide an attribute that records the time taken to refit the best model on the full data after hyperparameter optimization.\",\n\"actual\": \"There is no such attribute; users can only retrieve the time for fitting and scoring each fold, and timing the whole search on a single core and subtracting fold times is not possible with multi-core execution.\",\n\"reproduction_steps\": [\"Perform hyperparameter optimization using BaseSearchCV with n_jobs > 1.\", \"Attempt to measure the time taken to refit the best model on the full dataset.\", \"Observe that no built-in attribute exists for this purpose.\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"BaseSearchCV\", \"fit\", \"refit\"],\n\"input_conditions\": [\"setting n_jobs > 1\", \"running grid/random search\", \"refitting best model on full data\"],\n\"expected\": \"BaseSearchCV should provide an attribute that records the time taken to refit the best model on the full data after hyperparameter optimization.\",\n\"actual\": \"There is no such attribute; users can only retrieve the time for fitting and scoring each fold, and timing the whole search on a single core and subtracting fold times is not possible with multi-core execution.\",\n\"reproduction_steps\": [\"Perform hyperparameter optimization using BaseSearchCV with n_jobs > 1.\", \"Attempt to measure the time taken to refit the best model on the full dataset.\", \"Observe that no built-in attribute exists for this purpose.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

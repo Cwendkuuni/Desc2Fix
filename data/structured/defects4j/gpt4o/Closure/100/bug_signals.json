@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-100",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "writeMethodWithAnnotation",
+      "readMethodWithAnnotation",
+      "writeMethodWithoutAnnotation",
+      "readMethodWithoutAnnotation"
+    ],
+    "input_conditions": [
+      "Use of @this annotation in methods of a constructor function",
+      "GLOBAL_COMPILER@compilation_level ADVANCED_OPTIMIZATIONS"
+    ],
+    "reproduction_steps": [
+      "Compile the provided JavaScript code with Closure Compiler using ADVANCED_OPTIMIZATIONS.",
+      "Observe warnings for 'dangerous use of the global this object'."
+    ],
+    "expected": [
+      "Should get two 'dangerous use of the global this object' warnings in the readMethodWithAnnotation and writeMethodWithoutAnnotation functions."
+    ],
+    "actual": [
+      "Only writeMethodWithoutAnnotation warns."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "writeMethodWithAnnotation",
+      "readMethodWithAnnotation",
+      "writeMethodWithoutAnnotation",
+      "readMethodWithoutAnnotation"
+    ],
+    "input_conditions": [
+      "Use of @this annotation in methods of a constructor function",
+      "GLOBAL_COMPILER@compilation_level ADVANCED_OPTIMIZATIONS"
+    ],
+    "reproduction_steps": [
+      "Compile the provided JavaScript code with Closure Compiler using ADVANCED_OPTIMIZATIONS.",
+      "Observe warnings for 'dangerous use of the global this object'."
+    ],
+    "expected": [
+      "Should get two 'dangerous use of the global this object' warnings in the readMethodWithAnnotation and writeMethodWithoutAnnotation functions."
+    ],
+    "actual": [
+      "Only writeMethodWithoutAnnotation warns."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"writeMethodWithAnnotation\", \"readMethodWithAnnotation\", \"writeMethodWithoutAnnotation\", \"readMethodWithoutAnnotation\"],\n  \"input_conditions\": [\"Use of @this annotation in methods of a constructor function\", \"GLOBAL_COMPILER@compilation_level ADVANCED_OPTIMIZATIONS\"],\n  \"expected\": \"Should get two 'dangerous use of the global this object' warnings in the readMethodWithAnnotation and writeMethodWithoutAnnotation functions.\",\n  \"actual\": \"Only writeMethodWithoutAnnotation warns.\",\n  \"reproduction_steps\": [\n    \"Compile the provided JavaScript code with Closure Compiler using ADVANCED_OPTIMIZATIONS.\",\n    \"Observe warnings for 'dangerous use of the global this object'.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"writeMethodWithAnnotation\", \"readMethodWithAnnotation\", \"writeMethodWithoutAnnotation\", \"readMethodWithoutAnnotation\"],\n  \"input_conditions\": [\"Use of @this annotation in methods of a constructor function\", \"GLOBAL_COMPILER@compilation_level ADVANCED_OPTIMIZATIONS\"],\n  \"expected\": \"Should get two 'dangerous use of the global this object' warnings in the readMethodWithAnnotation and writeMethodWithoutAnnotation functions.\",\n  \"actual\": \"Only writeMethodWithoutAnnotation warns.\",\n  \"reproduction_steps\": [\n    \"Compile the provided JavaScript code with Closure Compiler using ADVANCED_OPTIMIZATIONS.\",\n    \"Observe warnings for 'dangerous use of the global this object'.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

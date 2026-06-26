@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-16527",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "show_save_as_new"
+    ],
+    "input_conditions": [
+      "not is_popup",
+      "has_add_permission",
+      "has_change_permission"
+    ],
+    "reproduction_steps": [
+      "Open admin interface",
+      "Attempt to add a new item without add permissions"
+    ],
+    "expected": [
+      "\"show_save_as_new\" should only be available if has_add_permission is true"
+    ],
+    "actual": [
+      "\"show_save_as_new\" can be added without checking has_add_permission"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "show_save_as_new"
+    ],
+    "input_conditions": [
+      "not is_popup",
+      "has_add_permission",
+      "has_change_permission"
+    ],
+    "reproduction_steps": [
+      "Open admin interface",
+      "Attempt to add a new item without add permissions"
+    ],
+    "expected": [
+      "\"show_save_as_new\" should only be available if has_add_permission is true"
+    ],
+    "actual": [
+      "\"show_save_as_new\" can be added without checking has_add_permission"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"show_save_as_new\"],\n  \"input_conditions\": [\"not is_popup\", \"has_add_permission\", \"has_change_permission\"],\n  \"expected\": \"\\\"show_save_as_new\\\" should only be available if has_add_permission is true\",\n  \"actual\": \"\\\"show_save_as_new\\\" can be added without checking has_add_permission\",\n  \"reproduction_steps\": [\"Open admin interface\", \"Attempt to add a new item without add permissions\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"show_save_as_new\"],\n  \"input_conditions\": [\"not is_popup\", \"has_add_permission\", \"has_change_permission\"],\n  \"expected\": \"\\\"show_save_as_new\\\" should only be available if has_add_permission is true\",\n  \"actual\": \"\\\"show_save_as_new\\\" can be added without checking has_add_permission\",\n  \"reproduction_steps\": [\"Open admin interface\", \"Attempt to add a new item without add permissions\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sqlfluff__sqlfluff-2907",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [
+      "Undefined jinja template variable"
+    ],
+    "api_involved": [
+      "set",
+      "if"
+    ],
+    "input_conditions": [
+      "snowflake dialect",
+      "jinja directive inside of an 'if' statement"
+    ],
+    "reproduction_steps": [
+      "Create a 'temp.sql' file with a jinja 'set' directive inside an 'if' statement",
+      "Run sqlfluff on the file"
+    ],
+    "expected": [
+      "to not have a linting issue"
+    ],
+    "actual": [
+      "linting error: 'Undefined jinja template variable'"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Undefined jinja template variable"
+    ],
+    "api_involved": [
+      "set",
+      "if"
+    ],
+    "input_conditions": [
+      "snowflake dialect",
+      "jinja directive inside of an 'if' statement"
+    ],
+    "reproduction_steps": [
+      "Create a 'temp.sql' file with a jinja 'set' directive inside an 'if' statement",
+      "Run sqlfluff on the file"
+    ],
+    "expected": [
+      "to not have a linting issue"
+    ],
+    "actual": [
+      "linting error: 'Undefined jinja template variable'"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"Undefined jinja template variable\",\n  \"api_involved\": [\"set\", \"if\"],\n  \"input_conditions\": [\"snowflake dialect\", \"jinja directive inside of an 'if' statement\"],\n  \"expected\": \"to not have a linting issue\",\n  \"actual\": \"linting error: 'Undefined jinja template variable'\",\n  \"reproduction_steps\": [\"Create a 'temp.sql' file with a jinja 'set' directive inside an 'if' statement\", \"Run sqlfluff on the file\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"Undefined jinja template variable\",\n  \"api_involved\": [\"set\", \"if\"],\n  \"input_conditions\": [\"snowflake dialect\", \"jinja directive inside of an 'if' statement\"],\n  \"expected\": \"to not have a linting issue\",\n  \"actual\": \"linting error: 'Undefined jinja template variable'\",\n  \"reproduction_steps\": [\"Create a 'temp.sql' file with a jinja 'set' directive inside an 'if' statement\", \"Run sqlfluff on the file\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

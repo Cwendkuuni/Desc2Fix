@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-13710",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Django Admin Inline"
+    ],
+    "input_conditions": [
+      "verbose_name specified for Inline",
+      "verbose_name_plural not specified for Inline"
+    ],
+    "reproduction_steps": [
+      "Create an Inline class with a specified verbose_name and without a verbose_name_plural in Django admin.",
+      "Observe that the verbose_name_plural used is based on the model name or the model's Meta class instead of the specified verbose_name."
+    ],
+    "expected": [
+      "inline verbose_name_plural should be based on the specified verbose_name for Inline"
+    ],
+    "actual": [
+      "inline verbose_name_plural is based on the model name or the model's Meta class verbose_name"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Django Admin Inline"
+    ],
+    "input_conditions": [
+      "verbose_name specified for Inline",
+      "verbose_name_plural not specified for Inline"
+    ],
+    "reproduction_steps": [
+      "Create an Inline class with a specified verbose_name and without a verbose_name_plural in Django admin.",
+      "Observe that the verbose_name_plural used is based on the model name or the model's Meta class instead of the specified verbose_name."
+    ],
+    "expected": [
+      "inline verbose_name_plural should be based on the specified verbose_name for Inline"
+    ],
+    "actual": [
+      "inline verbose_name_plural is based on the model name or the model's Meta class verbose_name"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"Django Admin Inline\"],\n  \"input_conditions\": [\"verbose_name specified for Inline\", \"verbose_name_plural not specified for Inline\"],\n  \"expected\": \"inline verbose_name_plural should be based on the specified verbose_name for Inline\",\n  \"actual\": \"inline verbose_name_plural is based on the model name or the model's Meta class verbose_name\",\n  \"reproduction_steps\": [\n    \"Create an Inline class with a specified verbose_name and without a verbose_name_plural in Django admin.\",\n    \"Observe that the verbose_name_plural used is based on the model name or the model's Meta class instead of the specified verbose_name.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"Django Admin Inline\"],\n  \"input_conditions\": [\"verbose_name specified for Inline\", \"verbose_name_plural not specified for Inline\"],\n  \"expected\": \"inline verbose_name_plural should be based on the specified verbose_name for Inline\",\n  \"actual\": \"inline verbose_name_plural is based on the model name or the model's Meta class verbose_name\",\n  \"reproduction_steps\": [\n    \"Create an Inline class with a specified verbose_name and without a verbose_name_plural in Django admin.\",\n    \"Observe that the verbose_name_plural used is based on the model name or the model's Meta class instead of the specified verbose_name.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

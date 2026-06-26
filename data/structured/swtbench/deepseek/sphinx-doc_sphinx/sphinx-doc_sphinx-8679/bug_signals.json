@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sphinx-doc__sphinx-8679",
+  "project": null,
+  "repo": "sphinx-doc/sphinx",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "rubric directive",
+      "reference"
+    ],
+    "input_conditions": [
+      "directive with quoted text",
+      "reference pointing at rubric directive"
+    ],
+    "reproduction_steps": [
+      "Use a directive with a quoted text in it (e.g., a rubric directive)",
+      "Create a reference pointing to that directive",
+      "Build the documentation and view the reference output"
+    ],
+    "expected": [
+      "Text displayed by the reference should be displayed entirely"
+    ],
+    "actual": [
+      "Reference pointing at a rubric directive containing a quoted text is not fully displayed"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "rubric directive",
+      "reference"
+    ],
+    "input_conditions": [
+      "directive with quoted text",
+      "reference pointing at rubric directive"
+    ],
+    "reproduction_steps": [
+      "Use a directive with a quoted text in it (e.g., a rubric directive)",
+      "Create a reference pointing to that directive",
+      "Build the documentation and view the reference output"
+    ],
+    "expected": [
+      "Text displayed by the reference should be displayed entirely"
+    ],
+    "actual": [
+      "Reference pointing at a rubric directive containing a quoted text is not fully displayed"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"rubric directive\", \"reference\"],\n\"input_conditions\": [\"directive with quoted text\", \"reference pointing at rubric directive\"],\n\"expected\": \"Text displayed by the reference should be displayed entirely\",\n\"actual\": \"Reference pointing at a rubric directive containing a quoted text is not fully displayed\",\n\"reproduction_steps\": [\n\"Use a directive with a quoted text in it (e.g., a rubric directive)\",\n\"Create a reference pointing to that directive\",\n\"Build the documentation and view the reference output\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"rubric directive\", \"reference\"],\n\"input_conditions\": [\"directive with quoted text\", \"reference pointing at rubric directive\"],\n\"expected\": \"Text displayed by the reference should be displayed entirely\",\n\"actual\": \"Reference pointing at a rubric directive containing a quoted text is not fully displayed\",\n\"reproduction_steps\": [\n\"Use a directive with a quoted text in it (e.g., a rubric directive)\",\n\"Create a reference pointing to that directive\",\n\"Build the documentation and view the reference output\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

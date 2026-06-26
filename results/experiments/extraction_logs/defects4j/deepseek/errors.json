@@ -1,0 +1,11 @@
+[
+  {
+    "dataset": "defects4j",
+    "model": "deepseek",
+    "instance_id": "Closure-75",
+    "project": "Closure",
+    "repo": null,
+    "error": "Invalid \\escape: line 4 column 73 (char 197)",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/e113/Documents/FROM-DESCRIPTION-TO-FIX/For_GitHub/Desc2Fix/Desc2Fix/scripts/extract_signals.py\", line 295, in run_extraction_for_pair\n    payload = extract_signals_for_triplet(\n  File \"/home/e113/Documents/FROM-DESCRIPTION-TO-FIX/For_GitHub/Desc2Fix/Desc2Fix/src/desc2fix/extraction/signal_extractor.py\", line 58, in extract_signals_for_triplet\n    parsed = parse_json_response(raw_response)\n  File \"/home/e113/Documents/FROM-DESCRIPTION-TO-FIX/For_GitHub/Desc2Fix/Desc2Fix/src/desc2fix/llm/json_parser.py\", line 42, in parse_json_response\n    obj_text = extract_json_object(text)\n  File \"/home/e113/Documents/FROM-DESCRIPTION-TO-FIX/For_GitHub/Desc2Fix/Desc2Fix/src/desc2fix/llm/json_parser.py\", line 37, in extract_json_object\n    json.loads(candidate)\n  File \"/usr/lib/python3.10/json/__init__.py\", line 346, in loads\n    return _default_decoder.decode(s)\n  File \"/usr/lib/python3.10/json/decoder.py\", line 337, in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n  File \"/usr/lib/python3.10/json/decoder.py\", line 353, in raw_decode\n    obj, end = self.scan_once(s, idx)\njson.decoder.JSONDecodeError: Invalid \\escape: line 4 column 73 (char 197)\n"
+  }
+]

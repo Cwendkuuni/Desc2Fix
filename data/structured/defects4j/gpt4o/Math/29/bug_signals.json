@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-29",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "OpenMapRealVector.ebeMultiply",
+      "OpenMapRealVector.ebeDivide",
+      "RealVector.ebeMultiply",
+      "RealVector.ebeDivide"
+    ],
+    "input_conditions": [
+      "RealVector has NaN",
+      "RealVector has infinity",
+      "Sparse RealVector"
+    ],
+    "reproduction_steps": [
+      "Use a RealVector with NaN or infinity in ebeMultiply or ebeDivide",
+      "Pass a sparse RealVector to ebeMultiply or ebeDivide",
+      "Observe incorrect results, e.g., loss of sign"
+    ],
+    "expected": [
+      "Correct handling of operations even with NaNs and infinities, keeping sign in results"
+    ],
+    "actual": [
+      "Wrong values returned; Infinity printed instead of -Infinity; loss of sign in results"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "OpenMapRealVector.ebeMultiply",
+      "OpenMapRealVector.ebeDivide",
+      "RealVector.ebeMultiply",
+      "RealVector.ebeDivide"
+    ],
+    "input_conditions": [
+      "RealVector has NaN",
+      "RealVector has infinity",
+      "Sparse RealVector"
+    ],
+    "reproduction_steps": [
+      "Use a RealVector with NaN or infinity in ebeMultiply or ebeDivide",
+      "Pass a sparse RealVector to ebeMultiply or ebeDivide",
+      "Observe incorrect results, e.g., loss of sign"
+    ],
+    "expected": [
+      "Correct handling of operations even with NaNs and infinities, keeping sign in results"
+    ],
+    "actual": [
+      "Wrong values returned; Infinity printed instead of -Infinity; loss of sign in results"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"OpenMapRealVector.ebeMultiply\", \"OpenMapRealVector.ebeDivide\", \"RealVector.ebeMultiply\", \"RealVector.ebeDivide\"],\n  \"input_conditions\": [\"RealVector has NaN\", \"RealVector has infinity\", \"Sparse RealVector\"],\n  \"expected\": \"Correct handling of operations even with NaNs and infinities, keeping sign in results\",\n  \"actual\": \"Wrong values returned; Infinity printed instead of -Infinity; loss of sign in results\",\n  \"reproduction_steps\": [\n    \"Use a RealVector with NaN or infinity in ebeMultiply or ebeDivide\",\n    \"Pass a sparse RealVector to ebeMultiply or ebeDivide\",\n    \"Observe incorrect results, e.g., loss of sign\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"OpenMapRealVector.ebeMultiply\", \"OpenMapRealVector.ebeDivide\", \"RealVector.ebeMultiply\", \"RealVector.ebeDivide\"],\n  \"input_conditions\": [\"RealVector has NaN\", \"RealVector has infinity\", \"Sparse RealVector\"],\n  \"expected\": \"Correct handling of operations even with NaNs and infinities, keeping sign in results\",\n  \"actual\": \"Wrong values returned; Infinity printed instead of -Infinity; loss of sign in results\",\n  \"reproduction_steps\": [\n    \"Use a RealVector with NaN or infinity in ebeMultiply or ebeDivide\",\n    \"Pass a sparse RealVector to ebeMultiply or ebeDivide\",\n    \"Observe incorrect results, e.g., loss of sign\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

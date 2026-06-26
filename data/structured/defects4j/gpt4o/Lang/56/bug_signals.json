@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Lang-56",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "FastDateFormat",
+      "init",
+      "readObject",
+      "ObjectInputStream"
+    ],
+    "input_conditions": [
+      "FastDateFormat.mRules should be transient or serializable"
+    ],
+    "reproduction_steps": [
+      "Attempt to serialize FastDateFormat instance"
+    ],
+    "expected": [
+      "FastDateFormat.mRules should be serialized without issues"
+    ],
+    "actual": [
+      "FastDateFormat.mRules is not transient or serializable leading to issues during serialization"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "FastDateFormat",
+      "init",
+      "readObject",
+      "ObjectInputStream"
+    ],
+    "input_conditions": [
+      "FastDateFormat.mRules should be transient or serializable"
+    ],
+    "reproduction_steps": [
+      "Attempt to serialize FastDateFormat instance"
+    ],
+    "expected": [
+      "FastDateFormat.mRules should be serialized without issues"
+    ],
+    "actual": [
+      "FastDateFormat.mRules is not transient or serializable leading to issues during serialization"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"FastDateFormat\", \"init\", \"readObject\", \"ObjectInputStream\"],\n  \"input_conditions\": [\"FastDateFormat.mRules should be transient or serializable\"],\n  \"expected\": \"FastDateFormat.mRules should be serialized without issues\",\n  \"actual\": \"FastDateFormat.mRules is not transient or serializable leading to issues during serialization\",\n  \"reproduction_steps\": [\"Attempt to serialize FastDateFormat instance\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"FastDateFormat\", \"init\", \"readObject\", \"ObjectInputStream\"],\n  \"input_conditions\": [\"FastDateFormat.mRules should be transient or serializable\"],\n  \"expected\": \"FastDateFormat.mRules should be serialized without issues\",\n  \"actual\": \"FastDateFormat.mRules is not transient or serializable leading to issues during serialization\",\n  \"reproduction_steps\": [\"Attempt to serialize FastDateFormat instance\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

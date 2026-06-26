@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-11823",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "cache_control",
+      "cache_page",
+      "UpdateCacheMiddleware.process_response"
+    ],
+    "input_conditions": [
+      "Decorating a view with both cache_control(max_age=3600) and cache_page(timeout=3600*24)"
+    ],
+    "reproduction_steps": [
+      "Decorate a view with both @cache_control(max_age=3600) and @cache_page(timeout=3600*24).",
+      "Make a request to the decorated view.",
+      "Observe that the server-side cache timeout equals 3600 seconds instead of 3600*24 seconds."
+    ],
+    "expected": [
+      "Server-side cache uses the timeout value (3600*24) from cache_page(), separate from the client-side max-age value."
+    ],
+    "actual": [
+      "Server-side cache incorrectly overrides the timeout value with the max_age value (3600) from cache_control() instead of using the timeout from cache_page()."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "cache_control",
+      "cache_page",
+      "UpdateCacheMiddleware.process_response"
+    ],
+    "input_conditions": [
+      "Decorating a view with both cache_control(max_age=3600) and cache_page(timeout=3600*24)"
+    ],
+    "reproduction_steps": [
+      "Decorate a view with both @cache_control(max_age=3600) and @cache_page(timeout=3600*24).",
+      "Make a request to the decorated view.",
+      "Observe that the server-side cache timeout equals 3600 seconds instead of 3600*24 seconds."
+    ],
+    "expected": [
+      "Server-side cache uses the timeout value (3600*24) from cache_page(), separate from the client-side max-age value."
+    ],
+    "actual": [
+      "Server-side cache incorrectly overrides the timeout value with the max_age value (3600) from cache_control() instead of using the timeout from cache_page()."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"cache_control\", \"cache_page\", \"UpdateCacheMiddleware.process_response\"],\n\"input_conditions\": [\"Decorating a view with both cache_control(max_age=3600) and cache_page(timeout=3600*24)\"],\n\"expected\": \"Server-side cache uses the timeout value (3600*24) from cache_page(), separate from the client-side max-age value.\",\n\"actual\": \"Server-side cache incorrectly overrides the timeout value with the max_age value (3600) from cache_control() instead of using the timeout from cache_page().\",\n\"reproduction_steps\": [\n    \"Decorate a view with both @cache_control(max_age=3600) and @cache_page(timeout=3600*24).\",\n    \"Make a request to the decorated view.\",\n    \"Observe that the server-side cache timeout equals 3600 seconds instead of 3600*24 seconds.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"cache_control\", \"cache_page\", \"UpdateCacheMiddleware.process_response\"],\n\"input_conditions\": [\"Decorating a view with both cache_control(max_age=3600) and cache_page(timeout=3600*24)\"],\n\"expected\": \"Server-side cache uses the timeout value (3600*24) from cache_page(), separate from the client-side max-age value.\",\n\"actual\": \"Server-side cache incorrectly overrides the timeout value with the max_age value (3600) from cache_control() instead of using the timeout from cache_page().\",\n\"reproduction_steps\": [\n    \"Decorate a view with both @cache_control(max_age=3600) and @cache_page(timeout=3600*24).\",\n    \"Make a request to the decorated view.\",\n    \"Observe that the server-side cache timeout equals 3600 seconds instead of 3600*24 seconds.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

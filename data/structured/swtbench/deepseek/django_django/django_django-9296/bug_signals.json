@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-9296",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Paginator",
+      "__iter__",
+      "page_range",
+      "page"
+    ],
+    "input_conditions": [
+      "Paginator object with pages",
+      "need to iterate over all pages"
+    ],
+    "reproduction_steps": [
+      "Create a Paginator object with some items and pages.",
+      "Attempt to iterate over the Paginator object directly (e.g., for page in paginator: ...).",
+      "Observe that iteration does not work as expected."
+    ],
+    "expected": [
+      "Iterating over a Paginator object directly should yield each page object, similar to Python's normal iteration pattern."
+    ],
+    "actual": [
+      "You must use the page_range method to iterate over all pages; direct iteration is not supported."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Paginator",
+      "__iter__",
+      "page_range",
+      "page"
+    ],
+    "input_conditions": [
+      "Paginator object with pages",
+      "need to iterate over all pages"
+    ],
+    "reproduction_steps": [
+      "Create a Paginator object with some items and pages.",
+      "Attempt to iterate over the Paginator object directly (e.g., for page in paginator: ...).",
+      "Observe that iteration does not work as expected."
+    ],
+    "expected": [
+      "Iterating over a Paginator object directly should yield each page object, similar to Python's normal iteration pattern."
+    ],
+    "actual": [
+      "You must use the page_range method to iterate over all pages; direct iteration is not supported."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Paginator\", \"__iter__\", \"page_range\", \"page\"],\n\"input_conditions\": [\"Paginator object with pages\", \"need to iterate over all pages\"],\n\"expected\": \"Iterating over a Paginator object directly should yield each page object, similar to Python's normal iteration pattern.\",\n\"actual\": \"You must use the page_range method to iterate over all pages; direct iteration is not supported.\",\n\"reproduction_steps\": [\"Create a Paginator object with some items and pages.\", \"Attempt to iterate over the Paginator object directly (e.g., for page in paginator: ...).\", \"Observe that iteration does not work as expected.\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Paginator\", \"__iter__\", \"page_range\", \"page\"],\n\"input_conditions\": [\"Paginator object with pages\", \"need to iterate over all pages\"],\n\"expected\": \"Iterating over a Paginator object directly should yield each page object, similar to Python's normal iteration pattern.\",\n\"actual\": \"You must use the page_range method to iterate over all pages; direct iteration is not supported.\",\n\"reproduction_steps\": [\"Create a Paginator object with some items and pages.\", \"Attempt to iterate over the Paginator object directly (e.g., for page in paginator: ...).\", \"Observe that iteration does not work as expected.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

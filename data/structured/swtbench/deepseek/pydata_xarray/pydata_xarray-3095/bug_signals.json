@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "pydata__xarray-3095",
+  "project": null,
+  "repo": "pydata/xarray",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Dataset.copy",
+      "DataArray.copy"
+    ],
+    "input_conditions": [
+      "deep=True",
+      "deep=True/False",
+      "IndexVariable with dtype='<U5'"
+    ],
+    "reproduction_steps": [
+      "Create a Dataset or DataArray with unicode indices (dtype='<U5')",
+      "Call .copy(deep=True) on the Dataset or .copy(deep=True/False) on the DataArray",
+      "Observe that the index dtype changes from '<U5' to 'object'"
+    ],
+    "expected": [
+      "unicode indices should remain unicode after copy"
+    ],
+    "actual": [
+      "unicode indices are cast to object dtype after copy"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Dataset.copy",
+      "DataArray.copy"
+    ],
+    "input_conditions": [
+      "deep=True",
+      "deep=True/False",
+      "IndexVariable with dtype='<U5'"
+    ],
+    "reproduction_steps": [
+      "Create a Dataset or DataArray with unicode indices (dtype='<U5')",
+      "Call .copy(deep=True) on the Dataset or .copy(deep=True/False) on the DataArray",
+      "Observe that the index dtype changes from '<U5' to 'object'"
+    ],
+    "expected": [
+      "unicode indices should remain unicode after copy"
+    ],
+    "actual": [
+      "unicode indices are cast to object dtype after copy"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Dataset.copy\", \"DataArray.copy\"],\n\"input_conditions\": [\"deep=True\", \"deep=True/False\", \"IndexVariable with dtype='<U5'\"],\n\"expected\": \"unicode indices should remain unicode after copy\",\n\"actual\": \"unicode indices are cast to object dtype after copy\",\n\"reproduction_steps\": [\n    \"Create a Dataset or DataArray with unicode indices (dtype='<U5')\",\n    \"Call .copy(deep=True) on the Dataset or .copy(deep=True/False) on the DataArray\",\n    \"Observe that the index dtype changes from '<U5' to 'object'\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Dataset.copy\", \"DataArray.copy\"],\n\"input_conditions\": [\"deep=True\", \"deep=True/False\", \"IndexVariable with dtype='<U5'\"],\n\"expected\": \"unicode indices should remain unicode after copy\",\n\"actual\": \"unicode indices are cast to object dtype after copy\",\n\"reproduction_steps\": [\n    \"Create a Dataset or DataArray with unicode indices (dtype='<U5')\",\n    \"Call .copy(deep=True) on the Dataset or .copy(deep=True/False) on the DataArray\",\n    \"Observe that the index dtype changes from '<U5' to 'object'\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,65 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-33",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "repro.js:30: ERROR - actual parameter 1 of temp3 does not match formal parameter"
+    ],
+    "api_involved": [
+      "temp1",
+      "temp2",
+      "temp3"
+    ],
+    "input_conditions": [
+      "--compilation_level=ADVANCED_OPTIMIZATIONS",
+      "--jscomp_error=accessControls",
+      "--jscomp_error=checkTypes",
+      "--jscomp_error=checkVars"
+    ],
+    "reproduction_steps": [
+      "Compile the code with advanced optimizations and specified errors",
+      "Function temp3 is called with an object containing properties {n: 0, text: 'a string', b: true}",
+      "The compiler yields a type mismatch error on temp3 though it seems to be called correctly"
+    ],
+    "expected": [
+      "temp3 should be called with a type {b: boolean, n: number, text: string}"
+    ],
+    "actual": [
+      "temp3 is being called with type {b: boolean, n: number, text: (string|undefined)}"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "repro.js:30: ERROR - actual parameter 1 of temp3 does not match formal parameter"
+    ],
+    "api_involved": [
+      "temp1",
+      "temp2",
+      "temp3"
+    ],
+    "input_conditions": [
+      "--compilation_level=ADVANCED_OPTIMIZATIONS",
+      "--jscomp_error=accessControls",
+      "--jscomp_error=checkTypes",
+      "--jscomp_error=checkVars"
+    ],
+    "reproduction_steps": [
+      "Compile the code with advanced optimizations and specified errors",
+      "Function temp3 is called with an object containing properties {n: 0, text: 'a string', b: true}",
+      "The compiler yields a type mismatch error on temp3 though it seems to be called correctly"
+    ],
+    "expected": [
+      "temp3 should be called with a type {b: boolean, n: number, text: string}"
+    ],
+    "actual": [
+      "temp3 is being called with type {b: boolean, n: number, text: (string|undefined)}"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"repro.js:30: ERROR - actual parameter 1 of temp3 does not match formal parameter\",\n  \"api_involved\": [\"temp1\", \"temp2\", \"temp3\"],\n  \"input_conditions\": [\"--compilation_level=ADVANCED_OPTIMIZATIONS\", \"--jscomp_error=accessControls\", \"--jscomp_error=checkTypes\", \"--jscomp_error=checkVars\"],\n  \"expected\": \"temp3 should be called with a type {b: boolean, n: number, text: string}\",\n  \"actual\": \"temp3 is being called with type {b: boolean, n: number, text: (string|undefined)}\",\n  \"reproduction_steps\": [\n    \"Compile the code with advanced optimizations and specified errors\",\n    \"Function temp3 is called with an object containing properties {n: 0, text: 'a string', b: true}\",\n    \"The compiler yields a type mismatch error on temp3 though it seems to be called correctly\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"repro.js:30: ERROR - actual parameter 1 of temp3 does not match formal parameter\",\n  \"api_involved\": [\"temp1\", \"temp2\", \"temp3\"],\n  \"input_conditions\": [\"--compilation_level=ADVANCED_OPTIMIZATIONS\", \"--jscomp_error=accessControls\", \"--jscomp_error=checkTypes\", \"--jscomp_error=checkVars\"],\n  \"expected\": \"temp3 should be called with a type {b: boolean, n: number, text: string}\",\n  \"actual\": \"temp3 is being called with type {b: boolean, n: number, text: (string|undefined)}\",\n  \"reproduction_steps\": [\n    \"Compile the code with advanced optimizations and specified errors\",\n    \"Function temp3 is called with an object containing properties {n: 0, text: 'a string', b: true}\",\n    \"The compiler yields a type mismatch error on temp3 though it seems to be called correctly\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

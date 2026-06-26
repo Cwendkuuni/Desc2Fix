@@ -1,0 +1,18 @@
+{
+  "instances": 10,
+  "with_report_text": 10,
+  "with_test_text": 10,
+  "avg_rouge_l": 0.044889,
+  "avg_jaccard": 0.085323,
+  "avg_identifier_jaccard": 0.05063,
+  "avg_pos_overlap": 0.708333,
+  "avg_structured_macro_jaccard": 0.028066,
+  "avg_structured_all_jaccard": 0.085323,
+  "avg_sbert": 0.38924,
+  "avg_codebert": 0.885296,
+  "avg_openai_embedding": 0.542693,
+  "dataset": "defects4j",
+  "scenario": "structured",
+  "model": "deepseek",
+  "artifact_pair": "report_test"
+}

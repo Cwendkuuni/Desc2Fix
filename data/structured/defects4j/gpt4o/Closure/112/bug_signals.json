@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-112",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "The compiler fails compilation when @template T is on the method."
+    ],
+    "api_involved": [
+      "Class",
+      "Class.prototype.foo"
+    ],
+    "input_conditions": [
+      "Template types are present on the method.",
+      "Template type CLASS is unspecified."
+    ],
+    "reproduction_steps": [
+      "Define a class with a template CLASS.",
+      "Define a method with @template T annotation and accepting a function parameter.",
+      "Pass a function to the method that does not specify CLASS type.",
+      "Observe compilation failure."
+    ],
+    "expected": [
+      "The block should compile successfully, inferring any necessary types or treating untyped instances appropriately."
+    ],
+    "actual": [
+      "The compiler tries to infer CLASS and fails compilation."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "The compiler fails compilation when @template T is on the method."
+    ],
+    "api_involved": [
+      "Class",
+      "Class.prototype.foo"
+    ],
+    "input_conditions": [
+      "Template types are present on the method.",
+      "Template type CLASS is unspecified."
+    ],
+    "reproduction_steps": [
+      "Define a class with a template CLASS.",
+      "Define a method with @template T annotation and accepting a function parameter.",
+      "Pass a function to the method that does not specify CLASS type.",
+      "Observe compilation failure."
+    ],
+    "expected": [
+      "The block should compile successfully, inferring any necessary types or treating untyped instances appropriately."
+    ],
+    "actual": [
+      "The compiler tries to infer CLASS and fails compilation."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"The compiler fails compilation when @template T is on the method.\",\n  \"api_involved\": [\"Class\", \"Class.prototype.foo\"],\n  \"input_conditions\": [\"Template types are present on the method.\", \"Template type CLASS is unspecified.\"],\n  \"expected\": \"The block should compile successfully, inferring any necessary types or treating untyped instances appropriately.\",\n  \"actual\": \"The compiler tries to infer CLASS and fails compilation.\",\n  \"reproduction_steps\": [\n    \"Define a class with a template CLASS.\",\n    \"Define a method with @template T annotation and accepting a function parameter.\",\n    \"Pass a function to the method that does not specify CLASS type.\",\n    \"Observe compilation failure.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"The compiler fails compilation when @template T is on the method.\",\n  \"api_involved\": [\"Class\", \"Class.prototype.foo\"],\n  \"input_conditions\": [\"Template types are present on the method.\", \"Template type CLASS is unspecified.\"],\n  \"expected\": \"The block should compile successfully, inferring any necessary types or treating untyped instances appropriately.\",\n  \"actual\": \"The compiler tries to infer CLASS and fails compilation.\",\n  \"reproduction_steps\": [\n    \"Define a class with a template CLASS.\",\n    \"Define a method with @template T annotation and accepting a function parameter.\",\n    \"Pass a function to the method that does not specify CLASS type.\",\n    \"Observe compilation failure.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

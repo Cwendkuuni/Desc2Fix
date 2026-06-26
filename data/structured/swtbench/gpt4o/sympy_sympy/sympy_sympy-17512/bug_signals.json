@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-17512",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [
+      "raises"
+    ],
+    "api_involved": [
+      "Range",
+      "sympify",
+      "ImageSet"
+    ],
+    "input_conditions": [
+      "range object passed to Range",
+      "automatic sympification"
+    ],
+    "reproduction_steps": [
+      "Attempt to convert a range object using Range",
+      "Observe behavior when passing range object"
+    ],
+    "expected": [
+      "Range should not accept range objects; automatic sympification should work consistently"
+    ],
+    "actual": [
+      "Range accepts range objects leading to nonsensical Range object"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "raises"
+    ],
+    "api_involved": [
+      "Range",
+      "sympify",
+      "ImageSet"
+    ],
+    "input_conditions": [
+      "range object passed to Range",
+      "automatic sympification"
+    ],
+    "reproduction_steps": [
+      "Attempt to convert a range object using Range",
+      "Observe behavior when passing range object"
+    ],
+    "expected": [
+      "Range should not accept range objects; automatic sympification should work consistently"
+    ],
+    "actual": [
+      "Range accepts range objects leading to nonsensical Range object"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"raises\",\n  \"api_involved\": [\"Range\", \"sympify\", \"ImageSet\"],\n  \"input_conditions\": [\"range object passed to Range\", \"automatic sympification\"],\n  \"expected\": \"Range should not accept range objects; automatic sympification should work consistently\",\n  \"actual\": \"Range accepts range objects leading to nonsensical Range object\",\n  \"reproduction_steps\": [\"Attempt to convert a range object using Range\", \"Observe behavior when passing range object\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"raises\",\n  \"api_involved\": [\"Range\", \"sympify\", \"ImageSet\"],\n  \"input_conditions\": [\"range object passed to Range\", \"automatic sympification\"],\n  \"expected\": \"Range should not accept range objects; automatic sympification should work consistently\",\n  \"actual\": \"Range accepts range objects leading to nonsensical Range object\",\n  \"reproduction_steps\": [\"Attempt to convert a range object using Range\", \"Observe behavior when passing range object\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

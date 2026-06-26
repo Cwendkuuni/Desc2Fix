@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Lang-17",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "StringEscapeUtils.escapeXml",
+      "CharSequenceTranslator.translate"
+    ],
+    "input_conditions": [
+      "Input string contains characters in Supplementary Planes (e.g., surrogate pairs like \\uD842\\uDFB7)",
+      "Input does not contain characters that need XML escaping"
+    ],
+    "reproduction_steps": [
+      "1. Create a string containing a supplementary plane character, e.g., \"\\uD842\\uDFB7\" + \"A\"",
+      "2. Call StringEscapeUtils.escapeXml on that string",
+      "3. Observe that the output is different from the input, even though no characters need escaping"
+    ],
+    "expected": [
+      "escapeXml should return the input unchanged when it contains no characters requiring escaping"
+    ],
+    "actual": [
+      "escapeXml returns a modified string with extra or corrupted characters (e.g., %FF%FD or replacement characters) when input contains supplementary plane characters"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "StringEscapeUtils.escapeXml",
+      "CharSequenceTranslator.translate"
+    ],
+    "input_conditions": [
+      "Input string contains characters in Supplementary Planes (e.g., surrogate pairs like \\uD842\\uDFB7)",
+      "Input does not contain characters that need XML escaping"
+    ],
+    "reproduction_steps": [
+      "1. Create a string containing a supplementary plane character, e.g., \"\\uD842\\uDFB7\" + \"A\"",
+      "2. Call StringEscapeUtils.escapeXml on that string",
+      "3. Observe that the output is different from the input, even though no characters need escaping"
+    ],
+    "expected": [
+      "escapeXml should return the input unchanged when it contains no characters requiring escaping"
+    ],
+    "actual": [
+      "escapeXml returns a modified string with extra or corrupted characters (e.g., %FF%FD or replacement characters) when input contains supplementary plane characters"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"StringEscapeUtils.escapeXml\", \"CharSequenceTranslator.translate\"],\n\"input_conditions\": [\"Input string contains characters in Supplementary Planes (e.g., surrogate pairs like \\\\uD842\\\\uDFB7)\", \"Input does not contain characters that need XML escaping\"],\n\"expected\": \"escapeXml should return the input unchanged when it contains no characters requiring escaping\",\n\"actual\": \"escapeXml returns a modified string with extra or corrupted characters (e.g., %FF%FD or replacement characters) when input contains supplementary plane characters\",\n\"reproduction_steps\": [\n\"1. Create a string containing a supplementary plane character, e.g., \\\"\\\\uD842\\\\uDFB7\\\" + \\\"A\\\"\",\n\"2. Call StringEscapeUtils.escapeXml on that string\",\n\"3. Observe that the output is different from the input, even though no characters need escaping\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"StringEscapeUtils.escapeXml\", \"CharSequenceTranslator.translate\"],\n\"input_conditions\": [\"Input string contains characters in Supplementary Planes (e.g., surrogate pairs like \\\\uD842\\\\uDFB7)\", \"Input does not contain characters that need XML escaping\"],\n\"expected\": \"escapeXml should return the input unchanged when it contains no characters requiring escaping\",\n\"actual\": \"escapeXml returns a modified string with extra or corrupted characters (e.g., %FF%FD or replacement characters) when input contains supplementary plane characters\",\n\"reproduction_steps\": [\n\"1. Create a string containing a supplementary plane character, e.g., \\\"\\\\uD842\\\\uDFB7\\\" + \\\"A\\\"\",\n\"2. Call StringEscapeUtils.escapeXml on that string\",\n\"3. Observe that the output is different from the input, even though no characters need escaping\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

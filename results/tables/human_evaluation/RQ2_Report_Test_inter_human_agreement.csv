@@ -1,0 +1,17 @@
+rq_label,rq,dataset,representation,patch_view,metric,rater_a,rater_b,n,spearman,spear_p,kendall,kend_p,mae,rmse
+RQ2_Report_Test,rq2,Defects4J,RAW,none,alignment_score,human1,human2,100,0.869608,0.0,0.848641,0.0,0.14,0.374166
+RQ2_Report_Test,rq2,Defects4J,RAW,none,coverage,human1,human2,100,0.905136,0.0,0.883467,0.0,0.11,0.331662
+RQ2_Report_Test,rq2,Defects4J,RAW,none,correctness,human1,human2,100,1.0,0.0,1.0,0.0,0.0,0.0
+RQ2_Report_Test,rq2,Defects4J,RAW,none,specificity,human1,human2,100,0.999792,0.0,0.997166,0.0,0.02,0.141421
+RQ2_Report_Test,rq2,Defects4J,STRUCTURED,none,alignment_score,human1,human2,100,0.708601,0.0,0.694016,0.0,0.21,0.458258
+RQ2_Report_Test,rq2,Defects4J,STRUCTURED,none,coverage,human1,human2,100,0.701958,0.0,0.655393,0.0,0.33,0.655744
+RQ2_Report_Test,rq2,Defects4J,STRUCTURED,none,correctness,human1,human2,100,1.0,0.0,1.0,0.0,0.0,0.0
+RQ2_Report_Test,rq2,Defects4J,STRUCTURED,none,specificity,human1,human2,100,0.76918,0.0,0.765855,0.0,0.05,0.331662
+RQ2_Report_Test,rq2,SWTBench,RAW,none,alignment_score,human1,human2,100,0.727962,0.0,0.689252,0.0,0.47,0.7
+RQ2_Report_Test,rq2,SWTBench,RAW,none,coverage,human1,human2,100,0.892829,0.0,0.831727,0.0,0.37,0.6245
+RQ2_Report_Test,rq2,SWTBench,RAW,none,correctness,human1,human2,100,0.800405,0.0,0.746116,0.0,1.49,1.584298
+RQ2_Report_Test,rq2,SWTBench,RAW,none,specificity,human1,human2,100,0.959474,0.0,0.931526,0.0,0.14,0.4
+RQ2_Report_Test,rq2,SWTBench,STRUCTURED,none,alignment_score,human1,human2,100,0.517265,0.0,0.487085,0.0,0.42,0.648074
+RQ2_Report_Test,rq2,SWTBench,STRUCTURED,none,coverage,human1,human2,100,0.88396,0.0,0.831282,0.0,0.25,0.556776
+RQ2_Report_Test,rq2,SWTBench,STRUCTURED,none,correctness,human1,human2,100,1.0,0.0,1.0,0.0,0.0,0.0
+RQ2_Report_Test,rq2,SWTBench,STRUCTURED,none,specificity,human1,human2,100,0.871095,0.0,0.857393,0.0,0.11,0.458258

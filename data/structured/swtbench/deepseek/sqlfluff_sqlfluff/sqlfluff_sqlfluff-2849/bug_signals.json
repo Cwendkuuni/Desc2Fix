@@ -1,0 +1,67 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sqlfluff__sqlfluff-2849",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [
+      "Lint and fix throws exception"
+    ],
+    "api_involved": [
+      "lint",
+      "fix",
+      "jinja for loop"
+    ],
+    "input_conditions": [
+      "jinja for loop inside set construct",
+      "new lines between selected columns",
+      "dialect = snowflake",
+      "templater = jinja"
+    ],
+    "reproduction_steps": [
+      "Create test.template.sql with a jinja for loop inside a set construct.",
+      "Run sqlfluff lint on the file.",
+      "Observe the exception.",
+      "Optionally, remove new lines between selected columns to make the linter pass."
+    ],
+    "expected": [
+      "The linter and fix should pass without exception."
+    ],
+    "actual": [
+      "Lint and fix throws an exception when having jinja for loop inside set."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Lint and fix throws exception"
+    ],
+    "api_involved": [
+      "lint",
+      "fix",
+      "jinja for loop"
+    ],
+    "input_conditions": [
+      "jinja for loop inside set construct",
+      "new lines between selected columns",
+      "dialect = snowflake",
+      "templater = jinja"
+    ],
+    "reproduction_steps": [
+      "Create test.template.sql with a jinja for loop inside a set construct.",
+      "Run sqlfluff lint on the file.",
+      "Observe the exception.",
+      "Optionally, remove new lines between selected columns to make the linter pass."
+    ],
+    "expected": [
+      "The linter and fix should pass without exception."
+    ],
+    "actual": [
+      "Lint and fix throws an exception when having jinja for loop inside set."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"Lint and fix throws exception\",\n\"api_involved\": [\"lint\", \"fix\", \"jinja for loop\"],\n\"input_conditions\": [\"jinja for loop inside set construct\", \"new lines between selected columns\", \"dialect = snowflake\", \"templater = jinja\"],\n\"expected\": \"The linter and fix should pass without exception.\",\n\"actual\": \"Lint and fix throws an exception when having jinja for loop inside set.\",\n\"reproduction_steps\": [\n\"Create test.template.sql with a jinja for loop inside a set construct.\",\n\"Run sqlfluff lint on the file.\",\n\"Observe the exception.\",\n\"Optionally, remove new lines between selected columns to make the linter pass.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"Lint and fix throws exception\",\n\"api_involved\": [\"lint\", \"fix\", \"jinja for loop\"],\n\"input_conditions\": [\"jinja for loop inside set construct\", \"new lines between selected columns\", \"dialect = snowflake\", \"templater = jinja\"],\n\"expected\": \"The linter and fix should pass without exception.\",\n\"actual\": \"Lint and fix throws an exception when having jinja for loop inside set.\",\n\"reproduction_steps\": [\n\"Create test.template.sql with a jinja for loop inside a set construct.\",\n\"Run sqlfluff lint on the file.\",\n\"Observe the exception.\",\n\"Optionally, remove new lines between selected columns to make the linter pass.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

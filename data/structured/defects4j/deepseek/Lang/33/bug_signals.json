@@ -1,0 +1,51 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Lang-33",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "ClassUtils.toClass(Object[])"
+    ],
+    "input_conditions": [
+      "array contains null element"
+    ],
+    "reproduction_steps": [
+      "Call ClassUtils.toClass(Object[]) with an array that has at least one null element"
+    ],
+    "expected": [
+      "should handle null array elements gracefully without throwing NullPointerException"
+    ],
+    "actual": [
+      "throws NullPointerException when array contains null element"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "ClassUtils.toClass(Object[])"
+    ],
+    "input_conditions": [
+      "array contains null element"
+    ],
+    "reproduction_steps": [
+      "Call ClassUtils.toClass(Object[]) with an array that has at least one null element"
+    ],
+    "expected": [
+      "should handle null array elements gracefully without throwing NullPointerException"
+    ],
+    "actual": [
+      "throws NullPointerException when array contains null element"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"NullPointerException\",\n\"api_involved\": [\"ClassUtils.toClass(Object[])\"],\n\"input_conditions\": [\"array contains null element\"],\n\"expected\": \"should handle null array elements gracefully without throwing NullPointerException\",\n\"actual\": \"throws NullPointerException when array contains null element\",\n\"reproduction_steps\": [\"Call ClassUtils.toClass(Object[]) with an array that has at least one null element\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"NullPointerException\",\n\"api_involved\": [\"ClassUtils.toClass(Object[])\"],\n\"input_conditions\": [\"array contains null element\"],\n\"expected\": \"should handle null array elements gracefully without throwing NullPointerException\",\n\"actual\": \"throws NullPointerException when array contains null element\",\n\"reproduction_steps\": [\"Call ClassUtils.toClass(Object[]) with an array that has at least one null element\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

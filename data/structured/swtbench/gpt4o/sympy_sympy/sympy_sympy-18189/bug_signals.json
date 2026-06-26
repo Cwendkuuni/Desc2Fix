@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-18189",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "diophantine"
+    ],
+    "input_conditions": [
+      "permuting symbols order"
+    ],
+    "reproduction_steps": [
+      "Use diophantine with permute=True and different orders of symbols"
+    ],
+    "expected": [
+      "Complete and correct results regardless of symbols order"
+    ],
+    "actual": [
+      "Incomplete results depending on symbols order"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "diophantine"
+    ],
+    "input_conditions": [
+      "permuting symbols order"
+    ],
+    "reproduction_steps": [
+      "Use diophantine with permute=True and different orders of symbols"
+    ],
+    "expected": [
+      "Complete and correct results regardless of symbols order"
+    ],
+    "actual": [
+      "Incomplete results depending on symbols order"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"diophantine\"],\n  \"input_conditions\": [\"permuting symbols order\"],\n  \"expected\": \"Complete and correct results regardless of symbols order\",\n  \"actual\": \"Incomplete results depending on symbols order\",\n  \"reproduction_steps\": [\"Use diophantine with permute=True and different orders of symbols\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"diophantine\"],\n  \"input_conditions\": [\"permuting symbols order\"],\n  \"expected\": \"Complete and correct results regardless of symbols order\",\n  \"actual\": \"Incomplete results depending on symbols order\",\n  \"reproduction_steps\": [\"Use diophantine with permute=True and different orders of symbols\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

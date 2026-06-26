@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-13560",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "ProtectedError (or RestrictedError) with message containing iterators"
+    ],
+    "api_involved": [
+      "Collector.collect",
+      "Sentry"
+    ],
+    "input_conditions": [
+      "Deleting instances of model 'A' that are referenced through protected foreign keys",
+      "Protect foreign keys: 'A.protect', 'B.protect'"
+    ],
+    "reproduction_steps": [
+      "Create model instances with protected foreign keys (A.protect, B.protect).",
+      "Attempt to delete some instances of model 'A' that are referenced via those protected foreign keys.",
+      "Observe that a ProtectedError/RestrictedError is raised from Collector.collect.",
+      "Check the repr of the exception in Sentry and note that it is not informative due to iterator content."
+    ],
+    "expected": [
+      "The exception repr should provide a clear and informative message for Sentry."
+    ],
+    "actual": [
+      "The exception repr contains iterators, making it not informative in Sentry."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ProtectedError (or RestrictedError) with message containing iterators"
+    ],
+    "api_involved": [
+      "Collector.collect",
+      "Sentry"
+    ],
+    "input_conditions": [
+      "Deleting instances of model 'A' that are referenced through protected foreign keys",
+      "Protect foreign keys: 'A.protect', 'B.protect'"
+    ],
+    "reproduction_steps": [
+      "Create model instances with protected foreign keys (A.protect, B.protect).",
+      "Attempt to delete some instances of model 'A' that are referenced via those protected foreign keys.",
+      "Observe that a ProtectedError/RestrictedError is raised from Collector.collect.",
+      "Check the repr of the exception in Sentry and note that it is not informative due to iterator content."
+    ],
+    "expected": [
+      "The exception repr should provide a clear and informative message for Sentry."
+    ],
+    "actual": [
+      "The exception repr contains iterators, making it not informative in Sentry."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"ProtectedError (or RestrictedError) with message containing iterators\",\n\"api_involved\": [\"Collector.collect\", \"Sentry\"],\n\"input_conditions\": [\"Deleting instances of model 'A' that are referenced through protected foreign keys\", \"Protect foreign keys: 'A.protect', 'B.protect'\"],\n\"expected\": \"The exception repr should provide a clear and informative message for Sentry.\",\n\"actual\": \"The exception repr contains iterators, making it not informative in Sentry.\",\n\"reproduction_steps\": [\n    \"Create model instances with protected foreign keys (A.protect, B.protect).\",\n    \"Attempt to delete some instances of model 'A' that are referenced via those protected foreign keys.\",\n    \"Observe that a ProtectedError/RestrictedError is raised from Collector.collect.\",\n    \"Check the repr of the exception in Sentry and note that it is not informative due to iterator content.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"ProtectedError (or RestrictedError) with message containing iterators\",\n\"api_involved\": [\"Collector.collect\", \"Sentry\"],\n\"input_conditions\": [\"Deleting instances of model 'A' that are referenced through protected foreign keys\", \"Protect foreign keys: 'A.protect', 'B.protect'\"],\n\"expected\": \"The exception repr should provide a clear and informative message for Sentry.\",\n\"actual\": \"The exception repr contains iterators, making it not informative in Sentry.\",\n\"reproduction_steps\": [\n    \"Create model instances with protected foreign keys (A.protect, B.protect).\",\n    \"Attempt to delete some instances of model 'A' that are referenced via those protected foreign keys.\",\n    \"Observe that a ProtectedError/RestrictedError is raised from Collector.collect.\",\n    \"Check the repr of the exception in Sentry and note that it is not informative due to iterator content.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

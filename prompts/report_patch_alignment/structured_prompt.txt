@@ -1,0 +1,30 @@
+You are an expert software engineer specialized in program repair.
+
+Evaluate the alignment between this structured bug report (semantic signals) and the corresponding patch (code diff).
+
+Structured Bug Report (JSON):
+---
+{BUG_REPORT_STRUCTURED_JSON}
+---
+
+Patch ({PATCH_TYPE}):
+---
+{PATCH_CODE}
+---
+
+Rate the following (1–5 integers):
+- coverage: patch coverage of described entities, APIs, and reproduction steps
+- correctness: patch correctness relative to expected vs. actual behavior
+- specificity: patch focus on the issue (avoidance of unrelated edits)
+- alignment_score: overall alignment
+
+Provide a short justification (2–4 sentences).
+
+Output only JSON between triple backticks:
+{{
+"alignment_score": <1-5>,
+"coverage": <1-5>,
+"correctness": <1-5>,
+"specificity": <1-5>,
+"justification": "..."
+}}

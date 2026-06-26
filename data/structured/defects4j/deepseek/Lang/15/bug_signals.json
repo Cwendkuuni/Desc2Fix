@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Lang-15",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "TypeUtils.getTypeArguments"
+    ],
+    "input_conditions": [
+      "Other.class implements This<String, T>",
+      "Other has its own type variable T"
+    ],
+    "reproduction_steps": [
+      "Define interface This<K, V>.",
+      "Define class Other<T> implements This<String, T>.",
+      "Call TypeUtils.getTypeArguments(Other.class, This.class).",
+      "Assert the returned map has size 2.",
+      "Assert the first entry maps This's first type parameter to String.class.",
+      "Assert the second entry maps This's second type parameter to Other's first type parameter."
+    ],
+    "expected": [
+      "getTypeArguments(Other.class, This.class) should return a map with 2 entries: K mapped to String.class and V mapped to T (Other.class's type parameter)."
+    ],
+    "actual": [
+      "getTypeArguments(Other.class, This.class) returns fewer than 2 entries, ignoring the type arguments because Other specifies its own type variables."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "TypeUtils.getTypeArguments"
+    ],
+    "input_conditions": [
+      "Other.class implements This<String, T>",
+      "Other has its own type variable T"
+    ],
+    "reproduction_steps": [
+      "Define interface This<K, V>.",
+      "Define class Other<T> implements This<String, T>.",
+      "Call TypeUtils.getTypeArguments(Other.class, This.class).",
+      "Assert the returned map has size 2.",
+      "Assert the first entry maps This's first type parameter to String.class.",
+      "Assert the second entry maps This's second type parameter to Other's first type parameter."
+    ],
+    "expected": [
+      "getTypeArguments(Other.class, This.class) should return a map with 2 entries: K mapped to String.class and V mapped to T (Other.class's type parameter)."
+    ],
+    "actual": [
+      "getTypeArguments(Other.class, This.class) returns fewer than 2 entries, ignoring the type arguments because Other specifies its own type variables."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"TypeUtils.getTypeArguments\"],\n\"input_conditions\": [\"Other.class implements This<String, T>\", \"Other has its own type variable T\"],\n\"expected\": \"getTypeArguments(Other.class, This.class) should return a map with 2 entries: K mapped to String.class and V mapped to T (Other.class's type parameter).\",\n\"actual\": \"getTypeArguments(Other.class, This.class) returns fewer than 2 entries, ignoring the type arguments because Other specifies its own type variables.\",\n\"reproduction_steps\": [\n    \"Define interface This<K, V>.\",\n    \"Define class Other<T> implements This<String, T>.\",\n    \"Call TypeUtils.getTypeArguments(Other.class, This.class).\",\n    \"Assert the returned map has size 2.\",\n    \"Assert the first entry maps This's first type parameter to String.class.\",\n    \"Assert the second entry maps This's second type parameter to Other's first type parameter.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"TypeUtils.getTypeArguments\"],\n\"input_conditions\": [\"Other.class implements This<String, T>\", \"Other has its own type variable T\"],\n\"expected\": \"getTypeArguments(Other.class, This.class) should return a map with 2 entries: K mapped to String.class and V mapped to T (Other.class's type parameter).\",\n\"actual\": \"getTypeArguments(Other.class, This.class) returns fewer than 2 entries, ignoring the type arguments because Other specifies its own type variables.\",\n\"reproduction_steps\": [\n    \"Define interface This<K, V>.\",\n    \"Define class Other<T> implements This<String, T>.\",\n    \"Call TypeUtils.getTypeArguments(Other.class, This.class).\",\n    \"Assert the returned map has size 2.\",\n    \"Assert the first entry maps This's first type parameter to String.class.\",\n    \"Assert the second entry maps This's second type parameter to Other's first type parameter.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

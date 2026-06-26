@@ -1,0 +1,63 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "pallets__flask-4160",
+  "project": null,
+  "repo": "pallets/flask",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Flask.json_encoder",
+      "json.dumps",
+      "Decimal"
+    ],
+    "input_conditions": [
+      "Python 3.8.10",
+      "Flask 2.0.1",
+      "simplejson 3.17.2 (optional)",
+      "encoding JSON with Decimal types",
+      "no simplejson installed"
+    ],
+    "reproduction_steps": [
+      "Install Flask 2.0.1 without simplejson",
+      "Create a Flask app and attempt to jsonify a response containing a Decimal value",
+      "Observe that the built-in encoder raises a TypeError because it does not handle Decimal"
+    ],
+    "expected": [
+      "Flask JSON encoder should handle Decimal values natively, as it did in Flask 1.1.2, even without simplejson installed"
+    ],
+    "actual": [
+      "Flask 2.0.1's built-in JSON encoder fails to serialize Decimal types when simplejson is not available, breaking backward compatibility"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Flask.json_encoder",
+      "json.dumps",
+      "Decimal"
+    ],
+    "input_conditions": [
+      "Python 3.8.10",
+      "Flask 2.0.1",
+      "simplejson 3.17.2 (optional)",
+      "encoding JSON with Decimal types",
+      "no simplejson installed"
+    ],
+    "reproduction_steps": [
+      "Install Flask 2.0.1 without simplejson",
+      "Create a Flask app and attempt to jsonify a response containing a Decimal value",
+      "Observe that the built-in encoder raises a TypeError because it does not handle Decimal"
+    ],
+    "expected": [
+      "Flask JSON encoder should handle Decimal values natively, as it did in Flask 1.1.2, even without simplejson installed"
+    ],
+    "actual": [
+      "Flask 2.0.1's built-in JSON encoder fails to serialize Decimal types when simplejson is not available, breaking backward compatibility"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Flask.json_encoder\", \"json.dumps\", \"Decimal\"],\n\"input_conditions\": [\"Python 3.8.10\", \"Flask 2.0.1\", \"simplejson 3.17.2 (optional)\", \"encoding JSON with Decimal types\", \"no simplejson installed\"],\n\"expected\": \"Flask JSON encoder should handle Decimal values natively, as it did in Flask 1.1.2, even without simplejson installed\",\n\"actual\": \"Flask 2.0.1's built-in JSON encoder fails to serialize Decimal types when simplejson is not available, breaking backward compatibility\",\n\"reproduction_steps\": [\n    \"Install Flask 2.0.1 without simplejson\",\n    \"Create a Flask app and attempt to jsonify a response containing a Decimal value\",\n    \"Observe that the built-in encoder raises a TypeError because it does not handle Decimal\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Flask.json_encoder\", \"json.dumps\", \"Decimal\"],\n\"input_conditions\": [\"Python 3.8.10\", \"Flask 2.0.1\", \"simplejson 3.17.2 (optional)\", \"encoding JSON with Decimal types\", \"no simplejson installed\"],\n\"expected\": \"Flask JSON encoder should handle Decimal values natively, as it did in Flask 1.1.2, even without simplejson installed\",\n\"actual\": \"Flask 2.0.1's built-in JSON encoder fails to serialize Decimal types when simplejson is not available, breaking backward compatibility\",\n\"reproduction_steps\": [\n    \"Install Flask 2.0.1 without simplejson\",\n    \"Create a Flask app and attempt to jsonify a response containing a Decimal value\",\n    \"Observe that the built-in encoder raises a TypeError because it does not handle Decimal\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

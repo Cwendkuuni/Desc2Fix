@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "astropy__astropy-8292",
+  "project": null,
+  "repo": "astropy/astropy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "unit equivalencies",
+      "units/equivalencies"
+    ],
+    "input_conditions": [
+      "certain unit equivalency implementation",
+      "specific numerical values for redshift and Hubble constant"
+    ],
+    "reproduction_steps": [
+      "Check the newly added unit equivalencies in the Astropy documentation",
+      "Apply the equivalency with specific values for redshift and Hubble constant",
+      "Observe the computed distance is 70 Mpc instead of the expected 140 Mpc"
+    ],
+    "expected": [
+      "equivalency should yield 140 Mpc"
+    ],
+    "actual": [
+      "equivalency yields 70 Mpc"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "unit equivalencies",
+      "units/equivalencies"
+    ],
+    "input_conditions": [
+      "certain unit equivalency implementation",
+      "specific numerical values for redshift and Hubble constant"
+    ],
+    "reproduction_steps": [
+      "Check the newly added unit equivalencies in the Astropy documentation",
+      "Apply the equivalency with specific values for redshift and Hubble constant",
+      "Observe the computed distance is 70 Mpc instead of the expected 140 Mpc"
+    ],
+    "expected": [
+      "equivalency should yield 140 Mpc"
+    ],
+    "actual": [
+      "equivalency yields 70 Mpc"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"unit equivalencies\", \"units/equivalencies\"],\n\"input_conditions\": [\"certain unit equivalency implementation\", \"specific numerical values for redshift and Hubble constant\"],\n\"expected\": \"equivalency should yield 140 Mpc\",\n\"actual\": \"equivalency yields 70 Mpc\",\n\"reproduction_steps\": [\n    \"Check the newly added unit equivalencies in the Astropy documentation\",\n    \"Apply the equivalency with specific values for redshift and Hubble constant\",\n    \"Observe the computed distance is 70 Mpc instead of the expected 140 Mpc\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"unit equivalencies\", \"units/equivalencies\"],\n\"input_conditions\": [\"certain unit equivalency implementation\", \"specific numerical values for redshift and Hubble constant\"],\n\"expected\": \"equivalency should yield 140 Mpc\",\n\"actual\": \"equivalency yields 70 Mpc\",\n\"reproduction_steps\": [\n    \"Check the newly added unit equivalencies in the Astropy documentation\",\n    \"Apply the equivalency with specific values for redshift and Hubble constant\",\n    \"Observe the computed distance is 70 Mpc instead of the expected 140 Mpc\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

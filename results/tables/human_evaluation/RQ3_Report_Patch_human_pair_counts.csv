@@ -1,0 +1,13 @@
+rq_label,rq,dataset,representation,patch_view,n_pairs
+RQ3_Report_Patch,rq3,Defects4J,RAW,add,78
+RQ3_Report_Patch,rq3,Defects4J,RAW,full,100
+RQ3_Report_Patch,rq3,Defects4J,RAW,remove,98
+RQ3_Report_Patch,rq3,Defects4J,STRUCTURED,add,78
+RQ3_Report_Patch,rq3,Defects4J,STRUCTURED,full,100
+RQ3_Report_Patch,rq3,Defects4J,STRUCTURED,remove,98
+RQ3_Report_Patch,rq3,SWTBench,RAW,add,99
+RQ3_Report_Patch,rq3,SWTBench,RAW,full,100
+RQ3_Report_Patch,rq3,SWTBench,RAW,remove,84
+RQ3_Report_Patch,rq3,SWTBench,STRUCTURED,add,99
+RQ3_Report_Patch,rq3,SWTBench,STRUCTURED,full,100
+RQ3_Report_Patch,rq3,SWTBench,STRUCTURED,remove,84

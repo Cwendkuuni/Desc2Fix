@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Csv-3",
+  "project": "Csv",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "org.junit.ComparisonFailure: Token content expected:<character[!r]Escaped> but was:<character[ ]Escaped>"
+    ],
+    "api_involved": [
+      "CSVLexer",
+      "Lexer"
+    ],
+    "input_conditions": [
+      "Escape character is defined as !",
+      "Escape character is defined in CSVFormat",
+      "MySQL out format represents NULL as \\N"
+    ],
+    "reproduction_steps": [
+      "Define escape character as ! in CSVFormat.",
+      "Create a Lexer instance with this format.",
+      "Pass a string including `!r` to the Lexer."
+    ],
+    "expected": [
+      "!r should be converted to CR just as \\r is converted to CR when the escape char is \\."
+    ],
+    "actual": [
+      "The escape character is silently dropped if the character that follows does not need escaping."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "org.junit.ComparisonFailure: Token content expected:<character[!r]Escaped> but was:<character[ ]Escaped>"
+    ],
+    "api_involved": [
+      "CSVLexer",
+      "Lexer"
+    ],
+    "input_conditions": [
+      "Escape character is defined as !",
+      "Escape character is defined in CSVFormat",
+      "MySQL out format represents NULL as \\N"
+    ],
+    "reproduction_steps": [
+      "Define escape character as ! in CSVFormat.",
+      "Create a Lexer instance with this format.",
+      "Pass a string including `!r` to the Lexer."
+    ],
+    "expected": [
+      "!r should be converted to CR just as \\r is converted to CR when the escape char is \\."
+    ],
+    "actual": [
+      "The escape character is silently dropped if the character that follows does not need escaping."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"org.junit.ComparisonFailure: Token content expected:<character[!r]Escaped> but was:<character[ ]Escaped>\",\n  \"api_involved\": [\n    \"CSVLexer\",\n    \"Lexer\"\n  ],\n  \"input_conditions\": [\n    \"Escape character is defined as !\",\n    \"Escape character is defined in CSVFormat\",\n    \"MySQL out format represents NULL as \\\\N\"\n  ],\n  \"expected\": \"!r should be converted to CR just as \\\\r is converted to CR when the escape char is \\\\.\",\n  \"actual\": \"The escape character is silently dropped if the character that follows does not need escaping.\",\n  \"reproduction_steps\": [\n    \"Define escape character as ! in CSVFormat.\",\n    \"Create a Lexer instance with this format.\",\n    \"Pass a string including `!r` to the Lexer.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"org.junit.ComparisonFailure: Token content expected:<character[!r]Escaped> but was:<character[ ]Escaped>\",\n  \"api_involved\": [\n    \"CSVLexer\",\n    \"Lexer\"\n  ],\n  \"input_conditions\": [\n    \"Escape character is defined as !\",\n    \"Escape character is defined in CSVFormat\",\n    \"MySQL out format represents NULL as \\\\N\"\n  ],\n  \"expected\": \"!r should be converted to CR just as \\\\r is converted to CR when the escape char is \\\\.\",\n  \"actual\": \"The escape character is silently dropped if the character that follows does not need escaping.\",\n  \"reproduction_steps\": [\n    \"Define escape character as ! in CSVFormat.\",\n    \"Create a Lexer instance with this format.\",\n    \"Pass a string including `!r` to the Lexer.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-15576",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "exists()",
+      "distinct"
+    ],
+    "input_conditions": [
+      "distinct querysets",
+      "non-sliced querysets"
+    ],
+    "reproduction_steps": [
+      "Apply fix 93cc6dcdac6fc3e506640fa38dd1798c3cd61cff",
+      "Invoke exists() on a distinct queryset"
+    ],
+    "expected": [
+      "Fields should be left on the queryset only if it is distinct and high_mark or low_mark is not None."
+    ],
+    "actual": [
+      "Now all distinct querysets are selecting all their fields."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "exists()",
+      "distinct"
+    ],
+    "input_conditions": [
+      "distinct querysets",
+      "non-sliced querysets"
+    ],
+    "reproduction_steps": [
+      "Apply fix 93cc6dcdac6fc3e506640fa38dd1798c3cd61cff",
+      "Invoke exists() on a distinct queryset"
+    ],
+    "expected": [
+      "Fields should be left on the queryset only if it is distinct and high_mark or low_mark is not None."
+    ],
+    "actual": [
+      "Now all distinct querysets are selecting all their fields."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"exists()\", \"distinct\"],\n  \"input_conditions\": [\"distinct querysets\", \"non-sliced querysets\"],\n  \"expected\": \"Fields should be left on the queryset only if it is distinct and high_mark or low_mark is not None.\",\n  \"actual\": \"Now all distinct querysets are selecting all their fields.\",\n  \"reproduction_steps\": [\"Apply fix 93cc6dcdac6fc3e506640fa38dd1798c3cd61cff\", \"Invoke exists() on a distinct queryset\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"exists()\", \"distinct\"],\n  \"input_conditions\": [\"distinct querysets\", \"non-sliced querysets\"],\n  \"expected\": \"Fields should be left on the queryset only if it is distinct and high_mark or low_mark is not None.\",\n  \"actual\": \"Now all distinct querysets are selecting all their fields.\",\n  \"reproduction_steps\": [\"Apply fix 93cc6dcdac6fc3e506640fa38dd1798c3cd61cff\", \"Invoke exists() on a distinct queryset\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

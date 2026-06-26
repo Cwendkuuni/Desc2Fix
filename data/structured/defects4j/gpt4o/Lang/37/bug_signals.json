@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Lang-37",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.ArrayStoreException"
+    ],
+    "api_involved": [
+      "ArrayUtils.addAll",
+      "java.lang.System.arraycopy"
+    ],
+    "input_conditions": [
+      "new Integer[]{1}",
+      "new Long[]{2L}"
+    ],
+    "reproduction_steps": [
+      "Call ArrayUtils.addAll with Integer array and Long array"
+    ],
+    "expected": [
+      "Method should handle mixed array types and throw IllegalArgumentException if types are not compatible"
+    ],
+    "actual": [
+      "java.lang.ArrayStoreException is thrown when incompatible array types are used"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.ArrayStoreException"
+    ],
+    "api_involved": [
+      "ArrayUtils.addAll",
+      "java.lang.System.arraycopy"
+    ],
+    "input_conditions": [
+      "new Integer[]{1}",
+      "new Long[]{2L}"
+    ],
+    "reproduction_steps": [
+      "Call ArrayUtils.addAll with Integer array and Long array"
+    ],
+    "expected": [
+      "Method should handle mixed array types and throw IllegalArgumentException if types are not compatible"
+    ],
+    "actual": [
+      "java.lang.ArrayStoreException is thrown when incompatible array types are used"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"java.lang.ArrayStoreException\",\n  \"api_involved\": [\"ArrayUtils.addAll\", \"java.lang.System.arraycopy\"],\n  \"input_conditions\": [\"new Integer[]{1}\", \"new Long[]{2L}\"],\n  \"expected\": \"Method should handle mixed array types and throw IllegalArgumentException if types are not compatible\",\n  \"actual\": \"java.lang.ArrayStoreException is thrown when incompatible array types are used\",\n  \"reproduction_steps\": [\n    \"Call ArrayUtils.addAll with Integer array and Long array\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"java.lang.ArrayStoreException\",\n  \"api_involved\": [\"ArrayUtils.addAll\", \"java.lang.System.arraycopy\"],\n  \"input_conditions\": [\"new Integer[]{1}\", \"new Long[]{2L}\"],\n  \"expected\": \"Method should handle mixed array types and throw IllegalArgumentException if types are not compatible\",\n  \"actual\": \"java.lang.ArrayStoreException is thrown when incompatible array types are used\",\n  \"reproduction_steps\": [\n    \"Call ArrayUtils.addAll with Integer array and Long array\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

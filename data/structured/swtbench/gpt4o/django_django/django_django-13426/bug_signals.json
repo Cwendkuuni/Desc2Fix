@@ -1,0 +1,67 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-13426",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "TypeError: 'NoneType' object is not iterable"
+    ],
+    "api_involved": [
+      "union",
+      "order_by",
+      "count"
+    ],
+    "input_conditions": [
+      "M2 and M1 models union",
+      "Ordering by '-f2'",
+      "Union result with Whelped model"
+    ],
+    "reproduction_steps": [
+      "Create M1, M2, and M3 models",
+      "Perform union on M2 and M1",
+      "Order the union result by '-f2'",
+      "Perform union of above result with Whelped model",
+      "Call count() on the final queryset"
+    ],
+    "expected": [
+      "res.count() should return the count of the combined queryset"
+    ],
+    "actual": [
+      "The query crashes with a TypeError"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "TypeError: 'NoneType' object is not iterable"
+    ],
+    "api_involved": [
+      "union",
+      "order_by",
+      "count"
+    ],
+    "input_conditions": [
+      "M2 and M1 models union",
+      "Ordering by '-f2'",
+      "Union result with Whelped model"
+    ],
+    "reproduction_steps": [
+      "Create M1, M2, and M3 models",
+      "Perform union on M2 and M1",
+      "Order the union result by '-f2'",
+      "Perform union of above result with Whelped model",
+      "Call count() on the final queryset"
+    ],
+    "expected": [
+      "res.count() should return the count of the combined queryset"
+    ],
+    "actual": [
+      "The query crashes with a TypeError"
+    ]
+  },
+  "raw_response": "```\n{\n    \"exception\": \"TypeError: 'NoneType' object is not iterable\",\n    \"api_involved\": [\"union\", \"order_by\", \"count\"],\n    \"input_conditions\": [\"M2 and M1 models union\", \"Ordering by '-f2'\", \"Union result with Whelped model\"],\n    \"expected\": \"res.count() should return the count of the combined queryset\",\n    \"actual\": \"The query crashes with a TypeError\",\n    \"reproduction_steps\": [\n        \"Create M1, M2, and M3 models\",\n        \"Perform union on M2 and M1\",\n        \"Order the union result by '-f2'\",\n        \"Perform union of above result with Whelped model\",\n        \"Call count() on the final queryset\"\n    ]\n}\n```",
+  "llm_response": "```\n{\n    \"exception\": \"TypeError: 'NoneType' object is not iterable\",\n    \"api_involved\": [\"union\", \"order_by\", \"count\"],\n    \"input_conditions\": [\"M2 and M1 models union\", \"Ordering by '-f2'\", \"Union result with Whelped model\"],\n    \"expected\": \"res.count() should return the count of the combined queryset\",\n    \"actual\": \"The query crashes with a TypeError\",\n    \"reproduction_steps\": [\n        \"Create M1, M2, and M3 models\",\n        \"Perform union on M2 and M1\",\n        \"Order the union result by '-f2'\",\n        \"Perform union of above result with Whelped model\",\n        \"Call count() on the final queryset\"\n    ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

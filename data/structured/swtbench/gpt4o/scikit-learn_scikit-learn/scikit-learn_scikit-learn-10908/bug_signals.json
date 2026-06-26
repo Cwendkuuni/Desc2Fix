@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "scikit-learn__scikit-learn-10908",
+  "project": null,
+  "repo": "scikit-learn/scikit-learn",
+  "signals": {
+    "exception": [
+      "NotFittedError"
+    ],
+    "api_involved": [
+      "CountVectorizer",
+      "get_feature_names"
+    ],
+    "input_conditions": [
+      "vocabulary parameter is provided",
+      "vectorizer is not trained"
+    ],
+    "reproduction_steps": [
+      "Initialize CountVectorizer with vocabulary parameter",
+      "Call get_feature_names without training the vectorizer"
+    ],
+    "expected": [
+      "get_feature_names should not raise an exception if vocabulary parameter is provided"
+    ],
+    "actual": [
+      "get_feature_names raises NotFittedError"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NotFittedError"
+    ],
+    "api_involved": [
+      "CountVectorizer",
+      "get_feature_names"
+    ],
+    "input_conditions": [
+      "vocabulary parameter is provided",
+      "vectorizer is not trained"
+    ],
+    "reproduction_steps": [
+      "Initialize CountVectorizer with vocabulary parameter",
+      "Call get_feature_names without training the vectorizer"
+    ],
+    "expected": [
+      "get_feature_names should not raise an exception if vocabulary parameter is provided"
+    ],
+    "actual": [
+      "get_feature_names raises NotFittedError"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"NotFittedError\",\n  \"api_involved\": [\"CountVectorizer\", \"get_feature_names\"],\n  \"input_conditions\": [\"vocabulary parameter is provided\", \"vectorizer is not trained\"],\n  \"expected\": \"get_feature_names should not raise an exception if vocabulary parameter is provided\",\n  \"actual\": \"get_feature_names raises NotFittedError\",\n  \"reproduction_steps\": [\"Initialize CountVectorizer with vocabulary parameter\", \"Call get_feature_names without training the vectorizer\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"NotFittedError\",\n  \"api_involved\": [\"CountVectorizer\", \"get_feature_names\"],\n  \"input_conditions\": [\"vocabulary parameter is provided\", \"vectorizer is not trained\"],\n  \"expected\": \"get_feature_names should not raise an exception if vocabulary parameter is provided\",\n  \"actual\": \"get_feature_names raises NotFittedError\",\n  \"reproduction_steps\": [\"Initialize CountVectorizer with vocabulary parameter\", \"Call get_feature_names without training the vectorizer\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

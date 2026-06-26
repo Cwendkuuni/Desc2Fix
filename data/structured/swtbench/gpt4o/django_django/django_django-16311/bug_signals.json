@@ -1,0 +1,45 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-16311",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "gzip",
+      "CSRF masking"
+    ],
+    "input_conditions": [
+      "gzip compression enabled"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Django should implement 'Heal The Breach' to add randomness to compressed responses."
+    ],
+    "actual": [
+      "Users are advised to disable gzip to mitigate BREACH attack."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "gzip",
+      "CSRF masking"
+    ],
+    "input_conditions": [
+      "gzip compression enabled"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Django should implement 'Heal The Breach' to add randomness to compressed responses."
+    ],
+    "actual": [
+      "Users are advised to disable gzip to mitigate BREACH attack."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"gzip\", \"CSRF masking\"],\n  \"input_conditions\": [\"gzip compression enabled\"],\n  \"expected\": \"Django should implement 'Heal The Breach' to add randomness to compressed responses.\",\n  \"actual\": \"Users are advised to disable gzip to mitigate BREACH attack.\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"gzip\", \"CSRF masking\"],\n  \"input_conditions\": [\"gzip compression enabled\"],\n  \"expected\": \"Django should implement 'Heal The Breach' to add randomness to compressed responses.\",\n  \"actual\": \"Users are advised to disable gzip to mitigate BREACH attack.\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

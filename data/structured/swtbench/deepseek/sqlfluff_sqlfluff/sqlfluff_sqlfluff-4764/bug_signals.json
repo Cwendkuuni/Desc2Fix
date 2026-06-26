@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sqlfluff__sqlfluff-4764",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "SQLFluff CLI"
+    ],
+    "input_conditions": [
+      "quiet mode or no-verbose option not available",
+      "used in pre-commit hook"
+    ],
+    "reproduction_steps": [
+      "Run SQLFluff CLI with a pre-commit hook",
+      "Observe that there is no flag to reduce verbosity",
+      "Notice that applying fixes generates a long, verbose output"
+    ],
+    "expected": [
+      "Option to limit verbosity when running SQLFluff, such as only printing the return status and number of fixes applied."
+    ],
+    "actual": [
+      "Only option to increase verbosity exists; no option to reduce verbosity; output can be very verbose showing full list of fixes."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "SQLFluff CLI"
+    ],
+    "input_conditions": [
+      "quiet mode or no-verbose option not available",
+      "used in pre-commit hook"
+    ],
+    "reproduction_steps": [
+      "Run SQLFluff CLI with a pre-commit hook",
+      "Observe that there is no flag to reduce verbosity",
+      "Notice that applying fixes generates a long, verbose output"
+    ],
+    "expected": [
+      "Option to limit verbosity when running SQLFluff, such as only printing the return status and number of fixes applied."
+    ],
+    "actual": [
+      "Only option to increase verbosity exists; no option to reduce verbosity; output can be very verbose showing full list of fixes."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"SQLFluff CLI\"],\n\"input_conditions\": [\"quiet mode or no-verbose option not available\", \"used in pre-commit hook\"],\n\"expected\": \"Option to limit verbosity when running SQLFluff, such as only printing the return status and number of fixes applied.\",\n\"actual\": \"Only option to increase verbosity exists; no option to reduce verbosity; output can be very verbose showing full list of fixes.\",\n\"reproduction_steps\": [\"Run SQLFluff CLI with a pre-commit hook\", \"Observe that there is no flag to reduce verbosity\", \"Notice that applying fixes generates a long, verbose output\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"SQLFluff CLI\"],\n\"input_conditions\": [\"quiet mode or no-verbose option not available\", \"used in pre-commit hook\"],\n\"expected\": \"Option to limit verbosity when running SQLFluff, such as only printing the return status and number of fixes applied.\",\n\"actual\": \"Only option to increase verbosity exists; no option to reduce verbosity; output can be very verbose showing full list of fixes.\",\n\"reproduction_steps\": [\"Run SQLFluff CLI with a pre-commit hook\", \"Observe that there is no flag to reduce verbosity\", \"Notice that applying fixes generates a long, verbose output\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

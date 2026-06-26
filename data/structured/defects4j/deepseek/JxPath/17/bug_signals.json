@@ -1,0 +1,65 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "JxPath-17",
+  "project": "JxPath",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "DOMAttributeIterator",
+      "JDOMAttributeIterator",
+      "selectSingleNode",
+      "assertXPathValueIterator"
+    ],
+    "input_conditions": [
+      "xpath expression xml/@*",
+      "xml document with default namespace and prefixed attribute",
+      "test context vendor/product/price:amount/@*"
+    ],
+    "reproduction_steps": [
+      "Create XML: <xml xmlns:x='foo' x:pop='a'/>",
+      "Execute XPath: xml/@*",
+      "Call selectSingleNode (returns null)",
+      "Alternatively, use @x:* which works fine",
+      "Run test: assertXPathValueIterator with vendor/product/price:amount/@* expecting both attributes, but only gets one"
+    ],
+    "expected": [
+      "selectSingleNode should return the attribute node for @* when namespaced attributes exist; @* should select all attributes including those with namespaces."
+    ],
+    "actual": [
+      "selectSingleNode returns null for xml/@*; @* only selects attributes without namespace (e.g., only 20% instead of both 10% and 20%)."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "DOMAttributeIterator",
+      "JDOMAttributeIterator",
+      "selectSingleNode",
+      "assertXPathValueIterator"
+    ],
+    "input_conditions": [
+      "xpath expression xml/@*",
+      "xml document with default namespace and prefixed attribute",
+      "test context vendor/product/price:amount/@*"
+    ],
+    "reproduction_steps": [
+      "Create XML: <xml xmlns:x='foo' x:pop='a'/>",
+      "Execute XPath: xml/@*",
+      "Call selectSingleNode (returns null)",
+      "Alternatively, use @x:* which works fine",
+      "Run test: assertXPathValueIterator with vendor/product/price:amount/@* expecting both attributes, but only gets one"
+    ],
+    "expected": [
+      "selectSingleNode should return the attribute node for @* when namespaced attributes exist; @* should select all attributes including those with namespaces."
+    ],
+    "actual": [
+      "selectSingleNode returns null for xml/@*; @* only selects attributes without namespace (e.g., only 20% instead of both 10% and 20%)."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"DOMAttributeIterator\", \"JDOMAttributeIterator\", \"selectSingleNode\", \"assertXPathValueIterator\"],\n\"input_conditions\": [\"xpath expression xml/@*\", \"xml document with default namespace and prefixed attribute\", \"test context vendor/product/price:amount/@*\"],\n\"expected\": \"selectSingleNode should return the attribute node for @* when namespaced attributes exist; @* should select all attributes including those with namespaces.\",\n\"actual\": \"selectSingleNode returns null for xml/@*; @* only selects attributes without namespace (e.g., only 20% instead of both 10% and 20%).\",\n\"reproduction_steps\": [\n    \"Create XML: <xml xmlns:x='foo' x:pop='a'/>\",\n    \"Execute XPath: xml/@*\",\n    \"Call selectSingleNode (returns null)\",\n    \"Alternatively, use @x:* which works fine\",\n    \"Run test: assertXPathValueIterator with vendor/product/price:amount/@* expecting both attributes, but only gets one\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"DOMAttributeIterator\", \"JDOMAttributeIterator\", \"selectSingleNode\", \"assertXPathValueIterator\"],\n\"input_conditions\": [\"xpath expression xml/@*\", \"xml document with default namespace and prefixed attribute\", \"test context vendor/product/price:amount/@*\"],\n\"expected\": \"selectSingleNode should return the attribute node for @* when namespaced attributes exist; @* should select all attributes including those with namespaces.\",\n\"actual\": \"selectSingleNode returns null for xml/@*; @* only selects attributes without namespace (e.g., only 20% instead of both 10% and 20%).\",\n\"reproduction_steps\": [\n    \"Create XML: <xml xmlns:x='foo' x:pop='a'/>\",\n    \"Execute XPath: xml/@*\",\n    \"Call selectSingleNode (returns null)\",\n    \"Alternatively, use @x:* which works fine\",\n    \"Run test: assertXPathValueIterator with vendor/product/price:amount/@* expecting both attributes, but only gets one\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

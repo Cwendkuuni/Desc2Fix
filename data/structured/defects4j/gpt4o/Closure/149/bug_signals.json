@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-149",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "null"
+    ],
+    "api_involved": [
+      "Closure Compiler",
+      "Closure Compiler Service"
+    ],
+    "input_conditions": [
+      "Large files with strings",
+      "Non-ASCII characters",
+      "UTF-8 encoding"
+    ],
+    "reproduction_steps": [
+      "Use Closure Compiler on a file like ru.js with non-ASCII characters.",
+      "Observe that minified file size is larger than the original file."
+    ],
+    "expected": [
+      "Option to turn off string escaping, resulting in smaller file sizes."
+    ],
+    "actual": [
+      "Strings are escaped into ASCII characters, increasing file size."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "null"
+    ],
+    "api_involved": [
+      "Closure Compiler",
+      "Closure Compiler Service"
+    ],
+    "input_conditions": [
+      "Large files with strings",
+      "Non-ASCII characters",
+      "UTF-8 encoding"
+    ],
+    "reproduction_steps": [
+      "Use Closure Compiler on a file like ru.js with non-ASCII characters.",
+      "Observe that minified file size is larger than the original file."
+    ],
+    "expected": [
+      "Option to turn off string escaping, resulting in smaller file sizes."
+    ],
+    "actual": [
+      "Strings are escaped into ASCII characters, increasing file size."
+    ]
+  },
+  "raw_response": "```\n{\n    \"exception\": \"null\",\n    \"api_involved\": [\"Closure Compiler\", \"Closure Compiler Service\"],\n    \"input_conditions\": [\"Large files with strings\", \"Non-ASCII characters\", \"UTF-8 encoding\"],\n    \"expected\": \"Option to turn off string escaping, resulting in smaller file sizes.\",\n    \"actual\": \"Strings are escaped into ASCII characters, increasing file size.\",\n    \"reproduction_steps\": [\n        \"Use Closure Compiler on a file like ru.js with non-ASCII characters.\",\n        \"Observe that minified file size is larger than the original file.\"\n    ]\n}\n```",
+  "llm_response": "```\n{\n    \"exception\": \"null\",\n    \"api_involved\": [\"Closure Compiler\", \"Closure Compiler Service\"],\n    \"input_conditions\": [\"Large files with strings\", \"Non-ASCII characters\", \"UTF-8 encoding\"],\n    \"expected\": \"Option to turn off string escaping, resulting in smaller file sizes.\",\n    \"actual\": \"Strings are escaped into ASCII characters, increasing file size.\",\n    \"reproduction_steps\": [\n        \"Use Closure Compiler on a file like ru.js with non-ASCII characters.\",\n        \"Observe that minified file size is larger than the original file.\"\n    ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

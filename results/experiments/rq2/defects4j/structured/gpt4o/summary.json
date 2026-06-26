@@ -1,0 +1,18 @@
+{
+  "instances": 10,
+  "with_report_text": 10,
+  "with_test_text": 10,
+  "avg_rouge_l": 0.045644,
+  "avg_jaccard": 0.080073,
+  "avg_identifier_jaccard": 0.045574,
+  "avg_pos_overlap": 0.708333,
+  "avg_structured_macro_jaccard": 0.026303,
+  "avg_structured_all_jaccard": 0.080073,
+  "avg_sbert": 0.4147,
+  "avg_codebert": 0.890342,
+  "avg_openai_embedding": 0.533708,
+  "dataset": "defects4j",
+  "scenario": "structured",
+  "model": "gpt4o",
+  "artifact_pair": "report_test"
+}

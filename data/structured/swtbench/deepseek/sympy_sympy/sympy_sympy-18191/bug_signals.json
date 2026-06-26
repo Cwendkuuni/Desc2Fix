@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-18191",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [
+      "Recursion error"
+    ],
+    "api_involved": [
+      "sqrt",
+      "tan",
+      "sympy.core.power.Pow._eval_nseries"
+    ],
+    "input_conditions": [
+      "sqrt(1 / tan(1 + I))"
+    ],
+    "reproduction_steps": [
+      "Call sqrt(1 / tan(1 + I))",
+      "Observe recursion error"
+    ],
+    "expected": [
+      "Proper evaluation or error handling without infinite recursion"
+    ],
+    "actual": [
+      "Recursion error due to missing check in _eval_nseries method"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Recursion error"
+    ],
+    "api_involved": [
+      "sqrt",
+      "tan",
+      "sympy.core.power.Pow._eval_nseries"
+    ],
+    "input_conditions": [
+      "sqrt(1 / tan(1 + I))"
+    ],
+    "reproduction_steps": [
+      "Call sqrt(1 / tan(1 + I))",
+      "Observe recursion error"
+    ],
+    "expected": [
+      "Proper evaluation or error handling without infinite recursion"
+    ],
+    "actual": [
+      "Recursion error due to missing check in _eval_nseries method"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"Recursion error\",\n\"api_involved\": [\"sqrt\", \"tan\", \"sympy.core.power.Pow._eval_nseries\"],\n\"input_conditions\": [\"sqrt(1 / tan(1 + I))\"],\n\"expected\": \"Proper evaluation or error handling without infinite recursion\",\n\"actual\": \"Recursion error due to missing check in _eval_nseries method\",\n\"reproduction_steps\": [\"Call sqrt(1 / tan(1 + I))\", \"Observe recursion error\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"Recursion error\",\n\"api_involved\": [\"sqrt\", \"tan\", \"sympy.core.power.Pow._eval_nseries\"],\n\"input_conditions\": [\"sqrt(1 / tan(1 + I))\"],\n\"expected\": \"Proper evaluation or error handling without infinite recursion\",\n\"actual\": \"Recursion error due to missing check in _eval_nseries method\",\n\"reproduction_steps\": [\"Call sqrt(1 / tan(1 + I))\", \"Observe recursion error\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "matplotlib__matplotlib-13959",
+  "project": null,
+  "repo": "matplotlib/matplotlib",
+  "signals": {
+    "exception": [
+      "ValueError: 'c' argument has 12 elements, which is not acceptable for use with 'x' with size 12, 'y' with size 12."
+    ],
+    "api_involved": [
+      "scatter()"
+    ],
+    "input_conditions": [
+      "c must match either the shape of x or y",
+      "x and y must have the same size"
+    ],
+    "reproduction_steps": [
+      "Use scatter() with x and y of the same size but c with a different shape."
+    ],
+    "expected": [
+      "All inputs must flatten or ravel to the same size for scatter() to work correctly."
+    ],
+    "actual": [
+      "c must match either the shape of x or y, not just the size."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ValueError: 'c' argument has 12 elements, which is not acceptable for use with 'x' with size 12, 'y' with size 12."
+    ],
+    "api_involved": [
+      "scatter()"
+    ],
+    "input_conditions": [
+      "c must match either the shape of x or y",
+      "x and y must have the same size"
+    ],
+    "reproduction_steps": [
+      "Use scatter() with x and y of the same size but c with a different shape."
+    ],
+    "expected": [
+      "All inputs must flatten or ravel to the same size for scatter() to work correctly."
+    ],
+    "actual": [
+      "c must match either the shape of x or y, not just the size."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"ValueError: 'c' argument has 12 elements, which is not acceptable for use with 'x' with size 12, 'y' with size 12.\",\n  \"api_involved\": [\"scatter()\"],\n  \"input_conditions\": [\"c must match either the shape of x or y\", \"x and y must have the same size\"],\n  \"expected\": \"All inputs must flatten or ravel to the same size for scatter() to work correctly.\",\n  \"actual\": \"c must match either the shape of x or y, not just the size.\",\n  \"reproduction_steps\": [\"Use scatter() with x and y of the same size but c with a different shape.\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"ValueError: 'c' argument has 12 elements, which is not acceptable for use with 'x' with size 12, 'y' with size 12.\",\n  \"api_involved\": [\"scatter()\"],\n  \"input_conditions\": [\"c must match either the shape of x or y\", \"x and y must have the same size\"],\n  \"expected\": \"All inputs must flatten or ravel to the same size for scatter() to work correctly.\",\n  \"actual\": \"c must match either the shape of x or y, not just the size.\",\n  \"reproduction_steps\": [\"Use scatter() with x and y of the same size but c with a different shape.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

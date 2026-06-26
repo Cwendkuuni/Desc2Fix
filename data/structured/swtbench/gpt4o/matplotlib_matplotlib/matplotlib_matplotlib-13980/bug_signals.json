@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "matplotlib__matplotlib-13980",
+  "project": null,
+  "repo": "matplotlib/matplotlib",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "matplotlib.pyplot.polar"
+    ],
+    "input_conditions": [
+      "Matplotlib version 3.0.2",
+      "Operating systems: Windows 10, Ubuntu Linux",
+      "Python versions: 3.7, 3.6",
+      "JupyterLab 0.35.4"
+    ],
+    "reproduction_steps": [
+      "Plot data using a polar plot in Matplotlib in a Jupyter Notebook."
+    ],
+    "expected": [
+      "The bottom y_limit should default to zero, making the plot's origin (r=0) at the center."
+    ],
+    "actual": [
+      "The bottom y_limit is non-zero, creating a hole at the origin in the polar plot."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "matplotlib.pyplot.polar"
+    ],
+    "input_conditions": [
+      "Matplotlib version 3.0.2",
+      "Operating systems: Windows 10, Ubuntu Linux",
+      "Python versions: 3.7, 3.6",
+      "JupyterLab 0.35.4"
+    ],
+    "reproduction_steps": [
+      "Plot data using a polar plot in Matplotlib in a Jupyter Notebook."
+    ],
+    "expected": [
+      "The bottom y_limit should default to zero, making the plot's origin (r=0) at the center."
+    ],
+    "actual": [
+      "The bottom y_limit is non-zero, creating a hole at the origin in the polar plot."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"matplotlib.pyplot.polar\"],\n  \"input_conditions\": [\"Matplotlib version 3.0.2\", \"Operating systems: Windows 10, Ubuntu Linux\", \"Python versions: 3.7, 3.6\", \"JupyterLab 0.35.4\"],\n  \"expected\": \"The bottom y_limit should default to zero, making the plot's origin (r=0) at the center.\",\n  \"actual\": \"The bottom y_limit is non-zero, creating a hole at the origin in the polar plot.\",\n  \"reproduction_steps\": [\"Plot data using a polar plot in Matplotlib in a Jupyter Notebook.\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"matplotlib.pyplot.polar\"],\n  \"input_conditions\": [\"Matplotlib version 3.0.2\", \"Operating systems: Windows 10, Ubuntu Linux\", \"Python versions: 3.7, 3.6\", \"JupyterLab 0.35.4\"],\n  \"expected\": \"The bottom y_limit should default to zero, making the plot's origin (r=0) at the center.\",\n  \"actual\": \"The bottom y_limit is non-zero, creating a hole at the origin in the polar plot.\",\n  \"reproduction_steps\": [\"Plot data using a polar plot in Matplotlib in a Jupyter Notebook.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

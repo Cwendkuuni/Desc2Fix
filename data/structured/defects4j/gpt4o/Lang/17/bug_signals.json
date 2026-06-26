@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Lang-17",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "StringEscapeUtils.escapeXml",
+      "CharSequenceTranslator.translate"
+    ],
+    "input_conditions": [
+      "input contains characters in Supplementary Planes"
+    ],
+    "reproduction_steps": [
+      "Create a string containing characters in Supplementary Planes (e.g., \"\\uD842\\uDFB7\" + \"A\").",
+      "Pass the string to StringEscapeUtils.escapeXml.",
+      "Check if the output is the same as the input."
+    ],
+    "expected": [
+      "Output of StringEscapeUtils.escapeXml should be equal to input when no characters to be escaped are present."
+    ],
+    "actual": [
+      "Output of StringEscapeUtils.escapeXml is different from input when it contains characters in Supplementary Planes."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "StringEscapeUtils.escapeXml",
+      "CharSequenceTranslator.translate"
+    ],
+    "input_conditions": [
+      "input contains characters in Supplementary Planes"
+    ],
+    "reproduction_steps": [
+      "Create a string containing characters in Supplementary Planes (e.g., \"\\uD842\\uDFB7\" + \"A\").",
+      "Pass the string to StringEscapeUtils.escapeXml.",
+      "Check if the output is the same as the input."
+    ],
+    "expected": [
+      "Output of StringEscapeUtils.escapeXml should be equal to input when no characters to be escaped are present."
+    ],
+    "actual": [
+      "Output of StringEscapeUtils.escapeXml is different from input when it contains characters in Supplementary Planes."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"StringEscapeUtils.escapeXml\", \"CharSequenceTranslator.translate\"],\n  \"input_conditions\": [\"input contains characters in Supplementary Planes\"],\n  \"expected\": \"Output of StringEscapeUtils.escapeXml should be equal to input when no characters to be escaped are present.\",\n  \"actual\": \"Output of StringEscapeUtils.escapeXml is different from input when it contains characters in Supplementary Planes.\",\n  \"reproduction_steps\": [\n    \"Create a string containing characters in Supplementary Planes (e.g., \\\"\\\\uD842\\\\uDFB7\\\" + \\\"A\\\").\",\n    \"Pass the string to StringEscapeUtils.escapeXml.\",\n    \"Check if the output is the same as the input.\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"StringEscapeUtils.escapeXml\", \"CharSequenceTranslator.translate\"],\n  \"input_conditions\": [\"input contains characters in Supplementary Planes\"],\n  \"expected\": \"Output of StringEscapeUtils.escapeXml should be equal to input when no characters to be escaped are present.\",\n  \"actual\": \"Output of StringEscapeUtils.escapeXml is different from input when it contains characters in Supplementary Planes.\",\n  \"reproduction_steps\": [\n    \"Create a string containing characters in Supplementary Planes (e.g., \\\"\\\\uD842\\\\uDFB7\\\" + \\\"A\\\").\",\n    \"Pass the string to StringEscapeUtils.escapeXml.\",\n    \"Check if the output is the same as the input.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

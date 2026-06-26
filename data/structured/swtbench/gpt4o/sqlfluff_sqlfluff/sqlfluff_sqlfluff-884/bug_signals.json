@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sqlfluff__sqlfluff-884",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "segment.is_whitespace"
+    ],
+    "input_conditions": [
+      "Whitespace token"
+    ],
+    "reproduction_steps": [
+      "Check the value of segment.is_whitespace for a Whitespace token"
+    ],
+    "expected": [
+      "segment.is_whitespace returns True"
+    ],
+    "actual": [
+      "segment.is_whitespace returns False"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "segment.is_whitespace"
+    ],
+    "input_conditions": [
+      "Whitespace token"
+    ],
+    "reproduction_steps": [
+      "Check the value of segment.is_whitespace for a Whitespace token"
+    ],
+    "expected": [
+      "segment.is_whitespace returns True"
+    ],
+    "actual": [
+      "segment.is_whitespace returns False"
+    ]
+  },
+  "raw_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"segment.is_whitespace\"],\n\"input_conditions\": [\"Whitespace token\"],\n\"expected\": \"segment.is_whitespace returns True\",\n\"actual\": \"segment.is_whitespace returns False\",\n\"reproduction_steps\": [\"Check the value of segment.is_whitespace for a Whitespace token\"]\n}\n```",
+  "llm_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"segment.is_whitespace\"],\n\"input_conditions\": [\"Whitespace token\"],\n\"expected\": \"segment.is_whitespace returns True\",\n\"actual\": \"segment.is_whitespace returns False\",\n\"reproduction_steps\": [\"Check the value of segment.is_whitespace for a Whitespace token\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

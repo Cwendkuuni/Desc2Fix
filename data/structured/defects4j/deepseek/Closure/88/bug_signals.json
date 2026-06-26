@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-88",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "DeadAssignmentElimination",
+      "closureCompilerTest"
+    ],
+    "input_conditions": [
+      "simple mode compilation",
+      "assignment in expression context",
+      "variable used after assignment"
+    ],
+    "reproduction_steps": [
+      "Define a function with a variable assignment inside a compound expression where the assigned variable is used later.",
+      "Compile the function in simple mode using the Closure Compiler with the DeadAssignmentElimination pass enabled.",
+      "Observe that the assignment is incorrectly eliminated, breaking subsequent uses of the variable."
+    ],
+    "expected": [
+      "The assignment `nodeId=someNode.id` should be preserved and the value assigned to `nodeId` should be used in subsequent expressions."
+    ],
+    "actual": [
+      "The assignment `nodeId=someNode.id` is incorrectly removed and replaced with `b.id`, causing `nodeId` to be undefined when used in `parseInt(a.substr(1))`."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "DeadAssignmentElimination",
+      "closureCompilerTest"
+    ],
+    "input_conditions": [
+      "simple mode compilation",
+      "assignment in expression context",
+      "variable used after assignment"
+    ],
+    "reproduction_steps": [
+      "Define a function with a variable assignment inside a compound expression where the assigned variable is used later.",
+      "Compile the function in simple mode using the Closure Compiler with the DeadAssignmentElimination pass enabled.",
+      "Observe that the assignment is incorrectly eliminated, breaking subsequent uses of the variable."
+    ],
+    "expected": [
+      "The assignment `nodeId=someNode.id` should be preserved and the value assigned to `nodeId` should be used in subsequent expressions."
+    ],
+    "actual": [
+      "The assignment `nodeId=someNode.id` is incorrectly removed and replaced with `b.id`, causing `nodeId` to be undefined when used in `parseInt(a.substr(1))`."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"DeadAssignmentElimination\", \"closureCompilerTest\"],\n\"input_conditions\": [\"simple mode compilation\", \"assignment in expression context\", \"variable used after assignment\"],\n\"expected\": \"The assignment `nodeId=someNode.id` should be preserved and the value assigned to `nodeId` should be used in subsequent expressions.\",\n\"actual\": \"The assignment `nodeId=someNode.id` is incorrectly removed and replaced with `b.id`, causing `nodeId` to be undefined when used in `parseInt(a.substr(1))`.\",\n\"reproduction_steps\": [\n\"Define a function with a variable assignment inside a compound expression where the assigned variable is used later.\",\n\"Compile the function in simple mode using the Closure Compiler with the DeadAssignmentElimination pass enabled.\",\n\"Observe that the assignment is incorrectly eliminated, breaking subsequent uses of the variable.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"DeadAssignmentElimination\", \"closureCompilerTest\"],\n\"input_conditions\": [\"simple mode compilation\", \"assignment in expression context\", \"variable used after assignment\"],\n\"expected\": \"The assignment `nodeId=someNode.id` should be preserved and the value assigned to `nodeId` should be used in subsequent expressions.\",\n\"actual\": \"The assignment `nodeId=someNode.id` is incorrectly removed and replaced with `b.id`, causing `nodeId` to be undefined when used in `parseInt(a.substr(1))`.\",\n\"reproduction_steps\": [\n\"Define a function with a variable assignment inside a compound expression where the assigned variable is used later.\",\n\"Compile the function in simple mode using the Closure Compiler with the DeadAssignmentElimination pass enabled.\",\n\"Observe that the assignment is incorrectly eliminated, breaking subsequent uses of the variable.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

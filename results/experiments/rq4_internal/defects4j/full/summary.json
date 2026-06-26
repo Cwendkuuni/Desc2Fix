@@ -1,0 +1,18 @@
+{
+  "instances": 10,
+  "with_test_text": 10,
+  "with_patch_text": 10,
+  "avg_rouge_l": 0.140479,
+  "avg_jaccard": 0.137435,
+  "avg_identifier_jaccard": 0.088319,
+  "avg_pos_overlap": 0.875,
+  "avg_sbert": 0.463818,
+  "avg_codebert": 0.949175,
+  "avg_openai_embedding": 0.591599,
+  "dataset": "defects4j",
+  "scenario": "raw",
+  "artifact_pair": "test_patch",
+  "patch_view": "full",
+  "internal": true,
+  "paper_rq": false
+}

@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-29",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "OpenMapRealVector.ebeMultiply(RealVector)",
+      "OpenMapRealVector.ebeDivide(RealVector)",
+      "RealVector.ebeMultiply(RealVector)",
+      "RealVector.ebeDivide(RealVector)"
+    ],
+    "input_conditions": [
+      "The specified RealVector contains NaN or infinity entries",
+      "Sparse representation (OpenMapRealVector) with negative zero (-0d) entries"
+    ],
+    "reproduction_steps": [
+      "Create an ArrayRealVector with value 1d.",
+      "Create an OpenMapRealVector with value -0d.",
+      "Call ebeMultiply on the first vector with the second as argument.",
+      "Check that the result entry is -0d (observe sign loss: prints Infinity for 1d / w.getEntry(0) instead of -Infinity).",
+      "Alternatively, for ebeDivide, create same vectors and call ebeDivide, check that result is -Infinity (instead of +Infinity)."
+    ],
+    "expected": [
+      "Correct multiplication and division results, preserving sign of zero and handling NaN/infinity correctly (e.g., 1d * -0d should give -0d, not +0d; 1d / -0d should give -Infinity, not +Infinity)"
+    ],
+    "actual": [
+      "Returns wrong values: sign of zero is lost (positive zero instead of negative zero), and NaN/infinity entries produce incorrect results because the implementation assumes x * 0 == 0 for all x."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "OpenMapRealVector.ebeMultiply(RealVector)",
+      "OpenMapRealVector.ebeDivide(RealVector)",
+      "RealVector.ebeMultiply(RealVector)",
+      "RealVector.ebeDivide(RealVector)"
+    ],
+    "input_conditions": [
+      "The specified RealVector contains NaN or infinity entries",
+      "Sparse representation (OpenMapRealVector) with negative zero (-0d) entries"
+    ],
+    "reproduction_steps": [
+      "Create an ArrayRealVector with value 1d.",
+      "Create an OpenMapRealVector with value -0d.",
+      "Call ebeMultiply on the first vector with the second as argument.",
+      "Check that the result entry is -0d (observe sign loss: prints Infinity for 1d / w.getEntry(0) instead of -Infinity).",
+      "Alternatively, for ebeDivide, create same vectors and call ebeDivide, check that result is -Infinity (instead of +Infinity)."
+    ],
+    "expected": [
+      "Correct multiplication and division results, preserving sign of zero and handling NaN/infinity correctly (e.g., 1d * -0d should give -0d, not +0d; 1d / -0d should give -Infinity, not +Infinity)"
+    ],
+    "actual": [
+      "Returns wrong values: sign of zero is lost (positive zero instead of negative zero), and NaN/infinity entries produce incorrect results because the implementation assumes x * 0 == 0 for all x."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"OpenMapRealVector.ebeMultiply(RealVector)\", \"OpenMapRealVector.ebeDivide(RealVector)\", \"RealVector.ebeMultiply(RealVector)\", \"RealVector.ebeDivide(RealVector)\"],\n\"input_conditions\": [\"The specified RealVector contains NaN or infinity entries\", \"Sparse representation (OpenMapRealVector) with negative zero (-0d) entries\"],\n\"expected\": \"Correct multiplication and division results, preserving sign of zero and handling NaN/infinity correctly (e.g., 1d * -0d should give -0d, not +0d; 1d / -0d should give -Infinity, not +Infinity)\",\n\"actual\": \"Returns wrong values: sign of zero is lost (positive zero instead of negative zero), and NaN/infinity entries produce incorrect results because the implementation assumes x * 0 == 0 for all x.\",\n\"reproduction_steps\": [\n\"Create an ArrayRealVector with value 1d.\",\n\"Create an OpenMapRealVector with value -0d.\",\n\"Call ebeMultiply on the first vector with the second as argument.\",\n\"Check that the result entry is -0d (observe sign loss: prints Infinity for 1d / w.getEntry(0) instead of -Infinity).\",\n\"Alternatively, for ebeDivide, create same vectors and call ebeDivide, check that result is -Infinity (instead of +Infinity).\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"OpenMapRealVector.ebeMultiply(RealVector)\", \"OpenMapRealVector.ebeDivide(RealVector)\", \"RealVector.ebeMultiply(RealVector)\", \"RealVector.ebeDivide(RealVector)\"],\n\"input_conditions\": [\"The specified RealVector contains NaN or infinity entries\", \"Sparse representation (OpenMapRealVector) with negative zero (-0d) entries\"],\n\"expected\": \"Correct multiplication and division results, preserving sign of zero and handling NaN/infinity correctly (e.g., 1d * -0d should give -0d, not +0d; 1d / -0d should give -Infinity, not +Infinity)\",\n\"actual\": \"Returns wrong values: sign of zero is lost (positive zero instead of negative zero), and NaN/infinity entries produce incorrect results because the implementation assumes x * 0 == 0 for all x.\",\n\"reproduction_steps\": [\n\"Create an ArrayRealVector with value 1d.\",\n\"Create an OpenMapRealVector with value -0d.\",\n\"Call ebeMultiply on the first vector with the second as argument.\",\n\"Check that the result entry is -0d (observe sign loss: prints Infinity for 1d / w.getEntry(0) instead of -Infinity).\",\n\"Alternatively, for ebeDivide, create same vectors and call ebeDivide, check that result is -Infinity (instead of +Infinity).\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

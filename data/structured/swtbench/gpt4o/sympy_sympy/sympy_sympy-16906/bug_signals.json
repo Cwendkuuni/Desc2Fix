@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-16906",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "str",
+      "pretty",
+      "MathML presentation printers",
+      "ZeroMatrix",
+      "Identity"
+    ],
+    "input_conditions": [
+      "OneMatrix"
+    ],
+    "reproduction_steps": [
+      "Use str, pretty, or MathML printers for OneMatrix."
+    ],
+    "expected": [
+      "Correct LaTeX expression rendering."
+    ],
+    "actual": [
+      "LaTeX expression renders unexpectedly."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "str",
+      "pretty",
+      "MathML presentation printers",
+      "ZeroMatrix",
+      "Identity"
+    ],
+    "input_conditions": [
+      "OneMatrix"
+    ],
+    "reproduction_steps": [
+      "Use str, pretty, or MathML printers for OneMatrix."
+    ],
+    "expected": [
+      "Correct LaTeX expression rendering."
+    ],
+    "actual": [
+      "LaTeX expression renders unexpectedly."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"str\", \"pretty\", \"MathML presentation printers\", \"ZeroMatrix\", \"Identity\"],\n  \"input_conditions\": [\"OneMatrix\"],\n  \"expected\": \"Correct LaTeX expression rendering.\",\n  \"actual\": \"LaTeX expression renders unexpectedly.\",\n  \"reproduction_steps\": [\"Use str, pretty, or MathML printers for OneMatrix.\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"str\", \"pretty\", \"MathML presentation printers\", \"ZeroMatrix\", \"Identity\"],\n  \"input_conditions\": [\"OneMatrix\"],\n  \"expected\": \"Correct LaTeX expression rendering.\",\n  \"actual\": \"LaTeX expression renders unexpectedly.\",\n  \"reproduction_steps\": [\"Use str, pretty, or MathML printers for OneMatrix.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

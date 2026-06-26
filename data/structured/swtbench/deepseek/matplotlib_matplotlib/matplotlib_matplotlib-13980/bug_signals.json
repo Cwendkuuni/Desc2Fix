@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "matplotlib__matplotlib-13980",
+  "project": null,
+  "repo": "matplotlib/matplotlib",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "polar plot",
+      "y_limit",
+      "axis scaling"
+    ],
+    "input_conditions": [
+      "data plotted on polar plot",
+      "negative radial scale minimum autoset",
+      "Matplotlib version 3.0.2",
+      "Jupyter Notebook environment"
+    ],
+    "reproduction_steps": [
+      "Create a polar plot in Matplotlib",
+      "Plot a set of data on the polar plot",
+      "Observe the default y-axis limits"
+    ],
+    "expected": [
+      "radial minimum should be zero (no hole around origin)"
+    ],
+    "actual": [
+      "radial minimum is negative (hole around origin), e.g., (-0.04989219852580686, 1.0497180912808268)"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "polar plot",
+      "y_limit",
+      "axis scaling"
+    ],
+    "input_conditions": [
+      "data plotted on polar plot",
+      "negative radial scale minimum autoset",
+      "Matplotlib version 3.0.2",
+      "Jupyter Notebook environment"
+    ],
+    "reproduction_steps": [
+      "Create a polar plot in Matplotlib",
+      "Plot a set of data on the polar plot",
+      "Observe the default y-axis limits"
+    ],
+    "expected": [
+      "radial minimum should be zero (no hole around origin)"
+    ],
+    "actual": [
+      "radial minimum is negative (hole around origin), e.g., (-0.04989219852580686, 1.0497180912808268)"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"polar plot\", \"y_limit\", \"axis scaling\"],\n\"input_conditions\": [\"data plotted on polar plot\", \"negative radial scale minimum autoset\", \"Matplotlib version 3.0.2\", \"Jupyter Notebook environment\"],\n\"expected\": \"radial minimum should be zero (no hole around origin)\",\n\"actual\": \"radial minimum is negative (hole around origin), e.g., (-0.04989219852580686, 1.0497180912808268)\",\n\"reproduction_steps\": [\"Create a polar plot in Matplotlib\", \"Plot a set of data on the polar plot\", \"Observe the default y-axis limits\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"polar plot\", \"y_limit\", \"axis scaling\"],\n\"input_conditions\": [\"data plotted on polar plot\", \"negative radial scale minimum autoset\", \"Matplotlib version 3.0.2\", \"Jupyter Notebook environment\"],\n\"expected\": \"radial minimum should be zero (no hole around origin)\",\n\"actual\": \"radial minimum is negative (hole around origin), e.g., (-0.04989219852580686, 1.0497180912808268)\",\n\"reproduction_steps\": [\"Create a polar plot in Matplotlib\", \"Plot a set of data on the polar plot\", \"Observe the default y-axis limits\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

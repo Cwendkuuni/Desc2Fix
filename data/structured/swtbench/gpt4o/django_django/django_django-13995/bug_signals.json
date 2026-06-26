@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-13995",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "admindocs",
+      "@cached_property"
+    ],
+    "input_conditions": [
+      "properties decorated with @cached_property"
+    ],
+    "reproduction_steps": [
+      "Navigate to the admindocs page.",
+      "Observe the models section for properties with @cached_property."
+    ],
+    "expected": [
+      "The models section of the admindocs page includes properties decorated with @cached_property along with fields, properties, and methods."
+    ],
+    "actual": [
+      "Properties decorated with @cached_property are not included in the models section of the admindocs page."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "admindocs",
+      "@cached_property"
+    ],
+    "input_conditions": [
+      "properties decorated with @cached_property"
+    ],
+    "reproduction_steps": [
+      "Navigate to the admindocs page.",
+      "Observe the models section for properties with @cached_property."
+    ],
+    "expected": [
+      "The models section of the admindocs page includes properties decorated with @cached_property along with fields, properties, and methods."
+    ],
+    "actual": [
+      "Properties decorated with @cached_property are not included in the models section of the admindocs page."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"admindocs\", \"@cached_property\"],\n  \"input_conditions\": [\"properties decorated with @cached_property\"],\n  \"expected\": \"The models section of the admindocs page includes properties decorated with @cached_property along with fields, properties, and methods.\",\n  \"actual\": \"Properties decorated with @cached_property are not included in the models section of the admindocs page.\",\n  \"reproduction_steps\": [\"Navigate to the admindocs page.\", \"Observe the models section for properties with @cached_property.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"admindocs\", \"@cached_property\"],\n  \"input_conditions\": [\"properties decorated with @cached_property\"],\n  \"expected\": \"The models section of the admindocs page includes properties decorated with @cached_property along with fields, properties, and methods.\",\n  \"actual\": \"Properties decorated with @cached_property are not included in the models section of the admindocs page.\",\n  \"reproduction_steps\": [\"Navigate to the admindocs page.\", \"Observe the models section for properties with @cached_property.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

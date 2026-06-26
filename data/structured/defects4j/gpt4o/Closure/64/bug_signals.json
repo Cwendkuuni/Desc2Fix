@@ -1,0 +1,51 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-64",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "compiler.jar"
+    ],
+    "input_conditions": [
+      "--language_in=ECMASCRIPT5_STRICT",
+      "--compilation_level=ADVANCED_OPTIMIZATIONS",
+      "--warning_level=VERBOSE"
+    ],
+    "reproduction_steps": [
+      "Create a JS file called 'get_num.js' with the contents 'var getNum = function() { return 5; };'",
+      "Create a JS file called 'alert.js' with the contents 'alert(getNum());'",
+      "Compile the two files using the compiler.jar with specified options"
+    ],
+    "expected": [
+      "'use strict';alert(5); or just 'alert(5)' since this is already ES5 Strict compliant."
+    ],
+    "actual": []
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "compiler.jar"
+    ],
+    "input_conditions": [
+      "--language_in=ECMASCRIPT5_STRICT",
+      "--compilation_level=ADVANCED_OPTIMIZATIONS",
+      "--warning_level=VERBOSE"
+    ],
+    "reproduction_steps": [
+      "Create a JS file called 'get_num.js' with the contents 'var getNum = function() { return 5; };'",
+      "Create a JS file called 'alert.js' with the contents 'alert(getNum());'",
+      "Compile the two files using the compiler.jar with specified options"
+    ],
+    "expected": [
+      "'use strict';alert(5); or just 'alert(5)' since this is already ES5 Strict compliant."
+    ],
+    "actual": []
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"compiler.jar\"],\n  \"input_conditions\": [\"--language_in=ECMASCRIPT5_STRICT\", \"--compilation_level=ADVANCED_OPTIMIZATIONS\", \"--warning_level=VERBOSE\"],\n  \"expected\": \"'use strict';alert(5); or just 'alert(5)' since this is already ES5 Strict compliant.\",\n  \"actual\": null,\n  \"reproduction_steps\": [\n    \"Create a JS file called 'get_num.js' with the contents 'var getNum = function() { return 5; };'\",\n    \"Create a JS file called 'alert.js' with the contents 'alert(getNum());'\",\n    \"Compile the two files using the compiler.jar with specified options\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"compiler.jar\"],\n  \"input_conditions\": [\"--language_in=ECMASCRIPT5_STRICT\", \"--compilation_level=ADVANCED_OPTIMIZATIONS\", \"--warning_level=VERBOSE\"],\n  \"expected\": \"'use strict';alert(5); or just 'alert(5)' since this is already ES5 Strict compliant.\",\n  \"actual\": null,\n  \"reproduction_steps\": [\n    \"Create a JS file called 'get_num.js' with the contents 'var getNum = function() { return 5; };'\",\n    \"Create a JS file called 'alert.js' with the contents 'alert(getNum());'\",\n    \"Compile the two files using the compiler.jar with specified options\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

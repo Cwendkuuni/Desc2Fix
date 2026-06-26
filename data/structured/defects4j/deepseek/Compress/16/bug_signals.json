@@ -1,0 +1,51 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Compress-16",
+  "project": "Compress",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "ArchiveStreamFactory"
+    ],
+    "input_conditions": [
+      "non-tar files with bytes that match relaxed tar detection",
+      "test AIFF file used by Apache Tika"
+    ],
+    "reproduction_steps": [
+      "Use ArchiveStreamFactory to detect the format of an AIFF test file",
+      "Observe that it is incorrectly identified as a tar file"
+    ],
+    "expected": [
+      "Improved detection heuristics avoid false positives like AIFF files while still matching true tar files"
+    ],
+    "actual": [
+      "Too relaxed tar detection in ArchiveStreamFactory falsely matches some non-tar files such as AIFF files"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "ArchiveStreamFactory"
+    ],
+    "input_conditions": [
+      "non-tar files with bytes that match relaxed tar detection",
+      "test AIFF file used by Apache Tika"
+    ],
+    "reproduction_steps": [
+      "Use ArchiveStreamFactory to detect the format of an AIFF test file",
+      "Observe that it is incorrectly identified as a tar file"
+    ],
+    "expected": [
+      "Improved detection heuristics avoid false positives like AIFF files while still matching true tar files"
+    ],
+    "actual": [
+      "Too relaxed tar detection in ArchiveStreamFactory falsely matches some non-tar files such as AIFF files"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"ArchiveStreamFactory\"],\n\"input_conditions\": [\"non-tar files with bytes that match relaxed tar detection\", \"test AIFF file used by Apache Tika\"],\n\"expected\": \"Improved detection heuristics avoid false positives like AIFF files while still matching true tar files\",\n\"actual\": \"Too relaxed tar detection in ArchiveStreamFactory falsely matches some non-tar files such as AIFF files\",\n\"reproduction_steps\": [\"Use ArchiveStreamFactory to detect the format of an AIFF test file\", \"Observe that it is incorrectly identified as a tar file\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"ArchiveStreamFactory\"],\n\"input_conditions\": [\"non-tar files with bytes that match relaxed tar detection\", \"test AIFF file used by Apache Tika\"],\n\"expected\": \"Improved detection heuristics avoid false positives like AIFF files while still matching true tar files\",\n\"actual\": \"Too relaxed tar detection in ArchiveStreamFactory falsely matches some non-tar files such as AIFF files\",\n\"reproduction_steps\": [\"Use ArchiveStreamFactory to detect the format of an AIFF test file\", \"Observe that it is incorrectly identified as a tar file\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

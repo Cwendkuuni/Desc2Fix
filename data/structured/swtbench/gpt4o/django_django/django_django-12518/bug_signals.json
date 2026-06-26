@@ -1,0 +1,63 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-12518",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "KeyError: ('testapp', '0001_initial')"
+    ],
+    "api_involved": [
+      "sqlmigrate",
+      "execute_from_command_line",
+      "run_from_argv",
+      "handle"
+    ],
+    "input_conditions": [
+      "migration name '0001' is ambiguous",
+      "trying to load '0001_initial'"
+    ],
+    "reproduction_steps": [
+      "Navigate to https://github.com/adamchainz/django-unique-together-bug",
+      "Run 'python manage.py sqlmigrate testapp 0001'",
+      "Run 'python manage.py sqlmigrate testapp 0001_initial'"
+    ],
+    "expected": [
+      "Be able to inspect the '0001_initial' migration or provide a clear error message."
+    ],
+    "actual": [
+      "CommandError due to ambiguous migration name and KeyError when trying to load '0001_initial'."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "KeyError: ('testapp', '0001_initial')"
+    ],
+    "api_involved": [
+      "sqlmigrate",
+      "execute_from_command_line",
+      "run_from_argv",
+      "handle"
+    ],
+    "input_conditions": [
+      "migration name '0001' is ambiguous",
+      "trying to load '0001_initial'"
+    ],
+    "reproduction_steps": [
+      "Navigate to https://github.com/adamchainz/django-unique-together-bug",
+      "Run 'python manage.py sqlmigrate testapp 0001'",
+      "Run 'python manage.py sqlmigrate testapp 0001_initial'"
+    ],
+    "expected": [
+      "Be able to inspect the '0001_initial' migration or provide a clear error message."
+    ],
+    "actual": [
+      "CommandError due to ambiguous migration name and KeyError when trying to load '0001_initial'."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"KeyError: ('testapp', '0001_initial')\",\n  \"api_involved\": [\"sqlmigrate\", \"execute_from_command_line\", \"run_from_argv\", \"handle\"],\n  \"input_conditions\": [\"migration name '0001' is ambiguous\", \"trying to load '0001_initial'\"],\n  \"expected\": \"Be able to inspect the '0001_initial' migration or provide a clear error message.\",\n  \"actual\": \"CommandError due to ambiguous migration name and KeyError when trying to load '0001_initial'.\",\n  \"reproduction_steps\": [\n    \"Navigate to https://github.com/adamchainz/django-unique-together-bug\",\n    \"Run 'python manage.py sqlmigrate testapp 0001'\",\n    \"Run 'python manage.py sqlmigrate testapp 0001_initial'\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"KeyError: ('testapp', '0001_initial')\",\n  \"api_involved\": [\"sqlmigrate\", \"execute_from_command_line\", \"run_from_argv\", \"handle\"],\n  \"input_conditions\": [\"migration name '0001' is ambiguous\", \"trying to load '0001_initial'\"],\n  \"expected\": \"Be able to inspect the '0001_initial' migration or provide a clear error message.\",\n  \"actual\": \"CommandError due to ambiguous migration name and KeyError when trying to load '0001_initial'.\",\n  \"reproduction_steps\": [\n    \"Navigate to https://github.com/adamchainz/django-unique-together-bug\",\n    \"Run 'python manage.py sqlmigrate testapp 0001'\",\n    \"Run 'python manage.py sqlmigrate testapp 0001_initial'\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

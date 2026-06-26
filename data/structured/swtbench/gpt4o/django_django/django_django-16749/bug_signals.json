@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-16749",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "ASGIRequest"
+    ],
+    "input_conditions": [
+      "settings.FORCE_SCRIPT_NAME = '/some-prefix'"
+    ],
+    "reproduction_steps": [
+      "Set settings.FORCE_SCRIPT_NAME to '/some-prefix'.",
+      "Start the Django server with the command: daphne django_project.asgi:application.",
+      "Navigate to http://localhost:8000/admin/login.",
+      "Observe the login form action URL."
+    ],
+    "expected": [
+      "The login form action URL should be '/some-prefix/admin/login'."
+    ],
+    "actual": [
+      "The login form action URL is '/admin/login'."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "ASGIRequest"
+    ],
+    "input_conditions": [
+      "settings.FORCE_SCRIPT_NAME = '/some-prefix'"
+    ],
+    "reproduction_steps": [
+      "Set settings.FORCE_SCRIPT_NAME to '/some-prefix'.",
+      "Start the Django server with the command: daphne django_project.asgi:application.",
+      "Navigate to http://localhost:8000/admin/login.",
+      "Observe the login form action URL."
+    ],
+    "expected": [
+      "The login form action URL should be '/some-prefix/admin/login'."
+    ],
+    "actual": [
+      "The login form action URL is '/admin/login'."
+    ]
+  },
+  "raw_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": [\"ASGIRequest\"],\n    \"input_conditions\": [\"settings.FORCE_SCRIPT_NAME = '/some-prefix'\"],\n    \"expected\": \"The login form action URL should be '/some-prefix/admin/login'.\",\n    \"actual\": \"The login form action URL is '/admin/login'.\",\n    \"reproduction_steps\": [\n        \"Set settings.FORCE_SCRIPT_NAME to '/some-prefix'.\",\n        \"Start the Django server with the command: daphne django_project.asgi:application.\",\n        \"Navigate to http://localhost:8000/admin/login.\",\n        \"Observe the login form action URL.\"\n    ]\n}\n```",
+  "llm_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": [\"ASGIRequest\"],\n    \"input_conditions\": [\"settings.FORCE_SCRIPT_NAME = '/some-prefix'\"],\n    \"expected\": \"The login form action URL should be '/some-prefix/admin/login'.\",\n    \"actual\": \"The login form action URL is '/admin/login'.\",\n    \"reproduction_steps\": [\n        \"Set settings.FORCE_SCRIPT_NAME to '/some-prefix'.\",\n        \"Start the Django server with the command: daphne django_project.asgi:application.\",\n        \"Navigate to http://localhost:8000/admin/login.\",\n        \"Observe the login form action URL.\"\n    ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

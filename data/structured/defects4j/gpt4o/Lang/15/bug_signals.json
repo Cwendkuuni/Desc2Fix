@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Lang-15",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "TypeUtils.getTypeArguments",
+      "TypeUtilsTest.testGetTypeArguments"
+    ],
+    "input_conditions": [
+      "Other class implements This interface and specifies type variables"
+    ],
+    "reproduction_steps": [
+      "Call TypeUtils.getTypeArguments() with Other.class and This.class",
+      "Check the size of the typeVarAssigns",
+      "Compare the returned type arguments against expected String class and Other class type parameters"
+    ],
+    "expected": [
+      "TypeUtils.getTypeArguments() correctly identifies and assigns type arguments for the Other class based on the This interface."
+    ],
+    "actual": [
+      "TypeUtils.getTypeArguments() misses type arguments for Other class because it incorrectly ignores the specified type variables in Other class."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "TypeUtils.getTypeArguments",
+      "TypeUtilsTest.testGetTypeArguments"
+    ],
+    "input_conditions": [
+      "Other class implements This interface and specifies type variables"
+    ],
+    "reproduction_steps": [
+      "Call TypeUtils.getTypeArguments() with Other.class and This.class",
+      "Check the size of the typeVarAssigns",
+      "Compare the returned type arguments against expected String class and Other class type parameters"
+    ],
+    "expected": [
+      "TypeUtils.getTypeArguments() correctly identifies and assigns type arguments for the Other class based on the This interface."
+    ],
+    "actual": [
+      "TypeUtils.getTypeArguments() misses type arguments for Other class because it incorrectly ignores the specified type variables in Other class."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"TypeUtils.getTypeArguments\", \"TypeUtilsTest.testGetTypeArguments\"],\n  \"input_conditions\": [\"Other class implements This interface and specifies type variables\"],\n  \"expected\": \"TypeUtils.getTypeArguments() correctly identifies and assigns type arguments for the Other class based on the This interface.\",\n  \"actual\": \"TypeUtils.getTypeArguments() misses type arguments for Other class because it incorrectly ignores the specified type variables in Other class.\",\n  \"reproduction_steps\": [\"Call TypeUtils.getTypeArguments() with Other.class and This.class\", \"Check the size of the typeVarAssigns\", \"Compare the returned type arguments against expected String class and Other class type parameters\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"TypeUtils.getTypeArguments\", \"TypeUtilsTest.testGetTypeArguments\"],\n  \"input_conditions\": [\"Other class implements This interface and specifies type variables\"],\n  \"expected\": \"TypeUtils.getTypeArguments() correctly identifies and assigns type arguments for the Other class based on the This interface.\",\n  \"actual\": \"TypeUtils.getTypeArguments() misses type arguments for Other class because it incorrectly ignores the specified type variables in Other class.\",\n  \"reproduction_steps\": [\"Call TypeUtils.getTypeArguments() with Other.class and This.class\", \"Check the size of the typeVarAssigns\", \"Compare the returned type arguments against expected String class and Other class type parameters\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

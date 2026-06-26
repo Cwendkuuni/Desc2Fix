@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-11823",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "cache_control",
+      "cache_page",
+      "UpdateCacheMiddleware.process_response"
+    ],
+    "input_conditions": [
+      "cache_control(max_age=3600)",
+      "cache_page(timeout=3600*24)"
+    ],
+    "reproduction_steps": [
+      "Decorate a view with cache_control(max_age=3600) and cache_page(timeout=3600*24).",
+      "Observe that the server-side cache uses the max_age value rather than the timeout."
+    ],
+    "expected": [
+      "The server-side cache should use the timeout value set by cache_page(timeout=3600*24) instead of the max_age value."
+    ],
+    "actual": [
+      "The server-side cache uses the max_age value set by cache_control(max_age=3600) instead of the timeout value."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "cache_control",
+      "cache_page",
+      "UpdateCacheMiddleware.process_response"
+    ],
+    "input_conditions": [
+      "cache_control(max_age=3600)",
+      "cache_page(timeout=3600*24)"
+    ],
+    "reproduction_steps": [
+      "Decorate a view with cache_control(max_age=3600) and cache_page(timeout=3600*24).",
+      "Observe that the server-side cache uses the max_age value rather than the timeout."
+    ],
+    "expected": [
+      "The server-side cache should use the timeout value set by cache_page(timeout=3600*24) instead of the max_age value."
+    ],
+    "actual": [
+      "The server-side cache uses the max_age value set by cache_control(max_age=3600) instead of the timeout value."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"cache_control\", \"cache_page\", \"UpdateCacheMiddleware.process_response\"],\n  \"input_conditions\": [\"cache_control(max_age=3600)\", \"cache_page(timeout=3600*24)\"],\n  \"expected\": \"The server-side cache should use the timeout value set by cache_page(timeout=3600*24) instead of the max_age value.\",\n  \"actual\": \"The server-side cache uses the max_age value set by cache_control(max_age=3600) instead of the timeout value.\",\n  \"reproduction_steps\": [\n    \"Decorate a view with cache_control(max_age=3600) and cache_page(timeout=3600*24).\",\n    \"Observe that the server-side cache uses the max_age value rather than the timeout.\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"cache_control\", \"cache_page\", \"UpdateCacheMiddleware.process_response\"],\n  \"input_conditions\": [\"cache_control(max_age=3600)\", \"cache_page(timeout=3600*24)\"],\n  \"expected\": \"The server-side cache should use the timeout value set by cache_page(timeout=3600*24) instead of the max_age value.\",\n  \"actual\": \"The server-side cache uses the max_age value set by cache_control(max_age=3600) instead of the timeout value.\",\n  \"reproduction_steps\": [\n    \"Decorate a view with cache_control(max_age=3600) and cache_page(timeout=3600*24).\",\n    \"Observe that the server-side cache uses the max_age value rather than the timeout.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

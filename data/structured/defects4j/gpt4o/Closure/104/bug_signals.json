@@ -1,0 +1,41 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-104",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "CanvasRenderingContext2D.prototype.globalCompositingOperation",
+      "CanvasRenderingContext2D.prototype.mitreLimit"
+    ],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [
+      "The method names should be globalCompositeOperation and miterLimit."
+    ],
+    "actual": [
+      "The method names were incorrectly typed as globalCompositingOperation and mitreLimit."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "CanvasRenderingContext2D.prototype.globalCompositingOperation",
+      "CanvasRenderingContext2D.prototype.mitreLimit"
+    ],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [
+      "The method names should be globalCompositeOperation and miterLimit."
+    ],
+    "actual": [
+      "The method names were incorrectly typed as globalCompositingOperation and mitreLimit."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"CanvasRenderingContext2D.prototype.globalCompositingOperation\", \"CanvasRenderingContext2D.prototype.mitreLimit\"],\n  \"input_conditions\": null,\n  \"expected\": \"The method names should be globalCompositeOperation and miterLimit.\",\n  \"actual\": \"The method names were incorrectly typed as globalCompositingOperation and mitreLimit.\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"CanvasRenderingContext2D.prototype.globalCompositingOperation\", \"CanvasRenderingContext2D.prototype.mitreLimit\"],\n  \"input_conditions\": null,\n  \"expected\": \"The method names should be globalCompositeOperation and miterLimit.\",\n  \"actual\": \"The method names were incorrectly typed as globalCompositingOperation and mitreLimit.\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

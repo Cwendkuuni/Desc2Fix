@@ -1,0 +1,29 @@
+You are an expert software engineer.
+Evaluate alignment between this structured bug report (extracted signals) and its triggering test code.
+
+Structured Bug Report (JSON signals):
+---
+{BUG_REPORT_STRUCTURED_JSON}
+---
+
+Triggering Test:
+---
+{TEST_CODE}
+---
+
+Rate the following (1–5 integers):
+- coverage: how well the test covers entities/APIs, input conditions, and reproduction steps in the structured signals
+- correctness: whether the test validates expected vs. actual behaviors described
+- specificity: whether checks are focused and relevant (not overly generic)
+- alignment_score: overall alignment
+
+Provide a short justification (2–4 sentences).
+
+Output only JSON between triple backticks:
+{{
+"alignment_score": <1-5>,
+"coverage": <1-5>,
+"correctness": <1-5>,
+"specificity": <1-5>,
+"justification": "..."
+}}

@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Lang-7",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NumberFormatException"
+    ],
+    "api_involved": [
+      "NumberUtils#createNumber",
+      "NumberUtils#createBigDecimal"
+    ],
+    "input_conditions": [
+      "leading '--' in the string"
+    ],
+    "reproduction_steps": [
+      "Call NumberUtils.createNumber with a string having leading '--'",
+      "Observe null is returned instead of a NumberFormatException"
+    ],
+    "expected": [
+      "throw NumberFormatException when leading '--' is detected"
+    ],
+    "actual": [
+      "returns null when leading '--' is detected"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NumberFormatException"
+    ],
+    "api_involved": [
+      "NumberUtils#createNumber",
+      "NumberUtils#createBigDecimal"
+    ],
+    "input_conditions": [
+      "leading '--' in the string"
+    ],
+    "reproduction_steps": [
+      "Call NumberUtils.createNumber with a string having leading '--'",
+      "Observe null is returned instead of a NumberFormatException"
+    ],
+    "expected": [
+      "throw NumberFormatException when leading '--' is detected"
+    ],
+    "actual": [
+      "returns null when leading '--' is detected"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"NumberFormatException\",\n\"api_involved\": [\"NumberUtils#createNumber\", \"NumberUtils#createBigDecimal\"],\n\"input_conditions\": [\"leading '--' in the string\"],\n\"expected\": \"throw NumberFormatException when leading '--' is detected\",\n\"actual\": \"returns null when leading '--' is detected\",\n\"reproduction_steps\": [\n\"Call NumberUtils.createNumber with a string having leading '--'\",\n\"Observe null is returned instead of a NumberFormatException\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"NumberFormatException\",\n\"api_involved\": [\"NumberUtils#createNumber\", \"NumberUtils#createBigDecimal\"],\n\"input_conditions\": [\"leading '--' in the string\"],\n\"expected\": \"throw NumberFormatException when leading '--' is detected\",\n\"actual\": \"returns null when leading '--' is detected\",\n\"reproduction_steps\": [\n\"Call NumberUtils.createNumber with a string having leading '--'\",\n\"Observe null is returned instead of a NumberFormatException\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

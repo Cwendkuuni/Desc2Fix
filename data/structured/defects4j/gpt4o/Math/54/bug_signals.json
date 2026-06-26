@@ -1,0 +1,49 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-54",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "toDouble"
+    ],
+    "input_conditions": [
+      "Dfp value is 0"
+    ],
+    "reproduction_steps": [
+      "Create a DfpField instance.",
+      "Call getZero().toDouble() or newDfp(0.0).toDouble() on the instance."
+    ],
+    "expected": [
+      "toDouble() method returns 0.0 when Dfp's value is 0"
+    ],
+    "actual": [
+      "toDouble() method returns negative infinity"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "toDouble"
+    ],
+    "input_conditions": [
+      "Dfp value is 0"
+    ],
+    "reproduction_steps": [
+      "Create a DfpField instance.",
+      "Call getZero().toDouble() or newDfp(0.0).toDouble() on the instance."
+    ],
+    "expected": [
+      "toDouble() method returns 0.0 when Dfp's value is 0"
+    ],
+    "actual": [
+      "toDouble() method returns negative infinity"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"toDouble\"],\n  \"input_conditions\": [\"Dfp value is 0\"],\n  \"expected\": \"toDouble() method returns 0.0 when Dfp's value is 0\",\n  \"actual\": \"toDouble() method returns negative infinity\",\n  \"reproduction_steps\": [\n    \"Create a DfpField instance.\",\n    \"Call getZero().toDouble() or newDfp(0.0).toDouble() on the instance.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"toDouble\"],\n  \"input_conditions\": [\"Dfp value is 0\"],\n  \"expected\": \"toDouble() method returns 0.0 when Dfp's value is 0\",\n  \"actual\": \"toDouble() method returns negative infinity\",\n  \"reproduction_steps\": [\n    \"Create a DfpField instance.\",\n    \"Call getZero().toDouble() or newDfp(0.0).toDouble() on the instance.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

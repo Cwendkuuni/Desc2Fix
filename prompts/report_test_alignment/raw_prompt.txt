@@ -1,0 +1,29 @@
+You are an expert software engineer.
+Given the following natural-language bug report and its triggering test code, evaluate how well the test reflects the behaviors and scenarios described in the report.
+
+Consider:
+1) Coverage: Does the test capture the core entities/APIs, steps, inputs, and outcomes mentioned (implicitly or explicitly) in the report?
+2) Correctness: Does the test meaningfully reproduce the issue and/or validate the expected vs. actual behaviors described?
+3) Specificity: Are the test checks focused and relevant to the described problem (not overly generic)?
+4) Overall alignment: holistic assessment.
+
+Provide a concise justification (2–4 sentences), then output scores as JSON (1–5 integers).
+
+Bug Report (RAW):
+---
+{BUG_REPORT_RAW}
+---
+
+Triggering Test:
+---
+{TEST_CODE}
+---
+
+Output only JSON between triple backticks:
+{{
+"alignment_score": <1-5>,
+"coverage": <1-5>,
+"correctness": <1-5>,
+"specificity": <1-5>,
+"justification": "..."
+}}

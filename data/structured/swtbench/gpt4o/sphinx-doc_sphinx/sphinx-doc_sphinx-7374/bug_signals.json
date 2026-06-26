@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sphinx-doc__sphinx-7374",
+  "project": null,
+  "repo": "sphinx-doc/sphinx",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Python domain IDs",
+      "nbsphinx",
+      "Sphinx"
+    ],
+    "input_conditions": [
+      "Python function names containing underscores"
+    ],
+    "reproduction_steps": [
+      "Document a Python function whose name contains underscores"
+    ],
+    "expected": [
+      "Create a fragment identifier with underscores."
+    ],
+    "actual": [
+      "Creates a fragment identifier with dashes."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Python domain IDs",
+      "nbsphinx",
+      "Sphinx"
+    ],
+    "input_conditions": [
+      "Python function names containing underscores"
+    ],
+    "reproduction_steps": [
+      "Document a Python function whose name contains underscores"
+    ],
+    "expected": [
+      "Create a fragment identifier with underscores."
+    ],
+    "actual": [
+      "Creates a fragment identifier with dashes."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"Python domain IDs\", \"nbsphinx\", \"Sphinx\"],\n  \"input_conditions\": [\"Python function names containing underscores\"],\n  \"expected\": \"Create a fragment identifier with underscores.\",\n  \"actual\": \"Creates a fragment identifier with dashes.\",\n  \"reproduction_steps\": [\"Document a Python function whose name contains underscores\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"Python domain IDs\", \"nbsphinx\", \"Sphinx\"],\n  \"input_conditions\": [\"Python function names containing underscores\"],\n  \"expected\": \"Create a fragment identifier with underscores.\",\n  \"actual\": \"Creates a fragment identifier with dashes.\",\n  \"reproduction_steps\": [\"Document a Python function whose name contains underscores\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

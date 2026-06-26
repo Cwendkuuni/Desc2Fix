@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-16599",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "OverflowError: Python int too large to convert to SQLite INTEGER"
+    ],
+    "api_involved": [
+      "sqlite3",
+      "django.db.backends"
+    ],
+    "input_conditions": [
+      "Integer larger than SQLite supports",
+      "URL with large integer"
+    ],
+    "reproduction_steps": [
+      "Navigate to http://127.0.0.1:8000/admin/auth/user/1111111111111111111111/change/",
+      "Observe OverflowError due to large integer in URL."
+    ],
+    "expected": [
+      "The application should handle large integers without crashing."
+    ],
+    "actual": [
+      "Application crashes with OverflowError when a large integer is used in the URL."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "OverflowError: Python int too large to convert to SQLite INTEGER"
+    ],
+    "api_involved": [
+      "sqlite3",
+      "django.db.backends"
+    ],
+    "input_conditions": [
+      "Integer larger than SQLite supports",
+      "URL with large integer"
+    ],
+    "reproduction_steps": [
+      "Navigate to http://127.0.0.1:8000/admin/auth/user/1111111111111111111111/change/",
+      "Observe OverflowError due to large integer in URL."
+    ],
+    "expected": [
+      "The application should handle large integers without crashing."
+    ],
+    "actual": [
+      "Application crashes with OverflowError when a large integer is used in the URL."
+    ]
+  },
+  "raw_response": "```\n{\n    \"exception\": \"OverflowError: Python int too large to convert to SQLite INTEGER\",\n    \"api_involved\": [\"sqlite3\", \"django.db.backends\"],\n    \"input_conditions\": [\"Integer larger than SQLite supports\", \"URL with large integer\"],\n    \"expected\": \"The application should handle large integers without crashing.\",\n    \"actual\": \"Application crashes with OverflowError when a large integer is used in the URL.\",\n    \"reproduction_steps\": [\n        \"Navigate to http://127.0.0.1:8000/admin/auth/user/1111111111111111111111/change/\",\n        \"Observe OverflowError due to large integer in URL.\"\n    ]\n}\n```",
+  "llm_response": "```\n{\n    \"exception\": \"OverflowError: Python int too large to convert to SQLite INTEGER\",\n    \"api_involved\": [\"sqlite3\", \"django.db.backends\"],\n    \"input_conditions\": [\"Integer larger than SQLite supports\", \"URL with large integer\"],\n    \"expected\": \"The application should handle large integers without crashing.\",\n    \"actual\": \"Application crashes with OverflowError when a large integer is used in the URL.\",\n    \"reproduction_steps\": [\n        \"Navigate to http://127.0.0.1:8000/admin/auth/user/1111111111111111111111/change/\",\n        \"Observe OverflowError due to large integer in URL.\"\n    ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

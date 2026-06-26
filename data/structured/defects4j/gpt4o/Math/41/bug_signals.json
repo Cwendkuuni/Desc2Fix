@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-41",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "org.apache.commons.math.stat.descriptive.moment.Variance.evaluate",
+      "Mean"
+    ],
+    "input_conditions": [
+      "length parameter ignored",
+      "sum of weights calculated on whole array"
+    ],
+    "reproduction_steps": [
+      "Call Variance.evaluate with a sub-array using length parameter",
+      "Observe if the entire array is used instead of the sub-array"
+    ],
+    "expected": [
+      "Variance.evaluate should consider the length parameter and use sub-array for calculations."
+    ],
+    "actual": [
+      "Variance.evaluate ignores the length parameter and calculates using the entire array, and the sum of weights is taken from the whole array."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "org.apache.commons.math.stat.descriptive.moment.Variance.evaluate",
+      "Mean"
+    ],
+    "input_conditions": [
+      "length parameter ignored",
+      "sum of weights calculated on whole array"
+    ],
+    "reproduction_steps": [
+      "Call Variance.evaluate with a sub-array using length parameter",
+      "Observe if the entire array is used instead of the sub-array"
+    ],
+    "expected": [
+      "Variance.evaluate should consider the length parameter and use sub-array for calculations."
+    ],
+    "actual": [
+      "Variance.evaluate ignores the length parameter and calculates using the entire array, and the sum of weights is taken from the whole array."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\n    \"org.apache.commons.math.stat.descriptive.moment.Variance.evaluate\",\n    \"Mean\"\n  ],\n  \"input_conditions\": [\n    \"length parameter ignored\",\n    \"sum of weights calculated on whole array\"\n  ],\n  \"expected\": \"Variance.evaluate should consider the length parameter and use sub-array for calculations.\",\n  \"actual\": \"Variance.evaluate ignores the length parameter and calculates using the entire array, and the sum of weights is taken from the whole array.\",\n  \"reproduction_steps\": [\n    \"Call Variance.evaluate with a sub-array using length parameter\",\n    \"Observe if the entire array is used instead of the sub-array\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\n    \"org.apache.commons.math.stat.descriptive.moment.Variance.evaluate\",\n    \"Mean\"\n  ],\n  \"input_conditions\": [\n    \"length parameter ignored\",\n    \"sum of weights calculated on whole array\"\n  ],\n  \"expected\": \"Variance.evaluate should consider the length parameter and use sub-array for calculations.\",\n  \"actual\": \"Variance.evaluate ignores the length parameter and calculates using the entire array, and the sum of weights is taken from the whole array.\",\n  \"reproduction_steps\": [\n    \"Call Variance.evaluate with a sub-array using length parameter\",\n    \"Observe if the entire array is used instead of the sub-array\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

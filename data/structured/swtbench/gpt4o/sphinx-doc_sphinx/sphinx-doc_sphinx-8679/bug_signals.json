@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sphinx-doc__sphinx-8679",
+  "project": null,
+  "repo": "sphinx-doc/sphinx",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "sphinx-rubric"
+    ],
+    "input_conditions": [
+      "quoted text in directive",
+      "OS: alpine linux",
+      "Python version: 3.7",
+      "Sphinx version: v3.4.1"
+    ],
+    "reproduction_steps": [
+      "Use a directive with quoted text"
+    ],
+    "expected": [
+      "Text displayed by the reference should be displayed entirely"
+    ],
+    "actual": [
+      "Title with quoted text is displayed incorrectly"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "sphinx-rubric"
+    ],
+    "input_conditions": [
+      "quoted text in directive",
+      "OS: alpine linux",
+      "Python version: 3.7",
+      "Sphinx version: v3.4.1"
+    ],
+    "reproduction_steps": [
+      "Use a directive with quoted text"
+    ],
+    "expected": [
+      "Text displayed by the reference should be displayed entirely"
+    ],
+    "actual": [
+      "Title with quoted text is displayed incorrectly"
+    ]
+  },
+  "raw_response": "```json\n{\n    \"exception\": null,\n    \"api_involved\": [\"sphinx-rubric\"],\n    \"input_conditions\": [\"quoted text in directive\", \"OS: alpine linux\", \"Python version: 3.7\", \"Sphinx version: v3.4.1\"],\n    \"expected\": \"Text displayed by the reference should be displayed entirely\",\n    \"actual\": \"Title with quoted text is displayed incorrectly\",\n    \"reproduction_steps\": [\"Use a directive with quoted text\"]\n}\n```",
+  "llm_response": "```json\n{\n    \"exception\": null,\n    \"api_involved\": [\"sphinx-rubric\"],\n    \"input_conditions\": [\"quoted text in directive\", \"OS: alpine linux\", \"Python version: 3.7\", \"Sphinx version: v3.4.1\"],\n    \"expected\": \"Text displayed by the reference should be displayed entirely\",\n    \"actual\": \"Title with quoted text is displayed incorrectly\",\n    \"reproduction_steps\": [\"Use a directive with quoted text\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

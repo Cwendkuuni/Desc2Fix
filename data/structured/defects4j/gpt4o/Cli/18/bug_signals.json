@@ -1,0 +1,51 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Cli-18",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "PosixParser"
+    ],
+    "input_conditions": [
+      "stopAtNonOption enabled",
+      "unrecognized tokens starting with '-'"
+    ],
+    "reproduction_steps": [
+      "Define option 'a'",
+      "Use command line '-z -a foo' with stopAtNonOption enabled"
+    ],
+    "expected": [
+      "The parser should throw an exception or stop processing when unrecognized tokens are detected"
+    ],
+    "actual": [
+      "Unrecognized tokens are ignored without exception"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "PosixParser"
+    ],
+    "input_conditions": [
+      "stopAtNonOption enabled",
+      "unrecognized tokens starting with '-'"
+    ],
+    "reproduction_steps": [
+      "Define option 'a'",
+      "Use command line '-z -a foo' with stopAtNonOption enabled"
+    ],
+    "expected": [
+      "The parser should throw an exception or stop processing when unrecognized tokens are detected"
+    ],
+    "actual": [
+      "Unrecognized tokens are ignored without exception"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"PosixParser\"],\n  \"input_conditions\": [\"stopAtNonOption enabled\", \"unrecognized tokens starting with '-'\"],\n  \"expected\": \"The parser should throw an exception or stop processing when unrecognized tokens are detected\",\n  \"actual\": \"Unrecognized tokens are ignored without exception\",\n  \"reproduction_steps\": [\"Define option 'a'\", \"Use command line '-z -a foo' with stopAtNonOption enabled\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"PosixParser\"],\n  \"input_conditions\": [\"stopAtNonOption enabled\", \"unrecognized tokens starting with '-'\"],\n  \"expected\": \"The parser should throw an exception or stop processing when unrecognized tokens are detected\",\n  \"actual\": \"Unrecognized tokens are ignored without exception\",\n  \"reproduction_steps\": [\"Define option 'a'\", \"Use command line '-z -a foo' with stopAtNonOption enabled\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

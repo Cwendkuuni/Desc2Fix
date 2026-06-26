@@ -1,0 +1,69 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-10",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "MissingOptionException"
+    ],
+    "api_involved": [
+      "org.apache.commons.cli.Options",
+      "org.apache.commons.cli.GnuParser",
+      "org.apache.commons.cli.CommandLine",
+      "org.apache.commons.cli.OptionBuilder"
+    ],
+    "input_conditions": [
+      "Options object used for a second parse call",
+      "Required option '-v' not provided in the second argument array",
+      "First parse call includes '-v' argument"
+    ],
+    "reproduction_steps": [
+      "Create an Options object and add a required option '-v' using OptionBuilder.",
+      "Create a GnuParser instance.",
+      "Parse a first set of arguments containing '-v' using the same parser and Options object.",
+      "Parse a second set of arguments (empty array) using the same parser and Options object.",
+      "Observe that no MissingOptionException is thrown for the second parse call."
+    ],
+    "expected": [
+      "A MissingOptionException should be thrown when parsing an empty argument array with a required option, regardless of previous parse calls."
+    ],
+    "actual": [
+      "No MissingOptionException is thrown on the second parse call; the parser completes successfully without error."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "MissingOptionException"
+    ],
+    "api_involved": [
+      "org.apache.commons.cli.Options",
+      "org.apache.commons.cli.GnuParser",
+      "org.apache.commons.cli.CommandLine",
+      "org.apache.commons.cli.OptionBuilder"
+    ],
+    "input_conditions": [
+      "Options object used for a second parse call",
+      "Required option '-v' not provided in the second argument array",
+      "First parse call includes '-v' argument"
+    ],
+    "reproduction_steps": [
+      "Create an Options object and add a required option '-v' using OptionBuilder.",
+      "Create a GnuParser instance.",
+      "Parse a first set of arguments containing '-v' using the same parser and Options object.",
+      "Parse a second set of arguments (empty array) using the same parser and Options object.",
+      "Observe that no MissingOptionException is thrown for the second parse call."
+    ],
+    "expected": [
+      "A MissingOptionException should be thrown when parsing an empty argument array with a required option, regardless of previous parse calls."
+    ],
+    "actual": [
+      "No MissingOptionException is thrown on the second parse call; the parser completes successfully without error."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"MissingOptionException\",\n\"api_involved\": [\"org.apache.commons.cli.Options\", \"org.apache.commons.cli.GnuParser\", \"org.apache.commons.cli.CommandLine\", \"org.apache.commons.cli.OptionBuilder\"],\n\"input_conditions\": [\"Options object used for a second parse call\", \"Required option '-v' not provided in the second argument array\", \"First parse call includes '-v' argument\"],\n\"expected\": \"A MissingOptionException should be thrown when parsing an empty argument array with a required option, regardless of previous parse calls.\",\n\"actual\": \"No MissingOptionException is thrown on the second parse call; the parser completes successfully without error.\",\n\"reproduction_steps\": [\n\"Create an Options object and add a required option '-v' using OptionBuilder.\",\n\"Create a GnuParser instance.\",\n\"Parse a first set of arguments containing '-v' using the same parser and Options object.\",\n\"Parse a second set of arguments (empty array) using the same parser and Options object.\",\n\"Observe that no MissingOptionException is thrown for the second parse call.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"MissingOptionException\",\n\"api_involved\": [\"org.apache.commons.cli.Options\", \"org.apache.commons.cli.GnuParser\", \"org.apache.commons.cli.CommandLine\", \"org.apache.commons.cli.OptionBuilder\"],\n\"input_conditions\": [\"Options object used for a second parse call\", \"Required option '-v' not provided in the second argument array\", \"First parse call includes '-v' argument\"],\n\"expected\": \"A MissingOptionException should be thrown when parsing an empty argument array with a required option, regardless of previous parse calls.\",\n\"actual\": \"No MissingOptionException is thrown on the second parse call; the parser completes successfully without error.\",\n\"reproduction_steps\": [\n\"Create an Options object and add a required option '-v' using OptionBuilder.\",\n\"Create a GnuParser instance.\",\n\"Parse a first set of arguments containing '-v' using the same parser and Options object.\",\n\"Parse a second set of arguments (empty array) using the same parser and Options object.\",\n\"Observe that no MissingOptionException is thrown for the second parse call.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

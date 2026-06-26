@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Cli-11",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "PosixParser interupts \"-target opt\" as \"-t arget opt\""
+    ],
+    "api_involved": [
+      "PosixParser",
+      "Option",
+      "HelpFormatter"
+    ],
+    "input_conditions": [
+      "command line with '-target foobar.com'",
+      "parsedLine.hasOption(OPTION_TARGET)"
+    ],
+    "reproduction_steps": [
+      "Provide an Option with short opt '-t' and long opt '--target'",
+      "Use PosixParser to parse command line arguments",
+      "Run command line with '-target foobar.com'"
+    ],
+    "expected": [
+      "processing selected target: foobar.com"
+    ],
+    "actual": [
+      "processing selected target: arget"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "PosixParser interupts \"-target opt\" as \"-t arget opt\""
+    ],
+    "api_involved": [
+      "PosixParser",
+      "Option",
+      "HelpFormatter"
+    ],
+    "input_conditions": [
+      "command line with '-target foobar.com'",
+      "parsedLine.hasOption(OPTION_TARGET)"
+    ],
+    "reproduction_steps": [
+      "Provide an Option with short opt '-t' and long opt '--target'",
+      "Use PosixParser to parse command line arguments",
+      "Run command line with '-target foobar.com'"
+    ],
+    "expected": [
+      "processing selected target: foobar.com"
+    ],
+    "actual": [
+      "processing selected target: arget"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"PosixParser interupts \\\"-target opt\\\" as \\\"-t arget opt\\\"\",\n  \"api_involved\": [\"PosixParser\", \"Option\", \"HelpFormatter\"],\n  \"input_conditions\": [\"command line with '-target foobar.com'\", \"parsedLine.hasOption(OPTION_TARGET)\"],\n  \"expected\": \"processing selected target: foobar.com\",\n  \"actual\": \"processing selected target: arget\",\n  \"reproduction_steps\": [\n    \"Provide an Option with short opt '-t' and long opt '--target'\",\n    \"Use PosixParser to parse command line arguments\",\n    \"Run command line with '-target foobar.com'\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"PosixParser interupts \\\"-target opt\\\" as \\\"-t arget opt\\\"\",\n  \"api_involved\": [\"PosixParser\", \"Option\", \"HelpFormatter\"],\n  \"input_conditions\": [\"command line with '-target foobar.com'\", \"parsedLine.hasOption(OPTION_TARGET)\"],\n  \"expected\": \"processing selected target: foobar.com\",\n  \"actual\": \"processing selected target: arget\",\n  \"reproduction_steps\": [\n    \"Provide an Option with short opt '-t' and long opt '--target'\",\n    \"Use PosixParser to parse command line arguments\",\n    \"Run command line with '-target foobar.com'\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

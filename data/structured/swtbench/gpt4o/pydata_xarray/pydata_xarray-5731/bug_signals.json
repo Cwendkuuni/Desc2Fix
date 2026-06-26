@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "pydata__xarray-5731",
+  "project": null,
+  "repo": "pydata/xarray",
+  "signals": {
+    "exception": [
+      "Dask error"
+    ],
+    "api_involved": [
+      "xarray.corr"
+    ],
+    "input_conditions": [
+      "dask is not installed"
+    ],
+    "reproduction_steps": [
+      "Use xarray.corr on two DataArrays"
+    ],
+    "expected": [
+      "Obtain the correlation values without dask interfering"
+    ],
+    "actual": [
+      "Error when using xarray.corr"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Dask error"
+    ],
+    "api_involved": [
+      "xarray.corr"
+    ],
+    "input_conditions": [
+      "dask is not installed"
+    ],
+    "reproduction_steps": [
+      "Use xarray.corr on two DataArrays"
+    ],
+    "expected": [
+      "Obtain the correlation values without dask interfering"
+    ],
+    "actual": [
+      "Error when using xarray.corr"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"Dask error\",\n  \"api_involved\": [\"xarray.corr\"],\n  \"input_conditions\": [\"dask is not installed\"],\n  \"expected\": \"Obtain the correlation values without dask interfering\",\n  \"actual\": \"Error when using xarray.corr\",\n  \"reproduction_steps\": [\"Use xarray.corr on two DataArrays\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"Dask error\",\n  \"api_involved\": [\"xarray.corr\"],\n  \"input_conditions\": [\"dask is not installed\"],\n  \"expected\": \"Obtain the correlation values without dask interfering\",\n  \"actual\": \"Error when using xarray.corr\",\n  \"reproduction_steps\": [\"Use xarray.corr on two DataArrays\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

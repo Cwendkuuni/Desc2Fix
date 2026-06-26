@@ -1,0 +1,47 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Codec-2",
+  "project": "Codec",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Base64.encode"
+    ],
+    "input_conditions": [
+      "empty byte array (new byte[0])"
+    ],
+    "reproduction_steps": [
+      "call Base64.encode(new byte[0])"
+    ],
+    "expected": [
+      "return an empty byte array"
+    ],
+    "actual": [
+      "returns CRLF (line terminator)"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Base64.encode"
+    ],
+    "input_conditions": [
+      "empty byte array (new byte[0])"
+    ],
+    "reproduction_steps": [
+      "call Base64.encode(new byte[0])"
+    ],
+    "expected": [
+      "return an empty byte array"
+    ],
+    "actual": [
+      "returns CRLF (line terminator)"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Base64.encode\"],\n\"input_conditions\": [\"empty byte array (new byte[0])\"],\n\"expected\": \"return an empty byte array\",\n\"actual\": \"returns CRLF (line terminator)\",\n\"reproduction_steps\": [\"call Base64.encode(new byte[0])\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Base64.encode\"],\n\"input_conditions\": [\"empty byte array (new byte[0])\"],\n\"expected\": \"return an empty byte array\",\n\"actual\": \"returns CRLF (line terminator)\",\n\"reproduction_steps\": [\"call Base64.encode(new byte[0])\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

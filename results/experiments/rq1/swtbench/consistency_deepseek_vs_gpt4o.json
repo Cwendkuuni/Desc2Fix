@@ -1,0 +1,15 @@
+{
+  "dataset": "swtbench",
+  "model_a": "deepseek",
+  "model_b": "gpt4o",
+  "common_instances": 10,
+  "avg_macro_jaccard": 0.481499,
+  "avg_field_jaccard": {
+    "exception": 0.926667,
+    "api_involved": 0.291667,
+    "input_conditions": 0.304351,
+    "reproduction_steps": 0.4536,
+    "expected": 0.562029,
+    "actual": 0.350683
+  }
+}

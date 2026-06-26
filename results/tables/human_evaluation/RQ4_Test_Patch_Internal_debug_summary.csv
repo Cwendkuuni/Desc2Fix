@@ -1,0 +1,5 @@
+source,status,rq,dataset,representation,patch_view,rows
+RQ4_Test_Patch_Internal_human_without_llm,non_empty,rq4_internal,Defects4J,RAW,add,2
+RQ4_Test_Patch_Internal_human_without_llm,non_empty,rq4_internal,Defects4J,RAW,remove,2
+RQ4_Test_Patch_Internal_llm_without_human,non_empty,rq4_internal,SWTBench,RAW,full,2
+RQ4_Test_Patch_Internal_llm_without_human,non_empty,rq4_internal,SWTBench,STRUCTURED,full,2

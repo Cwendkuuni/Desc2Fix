@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Compress-37",
+  "project": "Compress",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NegativeArraySizeException"
+    ],
+    "api_involved": [
+      "TarArchiveInputStream.parsePaxHeaders"
+    ],
+    "input_conditions": [
+      "PAX headers with an empty line at the end"
+    ],
+    "reproduction_steps": [
+      "Create a tarball with PAX headers that include an empty line at the end (e.g., using 'npm pack aws-sdk@2.2.16')",
+      "Call TarArchiveInputStream.parsePaxHeaders on the tar input stream"
+    ],
+    "expected": [
+      "Parse PAX headers without throwing an exception"
+    ],
+    "actual": [
+      "Throws NegativeArraySizeException because a newline character (10) minus '0' (48) gives a negative length, causing an attempt to allocate a negative-sized array"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NegativeArraySizeException"
+    ],
+    "api_involved": [
+      "TarArchiveInputStream.parsePaxHeaders"
+    ],
+    "input_conditions": [
+      "PAX headers with an empty line at the end"
+    ],
+    "reproduction_steps": [
+      "Create a tarball with PAX headers that include an empty line at the end (e.g., using 'npm pack aws-sdk@2.2.16')",
+      "Call TarArchiveInputStream.parsePaxHeaders on the tar input stream"
+    ],
+    "expected": [
+      "Parse PAX headers without throwing an exception"
+    ],
+    "actual": [
+      "Throws NegativeArraySizeException because a newline character (10) minus '0' (48) gives a negative length, causing an attempt to allocate a negative-sized array"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"NegativeArraySizeException\",\n\"api_involved\": [\"TarArchiveInputStream.parsePaxHeaders\"],\n\"input_conditions\": [\"PAX headers with an empty line at the end\"],\n\"expected\": \"Parse PAX headers without throwing an exception\",\n\"actual\": \"Throws NegativeArraySizeException because a newline character (10) minus '0' (48) gives a negative length, causing an attempt to allocate a negative-sized array\",\n\"reproduction_steps\": [\n\"Create a tarball with PAX headers that include an empty line at the end (e.g., using 'npm pack aws-sdk@2.2.16')\",\n\"Call TarArchiveInputStream.parsePaxHeaders on the tar input stream\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"NegativeArraySizeException\",\n\"api_involved\": [\"TarArchiveInputStream.parsePaxHeaders\"],\n\"input_conditions\": [\"PAX headers with an empty line at the end\"],\n\"expected\": \"Parse PAX headers without throwing an exception\",\n\"actual\": \"Throws NegativeArraySizeException because a newline character (10) minus '0' (48) gives a negative length, causing an attempt to allocate a negative-sized array\",\n\"reproduction_steps\": [\n\"Create a tarball with PAX headers that include an empty line at the end (e.g., using 'npm pack aws-sdk@2.2.16')\",\n\"Call TarArchiveInputStream.parsePaxHeaders on the tar input stream\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

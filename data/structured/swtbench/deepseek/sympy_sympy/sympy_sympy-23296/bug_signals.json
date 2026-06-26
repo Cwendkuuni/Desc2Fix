@@ -1,0 +1,49 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-23296",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "_collect_factor_and_dimension"
+    ],
+    "input_conditions": [
+      "dimensionless number in exponent not recognized as dimensionless"
+    ],
+    "reproduction_steps": [
+      "Use a dimensionless number in exponent with a predefined mathematical function",
+      "Call _collect_factor_and_dimension on the expression"
+    ],
+    "expected": [
+      "should recognize dimensionless number in exponent as dimensionless"
+    ],
+    "actual": [
+      "raises an error for dimensionless number in exponent, leading to wrong dimensional evaluation for expressions containing predefined mathematical functions"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "_collect_factor_and_dimension"
+    ],
+    "input_conditions": [
+      "dimensionless number in exponent not recognized as dimensionless"
+    ],
+    "reproduction_steps": [
+      "Use a dimensionless number in exponent with a predefined mathematical function",
+      "Call _collect_factor_and_dimension on the expression"
+    ],
+    "expected": [
+      "should recognize dimensionless number in exponent as dimensionless"
+    ],
+    "actual": [
+      "raises an error for dimensionless number in exponent, leading to wrong dimensional evaluation for expressions containing predefined mathematical functions"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"_collect_factor_and_dimension\"],\n\"input_conditions\": [\"dimensionless number in exponent not recognized as dimensionless\"],\n\"expected\": \"should recognize dimensionless number in exponent as dimensionless\",\n\"actual\": \"raises an error for dimensionless number in exponent, leading to wrong dimensional evaluation for expressions containing predefined mathematical functions\",\n\"reproduction_steps\": [\"Use a dimensionless number in exponent with a predefined mathematical function\", \"Call _collect_factor_and_dimension on the expression\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"_collect_factor_and_dimension\"],\n\"input_conditions\": [\"dimensionless number in exponent not recognized as dimensionless\"],\n\"expected\": \"should recognize dimensionless number in exponent as dimensionless\",\n\"actual\": \"raises an error for dimensionless number in exponent, leading to wrong dimensional evaluation for expressions containing predefined mathematical functions\",\n\"reproduction_steps\": [\"Use a dimensionless number in exponent with a predefined mathematical function\", \"Call _collect_factor_and_dimension on the expression\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

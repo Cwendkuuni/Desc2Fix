@@ -1,0 +1,45 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-12630",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "migrate",
+      "makemigrations"
+    ],
+    "input_conditions": [
+      "unapplied migrations exist"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "The CI should stop deployment automatically when unapplied migrations exist."
+    ],
+    "actual": [
+      "One needs to parse output to determine if migrations need to be run."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "migrate",
+      "makemigrations"
+    ],
+    "input_conditions": [
+      "unapplied migrations exist"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "The CI should stop deployment automatically when unapplied migrations exist."
+    ],
+    "actual": [
+      "One needs to parse output to determine if migrations need to be run."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"migrate\", \"makemigrations\"],\n  \"input_conditions\": [\"unapplied migrations exist\"],\n  \"expected\": \"The CI should stop deployment automatically when unapplied migrations exist.\",\n  \"actual\": \"One needs to parse output to determine if migrations need to be run.\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"migrate\", \"makemigrations\"],\n  \"input_conditions\": [\"unapplied migrations exist\"],\n  \"expected\": \"The CI should stop deployment automatically when unapplied migrations exist.\",\n  \"actual\": \"One needs to parse output to determine if migrations need to be run.\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

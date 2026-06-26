@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Lang-51",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "StringIndexOutOfBoundsException"
+    ],
+    "api_involved": [
+      "BooleanUtils.toBoolean"
+    ],
+    "input_conditions": [
+      "input string 'tru'",
+      "case statement in method"
+    ],
+    "reproduction_steps": [
+      "Call BooleanUtils.toBoolean('tru')",
+      "Observe exception occurs due to case 3 dropping through to case 4"
+    ],
+    "expected": [
+      "Method returns false when input is 'tru'"
+    ],
+    "actual": [
+      "StringIndexOutOfBoundsException occurs"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "StringIndexOutOfBoundsException"
+    ],
+    "api_involved": [
+      "BooleanUtils.toBoolean"
+    ],
+    "input_conditions": [
+      "input string 'tru'",
+      "case statement in method"
+    ],
+    "reproduction_steps": [
+      "Call BooleanUtils.toBoolean('tru')",
+      "Observe exception occurs due to case 3 dropping through to case 4"
+    ],
+    "expected": [
+      "Method returns false when input is 'tru'"
+    ],
+    "actual": [
+      "StringIndexOutOfBoundsException occurs"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"StringIndexOutOfBoundsException\",\n  \"api_involved\": [\"BooleanUtils.toBoolean\"],\n  \"input_conditions\": [\"input string 'tru'\", \"case statement in method\"],\n  \"expected\": \"Method returns false when input is 'tru'\",\n  \"actual\": \"StringIndexOutOfBoundsException occurs\",\n  \"reproduction_steps\": [\n    \"Call BooleanUtils.toBoolean('tru')\",\n    \"Observe exception occurs due to case 3 dropping through to case 4\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"StringIndexOutOfBoundsException\",\n  \"api_involved\": [\"BooleanUtils.toBoolean\"],\n  \"input_conditions\": [\"input string 'tru'\", \"case statement in method\"],\n  \"expected\": \"Method returns false when input is 'tru'\",\n  \"actual\": \"StringIndexOutOfBoundsException occurs\",\n  \"reproduction_steps\": [\n    \"Call BooleanUtils.toBoolean('tru')\",\n    \"Observe exception occurs due to case 3 dropping through to case 4\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

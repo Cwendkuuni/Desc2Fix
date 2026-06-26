@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-70",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Closure Compiler",
+      "checkTypes",
+      "summary_detail_level"
+    ],
+    "input_conditions": [
+      "JavaScript file with fully annotated types",
+      "use of @constructor, @param, @return annotations",
+      "invocation with --jscomp_error checkTypes and --summary_detail_level 3"
+    ],
+    "reproduction_steps": [
+      "Create JavaScript file with given code including type annotations and window['Example'] = Example;",
+      "Compile with: java -jar compiler.jar --jscomp_error checkTypes --summary_detail_level 3 --js v.js --js_output_file compiled.js",
+      "Observe output showing 0 error(s), 0 warning(s), 73.7% typed instead of 100%"
+    ],
+    "expected": [
+      "100% typed coverage, 0 error(s), 0 warning(s)"
+    ],
+    "actual": [
+      "73.7% typed coverage, 0 error(s), 0 warning(s)"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Closure Compiler",
+      "checkTypes",
+      "summary_detail_level"
+    ],
+    "input_conditions": [
+      "JavaScript file with fully annotated types",
+      "use of @constructor, @param, @return annotations",
+      "invocation with --jscomp_error checkTypes and --summary_detail_level 3"
+    ],
+    "reproduction_steps": [
+      "Create JavaScript file with given code including type annotations and window['Example'] = Example;",
+      "Compile with: java -jar compiler.jar --jscomp_error checkTypes --summary_detail_level 3 --js v.js --js_output_file compiled.js",
+      "Observe output showing 0 error(s), 0 warning(s), 73.7% typed instead of 100%"
+    ],
+    "expected": [
+      "100% typed coverage, 0 error(s), 0 warning(s)"
+    ],
+    "actual": [
+      "73.7% typed coverage, 0 error(s), 0 warning(s)"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Closure Compiler\", \"checkTypes\", \"summary_detail_level\"],\n\"input_conditions\": [\"JavaScript file with fully annotated types\", \"use of @constructor, @param, @return annotations\", \"invocation with --jscomp_error checkTypes and --summary_detail_level 3\"],\n\"expected\": \"100% typed coverage, 0 error(s), 0 warning(s)\",\n\"actual\": \"73.7% typed coverage, 0 error(s), 0 warning(s)\",\n\"reproduction_steps\": [\n\"Create JavaScript file with given code including type annotations and window['Example'] = Example;\",\n\"Compile with: java -jar compiler.jar --jscomp_error checkTypes --summary_detail_level 3 --js v.js --js_output_file compiled.js\",\n\"Observe output showing 0 error(s), 0 warning(s), 73.7% typed instead of 100%\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Closure Compiler\", \"checkTypes\", \"summary_detail_level\"],\n\"input_conditions\": [\"JavaScript file with fully annotated types\", \"use of @constructor, @param, @return annotations\", \"invocation with --jscomp_error checkTypes and --summary_detail_level 3\"],\n\"expected\": \"100% typed coverage, 0 error(s), 0 warning(s)\",\n\"actual\": \"73.7% typed coverage, 0 error(s), 0 warning(s)\",\n\"reproduction_steps\": [\n\"Create JavaScript file with given code including type annotations and window['Example'] = Example;\",\n\"Compile with: java -jar compiler.jar --jscomp_error checkTypes --summary_detail_level 3 --js v.js --js_output_file compiled.js\",\n\"Observe output showing 0 error(s), 0 warning(s), 73.7% typed instead of 100%\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

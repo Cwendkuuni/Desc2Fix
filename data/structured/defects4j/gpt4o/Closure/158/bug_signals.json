@@ -1,0 +1,43 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-158",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "jscomp_error",
+      "jscomp_warning",
+      "jscomp_off"
+    ],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [
+      "The last arguments should have the highest precedence."
+    ],
+    "actual": [
+      "\"off\" always takes precedence over \"warning\", and \"warning\" always takes precedence over \"error\"."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "jscomp_error",
+      "jscomp_warning",
+      "jscomp_off"
+    ],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [
+      "The last arguments should have the highest precedence."
+    ],
+    "actual": [
+      "\"off\" always takes precedence over \"warning\", and \"warning\" always takes precedence over \"error\"."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"jscomp_error\", \"jscomp_warning\", \"jscomp_off\"],\n  \"input_conditions\": null,\n  \"expected\": \"The last arguments should have the highest precedence.\",\n  \"actual\": \"\\\"off\\\" always takes precedence over \\\"warning\\\", and \\\"warning\\\" always takes precedence over \\\"error\\\".\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"jscomp_error\", \"jscomp_warning\", \"jscomp_off\"],\n  \"input_conditions\": null,\n  \"expected\": \"The last arguments should have the highest precedence.\",\n  \"actual\": \"\\\"off\\\" always takes precedence over \\\"warning\\\", and \\\"warning\\\" always takes precedence over \\\"error\\\".\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

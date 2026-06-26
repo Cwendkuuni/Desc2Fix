@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-5",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.NullPointerException"
+    ],
+    "api_involved": [
+      "org.apache.commons.cli.Util.stripLeadingHyphens",
+      "org.apache.commons.cli.CommandLine.resolveOption",
+      "org.apache.commons.cli.CommandLine.hasOption"
+    ],
+    "input_conditions": [
+      "null argument passed to hasOption method"
+    ],
+    "reproduction_steps": [
+      "Call hasOption(null) on a CommandLine object",
+      "NullPointerException is thrown at Util.stripLeadingHyphens"
+    ],
+    "expected": [
+      "hasOption should either reject the null argument or return false without throwing an exception"
+    ],
+    "actual": [
+      "NullPointerException thrown when null is passed to hasOption"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.NullPointerException"
+    ],
+    "api_involved": [
+      "org.apache.commons.cli.Util.stripLeadingHyphens",
+      "org.apache.commons.cli.CommandLine.resolveOption",
+      "org.apache.commons.cli.CommandLine.hasOption"
+    ],
+    "input_conditions": [
+      "null argument passed to hasOption method"
+    ],
+    "reproduction_steps": [
+      "Call hasOption(null) on a CommandLine object",
+      "NullPointerException is thrown at Util.stripLeadingHyphens"
+    ],
+    "expected": [
+      "hasOption should either reject the null argument or return false without throwing an exception"
+    ],
+    "actual": [
+      "NullPointerException thrown when null is passed to hasOption"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"java.lang.NullPointerException\",\n  \"api_involved\": [\n    \"org.apache.commons.cli.Util.stripLeadingHyphens\",\n    \"org.apache.commons.cli.CommandLine.resolveOption\",\n    \"org.apache.commons.cli.CommandLine.hasOption\"\n  ],\n  \"input_conditions\": [\"null argument passed to hasOption method\"],\n  \"expected\": \"hasOption should either reject the null argument or return false without throwing an exception\",\n  \"actual\": \"NullPointerException thrown when null is passed to hasOption\",\n  \"reproduction_steps\": [\n    \"Call hasOption(null) on a CommandLine object\",\n    \"NullPointerException is thrown at Util.stripLeadingHyphens\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"java.lang.NullPointerException\",\n  \"api_involved\": [\n    \"org.apache.commons.cli.Util.stripLeadingHyphens\",\n    \"org.apache.commons.cli.CommandLine.resolveOption\",\n    \"org.apache.commons.cli.CommandLine.hasOption\"\n  ],\n  \"input_conditions\": [\"null argument passed to hasOption method\"],\n  \"expected\": \"hasOption should either reject the null argument or return false without throwing an exception\",\n  \"actual\": \"NullPointerException thrown when null is passed to hasOption\",\n  \"reproduction_steps\": [\n    \"Call hasOption(null) on a CommandLine object\",\n    \"NullPointerException is thrown at Util.stripLeadingHyphens\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

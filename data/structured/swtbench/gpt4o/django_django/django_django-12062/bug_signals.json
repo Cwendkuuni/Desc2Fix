@@ -1,0 +1,49 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-12062",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "django.db.migrations.loader.MigrationLoader.migrations_module"
+    ],
+    "input_conditions": [
+      "DATABASE['TEST']['MIGRATE'] = False"
+    ],
+    "reproduction_steps": [
+      "Set DATABASE['TEST']['MIGRATE'] to False in the settings.",
+      "Ensure the system hooks into django.db.migrations.loader.MigrationLoader.migrations_module()"
+    ],
+    "expected": [
+      "All migrations should be disabled on the database when DATABASE['TEST']['MIGRATE'] is set to False."
+    ],
+    "actual": [
+      "Migrations are not disabled as expected when DATABASE['TEST']['MIGRATE'] is set to False."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "django.db.migrations.loader.MigrationLoader.migrations_module"
+    ],
+    "input_conditions": [
+      "DATABASE['TEST']['MIGRATE'] = False"
+    ],
+    "reproduction_steps": [
+      "Set DATABASE['TEST']['MIGRATE'] to False in the settings.",
+      "Ensure the system hooks into django.db.migrations.loader.MigrationLoader.migrations_module()"
+    ],
+    "expected": [
+      "All migrations should be disabled on the database when DATABASE['TEST']['MIGRATE'] is set to False."
+    ],
+    "actual": [
+      "Migrations are not disabled as expected when DATABASE['TEST']['MIGRATE'] is set to False."
+    ]
+  },
+  "raw_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"django.db.migrations.loader.MigrationLoader.migrations_module\"],\n\"input_conditions\": [\"DATABASE['TEST']['MIGRATE'] = False\"],\n\"expected\": \"All migrations should be disabled on the database when DATABASE['TEST']['MIGRATE'] is set to False.\",\n\"actual\": \"Migrations are not disabled as expected when DATABASE['TEST']['MIGRATE'] is set to False.\",\n\"reproduction_steps\": [\n  \"Set DATABASE['TEST']['MIGRATE'] to False in the settings.\",\n  \"Ensure the system hooks into django.db.migrations.loader.MigrationLoader.migrations_module()\"\n]\n}\n```",
+  "llm_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"django.db.migrations.loader.MigrationLoader.migrations_module\"],\n\"input_conditions\": [\"DATABASE['TEST']['MIGRATE'] = False\"],\n\"expected\": \"All migrations should be disabled on the database when DATABASE['TEST']['MIGRATE'] is set to False.\",\n\"actual\": \"Migrations are not disabled as expected when DATABASE['TEST']['MIGRATE'] is set to False.\",\n\"reproduction_steps\": [\n  \"Set DATABASE['TEST']['MIGRATE'] to False in the settings.\",\n  \"Ensure the system hooks into django.db.migrations.loader.MigrationLoader.migrations_module()\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

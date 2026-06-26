@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "pytest-dev__pytest-8950",
+  "project": null,
+  "repo": "pytest-dev/pytest",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "pytest.skip",
+      "pytest.mark.skip",
+      "pytest.mark.xfail"
+    ],
+    "input_conditions": [
+      "inconsistency in 'msg' argument naming"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "The argument name should be 'reason' for consistency."
+    ],
+    "actual": [
+      "The argument name is 'msg'."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "pytest.skip",
+      "pytest.mark.skip",
+      "pytest.mark.xfail"
+    ],
+    "input_conditions": [
+      "inconsistency in 'msg' argument naming"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "The argument name should be 'reason' for consistency."
+    ],
+    "actual": [
+      "The argument name is 'msg'."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"pytest.skip\", \"pytest.mark.skip\", \"pytest.mark.xfail\"],\n  \"input_conditions\": [\"inconsistency in 'msg' argument naming\"],\n  \"expected\": \"The argument name should be 'reason' for consistency.\",\n  \"actual\": \"The argument name is 'msg'.\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"pytest.skip\", \"pytest.mark.skip\", \"pytest.mark.xfail\"],\n  \"input_conditions\": [\"inconsistency in 'msg' argument naming\"],\n  \"expected\": \"The argument name should be 'reason' for consistency.\",\n  \"actual\": \"The argument name is 'msg'.\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

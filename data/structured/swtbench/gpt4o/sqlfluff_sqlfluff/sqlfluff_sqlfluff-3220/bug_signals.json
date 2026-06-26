@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sqlfluff__sqlfluff-3220",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "@click.option",
+      "fix command"
+    ],
+    "input_conditions": [
+      "config file set",
+      "Run Note set to False"
+    ],
+    "reproduction_steps": [
+      "Create a config file",
+      "Include Run Note that is set to False at runtime"
+    ],
+    "expected": [
+      "The config should be captured by the fix command."
+    ],
+    "actual": [
+      "The config is not being captured by the fix command."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "@click.option",
+      "fix command"
+    ],
+    "input_conditions": [
+      "config file set",
+      "Run Note set to False"
+    ],
+    "reproduction_steps": [
+      "Create a config file",
+      "Include Run Note that is set to False at runtime"
+    ],
+    "expected": [
+      "The config should be captured by the fix command."
+    ],
+    "actual": [
+      "The config is not being captured by the fix command."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"@click.option\", \"fix command\"],\n  \"input_conditions\": [\"config file set\", \"Run Note set to False\"],\n  \"expected\": \"The config should be captured by the fix command.\",\n  \"actual\": \"The config is not being captured by the fix command.\",\n  \"reproduction_steps\": [\"Create a config file\", \"Include Run Note that is set to False at runtime\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"@click.option\", \"fix command\"],\n  \"input_conditions\": [\"config file set\", \"Run Note set to False\"],\n  \"expected\": \"The config should be captured by the fix command.\",\n  \"actual\": \"The config is not being captured by the fix command.\",\n  \"reproduction_steps\": [\"Create a config file\", \"Include Run Note that is set to False at runtime\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

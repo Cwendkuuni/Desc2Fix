@@ -1,0 +1,65 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-19",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.IllegalArgumentException: Node cannot be refined."
+    ],
+    "api_involved": [
+      "goog.isFunction",
+      "goog.isObject",
+      "goog.isNull",
+      "com.google.javascript.jscomp.type.ChainableReverseAbstractInterpreter.declareNameInScope",
+      "com.google.javascript.jscomp.type.ClosureReverseAbstractInterpreter.restrictParameter",
+      "com.google.javascript.jscomp.TypeInference.branchedFlowThrough"
+    ],
+    "input_conditions": [
+      "The 'this' keyword is used as an argument to a type-checking function like goog.isFunction, goog.isObject, or goog.isNull.",
+      "The context is within the Closure Compiler's type inference pass."
+    ],
+    "reproduction_steps": [
+      "1. Write code that calls goog.isFunction(this) or goog.isObject(this) or goog.isNull(this).",
+      "2. Attempt to compile the code using the Closure Compiler."
+    ],
+    "expected": [
+      "Normal compilation, checking the type of 'this' without errors."
+    ],
+    "actual": [
+      "java.lang.IllegalArgumentException thrown with message 'Node cannot be refined.' for the THIS node (global this), causing compilation failure."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.IllegalArgumentException: Node cannot be refined."
+    ],
+    "api_involved": [
+      "goog.isFunction",
+      "goog.isObject",
+      "goog.isNull",
+      "com.google.javascript.jscomp.type.ChainableReverseAbstractInterpreter.declareNameInScope",
+      "com.google.javascript.jscomp.type.ClosureReverseAbstractInterpreter.restrictParameter",
+      "com.google.javascript.jscomp.TypeInference.branchedFlowThrough"
+    ],
+    "input_conditions": [
+      "The 'this' keyword is used as an argument to a type-checking function like goog.isFunction, goog.isObject, or goog.isNull.",
+      "The context is within the Closure Compiler's type inference pass."
+    ],
+    "reproduction_steps": [
+      "1. Write code that calls goog.isFunction(this) or goog.isObject(this) or goog.isNull(this).",
+      "2. Attempt to compile the code using the Closure Compiler."
+    ],
+    "expected": [
+      "Normal compilation, checking the type of 'this' without errors."
+    ],
+    "actual": [
+      "java.lang.IllegalArgumentException thrown with message 'Node cannot be refined.' for the THIS node (global this), causing compilation failure."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"java.lang.IllegalArgumentException: Node cannot be refined.\",\n\"api_involved\": [\n    \"goog.isFunction\",\n    \"goog.isObject\",\n    \"goog.isNull\",\n    \"com.google.javascript.jscomp.type.ChainableReverseAbstractInterpreter.declareNameInScope\",\n    \"com.google.javascript.jscomp.type.ClosureReverseAbstractInterpreter.restrictParameter\",\n    \"com.google.javascript.jscomp.TypeInference.branchedFlowThrough\"\n],\n\"input_conditions\": [\n    \"The 'this' keyword is used as an argument to a type-checking function like goog.isFunction, goog.isObject, or goog.isNull.\",\n    \"The context is within the Closure Compiler's type inference pass.\"\n],\n\"expected\": \"Normal compilation, checking the type of 'this' without errors.\",\n\"actual\": \"java.lang.IllegalArgumentException thrown with message 'Node cannot be refined.' for the THIS node (global this), causing compilation failure.\",\n\"reproduction_steps\": [\n    \"1. Write code that calls goog.isFunction(this) or goog.isObject(this) or goog.isNull(this).\",\n    \"2. Attempt to compile the code using the Closure Compiler.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"java.lang.IllegalArgumentException: Node cannot be refined.\",\n\"api_involved\": [\n    \"goog.isFunction\",\n    \"goog.isObject\",\n    \"goog.isNull\",\n    \"com.google.javascript.jscomp.type.ChainableReverseAbstractInterpreter.declareNameInScope\",\n    \"com.google.javascript.jscomp.type.ClosureReverseAbstractInterpreter.restrictParameter\",\n    \"com.google.javascript.jscomp.TypeInference.branchedFlowThrough\"\n],\n\"input_conditions\": [\n    \"The 'this' keyword is used as an argument to a type-checking function like goog.isFunction, goog.isObject, or goog.isNull.\",\n    \"The context is within the Closure Compiler's type inference pass.\"\n],\n\"expected\": \"Normal compilation, checking the type of 'this' without errors.\",\n\"actual\": \"java.lang.IllegalArgumentException thrown with message 'Node cannot be refined.' for the THIS node (global this), causing compilation failure.\",\n\"reproduction_steps\": [\n    \"1. Write code that calls goog.isFunction(this) or goog.isObject(this) or goog.isNull(this).\",\n    \"2. Attempt to compile the code using the Closure Compiler.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

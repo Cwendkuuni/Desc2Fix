@@ -1,0 +1,35 @@
+You are an expert software engineer specialized in program repair and testing.
+
+Evaluate how effectively this test validates the patch **in the context of the described bug**.
+
+Structured Bug Report (JSON signals):
+---
+{BUG_REPORT_STRUCTURED_JSON}
+---
+
+Test:
+---
+{TEST_CODE}
+---
+
+Patch ({PATCH_TYPE}):
+---
+{PATCH_CODE}
+---
+
+Rate the following (1–5 integers):
+- coverage: does the test cover entities/APIs or scenarios fixed by the patch?
+- correctness: does the test verify expected vs. actual behavior described in the signals?
+- specificity: is the test narrowly focused on validating the fix?
+- alignment_score: overall validation quality
+
+Provide a short justification (2–4 sentences).
+
+Output only JSON between triple backticks:
+{{
+"alignment_score": <1-5>,
+"coverage": <1-5>,
+"correctness": <1-5>,
+"specificity": <1-5>,
+"justification": "..."
+}}

@@ -1,0 +1,81 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-79",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.RuntimeException: INTERNAL COMPILER ERROR."
+    ],
+    "api_involved": [
+      "com.google.javascript.jscomp.Compiler.runCallable",
+      "com.google.javascript.jscomp.Compiler.runInCompilerThread",
+      "com.google.javascript.jscomp.Compiler.compile",
+      "com.google.javascript.jscomp.AbstractCommandLineRunner.doRun",
+      "com.google.javascript.jscomp.AbstractCommandLineRunner.run",
+      "com.google.javascript.jscomp.CommandLineRunner.main",
+      "com.google.common.base.Preconditions.checkState",
+      "com.google.javascript.jscomp.Normalize$DuplicateDeclarationHandler.onRedeclaration",
+      "com.google.javascript.jscomp.SyntacticScopeCreator.declareVar",
+      "com.google.javascript.jscomp.SyntacticScopeCreator.scanVars",
+      "com.google.javascript.jscomp.SyntacticScopeCreator.scanRoot",
+      "com.google.javascript.jscomp.SyntacticScopeCreator.createScope",
+      "com.google.javascript.jscomp.NodeTraversal.getScope"
+    ],
+    "input_conditions": [
+      "compilation_level ADVANCED_OPTIMIZATIONS",
+      "externs prototype.js",
+      "externs prototype-1.6.1.js"
+    ],
+    "reproduction_steps": [
+      "java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --externs prototype.js --js bootloader.js",
+      "java -jar compiler.jar --js source.js --js_output_file output.js --externs prototype-1.6.1.js --compilation_level ADVANCED_OPTIMIZATIONS"
+    ],
+    "expected": [
+      "Successful compilation without errors"
+    ],
+    "actual": [
+      "INTERNAL COMPILER ERROR occurs with a runtime exception"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.RuntimeException: INTERNAL COMPILER ERROR."
+    ],
+    "api_involved": [
+      "com.google.javascript.jscomp.Compiler.runCallable",
+      "com.google.javascript.jscomp.Compiler.runInCompilerThread",
+      "com.google.javascript.jscomp.Compiler.compile",
+      "com.google.javascript.jscomp.AbstractCommandLineRunner.doRun",
+      "com.google.javascript.jscomp.AbstractCommandLineRunner.run",
+      "com.google.javascript.jscomp.CommandLineRunner.main",
+      "com.google.common.base.Preconditions.checkState",
+      "com.google.javascript.jscomp.Normalize$DuplicateDeclarationHandler.onRedeclaration",
+      "com.google.javascript.jscomp.SyntacticScopeCreator.declareVar",
+      "com.google.javascript.jscomp.SyntacticScopeCreator.scanVars",
+      "com.google.javascript.jscomp.SyntacticScopeCreator.scanRoot",
+      "com.google.javascript.jscomp.SyntacticScopeCreator.createScope",
+      "com.google.javascript.jscomp.NodeTraversal.getScope"
+    ],
+    "input_conditions": [
+      "compilation_level ADVANCED_OPTIMIZATIONS",
+      "externs prototype.js",
+      "externs prototype-1.6.1.js"
+    ],
+    "reproduction_steps": [
+      "java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --externs prototype.js --js bootloader.js",
+      "java -jar compiler.jar --js source.js --js_output_file output.js --externs prototype-1.6.1.js --compilation_level ADVANCED_OPTIMIZATIONS"
+    ],
+    "expected": [
+      "Successful compilation without errors"
+    ],
+    "actual": [
+      "INTERNAL COMPILER ERROR occurs with a runtime exception"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"java.lang.RuntimeException: INTERNAL COMPILER ERROR.\",\n  \"api_involved\": [\n    \"com.google.javascript.jscomp.Compiler.runCallable\",\n    \"com.google.javascript.jscomp.Compiler.runInCompilerThread\",\n    \"com.google.javascript.jscomp.Compiler.compile\",\n    \"com.google.javascript.jscomp.AbstractCommandLineRunner.doRun\",\n    \"com.google.javascript.jscomp.AbstractCommandLineRunner.run\",\n    \"com.google.javascript.jscomp.CommandLineRunner.main\",\n    \"com.google.common.base.Preconditions.checkState\",\n    \"com.google.javascript.jscomp.Normalize$DuplicateDeclarationHandler.onRedeclaration\",\n    \"com.google.javascript.jscomp.SyntacticScopeCreator.declareVar\",\n    \"com.google.javascript.jscomp.SyntacticScopeCreator.scanVars\",\n    \"com.google.javascript.jscomp.SyntacticScopeCreator.scanRoot\",\n    \"com.google.javascript.jscomp.SyntacticScopeCreator.createScope\",\n    \"com.google.javascript.jscomp.NodeTraversal.getScope\"\n  ],\n  \"input_conditions\": [\n    \"compilation_level ADVANCED_OPTIMIZATIONS\",\n    \"externs prototype.js\",\n    \"externs prototype-1.6.1.js\"\n  ],\n  \"expected\": \"Successful compilation without errors\",\n  \"actual\": \"INTERNAL COMPILER ERROR occurs with a runtime exception\",\n  \"reproduction_steps\": [\n    \"java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --externs prototype.js --js bootloader.js\",\n    \"java -jar compiler.jar --js source.js --js_output_file output.js --externs prototype-1.6.1.js --compilation_level ADVANCED_OPTIMIZATIONS\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"java.lang.RuntimeException: INTERNAL COMPILER ERROR.\",\n  \"api_involved\": [\n    \"com.google.javascript.jscomp.Compiler.runCallable\",\n    \"com.google.javascript.jscomp.Compiler.runInCompilerThread\",\n    \"com.google.javascript.jscomp.Compiler.compile\",\n    \"com.google.javascript.jscomp.AbstractCommandLineRunner.doRun\",\n    \"com.google.javascript.jscomp.AbstractCommandLineRunner.run\",\n    \"com.google.javascript.jscomp.CommandLineRunner.main\",\n    \"com.google.common.base.Preconditions.checkState\",\n    \"com.google.javascript.jscomp.Normalize$DuplicateDeclarationHandler.onRedeclaration\",\n    \"com.google.javascript.jscomp.SyntacticScopeCreator.declareVar\",\n    \"com.google.javascript.jscomp.SyntacticScopeCreator.scanVars\",\n    \"com.google.javascript.jscomp.SyntacticScopeCreator.scanRoot\",\n    \"com.google.javascript.jscomp.SyntacticScopeCreator.createScope\",\n    \"com.google.javascript.jscomp.NodeTraversal.getScope\"\n  ],\n  \"input_conditions\": [\n    \"compilation_level ADVANCED_OPTIMIZATIONS\",\n    \"externs prototype.js\",\n    \"externs prototype-1.6.1.js\"\n  ],\n  \"expected\": \"Successful compilation without errors\",\n  \"actual\": \"INTERNAL COMPILER ERROR occurs with a runtime exception\",\n  \"reproduction_steps\": [\n    \"java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --externs prototype.js --js bootloader.js\",\n    \"java -jar compiler.jar --js source.js --js_output_file output.js --externs prototype-1.6.1.js --compilation_level ADVANCED_OPTIMIZATIONS\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

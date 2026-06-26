@@ -1,0 +1,65 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Collections-28",
+  "project": "Collections",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "PatriciaTrie.prefixMap",
+      "PatriciaTrie.clear",
+      "AbstractPatriciaTrie$PrefixRangeEntrySet$EntryIterator.remove"
+    ],
+    "input_conditions": [
+      "PatriciaTrie with entries (\"Anna\", 1), (\"Anael\", 2), (\"Analu\", 3), (\"Andreas\", 4), (\"Andrea\", 5), (\"Andres\", 6), (\"Anatole\", 7)",
+      "calling prefixMap(\"And\") on the trie",
+      "then calling clear() on the prefixMap"
+    ],
+    "reproduction_steps": [
+      "Create a PatriciaTrie and put in entries with keys starting with \"An\"",
+      "Call prefixMap(\"And\") to obtain a submap",
+      "Call clear() on the prefixMap",
+      "Observe NullPointerException in the stacktrace"
+    ],
+    "expected": [
+      "prefixMap.clear() should remove all entries matching the prefix and leave other entries intact"
+    ],
+    "actual": [
+      "prefixMap.clear() throws NullPointerException"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "PatriciaTrie.prefixMap",
+      "PatriciaTrie.clear",
+      "AbstractPatriciaTrie$PrefixRangeEntrySet$EntryIterator.remove"
+    ],
+    "input_conditions": [
+      "PatriciaTrie with entries (\"Anna\", 1), (\"Anael\", 2), (\"Analu\", 3), (\"Andreas\", 4), (\"Andrea\", 5), (\"Andres\", 6), (\"Anatole\", 7)",
+      "calling prefixMap(\"And\") on the trie",
+      "then calling clear() on the prefixMap"
+    ],
+    "reproduction_steps": [
+      "Create a PatriciaTrie and put in entries with keys starting with \"An\"",
+      "Call prefixMap(\"And\") to obtain a submap",
+      "Call clear() on the prefixMap",
+      "Observe NullPointerException in the stacktrace"
+    ],
+    "expected": [
+      "prefixMap.clear() should remove all entries matching the prefix and leave other entries intact"
+    ],
+    "actual": [
+      "prefixMap.clear() throws NullPointerException"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"NullPointerException\",\n\"api_involved\": [\"PatriciaTrie.prefixMap\", \"PatriciaTrie.clear\", \"AbstractPatriciaTrie$PrefixRangeEntrySet$EntryIterator.remove\"],\n\"input_conditions\": [\"PatriciaTrie with entries (\\\"Anna\\\", 1), (\\\"Anael\\\", 2), (\\\"Analu\\\", 3), (\\\"Andreas\\\", 4), (\\\"Andrea\\\", 5), (\\\"Andres\\\", 6), (\\\"Anatole\\\", 7)\", \"calling prefixMap(\\\"And\\\") on the trie\", \"then calling clear() on the prefixMap\"],\n\"expected\": \"prefixMap.clear() should remove all entries matching the prefix and leave other entries intact\",\n\"actual\": \"prefixMap.clear() throws NullPointerException\",\n\"reproduction_steps\": [\"Create a PatriciaTrie and put in entries with keys starting with \\\"An\\\"\", \"Call prefixMap(\\\"And\\\") to obtain a submap\", \"Call clear() on the prefixMap\", \"Observe NullPointerException in the stacktrace\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"NullPointerException\",\n\"api_involved\": [\"PatriciaTrie.prefixMap\", \"PatriciaTrie.clear\", \"AbstractPatriciaTrie$PrefixRangeEntrySet$EntryIterator.remove\"],\n\"input_conditions\": [\"PatriciaTrie with entries (\\\"Anna\\\", 1), (\\\"Anael\\\", 2), (\\\"Analu\\\", 3), (\\\"Andreas\\\", 4), (\\\"Andrea\\\", 5), (\\\"Andres\\\", 6), (\\\"Anatole\\\", 7)\", \"calling prefixMap(\\\"And\\\") on the trie\", \"then calling clear() on the prefixMap\"],\n\"expected\": \"prefixMap.clear() should remove all entries matching the prefix and leave other entries intact\",\n\"actual\": \"prefixMap.clear() throws NullPointerException\",\n\"reproduction_steps\": [\"Create a PatriciaTrie and put in entries with keys starting with \\\"An\\\"\", \"Call prefixMap(\\\"And\\\") to obtain a submap\", \"Call clear() on the prefixMap\", \"Observe NullPointerException in the stacktrace\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

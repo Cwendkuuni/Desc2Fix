@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Cli-4",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "processing selected target: arget"
+    ],
+    "api_involved": [
+      "PosixParser",
+      "parse",
+      "hasOption",
+      "getOptionValue"
+    ],
+    "input_conditions": [
+      "-target foobar.com"
+    ],
+    "reproduction_steps": [
+      "Set up command line option with short option '-t' and long option '--target'",
+      "Run the command line with '-target foobar.com'"
+    ],
+    "expected": [
+      "processing selected target: foobar.com"
+    ],
+    "actual": [
+      "processing selected target: arget"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "processing selected target: arget"
+    ],
+    "api_involved": [
+      "PosixParser",
+      "parse",
+      "hasOption",
+      "getOptionValue"
+    ],
+    "input_conditions": [
+      "-target foobar.com"
+    ],
+    "reproduction_steps": [
+      "Set up command line option with short option '-t' and long option '--target'",
+      "Run the command line with '-target foobar.com'"
+    ],
+    "expected": [
+      "processing selected target: foobar.com"
+    ],
+    "actual": [
+      "processing selected target: arget"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"processing selected target: arget\",\n  \"api_involved\": [\"PosixParser\", \"parse\", \"hasOption\", \"getOptionValue\"],\n  \"input_conditions\": [\"-target foobar.com\"],\n  \"expected\": \"processing selected target: foobar.com\",\n  \"actual\": \"processing selected target: arget\",\n  \"reproduction_steps\": [\n    \"Set up command line option with short option '-t' and long option '--target'\",\n    \"Run the command line with '-target foobar.com'\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"processing selected target: arget\",\n  \"api_involved\": [\"PosixParser\", \"parse\", \"hasOption\", \"getOptionValue\"],\n  \"input_conditions\": [\"-target foobar.com\"],\n  \"expected\": \"processing selected target: foobar.com\",\n  \"actual\": \"processing selected target: arget\",\n  \"reproduction_steps\": [\n    \"Set up command line option with short option '-t' and long option '--target'\",\n    \"Run the command line with '-target foobar.com'\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

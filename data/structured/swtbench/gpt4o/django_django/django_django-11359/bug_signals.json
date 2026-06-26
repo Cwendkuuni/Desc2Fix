@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-11359",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "FieldError: Cannot resolve expression type, unknown output_field"
+    ],
+    "api_involved": [
+      "django.db.models.Value",
+      "django.contrib.postgres.search.SearchVector",
+      "AModel.objects.filter.update"
+    ],
+    "input_conditions": [
+      "AModel instance exists with primary key 1",
+      "search_vector field type is SearchVectorField"
+    ],
+    "reproduction_steps": [
+      "Ensure AModel instance with pk=1 exists",
+      "Execute AModel.objects.filter(pk=1).update(search_vector=SearchVector(Value('a string to be indexed and inserted to search_vector field')))"
+    ],
+    "expected": [
+      "search_vector field should be updated with the indexed string"
+    ],
+    "actual": [
+      "FieldError preventing the update of the search_vector field"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "FieldError: Cannot resolve expression type, unknown output_field"
+    ],
+    "api_involved": [
+      "django.db.models.Value",
+      "django.contrib.postgres.search.SearchVector",
+      "AModel.objects.filter.update"
+    ],
+    "input_conditions": [
+      "AModel instance exists with primary key 1",
+      "search_vector field type is SearchVectorField"
+    ],
+    "reproduction_steps": [
+      "Ensure AModel instance with pk=1 exists",
+      "Execute AModel.objects.filter(pk=1).update(search_vector=SearchVector(Value('a string to be indexed and inserted to search_vector field')))"
+    ],
+    "expected": [
+      "search_vector field should be updated with the indexed string"
+    ],
+    "actual": [
+      "FieldError preventing the update of the search_vector field"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"FieldError: Cannot resolve expression type, unknown output_field\",\n  \"api_involved\": [\"django.db.models.Value\", \"django.contrib.postgres.search.SearchVector\", \"AModel.objects.filter.update\"],\n  \"input_conditions\": [\"AModel instance exists with primary key 1\", \"search_vector field type is SearchVectorField\"],\n  \"expected\": \"search_vector field should be updated with the indexed string\",\n  \"actual\": \"FieldError preventing the update of the search_vector field\",\n  \"reproduction_steps\": [\n    \"Ensure AModel instance with pk=1 exists\",\n    \"Execute AModel.objects.filter(pk=1).update(search_vector=SearchVector(Value('a string to be indexed and inserted to search_vector field')))\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"FieldError: Cannot resolve expression type, unknown output_field\",\n  \"api_involved\": [\"django.db.models.Value\", \"django.contrib.postgres.search.SearchVector\", \"AModel.objects.filter.update\"],\n  \"input_conditions\": [\"AModel instance exists with primary key 1\", \"search_vector field type is SearchVectorField\"],\n  \"expected\": \"search_vector field should be updated with the indexed string\",\n  \"actual\": \"FieldError preventing the update of the search_vector field\",\n  \"reproduction_steps\": [\n    \"Ensure AModel instance with pk=1 exists\",\n    \"Execute AModel.objects.filter(pk=1).update(search_vector=SearchVector(Value('a string to be indexed and inserted to search_vector field')))\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

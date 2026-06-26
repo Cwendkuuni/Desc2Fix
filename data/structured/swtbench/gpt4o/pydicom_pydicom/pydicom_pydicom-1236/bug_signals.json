@@ -1,0 +1,49 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "pydicom__pydicom-1236",
+  "project": null,
+  "repo": "pydicom/pydicom",
+  "signals": {
+    "exception": [
+      "throws an exception"
+    ],
+    "api_involved": [
+      "apply_voi_lut"
+    ],
+    "input_conditions": [
+      "both WL/VOILUTFunction and VOILUTSequence are present",
+      "DICOM meta fields corruption"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "clarify how to decide between applying WL or LUT based on DICOM standard"
+    ],
+    "actual": [
+      "unclear application decision between LUT and WL; throws exceptions in cases of missing DICOM metadata"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "throws an exception"
+    ],
+    "api_involved": [
+      "apply_voi_lut"
+    ],
+    "input_conditions": [
+      "both WL/VOILUTFunction and VOILUTSequence are present",
+      "DICOM meta fields corruption"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "clarify how to decide between applying WL or LUT based on DICOM standard"
+    ],
+    "actual": [
+      "unclear application decision between LUT and WL; throws exceptions in cases of missing DICOM metadata"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"throws an exception\",\n  \"api_involved\": [\"apply_voi_lut\"],\n  \"input_conditions\": [\n    \"both WL/VOILUTFunction and VOILUTSequence are present\",\n    \"DICOM meta fields corruption\"\n  ],\n  \"expected\": \"clarify how to decide between applying WL or LUT based on DICOM standard\",\n  \"actual\": \"unclear application decision between LUT and WL; throws exceptions in cases of missing DICOM metadata\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"throws an exception\",\n  \"api_involved\": [\"apply_voi_lut\"],\n  \"input_conditions\": [\n    \"both WL/VOILUTFunction and VOILUTSequence are present\",\n    \"DICOM meta fields corruption\"\n  ],\n  \"expected\": \"clarify how to decide between applying WL or LUT based on DICOM standard\",\n  \"actual\": \"unclear application decision between LUT and WL; throws exceptions in cases of missing DICOM metadata\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,65 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "matplotlib__matplotlib-20374",
+  "project": null,
+  "repo": "matplotlib/matplotlib",
+  "signals": {
+    "exception": [
+      "error in plot generation"
+    ],
+    "api_involved": [
+      "plot_directive",
+      "Sphinx include directive",
+      "context option"
+    ],
+    "input_conditions": [
+      "files a.rst and b.rst are included via RST include directive",
+      "plot directive has :context: option set",
+      "modification of included file changes its modification time but not the parent file"
+    ],
+    "reproduction_steps": [
+      "Put conf.py, index.rst, a.rst, b.rst in a directory and run sphinx-quickstart into it",
+      "Build the docs the first time using make html",
+      "Modify b.rst in any way",
+      "Build the docs again"
+    ],
+    "expected": [
+      "no error should occur; all context-dependent plots should be re-run when a file is recompiled"
+    ],
+    "actual": [
+      "the third plot throws an error because it is run without seeing the saved context from previous plots"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "error in plot generation"
+    ],
+    "api_involved": [
+      "plot_directive",
+      "Sphinx include directive",
+      "context option"
+    ],
+    "input_conditions": [
+      "files a.rst and b.rst are included via RST include directive",
+      "plot directive has :context: option set",
+      "modification of included file changes its modification time but not the parent file"
+    ],
+    "reproduction_steps": [
+      "Put conf.py, index.rst, a.rst, b.rst in a directory and run sphinx-quickstart into it",
+      "Build the docs the first time using make html",
+      "Modify b.rst in any way",
+      "Build the docs again"
+    ],
+    "expected": [
+      "no error should occur; all context-dependent plots should be re-run when a file is recompiled"
+    ],
+    "actual": [
+      "the third plot throws an error because it is run without seeing the saved context from previous plots"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"error in plot generation\",\n\"api_involved\": [\"plot_directive\", \"Sphinx include directive\", \"context option\"],\n\"input_conditions\": [\"files a.rst and b.rst are included via RST include directive\", \"plot directive has :context: option set\", \"modification of included file changes its modification time but not the parent file\"],\n\"expected\": \"no error should occur; all context-dependent plots should be re-run when a file is recompiled\",\n\"actual\": \"the third plot throws an error because it is run without seeing the saved context from previous plots\",\n\"reproduction_steps\": [\n\"Put conf.py, index.rst, a.rst, b.rst in a directory and run sphinx-quickstart into it\",\n\"Build the docs the first time using make html\",\n\"Modify b.rst in any way\",\n\"Build the docs again\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"error in plot generation\",\n\"api_involved\": [\"plot_directive\", \"Sphinx include directive\", \"context option\"],\n\"input_conditions\": [\"files a.rst and b.rst are included via RST include directive\", \"plot directive has :context: option set\", \"modification of included file changes its modification time but not the parent file\"],\n\"expected\": \"no error should occur; all context-dependent plots should be re-run when a file is recompiled\",\n\"actual\": \"the third plot throws an error because it is run without seeing the saved context from previous plots\",\n\"reproduction_steps\": [\n\"Put conf.py, index.rst, a.rst, b.rst in a directory and run sphinx-quickstart into it\",\n\"Build the docs the first time using make html\",\n\"Modify b.rst in any way\",\n\"Build the docs again\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

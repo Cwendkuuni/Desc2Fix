@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-150",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Closure Compiler type checker",
+      "@param annotation",
+      "ns.a"
+    ],
+    "input_conditions": [
+      "Source code with @param annotation on a function defined inside an anonymous function (local scope)",
+      "Calling code located in a different scope (e.g., inside another function or at global level)",
+      "Compilation with --warning_level VERBOSE"
+    ],
+    "reproduction_steps": [
+      "Set up code with ns.a defined inside an anonymous function (e.g., (function() { /** @param {string=} b */ ns.a = function(b) {} })())",
+      "Create a separate function d() that calls ns.a() and ns.a(123)",
+      "Compile the code with the Closure Compiler using --warning_level VERBOSE",
+      "Observe incorrect warnings: warning for calling ns.a with 0 parameters, but no warning for type mismatch on ns.a(123)"
+    ],
+    "expected": [
+      "The type checker should recognize the @param type annotation on ns.a even when ns.a is defined within an anonymous function (local scope) and emit a warning for calling ns.a(123) (wrong type) but no warning for calling ns.a() (optional parameter)."
+    ],
+    "actual": [
+      "When ns.a is defined inside an anonymous function, the type checker ignores the @param declaration. It emits a warning for calling ns.a with 0 parameters (incorrectly), and does not emit a warning for the type error in ns.a(123). Additionally, when calling ns.a from global scope, no warnings are emitted at all."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Closure Compiler type checker",
+      "@param annotation",
+      "ns.a"
+    ],
+    "input_conditions": [
+      "Source code with @param annotation on a function defined inside an anonymous function (local scope)",
+      "Calling code located in a different scope (e.g., inside another function or at global level)",
+      "Compilation with --warning_level VERBOSE"
+    ],
+    "reproduction_steps": [
+      "Set up code with ns.a defined inside an anonymous function (e.g., (function() { /** @param {string=} b */ ns.a = function(b) {} })())",
+      "Create a separate function d() that calls ns.a() and ns.a(123)",
+      "Compile the code with the Closure Compiler using --warning_level VERBOSE",
+      "Observe incorrect warnings: warning for calling ns.a with 0 parameters, but no warning for type mismatch on ns.a(123)"
+    ],
+    "expected": [
+      "The type checker should recognize the @param type annotation on ns.a even when ns.a is defined within an anonymous function (local scope) and emit a warning for calling ns.a(123) (wrong type) but no warning for calling ns.a() (optional parameter)."
+    ],
+    "actual": [
+      "When ns.a is defined inside an anonymous function, the type checker ignores the @param declaration. It emits a warning for calling ns.a with 0 parameters (incorrectly), and does not emit a warning for the type error in ns.a(123). Additionally, when calling ns.a from global scope, no warnings are emitted at all."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"Closure Compiler type checker\", \"@param annotation\", \"ns.a\"],\n  \"input_conditions\": [\n    \"Source code with @param annotation on a function defined inside an anonymous function (local scope)\",\n    \"Calling code located in a different scope (e.g., inside another function or at global level)\",\n    \"Compilation with --warning_level VERBOSE\"\n  ],\n  \"expected\": \"The type checker should recognize the @param type annotation on ns.a even when ns.a is defined within an anonymous function (local scope) and emit a warning for calling ns.a(123) (wrong type) but no warning for calling ns.a() (optional parameter).\",\n  \"actual\": \"When ns.a is defined inside an anonymous function, the type checker ignores the @param declaration. It emits a warning for calling ns.a with 0 parameters (incorrectly), and does not emit a warning for the type error in ns.a(123). Additionally, when calling ns.a from global scope, no warnings are emitted at all.\",\n  \"reproduction_steps\": [\n    \"Set up code with ns.a defined inside an anonymous function (e.g., (function() { /** @param {string=} b */ ns.a = function(b) {} })())\",\n    \"Create a separate function d() that calls ns.a() and ns.a(123)\",\n    \"Compile the code with the Closure Compiler using --warning_level VERBOSE\",\n    \"Observe incorrect warnings: warning for calling ns.a with 0 parameters, but no warning for type mismatch on ns.a(123)\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"Closure Compiler type checker\", \"@param annotation\", \"ns.a\"],\n  \"input_conditions\": [\n    \"Source code with @param annotation on a function defined inside an anonymous function (local scope)\",\n    \"Calling code located in a different scope (e.g., inside another function or at global level)\",\n    \"Compilation with --warning_level VERBOSE\"\n  ],\n  \"expected\": \"The type checker should recognize the @param type annotation on ns.a even when ns.a is defined within an anonymous function (local scope) and emit a warning for calling ns.a(123) (wrong type) but no warning for calling ns.a() (optional parameter).\",\n  \"actual\": \"When ns.a is defined inside an anonymous function, the type checker ignores the @param declaration. It emits a warning for calling ns.a with 0 parameters (incorrectly), and does not emit a warning for the type error in ns.a(123). Additionally, when calling ns.a from global scope, no warnings are emitted at all.\",\n  \"reproduction_steps\": [\n    \"Set up code with ns.a defined inside an anonymous function (e.g., (function() { /** @param {string=} b */ ns.a = function(b) {} })())\",\n    \"Create a separate function d() that calls ns.a() and ns.a(123)\",\n    \"Compile the code with the Closure Compiler using --warning_level VERBOSE\",\n    \"Observe incorrect warnings: warning for calling ns.a with 0 parameters, but no warning for type mismatch on ns.a(123)\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

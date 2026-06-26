@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Cli-24",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "OutOfMemoryError"
+    ],
+    "api_involved": [
+      "HelpFormatter",
+      "Options.addOption",
+      "HelpFormatter.printHelp"
+    ],
+    "input_conditions": [
+      "width < word length",
+      "OPT_PASSWORD longer than allowed width",
+      "lastPos equals firstPos for certain options"
+    ],
+    "reproduction_steps": [
+      "Create Options with a long description",
+      "Set HelpFormatter width to a low value",
+      "Call HelpFormatter.printHelp"
+    ],
+    "expected": [
+      "An exception indicating insufficient width"
+    ],
+    "actual": [
+      "Infinite loop causing OutOfMemoryError"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "OutOfMemoryError"
+    ],
+    "api_involved": [
+      "HelpFormatter",
+      "Options.addOption",
+      "HelpFormatter.printHelp"
+    ],
+    "input_conditions": [
+      "width < word length",
+      "OPT_PASSWORD longer than allowed width",
+      "lastPos equals firstPos for certain options"
+    ],
+    "reproduction_steps": [
+      "Create Options with a long description",
+      "Set HelpFormatter width to a low value",
+      "Call HelpFormatter.printHelp"
+    ],
+    "expected": [
+      "An exception indicating insufficient width"
+    ],
+    "actual": [
+      "Infinite loop causing OutOfMemoryError"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"OutOfMemoryError\",\n  \"api_involved\": [\"HelpFormatter\", \"Options.addOption\", \"HelpFormatter.printHelp\"],\n  \"input_conditions\": [\"width < word length\", \"OPT_PASSWORD longer than allowed width\", \"lastPos equals firstPos for certain options\"],\n  \"expected\": \"An exception indicating insufficient width\",\n  \"actual\": \"Infinite loop causing OutOfMemoryError\",\n  \"reproduction_steps\": [\"Create Options with a long description\", \"Set HelpFormatter width to a low value\", \"Call HelpFormatter.printHelp\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"OutOfMemoryError\",\n  \"api_involved\": [\"HelpFormatter\", \"Options.addOption\", \"HelpFormatter.printHelp\"],\n  \"input_conditions\": [\"width < word length\", \"OPT_PASSWORD longer than allowed width\", \"lastPos equals firstPos for certain options\"],\n  \"expected\": \"An exception indicating insufficient width\",\n  \"actual\": \"Infinite loop causing OutOfMemoryError\",\n  \"reproduction_steps\": [\"Create Options with a long description\", \"Set HelpFormatter width to a low value\", \"Call HelpFormatter.printHelp\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

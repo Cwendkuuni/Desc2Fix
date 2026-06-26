@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-14248",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "str",
+      "pretty",
+      "latex"
+    ],
+    "input_conditions": [
+      "MatrixSymbols difference"
+    ],
+    "reproduction_steps": [
+      "Create MatrixSymbols a and b.",
+      "Calculate the difference a-b.",
+      "Print the result using each of str, pretty, and latex printers."
+    ],
+    "expected": [
+      "MatrixSymbols should print as a difference (a-b)."
+    ],
+    "actual": [
+      "MatrixSymbols prints as a sum with (-1) coefficient."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "str",
+      "pretty",
+      "latex"
+    ],
+    "input_conditions": [
+      "MatrixSymbols difference"
+    ],
+    "reproduction_steps": [
+      "Create MatrixSymbols a and b.",
+      "Calculate the difference a-b.",
+      "Print the result using each of str, pretty, and latex printers."
+    ],
+    "expected": [
+      "MatrixSymbols should print as a difference (a-b)."
+    ],
+    "actual": [
+      "MatrixSymbols prints as a sum with (-1) coefficient."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"str\", \"pretty\", \"latex\"],\n  \"input_conditions\": [\"MatrixSymbols difference\"],\n  \"expected\": \"MatrixSymbols should print as a difference (a-b).\",\n  \"actual\": \"MatrixSymbols prints as a sum with (-1) coefficient.\",\n  \"reproduction_steps\": [\n    \"Create MatrixSymbols a and b.\",\n    \"Calculate the difference a-b.\",\n    \"Print the result using each of str, pretty, and latex printers.\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"str\", \"pretty\", \"latex\"],\n  \"input_conditions\": [\"MatrixSymbols difference\"],\n  \"expected\": \"MatrixSymbols should print as a difference (a-b).\",\n  \"actual\": \"MatrixSymbols prints as a sum with (-1) coefficient.\",\n  \"reproduction_steps\": [\n    \"Create MatrixSymbols a and b.\",\n    \"Calculate the difference a-b.\",\n    \"Print the result using each of str, pretty, and latex printers.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

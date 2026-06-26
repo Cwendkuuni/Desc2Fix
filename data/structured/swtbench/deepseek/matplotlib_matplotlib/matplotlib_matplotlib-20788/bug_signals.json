@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "matplotlib__matplotlib-20788",
+  "project": null,
+  "repo": "matplotlib/matplotlib",
+  "signals": {
+    "exception": [
+      "Error when creating colorbar from QuadMesh with cell-specific alpha values"
+    ],
+    "api_involved": [
+      "pcolormesh",
+      "colorbar",
+      "QuadMesh"
+    ],
+    "input_conditions": [
+      "cell-specific alpha values as an array in pcolormesh",
+      "Matplotlib version 3.4.2"
+    ],
+    "reproduction_steps": [
+      "Create a pcolormesh with cell-specific alpha values as an array",
+      "Use the resulting QuadMesh object to create a colorbar"
+    ],
+    "expected": [
+      "A heat-map with a color bar beside it"
+    ],
+    "actual": [
+      "Error generated when trying to create a colorbar from the QuadMesh object"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Error when creating colorbar from QuadMesh with cell-specific alpha values"
+    ],
+    "api_involved": [
+      "pcolormesh",
+      "colorbar",
+      "QuadMesh"
+    ],
+    "input_conditions": [
+      "cell-specific alpha values as an array in pcolormesh",
+      "Matplotlib version 3.4.2"
+    ],
+    "reproduction_steps": [
+      "Create a pcolormesh with cell-specific alpha values as an array",
+      "Use the resulting QuadMesh object to create a colorbar"
+    ],
+    "expected": [
+      "A heat-map with a color bar beside it"
+    ],
+    "actual": [
+      "Error generated when trying to create a colorbar from the QuadMesh object"
+    ]
+  },
+  "raw_response": "{\n\"exception\": \"Error when creating colorbar from QuadMesh with cell-specific alpha values\",\n\"api_involved\": [\"pcolormesh\", \"colorbar\", \"QuadMesh\"],\n\"input_conditions\": [\"cell-specific alpha values as an array in pcolormesh\", \"Matplotlib version 3.4.2\"],\n\"expected\": \"A heat-map with a color bar beside it\",\n\"actual\": \"Error generated when trying to create a colorbar from the QuadMesh object\",\n\"reproduction_steps\": [\n    \"Create a pcolormesh with cell-specific alpha values as an array\",\n    \"Use the resulting QuadMesh object to create a colorbar\"\n]\n}",
+  "llm_response": "{\n\"exception\": \"Error when creating colorbar from QuadMesh with cell-specific alpha values\",\n\"api_involved\": [\"pcolormesh\", \"colorbar\", \"QuadMesh\"],\n\"input_conditions\": [\"cell-specific alpha values as an array in pcolormesh\", \"Matplotlib version 3.4.2\"],\n\"expected\": \"A heat-map with a color bar beside it\",\n\"actual\": \"Error generated when trying to create a colorbar from the QuadMesh object\",\n\"reproduction_steps\": [\n    \"Create a pcolormesh with cell-specific alpha values as an array\",\n    \"Use the resulting QuadMesh object to create a colorbar\"\n]\n}",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

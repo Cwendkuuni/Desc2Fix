@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sqlfluff__sqlfluff-4151",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [
+      "error with exit code 2"
+    ],
+    "api_involved": [
+      "--disable_progress_bar"
+    ],
+    "input_conditions": [
+      "version 1.4.0",
+      "python 3.10.3",
+      "sqlfluff 1.4.0",
+      "dialect ansi"
+    ],
+    "reproduction_steps": [
+      "Run the command with --disable_progress_bar flag on sqlfluff version 1.4.0 or above"
+    ],
+    "expected": [
+      "Should run as expected, with no error and no progress bar."
+    ],
+    "actual": [
+      "Exit code 2 and stderr"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "error with exit code 2"
+    ],
+    "api_involved": [
+      "--disable_progress_bar"
+    ],
+    "input_conditions": [
+      "version 1.4.0",
+      "python 3.10.3",
+      "sqlfluff 1.4.0",
+      "dialect ansi"
+    ],
+    "reproduction_steps": [
+      "Run the command with --disable_progress_bar flag on sqlfluff version 1.4.0 or above"
+    ],
+    "expected": [
+      "Should run as expected, with no error and no progress bar."
+    ],
+    "actual": [
+      "Exit code 2 and stderr"
+    ]
+  },
+  "raw_response": "```\n{\n    \"exception\": \"error with exit code 2\",\n    \"api_involved\": [\"--disable_progress_bar\"],\n    \"input_conditions\": [\"version 1.4.0\", \"python 3.10.3\", \"sqlfluff 1.4.0\", \"dialect ansi\"],\n    \"expected\": \"Should run as expected, with no error and no progress bar.\",\n    \"actual\": \"Exit code 2 and stderr\",\n    \"reproduction_steps\": [\n        \"Run the command with --disable_progress_bar flag on sqlfluff version 1.4.0 or above\"\n    ]\n}\n```",
+  "llm_response": "```\n{\n    \"exception\": \"error with exit code 2\",\n    \"api_involved\": [\"--disable_progress_bar\"],\n    \"input_conditions\": [\"version 1.4.0\", \"python 3.10.3\", \"sqlfluff 1.4.0\", \"dialect ansi\"],\n    \"expected\": \"Should run as expected, with no error and no progress bar.\",\n    \"actual\": \"Exit code 2 and stderr\",\n    \"reproduction_steps\": [\n        \"Run the command with --disable_progress_bar flag on sqlfluff version 1.4.0 or above\"\n    ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-8",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "ClassCastException"
+    ],
+    "api_involved": [
+      "DiscreteDistribution.sample(int)",
+      "DiscreteDistribution.sample()"
+    ],
+    "input_conditions": [
+      "singletons.get(0) is of subtype T1 of T",
+      "DiscreteDistribution.sample() returns an object of type T but not T1",
+      "sampleSize is positive integer"
+    ],
+    "reproduction_steps": [
+      "Create a list of Pair<Object, Double> where first element is an anonymous subclass of Object and second is Double(0)",
+      "Add another Pair of Object and Double(1) to the list",
+      "Instantiate DiscreteDistribution<Object> with this list",
+      "Call sample(1) on the distribution"
+    ],
+    "expected": [
+      "Return an array of type T[] containing sampleSize random samples from the distribution without throwing exception"
+    ],
+    "actual": [
+      "Throws ClassCastException when trying to cast the runtime array created with a subtype's class to T[] because later samples may be of a different subtype"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ClassCastException"
+    ],
+    "api_involved": [
+      "DiscreteDistribution.sample(int)",
+      "DiscreteDistribution.sample()"
+    ],
+    "input_conditions": [
+      "singletons.get(0) is of subtype T1 of T",
+      "DiscreteDistribution.sample() returns an object of type T but not T1",
+      "sampleSize is positive integer"
+    ],
+    "reproduction_steps": [
+      "Create a list of Pair<Object, Double> where first element is an anonymous subclass of Object and second is Double(0)",
+      "Add another Pair of Object and Double(1) to the list",
+      "Instantiate DiscreteDistribution<Object> with this list",
+      "Call sample(1) on the distribution"
+    ],
+    "expected": [
+      "Return an array of type T[] containing sampleSize random samples from the distribution without throwing exception"
+    ],
+    "actual": [
+      "Throws ClassCastException when trying to cast the runtime array created with a subtype's class to T[] because later samples may be of a different subtype"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"ClassCastException\",\n\"api_involved\": [\"DiscreteDistribution.sample(int)\", \"DiscreteDistribution.sample()\"],\n\"input_conditions\": [\n    \"singletons.get(0) is of subtype T1 of T\",\n    \"DiscreteDistribution.sample() returns an object of type T but not T1\",\n    \"sampleSize is positive integer\"\n],\n\"expected\": \"Return an array of type T[] containing sampleSize random samples from the distribution without throwing exception\",\n\"actual\": \"Throws ClassCastException when trying to cast the runtime array created with a subtype's class to T[] because later samples may be of a different subtype\",\n\"reproduction_steps\": [\n    \"Create a list of Pair<Object, Double> where first element is an anonymous subclass of Object and second is Double(0)\",\n    \"Add another Pair of Object and Double(1) to the list\",\n    \"Instantiate DiscreteDistribution<Object> with this list\",\n    \"Call sample(1) on the distribution\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"ClassCastException\",\n\"api_involved\": [\"DiscreteDistribution.sample(int)\", \"DiscreteDistribution.sample()\"],\n\"input_conditions\": [\n    \"singletons.get(0) is of subtype T1 of T\",\n    \"DiscreteDistribution.sample() returns an object of type T but not T1\",\n    \"sampleSize is positive integer\"\n],\n\"expected\": \"Return an array of type T[] containing sampleSize random samples from the distribution without throwing exception\",\n\"actual\": \"Throws ClassCastException when trying to cast the runtime array created with a subtype's class to T[] because later samples may be of a different subtype\",\n\"reproduction_steps\": [\n    \"Create a list of Pair<Object, Double> where first element is an anonymous subclass of Object and second is Double(0)\",\n    \"Add another Pair of Object and Double(1) to the list\",\n    \"Instantiate DiscreteDistribution<Object> with this list\",\n    \"Call sample(1) on the distribution\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

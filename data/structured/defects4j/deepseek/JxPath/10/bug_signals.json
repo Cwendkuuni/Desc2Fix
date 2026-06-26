@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "JxPath-10",
+  "project": "JxPath",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "org.apache.xpath.objects.XObject",
+      "greaterThan()",
+      "lesserThan()"
+    ],
+    "input_conditions": [
+      "XPath expression: 2.0 > child1",
+      "child1 node-set is empty",
+      "XML document with only root element <doc/>"
+    ],
+    "reproduction_steps": [
+      "Create a JXPathContext with an XML document containing a root <doc/> element and no child elements.",
+      "Evaluate the XPath expression '2.0 > child1' with Boolean.class as the expected type.",
+      "Observe that the result is true, whereas it should be false because the 'child1' node-set is empty."
+    ],
+    "expected": [
+      "Comparison should return false because the right operand node-set is empty."
+    ],
+    "actual": [
+      "Comparison returns true instead of false."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "org.apache.xpath.objects.XObject",
+      "greaterThan()",
+      "lesserThan()"
+    ],
+    "input_conditions": [
+      "XPath expression: 2.0 > child1",
+      "child1 node-set is empty",
+      "XML document with only root element <doc/>"
+    ],
+    "reproduction_steps": [
+      "Create a JXPathContext with an XML document containing a root <doc/> element and no child elements.",
+      "Evaluate the XPath expression '2.0 > child1' with Boolean.class as the expected type.",
+      "Observe that the result is true, whereas it should be false because the 'child1' node-set is empty."
+    ],
+    "expected": [
+      "Comparison should return false because the right operand node-set is empty."
+    ],
+    "actual": [
+      "Comparison returns true instead of false."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"org.apache.xpath.objects.XObject\", \"greaterThan()\", \"lesserThan()\"],\n\"input_conditions\": [\"XPath expression: 2.0 > child1\", \"child1 node-set is empty\", \"XML document with only root element <doc/>\"],\n\"expected\": \"Comparison should return false because the right operand node-set is empty.\",\n\"actual\": \"Comparison returns true instead of false.\",\n\"reproduction_steps\": [\n\"Create a JXPathContext with an XML document containing a root <doc/> element and no child elements.\",\n\"Evaluate the XPath expression '2.0 > child1' with Boolean.class as the expected type.\",\n\"Observe that the result is true, whereas it should be false because the 'child1' node-set is empty.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"org.apache.xpath.objects.XObject\", \"greaterThan()\", \"lesserThan()\"],\n\"input_conditions\": [\"XPath expression: 2.0 > child1\", \"child1 node-set is empty\", \"XML document with only root element <doc/>\"],\n\"expected\": \"Comparison should return false because the right operand node-set is empty.\",\n\"actual\": \"Comparison returns true instead of false.\",\n\"reproduction_steps\": [\n\"Create a JXPathContext with an XML document containing a root <doc/> element and no child elements.\",\n\"Evaluate the XPath expression '2.0 > child1' with Boolean.class as the expected type.\",\n\"Observe that the result is true, whereas it should be false because the 'child1' node-set is empty.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

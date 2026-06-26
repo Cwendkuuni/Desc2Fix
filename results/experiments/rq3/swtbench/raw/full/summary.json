@@ -1,0 +1,17 @@
+{
+  "instances": 10,
+  "with_report_text": 10,
+  "with_patch_text": 10,
+  "avg_rouge_l": 0.083606,
+  "avg_jaccard": 0.108415,
+  "avg_identifier_jaccard": 0.063282,
+  "avg_pos_overlap": 0.791667,
+  "avg_sbert": 0.468967,
+  "avg_codebert": 0.909329,
+  "avg_openai_embedding": 0.420724,
+  "dataset": "swtbench",
+  "scenario": "raw",
+  "model": "none",
+  "artifact_pair": "report_patch",
+  "patch_view": "full"
+}

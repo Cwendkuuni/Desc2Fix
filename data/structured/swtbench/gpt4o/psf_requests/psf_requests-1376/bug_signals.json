@@ -1,0 +1,39 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "psf__requests-1376",
+  "project": null,
+  "repo": "psf/requests",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "test_unicode_multipart_post_fieldnames"
+    ],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [
+      "The test should consistently pass when executing with unicode field names in multipart POST requests."
+    ],
+    "actual": [
+      "The test fails intermittently when executed."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "test_unicode_multipart_post_fieldnames"
+    ],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [
+      "The test should consistently pass when executing with unicode field names in multipart POST requests."
+    ],
+    "actual": [
+      "The test fails intermittently when executed."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"test_unicode_multipart_post_fieldnames\"],\n  \"input_conditions\": null,\n  \"expected\": \"The test should consistently pass when executing with unicode field names in multipart POST requests.\",\n  \"actual\": \"The test fails intermittently when executed.\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"test_unicode_multipart_post_fieldnames\"],\n  \"input_conditions\": null,\n  \"expected\": \"The test should consistently pass when executing with unicode field names in multipart POST requests.\",\n  \"actual\": \"The test fails intermittently when executed.\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

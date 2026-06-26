@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-71",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "DormandPrince853Integrator",
+      "integrate",
+      "Assert.assertEquals"
+    ],
+    "input_conditions": [
+      "t0 = 1878250320.0000029",
+      "t = 1878250379.9999986",
+      "initialStepSize = 60.0"
+    ],
+    "reproduction_steps": [
+      "Instantiate FirstOrderDifferentialEquations with a specified derivative behavior",
+      "Configure DormandPrince853Integrator with a step size range and precision",
+      "Set initial conditions and integrate from t0 to t",
+      "Check the final integration time with Assert.assertEquals"
+    ],
+    "expected": [
+      "The integration should stop at t = 1878250379.9999986, covering a 60s range"
+    ],
+    "actual": [
+      "The integration stops at a time covering a 160s range"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "DormandPrince853Integrator",
+      "integrate",
+      "Assert.assertEquals"
+    ],
+    "input_conditions": [
+      "t0 = 1878250320.0000029",
+      "t = 1878250379.9999986",
+      "initialStepSize = 60.0"
+    ],
+    "reproduction_steps": [
+      "Instantiate FirstOrderDifferentialEquations with a specified derivative behavior",
+      "Configure DormandPrince853Integrator with a step size range and precision",
+      "Set initial conditions and integrate from t0 to t",
+      "Check the final integration time with Assert.assertEquals"
+    ],
+    "expected": [
+      "The integration should stop at t = 1878250379.9999986, covering a 60s range"
+    ],
+    "actual": [
+      "The integration stops at a time covering a 160s range"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"DormandPrince853Integrator\", \"integrate\", \"Assert.assertEquals\"],\n  \"input_conditions\": [\"t0 = 1878250320.0000029\", \"t = 1878250379.9999986\", \"initialStepSize = 60.0\"],\n  \"expected\": \"The integration should stop at t = 1878250379.9999986, covering a 60s range\",\n  \"actual\": \"The integration stops at a time covering a 160s range\",\n  \"reproduction_steps\": [\n    \"Instantiate FirstOrderDifferentialEquations with a specified derivative behavior\",\n    \"Configure DormandPrince853Integrator with a step size range and precision\",\n    \"Set initial conditions and integrate from t0 to t\",\n    \"Check the final integration time with Assert.assertEquals\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"DormandPrince853Integrator\", \"integrate\", \"Assert.assertEquals\"],\n  \"input_conditions\": [\"t0 = 1878250320.0000029\", \"t = 1878250379.9999986\", \"initialStepSize = 60.0\"],\n  \"expected\": \"The integration should stop at t = 1878250379.9999986, covering a 60s range\",\n  \"actual\": \"The integration stops at a time covering a 160s range\",\n  \"reproduction_steps\": [\n    \"Instantiate FirstOrderDifferentialEquations with a specified derivative behavior\",\n    \"Configure DormandPrince853Integrator with a step size range and precision\",\n    \"Set initial conditions and integrate from t0 to t\",\n    \"Check the final integration time with Assert.assertEquals\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

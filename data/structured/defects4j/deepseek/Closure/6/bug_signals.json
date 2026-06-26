@@ -1,0 +1,67 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-6",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "F.prototype.bar",
+      "G.prototype.bar",
+      "constructorFactory",
+      "@return {function(new:Type)}"
+    ],
+    "input_conditions": [
+      "Different constructor functions F and G with shared prototype method",
+      "Constructor return type mismatch in @return annotation"
+    ],
+    "reproduction_steps": [
+      "Define constructor function F with prototype methods that use 'this'.",
+      "Define constructor function G and assign F.prototype.bar to G.prototype.bar.",
+      "Observe no warning about different 'this' types.",
+      "Define a typedef Type with a foo method.",
+      "Define constructor T0 with a method foo2 (not foo).",
+      "Create a function constructorFactory with @return {function(new:Type)} that returns T0.",
+      "Observe no warning despite T0 not matching the Type contract."
+    ],
+    "expected": [
+      "A warning should be emitted when F.prototype.bar and G.prototype.bar have different 'this' types. Also, a warning should be emitted when the return type declared in @return does not match the actual returned constructor."
+    ],
+    "actual": [
+      "No warning is emitted for the different 'this' types, and no warning is emitted for the mismatched return type."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "F.prototype.bar",
+      "G.prototype.bar",
+      "constructorFactory",
+      "@return {function(new:Type)}"
+    ],
+    "input_conditions": [
+      "Different constructor functions F and G with shared prototype method",
+      "Constructor return type mismatch in @return annotation"
+    ],
+    "reproduction_steps": [
+      "Define constructor function F with prototype methods that use 'this'.",
+      "Define constructor function G and assign F.prototype.bar to G.prototype.bar.",
+      "Observe no warning about different 'this' types.",
+      "Define a typedef Type with a foo method.",
+      "Define constructor T0 with a method foo2 (not foo).",
+      "Create a function constructorFactory with @return {function(new:Type)} that returns T0.",
+      "Observe no warning despite T0 not matching the Type contract."
+    ],
+    "expected": [
+      "A warning should be emitted when F.prototype.bar and G.prototype.bar have different 'this' types. Also, a warning should be emitted when the return type declared in @return does not match the actual returned constructor."
+    ],
+    "actual": [
+      "No warning is emitted for the different 'this' types, and no warning is emitted for the mismatched return type."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"F.prototype.bar\", \"G.prototype.bar\", \"constructorFactory\", \"@return {function(new:Type)}\"],\n\"input_conditions\": [\"Different constructor functions F and G with shared prototype method\", \"Constructor return type mismatch in @return annotation\"],\n\"expected\": \"A warning should be emitted when F.prototype.bar and G.prototype.bar have different 'this' types. Also, a warning should be emitted when the return type declared in @return does not match the actual returned constructor.\",\n\"actual\": \"No warning is emitted for the different 'this' types, and no warning is emitted for the mismatched return type.\",\n\"reproduction_steps\": [\n\"Define constructor function F with prototype methods that use 'this'.\",\n\"Define constructor function G and assign F.prototype.bar to G.prototype.bar.\",\n\"Observe no warning about different 'this' types.\",\n\"Define a typedef Type with a foo method.\",\n\"Define constructor T0 with a method foo2 (not foo).\",\n\"Create a function constructorFactory with @return {function(new:Type)} that returns T0.\",\n\"Observe no warning despite T0 not matching the Type contract.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"F.prototype.bar\", \"G.prototype.bar\", \"constructorFactory\", \"@return {function(new:Type)}\"],\n\"input_conditions\": [\"Different constructor functions F and G with shared prototype method\", \"Constructor return type mismatch in @return annotation\"],\n\"expected\": \"A warning should be emitted when F.prototype.bar and G.prototype.bar have different 'this' types. Also, a warning should be emitted when the return type declared in @return does not match the actual returned constructor.\",\n\"actual\": \"No warning is emitted for the different 'this' types, and no warning is emitted for the mismatched return type.\",\n\"reproduction_steps\": [\n\"Define constructor function F with prototype methods that use 'this'.\",\n\"Define constructor function G and assign F.prototype.bar to G.prototype.bar.\",\n\"Observe no warning about different 'this' types.\",\n\"Define a typedef Type with a foo method.\",\n\"Define constructor T0 with a method foo2 (not foo).\",\n\"Create a function constructorFactory with @return {function(new:Type)} that returns T0.\",\n\"Observe no warning despite T0 not matching the Type contract.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

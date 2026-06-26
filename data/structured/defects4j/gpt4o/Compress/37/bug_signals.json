@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Compress-37",
+  "project": "Compress",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NegativeArraySizeException"
+    ],
+    "api_involved": [
+      "TarArchiveInputStream.parsePaxHeaders"
+    ],
+    "input_conditions": [
+      "empty line at the end of the headers",
+      "reading length gets a newline"
+    ],
+    "reproduction_steps": [
+      "Use npm pack aws-sdk@2.2.16 to generate a tarball",
+      "Attempt to parse the PAX headers with TarArchiveInputStream.parsePaxHeaders method"
+    ],
+    "expected": [
+      "The TarArchiveInputStream.parsePaxHeaders should handle an empty line in headers without error."
+    ],
+    "actual": [
+      "NegativeArraySizeException is thrown due to a negative length when attempting to allocate the rest array."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NegativeArraySizeException"
+    ],
+    "api_involved": [
+      "TarArchiveInputStream.parsePaxHeaders"
+    ],
+    "input_conditions": [
+      "empty line at the end of the headers",
+      "reading length gets a newline"
+    ],
+    "reproduction_steps": [
+      "Use npm pack aws-sdk@2.2.16 to generate a tarball",
+      "Attempt to parse the PAX headers with TarArchiveInputStream.parsePaxHeaders method"
+    ],
+    "expected": [
+      "The TarArchiveInputStream.parsePaxHeaders should handle an empty line in headers without error."
+    ],
+    "actual": [
+      "NegativeArraySizeException is thrown due to a negative length when attempting to allocate the rest array."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"NegativeArraySizeException\",\n  \"api_involved\": [\"TarArchiveInputStream.parsePaxHeaders\"],\n  \"input_conditions\": [\"empty line at the end of the headers\", \"reading length gets a newline\"],\n  \"expected\": \"The TarArchiveInputStream.parsePaxHeaders should handle an empty line in headers without error.\",\n  \"actual\": \"NegativeArraySizeException is thrown due to a negative length when attempting to allocate the rest array.\",\n  \"reproduction_steps\": [\"Use npm pack aws-sdk@2.2.16 to generate a tarball\", \"Attempt to parse the PAX headers with TarArchiveInputStream.parsePaxHeaders method\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"NegativeArraySizeException\",\n  \"api_involved\": [\"TarArchiveInputStream.parsePaxHeaders\"],\n  \"input_conditions\": [\"empty line at the end of the headers\", \"reading length gets a newline\"],\n  \"expected\": \"The TarArchiveInputStream.parsePaxHeaders should handle an empty line in headers without error.\",\n  \"actual\": \"NegativeArraySizeException is thrown due to a negative length when attempting to allocate the rest array.\",\n  \"reproduction_steps\": [\"Use npm pack aws-sdk@2.2.16 to generate a tarball\", \"Attempt to parse the PAX headers with TarArchiveInputStream.parsePaxHeaders method\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

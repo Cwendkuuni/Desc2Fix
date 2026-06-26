@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "pydata__xarray-2922",
+  "project": null,
+  "repo": "pydata/xarray",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "average function"
+    ],
+    "input_conditions": [
+      "weighted average computation",
+      "axes in predictable order",
+      "weight per dimension"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Ability to compute weighted averages, e.g., for geo data, possibly with axes in predictable order or weight per dimension."
+    ],
+    "actual": [
+      "No average function currently exists."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "average function"
+    ],
+    "input_conditions": [
+      "weighted average computation",
+      "axes in predictable order",
+      "weight per dimension"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Ability to compute weighted averages, e.g., for geo data, possibly with axes in predictable order or weight per dimension."
+    ],
+    "actual": [
+      "No average function currently exists."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"average function\"],\n\"input_conditions\": [\"weighted average computation\", \"axes in predictable order\", \"weight per dimension\"],\n\"expected\": \"Ability to compute weighted averages, e.g., for geo data, possibly with axes in predictable order or weight per dimension.\",\n\"actual\": \"No average function currently exists.\",\n\"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"average function\"],\n\"input_conditions\": [\"weighted average computation\", \"axes in predictable order\", \"weight per dimension\"],\n\"expected\": \"Ability to compute weighted averages, e.g., for geo data, possibly with axes in predictable order or weight per dimension.\",\n\"actual\": \"No average function currently exists.\",\n\"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

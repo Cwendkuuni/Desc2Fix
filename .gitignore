@@ -1,0 +1,184 @@
+# =========================
+# Desc2Fix .gitignore
+# Keep reproducibility artifacts by default.
+# Do NOT ignore data/processed, data/structured, results/, or Human_Eval/.
+# =========================
+
+# -------------------------
+# Secrets / local config
+# -------------------------
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+credentials/
+.streamlit/secrets.toml
+dashboard/.streamlit/secrets.toml
+
+# -------------------------
+# Python environments
+# -------------------------
+des2fix_env/
+.venv/
+venv/
+env/
+ENV/
+conda-env/
+__pypackages__/
+
+# -------------------------
+# Python caches
+# -------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.ipynb_checkpoints/
+
+# -------------------------
+# Build / packaging
+# -------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+.tox/
+.nox/
+
+# -------------------------
+# System / editor files
+# -------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# -------------------------
+# Logs / temp files
+# -------------------------
+*.log
+logs/
+tmp/
+temp/
+.cache/
+*.tmp
+*.bak
+*.orig
+
+# -------------------------
+# Local freeze files
+# Keep requirements.txt and requirements-lock.txt only.
+# -------------------------
+new_requierments.txt
+new_requirements.txt
+pip_freeze*.txt
+freeze*.txt
+
+# -------------------------
+# Large archives
+# -------------------------
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.gz
+*.bz2
+*.xz
+
+# -------------------------
+# Java / JVM binaries
+# -------------------------
+*.jar
+*.class
+*.war
+*.ear
+hs_err_pid*
+replay_pid*
+
+# -------------------------
+# Native binaries
+# -------------------------
+*.so
+*.dylib
+*.dll
+*.o
+*.obj
+*.a
+*.lib
+*.exe
+*.out
+
+# -------------------------
+# ML model/checkpoint artifacts
+# -------------------------
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.bin
+models/
+checkpoints/
+runs/
+wandb/
+mlruns/
+
+# -------------------------
+# External benchmark clones/downloads
+# Reproducible through setup scripts, too large for GitHub.
+# -------------------------
+external/
+
+# -------------------------
+# Data caches only
+# Keep data/processed and data/structured.
+# -------------------------
+data/cache/
+data/tmp/
+data/**/cache/
+data/**/tmp/
+
+# -------------------------
+# Results caches only
+# Keep results/tables, results/figures, and experiment summaries.
+# -------------------------
+results/cache/
+results/tmp/
+results/**/cache/
+results/**/tmp/
+
+# -------------------------
+# LaTeX temporary files
+# -------------------------
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.run.xml
+*.synctex.gz
+*.toc
+
+# -------------------------
+# Weird accidental empty/local files
+# -------------------------
+2206

@@ -1,0 +1,11 @@
+dataset,instance_id,model_a,model_b,macro_jaccard,exception_jaccard,api_involved_jaccard,input_conditions_jaccard,reproduction_steps_jaccard,expected_jaccard,actual_jaccard
+swtbench,sqlfluff__sqlfluff-2336,deepseek,gpt4o,0.615741,0.666667,0.25,0.0,0.777778,1.0,1.0
+swtbench,sqlfluff__sqlfluff-2849,deepseek,gpt4o,0.483403,1.0,0.166667,0.588235,0.366667,0.625,0.153846
+swtbench,sqlfluff__sqlfluff-2907,deepseek,gpt4o,0.501279,1.0,0.0,0.583333,0.736842,0.1875,0.5
+swtbench,sqlfluff__sqlfluff-3608,deepseek,gpt4o,0.37459,1.0,0.0,0.368421,0.178571,0.631579,0.068966
+swtbench,sqlfluff__sqlfluff-3700,deepseek,gpt4o,0.467721,1.0,0.0,0.363636,0.181818,1.0,0.26087
+swtbench,sqlfluff__sqlfluff-3904,deepseek,gpt4o,0.386905,1.0,0.0,0.0,1.0,0.25,0.071429
+swtbench,sqlfluff__sqlfluff-4151,deepseek,gpt4o,0.488236,0.6,0.5,0.285714,0.26087,0.727273,0.555556
+swtbench,sqlfluff__sqlfluff-4764,deepseek,gpt4o,0.523842,1.0,1.0,0.1875,0.296296,0.4,0.259259
+swtbench,sqlfluff__sqlfluff-5074,deepseek,gpt4o,0.337996,1.0,0.0,0.166667,0.282609,0.37037,0.208333
+swtbench,sqlfluff__sqlfluff-884,deepseek,gpt4o,0.635281,1.0,1.0,0.5,0.454545,0.428571,0.428571

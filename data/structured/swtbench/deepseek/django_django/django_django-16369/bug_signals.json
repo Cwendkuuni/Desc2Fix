@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-16369",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Sitemap"
+    ],
+    "input_conditions": [
+      "i18n is enabled",
+      "some items are not translated for certain languages",
+      "URLs are language-dependent and may not exist or raise an error for a given language"
+    ],
+    "reproduction_steps": [
+      "Enable i18n on the site.",
+      "Create some items (e.g., blog articles) that are not translated into all languages.",
+      "Generate the sitemap.",
+      "Observe that the sitemap includes entries for those items in languages where they are not available, potentially leading to broken or nonexistent URLs."
+    ],
+    "expected": [
+      "The sitemap should allow selecting which items are displayed per language, so that non-translated items (e.g., blog articles) can be excluded from the sitemap for languages where they do not exist."
+    ],
+    "actual": [
+      "The sitemap displays a cartesian product of all items and all languages, including items that are not translated or whose URLs may not exist for a given language."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Sitemap"
+    ],
+    "input_conditions": [
+      "i18n is enabled",
+      "some items are not translated for certain languages",
+      "URLs are language-dependent and may not exist or raise an error for a given language"
+    ],
+    "reproduction_steps": [
+      "Enable i18n on the site.",
+      "Create some items (e.g., blog articles) that are not translated into all languages.",
+      "Generate the sitemap.",
+      "Observe that the sitemap includes entries for those items in languages where they are not available, potentially leading to broken or nonexistent URLs."
+    ],
+    "expected": [
+      "The sitemap should allow selecting which items are displayed per language, so that non-translated items (e.g., blog articles) can be excluded from the sitemap for languages where they do not exist."
+    ],
+    "actual": [
+      "The sitemap displays a cartesian product of all items and all languages, including items that are not translated or whose URLs may not exist for a given language."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Sitemap\"],\n\"input_conditions\": [\n    \"i18n is enabled\",\n    \"some items are not translated for certain languages\",\n    \"URLs are language-dependent and may not exist or raise an error for a given language\"\n],\n\"expected\": \"The sitemap should allow selecting which items are displayed per language, so that non-translated items (e.g., blog articles) can be excluded from the sitemap for languages where they do not exist.\",\n\"actual\": \"The sitemap displays a cartesian product of all items and all languages, including items that are not translated or whose URLs may not exist for a given language.\",\n\"reproduction_steps\": [\n    \"Enable i18n on the site.\",\n    \"Create some items (e.g., blog articles) that are not translated into all languages.\",\n    \"Generate the sitemap.\",\n    \"Observe that the sitemap includes entries for those items in languages where they are not available, potentially leading to broken or nonexistent URLs.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Sitemap\"],\n\"input_conditions\": [\n    \"i18n is enabled\",\n    \"some items are not translated for certain languages\",\n    \"URLs are language-dependent and may not exist or raise an error for a given language\"\n],\n\"expected\": \"The sitemap should allow selecting which items are displayed per language, so that non-translated items (e.g., blog articles) can be excluded from the sitemap for languages where they do not exist.\",\n\"actual\": \"The sitemap displays a cartesian product of all items and all languages, including items that are not translated or whose URLs may not exist for a given language.\",\n\"reproduction_steps\": [\n    \"Enable i18n on the site.\",\n    \"Create some items (e.g., blog articles) that are not translated into all languages.\",\n    \"Generate the sitemap.\",\n    \"Observe that the sitemap includes entries for those items in languages where they are not available, potentially leading to broken or nonexistent URLs.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

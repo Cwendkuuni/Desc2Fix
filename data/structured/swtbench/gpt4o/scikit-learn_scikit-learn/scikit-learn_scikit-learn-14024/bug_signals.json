@@ -1,0 +1,49 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "scikit-learn__scikit-learn-14024",
+  "project": null,
+  "repo": "scikit-learn/scikit-learn",
+  "signals": {
+    "exception": [
+      "Zero division error"
+    ],
+    "api_involved": [
+      "HistGradientBoosting"
+    ],
+    "input_conditions": [
+      "dataset with 100 classes",
+      "16 samples each"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Should fail gracefully"
+    ],
+    "actual": [
+      "Zero division error occurred"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Zero division error"
+    ],
+    "api_involved": [
+      "HistGradientBoosting"
+    ],
+    "input_conditions": [
+      "dataset with 100 classes",
+      "16 samples each"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Should fail gracefully"
+    ],
+    "actual": [
+      "Zero division error occurred"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"Zero division error\",\n  \"api_involved\": [\"HistGradientBoosting\"],\n  \"input_conditions\": [\"dataset with 100 classes\", \"16 samples each\"],\n  \"expected\": \"Should fail gracefully\",\n  \"actual\": \"Zero division error occurred\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"Zero division error\",\n  \"api_involved\": [\"HistGradientBoosting\"],\n  \"input_conditions\": [\"dataset with 100 classes\", \"16 samples each\"],\n  \"expected\": \"Should fail gracefully\",\n  \"actual\": \"Zero division error occurred\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-12144",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Dummy",
+      "srepr",
+      "eval"
+    ],
+    "input_conditions": [
+      "Dummy symbol is used in an expression",
+      "Expression is serialized via srepr",
+      "Expression is re-evaluated"
+    ],
+    "reproduction_steps": [
+      "Create an expression using Dummy symbols.",
+      "Serialize the expression using srepr.",
+      "Re-evaluate the serialized string.",
+      "Observe that Dummy symbols are treated as distinct new symbols, causing the expression to fail."
+    ],
+    "expected": [
+      "Re-evaluating serialized Dummy expressions should preserve identity or consistency."
+    ],
+    "actual": [
+      "Re-evaluation treats each Dummy as a new Dummy, causing failure due to mismatched symbols."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Dummy",
+      "srepr",
+      "eval"
+    ],
+    "input_conditions": [
+      "Dummy symbol is used in an expression",
+      "Expression is serialized via srepr",
+      "Expression is re-evaluated"
+    ],
+    "reproduction_steps": [
+      "Create an expression using Dummy symbols.",
+      "Serialize the expression using srepr.",
+      "Re-evaluate the serialized string.",
+      "Observe that Dummy symbols are treated as distinct new symbols, causing the expression to fail."
+    ],
+    "expected": [
+      "Re-evaluating serialized Dummy expressions should preserve identity or consistency."
+    ],
+    "actual": [
+      "Re-evaluation treats each Dummy as a new Dummy, causing failure due to mismatched symbols."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Dummy\", \"srepr\", \"eval\"],\n\"input_conditions\": [\"Dummy symbol is used in an expression\", \"Expression is serialized via srepr\", \"Expression is re-evaluated\"],\n\"expected\": \"Re-evaluating serialized Dummy expressions should preserve identity or consistency.\",\n\"actual\": \"Re-evaluation treats each Dummy as a new Dummy, causing failure due to mismatched symbols.\",\n\"reproduction_steps\": [\n\"Create an expression using Dummy symbols.\",\n\"Serialize the expression using srepr.\",\n\"Re-evaluate the serialized string.\",\n\"Observe that Dummy symbols are treated as distinct new symbols, causing the expression to fail.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Dummy\", \"srepr\", \"eval\"],\n\"input_conditions\": [\"Dummy symbol is used in an expression\", \"Expression is serialized via srepr\", \"Expression is re-evaluated\"],\n\"expected\": \"Re-evaluating serialized Dummy expressions should preserve identity or consistency.\",\n\"actual\": \"Re-evaluation treats each Dummy as a new Dummy, causing failure due to mismatched symbols.\",\n\"reproduction_steps\": [\n\"Create an expression using Dummy symbols.\",\n\"Serialize the expression using srepr.\",\n\"Re-evaluate the serialized string.\",\n\"Observe that Dummy symbols are treated as distinct new symbols, causing the expression to fail.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

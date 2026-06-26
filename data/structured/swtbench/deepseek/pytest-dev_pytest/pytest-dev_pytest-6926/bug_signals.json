@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "pytest-dev__pytest-6926",
+  "project": null,
+  "repo": "pytest-dev/pytest",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "SysCaptureBinary",
+      "decode",
+      "writeorg"
+    ],
+    "input_conditions": [
+      "binary capture data",
+      "encoding/decoding context"
+    ],
+    "reproduction_steps": [
+      "Attempt to use SysCaptureBinary with binary capture data",
+      "Trigger writeorg operation",
+      "Observe decode failure"
+    ],
+    "expected": [
+      "SysCaptureBinary correctly decodes data during writeorg operation"
+    ],
+    "actual": [
+      "SysCaptureBinary fails to decode properly in writeorg, causing issue #6871"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "SysCaptureBinary",
+      "decode",
+      "writeorg"
+    ],
+    "input_conditions": [
+      "binary capture data",
+      "encoding/decoding context"
+    ],
+    "reproduction_steps": [
+      "Attempt to use SysCaptureBinary with binary capture data",
+      "Trigger writeorg operation",
+      "Observe decode failure"
+    ],
+    "expected": [
+      "SysCaptureBinary correctly decodes data during writeorg operation"
+    ],
+    "actual": [
+      "SysCaptureBinary fails to decode properly in writeorg, causing issue #6871"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"SysCaptureBinary\", \"decode\", \"writeorg\"],\n\"input_conditions\": [\"binary capture data\", \"encoding/decoding context\"],\n\"expected\": \"SysCaptureBinary correctly decodes data during writeorg operation\",\n\"actual\": \"SysCaptureBinary fails to decode properly in writeorg, causing issue #6871\",\n\"reproduction_steps\": [\"Attempt to use SysCaptureBinary with binary capture data\", \"Trigger writeorg operation\", \"Observe decode failure\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"SysCaptureBinary\", \"decode\", \"writeorg\"],\n\"input_conditions\": [\"binary capture data\", \"encoding/decoding context\"],\n\"expected\": \"SysCaptureBinary correctly decodes data during writeorg operation\",\n\"actual\": \"SysCaptureBinary fails to decode properly in writeorg, causing issue #6871\",\n\"reproduction_steps\": [\"Attempt to use SysCaptureBinary with binary capture data\", \"Trigger writeorg operation\", \"Observe decode failure\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

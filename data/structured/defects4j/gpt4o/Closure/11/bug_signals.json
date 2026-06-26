@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-11",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "makeClass",
+      "Person",
+      "initialize",
+      "say"
+    ],
+    "input_conditions": [
+      "options.thisPropDoesNotExist"
+    ],
+    "reproduction_steps": [
+      "Create a Person object using new Person({name: 'joe', height: 300})",
+      "Call initialize method with options containing a non-existent property",
+      "Invoke say method"
+    ],
+    "expected": [
+      "Error reported for accessing a non-existent property on options object"
+    ],
+    "actual": [
+      "No error reported for accessing a non-existent property on options object"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "makeClass",
+      "Person",
+      "initialize",
+      "say"
+    ],
+    "input_conditions": [
+      "options.thisPropDoesNotExist"
+    ],
+    "reproduction_steps": [
+      "Create a Person object using new Person({name: 'joe', height: 300})",
+      "Call initialize method with options containing a non-existent property",
+      "Invoke say method"
+    ],
+    "expected": [
+      "Error reported for accessing a non-existent property on options object"
+    ],
+    "actual": [
+      "No error reported for accessing a non-existent property on options object"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"makeClass\", \"Person\", \"initialize\", \"say\"],\n  \"input_conditions\": [\"options.thisPropDoesNotExist\"],\n  \"expected\": \"Error reported for accessing a non-existent property on options object\",\n  \"actual\": \"No error reported for accessing a non-existent property on options object\",\n  \"reproduction_steps\": [\n    \"Create a Person object using new Person({name: 'joe', height: 300})\",\n    \"Call initialize method with options containing a non-existent property\",\n    \"Invoke say method\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"makeClass\", \"Person\", \"initialize\", \"say\"],\n  \"input_conditions\": [\"options.thisPropDoesNotExist\"],\n  \"expected\": \"Error reported for accessing a non-existent property on options object\",\n  \"actual\": \"No error reported for accessing a non-existent property on options object\",\n  \"reproduction_steps\": [\n    \"Create a Person object using new Person({name: 'joe', height: 300})\",\n    \"Call initialize method with options containing a non-existent property\",\n    \"Invoke say method\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,65 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-11",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "null"
+    ],
+    "api_involved": [
+      "makeClass",
+      "Person",
+      "initialize",
+      "say"
+    ],
+    "input_conditions": [
+      "Function with @this annotation",
+      "Record type with invalid property access"
+    ],
+    "reproduction_steps": [
+      "Create a constructor function Person with @param {{name: string, height: number}} options.",
+      "Use makeClass to assign prototype methods including initialize with @this {Person} and @param {{name: string, height: number}} options.",
+      "Inside initialize, access options.thisPropDoesNotExist which does not exist in the record type.",
+      "Run the Closure Compiler with --jscomp_error=checkTypes."
+    ],
+    "expected": [
+      "The compiler should report an error for accessing a non-existent property 'thisPropDoesNotExist' on the record type options."
+    ],
+    "actual": [
+      "No error is reported for the invalid property access when the function has an @this annotation."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "null"
+    ],
+    "api_involved": [
+      "makeClass",
+      "Person",
+      "initialize",
+      "say"
+    ],
+    "input_conditions": [
+      "Function with @this annotation",
+      "Record type with invalid property access"
+    ],
+    "reproduction_steps": [
+      "Create a constructor function Person with @param {{name: string, height: number}} options.",
+      "Use makeClass to assign prototype methods including initialize with @this {Person} and @param {{name: string, height: number}} options.",
+      "Inside initialize, access options.thisPropDoesNotExist which does not exist in the record type.",
+      "Run the Closure Compiler with --jscomp_error=checkTypes."
+    ],
+    "expected": [
+      "The compiler should report an error for accessing a non-existent property 'thisPropDoesNotExist' on the record type options."
+    ],
+    "actual": [
+      "No error is reported for the invalid property access when the function has an @this annotation."
+    ]
+  },
+  "raw_response": "{\n\"exception\": \"null\",\n\"api_involved\": [\"makeClass\", \"Person\", \"initialize\", \"say\"],\n\"input_conditions\": [\"Function with @this annotation\", \"Record type with invalid property access\"],\n\"expected\": \"The compiler should report an error for accessing a non-existent property 'thisPropDoesNotExist' on the record type options.\",\n\"actual\": \"No error is reported for the invalid property access when the function has an @this annotation.\",\n\"reproduction_steps\": [\n  \"Create a constructor function Person with @param {{name: string, height: number}} options.\",\n  \"Use makeClass to assign prototype methods including initialize with @this {Person} and @param {{name: string, height: number}} options.\",\n  \"Inside initialize, access options.thisPropDoesNotExist which does not exist in the record type.\",\n  \"Run the Closure Compiler with --jscomp_error=checkTypes.\"\n]\n}",
+  "llm_response": "{\n\"exception\": \"null\",\n\"api_involved\": [\"makeClass\", \"Person\", \"initialize\", \"say\"],\n\"input_conditions\": [\"Function with @this annotation\", \"Record type with invalid property access\"],\n\"expected\": \"The compiler should report an error for accessing a non-existent property 'thisPropDoesNotExist' on the record type options.\",\n\"actual\": \"No error is reported for the invalid property access when the function has an @this annotation.\",\n\"reproduction_steps\": [\n  \"Create a constructor function Person with @param {{name: string, height: number}} options.\",\n  \"Use makeClass to assign prototype methods including initialize with @this {Person} and @param {{name: string, height: number}} options.\",\n  \"Inside initialize, access options.thisPropDoesNotExist which does not exist in the record type.\",\n  \"Run the Closure Compiler with --jscomp_error=checkTypes.\"\n]\n}",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

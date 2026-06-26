@@ -1,0 +1,69 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Codec-4",
+  "project": "Codec",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Base64.encode()",
+      "Base64.encodeBase64()",
+      "Base64.encodeBase64String()",
+      "Base64.Base64()",
+      "Base64.Base64(boolean urlSafe)",
+      "Base64.Base64(int lineLength, byte[] lineSeparator, boolean urlSafe)"
+    ],
+    "input_conditions": [
+      "Using instance method new Base64().encode()",
+      "Using Commons-Codec version 1.4",
+      "Input strings of various lengths (long, short, single character)"
+    ],
+    "reproduction_steps": [
+      "Create a new Base64 instance: Base64 b64 = new Base64();",
+      "Prepare input strings of varying lengths (e.g., a long string, a short one, a single character).",
+      "Call b64.encode() on each input and print the result.",
+      "Compare with output from Base64.encodeBase64() on the same inputs under Commons-Codec 1.4.",
+      "Observe that the instance encode() output contains CRLF and line breaks, unlike the static method and unlike version 1.3 behavior."
+    ],
+    "expected": [
+      "The instance encode() method should not append CRLF or chunk output into 76-character lines; it should return the same output as Base64.encodeBase64() and match the behavior of Commons-Codec 1.3."
+    ],
+    "actual": [
+      "The instance encode() method appends a CRLF and chunks the output into 76-character lines, which is a regression from version 1.3 behavior."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Base64.encode()",
+      "Base64.encodeBase64()",
+      "Base64.encodeBase64String()",
+      "Base64.Base64()",
+      "Base64.Base64(boolean urlSafe)",
+      "Base64.Base64(int lineLength, byte[] lineSeparator, boolean urlSafe)"
+    ],
+    "input_conditions": [
+      "Using instance method new Base64().encode()",
+      "Using Commons-Codec version 1.4",
+      "Input strings of various lengths (long, short, single character)"
+    ],
+    "reproduction_steps": [
+      "Create a new Base64 instance: Base64 b64 = new Base64();",
+      "Prepare input strings of varying lengths (e.g., a long string, a short one, a single character).",
+      "Call b64.encode() on each input and print the result.",
+      "Compare with output from Base64.encodeBase64() on the same inputs under Commons-Codec 1.4.",
+      "Observe that the instance encode() output contains CRLF and line breaks, unlike the static method and unlike version 1.3 behavior."
+    ],
+    "expected": [
+      "The instance encode() method should not append CRLF or chunk output into 76-character lines; it should return the same output as Base64.encodeBase64() and match the behavior of Commons-Codec 1.3."
+    ],
+    "actual": [
+      "The instance encode() method appends a CRLF and chunks the output into 76-character lines, which is a regression from version 1.3 behavior."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Base64.encode()\", \"Base64.encodeBase64()\", \"Base64.encodeBase64String()\", \"Base64.Base64()\", \"Base64.Base64(boolean urlSafe)\", \"Base64.Base64(int lineLength, byte[] lineSeparator, boolean urlSafe)\"],\n\"input_conditions\": [\"Using instance method new Base64().encode()\", \"Using Commons-Codec version 1.4\", \"Input strings of various lengths (long, short, single character)\"],\n\"expected\": \"The instance encode() method should not append CRLF or chunk output into 76-character lines; it should return the same output as Base64.encodeBase64() and match the behavior of Commons-Codec 1.3.\",\n\"actual\": \"The instance encode() method appends a CRLF and chunks the output into 76-character lines, which is a regression from version 1.3 behavior.\",\n\"reproduction_steps\": [\n\"Create a new Base64 instance: Base64 b64 = new Base64();\",\n\"Prepare input strings of varying lengths (e.g., a long string, a short one, a single character).\",\n\"Call b64.encode() on each input and print the result.\",\n\"Compare with output from Base64.encodeBase64() on the same inputs under Commons-Codec 1.4.\",\n\"Observe that the instance encode() output contains CRLF and line breaks, unlike the static method and unlike version 1.3 behavior.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Base64.encode()\", \"Base64.encodeBase64()\", \"Base64.encodeBase64String()\", \"Base64.Base64()\", \"Base64.Base64(boolean urlSafe)\", \"Base64.Base64(int lineLength, byte[] lineSeparator, boolean urlSafe)\"],\n\"input_conditions\": [\"Using instance method new Base64().encode()\", \"Using Commons-Codec version 1.4\", \"Input strings of various lengths (long, short, single character)\"],\n\"expected\": \"The instance encode() method should not append CRLF or chunk output into 76-character lines; it should return the same output as Base64.encodeBase64() and match the behavior of Commons-Codec 1.3.\",\n\"actual\": \"The instance encode() method appends a CRLF and chunks the output into 76-character lines, which is a regression from version 1.3 behavior.\",\n\"reproduction_steps\": [\n\"Create a new Base64 instance: Base64 b64 = new Base64();\",\n\"Prepare input strings of varying lengths (e.g., a long string, a short one, a single character).\",\n\"Call b64.encode() on each input and print the result.\",\n\"Compare with output from Base64.encodeBase64() on the same inputs under Commons-Codec 1.4.\",\n\"Observe that the instance encode() output contains CRLF and line breaks, unlike the static method and unlike version 1.3 behavior.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

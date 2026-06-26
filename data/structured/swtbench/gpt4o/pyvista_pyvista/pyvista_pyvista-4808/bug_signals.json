@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "pyvista__pyvista-4808",
+  "project": null,
+  "repo": "pyvista/pyvista",
+  "signals": {
+    "exception": [
+      "Application freezes/crashes"
+    ],
+    "api_involved": [
+      "pyvista",
+      "vtk"
+    ],
+    "input_conditions": [
+      "two polyData have the exact same shape"
+    ],
+    "reproduction_steps": [
+      "Perform a boolean operation on two polyData with the exact same shape"
+    ],
+    "expected": [
+      "Boolean operation completes without freezing or crashing"
+    ],
+    "actual": [
+      "Boolean operation freezes/crashes the application"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Application freezes/crashes"
+    ],
+    "api_involved": [
+      "pyvista",
+      "vtk"
+    ],
+    "input_conditions": [
+      "two polyData have the exact same shape"
+    ],
+    "reproduction_steps": [
+      "Perform a boolean operation on two polyData with the exact same shape"
+    ],
+    "expected": [
+      "Boolean operation completes without freezing or crashing"
+    ],
+    "actual": [
+      "Boolean operation freezes/crashes the application"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"Application freezes/crashes\",\n  \"api_involved\": [\"pyvista\", \"vtk\"],\n  \"input_conditions\": [\"two polyData have the exact same shape\"],\n  \"expected\": \"Boolean operation completes without freezing or crashing\",\n  \"actual\": \"Boolean operation freezes/crashes the application\",\n  \"reproduction_steps\": [\"Perform a boolean operation on two polyData with the exact same shape\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"Application freezes/crashes\",\n  \"api_involved\": [\"pyvista\", \"vtk\"],\n  \"input_conditions\": [\"two polyData have the exact same shape\"],\n  \"expected\": \"Boolean operation completes without freezing or crashing\",\n  \"actual\": \"Boolean operation freezes/crashes the application\",\n  \"reproduction_steps\": [\"Perform a boolean operation on two polyData with the exact same shape\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

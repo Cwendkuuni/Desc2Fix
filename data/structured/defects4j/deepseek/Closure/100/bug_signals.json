@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-100",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Closure Compiler",
+      "dangerous use of the global this object warning"
+    ],
+    "input_conditions": [
+      "Compilation level ADVANCED_OPTIMIZATIONS",
+      "Functions without @this annotation that access properties of 'this' in a non-constructor context"
+    ],
+    "reproduction_steps": [
+      "Create a function without @this annotation that reads a property from 'this' (e.g., return this._bar)",
+      "Compile the code using Closure Compiler with ADVANCED_OPTIMIZATIONS",
+      "Observe that no 'dangerous use of the global this object' warning is produced for the read operation, while an assignment to a property of 'this' in a similar unannotated function does produce the warning"
+    ],
+    "expected": [
+      "Two 'dangerous use of the global this object' warnings: one for writeMethodWithoutAnnotation (assignment) and one for readMethodWithoutAnnotation (property read). Also, any property access (read or write) of 'this' without @this annotation should trigger a warning, except when returning 'this' itself."
+    ],
+    "actual": [
+      "Only writeMethodWithoutAnnotation (assignment to this._bar) generates a warning; readMethodWithoutAnnotation (return this._bar) does not warn, even without @this annotation."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Closure Compiler",
+      "dangerous use of the global this object warning"
+    ],
+    "input_conditions": [
+      "Compilation level ADVANCED_OPTIMIZATIONS",
+      "Functions without @this annotation that access properties of 'this' in a non-constructor context"
+    ],
+    "reproduction_steps": [
+      "Create a function without @this annotation that reads a property from 'this' (e.g., return this._bar)",
+      "Compile the code using Closure Compiler with ADVANCED_OPTIMIZATIONS",
+      "Observe that no 'dangerous use of the global this object' warning is produced for the read operation, while an assignment to a property of 'this' in a similar unannotated function does produce the warning"
+    ],
+    "expected": [
+      "Two 'dangerous use of the global this object' warnings: one for writeMethodWithoutAnnotation (assignment) and one for readMethodWithoutAnnotation (property read). Also, any property access (read or write) of 'this' without @this annotation should trigger a warning, except when returning 'this' itself."
+    ],
+    "actual": [
+      "Only writeMethodWithoutAnnotation (assignment to this._bar) generates a warning; readMethodWithoutAnnotation (return this._bar) does not warn, even without @this annotation."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Closure Compiler\", \"dangerous use of the global this object warning\"],\n\"input_conditions\": [\"Compilation level ADVANCED_OPTIMIZATIONS\", \"Functions without @this annotation that access properties of 'this' in a non-constructor context\"],\n\"expected\": \"Two 'dangerous use of the global this object' warnings: one for writeMethodWithoutAnnotation (assignment) and one for readMethodWithoutAnnotation (property read). Also, any property access (read or write) of 'this' without @this annotation should trigger a warning, except when returning 'this' itself.\",\n\"actual\": \"Only writeMethodWithoutAnnotation (assignment to this._bar) generates a warning; readMethodWithoutAnnotation (return this._bar) does not warn, even without @this annotation.\",\n\"reproduction_steps\": [\n\"Create a function without @this annotation that reads a property from 'this' (e.g., return this._bar)\",\n\"Compile the code using Closure Compiler with ADVANCED_OPTIMIZATIONS\",\n\"Observe that no 'dangerous use of the global this object' warning is produced for the read operation, while an assignment to a property of 'this' in a similar unannotated function does produce the warning\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Closure Compiler\", \"dangerous use of the global this object warning\"],\n\"input_conditions\": [\"Compilation level ADVANCED_OPTIMIZATIONS\", \"Functions without @this annotation that access properties of 'this' in a non-constructor context\"],\n\"expected\": \"Two 'dangerous use of the global this object' warnings: one for writeMethodWithoutAnnotation (assignment) and one for readMethodWithoutAnnotation (property read). Also, any property access (read or write) of 'this' without @this annotation should trigger a warning, except when returning 'this' itself.\",\n\"actual\": \"Only writeMethodWithoutAnnotation (assignment to this._bar) generates a warning; readMethodWithoutAnnotation (return this._bar) does not warn, even without @this annotation.\",\n\"reproduction_steps\": [\n\"Create a function without @this annotation that reads a property from 'this' (e.g., return this._bar)\",\n\"Compile the code using Closure Compiler with ADVANCED_OPTIMIZATIONS\",\n\"Observe that no 'dangerous use of the global this object' warning is produced for the read operation, while an assignment to a property of 'this' in a similar unannotated function does produce the warning\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

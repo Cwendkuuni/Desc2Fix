@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-7",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "junit.framework.ComparisonFailure: expected:<[-h]> but was:<-c <arg>>"
+    ],
+    "api_involved": [
+      "PatternBuilder",
+      "LinkedHashSet",
+      "HashSet"
+    ],
+    "input_conditions": [
+      "Running tests under JDK 1.6",
+      "PatternBuilder uses HashSet to store options",
+      "Order of options not guaranteed"
+    ],
+    "reproduction_steps": [
+      "Run test suite Bug27575Test under JDK 1.6",
+      "Observe test failure due to unordered options returned from PatternBuilder"
+    ],
+    "expected": [
+      "Test passes with expected option order [-h]"
+    ],
+    "actual": [
+      "Test fails because option order returned is -c <arg> instead of -h"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "junit.framework.ComparisonFailure: expected:<[-h]> but was:<-c <arg>>"
+    ],
+    "api_involved": [
+      "PatternBuilder",
+      "LinkedHashSet",
+      "HashSet"
+    ],
+    "input_conditions": [
+      "Running tests under JDK 1.6",
+      "PatternBuilder uses HashSet to store options",
+      "Order of options not guaranteed"
+    ],
+    "reproduction_steps": [
+      "Run test suite Bug27575Test under JDK 1.6",
+      "Observe test failure due to unordered options returned from PatternBuilder"
+    ],
+    "expected": [
+      "Test passes with expected option order [-h]"
+    ],
+    "actual": [
+      "Test fails because option order returned is -c <arg> instead of -h"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"junit.framework.ComparisonFailure: expected:<[-h]> but was:<-c <arg>>\",\n\"api_involved\": [\"PatternBuilder\", \"LinkedHashSet\", \"HashSet\"],\n\"input_conditions\": [\"Running tests under JDK 1.6\", \"PatternBuilder uses HashSet to store options\", \"Order of options not guaranteed\"],\n\"expected\": \"Test passes with expected option order [-h]\",\n\"actual\": \"Test fails because option order returned is -c <arg> instead of -h\",\n\"reproduction_steps\": [\n    \"Run test suite Bug27575Test under JDK 1.6\",\n    \"Observe test failure due to unordered options returned from PatternBuilder\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"junit.framework.ComparisonFailure: expected:<[-h]> but was:<-c <arg>>\",\n\"api_involved\": [\"PatternBuilder\", \"LinkedHashSet\", \"HashSet\"],\n\"input_conditions\": [\"Running tests under JDK 1.6\", \"PatternBuilder uses HashSet to store options\", \"Order of options not guaranteed\"],\n\"expected\": \"Test passes with expected option order [-h]\",\n\"actual\": \"Test fails because option order returned is -c <arg> instead of -h\",\n\"reproduction_steps\": [\n    \"Run test suite Bug27575Test under JDK 1.6\",\n    \"Observe test failure due to unordered options returned from PatternBuilder\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

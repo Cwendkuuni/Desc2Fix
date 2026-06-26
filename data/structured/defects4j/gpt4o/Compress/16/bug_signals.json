@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Compress-16",
+  "project": "Compress",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "ArchiveStreamFactory",
+      "COMPRESS-117"
+    ],
+    "input_conditions": [
+      "relaxed tar detection logic",
+      "non-tar files like AIFF file"
+    ],
+    "reproduction_steps": [
+      "Use the relaxed tar detection logic on non-tar files like AIFF file",
+      "Check for false positives"
+    ],
+    "expected": [
+      "Improve tar detection heuristics to avoid false positives like the AIFF file."
+    ],
+    "actual": [
+      "The relaxed tar detection logic matches non-tar files like the AIFF file."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "ArchiveStreamFactory",
+      "COMPRESS-117"
+    ],
+    "input_conditions": [
+      "relaxed tar detection logic",
+      "non-tar files like AIFF file"
+    ],
+    "reproduction_steps": [
+      "Use the relaxed tar detection logic on non-tar files like AIFF file",
+      "Check for false positives"
+    ],
+    "expected": [
+      "Improve tar detection heuristics to avoid false positives like the AIFF file."
+    ],
+    "actual": [
+      "The relaxed tar detection logic matches non-tar files like the AIFF file."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"ArchiveStreamFactory\", \"COMPRESS-117\"],\n  \"input_conditions\": [\"relaxed tar detection logic\", \"non-tar files like AIFF file\"],\n  \"expected\": \"Improve tar detection heuristics to avoid false positives like the AIFF file.\",\n  \"actual\": \"The relaxed tar detection logic matches non-tar files like the AIFF file.\",\n  \"reproduction_steps\": [\"Use the relaxed tar detection logic on non-tar files like AIFF file\", \"Check for false positives\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"ArchiveStreamFactory\", \"COMPRESS-117\"],\n  \"input_conditions\": [\"relaxed tar detection logic\", \"non-tar files like AIFF file\"],\n  \"expected\": \"Improve tar detection heuristics to avoid false positives like the AIFF file.\",\n  \"actual\": \"The relaxed tar detection logic matches non-tar files like the AIFF file.\",\n  \"reproduction_steps\": [\"Use the relaxed tar detection logic on non-tar files like AIFF file\", \"Check for false positives\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

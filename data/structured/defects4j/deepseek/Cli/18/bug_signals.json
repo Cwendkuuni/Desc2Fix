@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-18",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "PosixParser"
+    ],
+    "input_conditions": [
+      "stopAtNonOption enabled",
+      "unrecognized tokens starting with '-'",
+      "option 'a' defined"
+    ],
+    "reproduction_steps": [
+      "Define option 'a'.",
+      "Use PosixParser to parse the command line: '-z -a foo'.",
+      "Observe that '-z' is ignored and the result is as if the input was '-a foo'.",
+      "Test with both stopAtNonOption enabled and disabled; in both cases no exception is thrown."
+    ],
+    "expected": [
+      "Unrecognized tokens starting with '-' should either stop parsing (if stopAtNonOption is enabled) or throw an exception (if stopAtNonOption is disabled)."
+    ],
+    "actual": [
+      "Unrecognized tokens starting with '-' are ignored, so '-z -a foo' is interpreted as '-a foo'. No exception is thrown even when stopAtNonOption is disabled."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "PosixParser"
+    ],
+    "input_conditions": [
+      "stopAtNonOption enabled",
+      "unrecognized tokens starting with '-'",
+      "option 'a' defined"
+    ],
+    "reproduction_steps": [
+      "Define option 'a'.",
+      "Use PosixParser to parse the command line: '-z -a foo'.",
+      "Observe that '-z' is ignored and the result is as if the input was '-a foo'.",
+      "Test with both stopAtNonOption enabled and disabled; in both cases no exception is thrown."
+    ],
+    "expected": [
+      "Unrecognized tokens starting with '-' should either stop parsing (if stopAtNonOption is enabled) or throw an exception (if stopAtNonOption is disabled)."
+    ],
+    "actual": [
+      "Unrecognized tokens starting with '-' are ignored, so '-z -a foo' is interpreted as '-a foo'. No exception is thrown even when stopAtNonOption is disabled."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"PosixParser\"],\n\"input_conditions\": [\"stopAtNonOption enabled\", \"unrecognized tokens starting with '-'\", \"option 'a' defined\"],\n\"expected\": \"Unrecognized tokens starting with '-' should either stop parsing (if stopAtNonOption is enabled) or throw an exception (if stopAtNonOption is disabled).\",\n\"actual\": \"Unrecognized tokens starting with '-' are ignored, so '-z -a foo' is interpreted as '-a foo'. No exception is thrown even when stopAtNonOption is disabled.\",\n\"reproduction_steps\": [\n\"Define option 'a'.\",\n\"Use PosixParser to parse the command line: '-z -a foo'.\",\n\"Observe that '-z' is ignored and the result is as if the input was '-a foo'.\",\n\"Test with both stopAtNonOption enabled and disabled; in both cases no exception is thrown.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"PosixParser\"],\n\"input_conditions\": [\"stopAtNonOption enabled\", \"unrecognized tokens starting with '-'\", \"option 'a' defined\"],\n\"expected\": \"Unrecognized tokens starting with '-' should either stop parsing (if stopAtNonOption is enabled) or throw an exception (if stopAtNonOption is disabled).\",\n\"actual\": \"Unrecognized tokens starting with '-' are ignored, so '-z -a foo' is interpreted as '-a foo'. No exception is thrown even when stopAtNonOption is disabled.\",\n\"reproduction_steps\": [\n\"Define option 'a'.\",\n\"Use PosixParser to parse the command line: '-z -a foo'.\",\n\"Observe that '-z' is ignored and the result is as if the input was '-a foo'.\",\n\"Test with both stopAtNonOption enabled and disabled; in both cases no exception is thrown.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-13710",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "InlineModelAdmin",
+      "verbose_name",
+      "verbose_name_plural"
+    ],
+    "input_conditions": [
+      "When verbose_name is specified for an Inline class in admin views",
+      "When verbose_name_plural is not explicitly specified for that Inline class"
+    ],
+    "reproduction_steps": [
+      "Define an Inline class with a verbose_name attribute set explicitly.",
+      "Do not set verbose_name_plural on the Inline class.",
+      "Register the Inline with an admin view.",
+      "Observe that the plural name used by the admin interface is not based on the specified verbose_name, but rather based on the model name or model Meta class verbose_name."
+    ],
+    "expected": [
+      "If verbose_name is set on an Inline class, verbose_name_plural should default based on that verbose_name (similar to how model Meta class works), rather than basing it on the model name or model Meta class verbose_name."
+    ],
+    "actual": [
+      "verbose_name_plural for an Inline is not automatically derived from the Inline's verbose_name if set; it continues to use the model name or model Meta class verbose_name as the basis, requiring the user to redundantly specify both names."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "InlineModelAdmin",
+      "verbose_name",
+      "verbose_name_plural"
+    ],
+    "input_conditions": [
+      "When verbose_name is specified for an Inline class in admin views",
+      "When verbose_name_plural is not explicitly specified for that Inline class"
+    ],
+    "reproduction_steps": [
+      "Define an Inline class with a verbose_name attribute set explicitly.",
+      "Do not set verbose_name_plural on the Inline class.",
+      "Register the Inline with an admin view.",
+      "Observe that the plural name used by the admin interface is not based on the specified verbose_name, but rather based on the model name or model Meta class verbose_name."
+    ],
+    "expected": [
+      "If verbose_name is set on an Inline class, verbose_name_plural should default based on that verbose_name (similar to how model Meta class works), rather than basing it on the model name or model Meta class verbose_name."
+    ],
+    "actual": [
+      "verbose_name_plural for an Inline is not automatically derived from the Inline's verbose_name if set; it continues to use the model name or model Meta class verbose_name as the basis, requiring the user to redundantly specify both names."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"InlineModelAdmin\", \"verbose_name\", \"verbose_name_plural\"],\n\"input_conditions\": [\"When verbose_name is specified for an Inline class in admin views\", \"When verbose_name_plural is not explicitly specified for that Inline class\"],\n\"expected\": \"If verbose_name is set on an Inline class, verbose_name_plural should default based on that verbose_name (similar to how model Meta class works), rather than basing it on the model name or model Meta class verbose_name.\",\n\"actual\": \"verbose_name_plural for an Inline is not automatically derived from the Inline's verbose_name if set; it continues to use the model name or model Meta class verbose_name as the basis, requiring the user to redundantly specify both names.\",\n\"reproduction_steps\": [\n    \"Define an Inline class with a verbose_name attribute set explicitly.\",\n    \"Do not set verbose_name_plural on the Inline class.\",\n    \"Register the Inline with an admin view.\",\n    \"Observe that the plural name used by the admin interface is not based on the specified verbose_name, but rather based on the model name or model Meta class verbose_name.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"InlineModelAdmin\", \"verbose_name\", \"verbose_name_plural\"],\n\"input_conditions\": [\"When verbose_name is specified for an Inline class in admin views\", \"When verbose_name_plural is not explicitly specified for that Inline class\"],\n\"expected\": \"If verbose_name is set on an Inline class, verbose_name_plural should default based on that verbose_name (similar to how model Meta class works), rather than basing it on the model name or model Meta class verbose_name.\",\n\"actual\": \"verbose_name_plural for an Inline is not automatically derived from the Inline's verbose_name if set; it continues to use the model name or model Meta class verbose_name as the basis, requiring the user to redundantly specify both names.\",\n\"reproduction_steps\": [\n    \"Define an Inline class with a verbose_name attribute set explicitly.\",\n    \"Do not set verbose_name_plural on the Inline class.\",\n    \"Register the Inline with an admin view.\",\n    \"Observe that the plural name used by the admin interface is not based on the specified verbose_name, but rather based on the model name or model Meta class verbose_name.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

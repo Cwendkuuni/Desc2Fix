@@ -1,0 +1,15 @@
+rq,comparison_type,dataset,left_source,right_source,level,field,n,presence_agreement_mean,presence_agreement_std,similarity_mean,similarity_std,left_signal_count_mean,right_signal_count_mean,signal_count_diff_mean
+rq1,human_pairwise,Defects4J,human1,human2,field,actual,100,0.87,0.337998,0.791775,0.406012,3.81,3.31,0.84
+rq1,human_pairwise,Defects4J,human1,human2,field,api_involved,100,0.78,0.416333,0.420308,0.350633,3.81,3.31,0.84
+rq1,human_pairwise,Defects4J,human1,human2,field,exception,100,1.0,0.0,0.96,0.196946,3.81,3.31,0.84
+rq1,human_pairwise,Defects4J,human1,human2,field,expected,100,0.8,0.402015,0.599218,0.474907,3.81,3.31,0.84
+rq1,human_pairwise,Defects4J,human1,human2,field,input_conditions,100,0.76,0.429235,0.388855,0.376108,3.81,3.31,0.84
+rq1,human_pairwise,Defects4J,human1,human2,field,reproduction_steps,100,0.65,0.479372,0.58,0.496045,3.81,3.31,0.84
+rq1,human_pairwise,Defects4J,human1,human2,macro,ALL,100,0.81,0.147975,0.623359,0.187508,3.81,3.31,0.84
+rq1,human_pairwise,SWTBench,human1,human2,field,actual,100,0.81,0.394277,0.766565,0.418598,3.33,3.38,0.59
+rq1,human_pairwise,SWTBench,human1,human2,field,api_involved,100,0.94,0.238683,0.816889,0.290286,3.33,3.38,0.59
+rq1,human_pairwise,SWTBench,human1,human2,field,exception,100,1.0,0.0,0.960066,0.098407,3.33,3.38,0.59
+rq1,human_pairwise,SWTBench,human1,human2,field,expected,100,0.8,0.402015,0.79087,0.407754,3.33,3.38,0.59
+rq1,human_pairwise,SWTBench,human1,human2,field,input_conditions,100,0.95,0.219043,0.732452,0.293233,3.33,3.38,0.59
+rq1,human_pairwise,SWTBench,human1,human2,field,reproduction_steps,100,0.71,0.456048,0.71,0.456048,3.33,3.38,0.59
+rq1,human_pairwise,SWTBench,human1,human2,macro,ALL,100,0.868333,0.150374,0.79614,0.175238,3.33,3.38,0.59

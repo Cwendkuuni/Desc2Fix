@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-20",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "CMAESOptimizer",
+      "CMAESOptimizer.doOptimize()",
+      "CMAESOptimizer.FitnessFunction.value()",
+      "CMAESOptimizer.isFeasible()",
+      "computeObjectiveValue()"
+    ],
+    "input_conditions": [
+      "checkFeasableCount zero (default)",
+      "bounds provided to optimize()"
+    ],
+    "reproduction_steps": [
+      "Create a CMAESOptimizer with default settings (checkFeasableCount = 0).",
+      "Call optimize() with bounds on the parameters.",
+      "Observe that the optimizer's final parameter values may exceed the specified bounds."
+    ],
+    "expected": [
+      "Optimizer parameters should always stay within the prescribed bounds."
+    ],
+    "actual": [
+      "Optimizer can produce offspring and store optimum parameter values outside the prescribed bounds when checkFeasableCount is zero or after giving up on finding in-bounds offspring."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "CMAESOptimizer",
+      "CMAESOptimizer.doOptimize()",
+      "CMAESOptimizer.FitnessFunction.value()",
+      "CMAESOptimizer.isFeasible()",
+      "computeObjectiveValue()"
+    ],
+    "input_conditions": [
+      "checkFeasableCount zero (default)",
+      "bounds provided to optimize()"
+    ],
+    "reproduction_steps": [
+      "Create a CMAESOptimizer with default settings (checkFeasableCount = 0).",
+      "Call optimize() with bounds on the parameters.",
+      "Observe that the optimizer's final parameter values may exceed the specified bounds."
+    ],
+    "expected": [
+      "Optimizer parameters should always stay within the prescribed bounds."
+    ],
+    "actual": [
+      "Optimizer can produce offspring and store optimum parameter values outside the prescribed bounds when checkFeasableCount is zero or after giving up on finding in-bounds offspring."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"CMAESOptimizer\", \"CMAESOptimizer.doOptimize()\", \"CMAESOptimizer.FitnessFunction.value()\", \"CMAESOptimizer.isFeasible()\", \"computeObjectiveValue()\"],\n\"input_conditions\": [\"checkFeasableCount zero (default)\", \"bounds provided to optimize()\"],\n\"expected\": \"Optimizer parameters should always stay within the prescribed bounds.\",\n\"actual\": \"Optimizer can produce offspring and store optimum parameter values outside the prescribed bounds when checkFeasableCount is zero or after giving up on finding in-bounds offspring.\",\n\"reproduction_steps\": [\n\"Create a CMAESOptimizer with default settings (checkFeasableCount = 0).\",\n\"Call optimize() with bounds on the parameters.\",\n\"Observe that the optimizer's final parameter values may exceed the specified bounds.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"CMAESOptimizer\", \"CMAESOptimizer.doOptimize()\", \"CMAESOptimizer.FitnessFunction.value()\", \"CMAESOptimizer.isFeasible()\", \"computeObjectiveValue()\"],\n\"input_conditions\": [\"checkFeasableCount zero (default)\", \"bounds provided to optimize()\"],\n\"expected\": \"Optimizer parameters should always stay within the prescribed bounds.\",\n\"actual\": \"Optimizer can produce offspring and store optimum parameter values outside the prescribed bounds when checkFeasableCount is zero or after giving up on finding in-bounds offspring.\",\n\"reproduction_steps\": [\n\"Create a CMAESOptimizer with default settings (checkFeasableCount = 0).\",\n\"Call optimize() with bounds on the parameters.\",\n\"Observe that the optimizer's final parameter values may exceed the specified bounds.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,45 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "matplotlib__matplotlib-25785",
+  "project": null,
+  "repo": "matplotlib/matplotlib",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "ps backend"
+    ],
+    "input_conditions": [
+      "automatic papersize selection",
+      "sorting by name"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "The appropriate paper size is selected based on requested size."
+    ],
+    "actual": [
+      "The first paper size that is larger than the requested size is selected based on alphabetical order, not size."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "ps backend"
+    ],
+    "input_conditions": [
+      "automatic papersize selection",
+      "sorting by name"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "The appropriate paper size is selected based on requested size."
+    ],
+    "actual": [
+      "The first paper size that is larger than the requested size is selected based on alphabetical order, not size."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"ps backend\"],\n  \"input_conditions\": [\"automatic papersize selection\", \"sorting by name\"],\n  \"expected\": \"The appropriate paper size is selected based on requested size.\",\n  \"actual\": \"The first paper size that is larger than the requested size is selected based on alphabetical order, not size.\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"ps backend\"],\n  \"input_conditions\": [\"automatic papersize selection\", \"sorting by name\"],\n  \"expected\": \"The appropriate paper size is selected based on requested size.\",\n  \"actual\": \"The first paper size that is larger than the requested size is selected based on alphabetical order, not size.\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

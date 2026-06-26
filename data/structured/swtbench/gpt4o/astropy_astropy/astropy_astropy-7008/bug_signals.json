@@ -1,0 +1,27 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "astropy__astropy-7008",
+  "project": null,
+  "repo": "astropy/astropy",
+  "signals": {
+    "exception": [],
+    "api_involved": [],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [],
+    "actual": []
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [],
+    "actual": []
+  },
+  "raw_response": "```json\n{\n    \"exception\": null,\n    \"api_involved\": [],\n    \"input_conditions\": [],\n    \"expected\": null,\n    \"actual\": null,\n    \"reproduction_steps\": []\n}\n```",
+  "llm_response": "```json\n{\n    \"exception\": null,\n    \"api_involved\": [],\n    \"input_conditions\": [],\n    \"expected\": null,\n    \"actual\": null,\n    \"reproduction_steps\": []\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

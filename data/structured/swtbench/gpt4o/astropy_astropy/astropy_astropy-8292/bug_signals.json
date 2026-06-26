@@ -1,0 +1,49 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "astropy__astropy-8292",
+  "project": null,
+  "repo": "astropy/astropy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "unit equivalencies"
+    ],
+    "input_conditions": [
+      "newly added equivalencies"
+    ],
+    "reproduction_steps": [
+      "Use the new unit equivalencies feature as documented",
+      "Compare unit conversion results with expected values"
+    ],
+    "expected": [
+      "Equivalent to 140 Mpc"
+    ],
+    "actual": [
+      "Equivalent to 70 Mpc"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "unit equivalencies"
+    ],
+    "input_conditions": [
+      "newly added equivalencies"
+    ],
+    "reproduction_steps": [
+      "Use the new unit equivalencies feature as documented",
+      "Compare unit conversion results with expected values"
+    ],
+    "expected": [
+      "Equivalent to 140 Mpc"
+    ],
+    "actual": [
+      "Equivalent to 70 Mpc"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"unit equivalencies\"],\n  \"input_conditions\": [\"newly added equivalencies\"],\n  \"expected\": \"Equivalent to 140 Mpc\",\n  \"actual\": \"Equivalent to 70 Mpc\",\n  \"reproduction_steps\": [\"Use the new unit equivalencies feature as documented\", \"Compare unit conversion results with expected values\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"unit equivalencies\"],\n  \"input_conditions\": [\"newly added equivalencies\"],\n  \"expected\": \"Equivalent to 140 Mpc\",\n  \"actual\": \"Equivalent to 70 Mpc\",\n  \"reproduction_steps\": [\"Use the new unit equivalencies feature as documented\", \"Compare unit conversion results with expected values\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

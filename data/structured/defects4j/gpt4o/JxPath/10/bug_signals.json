@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "JxPath-10",
+  "project": "JxPath",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "JXPathContext",
+      "org.apache.xpath.objects.XObject",
+      "DocumentBuilderFactory",
+      "newDocumentBuilder",
+      "parse",
+      "getValue"
+    ],
+    "input_conditions": [
+      "right operand node set is empty",
+      "comparison expression 2.0 > child1"
+    ],
+    "reproduction_steps": [
+      "Create a JXPathContext with an XML document.",
+      "Use getValue with the expression '2.0 > child1'.",
+      "Evaluate the result and assert it should be false."
+    ],
+    "expected": [
+      "The comparison should return FALSE when one node-set is empty."
+    ],
+    "actual": [
+      "The comparison returns TRUE when the right operand node-set is empty."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "JXPathContext",
+      "org.apache.xpath.objects.XObject",
+      "DocumentBuilderFactory",
+      "newDocumentBuilder",
+      "parse",
+      "getValue"
+    ],
+    "input_conditions": [
+      "right operand node set is empty",
+      "comparison expression 2.0 > child1"
+    ],
+    "reproduction_steps": [
+      "Create a JXPathContext with an XML document.",
+      "Use getValue with the expression '2.0 > child1'.",
+      "Evaluate the result and assert it should be false."
+    ],
+    "expected": [
+      "The comparison should return FALSE when one node-set is empty."
+    ],
+    "actual": [
+      "The comparison returns TRUE when the right operand node-set is empty."
+    ]
+  },
+  "raw_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": [\"JXPathContext\", \"org.apache.xpath.objects.XObject\", \"DocumentBuilderFactory\", \"newDocumentBuilder\", \"parse\", \"getValue\"],\n    \"input_conditions\": [\"right operand node set is empty\", \"comparison expression 2.0 > child1\"],\n    \"expected\": \"The comparison should return FALSE when one node-set is empty.\",\n    \"actual\": \"The comparison returns TRUE when the right operand node-set is empty.\",\n    \"reproduction_steps\": [\n        \"Create a JXPathContext with an XML document.\",\n        \"Use getValue with the expression '2.0 > child1'.\",\n        \"Evaluate the result and assert it should be false.\"\n    ]\n}\n```",
+  "llm_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": [\"JXPathContext\", \"org.apache.xpath.objects.XObject\", \"DocumentBuilderFactory\", \"newDocumentBuilder\", \"parse\", \"getValue\"],\n    \"input_conditions\": [\"right operand node set is empty\", \"comparison expression 2.0 > child1\"],\n    \"expected\": \"The comparison should return FALSE when one node-set is empty.\",\n    \"actual\": \"The comparison returns TRUE when the right operand node-set is empty.\",\n    \"reproduction_steps\": [\n        \"Create a JXPathContext with an XML document.\",\n        \"Use getValue with the expression '2.0 > child1'.\",\n        \"Evaluate the result and assert it should be false.\"\n    ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

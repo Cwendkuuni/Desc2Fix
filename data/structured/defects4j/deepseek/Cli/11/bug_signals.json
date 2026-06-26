@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-11",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "PosixParser.parse",
+      "Option",
+      "parsedLine.hasOption",
+      "parsedLine.getOptionValue"
+    ],
+    "input_conditions": [
+      "Option with short name 't' and long name 'target' defined",
+      "Using PosixParser (not GnuParser)",
+      "Command-line argument '-target opt'"
+    ],
+    "reproduction_steps": [
+      "Define an Option with shortOpt='t' and longOpt='target' that takes an argument.",
+      "Create a PosixParser and parse command-line arguments containing '-target opt'.",
+      "Check if the option 't' is present and retrieve its value.",
+      "Observe that the retrieved value is 'arget' instead of 'opt'."
+    ],
+    "expected": [
+      "When providing '-target opt' on the command line, the parser should interpret it as the long option '--target' with value 'opt'."
+    ],
+    "actual": [
+      "The PosixParser interprets '-target' as the short option '-t' with the remainder 'arget' as the argument value, resulting in 'target' being misparsed."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "PosixParser.parse",
+      "Option",
+      "parsedLine.hasOption",
+      "parsedLine.getOptionValue"
+    ],
+    "input_conditions": [
+      "Option with short name 't' and long name 'target' defined",
+      "Using PosixParser (not GnuParser)",
+      "Command-line argument '-target opt'"
+    ],
+    "reproduction_steps": [
+      "Define an Option with shortOpt='t' and longOpt='target' that takes an argument.",
+      "Create a PosixParser and parse command-line arguments containing '-target opt'.",
+      "Check if the option 't' is present and retrieve its value.",
+      "Observe that the retrieved value is 'arget' instead of 'opt'."
+    ],
+    "expected": [
+      "When providing '-target opt' on the command line, the parser should interpret it as the long option '--target' with value 'opt'."
+    ],
+    "actual": [
+      "The PosixParser interprets '-target' as the short option '-t' with the remainder 'arget' as the argument value, resulting in 'target' being misparsed."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"PosixParser.parse\", \"Option\", \"parsedLine.hasOption\", \"parsedLine.getOptionValue\"],\n\"input_conditions\": [\"Option with short name 't' and long name 'target' defined\", \"Using PosixParser (not GnuParser)\", \"Command-line argument '-target opt'\"],\n\"expected\": \"When providing '-target opt' on the command line, the parser should interpret it as the long option '--target' with value 'opt'.\",\n\"actual\": \"The PosixParser interprets '-target' as the short option '-t' with the remainder 'arget' as the argument value, resulting in 'target' being misparsed.\",\n\"reproduction_steps\": [\n\"Define an Option with shortOpt='t' and longOpt='target' that takes an argument.\",\n\"Create a PosixParser and parse command-line arguments containing '-target opt'.\",\n\"Check if the option 't' is present and retrieve its value.\",\n\"Observe that the retrieved value is 'arget' instead of 'opt'.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"PosixParser.parse\", \"Option\", \"parsedLine.hasOption\", \"parsedLine.getOptionValue\"],\n\"input_conditions\": [\"Option with short name 't' and long name 'target' defined\", \"Using PosixParser (not GnuParser)\", \"Command-line argument '-target opt'\"],\n\"expected\": \"When providing '-target opt' on the command line, the parser should interpret it as the long option '--target' with value 'opt'.\",\n\"actual\": \"The PosixParser interprets '-target' as the short option '-t' with the remainder 'arget' as the argument value, resulting in 'target' being misparsed.\",\n\"reproduction_steps\": [\n\"Define an Option with shortOpt='t' and longOpt='target' that takes an argument.\",\n\"Create a PosixParser and parse command-line arguments containing '-target opt'.\",\n\"Check if the option 't' is present and retrieve its value.\",\n\"Observe that the retrieved value is 'arget' instead of 'opt'.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

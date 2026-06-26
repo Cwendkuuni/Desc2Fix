@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sqlfluff__sqlfluff-4764",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "SQLFluff CLI"
+    ],
+    "input_conditions": [
+      "using SQLFluff in pre-commit hook",
+      "current verbosity setting"
+    ],
+    "reproduction_steps": [
+      "Use SQLFluff CLI in a pre-commit hook",
+      "Observe verbosity level and output"
+    ],
+    "expected": [
+      "Only print the return status and the number of fixes applied when using SQLFluff in a pre-commit hook, with an option to limit verbosity."
+    ],
+    "actual": [
+      "Only option to increase verbosity, potentially resulting in a verbose list of fixes being printed."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "SQLFluff CLI"
+    ],
+    "input_conditions": [
+      "using SQLFluff in pre-commit hook",
+      "current verbosity setting"
+    ],
+    "reproduction_steps": [
+      "Use SQLFluff CLI in a pre-commit hook",
+      "Observe verbosity level and output"
+    ],
+    "expected": [
+      "Only print the return status and the number of fixes applied when using SQLFluff in a pre-commit hook, with an option to limit verbosity."
+    ],
+    "actual": [
+      "Only option to increase verbosity, potentially resulting in a verbose list of fixes being printed."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"SQLFluff CLI\"],\n  \"input_conditions\": [\"using SQLFluff in pre-commit hook\", \"current verbosity setting\"],\n  \"expected\": \"Only print the return status and the number of fixes applied when using SQLFluff in a pre-commit hook, with an option to limit verbosity.\",\n  \"actual\": \"Only option to increase verbosity, potentially resulting in a verbose list of fixes being printed.\",\n  \"reproduction_steps\": [\n    \"Use SQLFluff CLI in a pre-commit hook\",\n    \"Observe verbosity level and output\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"SQLFluff CLI\"],\n  \"input_conditions\": [\"using SQLFluff in pre-commit hook\", \"current verbosity setting\"],\n  \"expected\": \"Only print the return status and the number of fixes applied when using SQLFluff in a pre-commit hook, with an option to limit verbosity.\",\n  \"actual\": \"Only option to increase verbosity, potentially resulting in a verbose list of fixes being printed.\",\n  \"reproduction_steps\": [\n    \"Use SQLFluff CLI in a pre-commit hook\",\n    \"Observe verbosity level and output\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,33 @@
+You are an expert software analyst tasked with analyzing natural language bug reports.
+
+Your goal is to extract a structured summary of key signals described in the report, across three semantic levels: Entity, Scenario, and Behavior. This information will be used to evaluate how well a test or a patch aligns with the bug description.
+
+Please follow these steps carefully:
+
+1. Read the bug report and identify any mentioned exceptions or error messages.
+2. Identify APIs, method names, or components involved in the bug.
+3. Determine any input conditions or environmental states relevant to the failure.
+4. Extract reproduction steps if they are listed or implied.
+5. Determine the expected behavior (what should happen).
+6. Identify the actual behavior (what happened instead).
+
+Once you’ve completed the reasoning, summarize the extracted elements in the following JSON format:
+
+{
+"exception": "...",
+"api_involved": ["...", "..."],
+"input_conditions": ["...", "..."],
+"expected": "...",
+"actual": "...",
+"reproduction_steps": ["...", "..."]
+}
+
+Please ensure the complete JSON format is placed between triple backticks ``` ``` for easy extraction.
+
+If any field is not mentioned explicitly, infer it based on context or return `null`.
+
+Here is the bug report to analyze:
+---
+{{BUG_REPORT}}
+---
+Please output only the final JSON structure.

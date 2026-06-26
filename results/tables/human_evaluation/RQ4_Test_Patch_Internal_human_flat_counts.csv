@@ -1,0 +1,13 @@
+rq_label,rq,dataset,representation,patch_view,rater,rows
+RQ4_Test_Patch_Internal,rq4_internal,Defects4J,RAW,add,human1,78
+RQ4_Test_Patch_Internal,rq4_internal,Defects4J,RAW,add,human2,78
+RQ4_Test_Patch_Internal,rq4_internal,Defects4J,RAW,full,human1,100
+RQ4_Test_Patch_Internal,rq4_internal,Defects4J,RAW,full,human2,100
+RQ4_Test_Patch_Internal,rq4_internal,Defects4J,RAW,remove,human1,98
+RQ4_Test_Patch_Internal,rq4_internal,Defects4J,RAW,remove,human2,98
+RQ4_Test_Patch_Internal,rq4_internal,SWTBench,RAW,add,human1,99
+RQ4_Test_Patch_Internal,rq4_internal,SWTBench,RAW,add,human2,99
+RQ4_Test_Patch_Internal,rq4_internal,SWTBench,RAW,full,human1,100
+RQ4_Test_Patch_Internal,rq4_internal,SWTBench,RAW,full,human2,100
+RQ4_Test_Patch_Internal,rq4_internal,SWTBench,RAW,remove,human1,84
+RQ4_Test_Patch_Internal,rq4_internal,SWTBench,RAW,remove,human2,84

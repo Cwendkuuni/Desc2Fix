@@ -1,0 +1,11 @@
+dataset,instance_id,project,repo,scenario,artifact_pair,patch_view,has_test_text,has_patch_text,a_chars,b_chars,a_tokens,b_tokens,a_identifiers,b_identifiers,rouge_l,jaccard,identifier_jaccard,pos_overlap,sbert,codebert,openai_embedding
+defects4j,Cli-1,Cli,,raw,test_patch,full,True,True,6997,3309,1805,1007,549,332,0.204836,0.151429,0.10101,1.0,0.382645,0.960162,0.592154
+defects4j,Cli-2,Cli,,raw,test_patch,full,True,True,6923,417,1789,144,539,53,0.098293,0.122605,0.086124,0.75,0.454819,0.921732,0.520672
+defects4j,Cli-3,Cli,,raw,test_patch,full,True,True,4275,555,1239,186,278,58,0.164211,0.139037,0.090909,0.75,0.510671,0.957149,0.456534
+defects4j,Cli-4,Cli,,raw,test_patch,full,True,True,8051,612,2137,187,467,67,0.114458,0.171429,0.114094,1.0,0.433815,0.948288,0.663267
+defects4j,Cli-5,Cli,,raw,test_patch,full,True,True,11166,413,2878,153,907,53,0.076542,0.120155,0.061321,1.0,0.425629,0.942144,0.597399
+defects4j,Cli-7,Cli,,raw,test_patch,full,True,True,2760,721,752,214,126,74,0.118012,0.057325,0.0,1.0,0.465833,0.962454,0.472616
+defects4j,Cli-8,Cli,,raw,test_patch,full,True,True,4224,474,1221,155,304,57,0.164244,0.145161,0.105691,0.75,0.554053,0.952524,0.614544
+defects4j,Cli-9,Cli,,raw,test_patch,full,True,True,9031,518,2415,169,573,56,0.101393,0.131579,0.08589,1.0,0.420736,0.94463,0.689961
+defects4j,Cli-10,Cli,,raw,test_patch,full,True,True,4570,709,1214,204,274,69,0.169252,0.156863,0.108844,0.75,0.485198,0.955217,0.619261
+defects4j,Cli-11,Cli,,raw,test_patch,full,True,True,4160,505,1127,175,258,56,0.193548,0.178771,0.12931,0.75,0.504779,0.947455,0.68958

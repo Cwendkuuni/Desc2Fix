@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-13995",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "admindocs",
+      "@cached_property"
+    ],
+    "input_conditions": [
+      "Model properties decorated with @cached_property"
+    ],
+    "reproduction_steps": [
+      "Open the admindocs page for a model that has a property decorated with @cached_property",
+      "Check the models section of the page to see if the cached property is listed"
+    ],
+    "expected": [
+      "Properties decorated with @cached_property should be included in the models section of the admindocs page, along with all other fields, properties, and methods."
+    ],
+    "actual": [
+      "Properties decorated with @cached_property are not included in the admindocs models description."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "admindocs",
+      "@cached_property"
+    ],
+    "input_conditions": [
+      "Model properties decorated with @cached_property"
+    ],
+    "reproduction_steps": [
+      "Open the admindocs page for a model that has a property decorated with @cached_property",
+      "Check the models section of the page to see if the cached property is listed"
+    ],
+    "expected": [
+      "Properties decorated with @cached_property should be included in the models section of the admindocs page, along with all other fields, properties, and methods."
+    ],
+    "actual": [
+      "Properties decorated with @cached_property are not included in the admindocs models description."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"admindocs\", \"@cached_property\"],\n\"input_conditions\": [\"Model properties decorated with @cached_property\"],\n\"expected\": \"Properties decorated with @cached_property should be included in the models section of the admindocs page, along with all other fields, properties, and methods.\",\n\"actual\": \"Properties decorated with @cached_property are not included in the admindocs models description.\",\n\"reproduction_steps\": [\"Open the admindocs page for a model that has a property decorated with @cached_property\", \"Check the models section of the page to see if the cached property is listed\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"admindocs\", \"@cached_property\"],\n\"input_conditions\": [\"Model properties decorated with @cached_property\"],\n\"expected\": \"Properties decorated with @cached_property should be included in the models section of the admindocs page, along with all other fields, properties, and methods.\",\n\"actual\": \"Properties decorated with @cached_property are not included in the admindocs models description.\",\n\"reproduction_steps\": [\"Open the admindocs page for a model that has a property decorated with @cached_property\", \"Check the models section of the page to see if the cached property is listed\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

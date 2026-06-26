@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sqlfluff__sqlfluff-2336",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [
+      "reference was not found in the FROM clause"
+    ],
+    "api_involved": [
+      "L026"
+    ],
+    "input_conditions": [
+      "subquery in an UPDATE statement references a column from the UPDATE target"
+    ],
+    "reproduction_steps": [
+      "Create with the content below",
+      "Run SQLFluff"
+    ],
+    "expected": [
+      "L026 should not fail when a subquery in an UPDATE statement references a column from the UPDATE target"
+    ],
+    "actual": [
+      "L026 failed due to reference was not found in the FROM clause"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "reference was not found in the FROM clause"
+    ],
+    "api_involved": [
+      "L026"
+    ],
+    "input_conditions": [
+      "subquery in an UPDATE statement references a column from the UPDATE target"
+    ],
+    "reproduction_steps": [
+      "Create with the content below",
+      "Run SQLFluff"
+    ],
+    "expected": [
+      "L026 should not fail when a subquery in an UPDATE statement references a column from the UPDATE target"
+    ],
+    "actual": [
+      "L026 failed due to reference was not found in the FROM clause"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"reference was not found in the FROM clause\",\n  \"api_involved\": [\"L026\"],\n  \"input_conditions\": [\"subquery in an UPDATE statement references a column from the UPDATE target\"],\n  \"expected\": \"L026 should not fail when a subquery in an UPDATE statement references a column from the UPDATE target\",\n  \"actual\": \"L026 failed due to reference was not found in the FROM clause\",\n  \"reproduction_steps\": [\n    \"Create with the content below\",\n    \"Run SQLFluff\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"reference was not found in the FROM clause\",\n  \"api_involved\": [\"L026\"],\n  \"input_conditions\": [\"subquery in an UPDATE statement references a column from the UPDATE target\"],\n  \"expected\": \"L026 should not fail when a subquery in an UPDATE statement references a column from the UPDATE target\",\n  \"actual\": \"L026 failed due to reference was not found in the FROM clause\",\n  \"reproduction_steps\": [\n    \"Create with the content below\",\n    \"Run SQLFluff\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

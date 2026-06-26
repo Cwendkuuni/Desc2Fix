@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sqlfluff__sqlfluff-3608",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "apply_fixes",
+      "load_dialect",
+      "determine_exit_code"
+    ],
+    "input_conditions": [
+      "Not having libraries installed",
+      "Failing to apply fixes",
+      "User Errors",
+      "OSError"
+    ],
+    "reproduction_steps": [
+      "Review code in #3431 for return code implementations",
+      "Check return codes related to success, errors, parsing, and linting"
+    ],
+    "expected": [
+      "Consistent return codes: 0 for success, 1 for error-related failure, 65 for linting fail, 66 for fixing fail."
+    ],
+    "actual": [
+      "Inconsistent return codes across different scenarios."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "apply_fixes",
+      "load_dialect",
+      "determine_exit_code"
+    ],
+    "input_conditions": [
+      "Not having libraries installed",
+      "Failing to apply fixes",
+      "User Errors",
+      "OSError"
+    ],
+    "reproduction_steps": [
+      "Review code in #3431 for return code implementations",
+      "Check return codes related to success, errors, parsing, and linting"
+    ],
+    "expected": [
+      "Consistent return codes: 0 for success, 1 for error-related failure, 65 for linting fail, 66 for fixing fail."
+    ],
+    "actual": [
+      "Inconsistent return codes across different scenarios."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"apply_fixes\", \"load_dialect\", \"determine_exit_code\"],\n  \"input_conditions\": [\"Not having libraries installed\", \"Failing to apply fixes\", \"User Errors\", \"OSError\"],\n  \"expected\": \"Consistent return codes: 0 for success, 1 for error-related failure, 65 for linting fail, 66 for fixing fail.\",\n  \"actual\": \"Inconsistent return codes across different scenarios.\",\n  \"reproduction_steps\": [\"Review code in #3431 for return code implementations\", \"Check return codes related to success, errors, parsing, and linting\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"apply_fixes\", \"load_dialect\", \"determine_exit_code\"],\n  \"input_conditions\": [\"Not having libraries installed\", \"Failing to apply fixes\", \"User Errors\", \"OSError\"],\n  \"expected\": \"Consistent return codes: 0 for success, 1 for error-related failure, 65 for linting fail, 66 for fixing fail.\",\n  \"actual\": \"Inconsistent return codes across different scenarios.\",\n  \"reproduction_steps\": [\"Review code in #3431 for return code implementations\", \"Check return codes related to success, errors, parsing, and linting\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

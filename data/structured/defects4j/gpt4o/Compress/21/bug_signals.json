@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Compress-21",
+  "project": "Compress",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "Cannot open file 'archivename.7z' as archive"
+    ],
+    "api_involved": [
+      "7zip Manager",
+      "Compress"
+    ],
+    "input_conditions": [
+      "folder with more than 7 files",
+      "last file with content or empty"
+    ],
+    "reproduction_steps": [
+      "Create a folder with more than 7 files.",
+      "Use 7zip to archive this folder.",
+      "Check if the archive opens correctly with 7zip Manager."
+    ],
+    "expected": [
+      "7Zip Manager should open the archive correctly without errors."
+    ],
+    "actual": [
+      "Archive is corrupt or 7Zip Manager crashes/stops working."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Cannot open file 'archivename.7z' as archive"
+    ],
+    "api_involved": [
+      "7zip Manager",
+      "Compress"
+    ],
+    "input_conditions": [
+      "folder with more than 7 files",
+      "last file with content or empty"
+    ],
+    "reproduction_steps": [
+      "Create a folder with more than 7 files.",
+      "Use 7zip to archive this folder.",
+      "Check if the archive opens correctly with 7zip Manager."
+    ],
+    "expected": [
+      "7Zip Manager should open the archive correctly without errors."
+    ],
+    "actual": [
+      "Archive is corrupt or 7Zip Manager crashes/stops working."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"Cannot open file 'archivename.7z' as archive\",\n  \"api_involved\": [\"7zip Manager\", \"Compress\"],\n  \"input_conditions\": [\"folder with more than 7 files\", \"last file with content or empty\"],\n  \"expected\": \"7Zip Manager should open the archive correctly without errors.\",\n  \"actual\": \"Archive is corrupt or 7Zip Manager crashes/stops working.\",\n  \"reproduction_steps\": [\n    \"Create a folder with more than 7 files.\",\n    \"Use 7zip to archive this folder.\",\n    \"Check if the archive opens correctly with 7zip Manager.\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"Cannot open file 'archivename.7z' as archive\",\n  \"api_involved\": [\"7zip Manager\", \"Compress\"],\n  \"input_conditions\": [\"folder with more than 7 files\", \"last file with content or empty\"],\n  \"expected\": \"7Zip Manager should open the archive correctly without errors.\",\n  \"actual\": \"Archive is corrupt or 7Zip Manager crashes/stops working.\",\n  \"reproduction_steps\": [\n    \"Create a folder with more than 7 files.\",\n    \"Use 7zip to archive this folder.\",\n    \"Check if the archive opens correctly with 7zip Manager.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

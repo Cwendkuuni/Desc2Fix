@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-138",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "JSC_DETERMINISTIC_TEST"
+    ],
+    "api_involved": [
+      "ClosureCompiler",
+      "ADVANCED_OPTIMIZATIONS"
+    ],
+    "input_conditions": [
+      "advance optimization compilation level",
+      "closure compiler with output_file_name default.js"
+    ],
+    "reproduction_steps": [
+      "Compile the provided JavaScript code using Closure Compiler with ADVANCED_OPTIMIZATIONS",
+      "Observe the warning JSC_DETERMINISTIC_TEST: condition always evaluates to false"
+    ],
+    "expected": [
+      "Code should be compiled without warnings"
+    ],
+    "actual": [
+      "Compiler warning JSC_DETERMINISTIC_TEST: condition always evaluates to false"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "JSC_DETERMINISTIC_TEST"
+    ],
+    "api_involved": [
+      "ClosureCompiler",
+      "ADVANCED_OPTIMIZATIONS"
+    ],
+    "input_conditions": [
+      "advance optimization compilation level",
+      "closure compiler with output_file_name default.js"
+    ],
+    "reproduction_steps": [
+      "Compile the provided JavaScript code using Closure Compiler with ADVANCED_OPTIMIZATIONS",
+      "Observe the warning JSC_DETERMINISTIC_TEST: condition always evaluates to false"
+    ],
+    "expected": [
+      "Code should be compiled without warnings"
+    ],
+    "actual": [
+      "Compiler warning JSC_DETERMINISTIC_TEST: condition always evaluates to false"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"JSC_DETERMINISTIC_TEST\",\n\"api_involved\": [\"ClosureCompiler\", \"ADVANCED_OPTIMIZATIONS\"],\n\"input_conditions\": [\"advance optimization compilation level\", \"closure compiler with output_file_name default.js\"],\n\"expected\": \"Code should be compiled without warnings\",\n\"actual\": \"Compiler warning JSC_DETERMINISTIC_TEST: condition always evaluates to false\",\n\"reproduction_steps\": [\n    \"Compile the provided JavaScript code using Closure Compiler with ADVANCED_OPTIMIZATIONS\",\n    \"Observe the warning JSC_DETERMINISTIC_TEST: condition always evaluates to false\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"JSC_DETERMINISTIC_TEST\",\n\"api_involved\": [\"ClosureCompiler\", \"ADVANCED_OPTIMIZATIONS\"],\n\"input_conditions\": [\"advance optimization compilation level\", \"closure compiler with output_file_name default.js\"],\n\"expected\": \"Code should be compiled without warnings\",\n\"actual\": \"Compiler warning JSC_DETERMINISTIC_TEST: condition always evaluates to false\",\n\"reproduction_steps\": [\n    \"Compile the provided JavaScript code using Closure Compiler with ADVANCED_OPTIMIZATIONS\",\n    \"Observe the warning JSC_DETERMINISTIC_TEST: condition always evaluates to false\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "astropy__astropy-13803",
+  "project": null,
+  "repo": "astropy/astropy",
+  "signals": {
+    "exception": [
+      "ValueError (rejection of float32 value slightly larger than pi/2)"
+    ],
+    "api_involved": [
+      "astropy",
+      "float32",
+      "float64"
+    ],
+    "input_conditions": [
+      "float32 representation of pi/2 is slightly larger than pi/2",
+      "float32 values read from files"
+    ],
+    "reproduction_steps": [
+      "Read a float32 value of pi/2 from a file",
+      "Pass it to an Astropy function that checks angle bounds using float64 precision",
+      "Observe that the value is rejected"
+    ],
+    "expected": [
+      "Be lenient and accept float32 values that are within float32 precision of pi/2"
+    ],
+    "actual": [
+      "Astropy checks using float64 precision and rejects valid float32 values"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ValueError (rejection of float32 value slightly larger than pi/2)"
+    ],
+    "api_involved": [
+      "astropy",
+      "float32",
+      "float64"
+    ],
+    "input_conditions": [
+      "float32 representation of pi/2 is slightly larger than pi/2",
+      "float32 values read from files"
+    ],
+    "reproduction_steps": [
+      "Read a float32 value of pi/2 from a file",
+      "Pass it to an Astropy function that checks angle bounds using float64 precision",
+      "Observe that the value is rejected"
+    ],
+    "expected": [
+      "Be lenient and accept float32 values that are within float32 precision of pi/2"
+    ],
+    "actual": [
+      "Astropy checks using float64 precision and rejects valid float32 values"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"ValueError (rejection of float32 value slightly larger than pi/2)\",\n\"api_involved\": [\"astropy\", \"float32\", \"float64\"],\n\"input_conditions\": [\"float32 representation of pi/2 is slightly larger than pi/2\", \"float32 values read from files\"],\n\"expected\": \"Be lenient and accept float32 values that are within float32 precision of pi/2\",\n\"actual\": \"Astropy checks using float64 precision and rejects valid float32 values\",\n\"reproduction_steps\": [\"Read a float32 value of pi/2 from a file\", \"Pass it to an Astropy function that checks angle bounds using float64 precision\", \"Observe that the value is rejected\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"ValueError (rejection of float32 value slightly larger than pi/2)\",\n\"api_involved\": [\"astropy\", \"float32\", \"float64\"],\n\"input_conditions\": [\"float32 representation of pi/2 is slightly larger than pi/2\", \"float32 values read from files\"],\n\"expected\": \"Be lenient and accept float32 values that are within float32 precision of pi/2\",\n\"actual\": \"Astropy checks using float64 precision and rejects valid float32 values\",\n\"reproduction_steps\": [\"Read a float32 value of pi/2 from a file\", \"Pass it to an Astropy function that checks angle bounds using float64 precision\", \"Observe that the value is rejected\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

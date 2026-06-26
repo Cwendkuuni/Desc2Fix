@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-16527",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "django/contrib/admin/templatetags/admin_modify.py",
+      "show_save_as_new"
+    ],
+    "input_conditions": [
+      "has_add_permission is required but not checked",
+      "is_popup is false",
+      "has_change_permission is true",
+      "change is true",
+      "save_as is true"
+    ],
+    "reproduction_steps": [
+      "Navigate to a change form page in Django admin where the model has save_as=True and the user has change permission but not add permission.",
+      "Observe that the 'Save as new' button is displayed despite the user lacking add permission."
+    ],
+    "expected": [
+      "The 'show_save_as_new' template tag should only be shown if the user has add permission, because saving as new is an add operation."
+    ],
+    "actual": [
+      "The 'show_save_as_new' tag can be displayed without checking has_add_permission, allowing users without add permission to see and use it."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "django/contrib/admin/templatetags/admin_modify.py",
+      "show_save_as_new"
+    ],
+    "input_conditions": [
+      "has_add_permission is required but not checked",
+      "is_popup is false",
+      "has_change_permission is true",
+      "change is true",
+      "save_as is true"
+    ],
+    "reproduction_steps": [
+      "Navigate to a change form page in Django admin where the model has save_as=True and the user has change permission but not add permission.",
+      "Observe that the 'Save as new' button is displayed despite the user lacking add permission."
+    ],
+    "expected": [
+      "The 'show_save_as_new' template tag should only be shown if the user has add permission, because saving as new is an add operation."
+    ],
+    "actual": [
+      "The 'show_save_as_new' tag can be displayed without checking has_add_permission, allowing users without add permission to see and use it."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"django/contrib/admin/templatetags/admin_modify.py\", \"show_save_as_new\"],\n\"input_conditions\": [\"has_add_permission is required but not checked\", \"is_popup is false\", \"has_change_permission is true\", \"change is true\", \"save_as is true\"],\n\"expected\": \"The 'show_save_as_new' template tag should only be shown if the user has add permission, because saving as new is an add operation.\",\n\"actual\": \"The 'show_save_as_new' tag can be displayed without checking has_add_permission, allowing users without add permission to see and use it.\",\n\"reproduction_steps\": [\"Navigate to a change form page in Django admin where the model has save_as=True and the user has change permission but not add permission.\", \"Observe that the 'Save as new' button is displayed despite the user lacking add permission.\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"django/contrib/admin/templatetags/admin_modify.py\", \"show_save_as_new\"],\n\"input_conditions\": [\"has_add_permission is required but not checked\", \"is_popup is false\", \"has_change_permission is true\", \"change is true\", \"save_as is true\"],\n\"expected\": \"The 'show_save_as_new' template tag should only be shown if the user has add permission, because saving as new is an add operation.\",\n\"actual\": \"The 'show_save_as_new' tag can be displayed without checking has_add_permission, allowing users without add permission to see and use it.\",\n\"reproduction_steps\": [\"Navigate to a change form page in Django admin where the model has save_as=True and the user has change permission but not add permission.\", \"Observe that the 'Save as new' button is displayed despite the user lacking add permission.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

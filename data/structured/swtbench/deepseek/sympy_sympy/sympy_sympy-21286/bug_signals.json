@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-21286",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Range"
+    ],
+    "input_conditions": [
+      "Symbolic arguments"
+    ],
+    "reproduction_steps": [
+      "Create a Range with symbolic arguments.",
+      "Observe that the Range is not canonical.",
+      "Observe incorrect results due to non-canonical behavior."
+    ],
+    "expected": [
+      "Symblic Range should behave in a canonical way, similar to numerical Range."
+    ],
+    "actual": [
+      "Symbolic Range is not canonical, leading to incorrect results based on assumption of canonicity."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Range"
+    ],
+    "input_conditions": [
+      "Symbolic arguments"
+    ],
+    "reproduction_steps": [
+      "Create a Range with symbolic arguments.",
+      "Observe that the Range is not canonical.",
+      "Observe incorrect results due to non-canonical behavior."
+    ],
+    "expected": [
+      "Symblic Range should behave in a canonical way, similar to numerical Range."
+    ],
+    "actual": [
+      "Symbolic Range is not canonical, leading to incorrect results based on assumption of canonicity."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Range\"],\n\"input_conditions\": [\"Symbolic arguments\"],\n\"expected\": \"Symblic Range should behave in a canonical way, similar to numerical Range.\",\n\"actual\": \"Symbolic Range is not canonical, leading to incorrect results based on assumption of canonicity.\",\n\"reproduction_steps\": [\"Create a Range with symbolic arguments.\", \"Observe that the Range is not canonical.\", \"Observe incorrect results due to non-canonical behavior.\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Range\"],\n\"input_conditions\": [\"Symbolic arguments\"],\n\"expected\": \"Symblic Range should behave in a canonical way, similar to numerical Range.\",\n\"actual\": \"Symbolic Range is not canonical, leading to incorrect results based on assumption of canonicity.\",\n\"reproduction_steps\": [\"Create a Range with symbolic arguments.\", \"Observe that the Range is not canonical.\", \"Observe incorrect results due to non-canonical behavior.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

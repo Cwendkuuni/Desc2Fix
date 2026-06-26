@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sphinx-doc__sphinx-7930",
+  "project": null,
+  "repo": "sphinx-doc/sphinx",
+  "signals": {
+    "exception": [
+      "warning: autodoc Dataclass variables reference target not found"
+    ],
+    "api_involved": [
+      "autodoc"
+    ],
+    "input_conditions": [
+      "dataclass with a variable of a custom type",
+      "Python 3.7.7",
+      "Sphinx 3.1.2 or 3.1.0"
+    ],
+    "reproduction_steps": [
+      "Open the attached project",
+      "Install Sphinx",
+      "Run Sphinx build"
+    ],
+    "expected": [
+      "no warning, or a clear message explaining how to avoid the warning"
+    ],
+    "actual": [
+      "a warning is generated when using autodoc with a dataclass containing a variable of a custom type"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "warning: autodoc Dataclass variables reference target not found"
+    ],
+    "api_involved": [
+      "autodoc"
+    ],
+    "input_conditions": [
+      "dataclass with a variable of a custom type",
+      "Python 3.7.7",
+      "Sphinx 3.1.2 or 3.1.0"
+    ],
+    "reproduction_steps": [
+      "Open the attached project",
+      "Install Sphinx",
+      "Run Sphinx build"
+    ],
+    "expected": [
+      "no warning, or a clear message explaining how to avoid the warning"
+    ],
+    "actual": [
+      "a warning is generated when using autodoc with a dataclass containing a variable of a custom type"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"warning: autodoc Dataclass variables reference target not found\",\n\"api_involved\": [\"autodoc\"],\n\"input_conditions\": [\"dataclass with a variable of a custom type\", \"Python 3.7.7\", \"Sphinx 3.1.2 or 3.1.0\"],\n\"expected\": \"no warning, or a clear message explaining how to avoid the warning\",\n\"actual\": \"a warning is generated when using autodoc with a dataclass containing a variable of a custom type\",\n\"reproduction_steps\": [\n    \"Open the attached project\",\n    \"Install Sphinx\",\n    \"Run Sphinx build\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"warning: autodoc Dataclass variables reference target not found\",\n\"api_involved\": [\"autodoc\"],\n\"input_conditions\": [\"dataclass with a variable of a custom type\", \"Python 3.7.7\", \"Sphinx 3.1.2 or 3.1.0\"],\n\"expected\": \"no warning, or a clear message explaining how to avoid the warning\",\n\"actual\": \"a warning is generated when using autodoc with a dataclass containing a variable of a custom type\",\n\"reproduction_steps\": [\n    \"Open the attached project\",\n    \"Install Sphinx\",\n    \"Run Sphinx build\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

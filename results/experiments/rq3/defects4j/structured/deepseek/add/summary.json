@@ -1,0 +1,19 @@
+{
+  "instances": 10,
+  "with_report_text": 10,
+  "with_patch_text": 9,
+  "avg_rouge_l": 0.094105,
+  "avg_jaccard": 0.072868,
+  "avg_identifier_jaccard": 0.025876,
+  "avg_pos_overlap": 0.683334,
+  "avg_structured_macro_jaccard": 0.056689,
+  "avg_structured_all_jaccard": 0.072868,
+  "avg_sbert": 0.322422,
+  "avg_codebert": 0.843047,
+  "avg_openai_embedding": 0.345176,
+  "dataset": "defects4j",
+  "scenario": "structured",
+  "model": "deepseek",
+  "artifact_pair": "report_patch",
+  "patch_view": "add"
+}

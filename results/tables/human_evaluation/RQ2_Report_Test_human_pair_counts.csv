@@ -1,0 +1,5 @@
+rq_label,rq,dataset,representation,patch_view,n_pairs
+RQ2_Report_Test,rq2,Defects4J,RAW,none,100
+RQ2_Report_Test,rq2,Defects4J,STRUCTURED,none,100
+RQ2_Report_Test,rq2,SWTBench,RAW,none,100
+RQ2_Report_Test,rq2,SWTBench,STRUCTURED,none,100

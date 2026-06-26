@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-11205",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "count() on a ManyToMany relation"
+    ],
+    "input_conditions": [
+      "unfiltered many to many relation"
+    ],
+    "reproduction_steps": [
+      "Call count() on an unfiltered ManyToMany relation"
+    ],
+    "expected": [
+      "SELECT COUNT(*) AS '__count' FROM 'app_foo_bar' WHERE 'app_foo_bar'.'foo_id' = ?;"
+    ],
+    "actual": [
+      "SELECT COUNT(*) AS '__count' FROM 'app_foo' INNER JOIN 'app_foo_bar' ON ('app_foo'.'id' = 'app_foo_bar'.'foo_id') WHERE 'app_foo_bar'.'foo_id' = ?;"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "count() on a ManyToMany relation"
+    ],
+    "input_conditions": [
+      "unfiltered many to many relation"
+    ],
+    "reproduction_steps": [
+      "Call count() on an unfiltered ManyToMany relation"
+    ],
+    "expected": [
+      "SELECT COUNT(*) AS '__count' FROM 'app_foo_bar' WHERE 'app_foo_bar'.'foo_id' = ?;"
+    ],
+    "actual": [
+      "SELECT COUNT(*) AS '__count' FROM 'app_foo' INNER JOIN 'app_foo_bar' ON ('app_foo'.'id' = 'app_foo_bar'.'foo_id') WHERE 'app_foo_bar'.'foo_id' = ?;"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"count() on a ManyToMany relation\"],\n  \"input_conditions\": [\"unfiltered many to many relation\"],\n  \"expected\": \"SELECT COUNT(*) AS '__count' FROM 'app_foo_bar' WHERE 'app_foo_bar'.'foo_id' = ?;\",\n  \"actual\": \"SELECT COUNT(*) AS '__count' FROM 'app_foo' INNER JOIN 'app_foo_bar' ON ('app_foo'.'id' = 'app_foo_bar'.'foo_id') WHERE 'app_foo_bar'.'foo_id' = ?;\",\n  \"reproduction_steps\": [\n    \"Call count() on an unfiltered ManyToMany relation\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"count() on a ManyToMany relation\"],\n  \"input_conditions\": [\"unfiltered many to many relation\"],\n  \"expected\": \"SELECT COUNT(*) AS '__count' FROM 'app_foo_bar' WHERE 'app_foo_bar'.'foo_id' = ?;\",\n  \"actual\": \"SELECT COUNT(*) AS '__count' FROM 'app_foo' INNER JOIN 'app_foo_bar' ON ('app_foo'.'id' = 'app_foo_bar'.'foo_id') WHERE 'app_foo_bar'.'foo_id' = ?;\",\n  \"reproduction_steps\": [\n    \"Call count() on an unfiltered ManyToMany relation\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

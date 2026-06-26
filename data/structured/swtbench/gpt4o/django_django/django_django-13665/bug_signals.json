@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-13665",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "serialize_db_to_string",
+      "CustomManagerThatFillterOutSomeRecords"
+    ],
+    "input_conditions": [
+      "Migration creates few records of Service",
+      "TestService uses serialized_rollback"
+    ],
+    "reproduction_steps": [
+      "Run migrations to create records for Service",
+      "Execute TestService with serialized_rollback set to True"
+    ],
+    "expected": [
+      "serialize_db_to_string should use the base manager to serialize without excluding records"
+    ],
+    "actual": [
+      "serialize_db_to_string uses _default_manager which excludes certain records"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "serialize_db_to_string",
+      "CustomManagerThatFillterOutSomeRecords"
+    ],
+    "input_conditions": [
+      "Migration creates few records of Service",
+      "TestService uses serialized_rollback"
+    ],
+    "reproduction_steps": [
+      "Run migrations to create records for Service",
+      "Execute TestService with serialized_rollback set to True"
+    ],
+    "expected": [
+      "serialize_db_to_string should use the base manager to serialize without excluding records"
+    ],
+    "actual": [
+      "serialize_db_to_string uses _default_manager which excludes certain records"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"serialize_db_to_string\", \"CustomManagerThatFillterOutSomeRecords\"],\n  \"input_conditions\": [\"Migration creates few records of Service\", \"TestService uses serialized_rollback\"],\n  \"expected\": \"serialize_db_to_string should use the base manager to serialize without excluding records\",\n  \"actual\": \"serialize_db_to_string uses _default_manager which excludes certain records\",\n  \"reproduction_steps\": [\"Run migrations to create records for Service\", \"Execute TestService with serialized_rollback set to True\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"serialize_db_to_string\", \"CustomManagerThatFillterOutSomeRecords\"],\n  \"input_conditions\": [\"Migration creates few records of Service\", \"TestService uses serialized_rollback\"],\n  \"expected\": \"serialize_db_to_string should use the base manager to serialize without excluding records\",\n  \"actual\": \"serialize_db_to_string uses _default_manager which excludes certain records\",\n  \"reproduction_steps\": [\"Run migrations to create records for Service\", \"Execute TestService with serialized_rollback set to True\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

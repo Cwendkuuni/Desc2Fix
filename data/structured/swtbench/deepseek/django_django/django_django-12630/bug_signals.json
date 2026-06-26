@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-12630",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "migrate",
+      "makemigrations --check"
+    ],
+    "input_conditions": [
+      "unapplied migrations exist",
+      "CI environment"
+    ],
+    "reproduction_steps": [
+      "Run migrate in a CI environment with unapplied migrations",
+      "Observe that there is no --check flag to indicate unapplied migrations without running them"
+    ],
+    "expected": [
+      "A --check flag for migrate that returns a non-zero exit code or signals when unapplied migrations exist, allowing CI to stop deployment"
+    ],
+    "actual": [
+      "No such flag exists; users must parse command output to detect unapplied migrations"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "migrate",
+      "makemigrations --check"
+    ],
+    "input_conditions": [
+      "unapplied migrations exist",
+      "CI environment"
+    ],
+    "reproduction_steps": [
+      "Run migrate in a CI environment with unapplied migrations",
+      "Observe that there is no --check flag to indicate unapplied migrations without running them"
+    ],
+    "expected": [
+      "A --check flag for migrate that returns a non-zero exit code or signals when unapplied migrations exist, allowing CI to stop deployment"
+    ],
+    "actual": [
+      "No such flag exists; users must parse command output to detect unapplied migrations"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"migrate\", \"makemigrations --check\"],\n\"input_conditions\": [\"unapplied migrations exist\", \"CI environment\"],\n\"expected\": \"A --check flag for migrate that returns a non-zero exit code or signals when unapplied migrations exist, allowing CI to stop deployment\",\n\"actual\": \"No such flag exists; users must parse command output to detect unapplied migrations\",\n\"reproduction_steps\": [\"Run migrate in a CI environment with unapplied migrations\", \"Observe that there is no --check flag to indicate unapplied migrations without running them\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"migrate\", \"makemigrations --check\"],\n\"input_conditions\": [\"unapplied migrations exist\", \"CI environment\"],\n\"expected\": \"A --check flag for migrate that returns a non-zero exit code or signals when unapplied migrations exist, allowing CI to stop deployment\",\n\"actual\": \"No such flag exists; users must parse command output to detect unapplied migrations\",\n\"reproduction_steps\": [\"Run migrate in a CI environment with unapplied migrations\", \"Observe that there is no --check flag to indicate unapplied migrations without running them\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

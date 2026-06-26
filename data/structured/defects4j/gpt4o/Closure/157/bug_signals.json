@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-157",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "parse errors"
+    ],
+    "api_involved": [
+      "Rhino parser"
+    ],
+    "input_conditions": [
+      "--language_in=ECMASCRIPT5"
+    ],
+    "reproduction_steps": [
+      "Use --language_in=ECMASCRIPT5",
+      "Define object properties using quoted strings or numbers with get and set as demonstrated in the report."
+    ],
+    "expected": [
+      "The Rhino parser should accept property names defined with get and set, including those with numbers and quotes, as allowed by ECMAScript 5."
+    ],
+    "actual": [
+      "The Rhino parser rejects property names defined with get and set if they include numbers or quotes, causing parse errors."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "parse errors"
+    ],
+    "api_involved": [
+      "Rhino parser"
+    ],
+    "input_conditions": [
+      "--language_in=ECMASCRIPT5"
+    ],
+    "reproduction_steps": [
+      "Use --language_in=ECMASCRIPT5",
+      "Define object properties using quoted strings or numbers with get and set as demonstrated in the report."
+    ],
+    "expected": [
+      "The Rhino parser should accept property names defined with get and set, including those with numbers and quotes, as allowed by ECMAScript 5."
+    ],
+    "actual": [
+      "The Rhino parser rejects property names defined with get and set if they include numbers or quotes, causing parse errors."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"parse errors\",\n  \"api_involved\": [\"Rhino parser\"],\n  \"input_conditions\": [\"--language_in=ECMASCRIPT5\"],\n  \"expected\": \"The Rhino parser should accept property names defined with get and set, including those with numbers and quotes, as allowed by ECMAScript 5.\",\n  \"actual\": \"The Rhino parser rejects property names defined with get and set if they include numbers or quotes, causing parse errors.\",\n  \"reproduction_steps\": [\n    \"Use --language_in=ECMASCRIPT5\",\n    \"Define object properties using quoted strings or numbers with get and set as demonstrated in the report.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"parse errors\",\n  \"api_involved\": [\"Rhino parser\"],\n  \"input_conditions\": [\"--language_in=ECMASCRIPT5\"],\n  \"expected\": \"The Rhino parser should accept property names defined with get and set, including those with numbers and quotes, as allowed by ECMAScript 5.\",\n  \"actual\": \"The Rhino parser rejects property names defined with get and set if they include numbers or quotes, causing parse errors.\",\n  \"reproduction_steps\": [\n    \"Use --language_in=ECMASCRIPT5\",\n    \"Define object properties using quoted strings or numbers with get and set as demonstrated in the report.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

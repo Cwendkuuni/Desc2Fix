@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Collections-5",
+  "project": "Collections",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "First new element should be at index 0 expected:<2> but was:<1>"
+    ],
+    "api_involved": [
+      "SetUniqueList.addAll(int index, Collection coll)",
+      "SetUniqueList.addAll(Collection coll)",
+      "TestSetUniqueList"
+    ],
+    "input_conditions": [
+      "Collection with unique elements",
+      "Index specified for insertion"
+    ],
+    "reproduction_steps": [
+      "Call SetUniqueList.addAll(int index, Collection coll) with a non-empty collection",
+      "Observe elements being added at the end of the list instead of the specified index"
+    ],
+    "expected": [
+      "Elements should be added at the specified index in the list."
+    ],
+    "actual": [
+      "Elements were incorrectly added to the end of the list."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "First new element should be at index 0 expected:<2> but was:<1>"
+    ],
+    "api_involved": [
+      "SetUniqueList.addAll(int index, Collection coll)",
+      "SetUniqueList.addAll(Collection coll)",
+      "TestSetUniqueList"
+    ],
+    "input_conditions": [
+      "Collection with unique elements",
+      "Index specified for insertion"
+    ],
+    "reproduction_steps": [
+      "Call SetUniqueList.addAll(int index, Collection coll) with a non-empty collection",
+      "Observe elements being added at the end of the list instead of the specified index"
+    ],
+    "expected": [
+      "Elements should be added at the specified index in the list."
+    ],
+    "actual": [
+      "Elements were incorrectly added to the end of the list."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"First new element should be at index 0 expected:<2> but was:<1>\",\n  \"api_involved\": [\"SetUniqueList.addAll(int index, Collection coll)\", \"SetUniqueList.addAll(Collection coll)\", \"TestSetUniqueList\"],\n  \"input_conditions\": [\"Collection with unique elements\", \"Index specified for insertion\"],\n  \"expected\": \"Elements should be added at the specified index in the list.\",\n  \"actual\": \"Elements were incorrectly added to the end of the list.\",\n  \"reproduction_steps\": [\"Call SetUniqueList.addAll(int index, Collection coll) with a non-empty collection\", \"Observe elements being added at the end of the list instead of the specified index\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"First new element should be at index 0 expected:<2> but was:<1>\",\n  \"api_involved\": [\"SetUniqueList.addAll(int index, Collection coll)\", \"SetUniqueList.addAll(Collection coll)\", \"TestSetUniqueList\"],\n  \"input_conditions\": [\"Collection with unique elements\", \"Index specified for insertion\"],\n  \"expected\": \"Elements should be added at the specified index in the list.\",\n  \"actual\": \"Elements were incorrectly added to the end of the list.\",\n  \"reproduction_steps\": [\"Call SetUniqueList.addAll(int index, Collection coll) with a non-empty collection\", \"Observe elements being added at the end of the list instead of the specified index\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

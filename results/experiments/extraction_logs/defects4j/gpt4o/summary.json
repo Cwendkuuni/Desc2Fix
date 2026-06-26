@@ -1,0 +1,9 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "instances": 100,
+  "written": 99,
+  "skipped": 1,
+  "errors": 0,
+  "sample_from_human": "Human_Eval"
+}

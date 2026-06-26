@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-8961",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "django-admin",
+      "manage.py",
+      "python -m django"
+    ],
+    "input_conditions": [
+      "running help command",
+      "non-Windows platform",
+      "Windows platform"
+    ],
+    "reproduction_steps": [
+      "Run `django-admin help`",
+      "Run `manage.py help`",
+      "Run `python -m django help`",
+      "On a non-Windows platform, attempt `manage.py help`"
+    ],
+    "expected": [
+      "The help command should show the correct invocation syntax for each method."
+    ],
+    "actual": [
+      "The help command shows '__main__.py' instead of 'python -m django', and requires './manage.py' on non-Windows."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "django-admin",
+      "manage.py",
+      "python -m django"
+    ],
+    "input_conditions": [
+      "running help command",
+      "non-Windows platform",
+      "Windows platform"
+    ],
+    "reproduction_steps": [
+      "Run `django-admin help`",
+      "Run `manage.py help`",
+      "Run `python -m django help`",
+      "On a non-Windows platform, attempt `manage.py help`"
+    ],
+    "expected": [
+      "The help command should show the correct invocation syntax for each method."
+    ],
+    "actual": [
+      "The help command shows '__main__.py' instead of 'python -m django', and requires './manage.py' on non-Windows."
+    ]
+  },
+  "raw_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"django-admin\", \"manage.py\", \"python -m django\"],\n\"input_conditions\": [\"running help command\", \"non-Windows platform\", \"Windows platform\"],\n\"expected\": \"The help command should show the correct invocation syntax for each method.\",\n\"actual\": \"The help command shows '__main__.py' instead of 'python -m django', and requires './manage.py' on non-Windows.\",\n\"reproduction_steps\": [\n    \"Run `django-admin help`\", \n    \"Run `manage.py help`\", \n    \"Run `python -m django help`\", \n    \"On a non-Windows platform, attempt `manage.py help`\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"django-admin\", \"manage.py\", \"python -m django\"],\n\"input_conditions\": [\"running help command\", \"non-Windows platform\", \"Windows platform\"],\n\"expected\": \"The help command should show the correct invocation syntax for each method.\",\n\"actual\": \"The help command shows '__main__.py' instead of 'python -m django', and requires './manage.py' on non-Windows.\",\n\"reproduction_steps\": [\n    \"Run `django-admin help`\", \n    \"Run `manage.py help`\", \n    \"Run `python -m django help`\", \n    \"On a non-Windows platform, attempt `manage.py help`\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

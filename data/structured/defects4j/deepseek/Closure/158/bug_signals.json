@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-158",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "null"
+    ],
+    "api_involved": [
+      "jscomp_error",
+      "jscomp_warning",
+      "jscomp_off"
+    ],
+    "input_conditions": [
+      "Flags passed in specific order",
+      "Precedence based on last argument expected"
+    ],
+    "reproduction_steps": [
+      "Pass jscomp_error, jscomp_warning, jscomp_off flags in a specific order.",
+      "Observe that the precedence is fixed (off > warning > error) instead of respecting the last argument having highest precedence."
+    ],
+    "expected": [
+      "The last argument among jscomp_error, jscomp_warning, jscomp_off flags should have highest precedence."
+    ],
+    "actual": [
+      "\"off\" always takes precedence over \"warning\", and \"warning\" always takes precedence over \"error\", regardless of order of flags."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "null"
+    ],
+    "api_involved": [
+      "jscomp_error",
+      "jscomp_warning",
+      "jscomp_off"
+    ],
+    "input_conditions": [
+      "Flags passed in specific order",
+      "Precedence based on last argument expected"
+    ],
+    "reproduction_steps": [
+      "Pass jscomp_error, jscomp_warning, jscomp_off flags in a specific order.",
+      "Observe that the precedence is fixed (off > warning > error) instead of respecting the last argument having highest precedence."
+    ],
+    "expected": [
+      "The last argument among jscomp_error, jscomp_warning, jscomp_off flags should have highest precedence."
+    ],
+    "actual": [
+      "\"off\" always takes precedence over \"warning\", and \"warning\" always takes precedence over \"error\", regardless of order of flags."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"null\",\n\"api_involved\": [\"jscomp_error\", \"jscomp_warning\", \"jscomp_off\"],\n\"input_conditions\": [\"Flags passed in specific order\", \"Precedence based on last argument expected\"],\n\"expected\": \"The last argument among jscomp_error, jscomp_warning, jscomp_off flags should have highest precedence.\",\n\"actual\": \"\\\"off\\\" always takes precedence over \\\"warning\\\", and \\\"warning\\\" always takes precedence over \\\"error\\\", regardless of order of flags.\",\n\"reproduction_steps\": [\"Pass jscomp_error, jscomp_warning, jscomp_off flags in a specific order.\", \"Observe that the precedence is fixed (off > warning > error) instead of respecting the last argument having highest precedence.\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"null\",\n\"api_involved\": [\"jscomp_error\", \"jscomp_warning\", \"jscomp_off\"],\n\"input_conditions\": [\"Flags passed in specific order\", \"Precedence based on last argument expected\"],\n\"expected\": \"The last argument among jscomp_error, jscomp_warning, jscomp_off flags should have highest precedence.\",\n\"actual\": \"\\\"off\\\" always takes precedence over \\\"warning\\\", and \\\"warning\\\" always takes precedence over \\\"error\\\", regardless of order of flags.\",\n\"reproduction_steps\": [\"Pass jscomp_error, jscomp_warning, jscomp_off flags in a specific order.\", \"Observe that the precedence is fixed (off > warning > error) instead of respecting the last argument having highest precedence.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

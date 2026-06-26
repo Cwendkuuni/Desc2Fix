@@ -1,0 +1,65 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "matplotlib__matplotlib-17810",
+  "project": null,
+  "repo": "matplotlib/matplotlib",
+  "signals": {
+    "exception": [
+      "StopIteration"
+    ],
+    "api_involved": [
+      "animation.save",
+      "fig.savefig"
+    ],
+    "input_conditions": [
+      "Using TkAgg backend",
+      "Matplotlib 3.2.2",
+      "Ubuntu 18.04",
+      "Python 3.7.7"
+    ],
+    "reproduction_steps": [
+      "1. Create an animation object using matplotlib.animation.",
+      "2. Call either animation.save() or fig.savefig() first.",
+      "3. Then call the other save method (the one not called first).",
+      "4. A StopIteration exception is raised."
+    ],
+    "expected": [
+      "Both animation.save and fig.savefig should work independently without raising an exception."
+    ],
+    "actual": [
+      "Calling animation.save and fig.savefig in sequence raises StopIteration."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "StopIteration"
+    ],
+    "api_involved": [
+      "animation.save",
+      "fig.savefig"
+    ],
+    "input_conditions": [
+      "Using TkAgg backend",
+      "Matplotlib 3.2.2",
+      "Ubuntu 18.04",
+      "Python 3.7.7"
+    ],
+    "reproduction_steps": [
+      "1. Create an animation object using matplotlib.animation.",
+      "2. Call either animation.save() or fig.savefig() first.",
+      "3. Then call the other save method (the one not called first).",
+      "4. A StopIteration exception is raised."
+    ],
+    "expected": [
+      "Both animation.save and fig.savefig should work independently without raising an exception."
+    ],
+    "actual": [
+      "Calling animation.save and fig.savefig in sequence raises StopIteration."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"StopIteration\",\n\"api_involved\": [\"animation.save\", \"fig.savefig\"],\n\"input_conditions\": [\"Using TkAgg backend\", \"Matplotlib 3.2.2\", \"Ubuntu 18.04\", \"Python 3.7.7\"],\n\"expected\": \"Both animation.save and fig.savefig should work independently without raising an exception.\",\n\"actual\": \"Calling animation.save and fig.savefig in sequence raises StopIteration.\",\n\"reproduction_steps\": [\n    \"1. Create an animation object using matplotlib.animation.\",\n    \"2. Call either animation.save() or fig.savefig() first.\",\n    \"3. Then call the other save method (the one not called first).\",\n    \"4. A StopIteration exception is raised.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"StopIteration\",\n\"api_involved\": [\"animation.save\", \"fig.savefig\"],\n\"input_conditions\": [\"Using TkAgg backend\", \"Matplotlib 3.2.2\", \"Ubuntu 18.04\", \"Python 3.7.7\"],\n\"expected\": \"Both animation.save and fig.savefig should work independently without raising an exception.\",\n\"actual\": \"Calling animation.save and fig.savefig in sequence raises StopIteration.\",\n\"reproduction_steps\": [\n    \"1. Create an animation object using matplotlib.animation.\",\n    \"2. Call either animation.save() or fig.savefig() first.\",\n    \"3. Then call the other save method (the one not called first).\",\n    \"4. A StopIteration exception is raised.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

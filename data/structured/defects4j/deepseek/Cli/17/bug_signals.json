@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-17",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "PosixParser",
+      "bursting"
+    ],
+    "input_conditions": [
+      "stopAtNonOption=true",
+      "options a and b defined",
+      "command line: -azb"
+    ],
+    "reproduction_steps": [
+      "Define options a and b.",
+      "Set stopAtNonOption to true.",
+      "Parse the command line: -azb"
+    ],
+    "expected": [
+      "The bursting process should stop when a non-option character is encountered, resulting in tokens -a and zb."
+    ],
+    "actual": [
+      "The bursting process continues, turning -azb into tokens -a, zb, and -b."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "PosixParser",
+      "bursting"
+    ],
+    "input_conditions": [
+      "stopAtNonOption=true",
+      "options a and b defined",
+      "command line: -azb"
+    ],
+    "reproduction_steps": [
+      "Define options a and b.",
+      "Set stopAtNonOption to true.",
+      "Parse the command line: -azb"
+    ],
+    "expected": [
+      "The bursting process should stop when a non-option character is encountered, resulting in tokens -a and zb."
+    ],
+    "actual": [
+      "The bursting process continues, turning -azb into tokens -a, zb, and -b."
+    ]
+  },
+  "raw_response": "{\n\"exception\": null,\n\"api_involved\": [\"PosixParser\", \"bursting\"],\n\"input_conditions\": [\"stopAtNonOption=true\", \"options a and b defined\", \"command line: -azb\"],\n\"expected\": \"The bursting process should stop when a non-option character is encountered, resulting in tokens -a and zb.\",\n\"actual\": \"The bursting process continues, turning -azb into tokens -a, zb, and -b.\",\n\"reproduction_steps\": [\n    \"Define options a and b.\",\n    \"Set stopAtNonOption to true.\",\n    \"Parse the command line: -azb\"\n]\n}",
+  "llm_response": "{\n\"exception\": null,\n\"api_involved\": [\"PosixParser\", \"bursting\"],\n\"input_conditions\": [\"stopAtNonOption=true\", \"options a and b defined\", \"command line: -azb\"],\n\"expected\": \"The bursting process should stop when a non-option character is encountered, resulting in tokens -a and zb.\",\n\"actual\": \"The bursting process continues, turning -azb into tokens -a, zb, and -b.\",\n\"reproduction_steps\": [\n    \"Define options a and b.\",\n    \"Set stopAtNonOption to true.\",\n    \"Parse the command line: -azb\"\n]\n}",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

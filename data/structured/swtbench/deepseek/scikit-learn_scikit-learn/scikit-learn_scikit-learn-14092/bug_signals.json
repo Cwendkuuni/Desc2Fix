@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "scikit-learn__scikit-learn-14092",
+  "project": null,
+  "repo": "scikit-learn/scikit-learn",
+  "signals": {
+    "exception": [
+      "TypeError"
+    ],
+    "api_involved": [
+      "NCA",
+      "GridSearch"
+    ],
+    "input_conditions": [
+      "Parameter value 1 is not a float",
+      "Parameter value np.int64 is not int"
+    ],
+    "reproduction_steps": [
+      "Set up a GridSearchCV with NCA as the estimator",
+      "Define a parameter grid that includes integer values like 1 or np.int64",
+      "Run the GridSearch"
+    ],
+    "expected": [
+      "GridSearch should accept integer or numeric parameter types for NCA parameters"
+    ],
+    "actual": [
+      "NCA fails with type error due to strict parameter type checks"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "TypeError"
+    ],
+    "api_involved": [
+      "NCA",
+      "GridSearch"
+    ],
+    "input_conditions": [
+      "Parameter value 1 is not a float",
+      "Parameter value np.int64 is not int"
+    ],
+    "reproduction_steps": [
+      "Set up a GridSearchCV with NCA as the estimator",
+      "Define a parameter grid that includes integer values like 1 or np.int64",
+      "Run the GridSearch"
+    ],
+    "expected": [
+      "GridSearch should accept integer or numeric parameter types for NCA parameters"
+    ],
+    "actual": [
+      "NCA fails with type error due to strict parameter type checks"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"TypeError\",\n\"api_involved\": [\"NCA\", \"GridSearch\"],\n\"input_conditions\": [\"Parameter value 1 is not a float\", \"Parameter value np.int64 is not int\"],\n\"expected\": \"GridSearch should accept integer or numeric parameter types for NCA parameters\",\n\"actual\": \"NCA fails with type error due to strict parameter type checks\",\n\"reproduction_steps\": [\n    \"Set up a GridSearchCV with NCA as the estimator\",\n    \"Define a parameter grid that includes integer values like 1 or np.int64\",\n    \"Run the GridSearch\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"TypeError\",\n\"api_involved\": [\"NCA\", \"GridSearch\"],\n\"input_conditions\": [\"Parameter value 1 is not a float\", \"Parameter value np.int64 is not int\"],\n\"expected\": \"GridSearch should accept integer or numeric parameter types for NCA parameters\",\n\"actual\": \"NCA fails with type error due to strict parameter type checks\",\n\"reproduction_steps\": [\n    \"Set up a GridSearchCV with NCA as the estimator\",\n    \"Define a parameter grid that includes integer values like 1 or np.int64\",\n    \"Run the GridSearch\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

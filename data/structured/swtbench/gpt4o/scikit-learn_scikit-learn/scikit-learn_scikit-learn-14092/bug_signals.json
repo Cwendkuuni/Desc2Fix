@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "scikit-learn__scikit-learn-14092",
+  "project": null,
+  "repo": "scikit-learn/scikit-learn",
+  "signals": {
+    "exception": [
+      "too strict parameter checks"
+    ],
+    "api_involved": [
+      "NCA",
+      "GridSearch"
+    ],
+    "input_conditions": [
+      "param grid includes np.int64 not int",
+      "param grid includes 1 not a float"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Parameters should be correctly validated without failing in GridSearch due to type specifics"
+    ],
+    "actual": [
+      "NCA fails in GridSearch because of strict parameter type checks"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "too strict parameter checks"
+    ],
+    "api_involved": [
+      "NCA",
+      "GridSearch"
+    ],
+    "input_conditions": [
+      "param grid includes np.int64 not int",
+      "param grid includes 1 not a float"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Parameters should be correctly validated without failing in GridSearch due to type specifics"
+    ],
+    "actual": [
+      "NCA fails in GridSearch because of strict parameter type checks"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"too strict parameter checks\",\n  \"api_involved\": [\"NCA\", \"GridSearch\"],\n  \"input_conditions\": [\"param grid includes np.int64 not int\", \"param grid includes 1 not a float\"],\n  \"expected\": \"Parameters should be correctly validated without failing in GridSearch due to type specifics\",\n  \"actual\": \"NCA fails in GridSearch because of strict parameter type checks\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"too strict parameter checks\",\n  \"api_involved\": [\"NCA\", \"GridSearch\"],\n  \"input_conditions\": [\"param grid includes np.int64 not int\", \"param grid includes 1 not a float\"],\n  \"expected\": \"Parameters should be correctly validated without failing in GridSearch due to type specifics\",\n  \"actual\": \"NCA fails in GridSearch because of strict parameter type checks\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

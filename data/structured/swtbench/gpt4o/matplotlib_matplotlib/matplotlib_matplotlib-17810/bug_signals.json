@@ -1,0 +1,63 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "matplotlib__matplotlib-17810",
+  "project": null,
+  "repo": "matplotlib/matplotlib",
+  "signals": {
+    "exception": [
+      "StopIteration"
+    ],
+    "api_involved": [
+      "animation.save",
+      "fig.savefig"
+    ],
+    "input_conditions": [
+      "Operating system: Ubuntu 18.04",
+      "Matplotlib version: 3.2.2",
+      "Matplotlib backend: TkAgg",
+      "Python version: 3.7.7",
+      "No Jupyter",
+      "Installed using pip inside a conda environment"
+    ],
+    "reproduction_steps": [
+      "Run code snippet that includes both animation.save and fig.savefig together"
+    ],
+    "expected": [
+      "Both animation.save and fig.savefig should execute without interfering with each other."
+    ],
+    "actual": [
+      "Running both animation.save and fig.savefig together raises StopIteration, indicating interference."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "StopIteration"
+    ],
+    "api_involved": [
+      "animation.save",
+      "fig.savefig"
+    ],
+    "input_conditions": [
+      "Operating system: Ubuntu 18.04",
+      "Matplotlib version: 3.2.2",
+      "Matplotlib backend: TkAgg",
+      "Python version: 3.7.7",
+      "No Jupyter",
+      "Installed using pip inside a conda environment"
+    ],
+    "reproduction_steps": [
+      "Run code snippet that includes both animation.save and fig.savefig together"
+    ],
+    "expected": [
+      "Both animation.save and fig.savefig should execute without interfering with each other."
+    ],
+    "actual": [
+      "Running both animation.save and fig.savefig together raises StopIteration, indicating interference."
+    ]
+  },
+  "raw_response": "```json\n{\n    \"exception\": \"StopIteration\",\n    \"api_involved\": [\"animation.save\", \"fig.savefig\"],\n    \"input_conditions\": [\n        \"Operating system: Ubuntu 18.04\",\n        \"Matplotlib version: 3.2.2\",\n        \"Matplotlib backend: TkAgg\",\n        \"Python version: 3.7.7\",\n        \"No Jupyter\",\n        \"Installed using pip inside a conda environment\"\n    ],\n    \"expected\": \"Both animation.save and fig.savefig should execute without interfering with each other.\",\n    \"actual\": \"Running both animation.save and fig.savefig together raises StopIteration, indicating interference.\",\n    \"reproduction_steps\": [\n        \"Run code snippet that includes both animation.save and fig.savefig together\"\n    ]\n}\n```",
+  "llm_response": "```json\n{\n    \"exception\": \"StopIteration\",\n    \"api_involved\": [\"animation.save\", \"fig.savefig\"],\n    \"input_conditions\": [\n        \"Operating system: Ubuntu 18.04\",\n        \"Matplotlib version: 3.2.2\",\n        \"Matplotlib backend: TkAgg\",\n        \"Python version: 3.7.7\",\n        \"No Jupyter\",\n        \"Installed using pip inside a conda environment\"\n    ],\n    \"expected\": \"Both animation.save and fig.savefig should execute without interfering with each other.\",\n    \"actual\": \"Running both animation.save and fig.savefig together raises StopIteration, indicating interference.\",\n    \"reproduction_steps\": [\n        \"Run code snippet that includes both animation.save and fig.savefig together\"\n    ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

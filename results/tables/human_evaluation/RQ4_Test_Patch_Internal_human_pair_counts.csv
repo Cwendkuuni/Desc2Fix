@@ -1,0 +1,7 @@
+rq_label,rq,dataset,representation,patch_view,n_pairs
+RQ4_Test_Patch_Internal,rq4_internal,Defects4J,RAW,add,78
+RQ4_Test_Patch_Internal,rq4_internal,Defects4J,RAW,full,100
+RQ4_Test_Patch_Internal,rq4_internal,Defects4J,RAW,remove,98
+RQ4_Test_Patch_Internal,rq4_internal,SWTBench,RAW,add,99
+RQ4_Test_Patch_Internal,rq4_internal,SWTBench,RAW,full,100
+RQ4_Test_Patch_Internal,rq4_internal,SWTBench,RAW,remove,84

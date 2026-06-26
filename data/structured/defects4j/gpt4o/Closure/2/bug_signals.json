@@ -1,0 +1,91 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-2",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.NullPointerException"
+    ],
+    "api_involved": [
+      "com.google.javascript.jscomp.TypeCheck.checkInterfaceConflictProperties",
+      "com.google.javascript.jscomp.TypeCheck.visitFunction",
+      "com.google.javascript.jscomp.TypeCheck.visit",
+      "com.google.javascript.jscomp.NodeTraversal.traverseBranch",
+      "com.google.javascript.jscomp.NodeTraversal.traverseWithScope",
+      "com.google.javascript.jscomp.TypeCheck.check",
+      "com.google.javascript.jscomp.TypeCheck.process",
+      "com.google.javascript.jscomp.DefaultPassConfig$29$1.process",
+      "com.google.javascript.jscomp.PhaseOptimizer$PassFactoryDelegate.processInternal",
+      "com.google.javascript.jscomp.PhaseOptimizer$NamedPass.process",
+      "com.google.javascript.jscomp.PhaseOptimizer.process",
+      "com.google.javascript.jscomp.Compiler.check",
+      "com.google.javascript.jscomp.Compiler.compileInternal",
+      "com.google.javascript.jscomp.Compiler.compile",
+      "com.google.javascript.jscomp.webservice.backend.CompilerInvokerImpl.compile",
+      "com.google.javascript.jscomp.webservice.backend.ServerController.executeRequest",
+      "com.google.javascript.jscomp.webservice.backend.CompilationRequestHandler.serviceParsedRequest",
+      "com.google.javascript.jscomp.webservice.backend.CompilationRequestHandler.service",
+      "com.google.javascript.jscomp.webservice.frontend.CompilationServlet.doPost",
+      "javax.servlet.http.HttpServlet.service"
+    ],
+    "input_conditions": [
+      "compilation_level=SIMPLE_OPTIMIZATIONS",
+      "warning_level=VERBOSE"
+    ],
+    "reproduction_steps": [
+      "Attempt to compile code that uses @interface with multiple @extends where at least one type is unknown"
+    ],
+    "expected": [
+      "Compile without error"
+    ],
+    "actual": [
+      "Compiler crashes with NullPointerException"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.NullPointerException"
+    ],
+    "api_involved": [
+      "com.google.javascript.jscomp.TypeCheck.checkInterfaceConflictProperties",
+      "com.google.javascript.jscomp.TypeCheck.visitFunction",
+      "com.google.javascript.jscomp.TypeCheck.visit",
+      "com.google.javascript.jscomp.NodeTraversal.traverseBranch",
+      "com.google.javascript.jscomp.NodeTraversal.traverseWithScope",
+      "com.google.javascript.jscomp.TypeCheck.check",
+      "com.google.javascript.jscomp.TypeCheck.process",
+      "com.google.javascript.jscomp.DefaultPassConfig$29$1.process",
+      "com.google.javascript.jscomp.PhaseOptimizer$PassFactoryDelegate.processInternal",
+      "com.google.javascript.jscomp.PhaseOptimizer$NamedPass.process",
+      "com.google.javascript.jscomp.PhaseOptimizer.process",
+      "com.google.javascript.jscomp.Compiler.check",
+      "com.google.javascript.jscomp.Compiler.compileInternal",
+      "com.google.javascript.jscomp.Compiler.compile",
+      "com.google.javascript.jscomp.webservice.backend.CompilerInvokerImpl.compile",
+      "com.google.javascript.jscomp.webservice.backend.ServerController.executeRequest",
+      "com.google.javascript.jscomp.webservice.backend.CompilationRequestHandler.serviceParsedRequest",
+      "com.google.javascript.jscomp.webservice.backend.CompilationRequestHandler.service",
+      "com.google.javascript.jscomp.webservice.frontend.CompilationServlet.doPost",
+      "javax.servlet.http.HttpServlet.service"
+    ],
+    "input_conditions": [
+      "compilation_level=SIMPLE_OPTIMIZATIONS",
+      "warning_level=VERBOSE"
+    ],
+    "reproduction_steps": [
+      "Attempt to compile code that uses @interface with multiple @extends where at least one type is unknown"
+    ],
+    "expected": [
+      "Compile without error"
+    ],
+    "actual": [
+      "Compiler crashes with NullPointerException"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"java.lang.NullPointerException\",\n  \"api_involved\": [\n    \"com.google.javascript.jscomp.TypeCheck.checkInterfaceConflictProperties\",\n    \"com.google.javascript.jscomp.TypeCheck.visitFunction\",\n    \"com.google.javascript.jscomp.TypeCheck.visit\",\n    \"com.google.javascript.jscomp.NodeTraversal.traverseBranch\",\n    \"com.google.javascript.jscomp.NodeTraversal.traverseWithScope\",\n    \"com.google.javascript.jscomp.TypeCheck.check\",\n    \"com.google.javascript.jscomp.TypeCheck.process\",\n    \"com.google.javascript.jscomp.DefaultPassConfig$29$1.process\",\n    \"com.google.javascript.jscomp.PhaseOptimizer$PassFactoryDelegate.processInternal\",\n    \"com.google.javascript.jscomp.PhaseOptimizer$NamedPass.process\",\n    \"com.google.javascript.jscomp.PhaseOptimizer.process\",\n    \"com.google.javascript.jscomp.Compiler.check\",\n    \"com.google.javascript.jscomp.Compiler.compileInternal\",\n    \"com.google.javascript.jscomp.Compiler.compile\",\n    \"com.google.javascript.jscomp.webservice.backend.CompilerInvokerImpl.compile\",\n    \"com.google.javascript.jscomp.webservice.backend.ServerController.executeRequest\",\n    \"com.google.javascript.jscomp.webservice.backend.CompilationRequestHandler.serviceParsedRequest\",\n    \"com.google.javascript.jscomp.webservice.backend.CompilationRequestHandler.service\",\n    \"com.google.javascript.jscomp.webservice.frontend.CompilationServlet.doPost\",\n    \"javax.servlet.http.HttpServlet.service\"\n  ],\n  \"input_conditions\": [\n    \"compilation_level=SIMPLE_OPTIMIZATIONS\",\n    \"warning_level=VERBOSE\"\n  ],\n  \"expected\": \"Compile without error\",\n  \"actual\": \"Compiler crashes with NullPointerException\",\n  \"reproduction_steps\": [\n    \"Attempt to compile code that uses @interface with multiple @extends where at least one type is unknown\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"java.lang.NullPointerException\",\n  \"api_involved\": [\n    \"com.google.javascript.jscomp.TypeCheck.checkInterfaceConflictProperties\",\n    \"com.google.javascript.jscomp.TypeCheck.visitFunction\",\n    \"com.google.javascript.jscomp.TypeCheck.visit\",\n    \"com.google.javascript.jscomp.NodeTraversal.traverseBranch\",\n    \"com.google.javascript.jscomp.NodeTraversal.traverseWithScope\",\n    \"com.google.javascript.jscomp.TypeCheck.check\",\n    \"com.google.javascript.jscomp.TypeCheck.process\",\n    \"com.google.javascript.jscomp.DefaultPassConfig$29$1.process\",\n    \"com.google.javascript.jscomp.PhaseOptimizer$PassFactoryDelegate.processInternal\",\n    \"com.google.javascript.jscomp.PhaseOptimizer$NamedPass.process\",\n    \"com.google.javascript.jscomp.PhaseOptimizer.process\",\n    \"com.google.javascript.jscomp.Compiler.check\",\n    \"com.google.javascript.jscomp.Compiler.compileInternal\",\n    \"com.google.javascript.jscomp.Compiler.compile\",\n    \"com.google.javascript.jscomp.webservice.backend.CompilerInvokerImpl.compile\",\n    \"com.google.javascript.jscomp.webservice.backend.ServerController.executeRequest\",\n    \"com.google.javascript.jscomp.webservice.backend.CompilationRequestHandler.serviceParsedRequest\",\n    \"com.google.javascript.jscomp.webservice.backend.CompilationRequestHandler.service\",\n    \"com.google.javascript.jscomp.webservice.frontend.CompilationServlet.doPost\",\n    \"javax.servlet.http.HttpServlet.service\"\n  ],\n  \"input_conditions\": [\n    \"compilation_level=SIMPLE_OPTIMIZATIONS\",\n    \"warning_level=VERBOSE\"\n  ],\n  \"expected\": \"Compile without error\",\n  \"actual\": \"Compiler crashes with NullPointerException\",\n  \"reproduction_steps\": [\n    \"Attempt to compile code that uses @interface with multiple @extends where at least one type is unknown\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

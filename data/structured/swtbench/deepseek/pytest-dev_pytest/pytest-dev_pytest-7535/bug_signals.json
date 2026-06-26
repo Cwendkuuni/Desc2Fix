@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "pytest-dev__pytest-7535",
+  "project": null,
+  "repo": "pytest-dev/pytest",
+  "signals": {
+    "exception": [
+      "Traceback in pytest.raises"
+    ],
+    "api_involved": [
+      "pytest.raises",
+      "py.path.local"
+    ],
+    "input_conditions": [
+      "pytest version 6",
+      "usage of py.path.local in format string"
+    ],
+    "reproduction_steps": [
+      "Use pytest 6",
+      "Trigger pytest.raises in code that involves py.path.local",
+      "Observe Traceback containing repr of py.path.local object"
+    ],
+    "expected": [
+      "The format string should use str representation so output is consistent"
+    ],
+    "actual": [
+      "The format string uses repr of the py.path.local object instead of repr of a string, causing tests to fail"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Traceback in pytest.raises"
+    ],
+    "api_involved": [
+      "pytest.raises",
+      "py.path.local"
+    ],
+    "input_conditions": [
+      "pytest version 6",
+      "usage of py.path.local in format string"
+    ],
+    "reproduction_steps": [
+      "Use pytest 6",
+      "Trigger pytest.raises in code that involves py.path.local",
+      "Observe Traceback containing repr of py.path.local object"
+    ],
+    "expected": [
+      "The format string should use str representation so output is consistent"
+    ],
+    "actual": [
+      "The format string uses repr of the py.path.local object instead of repr of a string, causing tests to fail"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"Traceback in pytest.raises\",\n\"api_involved\": [\"pytest.raises\", \"py.path.local\"],\n\"input_conditions\": [\"pytest version 6\", \"usage of py.path.local in format string\"],\n\"expected\": \"The format string should use str representation so output is consistent\",\n\"actual\": \"The format string uses repr of the py.path.local object instead of repr of a string, causing tests to fail\",\n\"reproduction_steps\": [\n    \"Use pytest 6\",\n    \"Trigger pytest.raises in code that involves py.path.local\",\n    \"Observe Traceback containing repr of py.path.local object\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"Traceback in pytest.raises\",\n\"api_involved\": [\"pytest.raises\", \"py.path.local\"],\n\"input_conditions\": [\"pytest version 6\", \"usage of py.path.local in format string\"],\n\"expected\": \"The format string should use str representation so output is consistent\",\n\"actual\": \"The format string uses repr of the py.path.local object instead of repr of a string, causing tests to fail\",\n\"reproduction_steps\": [\n    \"Use pytest 6\",\n    \"Trigger pytest.raises in code that involves py.path.local\",\n    \"Observe Traceback containing repr of py.path.local object\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

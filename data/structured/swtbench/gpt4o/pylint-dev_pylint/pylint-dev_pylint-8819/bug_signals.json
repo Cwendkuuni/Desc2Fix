@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "pylint-dev__pylint-8819",
+  "project": null,
+  "repo": "pylint-dev/pylint",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "rcfile parsing"
+    ],
+    "input_conditions": [
+      "order of enable/disable options",
+      "default section order"
+    ],
+    "reproduction_steps": [
+      "Configure rcfile with enable options before disable options.",
+      "Observe that the disable options are not taking effect as expected."
+    ],
+    "expected": [
+      "Enable/disable options in rcfile should apply in the specified order without needing to rearrange sections."
+    ],
+    "actual": [
+      "The order of enable/disable options in rcfile affects the resulting configuration, requiring section rearrangement to achieve desired effect."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "rcfile parsing"
+    ],
+    "input_conditions": [
+      "order of enable/disable options",
+      "default section order"
+    ],
+    "reproduction_steps": [
+      "Configure rcfile with enable options before disable options.",
+      "Observe that the disable options are not taking effect as expected."
+    ],
+    "expected": [
+      "Enable/disable options in rcfile should apply in the specified order without needing to rearrange sections."
+    ],
+    "actual": [
+      "The order of enable/disable options in rcfile affects the resulting configuration, requiring section rearrangement to achieve desired effect."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"rcfile parsing\"],\n  \"input_conditions\": [\"order of enable/disable options\", \"default section order\"],\n  \"expected\": \"Enable/disable options in rcfile should apply in the specified order without needing to rearrange sections.\",\n  \"actual\": \"The order of enable/disable options in rcfile affects the resulting configuration, requiring section rearrangement to achieve desired effect.\",\n  \"reproduction_steps\": [\n    \"Configure rcfile with enable options before disable options.\",\n    \"Observe that the disable options are not taking effect as expected.\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"rcfile parsing\"],\n  \"input_conditions\": [\"order of enable/disable options\", \"default section order\"],\n  \"expected\": \"Enable/disable options in rcfile should apply in the specified order without needing to rearrange sections.\",\n  \"actual\": \"The order of enable/disable options in rcfile affects the resulting configuration, requiring section rearrangement to achieve desired effect.\",\n  \"reproduction_steps\": [\n    \"Configure rcfile with enable options before disable options.\",\n    \"Observe that the disable options are not taking effect as expected.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

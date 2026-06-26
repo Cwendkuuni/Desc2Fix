@@ -1,0 +1,43 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "pytest-dev__pytest-8055",
+  "project": null,
+  "repo": "pytest-dev/pytest",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "sys.unraisablehook"
+    ],
+    "input_conditions": [
+      "Python 3.8 or later"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Pytest should set sys.unraisablehook to associate unraisable exceptions with tests."
+    ],
+    "actual": [
+      "Pytest does not currently set sys.unraisablehook."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "sys.unraisablehook"
+    ],
+    "input_conditions": [
+      "Python 3.8 or later"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Pytest should set sys.unraisablehook to associate unraisable exceptions with tests."
+    ],
+    "actual": [
+      "Pytest does not currently set sys.unraisablehook."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"sys.unraisablehook\"],\n\"input_conditions\": [\"Python 3.8 or later\"],\n\"expected\": \"Pytest should set sys.unraisablehook to associate unraisable exceptions with tests.\",\n\"actual\": \"Pytest does not currently set sys.unraisablehook.\",\n\"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"sys.unraisablehook\"],\n\"input_conditions\": [\"Python 3.8 or later\"],\n\"expected\": \"Pytest should set sys.unraisablehook to associate unraisable exceptions with tests.\",\n\"actual\": \"Pytest does not currently set sys.unraisablehook.\",\n\"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

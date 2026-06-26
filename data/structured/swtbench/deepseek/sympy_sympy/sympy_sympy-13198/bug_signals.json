@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-13198",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "simplify",
+      "factor"
+    ],
+    "input_conditions": [
+      "trivial polynomial",
+      "mass matrix for a 3-DOF robot"
+    ],
+    "reproduction_steps": [
+      "Use a mass matrix for a 3-DOF robot",
+      "Apply simplify to the matrix",
+      "Attempt to factor the resulting polynomial"
+    ],
+    "expected": [
+      "Correct factoring with x on the order of 10^-4"
+    ],
+    "actual": [
+      "Incorrect factoring with x on the order of 10^-8"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "simplify",
+      "factor"
+    ],
+    "input_conditions": [
+      "trivial polynomial",
+      "mass matrix for a 3-DOF robot"
+    ],
+    "reproduction_steps": [
+      "Use a mass matrix for a 3-DOF robot",
+      "Apply simplify to the matrix",
+      "Attempt to factor the resulting polynomial"
+    ],
+    "expected": [
+      "Correct factoring with x on the order of 10^-4"
+    ],
+    "actual": [
+      "Incorrect factoring with x on the order of 10^-8"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"simplify\", \"factor\"],\n\"input_conditions\": [\"trivial polynomial\", \"mass matrix for a 3-DOF robot\"],\n\"expected\": \"Correct factoring with x on the order of 10^-4\",\n\"actual\": \"Incorrect factoring with x on the order of 10^-8\",\n\"reproduction_steps\": [\n    \"Use a mass matrix for a 3-DOF robot\",\n    \"Apply simplify to the matrix\",\n    \"Attempt to factor the resulting polynomial\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"simplify\", \"factor\"],\n\"input_conditions\": [\"trivial polynomial\", \"mass matrix for a 3-DOF robot\"],\n\"expected\": \"Correct factoring with x on the order of 10^-4\",\n\"actual\": \"Incorrect factoring with x on the order of 10^-8\",\n\"reproduction_steps\": [\n    \"Use a mass matrix for a 3-DOF robot\",\n    \"Apply simplify to the matrix\",\n    \"Attempt to factor the resulting polynomial\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

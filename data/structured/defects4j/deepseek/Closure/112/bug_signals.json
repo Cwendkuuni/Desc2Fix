@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-112",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Class",
+      "Class.prototype.foo"
+    ],
+    "input_conditions": [
+      "CLASS template type is never specified",
+      "@template T annotation present on method foo",
+      "argument a is a function with signature function(number):string"
+    ],
+    "reproduction_steps": [
+      "Define a generic class with a @template CLASS annotation but never specify the type.",
+      "Define a method on the class prototype that uses CLASS in its parameter type and also has its own @template T annotation.",
+      "Call the method with an argument whose type does not match the method's parameter type.",
+      "Observe that the compiler fails with a type inference error when the method has an @template annotation, but compiles successfully without it."
+    ],
+    "expected": [
+      "The code should compile without error, similar to when the @template T line is removed."
+    ],
+    "actual": [
+      "The compiler tries to infer the CLASS template type from the usage of foo and fails compilation, producing a type error."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Class",
+      "Class.prototype.foo"
+    ],
+    "input_conditions": [
+      "CLASS template type is never specified",
+      "@template T annotation present on method foo",
+      "argument a is a function with signature function(number):string"
+    ],
+    "reproduction_steps": [
+      "Define a generic class with a @template CLASS annotation but never specify the type.",
+      "Define a method on the class prototype that uses CLASS in its parameter type and also has its own @template T annotation.",
+      "Call the method with an argument whose type does not match the method's parameter type.",
+      "Observe that the compiler fails with a type inference error when the method has an @template annotation, but compiles successfully without it."
+    ],
+    "expected": [
+      "The code should compile without error, similar to when the @template T line is removed."
+    ],
+    "actual": [
+      "The compiler tries to infer the CLASS template type from the usage of foo and fails compilation, producing a type error."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Class\", \"Class.prototype.foo\"],\n\"input_conditions\": [\"CLASS template type is never specified\", \"@template T annotation present on method foo\", \"argument a is a function with signature function(number):string\"],\n\"expected\": \"The code should compile without error, similar to when the @template T line is removed.\",\n\"actual\": \"The compiler tries to infer the CLASS template type from the usage of foo and fails compilation, producing a type error.\",\n\"reproduction_steps\": [\n\"Define a generic class with a @template CLASS annotation but never specify the type.\",\n\"Define a method on the class prototype that uses CLASS in its parameter type and also has its own @template T annotation.\",\n\"Call the method with an argument whose type does not match the method's parameter type.\",\n\"Observe that the compiler fails with a type inference error when the method has an @template annotation, but compiles successfully without it.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Class\", \"Class.prototype.foo\"],\n\"input_conditions\": [\"CLASS template type is never specified\", \"@template T annotation present on method foo\", \"argument a is a function with signature function(number):string\"],\n\"expected\": \"The code should compile without error, similar to when the @template T line is removed.\",\n\"actual\": \"The compiler tries to infer the CLASS template type from the usage of foo and fails compilation, producing a type error.\",\n\"reproduction_steps\": [\n\"Define a generic class with a @template CLASS annotation but never specify the type.\",\n\"Define a method on the class prototype that uses CLASS in its parameter type and also has its own @template T annotation.\",\n\"Call the method with an argument whose type does not match the method's parameter type.\",\n\"Observe that the compiler fails with a type inference error when the method has an @template annotation, but compiles successfully without it.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

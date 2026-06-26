@@ -1,0 +1,72 @@
+{
+  "total_instances": 2519,
+  "triplets": 2346,
+  "repos": 18,
+  "repo_distribution": {
+    "django/django": 850,
+    "sympy/sympy": 386,
+    "scikit-learn/scikit-learn": 229,
+    "sphinx-doc/sphinx": 187,
+    "matplotlib/matplotlib": 184,
+    "pytest-dev/pytest": 119,
+    "pydata/xarray": 110,
+    "astropy/astropy": 95,
+    "pvlib/pvlib-python": 63,
+    "pylint-dev/pylint": 57,
+    "pydicom/pydicom": 56,
+    "sqlfluff/sqlfluff": 50,
+    "psf/requests": 44,
+    "pylint-dev/astroid": 31,
+    "mwaskom/seaborn": 22
+  },
+  "avg_bug_report_words": 119.6,
+  "avg_patch_lines": 80.14,
+  "avg_test_lines": 33.69,
+  "avg_patch_size_lines": 41.23,
+  "avg_add_remove_ratio": 4.48,
+  "test_type_counts": {
+    "python": 2346,
+    "declarative": 3,
+    "none": 170
+  },
+  "canonical_triplet_stats": {
+    "total_instances": 2346,
+    "datasets": {
+      "swtbench": 2346
+    },
+    "languages": {
+      "python": 2346
+    },
+    "projects": {},
+    "repos": {
+      "sqlfluff/sqlfluff": 37,
+      "marshmallow-code/marshmallow": 8,
+      "pvlib/pvlib-python": 56,
+      "pylint-dev/astroid": 28,
+      "pyvista/pyvista": 16,
+      "pydicom/pydicom": 56,
+      "astropy/astropy": 89,
+      "django/django": 791,
+      "matplotlib/matplotlib": 172,
+      "mwaskom/seaborn": 21,
+      "pallets/flask": 11,
+      "psf/requests": 41,
+      "pydata/xarray": 106,
+      "pylint-dev/pylint": 53,
+      "pytest-dev/pytest": 108,
+      "scikit-learn/scikit-learn": 228,
+      "sphinx-doc/sphinx": 150,
+      "sympy/sympy": 375
+    },
+    "with_bug_report": 2346,
+    "with_tests": 2346,
+    "with_patch": 2346,
+    "with_structured_patch_views": 1975,
+    "coverage": {
+      "bug_report": 1.0,
+      "tests": 1.0,
+      "patch": 1.0,
+      "structured_patch_views": 0.841858
+    }
+  }
+}

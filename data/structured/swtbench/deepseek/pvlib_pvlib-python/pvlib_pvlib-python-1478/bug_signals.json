@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "pvlib__pvlib-python-1478",
+  "project": null,
+  "repo": "pvlib/pvlib-python",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "ModelChain.run_model()",
+      "PVSystem",
+      "Array"
+    ],
+    "input_conditions": [
+      "weather DataFrame with an 'albedo' column expected"
+    ],
+    "reproduction_steps": [
+      "Create a ModelChain and a PVSystem/Array with default albedo.",
+      "Prepare a weather dataframe that includes GHI, temperature, wind, and an 'albedo' column.",
+      "Call ModelChain.run_model(weather) with this dataframe.",
+      "Observe that albedo from the dataframe is ignored and the scalar value from the Array is used instead."
+    ],
+    "expected": [
+      "ModelChain.run_model() should accept albedo as a column in the weather dataframe and use it in calculations dynamically per timestep."
+    ],
+    "actual": [
+      "Albedo is only accepted as a scalar constant on the PVSystem or Array, and cannot be provided as a timeseries in the weather dataframe to the ModelChain."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "ModelChain.run_model()",
+      "PVSystem",
+      "Array"
+    ],
+    "input_conditions": [
+      "weather DataFrame with an 'albedo' column expected"
+    ],
+    "reproduction_steps": [
+      "Create a ModelChain and a PVSystem/Array with default albedo.",
+      "Prepare a weather dataframe that includes GHI, temperature, wind, and an 'albedo' column.",
+      "Call ModelChain.run_model(weather) with this dataframe.",
+      "Observe that albedo from the dataframe is ignored and the scalar value from the Array is used instead."
+    ],
+    "expected": [
+      "ModelChain.run_model() should accept albedo as a column in the weather dataframe and use it in calculations dynamically per timestep."
+    ],
+    "actual": [
+      "Albedo is only accepted as a scalar constant on the PVSystem or Array, and cannot be provided as a timeseries in the weather dataframe to the ModelChain."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"ModelChain.run_model()\", \"PVSystem\", \"Array\"],\n\"input_conditions\": [\"weather DataFrame with an 'albedo' column expected\"],\n\"expected\": \"ModelChain.run_model() should accept albedo as a column in the weather dataframe and use it in calculations dynamically per timestep.\",\n\"actual\": \"Albedo is only accepted as a scalar constant on the PVSystem or Array, and cannot be provided as a timeseries in the weather dataframe to the ModelChain.\",\n\"reproduction_steps\": [\n\"Create a ModelChain and a PVSystem/Array with default albedo.\",\n\"Prepare a weather dataframe that includes GHI, temperature, wind, and an 'albedo' column.\",\n\"Call ModelChain.run_model(weather) with this dataframe.\",\n\"Observe that albedo from the dataframe is ignored and the scalar value from the Array is used instead.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"ModelChain.run_model()\", \"PVSystem\", \"Array\"],\n\"input_conditions\": [\"weather DataFrame with an 'albedo' column expected\"],\n\"expected\": \"ModelChain.run_model() should accept albedo as a column in the weather dataframe and use it in calculations dynamically per timestep.\",\n\"actual\": \"Albedo is only accepted as a scalar constant on the PVSystem or Array, and cannot be provided as a timeseries in the weather dataframe to the ModelChain.\",\n\"reproduction_steps\": [\n\"Create a ModelChain and a PVSystem/Array with default albedo.\",\n\"Prepare a weather dataframe that includes GHI, temperature, wind, and an 'albedo' column.\",\n\"Call ModelChain.run_model(weather) with this dataframe.\",\n\"Observe that albedo from the dataframe is ignored and the scalar value from the Array is used instead.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

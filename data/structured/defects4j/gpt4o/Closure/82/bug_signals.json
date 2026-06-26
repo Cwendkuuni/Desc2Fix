@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-82",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "String.toLowerCase",
+      "String.indexOf",
+      "String.substr"
+    ],
+    "input_conditions": [
+      "VERBOSE warnings",
+      "missingProperties check enabled"
+    ],
+    "reproduction_steps": [
+      "Compile with VERBOSE warnings or with the missingProperties check enabled.",
+      "Run code: var s = new String('hello'); alert(s.toLowerCase.indexOf('l'));"
+    ],
+    "expected": [
+      "A warning or error should be produced for missing property 'indexOf' on the result of toLowerCase."
+    ],
+    "actual": [
+      "No warning or error was produced for the missing property 'indexOf' on the result of toLowerCase."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "String.toLowerCase",
+      "String.indexOf",
+      "String.substr"
+    ],
+    "input_conditions": [
+      "VERBOSE warnings",
+      "missingProperties check enabled"
+    ],
+    "reproduction_steps": [
+      "Compile with VERBOSE warnings or with the missingProperties check enabled.",
+      "Run code: var s = new String('hello'); alert(s.toLowerCase.indexOf('l'));"
+    ],
+    "expected": [
+      "A warning or error should be produced for missing property 'indexOf' on the result of toLowerCase."
+    ],
+    "actual": [
+      "No warning or error was produced for the missing property 'indexOf' on the result of toLowerCase."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"String.toLowerCase\", \"String.indexOf\", \"String.substr\"],\n  \"input_conditions\": [\"VERBOSE warnings\", \"missingProperties check enabled\"],\n  \"expected\": \"A warning or error should be produced for missing property 'indexOf' on the result of toLowerCase.\",\n  \"actual\": \"No warning or error was produced for the missing property 'indexOf' on the result of toLowerCase.\",\n  \"reproduction_steps\": [\n    \"Compile with VERBOSE warnings or with the missingProperties check enabled.\",\n    \"Run code: var s = new String('hello'); alert(s.toLowerCase.indexOf('l'));\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"String.toLowerCase\", \"String.indexOf\", \"String.substr\"],\n  \"input_conditions\": [\"VERBOSE warnings\", \"missingProperties check enabled\"],\n  \"expected\": \"A warning or error should be produced for missing property 'indexOf' on the result of toLowerCase.\",\n  \"actual\": \"No warning or error was produced for the missing property 'indexOf' on the result of toLowerCase.\",\n  \"reproduction_steps\": [\n    \"Compile with VERBOSE warnings or with the missingProperties check enabled.\",\n    \"Run code: var s = new String('hello'); alert(s.toLowerCase.indexOf('l'));\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,67 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Compress-24",
+  "project": "Compress",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.IllegalArgumentException: Invalid byte 52 at offset 7 in '62410554' len=8"
+    ],
+    "api_involved": [
+      "TarArchiveInputStream.getNextTarEntry",
+      "TarArchiveEntry.<init>",
+      "TarArchiveEntry.parseTarHeader",
+      "TarUtils.parseOctalOrBinary",
+      "TarUtils.parseOctal"
+    ],
+    "input_conditions": [
+      "user-id field in tar entry contains '62410554' which is not NULL-terminated and exceeds octal limit 07777777",
+      "tar archive created by a tar implementation that uses big numbers dialect",
+      "GNU tar is able to read the archive"
+    ],
+    "reproduction_steps": [
+      "Obtain a tar archive where the second entry has a user-id field containing '62410554' without NULL termination",
+      "Attempt to read the archive using TarArchiveInputStream",
+      "Observe the IllegalArgumentException at parseOctal"
+    ],
+    "expected": [
+      "TarArchiveInputStream should successfully read the tar entry with the big user-id value"
+    ],
+    "actual": [
+      "TarArchiveInputStream throws an IllegalArgumentException when parsing the user-id field"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.IllegalArgumentException: Invalid byte 52 at offset 7 in '62410554' len=8"
+    ],
+    "api_involved": [
+      "TarArchiveInputStream.getNextTarEntry",
+      "TarArchiveEntry.<init>",
+      "TarArchiveEntry.parseTarHeader",
+      "TarUtils.parseOctalOrBinary",
+      "TarUtils.parseOctal"
+    ],
+    "input_conditions": [
+      "user-id field in tar entry contains '62410554' which is not NULL-terminated and exceeds octal limit 07777777",
+      "tar archive created by a tar implementation that uses big numbers dialect",
+      "GNU tar is able to read the archive"
+    ],
+    "reproduction_steps": [
+      "Obtain a tar archive where the second entry has a user-id field containing '62410554' without NULL termination",
+      "Attempt to read the archive using TarArchiveInputStream",
+      "Observe the IllegalArgumentException at parseOctal"
+    ],
+    "expected": [
+      "TarArchiveInputStream should successfully read the tar entry with the big user-id value"
+    ],
+    "actual": [
+      "TarArchiveInputStream throws an IllegalArgumentException when parsing the user-id field"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"java.lang.IllegalArgumentException: Invalid byte 52 at offset 7 in '62410554' len=8\",\n\"api_involved\": [\n    \"TarArchiveInputStream.getNextTarEntry\",\n    \"TarArchiveEntry.<init>\",\n    \"TarArchiveEntry.parseTarHeader\",\n    \"TarUtils.parseOctalOrBinary\",\n    \"TarUtils.parseOctal\"\n],\n\"input_conditions\": [\n    \"user-id field in tar entry contains '62410554' which is not NULL-terminated and exceeds octal limit 07777777\",\n    \"tar archive created by a tar implementation that uses big numbers dialect\",\n    \"GNU tar is able to read the archive\"\n],\n\"expected\": \"TarArchiveInputStream should successfully read the tar entry with the big user-id value\",\n\"actual\": \"TarArchiveInputStream throws an IllegalArgumentException when parsing the user-id field\",\n\"reproduction_steps\": [\n    \"Obtain a tar archive where the second entry has a user-id field containing '62410554' without NULL termination\",\n    \"Attempt to read the archive using TarArchiveInputStream\",\n    \"Observe the IllegalArgumentException at parseOctal\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"java.lang.IllegalArgumentException: Invalid byte 52 at offset 7 in '62410554' len=8\",\n\"api_involved\": [\n    \"TarArchiveInputStream.getNextTarEntry\",\n    \"TarArchiveEntry.<init>\",\n    \"TarArchiveEntry.parseTarHeader\",\n    \"TarUtils.parseOctalOrBinary\",\n    \"TarUtils.parseOctal\"\n],\n\"input_conditions\": [\n    \"user-id field in tar entry contains '62410554' which is not NULL-terminated and exceeds octal limit 07777777\",\n    \"tar archive created by a tar implementation that uses big numbers dialect\",\n    \"GNU tar is able to read the archive\"\n],\n\"expected\": \"TarArchiveInputStream should successfully read the tar entry with the big user-id value\",\n\"actual\": \"TarArchiveInputStream throws an IllegalArgumentException when parsing the user-id field\",\n\"reproduction_steps\": [\n    \"Obtain a tar archive where the second entry has a user-id field containing '62410554' without NULL termination\",\n    \"Attempt to read the archive using TarArchiveInputStream\",\n    \"Observe the IllegalArgumentException at parseOctal\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

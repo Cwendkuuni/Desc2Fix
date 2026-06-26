@@ -1,0 +1,63 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-15018",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "parse_duration_to_time error due to incorrect input format"
+    ],
+    "api_involved": [
+      "call_command",
+      "add_arguments",
+      "add_mutually_exclusive_group"
+    ],
+    "input_conditions": [
+      "--for and --until are mutually exclusive",
+      "--for is always required in call_command",
+      "string input intended for --until is passed to --for's type parser"
+    ],
+    "reproduction_steps": [
+      "Define a management command with a mutually exclusive group containing --for (with parse_duration_to_time type) and --until (with parse_time type).",
+      "Attempt to call the command using call_command with --until argument only.",
+      "Observe that --for is still required and its type parser is incorrectly used on the --until value, resulting in a parsing error."
+    ],
+    "expected": [
+      "call_command should accept either --for or --until argument as mutually exclusive required options, like the command line."
+    ],
+    "actual": [
+      "call_command fails because it always requires --for and attempts to parse the --until value using --for's type parser, causing an error."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "parse_duration_to_time error due to incorrect input format"
+    ],
+    "api_involved": [
+      "call_command",
+      "add_arguments",
+      "add_mutually_exclusive_group"
+    ],
+    "input_conditions": [
+      "--for and --until are mutually exclusive",
+      "--for is always required in call_command",
+      "string input intended for --until is passed to --for's type parser"
+    ],
+    "reproduction_steps": [
+      "Define a management command with a mutually exclusive group containing --for (with parse_duration_to_time type) and --until (with parse_time type).",
+      "Attempt to call the command using call_command with --until argument only.",
+      "Observe that --for is still required and its type parser is incorrectly used on the --until value, resulting in a parsing error."
+    ],
+    "expected": [
+      "call_command should accept either --for or --until argument as mutually exclusive required options, like the command line."
+    ],
+    "actual": [
+      "call_command fails because it always requires --for and attempts to parse the --until value using --for's type parser, causing an error."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"parse_duration_to_time error due to incorrect input format\",\n\"api_involved\": [\"call_command\", \"add_arguments\", \"add_mutually_exclusive_group\"],\n\"input_conditions\": [\"--for and --until are mutually exclusive\", \"--for is always required in call_command\", \"string input intended for --until is passed to --for's type parser\"],\n\"expected\": \"call_command should accept either --for or --until argument as mutually exclusive required options, like the command line.\",\n\"actual\": \"call_command fails because it always requires --for and attempts to parse the --until value using --for's type parser, causing an error.\",\n\"reproduction_steps\": [\n    \"Define a management command with a mutually exclusive group containing --for (with parse_duration_to_time type) and --until (with parse_time type).\",\n    \"Attempt to call the command using call_command with --until argument only.\",\n    \"Observe that --for is still required and its type parser is incorrectly used on the --until value, resulting in a parsing error.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"parse_duration_to_time error due to incorrect input format\",\n\"api_involved\": [\"call_command\", \"add_arguments\", \"add_mutually_exclusive_group\"],\n\"input_conditions\": [\"--for and --until are mutually exclusive\", \"--for is always required in call_command\", \"string input intended for --until is passed to --for's type parser\"],\n\"expected\": \"call_command should accept either --for or --until argument as mutually exclusive required options, like the command line.\",\n\"actual\": \"call_command fails because it always requires --for and attempts to parse the --until value using --for's type parser, causing an error.\",\n\"reproduction_steps\": [\n    \"Define a management command with a mutually exclusive group containing --for (with parse_duration_to_time type) and --until (with parse_time type).\",\n    \"Attempt to call the command using call_command with --until argument only.\",\n    \"Observe that --for is still required and its type parser is incorrectly used on the --until value, resulting in a parsing error.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

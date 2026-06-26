@@ -1,0 +1,45 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-13097",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "formsets",
+      "formsets.py"
+    ],
+    "input_conditions": [
+      "can_delete=True"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Delete field should not be added to extra forms when can_delete=True."
+    ],
+    "actual": [
+      "A delete field is added to every form when can_delete=True."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "formsets",
+      "formsets.py"
+    ],
+    "input_conditions": [
+      "can_delete=True"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Delete field should not be added to extra forms when can_delete=True."
+    ],
+    "actual": [
+      "A delete field is added to every form when can_delete=True."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"formsets\", \"formsets.py\"],\n  \"input_conditions\": [\"can_delete=True\"],\n  \"expected\": \"Delete field should not be added to extra forms when can_delete=True.\",\n  \"actual\": \"A delete field is added to every form when can_delete=True.\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"formsets\", \"formsets.py\"],\n  \"input_conditions\": [\"can_delete=True\"],\n  \"expected\": \"Delete field should not be added to extra forms when can_delete=True.\",\n  \"actual\": \"A delete field is added to every form when can_delete=True.\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

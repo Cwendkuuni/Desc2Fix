@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-17038",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "isqrt"
+    ],
+    "input_conditions": [
+      "Python 3.7.3",
+      "SymPy 1.4",
+      "macOS 10.14.5",
+      "small values of input"
+    ],
+    "reproduction_steps": [
+      "Invoke isqrt with specific inputs leading to incorrect result",
+      "Ensure the environment is Python 3.7.3, SymPy 1.4 on macOS 10.14.5"
+    ],
+    "expected": [
+      "isqrt function should return the correctly rounded integer square root."
+    ],
+    "actual": [
+      "isqrt returns incorrect results for some inputs due to overly large bound used."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "isqrt"
+    ],
+    "input_conditions": [
+      "Python 3.7.3",
+      "SymPy 1.4",
+      "macOS 10.14.5",
+      "small values of input"
+    ],
+    "reproduction_steps": [
+      "Invoke isqrt with specific inputs leading to incorrect result",
+      "Ensure the environment is Python 3.7.3, SymPy 1.4 on macOS 10.14.5"
+    ],
+    "expected": [
+      "isqrt function should return the correctly rounded integer square root."
+    ],
+    "actual": [
+      "isqrt returns incorrect results for some inputs due to overly large bound used."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"isqrt\"],\n  \"input_conditions\": [\"Python 3.7.3\", \"SymPy 1.4\", \"macOS 10.14.5\", \"small values of input\"],\n  \"expected\": \"isqrt function should return the correctly rounded integer square root.\",\n  \"actual\": \"isqrt returns incorrect results for some inputs due to overly large bound used.\",\n  \"reproduction_steps\": [\"Invoke isqrt with specific inputs leading to incorrect result\", \"Ensure the environment is Python 3.7.3, SymPy 1.4 on macOS 10.14.5\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"isqrt\"],\n  \"input_conditions\": [\"Python 3.7.3\", \"SymPy 1.4\", \"macOS 10.14.5\", \"small values of input\"],\n  \"expected\": \"isqrt function should return the correctly rounded integer square root.\",\n  \"actual\": \"isqrt returns incorrect results for some inputs due to overly large bound used.\",\n  \"reproduction_steps\": [\"Invoke isqrt with specific inputs leading to incorrect result\", \"Ensure the environment is Python 3.7.3, SymPy 1.4 on macOS 10.14.5\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

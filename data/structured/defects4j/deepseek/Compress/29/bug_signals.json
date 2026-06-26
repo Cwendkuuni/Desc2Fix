@@ -1,0 +1,67 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Compress-29",
+  "project": "Compress",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "ArchiveStreamFactory.createArchiveInputStream",
+      "ArchiveStreamFactory.createArchiveInputStream(String, InputStream)",
+      "ArjArchiveInputStream",
+      "CpioArchiveInputStream",
+      "DumpArchiveInputStream",
+      "JarArchiveInputStream",
+      "JarArchiveOutputStream"
+    ],
+    "input_conditions": [
+      "Archive type determined from input stream",
+      "Encoding parameter not passed to some archive stream constructors"
+    ],
+    "reproduction_steps": [
+      "1. Create an ArchiveStreamFactory instance.",
+      "2. Call createArchiveInputStream with an InputStream that matches one of the affected archive types (Arj, Cpio, Dump, or Jar) or createArchiveOutputStream with Jar.",
+      "3. Observe that the encoding parameter is not forwarded to the underlying stream constructor.",
+      "4. Note that the TAR input stream creation may also incorrectly use 'encoding' instead of 'entryEncoding' due to a subtle bug (COMPRESS-191)."
+    ],
+    "expected": [
+      "The encoding parameter should be passed correctly when creating all archive input/output streams, including Arj, Cpio, Dump, Jar, Tar, and Zip streams."
+    ],
+    "actual": [
+      "ArchiveStreamFactory fails to pass the encoding when creating ArjArchiveInputStream, CpioArchiveInputStream, DumpArchiveInputStream, JarArchiveInputStream, and JarArchiveOutputStream in some or all cases."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "ArchiveStreamFactory.createArchiveInputStream",
+      "ArchiveStreamFactory.createArchiveInputStream(String, InputStream)",
+      "ArjArchiveInputStream",
+      "CpioArchiveInputStream",
+      "DumpArchiveInputStream",
+      "JarArchiveInputStream",
+      "JarArchiveOutputStream"
+    ],
+    "input_conditions": [
+      "Archive type determined from input stream",
+      "Encoding parameter not passed to some archive stream constructors"
+    ],
+    "reproduction_steps": [
+      "1. Create an ArchiveStreamFactory instance.",
+      "2. Call createArchiveInputStream with an InputStream that matches one of the affected archive types (Arj, Cpio, Dump, or Jar) or createArchiveOutputStream with Jar.",
+      "3. Observe that the encoding parameter is not forwarded to the underlying stream constructor.",
+      "4. Note that the TAR input stream creation may also incorrectly use 'encoding' instead of 'entryEncoding' due to a subtle bug (COMPRESS-191)."
+    ],
+    "expected": [
+      "The encoding parameter should be passed correctly when creating all archive input/output streams, including Arj, Cpio, Dump, Jar, Tar, and Zip streams."
+    ],
+    "actual": [
+      "ArchiveStreamFactory fails to pass the encoding when creating ArjArchiveInputStream, CpioArchiveInputStream, DumpArchiveInputStream, JarArchiveInputStream, and JarArchiveOutputStream in some or all cases."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\n    \"ArchiveStreamFactory.createArchiveInputStream\",\n    \"ArchiveStreamFactory.createArchiveInputStream(String, InputStream)\",\n    \"ArjArchiveInputStream\",\n    \"CpioArchiveInputStream\",\n    \"DumpArchiveInputStream\",\n    \"JarArchiveInputStream\",\n    \"JarArchiveOutputStream\"\n],\n\"input_conditions\": [\n    \"Archive type determined from input stream\",\n    \"Encoding parameter not passed to some archive stream constructors\"\n],\n\"expected\": \"The encoding parameter should be passed correctly when creating all archive input/output streams, including Arj, Cpio, Dump, Jar, Tar, and Zip streams.\",\n\"actual\": \"ArchiveStreamFactory fails to pass the encoding when creating ArjArchiveInputStream, CpioArchiveInputStream, DumpArchiveInputStream, JarArchiveInputStream, and JarArchiveOutputStream in some or all cases.\",\n\"reproduction_steps\": [\n    \"1. Create an ArchiveStreamFactory instance.\",\n    \"2. Call createArchiveInputStream with an InputStream that matches one of the affected archive types (Arj, Cpio, Dump, or Jar) or createArchiveOutputStream with Jar.\",\n    \"3. Observe that the encoding parameter is not forwarded to the underlying stream constructor.\",\n    \"4. Note that the TAR input stream creation may also incorrectly use 'encoding' instead of 'entryEncoding' due to a subtle bug (COMPRESS-191).\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\n    \"ArchiveStreamFactory.createArchiveInputStream\",\n    \"ArchiveStreamFactory.createArchiveInputStream(String, InputStream)\",\n    \"ArjArchiveInputStream\",\n    \"CpioArchiveInputStream\",\n    \"DumpArchiveInputStream\",\n    \"JarArchiveInputStream\",\n    \"JarArchiveOutputStream\"\n],\n\"input_conditions\": [\n    \"Archive type determined from input stream\",\n    \"Encoding parameter not passed to some archive stream constructors\"\n],\n\"expected\": \"The encoding parameter should be passed correctly when creating all archive input/output streams, including Arj, Cpio, Dump, Jar, Tar, and Zip streams.\",\n\"actual\": \"ArchiveStreamFactory fails to pass the encoding when creating ArjArchiveInputStream, CpioArchiveInputStream, DumpArchiveInputStream, JarArchiveInputStream, and JarArchiveOutputStream in some or all cases.\",\n\"reproduction_steps\": [\n    \"1. Create an ArchiveStreamFactory instance.\",\n    \"2. Call createArchiveInputStream with an InputStream that matches one of the affected archive types (Arj, Cpio, Dump, or Jar) or createArchiveOutputStream with Jar.\",\n    \"3. Observe that the encoding parameter is not forwarded to the underlying stream constructor.\",\n    \"4. Note that the TAR input stream creation may also incorrectly use 'encoding' instead of 'entryEncoding' due to a subtle bug (COMPRESS-191).\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

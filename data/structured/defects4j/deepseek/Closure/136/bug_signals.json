@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-136",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "MakeDeclaredNamesUnique.java",
+      "DefaultCodingConvention"
+    ],
+    "input_conditions": [
+      "JavaScript code using Prototype's $super variable",
+      "Compilation with ADVANCED_OPTIMIZATIONS"
+    ],
+    "reproduction_steps": [
+      "1. Write JavaScript that uses Prototype's $super variable.",
+      "2. Compile the JavaScript with the Closure Compiler using ADVANCED_OPTIMIZATIONS.",
+      "3. Observe that $super is replaced by a renamed variable like $super$$4."
+    ],
+    "expected": [
+      "$super should not be renamed because it is used by the Prototype library."
+    ],
+    "actual": [
+      "$super is renamed (e.g., to $super$$4) during advanced compilation, breaking Prototype functionality."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "MakeDeclaredNamesUnique.java",
+      "DefaultCodingConvention"
+    ],
+    "input_conditions": [
+      "JavaScript code using Prototype's $super variable",
+      "Compilation with ADVANCED_OPTIMIZATIONS"
+    ],
+    "reproduction_steps": [
+      "1. Write JavaScript that uses Prototype's $super variable.",
+      "2. Compile the JavaScript with the Closure Compiler using ADVANCED_OPTIMIZATIONS.",
+      "3. Observe that $super is replaced by a renamed variable like $super$$4."
+    ],
+    "expected": [
+      "$super should not be renamed because it is used by the Prototype library."
+    ],
+    "actual": [
+      "$super is renamed (e.g., to $super$$4) during advanced compilation, breaking Prototype functionality."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"MakeDeclaredNamesUnique.java\", \"DefaultCodingConvention\"],\n\"input_conditions\": [\"JavaScript code using Prototype's $super variable\", \"Compilation with ADVANCED_OPTIMIZATIONS\"],\n\"expected\": \"$super should not be renamed because it is used by the Prototype library.\",\n\"actual\": \"$super is renamed (e.g., to $super$$4) during advanced compilation, breaking Prototype functionality.\",\n\"reproduction_steps\": [\n\"1. Write JavaScript that uses Prototype's $super variable.\",\n\"2. Compile the JavaScript with the Closure Compiler using ADVANCED_OPTIMIZATIONS.\",\n\"3. Observe that $super is replaced by a renamed variable like $super$$4.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"MakeDeclaredNamesUnique.java\", \"DefaultCodingConvention\"],\n\"input_conditions\": [\"JavaScript code using Prototype's $super variable\", \"Compilation with ADVANCED_OPTIMIZATIONS\"],\n\"expected\": \"$super should not be renamed because it is used by the Prototype library.\",\n\"actual\": \"$super is renamed (e.g., to $super$$4) during advanced compilation, breaking Prototype functionality.\",\n\"reproduction_steps\": [\n\"1. Write JavaScript that uses Prototype's $super variable.\",\n\"2. Compile the JavaScript with the Closure Compiler using ADVANCED_OPTIMIZATIONS.\",\n\"3. Observe that $super is replaced by a renamed variable like $super$$4.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,43 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-21864",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "multiset_permutations"
+    ],
+    "input_conditions": [
+      "input: []"
+    ],
+    "reproduction_steps": [
+      "Call multiset_permutations with an empty list as input."
+    ],
+    "expected": [
+      "The function should correctly handle an empty list input and return an appropriate result such as an empty permutation."
+    ],
+    "actual": []
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "multiset_permutations"
+    ],
+    "input_conditions": [
+      "input: []"
+    ],
+    "reproduction_steps": [
+      "Call multiset_permutations with an empty list as input."
+    ],
+    "expected": [
+      "The function should correctly handle an empty list input and return an appropriate result such as an empty permutation."
+    ],
+    "actual": []
+  },
+  "raw_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"multiset_permutations\"],\n\"input_conditions\": [\"input: []\"],\n\"expected\": \"The function should correctly handle an empty list input and return an appropriate result such as an empty permutation.\",\n\"actual\": null,\n\"reproduction_steps\": [\"Call multiset_permutations with an empty list as input.\" ]\n}\n```",
+  "llm_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"multiset_permutations\"],\n\"input_conditions\": [\"input: []\"],\n\"expected\": \"The function should correctly handle an empty list input and return an appropriate result such as an empty permutation.\",\n\"actual\": null,\n\"reproduction_steps\": [\"Call multiset_permutations with an empty list as input.\" ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-2",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "ParseException"
+    ],
+    "api_involved": [
+      "PosixParser",
+      "CommandLineParser.parse(Options, String[])"
+    ],
+    "input_conditions": [
+      "parameter value starts with hyphen as first character",
+      "using Posix parser"
+    ],
+    "reproduction_steps": [
+      "Execute: java myclass -t \"-something\"",
+      "Parser should correctly handle the hyphenated value as an argument to -t"
+    ],
+    "expected": [
+      "Parameter value \"-something\" should be treated as a literal value, not as an option"
+    ],
+    "actual": [
+      "CLI parser misinterprets the value as a parameter and creates an invalid parameter (e.g., -o by skipping 's')"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ParseException"
+    ],
+    "api_involved": [
+      "PosixParser",
+      "CommandLineParser.parse(Options, String[])"
+    ],
+    "input_conditions": [
+      "parameter value starts with hyphen as first character",
+      "using Posix parser"
+    ],
+    "reproduction_steps": [
+      "Execute: java myclass -t \"-something\"",
+      "Parser should correctly handle the hyphenated value as an argument to -t"
+    ],
+    "expected": [
+      "Parameter value \"-something\" should be treated as a literal value, not as an option"
+    ],
+    "actual": [
+      "CLI parser misinterprets the value as a parameter and creates an invalid parameter (e.g., -o by skipping 's')"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"ParseException\",\n\"api_involved\": [\"PosixParser\", \"CommandLineParser.parse(Options, String[])\"],\n\"input_conditions\": [\"parameter value starts with hyphen as first character\", \"using Posix parser\"],\n\"expected\": \"Parameter value \\\"-something\\\" should be treated as a literal value, not as an option\",\n\"actual\": \"CLI parser misinterprets the value as a parameter and creates an invalid parameter (e.g., -o by skipping 's')\",\n\"reproduction_steps\": [\"Execute: java myclass -t \\\"-something\\\"\", \"Parser should correctly handle the hyphenated value as an argument to -t\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"ParseException\",\n\"api_involved\": [\"PosixParser\", \"CommandLineParser.parse(Options, String[])\"],\n\"input_conditions\": [\"parameter value starts with hyphen as first character\", \"using Posix parser\"],\n\"expected\": \"Parameter value \\\"-something\\\" should be treated as a literal value, not as an option\",\n\"actual\": \"CLI parser misinterprets the value as a parameter and creates an invalid parameter (e.g., -o by skipping 's')\",\n\"reproduction_steps\": [\"Execute: java myclass -t \\\"-something\\\"\", \"Parser should correctly handle the hyphenated value as an argument to -t\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

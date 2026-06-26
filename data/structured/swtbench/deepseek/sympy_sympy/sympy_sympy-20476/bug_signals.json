@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-20476",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "simplify"
+    ],
+    "input_conditions": [
+      "SymPy version 1.6.2",
+      "Python version 3.8"
+    ],
+    "reproduction_steps": [
+      "Call simplify() on a certain trigonometric expression",
+      "Observe that the result is wrong"
+    ],
+    "expected": [
+      "The correct simplified trigonometric expression (not specified explicitly but implied to differ from actual)"
+    ],
+    "actual": [
+      "An incorrect simplified result from simplify()"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "simplify"
+    ],
+    "input_conditions": [
+      "SymPy version 1.6.2",
+      "Python version 3.8"
+    ],
+    "reproduction_steps": [
+      "Call simplify() on a certain trigonometric expression",
+      "Observe that the result is wrong"
+    ],
+    "expected": [
+      "The correct simplified trigonometric expression (not specified explicitly but implied to differ from actual)"
+    ],
+    "actual": [
+      "An incorrect simplified result from simplify()"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"simplify\"],\n\"input_conditions\": [\"SymPy version 1.6.2\", \"Python version 3.8\"],\n\"expected\": \"The correct simplified trigonometric expression (not specified explicitly but implied to differ from actual)\",\n\"actual\": \"An incorrect simplified result from simplify()\",\n\"reproduction_steps\": [\"Call simplify() on a certain trigonometric expression\", \"Observe that the result is wrong\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"simplify\"],\n\"input_conditions\": [\"SymPy version 1.6.2\", \"Python version 3.8\"],\n\"expected\": \"The correct simplified trigonometric expression (not specified explicitly but implied to differ from actual)\",\n\"actual\": \"An incorrect simplified result from simplify()\",\n\"reproduction_steps\": [\"Call simplify() on a certain trigonometric expression\", \"Observe that the result is wrong\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

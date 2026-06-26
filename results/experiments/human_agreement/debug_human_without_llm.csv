@@ -1,0 +1,5 @@
+rq,dataset,representation,patch_view,pair_id
+rq4_internal,Defects4J,RAW,remove,Codec__4
+rq4_internal,Defects4J,RAW,remove,Cli__17
+rq4_internal,Defects4J,RAW,add,Closure__114
+rq4_internal,Defects4J,RAW,add,Math__20

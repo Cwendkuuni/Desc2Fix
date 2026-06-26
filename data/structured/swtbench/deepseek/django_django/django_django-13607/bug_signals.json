@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-13607",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "ValidationError with code='missing_management_form' and message 'ManagementForm data is missing or has been tampered with'"
+    ],
+    "api_involved": [
+      "BaseFormSet.is_valid()",
+      "BaseFormSet.total_form_count()",
+      "BaseFormSet.management_form"
+    ],
+    "input_conditions": [
+      "Submitting a formset after stripping out the management form hidden fields"
+    ],
+    "reproduction_steps": [
+      "1. Create a formset",
+      "2. Remove or omit the management form hidden fields from the submitted data",
+      "3. Call is_valid() on the formset",
+      "4. Observe that a ValidationError is raised instead of returning False"
+    ],
+    "expected": [
+      "BaseFormSet.is_valid() should return False when the management form is missing, not raise an exception"
+    ],
+    "actual": [
+      "BaseFormSet.is_valid() raises a ValidationError when the management form data is missing"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ValidationError with code='missing_management_form' and message 'ManagementForm data is missing or has been tampered with'"
+    ],
+    "api_involved": [
+      "BaseFormSet.is_valid()",
+      "BaseFormSet.total_form_count()",
+      "BaseFormSet.management_form"
+    ],
+    "input_conditions": [
+      "Submitting a formset after stripping out the management form hidden fields"
+    ],
+    "reproduction_steps": [
+      "1. Create a formset",
+      "2. Remove or omit the management form hidden fields from the submitted data",
+      "3. Call is_valid() on the formset",
+      "4. Observe that a ValidationError is raised instead of returning False"
+    ],
+    "expected": [
+      "BaseFormSet.is_valid() should return False when the management form is missing, not raise an exception"
+    ],
+    "actual": [
+      "BaseFormSet.is_valid() raises a ValidationError when the management form data is missing"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"ValidationError with code='missing_management_form' and message 'ManagementForm data is missing or has been tampered with'\",\n\"api_involved\": [\"BaseFormSet.is_valid()\", \"BaseFormSet.total_form_count()\", \"BaseFormSet.management_form\"],\n\"input_conditions\": [\"Submitting a formset after stripping out the management form hidden fields\"],\n\"expected\": \"BaseFormSet.is_valid() should return False when the management form is missing, not raise an exception\",\n\"actual\": \"BaseFormSet.is_valid() raises a ValidationError when the management form data is missing\",\n\"reproduction_steps\": [\"1. Create a formset\", \"2. Remove or omit the management form hidden fields from the submitted data\", \"3. Call is_valid() on the formset\", \"4. Observe that a ValidationError is raised instead of returning False\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"ValidationError with code='missing_management_form' and message 'ManagementForm data is missing or has been tampered with'\",\n\"api_involved\": [\"BaseFormSet.is_valid()\", \"BaseFormSet.total_form_count()\", \"BaseFormSet.management_form\"],\n\"input_conditions\": [\"Submitting a formset after stripping out the management form hidden fields\"],\n\"expected\": \"BaseFormSet.is_valid() should return False when the management form is missing, not raise an exception\",\n\"actual\": \"BaseFormSet.is_valid() raises a ValidationError when the management form data is missing\",\n\"reproduction_steps\": [\"1. Create a formset\", \"2. Remove or omit the management form hidden fields from the submitted data\", \"3. Call is_valid() on the formset\", \"4. Observe that a ValidationError is raised instead of returning False\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

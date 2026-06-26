@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-6",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "F.prototype.bar",
+      "G.prototype.bar",
+      "constructorFactory",
+      "T0.prototype.foo2"
+    ],
+    "input_conditions": [
+      "F.prototype.bar has a different 'this' type when used in G",
+      "constructorFactory returns a constructor not matching the declared return type"
+    ],
+    "reproduction_steps": [
+      "Define constructors F and G with methods bar and baz.",
+      "Assign F.prototype.bar to G.prototype.bar.",
+      "Define constructorFactory with a @return type of Type but return T0.",
+      "Create an instance of T from the constructor returned by constructorFactory."
+    ],
+    "expected": [
+      "Warnings are emitted for 'this' type mismatches and return type mismatches."
+    ],
+    "actual": [
+      "No warnings are emitted for 'this' type mismatches or return type mismatches."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "F.prototype.bar",
+      "G.prototype.bar",
+      "constructorFactory",
+      "T0.prototype.foo2"
+    ],
+    "input_conditions": [
+      "F.prototype.bar has a different 'this' type when used in G",
+      "constructorFactory returns a constructor not matching the declared return type"
+    ],
+    "reproduction_steps": [
+      "Define constructors F and G with methods bar and baz.",
+      "Assign F.prototype.bar to G.prototype.bar.",
+      "Define constructorFactory with a @return type of Type but return T0.",
+      "Create an instance of T from the constructor returned by constructorFactory."
+    ],
+    "expected": [
+      "Warnings are emitted for 'this' type mismatches and return type mismatches."
+    ],
+    "actual": [
+      "No warnings are emitted for 'this' type mismatches or return type mismatches."
+    ]
+  },
+  "raw_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": [\"F.prototype.bar\", \"G.prototype.bar\", \"constructorFactory\", \"T0.prototype.foo2\"],\n    \"input_conditions\": [\"F.prototype.bar has a different 'this' type when used in G\", \"constructorFactory returns a constructor not matching the declared return type\"],\n    \"expected\": \"Warnings are emitted for 'this' type mismatches and return type mismatches.\",\n    \"actual\": \"No warnings are emitted for 'this' type mismatches or return type mismatches.\",\n    \"reproduction_steps\": [\n        \"Define constructors F and G with methods bar and baz.\",\n        \"Assign F.prototype.bar to G.prototype.bar.\",\n        \"Define constructorFactory with a @return type of Type but return T0.\",\n        \"Create an instance of T from the constructor returned by constructorFactory.\"\n    ]\n}\n```",
+  "llm_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": [\"F.prototype.bar\", \"G.prototype.bar\", \"constructorFactory\", \"T0.prototype.foo2\"],\n    \"input_conditions\": [\"F.prototype.bar has a different 'this' type when used in G\", \"constructorFactory returns a constructor not matching the declared return type\"],\n    \"expected\": \"Warnings are emitted for 'this' type mismatches and return type mismatches.\",\n    \"actual\": \"No warnings are emitted for 'this' type mismatches or return type mismatches.\",\n    \"reproduction_steps\": [\n        \"Define constructors F and G with methods bar and baz.\",\n        \"Assign F.prototype.bar to G.prototype.bar.\",\n        \"Define constructorFactory with a @return type of Type but return T0.\",\n        \"Create an instance of T from the constructor returned by constructorFactory.\"\n    ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

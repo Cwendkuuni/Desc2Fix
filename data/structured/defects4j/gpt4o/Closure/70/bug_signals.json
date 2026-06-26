@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-70",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "createElementNS",
+      "appendChild"
+    ],
+    "input_conditions": [
+      "JavaScript file with Example class",
+      "element parameter"
+    ],
+    "reproduction_steps": [
+      "Create a JavaScript file with the Example class definition.",
+      "Compile the file using the Closure Compiler with specified flags.",
+      "Observe the typing coverage result."
+    ],
+    "expected": [
+      "0 error(s), 0 warning(s), 100% typed"
+    ],
+    "actual": [
+      "0 error(s), 0 warning(s), 73.7% typed"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "createElementNS",
+      "appendChild"
+    ],
+    "input_conditions": [
+      "JavaScript file with Example class",
+      "element parameter"
+    ],
+    "reproduction_steps": [
+      "Create a JavaScript file with the Example class definition.",
+      "Compile the file using the Closure Compiler with specified flags.",
+      "Observe the typing coverage result."
+    ],
+    "expected": [
+      "0 error(s), 0 warning(s), 100% typed"
+    ],
+    "actual": [
+      "0 error(s), 0 warning(s), 73.7% typed"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"createElementNS\", \"appendChild\"],\n  \"input_conditions\": [\"JavaScript file with Example class\", \"element parameter\"],\n  \"expected\": \"0 error(s), 0 warning(s), 100% typed\",\n  \"actual\": \"0 error(s), 0 warning(s), 73.7% typed\",\n  \"reproduction_steps\": [\n    \"Create a JavaScript file with the Example class definition.\",\n    \"Compile the file using the Closure Compiler with specified flags.\",\n    \"Observe the typing coverage result.\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"createElementNS\", \"appendChild\"],\n  \"input_conditions\": [\"JavaScript file with Example class\", \"element parameter\"],\n  \"expected\": \"0 error(s), 0 warning(s), 100% typed\",\n  \"actual\": \"0 error(s), 0 warning(s), 73.7% typed\",\n  \"reproduction_steps\": [\n    \"Create a JavaScript file with the Example class definition.\",\n    \"Compile the file using the Closure Compiler with specified flags.\",\n    \"Observe the typing coverage result.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

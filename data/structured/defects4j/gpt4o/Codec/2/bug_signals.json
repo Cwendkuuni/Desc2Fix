@@ -1,0 +1,47 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Codec-2",
+  "project": "Codec",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Base64.encode"
+    ],
+    "input_conditions": [
+      "new byte[0]"
+    ],
+    "reproduction_steps": [
+      "Call Base64.encode with new byte[0]"
+    ],
+    "expected": [
+      "Return an empty byte array"
+    ],
+    "actual": [
+      "Returns CRLF"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Base64.encode"
+    ],
+    "input_conditions": [
+      "new byte[0]"
+    ],
+    "reproduction_steps": [
+      "Call Base64.encode with new byte[0]"
+    ],
+    "expected": [
+      "Return an empty byte array"
+    ],
+    "actual": [
+      "Returns CRLF"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"Base64.encode\"],\n  \"input_conditions\": [\"new byte[0]\"],\n  \"expected\": \"Return an empty byte array\",\n  \"actual\": \"Returns CRLF\",\n  \"reproduction_steps\": [\"Call Base64.encode with new byte[0]\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"Base64.encode\"],\n  \"input_conditions\": [\"new byte[0]\"],\n  \"expected\": \"Return an empty byte array\",\n  \"actual\": \"Returns CRLF\",\n  \"reproduction_steps\": [\"Call Base64.encode with new byte[0]\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

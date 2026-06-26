@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Compress-44",
+  "project": "Compress",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "ChecksumCalculatingInputStream",
+      "ChecksumCalculatingInputStream#getValue()"
+    ],
+    "input_conditions": [
+      "Constructor called with null arguments: checksum=null, in=null"
+    ],
+    "reproduction_steps": [
+      "Create a new ChecksumCalculatingInputStream with both parameters set to null: new ChecksumCalculatingInputStream(null, null)",
+      "Call getValue() on the created instance"
+    ],
+    "expected": [
+      "ChecksumCalculatingInputStream constructor should throw NullPointerException when null parameters are passed; getValue() should not throw NullPointerException due to null internal fields"
+    ],
+    "actual": [
+      "ChecksumCalculatingInputStream.getValue() throws NullPointerException when the object was constructed with null parameters"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NullPointerException"
+    ],
+    "api_involved": [
+      "ChecksumCalculatingInputStream",
+      "ChecksumCalculatingInputStream#getValue()"
+    ],
+    "input_conditions": [
+      "Constructor called with null arguments: checksum=null, in=null"
+    ],
+    "reproduction_steps": [
+      "Create a new ChecksumCalculatingInputStream with both parameters set to null: new ChecksumCalculatingInputStream(null, null)",
+      "Call getValue() on the created instance"
+    ],
+    "expected": [
+      "ChecksumCalculatingInputStream constructor should throw NullPointerException when null parameters are passed; getValue() should not throw NullPointerException due to null internal fields"
+    ],
+    "actual": [
+      "ChecksumCalculatingInputStream.getValue() throws NullPointerException when the object was constructed with null parameters"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"NullPointerException\",\n\"api_involved\": [\"ChecksumCalculatingInputStream\", \"ChecksumCalculatingInputStream#getValue()\"],\n\"input_conditions\": [\"Constructor called with null arguments: checksum=null, in=null\"],\n\"expected\": \"ChecksumCalculatingInputStream constructor should throw NullPointerException when null parameters are passed; getValue() should not throw NullPointerException due to null internal fields\",\n\"actual\": \"ChecksumCalculatingInputStream.getValue() throws NullPointerException when the object was constructed with null parameters\",\n\"reproduction_steps\": [\n    \"Create a new ChecksumCalculatingInputStream with both parameters set to null: new ChecksumCalculatingInputStream(null, null)\",\n    \"Call getValue() on the created instance\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"NullPointerException\",\n\"api_involved\": [\"ChecksumCalculatingInputStream\", \"ChecksumCalculatingInputStream#getValue()\"],\n\"input_conditions\": [\"Constructor called with null arguments: checksum=null, in=null\"],\n\"expected\": \"ChecksumCalculatingInputStream constructor should throw NullPointerException when null parameters are passed; getValue() should not throw NullPointerException due to null internal fields\",\n\"actual\": \"ChecksumCalculatingInputStream.getValue() throws NullPointerException when the object was constructed with null parameters\",\n\"reproduction_steps\": [\n    \"Create a new ChecksumCalculatingInputStream with both parameters set to null: new ChecksumCalculatingInputStream(null, null)\",\n    \"Call getValue() on the created instance\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

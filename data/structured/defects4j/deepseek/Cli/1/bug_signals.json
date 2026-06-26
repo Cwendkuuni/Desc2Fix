@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-1",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "CommandLine.getOptionValue()",
+      "OptionBuilder",
+      "Option",
+      "CommandLine"
+    ],
+    "input_conditions": [
+      "Option has both short name 'd' and long name 'debug'",
+      "Querying by long option name string"
+    ],
+    "reproduction_steps": [
+      "Create an Option with long option name 'debug' and short option character 'd' using OptionBuilder",
+      "Parse the command line with this option",
+      "Call commandLine.getOptionValue(\"debug\")",
+      "Observe that the return value is null"
+    ],
+    "expected": [
+      "getOptionValue(String) should return the option value when using the full long option name string, as implied by the documentation"
+    ],
+    "actual": [
+      "getOptionValue(String) returns null when using the long option name; only getOptionValue('d') works"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "CommandLine.getOptionValue()",
+      "OptionBuilder",
+      "Option",
+      "CommandLine"
+    ],
+    "input_conditions": [
+      "Option has both short name 'd' and long name 'debug'",
+      "Querying by long option name string"
+    ],
+    "reproduction_steps": [
+      "Create an Option with long option name 'debug' and short option character 'd' using OptionBuilder",
+      "Parse the command line with this option",
+      "Call commandLine.getOptionValue(\"debug\")",
+      "Observe that the return value is null"
+    ],
+    "expected": [
+      "getOptionValue(String) should return the option value when using the full long option name string, as implied by the documentation"
+    ],
+    "actual": [
+      "getOptionValue(String) returns null when using the long option name; only getOptionValue('d') works"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"CommandLine.getOptionValue()\", \"OptionBuilder\", \"Option\", \"CommandLine\"],\n\"input_conditions\": [\"Option has both short name 'd' and long name 'debug'\", \"Querying by long option name string\"],\n\"expected\": \"getOptionValue(String) should return the option value when using the full long option name string, as implied by the documentation\",\n\"actual\": \"getOptionValue(String) returns null when using the long option name; only getOptionValue('d') works\",\n\"reproduction_steps\": [\n\"Create an Option with long option name 'debug' and short option character 'd' using OptionBuilder\",\n\"Parse the command line with this option\",\n\"Call commandLine.getOptionValue(\\\"debug\\\")\",\n\"Observe that the return value is null\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"CommandLine.getOptionValue()\", \"OptionBuilder\", \"Option\", \"CommandLine\"],\n\"input_conditions\": [\"Option has both short name 'd' and long name 'debug'\", \"Querying by long option name string\"],\n\"expected\": \"getOptionValue(String) should return the option value when using the full long option name string, as implied by the documentation\",\n\"actual\": \"getOptionValue(String) returns null when using the long option name; only getOptionValue('d') works\",\n\"reproduction_steps\": [\n\"Create an Option with long option name 'debug' and short option character 'd' using OptionBuilder\",\n\"Parse the command line with this option\",\n\"Call commandLine.getOptionValue(\\\"debug\\\")\",\n\"Observe that the return value is null\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

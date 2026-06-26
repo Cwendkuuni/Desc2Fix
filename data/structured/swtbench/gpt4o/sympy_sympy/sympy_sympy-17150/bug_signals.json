@@ -1,0 +1,43 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-17150",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "log"
+    ],
+    "input_conditions": [
+      "den.is_Integer"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Correct extraction of base powers"
+    ],
+    "actual": [
+      "Incorrect extraction of base powers"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "log"
+    ],
+    "input_conditions": [
+      "den.is_Integer"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Correct extraction of base powers"
+    ],
+    "actual": [
+      "Incorrect extraction of base powers"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"log\"],\n  \"input_conditions\": [\"den.is_Integer\"],\n  \"expected\": \"Correct extraction of base powers\",\n  \"actual\": \"Incorrect extraction of base powers\",\n  \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"log\"],\n  \"input_conditions\": [\"den.is_Integer\"],\n  \"expected\": \"Correct extraction of base powers\",\n  \"actual\": \"Incorrect extraction of base powers\",\n  \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

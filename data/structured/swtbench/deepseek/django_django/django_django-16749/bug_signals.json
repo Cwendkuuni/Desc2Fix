@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-16749",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "ASGIRequest",
+      "settings.FORCE_SCRIPT_NAME"
+    ],
+    "input_conditions": [
+      "settings.FORCE_SCRIPT_NAME = '/some-prefix'",
+      "Daphne ASGI server",
+      "request to /admin/login"
+    ],
+    "reproduction_steps": [
+      "Set settings.FORCE_SCRIPT_NAME = '/some-prefix'.",
+      "Start Django server with daphne django_project.asgi:application.",
+      "Navigate to http://localhost:8000/admin/login.",
+      "Observe the login form action URL."
+    ],
+    "expected": [
+      "The login form action URL should be '/some-prefix/admin/login'."
+    ],
+    "actual": [
+      "The login form action URL is '/admin/login' (missing the script name prefix)."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "ASGIRequest",
+      "settings.FORCE_SCRIPT_NAME"
+    ],
+    "input_conditions": [
+      "settings.FORCE_SCRIPT_NAME = '/some-prefix'",
+      "Daphne ASGI server",
+      "request to /admin/login"
+    ],
+    "reproduction_steps": [
+      "Set settings.FORCE_SCRIPT_NAME = '/some-prefix'.",
+      "Start Django server with daphne django_project.asgi:application.",
+      "Navigate to http://localhost:8000/admin/login.",
+      "Observe the login form action URL."
+    ],
+    "expected": [
+      "The login form action URL should be '/some-prefix/admin/login'."
+    ],
+    "actual": [
+      "The login form action URL is '/admin/login' (missing the script name prefix)."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"ASGIRequest\", \"settings.FORCE_SCRIPT_NAME\"],\n\"input_conditions\": [\"settings.FORCE_SCRIPT_NAME = '/some-prefix'\", \"Daphne ASGI server\", \"request to /admin/login\"],\n\"expected\": \"The login form action URL should be '/some-prefix/admin/login'.\",\n\"actual\": \"The login form action URL is '/admin/login' (missing the script name prefix).\",\n\"reproduction_steps\": [\n\"Set settings.FORCE_SCRIPT_NAME = '/some-prefix'.\",\n\"Start Django server with daphne django_project.asgi:application.\",\n\"Navigate to http://localhost:8000/admin/login.\",\n\"Observe the login form action URL.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"ASGIRequest\", \"settings.FORCE_SCRIPT_NAME\"],\n\"input_conditions\": [\"settings.FORCE_SCRIPT_NAME = '/some-prefix'\", \"Daphne ASGI server\", \"request to /admin/login\"],\n\"expected\": \"The login form action URL should be '/some-prefix/admin/login'.\",\n\"actual\": \"The login form action URL is '/admin/login' (missing the script name prefix).\",\n\"reproduction_steps\": [\n\"Set settings.FORCE_SCRIPT_NAME = '/some-prefix'.\",\n\"Start Django server with daphne django_project.asgi:application.\",\n\"Navigate to http://localhost:8000/admin/login.\",\n\"Observe the login form action URL.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,53 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Compress-43",
+  "project": "Compress",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "ZipArchiveOutputStream",
+      "BufferedOutputStream"
+    ],
+    "input_conditions": [
+      "Data descriptors not taken into account",
+      "Deflate compression used"
+    ],
+    "reproduction_steps": [
+      "Create zip archive using ZipArchiveOutputStream",
+      "Check version needed to extract in both local file header and central directory"
+    ],
+    "expected": [
+      "Version needed to extract should be consistent in both local file header and central directory"
+    ],
+    "actual": [
+      "Different version needed to extract values set in the local file header and central directory"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "ZipArchiveOutputStream",
+      "BufferedOutputStream"
+    ],
+    "input_conditions": [
+      "Data descriptors not taken into account",
+      "Deflate compression used"
+    ],
+    "reproduction_steps": [
+      "Create zip archive using ZipArchiveOutputStream",
+      "Check version needed to extract in both local file header and central directory"
+    ],
+    "expected": [
+      "Version needed to extract should be consistent in both local file header and central directory"
+    ],
+    "actual": [
+      "Different version needed to extract values set in the local file header and central directory"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"ZipArchiveOutputStream\", \"BufferedOutputStream\"],\n  \"input_conditions\": [\"Data descriptors not taken into account\", \"Deflate compression used\"],\n  \"expected\": \"Version needed to extract should be consistent in both local file header and central directory\",\n  \"actual\": \"Different version needed to extract values set in the local file header and central directory\",\n  \"reproduction_steps\": [\"Create zip archive using ZipArchiveOutputStream\", \"Check version needed to extract in both local file header and central directory\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"ZipArchiveOutputStream\", \"BufferedOutputStream\"],\n  \"input_conditions\": [\"Data descriptors not taken into account\", \"Deflate compression used\"],\n  \"expected\": \"Version needed to extract should be consistent in both local file header and central directory\",\n  \"actual\": \"Different version needed to extract values set in the local file header and central directory\",\n  \"reproduction_steps\": [\"Create zip archive using ZipArchiveOutputStream\", \"Check version needed to extract in both local file header and central directory\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

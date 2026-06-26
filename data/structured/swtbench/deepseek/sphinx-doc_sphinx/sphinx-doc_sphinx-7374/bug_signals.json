@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sphinx-doc__sphinx-7374",
+  "project": null,
+  "repo": "sphinx-doc/sphinx",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Sphinx Python domain",
+      "anchor generation"
+    ],
+    "input_conditions": [
+      "Python function name containing underscores in documentation"
+    ],
+    "reproduction_steps": [
+      "Document a Python function whose name contains underscores.",
+      "Build the documentation using Sphinx after PR #7236.",
+      "Check the generated fragment identifier for the function."
+    ],
+    "expected": [
+      "Anchor fragment identifiers use underscores for Python functions."
+    ],
+    "actual": [
+      "Anchor fragment identifiers use dashes instead of underscores for Python functions."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Sphinx Python domain",
+      "anchor generation"
+    ],
+    "input_conditions": [
+      "Python function name containing underscores in documentation"
+    ],
+    "reproduction_steps": [
+      "Document a Python function whose name contains underscores.",
+      "Build the documentation using Sphinx after PR #7236.",
+      "Check the generated fragment identifier for the function."
+    ],
+    "expected": [
+      "Anchor fragment identifiers use underscores for Python functions."
+    ],
+    "actual": [
+      "Anchor fragment identifiers use dashes instead of underscores for Python functions."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Sphinx Python domain\", \"anchor generation\"],\n\"input_conditions\": [\"Python function name containing underscores in documentation\"],\n\"expected\": \"Anchor fragment identifiers use underscores for Python functions.\",\n\"actual\": \"Anchor fragment identifiers use dashes instead of underscores for Python functions.\",\n\"reproduction_steps\": [\n    \"Document a Python function whose name contains underscores.\",\n    \"Build the documentation using Sphinx after PR #7236.\",\n    \"Check the generated fragment identifier for the function.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Sphinx Python domain\", \"anchor generation\"],\n\"input_conditions\": [\"Python function name containing underscores in documentation\"],\n\"expected\": \"Anchor fragment identifiers use underscores for Python functions.\",\n\"actual\": \"Anchor fragment identifiers use dashes instead of underscores for Python functions.\",\n\"reproduction_steps\": [\n    \"Document a Python function whose name contains underscores.\",\n    \"Build the documentation using Sphinx after PR #7236.\",\n    \"Check the generated fragment identifier for the function.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

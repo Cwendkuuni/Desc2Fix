@@ -1,0 +1,63 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-15380",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "KeyError: ('test_one', 'mymodel')"
+    ],
+    "api_involved": [
+      "makemigrations",
+      "autodetector.changes",
+      "generate_renamed_fields",
+      "to_state.models"
+    ],
+    "input_conditions": [
+      "renaming both a model and a field in a single makemigrations step",
+      "answering 'y' to rename prompt"
+    ],
+    "reproduction_steps": [
+      "Run 'python manage.py makemigrations' after renaming a model (e.g., MyModel to MyModel2) and a field in a single step.",
+      "Answer 'y' when prompted 'Did you rename the test_one.MyModel model to MyModel2?'.",
+      "Observe the KeyError crash."
+    ],
+    "expected": [
+      "Migration autodetector successfully generates migrations for renaming both model and field without crashing."
+    ],
+    "actual": [
+      "Migration autodetector crashes with KeyError when looking up the old model name in to_state.models."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "KeyError: ('test_one', 'mymodel')"
+    ],
+    "api_involved": [
+      "makemigrations",
+      "autodetector.changes",
+      "generate_renamed_fields",
+      "to_state.models"
+    ],
+    "input_conditions": [
+      "renaming both a model and a field in a single makemigrations step",
+      "answering 'y' to rename prompt"
+    ],
+    "reproduction_steps": [
+      "Run 'python manage.py makemigrations' after renaming a model (e.g., MyModel to MyModel2) and a field in a single step.",
+      "Answer 'y' when prompted 'Did you rename the test_one.MyModel model to MyModel2?'.",
+      "Observe the KeyError crash."
+    ],
+    "expected": [
+      "Migration autodetector successfully generates migrations for renaming both model and field without crashing."
+    ],
+    "actual": [
+      "Migration autodetector crashes with KeyError when looking up the old model name in to_state.models."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"KeyError: ('test_one', 'mymodel')\",\n\"api_involved\": [\"makemigrations\", \"autodetector.changes\", \"generate_renamed_fields\", \"to_state.models\"],\n\"input_conditions\": [\"renaming both a model and a field in a single makemigrations step\", \"answering 'y' to rename prompt\"],\n\"expected\": \"Migration autodetector successfully generates migrations for renaming both model and field without crashing.\",\n\"actual\": \"Migration autodetector crashes with KeyError when looking up the old model name in to_state.models.\",\n\"reproduction_steps\": [\n    \"Run 'python manage.py makemigrations' after renaming a model (e.g., MyModel to MyModel2) and a field in a single step.\",\n    \"Answer 'y' when prompted 'Did you rename the test_one.MyModel model to MyModel2?'.\",\n    \"Observe the KeyError crash.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"KeyError: ('test_one', 'mymodel')\",\n\"api_involved\": [\"makemigrations\", \"autodetector.changes\", \"generate_renamed_fields\", \"to_state.models\"],\n\"input_conditions\": [\"renaming both a model and a field in a single makemigrations step\", \"answering 'y' to rename prompt\"],\n\"expected\": \"Migration autodetector successfully generates migrations for renaming both model and field without crashing.\",\n\"actual\": \"Migration autodetector crashes with KeyError when looking up the old model name in to_state.models.\",\n\"reproduction_steps\": [\n    \"Run 'python manage.py makemigrations' after renaming a model (e.g., MyModel to MyModel2) and a field in a single step.\",\n    \"Answer 'y' when prompted 'Did you rename the test_one.MyModel model to MyModel2?'.\",\n    \"Observe the KeyError crash.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

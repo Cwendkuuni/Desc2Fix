@@ -1,0 +1,47 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-60",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [],
+    "input_conditions": [
+      "void keyword"
+    ],
+    "reproduction_steps": [
+      "Use void with a function that actually has side effects.",
+      "Compress the code at high compression levels.",
+      "Observe that the function is removed."
+    ],
+    "expected": [
+      "The function is recognized as having side effects and is not removed during compression."
+    ],
+    "actual": [
+      "The function is incorrectly identified as having no side effects and is removed at higher compression levels."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [],
+    "input_conditions": [
+      "void keyword"
+    ],
+    "reproduction_steps": [
+      "Use void with a function that actually has side effects.",
+      "Compress the code at high compression levels.",
+      "Observe that the function is removed."
+    ],
+    "expected": [
+      "The function is recognized as having side effects and is not removed during compression."
+    ],
+    "actual": [
+      "The function is incorrectly identified as having no side effects and is removed at higher compression levels."
+    ]
+  },
+  "raw_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": null,\n    \"input_conditions\": [\"void keyword\"],\n    \"expected\": \"The function is recognized as having side effects and is not removed during compression.\",\n    \"actual\": \"The function is incorrectly identified as having no side effects and is removed at higher compression levels.\",\n    \"reproduction_steps\": [\n        \"Use void with a function that actually has side effects.\",\n        \"Compress the code at high compression levels.\",\n        \"Observe that the function is removed.\"\n    ]\n}\n```",
+  "llm_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": null,\n    \"input_conditions\": [\"void keyword\"],\n    \"expected\": \"The function is recognized as having side effects and is not removed during compression.\",\n    \"actual\": \"The function is incorrectly identified as having no side effects and is removed at higher compression levels.\",\n    \"reproduction_steps\": [\n        \"Use void with a function that actually has side effects.\",\n        \"Compress the code at high compression levels.\",\n        \"Observe that the function is removed.\"\n    ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

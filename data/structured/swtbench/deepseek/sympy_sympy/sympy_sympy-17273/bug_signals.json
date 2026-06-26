@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-17273",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "sympy.physics.units",
+      "hbar"
+    ],
+    "input_conditions": [
+      "Imported sympy.physics.units module"
+    ],
+    "reproduction_steps": [
+      "Import sympy.physics.units",
+      "Access the constant hbar (e.g., from sympy.physics.units import hbar)",
+      "Compare its numerical value to the CODATA recommended value"
+    ],
+    "expected": [
+      "hbar should have the CODATA recommended value (1.054571817...e-34 J·s)"
+    ],
+    "actual": [
+      "hbar has an incorrect numerical value that differs from the CODATA recommended value"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "sympy.physics.units",
+      "hbar"
+    ],
+    "input_conditions": [
+      "Imported sympy.physics.units module"
+    ],
+    "reproduction_steps": [
+      "Import sympy.physics.units",
+      "Access the constant hbar (e.g., from sympy.physics.units import hbar)",
+      "Compare its numerical value to the CODATA recommended value"
+    ],
+    "expected": [
+      "hbar should have the CODATA recommended value (1.054571817...e-34 J·s)"
+    ],
+    "actual": [
+      "hbar has an incorrect numerical value that differs from the CODATA recommended value"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"sympy.physics.units\", \"hbar\"],\n\"input_conditions\": [\"Imported sympy.physics.units module\"],\n\"expected\": \"hbar should have the CODATA recommended value (1.054571817...e-34 J·s)\",\n\"actual\": \"hbar has an incorrect numerical value that differs from the CODATA recommended value\",\n\"reproduction_steps\": [\"Import sympy.physics.units\", \"Access the constant hbar (e.g., from sympy.physics.units import hbar)\", \"Compare its numerical value to the CODATA recommended value\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"sympy.physics.units\", \"hbar\"],\n\"input_conditions\": [\"Imported sympy.physics.units module\"],\n\"expected\": \"hbar should have the CODATA recommended value (1.054571817...e-34 J·s)\",\n\"actual\": \"hbar has an incorrect numerical value that differs from the CODATA recommended value\",\n\"reproduction_steps\": [\"Import sympy.physics.units\", \"Access the constant hbar (e.g., from sympy.physics.units import hbar)\", \"Compare its numerical value to the CODATA recommended value\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

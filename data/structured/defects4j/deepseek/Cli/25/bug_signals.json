@@ -1,0 +1,69 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-25",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "OutOfMemoryError (later changed to RuntimeException, then to IllegalStateException)"
+    ],
+    "api_involved": [
+      "HelpFormatter",
+      "HelpFormatter.printHelp",
+      "HelpFormatter.setWidth",
+      "Options",
+      "Options.addOption"
+    ],
+    "input_conditions": [
+      "width set to 20 (insufficient to display a word on a single line)",
+      "long description text",
+      "width smaller than nextTabStop (argument + indent)"
+    ],
+    "reproduction_steps": [
+      "Create an Options object and add an option with a long description (e.g., 'This is a looooong description').",
+      "Create a HelpFormatter and set its width to a small value (e.g., 20).",
+      "Call formatter.printHelp(\"app\", options).",
+      "Observe infinite loop and eventual OutOfMemoryError or hang."
+    ],
+    "expected": [
+      "An exception indicating insufficient width or text broken up to fit screen width, no infinite loop"
+    ],
+    "actual": [
+      "Infinite loop leading to JVM crash with OutOfMemoryError (or hang)"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "OutOfMemoryError (later changed to RuntimeException, then to IllegalStateException)"
+    ],
+    "api_involved": [
+      "HelpFormatter",
+      "HelpFormatter.printHelp",
+      "HelpFormatter.setWidth",
+      "Options",
+      "Options.addOption"
+    ],
+    "input_conditions": [
+      "width set to 20 (insufficient to display a word on a single line)",
+      "long description text",
+      "width smaller than nextTabStop (argument + indent)"
+    ],
+    "reproduction_steps": [
+      "Create an Options object and add an option with a long description (e.g., 'This is a looooong description').",
+      "Create a HelpFormatter and set its width to a small value (e.g., 20).",
+      "Call formatter.printHelp(\"app\", options).",
+      "Observe infinite loop and eventual OutOfMemoryError or hang."
+    ],
+    "expected": [
+      "An exception indicating insufficient width or text broken up to fit screen width, no infinite loop"
+    ],
+    "actual": [
+      "Infinite loop leading to JVM crash with OutOfMemoryError (or hang)"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"OutOfMemoryError (later changed to RuntimeException, then to IllegalStateException)\",\n\"api_involved\": [\"HelpFormatter\", \"HelpFormatter.printHelp\", \"HelpFormatter.setWidth\", \"Options\", \"Options.addOption\"],\n\"input_conditions\": [\"width set to 20 (insufficient to display a word on a single line)\", \"long description text\", \"width smaller than nextTabStop (argument + indent)\"],\n\"expected\": \"An exception indicating insufficient width or text broken up to fit screen width, no infinite loop\",\n\"actual\": \"Infinite loop leading to JVM crash with OutOfMemoryError (or hang)\",\n\"reproduction_steps\": [\n\"Create an Options object and add an option with a long description (e.g., 'This is a looooong description').\",\n\"Create a HelpFormatter and set its width to a small value (e.g., 20).\",\n\"Call formatter.printHelp(\\\"app\\\", options).\",\n\"Observe infinite loop and eventual OutOfMemoryError or hang.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"OutOfMemoryError (later changed to RuntimeException, then to IllegalStateException)\",\n\"api_involved\": [\"HelpFormatter\", \"HelpFormatter.printHelp\", \"HelpFormatter.setWidth\", \"Options\", \"Options.addOption\"],\n\"input_conditions\": [\"width set to 20 (insufficient to display a word on a single line)\", \"long description text\", \"width smaller than nextTabStop (argument + indent)\"],\n\"expected\": \"An exception indicating insufficient width or text broken up to fit screen width, no infinite loop\",\n\"actual\": \"Infinite loop leading to JVM crash with OutOfMemoryError (or hang)\",\n\"reproduction_steps\": [\n\"Create an Options object and add an option with a long description (e.g., 'This is a looooong description').\",\n\"Create a HelpFormatter and set its width to a small value (e.g., 20).\",\n\"Call formatter.printHelp(\\\"app\\\", options).\",\n\"Observe infinite loop and eventual OutOfMemoryError or hang.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

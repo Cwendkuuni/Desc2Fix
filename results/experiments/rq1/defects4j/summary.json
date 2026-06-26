@@ -1,0 +1,75 @@
+{
+  "dataset": "defects4j",
+  "instances": 10,
+  "models": {
+    "deepseek": {
+      "dataset": "defects4j",
+      "model": "deepseek",
+      "expected_instances": 10,
+      "available_instances": 10,
+      "missing_instances": 0,
+      "availability_rate": 1.0,
+      "avg_signal_items_per_instance": 11.3,
+      "avg_field_completeness": 0.933333,
+      "field_non_empty_counts": {
+        "exception": 6,
+        "api_involved": 10,
+        "input_conditions": 10,
+        "reproduction_steps": 10,
+        "expected": 10,
+        "actual": 10
+      },
+      "field_non_empty_rates": {
+        "exception": 0.6,
+        "api_involved": 1.0,
+        "input_conditions": 1.0,
+        "reproduction_steps": 1.0,
+        "expected": 1.0,
+        "actual": 1.0
+      }
+    },
+    "gpt4o": {
+      "dataset": "defects4j",
+      "model": "gpt4o",
+      "expected_instances": 10,
+      "available_instances": 10,
+      "missing_instances": 0,
+      "availability_rate": 1.0,
+      "avg_signal_items_per_instance": 9.8,
+      "avg_field_completeness": 0.966667,
+      "field_non_empty_counts": {
+        "exception": 8,
+        "api_involved": 10,
+        "input_conditions": 10,
+        "reproduction_steps": 10,
+        "expected": 10,
+        "actual": 10
+      },
+      "field_non_empty_rates": {
+        "exception": 0.8,
+        "api_involved": 1.0,
+        "input_conditions": 1.0,
+        "reproduction_steps": 1.0,
+        "expected": 1.0,
+        "actual": 1.0
+      }
+    }
+  },
+  "consistency": {
+    "deepseek_vs_gpt4o": {
+      "dataset": "defects4j",
+      "model_a": "deepseek",
+      "model_b": "gpt4o",
+      "common_instances": 10,
+      "avg_macro_jaccard": 0.300495,
+      "avg_field_jaccard": {
+        "exception": 0.52,
+        "api_involved": 0.353333,
+        "input_conditions": 0.23307,
+        "reproduction_steps": 0.256857,
+        "expected": 0.243936,
+        "actual": 0.195771
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+You are an expert software engineer specialized in program repair.
+
+Given the following natural-language bug report and the patch (code diff) that fixes it,
+evaluate how well the patch addresses the behaviors and scenarios described in the report.
+
+Criteria (rate each 1–5):
+1) Coverage: Does the patch modify code clearly related to entities/APIs or behaviors described in the report?
+2) Correctness: Does the patch appear to fix the described issue (expected vs. actual behavior)?
+3) Specificity: Is the patch focused on the described problem rather than unrelated code?
+
+Provide a concise justification (2–4 sentences), then output scores as JSON between triple backticks.
+
+Bug Report (RAW):
+---
+{BUG_REPORT_RAW}
+---
+
+Patch ({PATCH_TYPE}):
+---
+{PATCH_CODE}
+---
+
+Output only JSON between triple backticks:
+{{
+"alignment_score": <1-5>,
+"coverage": <1-5>,
+"correctness": <1-5>,
+"specificity": <1-5>,
+"justification": "..."
+}}

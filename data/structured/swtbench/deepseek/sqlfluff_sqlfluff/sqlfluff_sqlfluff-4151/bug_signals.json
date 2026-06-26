@@ -1,0 +1,65 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sqlfluff__sqlfluff-4151",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [
+      "Exit code 2"
+    ],
+    "api_involved": [
+      "sqlfluff",
+      "--disable_progress_bar"
+    ],
+    "input_conditions": [
+      "Sql file provided",
+      "Command executed with --disable_progress_bar flag",
+      "No special configuration",
+      "Dialect ansi",
+      "Python 3.10.3",
+      "sqlfluff versions 1.4.0 through 1.4.2"
+    ],
+    "reproduction_steps": [
+      "Run sqlfluff with --disable_progress_bar flag on a Sql file",
+      "Observe exit code 2 and error in stderr"
+    ],
+    "expected": [
+      "Run as expected, with no error and no progress bar"
+    ],
+    "actual": [
+      "Exit code 2 and stderr (error message not provided)"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Exit code 2"
+    ],
+    "api_involved": [
+      "sqlfluff",
+      "--disable_progress_bar"
+    ],
+    "input_conditions": [
+      "Sql file provided",
+      "Command executed with --disable_progress_bar flag",
+      "No special configuration",
+      "Dialect ansi",
+      "Python 3.10.3",
+      "sqlfluff versions 1.4.0 through 1.4.2"
+    ],
+    "reproduction_steps": [
+      "Run sqlfluff with --disable_progress_bar flag on a Sql file",
+      "Observe exit code 2 and error in stderr"
+    ],
+    "expected": [
+      "Run as expected, with no error and no progress bar"
+    ],
+    "actual": [
+      "Exit code 2 and stderr (error message not provided)"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"Exit code 2\",\n\"api_involved\": [\"sqlfluff\", \"--disable_progress_bar\"],\n\"input_conditions\": [\"Sql file provided\", \"Command executed with --disable_progress_bar flag\", \"No special configuration\", \"Dialect ansi\", \"Python 3.10.3\", \"sqlfluff versions 1.4.0 through 1.4.2\"],\n\"expected\": \"Run as expected, with no error and no progress bar\",\n\"actual\": \"Exit code 2 and stderr (error message not provided)\",\n\"reproduction_steps\": [\n\"Run sqlfluff with --disable_progress_bar flag on a Sql file\",\n\"Observe exit code 2 and error in stderr\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"Exit code 2\",\n\"api_involved\": [\"sqlfluff\", \"--disable_progress_bar\"],\n\"input_conditions\": [\"Sql file provided\", \"Command executed with --disable_progress_bar flag\", \"No special configuration\", \"Dialect ansi\", \"Python 3.10.3\", \"sqlfluff versions 1.4.0 through 1.4.2\"],\n\"expected\": \"Run as expected, with no error and no progress bar\",\n\"actual\": \"Exit code 2 and stderr (error message not provided)\",\n\"reproduction_steps\": [\n\"Run sqlfluff with --disable_progress_bar flag on a Sql file\",\n\"Observe exit code 2 and error in stderr\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

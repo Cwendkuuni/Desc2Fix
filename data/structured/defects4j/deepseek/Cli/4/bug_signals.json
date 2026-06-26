@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-4",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "PosixParser.parse",
+      "Option",
+      "parsedLine.hasOption",
+      "parsedLine.getOptionValue"
+    ],
+    "input_conditions": [
+      "Option with short name 't' and long name 'target' requiring an argument",
+      "Using PosixParser",
+      "Command line argument '-target foobar.com'"
+    ],
+    "reproduction_steps": [
+      "Define an Option with shortOpt 't' and longOpt 'target', requiring an argument.",
+      "Use PosixParser to parse command line arguments.",
+      "Pass '-target foobar.com' as arguments.",
+      "Call parsedLine.getOptionValue('t') and print the result."
+    ],
+    "expected": [
+      "Processing selected target: foobar.com"
+    ],
+    "actual": [
+      "Processing selected target: arget"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "PosixParser.parse",
+      "Option",
+      "parsedLine.hasOption",
+      "parsedLine.getOptionValue"
+    ],
+    "input_conditions": [
+      "Option with short name 't' and long name 'target' requiring an argument",
+      "Using PosixParser",
+      "Command line argument '-target foobar.com'"
+    ],
+    "reproduction_steps": [
+      "Define an Option with shortOpt 't' and longOpt 'target', requiring an argument.",
+      "Use PosixParser to parse command line arguments.",
+      "Pass '-target foobar.com' as arguments.",
+      "Call parsedLine.getOptionValue('t') and print the result."
+    ],
+    "expected": [
+      "Processing selected target: foobar.com"
+    ],
+    "actual": [
+      "Processing selected target: arget"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"PosixParser.parse\", \"Option\", \"parsedLine.hasOption\", \"parsedLine.getOptionValue\"],\n\"input_conditions\": [\"Option with short name 't' and long name 'target' requiring an argument\", \"Using PosixParser\", \"Command line argument '-target foobar.com'\"],\n\"expected\": \"Processing selected target: foobar.com\",\n\"actual\": \"Processing selected target: arget\",\n\"reproduction_steps\": [\n\"Define an Option with shortOpt 't' and longOpt 'target', requiring an argument.\",\n\"Use PosixParser to parse command line arguments.\",\n\"Pass '-target foobar.com' as arguments.\",\n\"Call parsedLine.getOptionValue('t') and print the result.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"PosixParser.parse\", \"Option\", \"parsedLine.hasOption\", \"parsedLine.getOptionValue\"],\n\"input_conditions\": [\"Option with short name 't' and long name 'target' requiring an argument\", \"Using PosixParser\", \"Command line argument '-target foobar.com'\"],\n\"expected\": \"Processing selected target: foobar.com\",\n\"actual\": \"Processing selected target: arget\",\n\"reproduction_steps\": [\n\"Define an Option with shortOpt 't' and longOpt 'target', requiring an argument.\",\n\"Use PosixParser to parse command line arguments.\",\n\"Pass '-target foobar.com' as arguments.\",\n\"Call parsedLine.getOptionValue('t') and print the result.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

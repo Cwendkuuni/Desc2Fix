@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "pylint-dev__pylint-8819",
+  "project": null,
+  "repo": "pylint-dev/pylint",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "enable",
+      "disable",
+      "rcfile"
+    ],
+    "input_conditions": [
+      "Order-dependent enable/disable options in rcfile",
+      "enable section precedes disable section by default"
+    ],
+    "reproduction_steps": [
+      "Specify an enable section followed by a disable section in rcfile.",
+      "Observe that the disable settings are overwritten by enable settings.",
+      "Specify a disable section followed by an enable section in rcfile.",
+      "Observe the opposite effect."
+    ],
+    "expected": [
+      "Enable/disable options in rcfile should work regardless of order; enabling all checks except the disabled ones should be clear without rearranging sections."
+    ],
+    "actual": [
+      "Enable/disable options in rcfile depend on the order they are specified, causing counter-intuitive behavior."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "enable",
+      "disable",
+      "rcfile"
+    ],
+    "input_conditions": [
+      "Order-dependent enable/disable options in rcfile",
+      "enable section precedes disable section by default"
+    ],
+    "reproduction_steps": [
+      "Specify an enable section followed by a disable section in rcfile.",
+      "Observe that the disable settings are overwritten by enable settings.",
+      "Specify a disable section followed by an enable section in rcfile.",
+      "Observe the opposite effect."
+    ],
+    "expected": [
+      "Enable/disable options in rcfile should work regardless of order; enabling all checks except the disabled ones should be clear without rearranging sections."
+    ],
+    "actual": [
+      "Enable/disable options in rcfile depend on the order they are specified, causing counter-intuitive behavior."
+    ]
+  },
+  "raw_response": "{\n\"exception\": null,\n\"api_involved\": [\"enable\", \"disable\", \"rcfile\"],\n\"input_conditions\": [\"Order-dependent enable/disable options in rcfile\", \"enable section precedes disable section by default\"],\n\"expected\": \"Enable/disable options in rcfile should work regardless of order; enabling all checks except the disabled ones should be clear without rearranging sections.\",\n\"actual\": \"Enable/disable options in rcfile depend on the order they are specified, causing counter-intuitive behavior.\",\n\"reproduction_steps\": [\n    \"Specify an enable section followed by a disable section in rcfile.\",\n    \"Observe that the disable settings are overwritten by enable settings.\",\n    \"Specify a disable section followed by an enable section in rcfile.\",\n    \"Observe the opposite effect.\"\n]\n}",
+  "llm_response": "{\n\"exception\": null,\n\"api_involved\": [\"enable\", \"disable\", \"rcfile\"],\n\"input_conditions\": [\"Order-dependent enable/disable options in rcfile\", \"enable section precedes disable section by default\"],\n\"expected\": \"Enable/disable options in rcfile should work regardless of order; enabling all checks except the disabled ones should be clear without rearranging sections.\",\n\"actual\": \"Enable/disable options in rcfile depend on the order they are specified, causing counter-intuitive behavior.\",\n\"reproduction_steps\": [\n    \"Specify an enable section followed by a disable section in rcfile.\",\n    \"Observe that the disable settings are overwritten by enable settings.\",\n    \"Specify a disable section followed by an enable section in rcfile.\",\n    \"Observe the opposite effect.\"\n]\n}",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

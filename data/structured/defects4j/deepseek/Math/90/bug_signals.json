@@ -1,0 +1,71 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-90",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "IllegalArgumentException"
+    ],
+    "api_involved": [
+      "addValue(Object)",
+      "addValue(Comparable<?>)",
+      "getCumFreq(Object)",
+      "getCumPct(Object)",
+      "getCount(Object)",
+      "getPct(Object)"
+    ],
+    "input_conditions": [
+      "object must implement Comparable",
+      "non-Comparable objects cause failures"
+    ],
+    "reproduction_steps": [
+      "Create a Frequency instance f",
+      "Call f.addValue(new Object())",
+      "Call f.addValue(any other object) and observe IllegalArgumentException",
+      "Call f.getCount(new Object()) and observe 0",
+      "Call f.getPct(new Object()) and observe 0.0"
+    ],
+    "expected": [
+      "addValue(Object) should reject non-Comparable objects with IllegalArgumentException; getCumFreq, getCumPct should only work with Comparable objects; getCount and getPct should not silently return 0 for non-Comparable objects"
+    ],
+    "actual": [
+      "addValue(Object) accepts plain Object but second add fails; getCount and getPct return 0 for non-Comparable objects instead of failing; getCumFreq and getCumPct fail with ClassCastException for non-Comparable objects"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "IllegalArgumentException"
+    ],
+    "api_involved": [
+      "addValue(Object)",
+      "addValue(Comparable<?>)",
+      "getCumFreq(Object)",
+      "getCumPct(Object)",
+      "getCount(Object)",
+      "getPct(Object)"
+    ],
+    "input_conditions": [
+      "object must implement Comparable",
+      "non-Comparable objects cause failures"
+    ],
+    "reproduction_steps": [
+      "Create a Frequency instance f",
+      "Call f.addValue(new Object())",
+      "Call f.addValue(any other object) and observe IllegalArgumentException",
+      "Call f.getCount(new Object()) and observe 0",
+      "Call f.getPct(new Object()) and observe 0.0"
+    ],
+    "expected": [
+      "addValue(Object) should reject non-Comparable objects with IllegalArgumentException; getCumFreq, getCumPct should only work with Comparable objects; getCount and getPct should not silently return 0 for non-Comparable objects"
+    ],
+    "actual": [
+      "addValue(Object) accepts plain Object but second add fails; getCount and getPct return 0 for non-Comparable objects instead of failing; getCumFreq and getCumPct fail with ClassCastException for non-Comparable objects"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"IllegalArgumentException\",\n\"api_involved\": [\"addValue(Object)\", \"addValue(Comparable<?>)\", \"getCumFreq(Object)\", \"getCumPct(Object)\", \"getCount(Object)\", \"getPct(Object)\"],\n\"input_conditions\": [\"object must implement Comparable\", \"non-Comparable objects cause failures\"],\n\"expected\": \"addValue(Object) should reject non-Comparable objects with IllegalArgumentException; getCumFreq, getCumPct should only work with Comparable objects; getCount and getPct should not silently return 0 for non-Comparable objects\",\n\"actual\": \"addValue(Object) accepts plain Object but second add fails; getCount and getPct return 0 for non-Comparable objects instead of failing; getCumFreq and getCumPct fail with ClassCastException for non-Comparable objects\",\n\"reproduction_steps\": [\"Create a Frequency instance f\", \"Call f.addValue(new Object())\", \"Call f.addValue(any other object) and observe IllegalArgumentException\", \"Call f.getCount(new Object()) and observe 0\", \"Call f.getPct(new Object()) and observe 0.0\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"IllegalArgumentException\",\n\"api_involved\": [\"addValue(Object)\", \"addValue(Comparable<?>)\", \"getCumFreq(Object)\", \"getCumPct(Object)\", \"getCount(Object)\", \"getPct(Object)\"],\n\"input_conditions\": [\"object must implement Comparable\", \"non-Comparable objects cause failures\"],\n\"expected\": \"addValue(Object) should reject non-Comparable objects with IllegalArgumentException; getCumFreq, getCumPct should only work with Comparable objects; getCount and getPct should not silently return 0 for non-Comparable objects\",\n\"actual\": \"addValue(Object) accepts plain Object but second add fails; getCount and getPct return 0 for non-Comparable objects instead of failing; getCumFreq and getCumPct fail with ClassCastException for non-Comparable objects\",\n\"reproduction_steps\": [\"Create a Frequency instance f\", \"Call f.addValue(new Object())\", \"Call f.addValue(any other object) and observe IllegalArgumentException\", \"Call f.getCount(new Object()) and observe 0\", \"Call f.getPct(new Object()) and observe 0.0\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

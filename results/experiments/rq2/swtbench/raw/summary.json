@@ -1,0 +1,16 @@
+{
+  "instances": 10,
+  "with_report_text": 10,
+  "with_test_text": 10,
+  "avg_rouge_l": 0.040345,
+  "avg_jaccard": 0.083602,
+  "avg_identifier_jaccard": 0.048088,
+  "avg_pos_overlap": 0.85,
+  "avg_sbert": 0.571407,
+  "avg_codebert": 0.94491,
+  "avg_openai_embedding": 0.47595,
+  "dataset": "swtbench",
+  "scenario": "raw",
+  "model": "none",
+  "artifact_pair": "report_test"
+}

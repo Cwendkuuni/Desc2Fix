@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-106",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.IllegalArgumentException"
+    ],
+    "api_involved": [
+      "com.google.javascript.jscomp.CollapseProperties.addStubsForUndeclaredProperties",
+      "com.google.javascript.jscomp.Compiler.runInCompilerThread",
+      "com.google.javascript.jscomp.Compiler.compile",
+      "com.google.javascript.jscomp.PhaseOptimizer$PassFactoryDelegate.processInternal"
+    ],
+    "input_conditions": [
+      "compiling with ADVANCED_OPTIMIZATIONS",
+      "use of goog.exportSymbol"
+    ],
+    "reproduction_steps": [
+      "Execute the provided Java command with Closure Compiler using ADVANCED_OPTIMIZATIONS on the specific JavaScript file.",
+      "Observe the thrown exception without proper error handling if goog.exportSymbol is misused."
+    ],
+    "expected": [
+      "The compiler should provide a nice warning or error indicating the issue."
+    ],
+    "actual": [
+      "A Java exception is thrown instead."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.IllegalArgumentException"
+    ],
+    "api_involved": [
+      "com.google.javascript.jscomp.CollapseProperties.addStubsForUndeclaredProperties",
+      "com.google.javascript.jscomp.Compiler.runInCompilerThread",
+      "com.google.javascript.jscomp.Compiler.compile",
+      "com.google.javascript.jscomp.PhaseOptimizer$PassFactoryDelegate.processInternal"
+    ],
+    "input_conditions": [
+      "compiling with ADVANCED_OPTIMIZATIONS",
+      "use of goog.exportSymbol"
+    ],
+    "reproduction_steps": [
+      "Execute the provided Java command with Closure Compiler using ADVANCED_OPTIMIZATIONS on the specific JavaScript file.",
+      "Observe the thrown exception without proper error handling if goog.exportSymbol is misused."
+    ],
+    "expected": [
+      "The compiler should provide a nice warning or error indicating the issue."
+    ],
+    "actual": [
+      "A Java exception is thrown instead."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"java.lang.IllegalArgumentException\",\n  \"api_involved\": [\n    \"com.google.javascript.jscomp.CollapseProperties.addStubsForUndeclaredProperties\",\n    \"com.google.javascript.jscomp.Compiler.runInCompilerThread\",\n    \"com.google.javascript.jscomp.Compiler.compile\",\n    \"com.google.javascript.jscomp.PhaseOptimizer$PassFactoryDelegate.processInternal\"\n  ],\n  \"input_conditions\": [\n    \"compiling with ADVANCED_OPTIMIZATIONS\",\n    \"use of goog.exportSymbol\"\n  ],\n  \"expected\": \"The compiler should provide a nice warning or error indicating the issue.\",\n  \"actual\": \"A Java exception is thrown instead.\",\n  \"reproduction_steps\": [\n    \"Execute the provided Java command with Closure Compiler using ADVANCED_OPTIMIZATIONS on the specific JavaScript file.\",\n    \"Observe the thrown exception without proper error handling if goog.exportSymbol is misused.\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"java.lang.IllegalArgumentException\",\n  \"api_involved\": [\n    \"com.google.javascript.jscomp.CollapseProperties.addStubsForUndeclaredProperties\",\n    \"com.google.javascript.jscomp.Compiler.runInCompilerThread\",\n    \"com.google.javascript.jscomp.Compiler.compile\",\n    \"com.google.javascript.jscomp.PhaseOptimizer$PassFactoryDelegate.processInternal\"\n  ],\n  \"input_conditions\": [\n    \"compiling with ADVANCED_OPTIMIZATIONS\",\n    \"use of goog.exportSymbol\"\n  ],\n  \"expected\": \"The compiler should provide a nice warning or error indicating the issue.\",\n  \"actual\": \"A Java exception is thrown instead.\",\n  \"reproduction_steps\": [\n    \"Execute the provided Java command with Closure Compiler using ADVANCED_OPTIMIZATIONS on the specific JavaScript file.\",\n    \"Observe the thrown exception without proper error handling if goog.exportSymbol is misused.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,73 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-11964",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "AssertionError: 'MyChoice.FIRST_CHOICE' != 'first'"
+    ],
+    "api_involved": [
+      "CharField",
+      "TextChoices",
+      "IntegerChoices",
+      "models.Model",
+      "create",
+      "last"
+    ],
+    "input_conditions": [
+      "CharField with choices=MyChoice.choices",
+      "IntegerField with choices=IntegerChoices",
+      "Field value set using an enum member (e.g., MyChoice.FIRST_CHOICE)"
+    ],
+    "reproduction_steps": [
+      "Define a TextChoices or IntegerChoices enum class (e.g., MyChoice with values 'first', 'second').",
+      "Create a model with a CharField or IntegerField that uses these choices.",
+      "Create an instance of the model, setting the field to an enum member (e.g., MyChoice.FIRST_CHOICE).",
+      "Access the field value on the created instance and print/convert it to string.",
+      "Observe that __str__() returns the enum name (e.g., 'MyChoice.FIRST_CHOICE') instead of the underlying value."
+    ],
+    "expected": [
+      "The field getter should return the value property of the enum (e.g., 'first' for a freshly created object), consistent with retrieving from the database."
+    ],
+    "actual": [
+      "For a freshly created object, the getter returns the enum member object (e.g., MyChoice.FIRST_CHOICE). When __str__() is called, it returns 'MyChoice.FIRST_CHOICE' instead of 'first'. For a retrieved object, the value is correctly the plain string 'first'."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "AssertionError: 'MyChoice.FIRST_CHOICE' != 'first'"
+    ],
+    "api_involved": [
+      "CharField",
+      "TextChoices",
+      "IntegerChoices",
+      "models.Model",
+      "create",
+      "last"
+    ],
+    "input_conditions": [
+      "CharField with choices=MyChoice.choices",
+      "IntegerField with choices=IntegerChoices",
+      "Field value set using an enum member (e.g., MyChoice.FIRST_CHOICE)"
+    ],
+    "reproduction_steps": [
+      "Define a TextChoices or IntegerChoices enum class (e.g., MyChoice with values 'first', 'second').",
+      "Create a model with a CharField or IntegerField that uses these choices.",
+      "Create an instance of the model, setting the field to an enum member (e.g., MyChoice.FIRST_CHOICE).",
+      "Access the field value on the created instance and print/convert it to string.",
+      "Observe that __str__() returns the enum name (e.g., 'MyChoice.FIRST_CHOICE') instead of the underlying value."
+    ],
+    "expected": [
+      "The field getter should return the value property of the enum (e.g., 'first' for a freshly created object), consistent with retrieving from the database."
+    ],
+    "actual": [
+      "For a freshly created object, the getter returns the enum member object (e.g., MyChoice.FIRST_CHOICE). When __str__() is called, it returns 'MyChoice.FIRST_CHOICE' instead of 'first'. For a retrieved object, the value is correctly the plain string 'first'."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"AssertionError: 'MyChoice.FIRST_CHOICE' != 'first'\",\n\"api_involved\": [\"CharField\", \"TextChoices\", \"IntegerChoices\", \"models.Model\", \"create\", \"last\"],\n\"input_conditions\": [\"CharField with choices=MyChoice.choices\", \"IntegerField with choices=IntegerChoices\", \"Field value set using an enum member (e.g., MyChoice.FIRST_CHOICE)\"],\n\"expected\": \"The field getter should return the value property of the enum (e.g., 'first' for a freshly created object), consistent with retrieving from the database.\",\n\"actual\": \"For a freshly created object, the getter returns the enum member object (e.g., MyChoice.FIRST_CHOICE). When __str__() is called, it returns 'MyChoice.FIRST_CHOICE' instead of 'first'. For a retrieved object, the value is correctly the plain string 'first'.\",\n\"reproduction_steps\": [\n\"Define a TextChoices or IntegerChoices enum class (e.g., MyChoice with values 'first', 'second').\",\n\"Create a model with a CharField or IntegerField that uses these choices.\",\n\"Create an instance of the model, setting the field to an enum member (e.g., MyChoice.FIRST_CHOICE).\",\n\"Access the field value on the created instance and print/convert it to string.\",\n\"Observe that __str__() returns the enum name (e.g., 'MyChoice.FIRST_CHOICE') instead of the underlying value.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"AssertionError: 'MyChoice.FIRST_CHOICE' != 'first'\",\n\"api_involved\": [\"CharField\", \"TextChoices\", \"IntegerChoices\", \"models.Model\", \"create\", \"last\"],\n\"input_conditions\": [\"CharField with choices=MyChoice.choices\", \"IntegerField with choices=IntegerChoices\", \"Field value set using an enum member (e.g., MyChoice.FIRST_CHOICE)\"],\n\"expected\": \"The field getter should return the value property of the enum (e.g., 'first' for a freshly created object), consistent with retrieving from the database.\",\n\"actual\": \"For a freshly created object, the getter returns the enum member object (e.g., MyChoice.FIRST_CHOICE). When __str__() is called, it returns 'MyChoice.FIRST_CHOICE' instead of 'first'. For a retrieved object, the value is correctly the plain string 'first'.\",\n\"reproduction_steps\": [\n\"Define a TextChoices or IntegerChoices enum class (e.g., MyChoice with values 'first', 'second').\",\n\"Create a model with a CharField or IntegerField that uses these choices.\",\n\"Create an instance of the model, setting the field to an enum member (e.g., MyChoice.FIRST_CHOICE).\",\n\"Access the field value on the created instance and print/convert it to string.\",\n\"Observe that __str__() returns the enum name (e.g., 'MyChoice.FIRST_CHOICE') instead of the underlying value.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,35 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "scikit-learn__scikit-learn-24769",
+  "project": null,
+  "repo": "scikit-learn/scikit-learn",
+  "signals": {
+    "exception": [],
+    "api_involved": [],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [
+      "Add support for mean average precision (mAP) as a multi-class evaluation metric."
+    ],
+    "actual": [
+      "mAP is currently not implemented in the system."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [
+      "Add support for mean average precision (mAP) as a multi-class evaluation metric."
+    ],
+    "actual": [
+      "mAP is currently not implemented in the system."
+    ]
+  },
+  "raw_response": "```\n{\n\"exception\": null,\n\"api_involved\": [],\n\"input_conditions\": [],\n\"expected\": \"Add support for mean average precision (mAP) as a multi-class evaluation metric.\",\n\"actual\": \"mAP is currently not implemented in the system.\",\n\"reproduction_steps\": []\n}\n```",
+  "llm_response": "```\n{\n\"exception\": null,\n\"api_involved\": [],\n\"input_conditions\": [],\n\"expected\": \"Add support for mean average precision (mAP) as a multi-class evaluation metric.\",\n\"actual\": \"mAP is currently not implemented in the system.\",\n\"reproduction_steps\": []\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "JxPath-4",
+  "project": "JxPath",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "JXPath",
+      "selectSingleNode",
+      "selectNodes",
+      "getStringValueOfNode"
+    ],
+    "input_conditions": [
+      "XML contains a value with leading or trailing spaces",
+      "xml:space attribute not set to 'preserve'"
+    ],
+    "reproduction_steps": [
+      "Use JXPath to retrieve a value from XML with leading or trailing spaces"
+    ],
+    "expected": [
+      "JXPath should return the XML value with leading and trailing spaces preserved"
+    ],
+    "actual": [
+      "JXPath trims the leading and trailing spaces from the XML value"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "JXPath",
+      "selectSingleNode",
+      "selectNodes",
+      "getStringValueOfNode"
+    ],
+    "input_conditions": [
+      "XML contains a value with leading or trailing spaces",
+      "xml:space attribute not set to 'preserve'"
+    ],
+    "reproduction_steps": [
+      "Use JXPath to retrieve a value from XML with leading or trailing spaces"
+    ],
+    "expected": [
+      "JXPath should return the XML value with leading and trailing spaces preserved"
+    ],
+    "actual": [
+      "JXPath trims the leading and trailing spaces from the XML value"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"JXPath\", \"selectSingleNode\", \"selectNodes\", \"getStringValueOfNode\"],\n  \"input_conditions\": [\"XML contains a value with leading or trailing spaces\", \"xml:space attribute not set to 'preserve'\"],\n  \"expected\": \"JXPath should return the XML value with leading and trailing spaces preserved\",\n  \"actual\": \"JXPath trims the leading and trailing spaces from the XML value\",\n  \"reproduction_steps\": [\"Use JXPath to retrieve a value from XML with leading or trailing spaces\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"JXPath\", \"selectSingleNode\", \"selectNodes\", \"getStringValueOfNode\"],\n  \"input_conditions\": [\"XML contains a value with leading or trailing spaces\", \"xml:space attribute not set to 'preserve'\"],\n  \"expected\": \"JXPath should return the XML value with leading and trailing spaces preserved\",\n  \"actual\": \"JXPath trims the leading and trailing spaces from the XML value\",\n  \"reproduction_steps\": [\"Use JXPath to retrieve a value from XML with leading or trailing spaces\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

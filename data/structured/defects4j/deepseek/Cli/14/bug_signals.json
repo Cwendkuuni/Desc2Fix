@@ -1,0 +1,79 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-14",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.ClassCastException: java.io.File cannot be cast to java.lang.String"
+    ],
+    "api_involved": [
+      "org.apache.commons.cli2.validation.FileValidator.validate",
+      "org.apache.commons.cli2.option.ArgumentImpl.validate",
+      "org.apache.commons.cli2.option.ParentImpl.validate",
+      "org.apache.commons.cli2.option.DefaultOption.validate",
+      "org.apache.commons.cli2.option.GroupImpl.validate",
+      "org.apache.commons.cli2.commandline.Parser.parse",
+      "org.apache.commons.cli2.commandline.Parser.parseAndHelp",
+      "org.apache.commons.cli2.builder.ArgumentBuilder.withValidator",
+      "org.apache.commons.cli2.option.GroupImpl"
+    ],
+    "input_conditions": [
+      "A FileValidator (or NumberValidator) is attached to an argument option",
+      "The option is part of a group",
+      "The same option's validate() is called more than once (because it satisfies multiple conditions in GroupImpl.validate loop)",
+      "The validator is not idempotent (replaces String with File/Number on first call)"
+    ],
+    "reproduction_steps": [
+      "Create a DefaultOption with an Argument that has a FileValidator.getExistingFileInstance() attached via .withValidator().",
+      "Create a Group containing that option and set it on a Parser.",
+      "Run parseAndHelp(args) with arguments like '--file-name path-to-an-existing-file'.",
+      "Observe ClassCastException."
+    ],
+    "expected": [
+      "Parsing should succeed without exception; the option should be validated once and return the correct value (e.g., File or Number)."
+    ],
+    "actual": [
+      "A ClassCastException is thrown because the validator is called twice; on the second call, the value has already been converted to a File (or Number) and cannot be cast back to String."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.ClassCastException: java.io.File cannot be cast to java.lang.String"
+    ],
+    "api_involved": [
+      "org.apache.commons.cli2.validation.FileValidator.validate",
+      "org.apache.commons.cli2.option.ArgumentImpl.validate",
+      "org.apache.commons.cli2.option.ParentImpl.validate",
+      "org.apache.commons.cli2.option.DefaultOption.validate",
+      "org.apache.commons.cli2.option.GroupImpl.validate",
+      "org.apache.commons.cli2.commandline.Parser.parse",
+      "org.apache.commons.cli2.commandline.Parser.parseAndHelp",
+      "org.apache.commons.cli2.builder.ArgumentBuilder.withValidator",
+      "org.apache.commons.cli2.option.GroupImpl"
+    ],
+    "input_conditions": [
+      "A FileValidator (or NumberValidator) is attached to an argument option",
+      "The option is part of a group",
+      "The same option's validate() is called more than once (because it satisfies multiple conditions in GroupImpl.validate loop)",
+      "The validator is not idempotent (replaces String with File/Number on first call)"
+    ],
+    "reproduction_steps": [
+      "Create a DefaultOption with an Argument that has a FileValidator.getExistingFileInstance() attached via .withValidator().",
+      "Create a Group containing that option and set it on a Parser.",
+      "Run parseAndHelp(args) with arguments like '--file-name path-to-an-existing-file'.",
+      "Observe ClassCastException."
+    ],
+    "expected": [
+      "Parsing should succeed without exception; the option should be validated once and return the correct value (e.g., File or Number)."
+    ],
+    "actual": [
+      "A ClassCastException is thrown because the validator is called twice; on the second call, the value has already been converted to a File (or Number) and cannot be cast back to String."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"java.lang.ClassCastException: java.io.File cannot be cast to java.lang.String\",\n\"api_involved\": [\"org.apache.commons.cli2.validation.FileValidator.validate\", \"org.apache.commons.cli2.option.ArgumentImpl.validate\", \"org.apache.commons.cli2.option.ParentImpl.validate\", \"org.apache.commons.cli2.option.DefaultOption.validate\", \"org.apache.commons.cli2.option.GroupImpl.validate\", \"org.apache.commons.cli2.commandline.Parser.parse\", \"org.apache.commons.cli2.commandline.Parser.parseAndHelp\", \"org.apache.commons.cli2.builder.ArgumentBuilder.withValidator\", \"org.apache.commons.cli2.option.GroupImpl\"],\n\"input_conditions\": [\"A FileValidator (or NumberValidator) is attached to an argument option\", \"The option is part of a group\", \"The same option's validate() is called more than once (because it satisfies multiple conditions in GroupImpl.validate loop)\", \"The validator is not idempotent (replaces String with File/Number on first call)\"],\n\"expected\": \"Parsing should succeed without exception; the option should be validated once and return the correct value (e.g., File or Number).\",\n\"actual\": \"A ClassCastException is thrown because the validator is called twice; on the second call, the value has already been converted to a File (or Number) and cannot be cast back to String.\",\n\"reproduction_steps\": [\n\"Create a DefaultOption with an Argument that has a FileValidator.getExistingFileInstance() attached via .withValidator().\",\n\"Create a Group containing that option and set it on a Parser.\",\n\"Run parseAndHelp(args) with arguments like '--file-name path-to-an-existing-file'.\",\n\"Observe ClassCastException.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"java.lang.ClassCastException: java.io.File cannot be cast to java.lang.String\",\n\"api_involved\": [\"org.apache.commons.cli2.validation.FileValidator.validate\", \"org.apache.commons.cli2.option.ArgumentImpl.validate\", \"org.apache.commons.cli2.option.ParentImpl.validate\", \"org.apache.commons.cli2.option.DefaultOption.validate\", \"org.apache.commons.cli2.option.GroupImpl.validate\", \"org.apache.commons.cli2.commandline.Parser.parse\", \"org.apache.commons.cli2.commandline.Parser.parseAndHelp\", \"org.apache.commons.cli2.builder.ArgumentBuilder.withValidator\", \"org.apache.commons.cli2.option.GroupImpl\"],\n\"input_conditions\": [\"A FileValidator (or NumberValidator) is attached to an argument option\", \"The option is part of a group\", \"The same option's validate() is called more than once (because it satisfies multiple conditions in GroupImpl.validate loop)\", \"The validator is not idempotent (replaces String with File/Number on first call)\"],\n\"expected\": \"Parsing should succeed without exception; the option should be validated once and return the correct value (e.g., File or Number).\",\n\"actual\": \"A ClassCastException is thrown because the validator is called twice; on the second call, the value has already been converted to a File (or Number) and cannot be cast back to String.\",\n\"reproduction_steps\": [\n\"Create a DefaultOption with an Argument that has a FileValidator.getExistingFileInstance() attached via .withValidator().\",\n\"Create a Group containing that option and set it on a Parser.\",\n\"Run parseAndHelp(args) with arguments like '--file-name path-to-an-existing-file'.\",\n\"Observe ClassCastException.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-82",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "String.prototype.toLowerCase",
+      "Array.prototype.indexOf",
+      "String.prototype.substr"
+    ],
+    "input_conditions": [
+      "VERBOSE warnings enabled",
+      "missingProperties check enabled"
+    ],
+    "reproduction_steps": [
+      "Create a String object: var s = new String('hello');",
+      "Call alert(s.toLowerCase.indexOf('l'));",
+      "Compile with VERBOSE warnings or missingProperties check enabled.",
+      "Observe that no missing property warning is emitted."
+    ],
+    "expected": [
+      "A warning about missing property .indexOf on the return value of s.toLowerCase should be produced."
+    ],
+    "actual": [
+      "No warning or error is produced when calling s.toLowerCase.indexOf; the compiler assumes the property could exist via an assignment like s.toLowerCase = Array."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "String.prototype.toLowerCase",
+      "Array.prototype.indexOf",
+      "String.prototype.substr"
+    ],
+    "input_conditions": [
+      "VERBOSE warnings enabled",
+      "missingProperties check enabled"
+    ],
+    "reproduction_steps": [
+      "Create a String object: var s = new String('hello');",
+      "Call alert(s.toLowerCase.indexOf('l'));",
+      "Compile with VERBOSE warnings or missingProperties check enabled.",
+      "Observe that no missing property warning is emitted."
+    ],
+    "expected": [
+      "A warning about missing property .indexOf on the return value of s.toLowerCase should be produced."
+    ],
+    "actual": [
+      "No warning or error is produced when calling s.toLowerCase.indexOf; the compiler assumes the property could exist via an assignment like s.toLowerCase = Array."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"String.prototype.toLowerCase\", \"Array.prototype.indexOf\", \"String.prototype.substr\"],\n\"input_conditions\": [\"VERBOSE warnings enabled\", \"missingProperties check enabled\"],\n\"expected\": \"A warning about missing property .indexOf on the return value of s.toLowerCase should be produced.\",\n\"actual\": \"No warning or error is produced when calling s.toLowerCase.indexOf; the compiler assumes the property could exist via an assignment like s.toLowerCase = Array.\",\n\"reproduction_steps\": [\n\"Create a String object: var s = new String('hello');\",\n\"Call alert(s.toLowerCase.indexOf('l'));\",\n\"Compile with VERBOSE warnings or missingProperties check enabled.\",\n\"Observe that no missing property warning is emitted.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"String.prototype.toLowerCase\", \"Array.prototype.indexOf\", \"String.prototype.substr\"],\n\"input_conditions\": [\"VERBOSE warnings enabled\", \"missingProperties check enabled\"],\n\"expected\": \"A warning about missing property .indexOf on the return value of s.toLowerCase should be produced.\",\n\"actual\": \"No warning or error is produced when calling s.toLowerCase.indexOf; the compiler assumes the property could exist via an assignment like s.toLowerCase = Array.\",\n\"reproduction_steps\": [\n\"Create a String object: var s = new String('hello');\",\n\"Call alert(s.toLowerCase.indexOf('l'));\",\n\"Compile with VERBOSE warnings or missingProperties check enabled.\",\n\"Observe that no missing property warning is emitted.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

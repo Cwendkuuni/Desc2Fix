@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-14",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "Missing return statement. Function expected to return boolean."
+    ],
+    "api_involved": [
+      "alert"
+    ],
+    "input_conditions": [
+      "a > 0"
+    ],
+    "reproduction_steps": [
+      "Write a function that attempts to return boolean values based on conditions.",
+      "Wrap code in a try-finally block without explicit return in finally.",
+      "Use a control flow where all execution paths theoretically return a value."
+    ],
+    "expected": [
+      "The function should compile without a 'Missing return statement' warning."
+    ],
+    "actual": [
+      "The code compiles with a 'Missing return statement. Function expected to return boolean.' warning."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Missing return statement. Function expected to return boolean."
+    ],
+    "api_involved": [
+      "alert"
+    ],
+    "input_conditions": [
+      "a > 0"
+    ],
+    "reproduction_steps": [
+      "Write a function that attempts to return boolean values based on conditions.",
+      "Wrap code in a try-finally block without explicit return in finally.",
+      "Use a control flow where all execution paths theoretically return a value."
+    ],
+    "expected": [
+      "The function should compile without a 'Missing return statement' warning."
+    ],
+    "actual": [
+      "The code compiles with a 'Missing return statement. Function expected to return boolean.' warning."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"Missing return statement. Function expected to return boolean.\",\n  \"api_involved\": [\"alert\"],\n  \"input_conditions\": [\"a > 0\"],\n  \"expected\": \"The function should compile without a 'Missing return statement' warning.\",\n  \"actual\": \"The code compiles with a 'Missing return statement. Function expected to return boolean.' warning.\",\n  \"reproduction_steps\": [\n    \"Write a function that attempts to return boolean values based on conditions.\",\n    \"Wrap code in a try-finally block without explicit return in finally.\",\n    \"Use a control flow where all execution paths theoretically return a value.\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"Missing return statement. Function expected to return boolean.\",\n  \"api_involved\": [\"alert\"],\n  \"input_conditions\": [\"a > 0\"],\n  \"expected\": \"The function should compile without a 'Missing return statement' warning.\",\n  \"actual\": \"The code compiles with a 'Missing return statement. Function expected to return boolean.' warning.\",\n  \"reproduction_steps\": [\n    \"Write a function that attempts to return boolean values based on conditions.\",\n    \"Wrap code in a try-finally block without explicit return in finally.\",\n    \"Use a control flow where all execution paths theoretically return a value.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

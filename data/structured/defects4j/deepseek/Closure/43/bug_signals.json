@@ -1,0 +1,67 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-43",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "ERROR - Variable Person.prototype not declared before @lends annotation."
+    ],
+    "api_involved": [
+      "@lends annotation",
+      "Closure Compiler",
+      "dojo.declare",
+      "makeClass"
+    ],
+    "input_conditions": [
+      "Advanced optimizations enabled",
+      "Type checking enabled (--jscomp_error=checkTypes)",
+      "Use of @lends in same statement where symbol is declared"
+    ],
+    "reproduction_steps": [
+      "Enable advanced optimizations and type checking (--jscomp_error=checkTypes).",
+      "Use @lends annotation inline, e.g., with a utility method like makeClass or John Resig's inheritance pattern, where the annotated object literal is assigned to a variable that is defined in the same statement (e.g., foo(/** @lends {Bar} */ {}); var Bar = function() {};).",
+      "Attempt to compile the code.",
+      "Observe the compile error about variable not declared before @lends annotation."
+    ],
+    "expected": [
+      "Code should compile successfully when using @lends annotation inline with the declaration of a symbol (e.g., var Bar = function() {};)."
+    ],
+    "actual": [
+      "Compiler throws error: 'Variable Person.prototype not declared before @lends annotation.' (The @lends annotation fails when the target symbol is not previously declared.)"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ERROR - Variable Person.prototype not declared before @lends annotation."
+    ],
+    "api_involved": [
+      "@lends annotation",
+      "Closure Compiler",
+      "dojo.declare",
+      "makeClass"
+    ],
+    "input_conditions": [
+      "Advanced optimizations enabled",
+      "Type checking enabled (--jscomp_error=checkTypes)",
+      "Use of @lends in same statement where symbol is declared"
+    ],
+    "reproduction_steps": [
+      "Enable advanced optimizations and type checking (--jscomp_error=checkTypes).",
+      "Use @lends annotation inline, e.g., with a utility method like makeClass or John Resig's inheritance pattern, where the annotated object literal is assigned to a variable that is defined in the same statement (e.g., foo(/** @lends {Bar} */ {}); var Bar = function() {};).",
+      "Attempt to compile the code.",
+      "Observe the compile error about variable not declared before @lends annotation."
+    ],
+    "expected": [
+      "Code should compile successfully when using @lends annotation inline with the declaration of a symbol (e.g., var Bar = function() {};)."
+    ],
+    "actual": [
+      "Compiler throws error: 'Variable Person.prototype not declared before @lends annotation.' (The @lends annotation fails when the target symbol is not previously declared.)"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"ERROR - Variable Person.prototype not declared before @lends annotation.\",\n\"api_involved\": [\"@lends annotation\", \"Closure Compiler\", \"dojo.declare\", \"makeClass\"],\n\"input_conditions\": [\"Advanced optimizations enabled\", \"Type checking enabled (--jscomp_error=checkTypes)\", \"Use of @lends in same statement where symbol is declared\"],\n\"expected\": \"Code should compile successfully when using @lends annotation inline with the declaration of a symbol (e.g., var Bar = function() {};).\",\n\"actual\": \"Compiler throws error: 'Variable Person.prototype not declared before @lends annotation.' (The @lends annotation fails when the target symbol is not previously declared.)\",\n\"reproduction_steps\": [\n\"Enable advanced optimizations and type checking (--jscomp_error=checkTypes).\",\n\"Use @lends annotation inline, e.g., with a utility method like makeClass or John Resig's inheritance pattern, where the annotated object literal is assigned to a variable that is defined in the same statement (e.g., foo(/** @lends {Bar} */ {}); var Bar = function() {};).\",\n\"Attempt to compile the code.\",\n\"Observe the compile error about variable not declared before @lends annotation.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"ERROR - Variable Person.prototype not declared before @lends annotation.\",\n\"api_involved\": [\"@lends annotation\", \"Closure Compiler\", \"dojo.declare\", \"makeClass\"],\n\"input_conditions\": [\"Advanced optimizations enabled\", \"Type checking enabled (--jscomp_error=checkTypes)\", \"Use of @lends in same statement where symbol is declared\"],\n\"expected\": \"Code should compile successfully when using @lends annotation inline with the declaration of a symbol (e.g., var Bar = function() {};).\",\n\"actual\": \"Compiler throws error: 'Variable Person.prototype not declared before @lends annotation.' (The @lends annotation fails when the target symbol is not previously declared.)\",\n\"reproduction_steps\": [\n\"Enable advanced optimizations and type checking (--jscomp_error=checkTypes).\",\n\"Use @lends annotation inline, e.g., with a utility method like makeClass or John Resig's inheritance pattern, where the annotated object literal is assigned to a variable that is defined in the same statement (e.g., foo(/** @lends {Bar} */ {}); var Bar = function() {};).\",\n\"Attempt to compile the code.\",\n\"Observe the compile error about variable not declared before @lends annotation.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

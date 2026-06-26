@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Math-85",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "org.apache.commons.math.MathException: Number of iterations=1, maximum iterations=2,147,483,647, initial=1, lower bound=0, upper bound=179,769,313,486,231,570,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000, final a value=0, final b value=2, f(a)=-0.477, f(b)=0"
+    ],
+    "api_involved": [
+      "app.getDistributionFactory",
+      "factory.createNormalDistribution",
+      "normal.inverseCumulativeProbability"
+    ],
+    "input_conditions": [
+      "normal distribution with mean 0",
+      "standard deviation 1"
+    ],
+    "reproduction_steps": [
+      "Create DistributionFactory instance",
+      "Create NormalDistribution with mean 0 and sd 1 using factory",
+      "Call inverseCumulativeProbability with values 0.9772498680518209, 0.9986501019683698, 0.9999683287581673"
+    ],
+    "expected": [
+      "inverseCumulativeProbability(0.9772498680518209) should return approx 2.0000, inverseCumulativeProbability(0.9986501019683698) should return 3.0000, inverseCumulativeProbability(0.9999683287581673) should return 4.0000"
+    ],
+    "actual": [
+      "Exception thrown indicating failure in calculation due to iteration limits"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "org.apache.commons.math.MathException: Number of iterations=1, maximum iterations=2,147,483,647, initial=1, lower bound=0, upper bound=179,769,313,486,231,570,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000, final a value=0, final b value=2, f(a)=-0.477, f(b)=0"
+    ],
+    "api_involved": [
+      "app.getDistributionFactory",
+      "factory.createNormalDistribution",
+      "normal.inverseCumulativeProbability"
+    ],
+    "input_conditions": [
+      "normal distribution with mean 0",
+      "standard deviation 1"
+    ],
+    "reproduction_steps": [
+      "Create DistributionFactory instance",
+      "Create NormalDistribution with mean 0 and sd 1 using factory",
+      "Call inverseCumulativeProbability with values 0.9772498680518209, 0.9986501019683698, 0.9999683287581673"
+    ],
+    "expected": [
+      "inverseCumulativeProbability(0.9772498680518209) should return approx 2.0000, inverseCumulativeProbability(0.9986501019683698) should return 3.0000, inverseCumulativeProbability(0.9999683287581673) should return 4.0000"
+    ],
+    "actual": [
+      "Exception thrown indicating failure in calculation due to iteration limits"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"org.apache.commons.math.MathException: Number of iterations=1, maximum iterations=2,147,483,647, initial=1, lower bound=0, upper bound=179,769,313,486,231,570,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000, final a value=0, final b value=2, f(a)=-0.477, f(b)=0\",\n  \"api_involved\": [\"app.getDistributionFactory\", \"factory.createNormalDistribution\", \"normal.inverseCumulativeProbability\"],\n  \"input_conditions\": [\"normal distribution with mean 0\", \"standard deviation 1\"],\n  \"expected\": \"inverseCumulativeProbability(0.9772498680518209) should return approx 2.0000, inverseCumulativeProbability(0.9986501019683698) should return 3.0000, inverseCumulativeProbability(0.9999683287581673) should return 4.0000\",\n  \"actual\": \"Exception thrown indicating failure in calculation due to iteration limits\",\n  \"reproduction_steps\": [\"Create DistributionFactory instance\", \"Create NormalDistribution with mean 0 and sd 1 using factory\", \"Call inverseCumulativeProbability with values 0.9772498680518209, 0.9986501019683698, 0.9999683287581673\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"org.apache.commons.math.MathException: Number of iterations=1, maximum iterations=2,147,483,647, initial=1, lower bound=0, upper bound=179,769,313,486,231,570,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000, final a value=0, final b value=2, f(a)=-0.477, f(b)=0\",\n  \"api_involved\": [\"app.getDistributionFactory\", \"factory.createNormalDistribution\", \"normal.inverseCumulativeProbability\"],\n  \"input_conditions\": [\"normal distribution with mean 0\", \"standard deviation 1\"],\n  \"expected\": \"inverseCumulativeProbability(0.9772498680518209) should return approx 2.0000, inverseCumulativeProbability(0.9986501019683698) should return 3.0000, inverseCumulativeProbability(0.9999683287581673) should return 4.0000\",\n  \"actual\": \"Exception thrown indicating failure in calculation due to iteration limits\",\n  \"reproduction_steps\": [\"Create DistributionFactory instance\", \"Create NormalDistribution with mean 0 and sd 1 using factory\", \"Call inverseCumulativeProbability with values 0.9772498680518209, 0.9986501019683698, 0.9999683287581673\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

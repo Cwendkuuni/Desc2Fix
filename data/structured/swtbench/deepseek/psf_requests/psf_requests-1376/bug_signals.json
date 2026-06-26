@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "psf__requests-1376",
+  "project": null,
+  "repo": "psf/requests",
+  "signals": {
+    "exception": [
+      "AssertionError or similar test failure"
+    ],
+    "api_involved": [
+      "test_unicode_multipart_post_fieldnames"
+    ],
+    "input_conditions": [
+      "multipart POST with Unicode field names",
+      "non-deterministic environment causing intermittent failure"
+    ],
+    "reproduction_steps": [
+      "Run test_unicode_multipart_post_fieldnames() repeatedly",
+      "Observe that it fails on some runs but passes on others"
+    ],
+    "expected": [
+      "The test should pass consistently"
+    ],
+    "actual": [
+      "The test fails sometimes (intermittent failure)"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "AssertionError or similar test failure"
+    ],
+    "api_involved": [
+      "test_unicode_multipart_post_fieldnames"
+    ],
+    "input_conditions": [
+      "multipart POST with Unicode field names",
+      "non-deterministic environment causing intermittent failure"
+    ],
+    "reproduction_steps": [
+      "Run test_unicode_multipart_post_fieldnames() repeatedly",
+      "Observe that it fails on some runs but passes on others"
+    ],
+    "expected": [
+      "The test should pass consistently"
+    ],
+    "actual": [
+      "The test fails sometimes (intermittent failure)"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"AssertionError or similar test failure\",\n\"api_involved\": [\"test_unicode_multipart_post_fieldnames\"],\n\"input_conditions\": [\"multipart POST with Unicode field names\", \"non-deterministic environment causing intermittent failure\"],\n\"expected\": \"The test should pass consistently\",\n\"actual\": \"The test fails sometimes (intermittent failure)\",\n\"reproduction_steps\": [\"Run test_unicode_multipart_post_fieldnames() repeatedly\", \"Observe that it fails on some runs but passes on others\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"AssertionError or similar test failure\",\n\"api_involved\": [\"test_unicode_multipart_post_fieldnames\"],\n\"input_conditions\": [\"multipart POST with Unicode field names\", \"non-deterministic environment causing intermittent failure\"],\n\"expected\": \"The test should pass consistently\",\n\"actual\": \"The test fails sometimes (intermittent failure)\",\n\"reproduction_steps\": [\"Run test_unicode_multipart_post_fieldnames() repeatedly\", \"Observe that it fails on some runs but passes on others\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

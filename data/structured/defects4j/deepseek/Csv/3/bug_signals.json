@@ -1,0 +1,69 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Csv-3",
+  "project": "Csv",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "org.junit.ComparisonFailure"
+    ],
+    "api_involved": [
+      "CSVLexer",
+      "Lexer",
+      "CSVFormat",
+      "Token"
+    ],
+    "input_conditions": [
+      "escape character is '!'",
+      "escape handling for unrecognized escape sequences",
+      "unicode escape sequences may lose escape character if not properly handled",
+      "MySQL NULL representation \\N should be retained"
+    ],
+    "reproduction_steps": [
+      "Define a CSVFormat with escape character '!'.",
+      "Create a CSV input string: \"plain,character!rEscaped\".",
+      "Feed the string to CSVLexer and call nextToken().",
+      "Observe that '!r' is treated as an escape for CR and replaced by a newline character, instead of being left as literal '!r'."
+    ],
+    "expected": [
+      "Unrecognized escape sequences should leave the escape character and the following character unchanged, or throw an exception; only recognized special characters (encapsulator, CR, LF, delimiter) should be de-escaped; escape handling should be symmetric (escaping and unescaping consistent)."
+    ],
+    "actual": [
+      "Current behavior silently drops the escape character if the following character is not a recognized special character, losing data (e.g., \\u or \\N become just u or N, false conversion of !r to CR even when r is not a recognized special)."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "org.junit.ComparisonFailure"
+    ],
+    "api_involved": [
+      "CSVLexer",
+      "Lexer",
+      "CSVFormat",
+      "Token"
+    ],
+    "input_conditions": [
+      "escape character is '!'",
+      "escape handling for unrecognized escape sequences",
+      "unicode escape sequences may lose escape character if not properly handled",
+      "MySQL NULL representation \\N should be retained"
+    ],
+    "reproduction_steps": [
+      "Define a CSVFormat with escape character '!'.",
+      "Create a CSV input string: \"plain,character!rEscaped\".",
+      "Feed the string to CSVLexer and call nextToken().",
+      "Observe that '!r' is treated as an escape for CR and replaced by a newline character, instead of being left as literal '!r'."
+    ],
+    "expected": [
+      "Unrecognized escape sequences should leave the escape character and the following character unchanged, or throw an exception; only recognized special characters (encapsulator, CR, LF, delimiter) should be de-escaped; escape handling should be symmetric (escaping and unescaping consistent)."
+    ],
+    "actual": [
+      "Current behavior silently drops the escape character if the following character is not a recognized special character, losing data (e.g., \\u or \\N become just u or N, false conversion of !r to CR even when r is not a recognized special)."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"org.junit.ComparisonFailure\",\n\"api_involved\": [\"CSVLexer\", \"Lexer\", \"CSVFormat\", \"Token\"],\n\"input_conditions\": [\"escape character is '!'\", \"escape handling for unrecognized escape sequences\", \"unicode escape sequences may lose escape character if not properly handled\", \"MySQL NULL representation \\\\N should be retained\"],\n\"expected\": \"Unrecognized escape sequences should leave the escape character and the following character unchanged, or throw an exception; only recognized special characters (encapsulator, CR, LF, delimiter) should be de-escaped; escape handling should be symmetric (escaping and unescaping consistent).\",\n\"actual\": \"Current behavior silently drops the escape character if the following character is not a recognized special character, losing data (e.g., \\\\u or \\\\N become just u or N, false conversion of !r to CR even when r is not a recognized special).\",\n\"reproduction_steps\": [\n\"Define a CSVFormat with escape character '!'.\",\n\"Create a CSV input string: \\\"plain,character!rEscaped\\\".\",\n\"Feed the string to CSVLexer and call nextToken().\",\n\"Observe that '!r' is treated as an escape for CR and replaced by a newline character, instead of being left as literal '!r'.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"org.junit.ComparisonFailure\",\n\"api_involved\": [\"CSVLexer\", \"Lexer\", \"CSVFormat\", \"Token\"],\n\"input_conditions\": [\"escape character is '!'\", \"escape handling for unrecognized escape sequences\", \"unicode escape sequences may lose escape character if not properly handled\", \"MySQL NULL representation \\\\N should be retained\"],\n\"expected\": \"Unrecognized escape sequences should leave the escape character and the following character unchanged, or throw an exception; only recognized special characters (encapsulator, CR, LF, delimiter) should be de-escaped; escape handling should be symmetric (escaping and unescaping consistent).\",\n\"actual\": \"Current behavior silently drops the escape character if the following character is not a recognized special character, losing data (e.g., \\\\u or \\\\N become just u or N, false conversion of !r to CR even when r is not a recognized special).\",\n\"reproduction_steps\": [\n\"Define a CSVFormat with escape character '!'.\",\n\"Create a CSV input string: \\\"plain,character!rEscaped\\\".\",\n\"Feed the string to CSVLexer and call nextToken().\",\n\"Observe that '!r' is treated as an escape for CR and replaced by a newline character, instead of being left as literal '!r'.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

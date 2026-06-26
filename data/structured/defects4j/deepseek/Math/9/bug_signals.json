@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-9",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Line.revert()",
+      "Vector3D.negate()",
+      "Line.getDirection()"
+    ],
+    "input_conditions": [
+      "Line constructed far from origin with large coordinate values",
+      "Direction vector with limited precision when reverted"
+    ],
+    "reproduction_steps": [
+      "Create a Line with coordinates far from origin (e.g., Vector3D(1653345.6696423641, 6170370.041579291, 90000) and Vector3D(1650757.5050732433, 6160710.879908984, 0.9))",
+      "Call line.revert()",
+      "Compare the reverted line's direction with the negation of the original direction using assertArrayEquals with tolerance 0"
+    ],
+    "expected": [
+      "Line.revert() should return a line whose direction is the exact negation of the original direction"
+    ],
+    "actual": [
+      "Line.revert() only maintains approximately 10 digits of precision for the direction, causing imprecision when the line's position is far from origin"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Line.revert()",
+      "Vector3D.negate()",
+      "Line.getDirection()"
+    ],
+    "input_conditions": [
+      "Line constructed far from origin with large coordinate values",
+      "Direction vector with limited precision when reverted"
+    ],
+    "reproduction_steps": [
+      "Create a Line with coordinates far from origin (e.g., Vector3D(1653345.6696423641, 6170370.041579291, 90000) and Vector3D(1650757.5050732433, 6160710.879908984, 0.9))",
+      "Call line.revert()",
+      "Compare the reverted line's direction with the negation of the original direction using assertArrayEquals with tolerance 0"
+    ],
+    "expected": [
+      "Line.revert() should return a line whose direction is the exact negation of the original direction"
+    ],
+    "actual": [
+      "Line.revert() only maintains approximately 10 digits of precision for the direction, causing imprecision when the line's position is far from origin"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Line.revert()\", \"Vector3D.negate()\", \"Line.getDirection()\"],\n\"input_conditions\": [\"Line constructed far from origin with large coordinate values\", \"Direction vector with limited precision when reverted\"],\n\"expected\": \"Line.revert() should return a line whose direction is the exact negation of the original direction\",\n\"actual\": \"Line.revert() only maintains approximately 10 digits of precision for the direction, causing imprecision when the line's position is far from origin\",\n\"reproduction_steps\": [\"Create a Line with coordinates far from origin (e.g., Vector3D(1653345.6696423641, 6170370.041579291, 90000) and Vector3D(1650757.5050732433, 6160710.879908984, 0.9))\", \"Call line.revert()\", \"Compare the reverted line's direction with the negation of the original direction using assertArrayEquals with tolerance 0\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Line.revert()\", \"Vector3D.negate()\", \"Line.getDirection()\"],\n\"input_conditions\": [\"Line constructed far from origin with large coordinate values\", \"Direction vector with limited precision when reverted\"],\n\"expected\": \"Line.revert() should return a line whose direction is the exact negation of the original direction\",\n\"actual\": \"Line.revert() only maintains approximately 10 digits of precision for the direction, causing imprecision when the line's position is far from origin\",\n\"reproduction_steps\": [\"Create a Line with coordinates far from origin (e.g., Vector3D(1653345.6696423641, 6170370.041579291, 90000) and Vector3D(1650757.5050732433, 6160710.879908984, 0.9))\", \"Call line.revert()\", \"Compare the reverted line's direction with the negation of the original direction using assertArrayEquals with tolerance 0\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

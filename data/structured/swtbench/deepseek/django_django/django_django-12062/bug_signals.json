@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-12062",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "DATABASE['TEST']['MIGRATE']",
+      "django.db.migrations.loader.MigrationLoader.migrations_module()"
+    ],
+    "input_conditions": [
+      "TEST with MIGRATE = False set in database configuration"
+    ],
+    "reproduction_steps": [
+      "Set DATABASE['TEST']['MIGRATE'] = False in Django database settings.",
+      "Run tests on that database.",
+      "Observe that migrations are not applied (expected after implementation)."
+    ],
+    "expected": [
+      "All migrations on the specified database should be disabled when DATABASE['TEST']['MIGRATE'] = False."
+    ],
+    "actual": [
+      "Not described; the bug report describes a feature request to implement this behavior."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "DATABASE['TEST']['MIGRATE']",
+      "django.db.migrations.loader.MigrationLoader.migrations_module()"
+    ],
+    "input_conditions": [
+      "TEST with MIGRATE = False set in database configuration"
+    ],
+    "reproduction_steps": [
+      "Set DATABASE['TEST']['MIGRATE'] = False in Django database settings.",
+      "Run tests on that database.",
+      "Observe that migrations are not applied (expected after implementation)."
+    ],
+    "expected": [
+      "All migrations on the specified database should be disabled when DATABASE['TEST']['MIGRATE'] = False."
+    ],
+    "actual": [
+      "Not described; the bug report describes a feature request to implement this behavior."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"DATABASE['TEST']['MIGRATE']\", \"django.db.migrations.loader.MigrationLoader.migrations_module()\"],\n\"input_conditions\": [\"TEST with MIGRATE = False set in database configuration\"],\n\"expected\": \"All migrations on the specified database should be disabled when DATABASE['TEST']['MIGRATE'] = False.\",\n\"actual\": \"Not described; the bug report describes a feature request to implement this behavior.\",\n\"reproduction_steps\": [\"Set DATABASE['TEST']['MIGRATE'] = False in Django database settings.\", \"Run tests on that database.\", \"Observe that migrations are not applied (expected after implementation).\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"DATABASE['TEST']['MIGRATE']\", \"django.db.migrations.loader.MigrationLoader.migrations_module()\"],\n\"input_conditions\": [\"TEST with MIGRATE = False set in database configuration\"],\n\"expected\": \"All migrations on the specified database should be disabled when DATABASE['TEST']['MIGRATE'] = False.\",\n\"actual\": \"Not described; the bug report describes a feature request to implement this behavior.\",\n\"reproduction_steps\": [\"Set DATABASE['TEST']['MIGRATE'] = False in Django database settings.\", \"Run tests on that database.\", \"Observe that migrations are not applied (expected after implementation).\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

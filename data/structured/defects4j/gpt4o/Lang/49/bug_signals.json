@@ -1,0 +1,49 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Lang-49",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Fraction.reduce"
+    ],
+    "input_conditions": [
+      "numerator == 0"
+    ],
+    "reproduction_steps": [
+      "Create a Fraction object with numerator set to 0.",
+      "Call the reduce method."
+    ],
+    "expected": [
+      "The method should handle the reduction without entering an infinite loop."
+    ],
+    "actual": [
+      "The method enters an infinite loop."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Fraction.reduce"
+    ],
+    "input_conditions": [
+      "numerator == 0"
+    ],
+    "reproduction_steps": [
+      "Create a Fraction object with numerator set to 0.",
+      "Call the reduce method."
+    ],
+    "expected": [
+      "The method should handle the reduction without entering an infinite loop."
+    ],
+    "actual": [
+      "The method enters an infinite loop."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"Fraction.reduce\"],\n  \"input_conditions\": [\"numerator == 0\"],\n  \"expected\": \"The method should handle the reduction without entering an infinite loop.\",\n  \"actual\": \"The method enters an infinite loop.\",\n  \"reproduction_steps\": [\"Create a Fraction object with numerator set to 0.\", \"Call the reduce method.\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"Fraction.reduce\"],\n  \"input_conditions\": [\"numerator == 0\"],\n  \"expected\": \"The method should handle the reduction without entering an infinite loop.\",\n  \"actual\": \"The method enters an infinite loop.\",\n  \"reproduction_steps\": [\"Create a Fraction object with numerator set to 0.\", \"Call the reduce method.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

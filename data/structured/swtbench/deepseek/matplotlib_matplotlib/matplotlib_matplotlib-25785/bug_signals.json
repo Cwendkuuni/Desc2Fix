@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "matplotlib__matplotlib-25785",
+  "project": null,
+  "repo": "matplotlib/matplotlib",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "ps backend",
+      "papersize selection"
+    ],
+    "input_conditions": [
+      "requested page size",
+      "list of paper sizes sorted by name"
+    ],
+    "reproduction_steps": [
+      "Use the ps backend to print a document",
+      "Request a specific page size",
+      "Observe the automatically selected paper size"
+    ],
+    "expected": [
+      "The paper size selected should be the smallest size that is larger than the requested size, according to logical size ordering."
+    ],
+    "actual": [
+      "The paper size selected is the first one alphabetically (e.g., 'a1', 'a2', ...) that is larger than the requested size, which is nonsensical because alphabetical order does not correspond to actual size order."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "ps backend",
+      "papersize selection"
+    ],
+    "input_conditions": [
+      "requested page size",
+      "list of paper sizes sorted by name"
+    ],
+    "reproduction_steps": [
+      "Use the ps backend to print a document",
+      "Request a specific page size",
+      "Observe the automatically selected paper size"
+    ],
+    "expected": [
+      "The paper size selected should be the smallest size that is larger than the requested size, according to logical size ordering."
+    ],
+    "actual": [
+      "The paper size selected is the first one alphabetically (e.g., 'a1', 'a2', ...) that is larger than the requested size, which is nonsensical because alphabetical order does not correspond to actual size order."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"ps backend\", \"papersize selection\"],\n\"input_conditions\": [\"requested page size\", \"list of paper sizes sorted by name\"],\n\"expected\": \"The paper size selected should be the smallest size that is larger than the requested size, according to logical size ordering.\",\n\"actual\": \"The paper size selected is the first one alphabetically (e.g., 'a1', 'a2', ...) that is larger than the requested size, which is nonsensical because alphabetical order does not correspond to actual size order.\",\n\"reproduction_steps\": [\"Use the ps backend to print a document\", \"Request a specific page size\", \"Observe the automatically selected paper size\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"ps backend\", \"papersize selection\"],\n\"input_conditions\": [\"requested page size\", \"list of paper sizes sorted by name\"],\n\"expected\": \"The paper size selected should be the smallest size that is larger than the requested size, according to logical size ordering.\",\n\"actual\": \"The paper size selected is the first one alphabetically (e.g., 'a1', 'a2', ...) that is larger than the requested size, which is nonsensical because alphabetical order does not correspond to actual size order.\",\n\"reproduction_steps\": [\"Use the ps backend to print a document\", \"Request a specific page size\", \"Observe the automatically selected paper size\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

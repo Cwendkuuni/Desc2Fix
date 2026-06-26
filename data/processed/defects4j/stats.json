@@ -1,0 +1,33 @@
+{
+  "total_instances": 540,
+  "datasets": {
+    "defects4j": 540
+  },
+  "languages": {
+    "java": 540
+  },
+  "projects": {
+    "Cli": 39,
+    "Closure": 174,
+    "Codec": 18,
+    "Collections": 28,
+    "Compress": 47,
+    "Csv": 16,
+    "Gson": 11,
+    "JacksonCore": 18,
+    "JxPath": 22,
+    "Lang": 61,
+    "Math": 106
+  },
+  "repos": {},
+  "with_bug_report": 540,
+  "with_tests": 540,
+  "with_patch": 540,
+  "with_structured_patch_views": 384,
+  "coverage": {
+    "bug_report": 1.0,
+    "tests": 1.0,
+    "patch": 1.0,
+    "structured_patch_views": 0.711111
+  }
+}

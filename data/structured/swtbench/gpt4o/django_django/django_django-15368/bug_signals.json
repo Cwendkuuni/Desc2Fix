@@ -1,0 +1,69 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-15368",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "bulk_update",
+      "F",
+      "SelfRef.objects.all().first",
+      "SelfRef.objects.bulk_update",
+      "refresh_from_db",
+      "connection.queries"
+    ],
+    "input_conditions": [
+      "model has char fields 'c8' and 'name'",
+      "plain F('name') expression assigned to model instance field c8"
+    ],
+    "reproduction_steps": [
+      "Import SelfRef model",
+      "Retrieve the first instance using SelfRef.objects.all().first()",
+      "Assign F('name') to the 'c8' field",
+      "Perform bulk_update with SelfRef.objects.bulk_update([o], ['c8'])",
+      "Refresh from DB using o.refresh_from_db()",
+      "Observe o.c8 value being 'F(name)'"
+    ],
+    "expected": [
+      "The SQL should resolve the F('name') expression to use the column name instead of its string representation."
+    ],
+    "actual": [
+      "The created SQL contains the string representation of F(), 'F(name)', instead of resolving to the column name."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "bulk_update",
+      "F",
+      "SelfRef.objects.all().first",
+      "SelfRef.objects.bulk_update",
+      "refresh_from_db",
+      "connection.queries"
+    ],
+    "input_conditions": [
+      "model has char fields 'c8' and 'name'",
+      "plain F('name') expression assigned to model instance field c8"
+    ],
+    "reproduction_steps": [
+      "Import SelfRef model",
+      "Retrieve the first instance using SelfRef.objects.all().first()",
+      "Assign F('name') to the 'c8' field",
+      "Perform bulk_update with SelfRef.objects.bulk_update([o], ['c8'])",
+      "Refresh from DB using o.refresh_from_db()",
+      "Observe o.c8 value being 'F(name)'"
+    ],
+    "expected": [
+      "The SQL should resolve the F('name') expression to use the column name instead of its string representation."
+    ],
+    "actual": [
+      "The created SQL contains the string representation of F(), 'F(name)', instead of resolving to the column name."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"bulk_update\", \"F\", \"SelfRef.objects.all().first\", \"SelfRef.objects.bulk_update\", \"refresh_from_db\", \"connection.queries\"],\n  \"input_conditions\": [\"model has char fields 'c8' and 'name'\", \"plain F('name') expression assigned to model instance field c8\"],\n  \"expected\": \"The SQL should resolve the F('name') expression to use the column name instead of its string representation.\",\n  \"actual\": \"The created SQL contains the string representation of F(), 'F(name)', instead of resolving to the column name.\",\n  \"reproduction_steps\": [\"Import SelfRef model\", \"Retrieve the first instance using SelfRef.objects.all().first()\", \"Assign F('name') to the 'c8' field\", \"Perform bulk_update with SelfRef.objects.bulk_update([o], ['c8'])\", \"Refresh from DB using o.refresh_from_db()\", \"Observe o.c8 value being 'F(name)'\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"bulk_update\", \"F\", \"SelfRef.objects.all().first\", \"SelfRef.objects.bulk_update\", \"refresh_from_db\", \"connection.queries\"],\n  \"input_conditions\": [\"model has char fields 'c8' and 'name'\", \"plain F('name') expression assigned to model instance field c8\"],\n  \"expected\": \"The SQL should resolve the F('name') expression to use the column name instead of its string representation.\",\n  \"actual\": \"The created SQL contains the string representation of F(), 'F(name)', instead of resolving to the column name.\",\n  \"reproduction_steps\": [\"Import SelfRef model\", \"Retrieve the first instance using SelfRef.objects.all().first()\", \"Assign F('name') to the 'c8' field\", \"Perform bulk_update with SelfRef.objects.bulk_update([o], ['c8'])\", \"Refresh from DB using o.refresh_from_db()\", \"Observe o.c8 value being 'F(name)'\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "mwaskom__seaborn-2848",
+  "project": null,
+  "repo": "mwaskom/seaborn",
+  "signals": {
+    "exception": [
+      "Error"
+    ],
+    "api_involved": [
+      "PairGrid",
+      "regplot"
+    ],
+    "input_conditions": [
+      "hue specified in PairGrid map method but not in PairGrid constructor",
+      "categorical hue values",
+      "seaborn version 0.11.1"
+    ],
+    "reproduction_steps": [
+      "Create a PairGrid without specifying hue in the constructor",
+      "Use the map method with hue parameter set to a categorical column",
+      "Attempt to plot with regplot on the PairGrid"
+    ],
+    "expected": [
+      "PairGrid should accept categorical hue assigned in map method and plot scatterplots with a single regression line across all categories"
+    ],
+    "actual": [
+      "PairGrid raises an error when categorical hue is assigned via map method, works with numerical hue or when hue is specified in PairGrid constructor"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Error"
+    ],
+    "api_involved": [
+      "PairGrid",
+      "regplot"
+    ],
+    "input_conditions": [
+      "hue specified in PairGrid map method but not in PairGrid constructor",
+      "categorical hue values",
+      "seaborn version 0.11.1"
+    ],
+    "reproduction_steps": [
+      "Create a PairGrid without specifying hue in the constructor",
+      "Use the map method with hue parameter set to a categorical column",
+      "Attempt to plot with regplot on the PairGrid"
+    ],
+    "expected": [
+      "PairGrid should accept categorical hue assigned in map method and plot scatterplots with a single regression line across all categories"
+    ],
+    "actual": [
+      "PairGrid raises an error when categorical hue is assigned via map method, works with numerical hue or when hue is specified in PairGrid constructor"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"Error\",\n\"api_involved\": [\"PairGrid\", \"regplot\"],\n\"input_conditions\": [\"hue specified in PairGrid map method but not in PairGrid constructor\", \"categorical hue values\", \"seaborn version 0.11.1\"],\n\"expected\": \"PairGrid should accept categorical hue assigned in map method and plot scatterplots with a single regression line across all categories\",\n\"actual\": \"PairGrid raises an error when categorical hue is assigned via map method, works with numerical hue or when hue is specified in PairGrid constructor\",\n\"reproduction_steps\": [\n\"Create a PairGrid without specifying hue in the constructor\",\n\"Use the map method with hue parameter set to a categorical column\",\n\"Attempt to plot with regplot on the PairGrid\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"Error\",\n\"api_involved\": [\"PairGrid\", \"regplot\"],\n\"input_conditions\": [\"hue specified in PairGrid map method but not in PairGrid constructor\", \"categorical hue values\", \"seaborn version 0.11.1\"],\n\"expected\": \"PairGrid should accept categorical hue assigned in map method and plot scatterplots with a single regression line across all categories\",\n\"actual\": \"PairGrid raises an error when categorical hue is assigned via map method, works with numerical hue or when hue is specified in PairGrid constructor\",\n\"reproduction_steps\": [\n\"Create a PairGrid without specifying hue in the constructor\",\n\"Use the map method with hue parameter set to a categorical column\",\n\"Attempt to plot with regplot on the PairGrid\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

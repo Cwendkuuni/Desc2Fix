@@ -1,0 +1,11 @@
+dataset,instance_id,model_a,model_b,macro_jaccard,exception_jaccard,api_involved_jaccard,input_conditions_jaccard,reproduction_steps_jaccard,expected_jaccard,actual_jaccard
+defects4j,Cli-1,deepseek,gpt4o,0.392725,1.0,0.2,0.266667,0.428571,0.35,0.111111
+defects4j,Cli-10,deepseek,gpt4o,0.320623,1.0,0.0,0.0,0.355556,0.318182,0.25
+defects4j,Cli-11,deepseek,gpt4o,0.07202,0.0,0.166667,0.095238,0.170213,0.0,0.0
+defects4j,Cli-2,deepseek,gpt4o,0.402744,1.0,0.2,0.294118,0.151515,0.5625,0.208333
+defects4j,Cli-3,deepseek,gpt4o,0.305802,1.0,0.5,0.090909,0.243902,0.0,0.0
+defects4j,Cli-4,deepseek,gpt4o,0.159259,0.0,0.8,0.0,0.155556,0.0,0.0
+defects4j,Cli-5,deepseek,gpt4o,0.47751,0.0,1.0,0.833333,0.133333,0.352941,0.545455
+defects4j,Cli-7,deepseek,gpt4o,0.149845,0.0,0.0,0.409091,0.318182,0.133333,0.038462
+defects4j,Cli-8,deepseek,gpt4o,0.340604,0.2,0.666667,0.1875,0.424242,0.26087,0.304348
+defects4j,Cli-9,deepseek,gpt4o,0.383814,1.0,0.0,0.153846,0.1875,0.461538,0.5

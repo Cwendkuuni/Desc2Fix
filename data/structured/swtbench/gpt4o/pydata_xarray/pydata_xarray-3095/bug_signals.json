@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "pydata__xarray-3095",
+  "project": null,
+  "repo": "pydata/xarray",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Dataset.copy",
+      "DataArray.copy"
+    ],
+    "input_conditions": [
+      "deep=True",
+      "dtype='= 0.12.2"
+    ],
+    "reproduction_steps": [
+      "Use Dataset.copy(deep=True) or DataArray.copy with unicode indices in xarray 0.12.2"
+    ],
+    "expected": [
+      "IndexVariable retains unicode indices with dtype"
+    ],
+    "actual": [
+      "IndexVariable's unicode indices are cast to object"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Dataset.copy",
+      "DataArray.copy"
+    ],
+    "input_conditions": [
+      "deep=True",
+      "dtype='= 0.12.2"
+    ],
+    "reproduction_steps": [
+      "Use Dataset.copy(deep=True) or DataArray.copy with unicode indices in xarray 0.12.2"
+    ],
+    "expected": [
+      "IndexVariable retains unicode indices with dtype"
+    ],
+    "actual": [
+      "IndexVariable's unicode indices are cast to object"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"Dataset.copy\", \"DataArray.copy\"],\n  \"input_conditions\": [\"deep=True\", \"dtype='= 0.12.2\"],\n  \"expected\": \"IndexVariable retains unicode indices with dtype\",\n  \"actual\": \"IndexVariable's unicode indices are cast to object\",\n  \"reproduction_steps\": [\"Use Dataset.copy(deep=True) or DataArray.copy with unicode indices in xarray 0.12.2\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"Dataset.copy\", \"DataArray.copy\"],\n  \"input_conditions\": [\"deep=True\", \"dtype='= 0.12.2\"],\n  \"expected\": \"IndexVariable retains unicode indices with dtype\",\n  \"actual\": \"IndexVariable's unicode indices are cast to object\",\n  \"reproduction_steps\": [\"Use Dataset.copy(deep=True) or DataArray.copy with unicode indices in xarray 0.12.2\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

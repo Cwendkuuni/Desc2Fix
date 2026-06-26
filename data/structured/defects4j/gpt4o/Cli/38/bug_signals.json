@@ -1,0 +1,65 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Cli-38",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "ERROR Database \"-last\" not found"
+    ],
+    "api_involved": [
+      "DefaultParser",
+      "GnuParser",
+      "Option.builder",
+      "CommandLine"
+    ],
+    "input_conditions": [
+      "CLI version 1.2, 1.3.1, 1.4",
+      "use of DefaultParser",
+      "use of GnuParser"
+    ],
+    "reproduction_steps": [
+      "Create Option object for 'db' with optional arguments.",
+      "Create Option object for 'last' without argument.",
+      "Execute command 'open -db -last' using DefaultParser."
+    ],
+    "expected": [
+      "The -last option should be recognized as an option and not as an argument to -db."
+    ],
+    "actual": [
+      "The -last option is treated as an argument to -db when using DefaultParser, causing an error."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ERROR Database \"-last\" not found"
+    ],
+    "api_involved": [
+      "DefaultParser",
+      "GnuParser",
+      "Option.builder",
+      "CommandLine"
+    ],
+    "input_conditions": [
+      "CLI version 1.2, 1.3.1, 1.4",
+      "use of DefaultParser",
+      "use of GnuParser"
+    ],
+    "reproduction_steps": [
+      "Create Option object for 'db' with optional arguments.",
+      "Create Option object for 'last' without argument.",
+      "Execute command 'open -db -last' using DefaultParser."
+    ],
+    "expected": [
+      "The -last option should be recognized as an option and not as an argument to -db."
+    ],
+    "actual": [
+      "The -last option is treated as an argument to -db when using DefaultParser, causing an error."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"ERROR Database \\\"-last\\\" not found\",\n  \"api_involved\": [\"DefaultParser\", \"GnuParser\", \"Option.builder\", \"CommandLine\"],\n  \"input_conditions\": [\"CLI version 1.2, 1.3.1, 1.4\", \"use of DefaultParser\", \"use of GnuParser\"],\n  \"expected\": \"The -last option should be recognized as an option and not as an argument to -db.\",\n  \"actual\": \"The -last option is treated as an argument to -db when using DefaultParser, causing an error.\",\n  \"reproduction_steps\": [\n    \"Create Option object for 'db' with optional arguments.\",\n    \"Create Option object for 'last' without argument.\",\n    \"Execute command 'open -db -last' using DefaultParser.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"ERROR Database \\\"-last\\\" not found\",\n  \"api_involved\": [\"DefaultParser\", \"GnuParser\", \"Option.builder\", \"CommandLine\"],\n  \"input_conditions\": [\"CLI version 1.2, 1.3.1, 1.4\", \"use of DefaultParser\", \"use of GnuParser\"],\n  \"expected\": \"The -last option should be recognized as an option and not as an argument to -db.\",\n  \"actual\": \"The -last option is treated as an argument to -db when using DefaultParser, causing an error.\",\n  \"reproduction_steps\": [\n    \"Create Option object for 'db' with optional arguments.\",\n    \"Create Option object for 'last' without argument.\",\n    \"Execute command 'open -db -last' using DefaultParser.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

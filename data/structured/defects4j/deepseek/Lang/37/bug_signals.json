@@ -1,0 +1,51 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Lang-37",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "ArrayStoreException"
+    ],
+    "api_involved": [
+      "ArrayUtils.addAll(T[] array1, T... array2)"
+    ],
+    "input_conditions": [
+      "mixed array types (e.g., Integer[] and Long[])"
+    ],
+    "reproduction_steps": [
+      "Call ArrayUtils.addAll with two arrays of different but compatible numeric types, e.g., ArrayUtils.addAll(new Integer[]{1}, new Long[]{2L})"
+    ],
+    "expected": [
+      "throw IllegalArgumentException with a clear message when array types are incompatible"
+    ],
+    "actual": [
+      "throws ArrayStoreException with unclear message"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ArrayStoreException"
+    ],
+    "api_involved": [
+      "ArrayUtils.addAll(T[] array1, T... array2)"
+    ],
+    "input_conditions": [
+      "mixed array types (e.g., Integer[] and Long[])"
+    ],
+    "reproduction_steps": [
+      "Call ArrayUtils.addAll with two arrays of different but compatible numeric types, e.g., ArrayUtils.addAll(new Integer[]{1}, new Long[]{2L})"
+    ],
+    "expected": [
+      "throw IllegalArgumentException with a clear message when array types are incompatible"
+    ],
+    "actual": [
+      "throws ArrayStoreException with unclear message"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"ArrayStoreException\",\n\"api_involved\": [\"ArrayUtils.addAll(T[] array1, T... array2)\"],\n\"input_conditions\": [\"mixed array types (e.g., Integer[] and Long[])\"],\n\"expected\": \"throw IllegalArgumentException with a clear message when array types are incompatible\",\n\"actual\": \"throws ArrayStoreException with unclear message\",\n\"reproduction_steps\": [\"Call ArrayUtils.addAll with two arrays of different but compatible numeric types, e.g., ArrayUtils.addAll(new Integer[]{1}, new Long[]{2L})\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"ArrayStoreException\",\n\"api_involved\": [\"ArrayUtils.addAll(T[] array1, T... array2)\"],\n\"input_conditions\": [\"mixed array types (e.g., Integer[] and Long[])\"],\n\"expected\": \"throw IllegalArgumentException with a clear message when array types are incompatible\",\n\"actual\": \"throws ArrayStoreException with unclear message\",\n\"reproduction_steps\": [\"Call ArrayUtils.addAll with two arrays of different but compatible numeric types, e.g., ArrayUtils.addAll(new Integer[]{1}, new Long[]{2L})\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

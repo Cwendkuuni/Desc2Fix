@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sphinx-doc__sphinx-9289",
+  "project": null,
+  "repo": "sphinx-doc/sphinx",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "python_use_unqualified_type_names",
+      "Sphinx"
+    ],
+    "input_conditions": [
+      "Sphinx 4.0.2",
+      "Python 3.9",
+      "configuration with python_use_unqualified_type_names"
+    ],
+    "reproduction_steps": [
+      "Create a minimal Sphinx project using Sphinx 4.0.2 on Python 3.9.",
+      "Enable the python_use_unqualified_type_names configuration option.",
+      "Build the documentation.",
+      "Observe that type names in function descriptions are not shortened despite links being generated."
+    ],
+    "expected": [
+      "Unqualified type names should be used in function descriptions when python_use_unqualified_type_names is enabled."
+    ],
+    "actual": [
+      "Type names are not shortened in function descriptions, even though links are created."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "python_use_unqualified_type_names",
+      "Sphinx"
+    ],
+    "input_conditions": [
+      "Sphinx 4.0.2",
+      "Python 3.9",
+      "configuration with python_use_unqualified_type_names"
+    ],
+    "reproduction_steps": [
+      "Create a minimal Sphinx project using Sphinx 4.0.2 on Python 3.9.",
+      "Enable the python_use_unqualified_type_names configuration option.",
+      "Build the documentation.",
+      "Observe that type names in function descriptions are not shortened despite links being generated."
+    ],
+    "expected": [
+      "Unqualified type names should be used in function descriptions when python_use_unqualified_type_names is enabled."
+    ],
+    "actual": [
+      "Type names are not shortened in function descriptions, even though links are created."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"python_use_unqualified_type_names\", \"Sphinx\"],\n\"input_conditions\": [\"Sphinx 4.0.2\", \"Python 3.9\", \"configuration with python_use_unqualified_type_names\"],\n\"expected\": \"Unqualified type names should be used in function descriptions when python_use_unqualified_type_names is enabled.\",\n\"actual\": \"Type names are not shortened in function descriptions, even though links are created.\",\n\"reproduction_steps\": [\n    \"Create a minimal Sphinx project using Sphinx 4.0.2 on Python 3.9.\",\n    \"Enable the python_use_unqualified_type_names configuration option.\",\n    \"Build the documentation.\",\n    \"Observe that type names in function descriptions are not shortened despite links being generated.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"python_use_unqualified_type_names\", \"Sphinx\"],\n\"input_conditions\": [\"Sphinx 4.0.2\", \"Python 3.9\", \"configuration with python_use_unqualified_type_names\"],\n\"expected\": \"Unqualified type names should be used in function descriptions when python_use_unqualified_type_names is enabled.\",\n\"actual\": \"Type names are not shortened in function descriptions, even though links are created.\",\n\"reproduction_steps\": [\n    \"Create a minimal Sphinx project using Sphinx 4.0.2 on Python 3.9.\",\n    \"Enable the python_use_unqualified_type_names configuration option.\",\n    \"Build the documentation.\",\n    \"Observe that type names in function descriptions are not shortened despite links being generated.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

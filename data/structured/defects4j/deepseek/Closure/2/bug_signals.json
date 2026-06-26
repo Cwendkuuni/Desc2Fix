@@ -1,0 +1,95 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-2",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.NullPointerException"
+    ],
+    "api_involved": [
+      "TypeCheck.checkInterfaceConflictProperties",
+      "TypeCheck.visitFunction",
+      "TypeCheck.visit",
+      "NodeTraversal.traverseBranch",
+      "NodeTraversal.traverseWithScope",
+      "TypeCheck.check",
+      "TypeCheck.process",
+      "DefaultPassConfig$29$1.process",
+      "PhaseOptimizer$PassFactoryDelegate.processInternal",
+      "PhaseOptimizer$NamedPass.process",
+      "PhaseOptimizer.process",
+      "Compiler.check",
+      "Compiler.compileInternal",
+      "Compiler.compile",
+      "CompilerInvokerImpl.compile",
+      "ServerController.executeRequest",
+      "CompilationRequestHandler.serviceParsedRequest",
+      "CompilationRequestHandler.service",
+      "CompilationServlet.doPost"
+    ],
+    "input_conditions": [
+      "@interface annotation on function Foo",
+      "multiple @extends annotations on Foo",
+      "at least one @extends refers to an unknown type"
+    ],
+    "reproduction_steps": [
+      "Write JavaScript code with a function annotated with @interface",
+      "Add two or more @extends annotations to the function, where at least one refers to an undefined/unknown type",
+      "Compile the code with the Closure Compiler at SIMPLE_OPTIMIZATIONS level and VERBOSE warnings"
+    ],
+    "expected": [
+      "The compiler should compile the code without crashing, either by producing appropriate error messages about the unknown extended types or handling the interface normally."
+    ],
+    "actual": [
+      "The compiler crashes with a NullPointerException in TypeCheck.checkInterfaceConflictProperties."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.NullPointerException"
+    ],
+    "api_involved": [
+      "TypeCheck.checkInterfaceConflictProperties",
+      "TypeCheck.visitFunction",
+      "TypeCheck.visit",
+      "NodeTraversal.traverseBranch",
+      "NodeTraversal.traverseWithScope",
+      "TypeCheck.check",
+      "TypeCheck.process",
+      "DefaultPassConfig$29$1.process",
+      "PhaseOptimizer$PassFactoryDelegate.processInternal",
+      "PhaseOptimizer$NamedPass.process",
+      "PhaseOptimizer.process",
+      "Compiler.check",
+      "Compiler.compileInternal",
+      "Compiler.compile",
+      "CompilerInvokerImpl.compile",
+      "ServerController.executeRequest",
+      "CompilationRequestHandler.serviceParsedRequest",
+      "CompilationRequestHandler.service",
+      "CompilationServlet.doPost"
+    ],
+    "input_conditions": [
+      "@interface annotation on function Foo",
+      "multiple @extends annotations on Foo",
+      "at least one @extends refers to an unknown type"
+    ],
+    "reproduction_steps": [
+      "Write JavaScript code with a function annotated with @interface",
+      "Add two or more @extends annotations to the function, where at least one refers to an undefined/unknown type",
+      "Compile the code with the Closure Compiler at SIMPLE_OPTIMIZATIONS level and VERBOSE warnings"
+    ],
+    "expected": [
+      "The compiler should compile the code without crashing, either by producing appropriate error messages about the unknown extended types or handling the interface normally."
+    ],
+    "actual": [
+      "The compiler crashes with a NullPointerException in TypeCheck.checkInterfaceConflictProperties."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"java.lang.NullPointerException\",\n\"api_involved\": [\"TypeCheck.checkInterfaceConflictProperties\", \"TypeCheck.visitFunction\", \"TypeCheck.visit\", \"NodeTraversal.traverseBranch\", \"NodeTraversal.traverseWithScope\", \"TypeCheck.check\", \"TypeCheck.process\", \"DefaultPassConfig$29$1.process\", \"PhaseOptimizer$PassFactoryDelegate.processInternal\", \"PhaseOptimizer$NamedPass.process\", \"PhaseOptimizer.process\", \"Compiler.check\", \"Compiler.compileInternal\", \"Compiler.compile\", \"CompilerInvokerImpl.compile\", \"ServerController.executeRequest\", \"CompilationRequestHandler.serviceParsedRequest\", \"CompilationRequestHandler.service\", \"CompilationServlet.doPost\"],\n\"input_conditions\": [\"@interface annotation on function Foo\", \"multiple @extends annotations on Foo\", \"at least one @extends refers to an unknown type\"],\n\"expected\": \"The compiler should compile the code without crashing, either by producing appropriate error messages about the unknown extended types or handling the interface normally.\",\n\"actual\": \"The compiler crashes with a NullPointerException in TypeCheck.checkInterfaceConflictProperties.\",\n\"reproduction_steps\": [\"Write JavaScript code with a function annotated with @interface\", \"Add two or more @extends annotations to the function, where at least one refers to an undefined/unknown type\", \"Compile the code with the Closure Compiler at SIMPLE_OPTIMIZATIONS level and VERBOSE warnings\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"java.lang.NullPointerException\",\n\"api_involved\": [\"TypeCheck.checkInterfaceConflictProperties\", \"TypeCheck.visitFunction\", \"TypeCheck.visit\", \"NodeTraversal.traverseBranch\", \"NodeTraversal.traverseWithScope\", \"TypeCheck.check\", \"TypeCheck.process\", \"DefaultPassConfig$29$1.process\", \"PhaseOptimizer$PassFactoryDelegate.processInternal\", \"PhaseOptimizer$NamedPass.process\", \"PhaseOptimizer.process\", \"Compiler.check\", \"Compiler.compileInternal\", \"Compiler.compile\", \"CompilerInvokerImpl.compile\", \"ServerController.executeRequest\", \"CompilationRequestHandler.serviceParsedRequest\", \"CompilationRequestHandler.service\", \"CompilationServlet.doPost\"],\n\"input_conditions\": [\"@interface annotation on function Foo\", \"multiple @extends annotations on Foo\", \"at least one @extends refers to an unknown type\"],\n\"expected\": \"The compiler should compile the code without crashing, either by producing appropriate error messages about the unknown extended types or handling the interface normally.\",\n\"actual\": \"The compiler crashes with a NullPointerException in TypeCheck.checkInterfaceConflictProperties.\",\n\"reproduction_steps\": [\"Write JavaScript code with a function annotated with @interface\", \"Add two or more @extends annotations to the function, where at least one refers to an undefined/unknown type\", \"Compile the code with the Closure Compiler at SIMPLE_OPTIMIZATIONS level and VERBOSE warnings\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

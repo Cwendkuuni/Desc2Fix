@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Lang-19",
+  "project": "Lang",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.StringIndexOutOfBoundsException"
+    ],
+    "api_involved": [
+      "org.apache.commons.lang3.text.translate.NumericEntityUnescaper.translate",
+      "org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4"
+    ],
+    "input_conditions": [
+      "String \"&#03\"",
+      "any & followed by an invalid escape sequence",
+      "solitary \"&\""
+    ],
+    "reproduction_steps": [
+      "Call unescapeHtml4(\"&#03\")",
+      "or any string containing an & followed by an invalid numeric entity"
+    ],
+    "expected": [
+      "Should handle unfinished/illegal numeric entities without throwing an exception, or throw a meaningful exception like ParseException"
+    ],
+    "actual": [
+      "StringIndexOutOfBoundsException thrown at NumericEntityUnescaper.translate line 49"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.StringIndexOutOfBoundsException"
+    ],
+    "api_involved": [
+      "org.apache.commons.lang3.text.translate.NumericEntityUnescaper.translate",
+      "org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4"
+    ],
+    "input_conditions": [
+      "String \"&#03\"",
+      "any & followed by an invalid escape sequence",
+      "solitary \"&\""
+    ],
+    "reproduction_steps": [
+      "Call unescapeHtml4(\"&#03\")",
+      "or any string containing an & followed by an invalid numeric entity"
+    ],
+    "expected": [
+      "Should handle unfinished/illegal numeric entities without throwing an exception, or throw a meaningful exception like ParseException"
+    ],
+    "actual": [
+      "StringIndexOutOfBoundsException thrown at NumericEntityUnescaper.translate line 49"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"java.lang.StringIndexOutOfBoundsException\",\n\"api_involved\": [\"org.apache.commons.lang3.text.translate.NumericEntityUnescaper.translate\", \"org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4\"],\n\"input_conditions\": [\"String \\\"&#03\\\"\", \"any & followed by an invalid escape sequence\", \"solitary \\\"&\\\"\"],\n\"expected\": \"Should handle unfinished/illegal numeric entities without throwing an exception, or throw a meaningful exception like ParseException\",\n\"actual\": \"StringIndexOutOfBoundsException thrown at NumericEntityUnescaper.translate line 49\",\n\"reproduction_steps\": [\"Call unescapeHtml4(\\\"&#03\\\")\", \"or any string containing an & followed by an invalid numeric entity\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"java.lang.StringIndexOutOfBoundsException\",\n\"api_involved\": [\"org.apache.commons.lang3.text.translate.NumericEntityUnescaper.translate\", \"org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4\"],\n\"input_conditions\": [\"String \\\"&#03\\\"\", \"any & followed by an invalid escape sequence\", \"solitary \\\"&\\\"\"],\n\"expected\": \"Should handle unfinished/illegal numeric entities without throwing an exception, or throw a meaningful exception like ParseException\",\n\"actual\": \"StringIndexOutOfBoundsException thrown at NumericEntityUnescaper.translate line 49\",\n\"reproduction_steps\": [\"Call unescapeHtml4(\\\"&#03\\\")\", \"or any string containing an & followed by an invalid numeric entity\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

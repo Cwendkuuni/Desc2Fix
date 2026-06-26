@@ -1,0 +1,51 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "pytest-dev__pytest-6926",
+  "project": null,
+  "repo": "pytest-dev/pytest",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "SysCaptureBinary.decode",
+      "writeorg"
+    ],
+    "input_conditions": [
+      "use of decode method in binary capture"
+    ],
+    "reproduction_steps": [
+      "Trigger a binary capture event",
+      "Invoke the decode method during write operation"
+    ],
+    "expected": [
+      "The SysCaptureBinary.decode method should properly handle binary data during the write operation."
+    ],
+    "actual": [
+      "The write operation fails or mishandles the data when decode is used."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "SysCaptureBinary.decode",
+      "writeorg"
+    ],
+    "input_conditions": [
+      "use of decode method in binary capture"
+    ],
+    "reproduction_steps": [
+      "Trigger a binary capture event",
+      "Invoke the decode method during write operation"
+    ],
+    "expected": [
+      "The SysCaptureBinary.decode method should properly handle binary data during the write operation."
+    ],
+    "actual": [
+      "The write operation fails or mishandles the data when decode is used."
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"SysCaptureBinary.decode\", \"writeorg\"],\n  \"input_conditions\": [\"use of decode method in binary capture\"],\n  \"expected\": \"The SysCaptureBinary.decode method should properly handle binary data during the write operation.\",\n  \"actual\": \"The write operation fails or mishandles the data when decode is used.\",\n  \"reproduction_steps\": [\"Trigger a binary capture event\", \"Invoke the decode method during write operation\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": null,\n  \"api_involved\": [\"SysCaptureBinary.decode\", \"writeorg\"],\n  \"input_conditions\": [\"use of decode method in binary capture\"],\n  \"expected\": \"The SysCaptureBinary.decode method should properly handle binary data during the write operation.\",\n  \"actual\": \"The write operation fails or mishandles the data when decode is used.\",\n  \"reproduction_steps\": [\"Trigger a binary capture event\", \"Invoke the decode method during write operation\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

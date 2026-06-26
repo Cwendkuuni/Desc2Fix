@@ -1,0 +1,4 @@
+source,status,rows,rq,dataset,representation,patch_view
+RQ2_Report_Test_human_without_llm,empty,0,,,,
+RQ2_Report_Test_llm_without_human,non_empty,2,rq2,Defects4J,RAW,none
+RQ2_Report_Test_llm_without_human,non_empty,2,rq2,Defects4J,STRUCTURED,none

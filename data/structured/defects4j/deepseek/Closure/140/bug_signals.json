@@ -1,0 +1,31 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-140",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Google Common Loader Extern"
+    ],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [],
+    "actual": []
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Google Common Loader Extern"
+    ],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [],
+    "actual": []
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Google Common Loader Extern\"],\n\"input_conditions\": null,\n\"expected\": null,\n\"actual\": null,\n\"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Google Common Loader Extern\"],\n\"input_conditions\": null,\n\"expected\": null,\n\"actual\": null,\n\"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

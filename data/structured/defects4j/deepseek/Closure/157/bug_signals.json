@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-157",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "parse errors"
+    ],
+    "api_involved": [
+      "Rhino parser"
+    ],
+    "input_conditions": [
+      "--language_in=ECMASCRIPT5"
+    ],
+    "reproduction_steps": [
+      "Run the parser with the flag --language_in=ECMASCRIPT5.",
+      "Parse the code: var x = { get 'x'() { return 1 } };",
+      "Parse the code: var x = { get 1() { return 1 } };",
+      "Observe parse errors."
+    ],
+    "expected": [
+      "Property names like 'x' and 1 should be allowed for get and set properties in object literals as per ES5."
+    ],
+    "actual": [
+      "The parser throws parse errors for quoted property names or numbers used as getter/setter property names. Numbers are not passed through properly even after a partial fix."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "parse errors"
+    ],
+    "api_involved": [
+      "Rhino parser"
+    ],
+    "input_conditions": [
+      "--language_in=ECMASCRIPT5"
+    ],
+    "reproduction_steps": [
+      "Run the parser with the flag --language_in=ECMASCRIPT5.",
+      "Parse the code: var x = { get 'x'() { return 1 } };",
+      "Parse the code: var x = { get 1() { return 1 } };",
+      "Observe parse errors."
+    ],
+    "expected": [
+      "Property names like 'x' and 1 should be allowed for get and set properties in object literals as per ES5."
+    ],
+    "actual": [
+      "The parser throws parse errors for quoted property names or numbers used as getter/setter property names. Numbers are not passed through properly even after a partial fix."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"parse errors\",\n\"api_involved\": [\"Rhino parser\"],\n\"input_conditions\": [\"--language_in=ECMASCRIPT5\"],\n\"expected\": \"Property names like 'x' and 1 should be allowed for get and set properties in object literals as per ES5.\",\n\"actual\": \"The parser throws parse errors for quoted property names or numbers used as getter/setter property names. Numbers are not passed through properly even after a partial fix.\",\n\"reproduction_steps\": [\n\"Run the parser with the flag --language_in=ECMASCRIPT5.\",\n\"Parse the code: var x = { get 'x'() { return 1 } };\",\n\"Parse the code: var x = { get 1() { return 1 } };\",\n\"Observe parse errors.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"parse errors\",\n\"api_involved\": [\"Rhino parser\"],\n\"input_conditions\": [\"--language_in=ECMASCRIPT5\"],\n\"expected\": \"Property names like 'x' and 1 should be allowed for get and set properties in object literals as per ES5.\",\n\"actual\": \"The parser throws parse errors for quoted property names or numbers used as getter/setter property names. Numbers are not passed through properly even after a partial fix.\",\n\"reproduction_steps\": [\n\"Run the parser with the flag --language_in=ECMASCRIPT5.\",\n\"Parse the code: var x = { get 'x'() { return 1 } };\",\n\"Parse the code: var x = { get 1() { return 1 } };\",\n\"Observe parse errors.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-9",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "MissingOptionException.getMessage()"
+    ],
+    "api_involved": [
+      "Options.addOption(Option)",
+      "Parser.checkRequiredOptions()"
+    ],
+    "input_conditions": [
+      "required options with hyphens in long names (e.g., -format-source-properties)"
+    ],
+    "reproduction_steps": [
+      "Create an Option with a long option like 'format-source-properties' and mark it required",
+      "Use the Parser to parse command line arguments without providing this option",
+      "Call MissingOptionException.getMessage() and observe the string output"
+    ],
+    "expected": [
+      "Missing required options: -format, -source, -properties (or format, source, properties with spaces/comma delimiting)"
+    ],
+    "actual": [
+      "Missing required options: formatsourceproperties (no hyphens, no spaces)"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "MissingOptionException.getMessage()"
+    ],
+    "api_involved": [
+      "Options.addOption(Option)",
+      "Parser.checkRequiredOptions()"
+    ],
+    "input_conditions": [
+      "required options with hyphens in long names (e.g., -format-source-properties)"
+    ],
+    "reproduction_steps": [
+      "Create an Option with a long option like 'format-source-properties' and mark it required",
+      "Use the Parser to parse command line arguments without providing this option",
+      "Call MissingOptionException.getMessage() and observe the string output"
+    ],
+    "expected": [
+      "Missing required options: -format, -source, -properties (or format, source, properties with spaces/comma delimiting)"
+    ],
+    "actual": [
+      "Missing required options: formatsourceproperties (no hyphens, no spaces)"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"MissingOptionException.getMessage()\",\n\"api_involved\": [\"Options.addOption(Option)\", \"Parser.checkRequiredOptions()\"],\n\"input_conditions\": [\"required options with hyphens in long names (e.g., -format-source-properties)\"],\n\"expected\": \"Missing required options: -format, -source, -properties (or format, source, properties with spaces/comma delimiting)\",\n\"actual\": \"Missing required options: formatsourceproperties (no hyphens, no spaces)\",\n\"reproduction_steps\": [\"Create an Option with a long option like 'format-source-properties' and mark it required\", \"Use the Parser to parse command line arguments without providing this option\", \"Call MissingOptionException.getMessage() and observe the string output\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"MissingOptionException.getMessage()\",\n\"api_involved\": [\"Options.addOption(Option)\", \"Parser.checkRequiredOptions()\"],\n\"input_conditions\": [\"required options with hyphens in long names (e.g., -format-source-properties)\"],\n\"expected\": \"Missing required options: -format, -source, -properties (or format, source, properties with spaces/comma delimiting)\",\n\"actual\": \"Missing required options: formatsourceproperties (no hyphens, no spaces)\",\n\"reproduction_steps\": [\"Create an Option with a long option like 'format-source-properties' and mark it required\", \"Use the Parser to parse command line arguments without providing this option\", \"Call MissingOptionException.getMessage() and observe the string output\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

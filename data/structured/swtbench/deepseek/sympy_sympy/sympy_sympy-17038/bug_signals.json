@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-17038",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "isqrt",
+      "sqrt",
+      "int(n ** 0.5)"
+    ],
+    "input_conditions": [
+      "large integer n",
+      "small integer n",
+      "IEEE 754 binary64 floats",
+      "correctly-rounded sqrt vs incorrectly-rounded sqrt"
+    ],
+    "reproduction_steps": [
+      "Call isqrt with a large integer input where floating-point sqrt is inaccurate",
+      "Observe that the result is off by one or more due to bound being too large or sqrt rounding error"
+    ],
+    "expected": [
+      "isqrt returns the floor of the exact square root for any nonnegative integer input"
+    ],
+    "actual": [
+      "isqrt gives incorrect results for some inputs due to floating-point inaccuracy in the sqrt fallback, especially when using int(n ** 0.5) bound that is too large"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "isqrt",
+      "sqrt",
+      "int(n ** 0.5)"
+    ],
+    "input_conditions": [
+      "large integer n",
+      "small integer n",
+      "IEEE 754 binary64 floats",
+      "correctly-rounded sqrt vs incorrectly-rounded sqrt"
+    ],
+    "reproduction_steps": [
+      "Call isqrt with a large integer input where floating-point sqrt is inaccurate",
+      "Observe that the result is off by one or more due to bound being too large or sqrt rounding error"
+    ],
+    "expected": [
+      "isqrt returns the floor of the exact square root for any nonnegative integer input"
+    ],
+    "actual": [
+      "isqrt gives incorrect results for some inputs due to floating-point inaccuracy in the sqrt fallback, especially when using int(n ** 0.5) bound that is too large"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"isqrt\", \"sqrt\", \"int(n ** 0.5)\"],\n\"input_conditions\": [\"large integer n\", \"small integer n\", \"IEEE 754 binary64 floats\", \"correctly-rounded sqrt vs incorrectly-rounded sqrt\"],\n\"expected\": \"isqrt returns the floor of the exact square root for any nonnegative integer input\",\n\"actual\": \"isqrt gives incorrect results for some inputs due to floating-point inaccuracy in the sqrt fallback, especially when using int(n ** 0.5) bound that is too large\",\n\"reproduction_steps\": [\n    \"Call isqrt with a large integer input where floating-point sqrt is inaccurate\",\n    \"Observe that the result is off by one or more due to bound being too large or sqrt rounding error\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"isqrt\", \"sqrt\", \"int(n ** 0.5)\"],\n\"input_conditions\": [\"large integer n\", \"small integer n\", \"IEEE 754 binary64 floats\", \"correctly-rounded sqrt vs incorrectly-rounded sqrt\"],\n\"expected\": \"isqrt returns the floor of the exact square root for any nonnegative integer input\",\n\"actual\": \"isqrt gives incorrect results for some inputs due to floating-point inaccuracy in the sqrt fallback, especially when using int(n ** 0.5) bound that is too large\",\n\"reproduction_steps\": [\n    \"Call isqrt with a large integer input where floating-point sqrt is inaccurate\",\n    \"Observe that the result is off by one or more due to bound being too large or sqrt rounding error\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

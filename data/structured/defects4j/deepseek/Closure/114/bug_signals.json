@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-114",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "java.lang.IllegalStateException: Unexpected variable l"
+    ],
+    "api_involved": [
+      "com.google.javascript.jscomp.VarCheck",
+      "com.google.javascript.jscomp.Compiler"
+    ],
+    "input_conditions": [
+      "compilation_level=ADVANCED_OPTIMIZATIONS",
+      "code with pattern: var l; (l = function(){ l; })();"
+    ],
+    "reproduction_steps": [
+      "Open the web application at http://closure-compiler.appspot.com/home",
+      "Set compilation level to ADVANCED_OPTIMIZATIONS",
+      "Input the code: var g=function(m){return m*Math.random()|0},d=document,h=d.getElementById('h'),c=d.getElementById('c'),l;\n(l=function(){requestAnimationFrame(l);h.style.textShadow=\"0 0 1px #000,\"+(g(10)-5)+\"px \"+(g(10)-5)+\"px 0 #888,0 0 180px rgb(\"+g(255)+\",\"+g(255)+\",\"+g(255)+\")\"})();\nd.addEventListener('mousemove',function(v){c.style.marginTop=(v.pageY/10+15|0)+'px'})",
+      "Click compile",
+      "Observe internal compiler error"
+    ],
+    "expected": [
+      "The Closure Compiler should compile the JavaScript without internal errors."
+    ],
+    "actual": [
+      "The compiler throws an internal RuntimeException with 'Unexpected variable l' caused by an IllegalStateException."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "java.lang.IllegalStateException: Unexpected variable l"
+    ],
+    "api_involved": [
+      "com.google.javascript.jscomp.VarCheck",
+      "com.google.javascript.jscomp.Compiler"
+    ],
+    "input_conditions": [
+      "compilation_level=ADVANCED_OPTIMIZATIONS",
+      "code with pattern: var l; (l = function(){ l; })();"
+    ],
+    "reproduction_steps": [
+      "Open the web application at http://closure-compiler.appspot.com/home",
+      "Set compilation level to ADVANCED_OPTIMIZATIONS",
+      "Input the code: var g=function(m){return m*Math.random()|0},d=document,h=d.getElementById('h'),c=d.getElementById('c'),l;\n(l=function(){requestAnimationFrame(l);h.style.textShadow=\"0 0 1px #000,\"+(g(10)-5)+\"px \"+(g(10)-5)+\"px 0 #888,0 0 180px rgb(\"+g(255)+\",\"+g(255)+\",\"+g(255)+\")\"})();\nd.addEventListener('mousemove',function(v){c.style.marginTop=(v.pageY/10+15|0)+'px'})",
+      "Click compile",
+      "Observe internal compiler error"
+    ],
+    "expected": [
+      "The Closure Compiler should compile the JavaScript without internal errors."
+    ],
+    "actual": [
+      "The compiler throws an internal RuntimeException with 'Unexpected variable l' caused by an IllegalStateException."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"java.lang.IllegalStateException: Unexpected variable l\",\n\"api_involved\": [\"com.google.javascript.jscomp.VarCheck\", \"com.google.javascript.jscomp.Compiler\"],\n\"input_conditions\": [\"compilation_level=ADVANCED_OPTIMIZATIONS\", \"code with pattern: var l; (l = function(){ l; })();\"],\n\"expected\": \"The Closure Compiler should compile the JavaScript without internal errors.\",\n\"actual\": \"The compiler throws an internal RuntimeException with 'Unexpected variable l' caused by an IllegalStateException.\",\n\"reproduction_steps\": [\n\"Open the web application at http://closure-compiler.appspot.com/home\",\n\"Set compilation level to ADVANCED_OPTIMIZATIONS\",\n\"Input the code: var g=function(m){return m*Math.random()|0},d=document,h=d.getElementById('h'),c=d.getElementById('c'),l;\\n(l=function(){requestAnimationFrame(l);h.style.textShadow=\\\"0 0 1px #000,\\\"+(g(10)-5)+\\\"px \\\"+(g(10)-5)+\\\"px 0 #888,0 0 180px rgb(\\\"+g(255)+\\\",\\\"+g(255)+\\\",\\\"+g(255)+\\\")\\\"})();\\nd.addEventListener('mousemove',function(v){c.style.marginTop=(v.pageY/10+15|0)+'px'})\",\n\"Click compile\",\n\"Observe internal compiler error\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"java.lang.IllegalStateException: Unexpected variable l\",\n\"api_involved\": [\"com.google.javascript.jscomp.VarCheck\", \"com.google.javascript.jscomp.Compiler\"],\n\"input_conditions\": [\"compilation_level=ADVANCED_OPTIMIZATIONS\", \"code with pattern: var l; (l = function(){ l; })();\"],\n\"expected\": \"The Closure Compiler should compile the JavaScript without internal errors.\",\n\"actual\": \"The compiler throws an internal RuntimeException with 'Unexpected variable l' caused by an IllegalStateException.\",\n\"reproduction_steps\": [\n\"Open the web application at http://closure-compiler.appspot.com/home\",\n\"Set compilation level to ADVANCED_OPTIMIZATIONS\",\n\"Input the code: var g=function(m){return m*Math.random()|0},d=document,h=d.getElementById('h'),c=d.getElementById('c'),l;\\n(l=function(){requestAnimationFrame(l);h.style.textShadow=\\\"0 0 1px #000,\\\"+(g(10)-5)+\\\"px \\\"+(g(10)-5)+\\\"px 0 #888,0 0 180px rgb(\\\"+g(255)+\\\",\\\"+g(255)+\\\",\\\"+g(255)+\\\")\\\"})();\\nd.addEventListener('mousemove',function(v){c.style.marginTop=(v.pageY/10+15|0)+'px'})\",\n\"Click compile\",\n\"Observe internal compiler error\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

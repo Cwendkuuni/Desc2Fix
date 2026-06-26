@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-73",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Closure Compiler",
+      "compile"
+    ],
+    "input_conditions": [
+      "JavaScript source code containing alert('\\x7f')",
+      "alert('\\u007f')"
+    ],
+    "reproduction_steps": [
+      "Open http://closure-compiler.appspot.com/home in a browser",
+      "Enter the source code: alert('\\x7f')",
+      "Hit the Compile button"
+    ],
+    "expected": [
+      "alert(\"\\x7f\")"
+    ],
+    "actual": [
+      "alert(\"\")"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Closure Compiler",
+      "compile"
+    ],
+    "input_conditions": [
+      "JavaScript source code containing alert('\\x7f')",
+      "alert('\\u007f')"
+    ],
+    "reproduction_steps": [
+      "Open http://closure-compiler.appspot.com/home in a browser",
+      "Enter the source code: alert('\\x7f')",
+      "Hit the Compile button"
+    ],
+    "expected": [
+      "alert(\"\\x7f\")"
+    ],
+    "actual": [
+      "alert(\"\")"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Closure Compiler\", \"compile\"],\n\"input_conditions\": [\"JavaScript source code containing alert('\\\\x7f')\", \"alert('\\\\u007f')\"],\n\"expected\": \"alert(\\\"\\\\x7f\\\")\",\n\"actual\": \"alert(\\\"\\\")\",\n\"reproduction_steps\": [\n\"Open http://closure-compiler.appspot.com/home in a browser\",\n\"Enter the source code: alert('\\\\x7f')\",\n\"Hit the Compile button\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Closure Compiler\", \"compile\"],\n\"input_conditions\": [\"JavaScript source code containing alert('\\\\x7f')\", \"alert('\\\\u007f')\"],\n\"expected\": \"alert(\\\"\\\\x7f\\\")\",\n\"actual\": \"alert(\\\"\\\")\",\n\"reproduction_steps\": [\n\"Open http://closure-compiler.appspot.com/home in a browser\",\n\"Enter the source code: alert('\\\\x7f')\",\n\"Hit the Compile button\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "pallets__flask-4160",
+  "project": null,
+  "repo": "pallets/flask",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "json encoder",
+      "flask app encoder"
+    ],
+    "input_conditions": [
+      "Decimal handling within JSON encoding",
+      "Flask version 2.0.1 and 1.1.2",
+      "Python version 3.8.10",
+      "Simplejson version 3.17.2"
+    ],
+    "reproduction_steps": [
+      "Use Flask version 2.0.1",
+      "Attempt to encode data containing Decimal types with the built-in JSON encoder"
+    ],
+    "expected": [
+      "The encoder should work with both built-in JSON encoder and Simplejson as it did in Flask version 1.1.2."
+    ],
+    "actual": [
+      "Flask's built-in JSON encoder does not handle Decimal types, causing issues for users relying on both built-in encoder and Simplejson."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "json encoder",
+      "flask app encoder"
+    ],
+    "input_conditions": [
+      "Decimal handling within JSON encoding",
+      "Flask version 2.0.1 and 1.1.2",
+      "Python version 3.8.10",
+      "Simplejson version 3.17.2"
+    ],
+    "reproduction_steps": [
+      "Use Flask version 2.0.1",
+      "Attempt to encode data containing Decimal types with the built-in JSON encoder"
+    ],
+    "expected": [
+      "The encoder should work with both built-in JSON encoder and Simplejson as it did in Flask version 1.1.2."
+    ],
+    "actual": [
+      "Flask's built-in JSON encoder does not handle Decimal types, causing issues for users relying on both built-in encoder and Simplejson."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"json encoder\", \"flask app encoder\"],\n  \"input_conditions\": [\"Decimal handling within JSON encoding\", \"Flask version 2.0.1 and 1.1.2\", \"Python version 3.8.10\", \"Simplejson version 3.17.2\"],\n  \"expected\": \"The encoder should work with both built-in JSON encoder and Simplejson as it did in Flask version 1.1.2.\",\n  \"actual\": \"Flask's built-in JSON encoder does not handle Decimal types, causing issues for users relying on both built-in encoder and Simplejson.\",\n  \"reproduction_steps\": [\"Use Flask version 2.0.1\", \"Attempt to encode data containing Decimal types with the built-in JSON encoder\"]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"json encoder\", \"flask app encoder\"],\n  \"input_conditions\": [\"Decimal handling within JSON encoding\", \"Flask version 2.0.1 and 1.1.2\", \"Python version 3.8.10\", \"Simplejson version 3.17.2\"],\n  \"expected\": \"The encoder should work with both built-in JSON encoder and Simplejson as it did in Flask version 1.1.2.\",\n  \"actual\": \"Flask's built-in JSON encoder does not handle Decimal types, causing issues for users relying on both built-in encoder and Simplejson.\",\n  \"reproduction_steps\": [\"Use Flask version 2.0.1\", \"Attempt to encode data containing Decimal types with the built-in JSON encoder\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

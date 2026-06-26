@@ -1,0 +1,63 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sqlfluff__sqlfluff-3608",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "exit code",
+      "set_return_code",
+      "get_return_code"
+    ],
+    "input_conditions": [
+      "success",
+      "failure to apply fixes",
+      "user errors",
+      "OSError",
+      "unknown dialect",
+      "failing to load dialect or config",
+      "parsing failure"
+    ],
+    "reproduction_steps": [
+      "Observe return code usage across the codebase, noting inconsistent calls to set_return_code and get_return_code for different scenarios."
+    ],
+    "expected": [
+      "Consistent return codes: 0 for success, 1 for error-related failures, 65 for linting failures, 66 for fixing failures, defined as constants."
+    ],
+    "actual": [
+      "Inconsistent return codes: mix of calling set_return_code on success, calling set_return_code for various error conditions, using get_return_code returning 1 or 0, and a mixture at end of file."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "exit code",
+      "set_return_code",
+      "get_return_code"
+    ],
+    "input_conditions": [
+      "success",
+      "failure to apply fixes",
+      "user errors",
+      "OSError",
+      "unknown dialect",
+      "failing to load dialect or config",
+      "parsing failure"
+    ],
+    "reproduction_steps": [
+      "Observe return code usage across the codebase, noting inconsistent calls to set_return_code and get_return_code for different scenarios."
+    ],
+    "expected": [
+      "Consistent return codes: 0 for success, 1 for error-related failures, 65 for linting failures, 66 for fixing failures, defined as constants."
+    ],
+    "actual": [
+      "Inconsistent return codes: mix of calling set_return_code on success, calling set_return_code for various error conditions, using get_return_code returning 1 or 0, and a mixture at end of file."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"exit code\", \"set_return_code\", \"get_return_code\"],\n\"input_conditions\": [\"success\", \"failure to apply fixes\", \"user errors\", \"OSError\", \"unknown dialect\", \"failing to load dialect or config\", \"parsing failure\"],\n\"expected\": \"Consistent return codes: 0 for success, 1 for error-related failures, 65 for linting failures, 66 for fixing failures, defined as constants.\",\n\"actual\": \"Inconsistent return codes: mix of calling set_return_code on success, calling set_return_code for various error conditions, using get_return_code returning 1 or 0, and a mixture at end of file.\",\n\"reproduction_steps\": [\"Observe return code usage across the codebase, noting inconsistent calls to set_return_code and get_return_code for different scenarios.\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"exit code\", \"set_return_code\", \"get_return_code\"],\n\"input_conditions\": [\"success\", \"failure to apply fixes\", \"user errors\", \"OSError\", \"unknown dialect\", \"failing to load dialect or config\", \"parsing failure\"],\n\"expected\": \"Consistent return codes: 0 for success, 1 for error-related failures, 65 for linting failures, 66 for fixing failures, defined as constants.\",\n\"actual\": \"Inconsistent return codes: mix of calling set_return_code on success, calling set_return_code for various error conditions, using get_return_code returning 1 or 0, and a mixture at end of file.\",\n\"reproduction_steps\": [\"Observe return code usage across the codebase, noting inconsistent calls to set_return_code and get_return_code for different scenarios.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

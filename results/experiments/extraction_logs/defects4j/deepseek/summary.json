@@ -1,0 +1,9 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "instances": 100,
+  "written": 99,
+  "skipped": 0,
+  "errors": 1,
+  "sample_from_human": "Human_Eval"
+}

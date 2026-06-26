@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-41",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "JSC_WRONG_ARGUMENT_COUNT"
+    ],
+    "api_involved": [
+      "Closure Compiler"
+    ],
+    "input_conditions": [
+      "ADVANCED mode",
+      "@inheritDoc used with method overriding in Bar"
+    ],
+    "reproduction_steps": [
+      "Set the compilation level to ADVANCED_OPTIMIZATIONS",
+      "Use the Closure Library",
+      "Implement the Foo and Bar classes as described",
+      "Override Foo methods in Bar with @inheritDoc",
+      "Attempt to call bar.add with two arguments to trigger the warning"
+    ],
+    "expected": [
+      "Compiler should warn about overridden methods with different signatures"
+    ],
+    "actual": [
+      "Compiler warns only in one instance and fails to warn about all necessary cases of overridden methods with different signatures"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "JSC_WRONG_ARGUMENT_COUNT"
+    ],
+    "api_involved": [
+      "Closure Compiler"
+    ],
+    "input_conditions": [
+      "ADVANCED mode",
+      "@inheritDoc used with method overriding in Bar"
+    ],
+    "reproduction_steps": [
+      "Set the compilation level to ADVANCED_OPTIMIZATIONS",
+      "Use the Closure Library",
+      "Implement the Foo and Bar classes as described",
+      "Override Foo methods in Bar with @inheritDoc",
+      "Attempt to call bar.add with two arguments to trigger the warning"
+    ],
+    "expected": [
+      "Compiler should warn about overridden methods with different signatures"
+    ],
+    "actual": [
+      "Compiler warns only in one instance and fails to warn about all necessary cases of overridden methods with different signatures"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"JSC_WRONG_ARGUMENT_COUNT\",\n  \"api_involved\": [\"Closure Compiler\"],\n  \"input_conditions\": [\"ADVANCED mode\", \"@inheritDoc used with method overriding in Bar\"],\n  \"expected\": \"Compiler should warn about overridden methods with different signatures\",\n  \"actual\": \"Compiler warns only in one instance and fails to warn about all necessary cases of overridden methods with different signatures\",\n  \"reproduction_steps\": [\n    \"Set the compilation level to ADVANCED_OPTIMIZATIONS\",\n    \"Use the Closure Library\",\n    \"Implement the Foo and Bar classes as described\",\n    \"Override Foo methods in Bar with @inheritDoc\",\n    \"Attempt to call bar.add with two arguments to trigger the warning\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"JSC_WRONG_ARGUMENT_COUNT\",\n  \"api_involved\": [\"Closure Compiler\"],\n  \"input_conditions\": [\"ADVANCED mode\", \"@inheritDoc used with method overriding in Bar\"],\n  \"expected\": \"Compiler should warn about overridden methods with different signatures\",\n  \"actual\": \"Compiler warns only in one instance and fails to warn about all necessary cases of overridden methods with different signatures\",\n  \"reproduction_steps\": [\n    \"Set the compilation level to ADVANCED_OPTIMIZATIONS\",\n    \"Use the Closure Library\",\n    \"Implement the Foo and Bar classes as described\",\n    \"Override Foo methods in Bar with @inheritDoc\",\n    \"Attempt to call bar.add with two arguments to trigger the warning\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

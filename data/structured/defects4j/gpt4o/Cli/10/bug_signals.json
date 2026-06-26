@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Cli-10",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "MissingOptionException"
+    ],
+    "api_involved": [
+      "Options",
+      "GnuParser",
+      "CommandLine"
+    ],
+    "input_conditions": [
+      "firstArgs = { \"-v\" }",
+      "secondArgs = {}"
+    ],
+    "reproduction_steps": [
+      "Create an Options object with a required option.",
+      "Use GnuParser to parse args with the required option present.",
+      "Use the same Options object to parse a second set of args without the required option.",
+      "Notice no exception is thrown."
+    ],
+    "expected": [
+      "A MissingOptionException should be thrown when required options are missing."
+    ],
+    "actual": [
+      "No exception is thrown on the second invocation of parse, even when required options are missing."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "MissingOptionException"
+    ],
+    "api_involved": [
+      "Options",
+      "GnuParser",
+      "CommandLine"
+    ],
+    "input_conditions": [
+      "firstArgs = { \"-v\" }",
+      "secondArgs = {}"
+    ],
+    "reproduction_steps": [
+      "Create an Options object with a required option.",
+      "Use GnuParser to parse args with the required option present.",
+      "Use the same Options object to parse a second set of args without the required option.",
+      "Notice no exception is thrown."
+    ],
+    "expected": [
+      "A MissingOptionException should be thrown when required options are missing."
+    ],
+    "actual": [
+      "No exception is thrown on the second invocation of parse, even when required options are missing."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"MissingOptionException\",\n  \"api_involved\": [\"Options\", \"GnuParser\", \"CommandLine\"],\n  \"input_conditions\": [\"firstArgs = { \\\"-v\\\" }\", \"secondArgs = {}\"],\n  \"expected\": \"A MissingOptionException should be thrown when required options are missing.\",\n  \"actual\": \"No exception is thrown on the second invocation of parse, even when required options are missing.\",\n  \"reproduction_steps\": [\n    \"Create an Options object with a required option.\",\n    \"Use GnuParser to parse args with the required option present.\",\n    \"Use the same Options object to parse a second set of args without the required option.\",\n    \"Notice no exception is thrown.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"MissingOptionException\",\n  \"api_involved\": [\"Options\", \"GnuParser\", \"CommandLine\"],\n  \"input_conditions\": [\"firstArgs = { \\\"-v\\\" }\", \"secondArgs = {}\"],\n  \"expected\": \"A MissingOptionException should be thrown when required options are missing.\",\n  \"actual\": \"No exception is thrown on the second invocation of parse, even when required options are missing.\",\n  \"reproduction_steps\": [\n    \"Create an Options object with a required option.\",\n    \"Use GnuParser to parse args with the required option present.\",\n    \"Use the same Options object to parse a second set of args without the required option.\",\n    \"Notice no exception is thrown.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

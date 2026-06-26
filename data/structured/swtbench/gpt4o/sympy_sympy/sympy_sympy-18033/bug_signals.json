@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-18033",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Permutation.print_cyclic",
+      "SymPy printers",
+      "doctest",
+      "pprint",
+      "latex"
+    ],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [
+      "Permutation.print_cyclic flag should be handled by the printers, not on the object itself; printer should print a Python valid representation and pretty printers should pretty print."
+    ],
+    "actual": [
+      "Permutation.print_cyclic flag is handled on the object itself."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Permutation.print_cyclic",
+      "SymPy printers",
+      "doctest",
+      "pprint",
+      "latex"
+    ],
+    "input_conditions": [],
+    "reproduction_steps": [],
+    "expected": [
+      "Permutation.print_cyclic flag should be handled by the printers, not on the object itself; printer should print a Python valid representation and pretty printers should pretty print."
+    ],
+    "actual": [
+      "Permutation.print_cyclic flag is handled on the object itself."
+    ]
+  },
+  "raw_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": [\"Permutation.print_cyclic\", \"SymPy printers\", \"doctest\", \"pprint\", \"latex\"],\n    \"input_conditions\": null,\n    \"expected\": \"Permutation.print_cyclic flag should be handled by the printers, not on the object itself; printer should print a Python valid representation and pretty printers should pretty print.\",\n    \"actual\": \"Permutation.print_cyclic flag is handled on the object itself.\",\n    \"reproduction_steps\": null\n}\n```",
+  "llm_response": "```\n{\n    \"exception\": null,\n    \"api_involved\": [\"Permutation.print_cyclic\", \"SymPy printers\", \"doctest\", \"pprint\", \"latex\"],\n    \"input_conditions\": null,\n    \"expected\": \"Permutation.print_cyclic flag should be handled by the printers, not on the object itself; printer should print a Python valid representation and pretty printers should pretty print.\",\n    \"actual\": \"Permutation.print_cyclic flag is handled on the object itself.\",\n    \"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

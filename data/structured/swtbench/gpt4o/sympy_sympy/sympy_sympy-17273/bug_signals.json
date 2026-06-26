@@ -1,0 +1,43 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "sympy__sympy-17273",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "sympy.physics.units"
+    ],
+    "input_conditions": [
+      "value for hbar in sympy.physics.units"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "The value for hbar should match the CODATA recommended value."
+    ],
+    "actual": [
+      "The numerical value given for hbar differs from the CODATA recommended one."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "sympy.physics.units"
+    ],
+    "input_conditions": [
+      "value for hbar in sympy.physics.units"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "The value for hbar should match the CODATA recommended value."
+    ],
+    "actual": [
+      "The numerical value given for hbar differs from the CODATA recommended one."
+    ]
+  },
+  "raw_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"sympy.physics.units\"],\n\"input_conditions\": [\"value for hbar in sympy.physics.units\"],\n\"expected\": \"The value for hbar should match the CODATA recommended value.\",\n\"actual\": \"The numerical value given for hbar differs from the CODATA recommended one.\",\n\"reproduction_steps\": null\n}\n```",
+  "llm_response": "```\n{\n\"exception\": null,\n\"api_involved\": [\"sympy.physics.units\"],\n\"input_conditions\": [\"value for hbar in sympy.physics.units\"],\n\"expected\": \"The value for hbar should match the CODATA recommended value.\",\n\"actual\": \"The numerical value given for hbar differs from the CODATA recommended one.\",\n\"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

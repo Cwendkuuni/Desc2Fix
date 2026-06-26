@@ -1,0 +1,67 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-52",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "NaN (in quaternion computation due to numerical cancellation)"
+    ],
+    "api_involved": [
+      "Rotation constructor with two vector pairs"
+    ],
+    "input_conditions": [
+      "u1 = (-4921140.837095533, -2.1512094250440013E7, -890093.279426377)",
+      "u2 = (-2.7238580938724895E9, -2.169664921341876E9, 6.749688708885301E10)",
+      "v1 = (1, 0, 0)",
+      "v2 = (0, 0, 1)"
+    ],
+    "reproduction_steps": [
+      "Call Rotation constructor with the given u1, u2, v1, v2 vectors",
+      "The constructor transforms (v1, v2) to (v1', v2') to match scalar products with u1 and u2",
+      "Computes cross product k = (v1' - u1) ^ (v2' - u2)",
+      "Computes c = < k | (u1 ^ u2) >",
+      "Due to near-alignment of rotation axis with (u1, u2) plane and numerical cancellation, c becomes negative and loses all significant digits",
+      "Resulting quaternion computation fails (produces NaN)"
+    ],
+    "expected": [
+      "A valid quaternion with q0=0.622837..., q1=0.025770..., q2=-0.000000..., q3=-0.781927... and no NaN values"
+    ],
+    "actual": [
+      "c computed as -1.2397173627587605E20 (negative, wrong sign) instead of positive ~5.5838e20, leading to NaN in quaternion axis computation"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "NaN (in quaternion computation due to numerical cancellation)"
+    ],
+    "api_involved": [
+      "Rotation constructor with two vector pairs"
+    ],
+    "input_conditions": [
+      "u1 = (-4921140.837095533, -2.1512094250440013E7, -890093.279426377)",
+      "u2 = (-2.7238580938724895E9, -2.169664921341876E9, 6.749688708885301E10)",
+      "v1 = (1, 0, 0)",
+      "v2 = (0, 0, 1)"
+    ],
+    "reproduction_steps": [
+      "Call Rotation constructor with the given u1, u2, v1, v2 vectors",
+      "The constructor transforms (v1, v2) to (v1', v2') to match scalar products with u1 and u2",
+      "Computes cross product k = (v1' - u1) ^ (v2' - u2)",
+      "Computes c = < k | (u1 ^ u2) >",
+      "Due to near-alignment of rotation axis with (u1, u2) plane and numerical cancellation, c becomes negative and loses all significant digits",
+      "Resulting quaternion computation fails (produces NaN)"
+    ],
+    "expected": [
+      "A valid quaternion with q0=0.622837..., q1=0.025770..., q2=-0.000000..., q3=-0.781927... and no NaN values"
+    ],
+    "actual": [
+      "c computed as -1.2397173627587605E20 (negative, wrong sign) instead of positive ~5.5838e20, leading to NaN in quaternion axis computation"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"NaN (in quaternion computation due to numerical cancellation)\",\n\"api_involved\": [\"Rotation constructor with two vector pairs\"],\n\"input_conditions\": [\n    \"u1 = (-4921140.837095533, -2.1512094250440013E7, -890093.279426377)\",\n    \"u2 = (-2.7238580938724895E9, -2.169664921341876E9, 6.749688708885301E10)\",\n    \"v1 = (1, 0, 0)\",\n    \"v2 = (0, 0, 1)\"\n],\n\"expected\": \"A valid quaternion with q0=0.622837..., q1=0.025770..., q2=-0.000000..., q3=-0.781927... and no NaN values\",\n\"actual\": \"c computed as -1.2397173627587605E20 (negative, wrong sign) instead of positive ~5.5838e20, leading to NaN in quaternion axis computation\",\n\"reproduction_steps\": [\n    \"Call Rotation constructor with the given u1, u2, v1, v2 vectors\",\n    \"The constructor transforms (v1, v2) to (v1', v2') to match scalar products with u1 and u2\",\n    \"Computes cross product k = (v1' - u1) ^ (v2' - u2)\",\n    \"Computes c = < k | (u1 ^ u2) >\",\n    \"Due to near-alignment of rotation axis with (u1, u2) plane and numerical cancellation, c becomes negative and loses all significant digits\",\n    \"Resulting quaternion computation fails (produces NaN)\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"NaN (in quaternion computation due to numerical cancellation)\",\n\"api_involved\": [\"Rotation constructor with two vector pairs\"],\n\"input_conditions\": [\n    \"u1 = (-4921140.837095533, -2.1512094250440013E7, -890093.279426377)\",\n    \"u2 = (-2.7238580938724895E9, -2.169664921341876E9, 6.749688708885301E10)\",\n    \"v1 = (1, 0, 0)\",\n    \"v2 = (0, 0, 1)\"\n],\n\"expected\": \"A valid quaternion with q0=0.622837..., q1=0.025770..., q2=-0.000000..., q3=-0.781927... and no NaN values\",\n\"actual\": \"c computed as -1.2397173627587605E20 (negative, wrong sign) instead of positive ~5.5838e20, leading to NaN in quaternion axis computation\",\n\"reproduction_steps\": [\n    \"Call Rotation constructor with the given u1, u2, v1, v2 vectors\",\n    \"The constructor transforms (v1, v2) to (v1', v2') to match scalar products with u1 and u2\",\n    \"Computes cross product k = (v1' - u1) ^ (v2' - u2)\",\n    \"Computes c = < k | (u1 ^ u2) >\",\n    \"Due to near-alignment of rotation axis with (u1, u2) plane and numerical cancellation, c becomes negative and loses all significant digits\",\n    \"Resulting quaternion computation fails (produces NaN)\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

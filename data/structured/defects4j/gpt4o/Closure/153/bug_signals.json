@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-153",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "Node - definition is missing"
+    ],
+    "api_involved": [
+      "prototype.js",
+      "command line compiler"
+    ],
+    "input_conditions": [
+      "Prototype library in use",
+      "IE8 browser",
+      "Linux Mint 7 OS"
+    ],
+    "reproduction_steps": [
+      "Use namespace definition in prototype.js with 'if (!Node) var Node = { };'",
+      "Compile with latest command line compiler Version: 20100917",
+      "Open HTML using this script in IE8"
+    ],
+    "expected": [
+      "if(!Node)var Node={};"
+    ],
+    "actual": [
+      "Node||(Node={});"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Node - definition is missing"
+    ],
+    "api_involved": [
+      "prototype.js",
+      "command line compiler"
+    ],
+    "input_conditions": [
+      "Prototype library in use",
+      "IE8 browser",
+      "Linux Mint 7 OS"
+    ],
+    "reproduction_steps": [
+      "Use namespace definition in prototype.js with 'if (!Node) var Node = { };'",
+      "Compile with latest command line compiler Version: 20100917",
+      "Open HTML using this script in IE8"
+    ],
+    "expected": [
+      "if(!Node)var Node={};"
+    ],
+    "actual": [
+      "Node||(Node={});"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"Node - definition is missing\",\n  \"api_involved\": [\"prototype.js\", \"command line compiler\"],\n  \"input_conditions\": [\"Prototype library in use\", \"IE8 browser\", \"Linux Mint 7 OS\"],\n  \"expected\": \"if(!Node)var Node={};\",\n  \"actual\": \"Node||(Node={});\",\n  \"reproduction_steps\": [\n    \"Use namespace definition in prototype.js with 'if (!Node) var Node = { };'\",\n    \"Compile with latest command line compiler Version: 20100917\",\n    \"Open HTML using this script in IE8\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"Node - definition is missing\",\n  \"api_involved\": [\"prototype.js\", \"command line compiler\"],\n  \"input_conditions\": [\"Prototype library in use\", \"IE8 browser\", \"Linux Mint 7 OS\"],\n  \"expected\": \"if(!Node)var Node={};\",\n  \"actual\": \"Node||(Node={});\",\n  \"reproduction_steps\": [\n    \"Use namespace definition in prototype.js with 'if (!Node) var Node = { };'\",\n    \"Compile with latest command line compiler Version: 20100917\",\n    \"Open HTML using this script in IE8\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

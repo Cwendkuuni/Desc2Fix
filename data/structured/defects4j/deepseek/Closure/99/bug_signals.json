@@ -1,0 +1,63 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-99",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "JSC_USED_GLOBAL_THIS, property MyMethod on interface MyParent is not implemented by type MyClass"
+    ],
+    "api_involved": [
+      "MyClass",
+      "MyClass.prototype[\"MyMethod\"]",
+      "MyParent.prototype.MyMethod",
+      "window[\"MyClass\"]"
+    ],
+    "input_conditions": [
+      "advanced optimizations",
+      "VERBOSE warning levels"
+    ],
+    "reproduction_steps": [
+      "Compile the following code in advanced optimizations with VERBOSE warning levels: /** @constructor */ function MyClass() {} MyClass.prototype[\"MyMethod\"] = function(a) { this.a = a; } window[\"MyClass\"] = MyClass;",
+      "Observe the 'dangerous use of the global this object' warning.",
+      "Optionally, provide externs defining an interface MyParent with MyMethod, and code where MyClass implements MyParent using quoted prototype property, and observe the 'property MyMethod on interface MyParent is not implemented by type MyClass' warning."
+    ],
+    "expected": [
+      "No warning should be produced when declaring a prototype with quoted property names, especially for export purposes."
+    ],
+    "actual": [
+      "A 'dangerous use of the global this object' warning is produced, and when implementing an interface, a 'property not implemented by type' warning is produced."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "JSC_USED_GLOBAL_THIS, property MyMethod on interface MyParent is not implemented by type MyClass"
+    ],
+    "api_involved": [
+      "MyClass",
+      "MyClass.prototype[\"MyMethod\"]",
+      "MyParent.prototype.MyMethod",
+      "window[\"MyClass\"]"
+    ],
+    "input_conditions": [
+      "advanced optimizations",
+      "VERBOSE warning levels"
+    ],
+    "reproduction_steps": [
+      "Compile the following code in advanced optimizations with VERBOSE warning levels: /** @constructor */ function MyClass() {} MyClass.prototype[\"MyMethod\"] = function(a) { this.a = a; } window[\"MyClass\"] = MyClass;",
+      "Observe the 'dangerous use of the global this object' warning.",
+      "Optionally, provide externs defining an interface MyParent with MyMethod, and code where MyClass implements MyParent using quoted prototype property, and observe the 'property MyMethod on interface MyParent is not implemented by type MyClass' warning."
+    ],
+    "expected": [
+      "No warning should be produced when declaring a prototype with quoted property names, especially for export purposes."
+    ],
+    "actual": [
+      "A 'dangerous use of the global this object' warning is produced, and when implementing an interface, a 'property not implemented by type' warning is produced."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"JSC_USED_GLOBAL_THIS, property MyMethod on interface MyParent is not implemented by type MyClass\",\n\"api_involved\": [\"MyClass\", \"MyClass.prototype[\\\"MyMethod\\\"]\", \"MyParent.prototype.MyMethod\", \"window[\\\"MyClass\\\"]\"],\n\"input_conditions\": [\"advanced optimizations\", \"VERBOSE warning levels\"],\n\"expected\": \"No warning should be produced when declaring a prototype with quoted property names, especially for export purposes.\",\n\"actual\": \"A 'dangerous use of the global this object' warning is produced, and when implementing an interface, a 'property not implemented by type' warning is produced.\",\n\"reproduction_steps\": [\n\"Compile the following code in advanced optimizations with VERBOSE warning levels: /** @constructor */ function MyClass() {} MyClass.prototype[\\\"MyMethod\\\"] = function(a) { this.a = a; } window[\\\"MyClass\\\"] = MyClass;\",\n\"Observe the 'dangerous use of the global this object' warning.\",\n\"Optionally, provide externs defining an interface MyParent with MyMethod, and code where MyClass implements MyParent using quoted prototype property, and observe the 'property MyMethod on interface MyParent is not implemented by type MyClass' warning.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"JSC_USED_GLOBAL_THIS, property MyMethod on interface MyParent is not implemented by type MyClass\",\n\"api_involved\": [\"MyClass\", \"MyClass.prototype[\\\"MyMethod\\\"]\", \"MyParent.prototype.MyMethod\", \"window[\\\"MyClass\\\"]\"],\n\"input_conditions\": [\"advanced optimizations\", \"VERBOSE warning levels\"],\n\"expected\": \"No warning should be produced when declaring a prototype with quoted property names, especially for export purposes.\",\n\"actual\": \"A 'dangerous use of the global this object' warning is produced, and when implementing an interface, a 'property not implemented by type' warning is produced.\",\n\"reproduction_steps\": [\n\"Compile the following code in advanced optimizations with VERBOSE warning levels: /** @constructor */ function MyClass() {} MyClass.prototype[\\\"MyMethod\\\"] = function(a) { this.a = a; } window[\\\"MyClass\\\"] = MyClass;\",\n\"Observe the 'dangerous use of the global this object' warning.\",\n\"Optionally, provide externs defining an interface MyParent with MyMethod, and code where MyClass implements MyParent using quoted prototype property, and observe the 'property MyMethod on interface MyParent is not implemented by type MyClass' warning.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

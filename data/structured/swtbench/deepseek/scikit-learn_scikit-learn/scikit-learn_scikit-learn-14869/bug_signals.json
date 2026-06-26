@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "scikit-learn__scikit-learn-14869",
+  "project": null,
+  "repo": "scikit-learn/scikit-learn",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "HGBC",
+      "categorical_crossentropy"
+    ],
+    "input_conditions": [
+      "binary classification task",
+      "categorical_crossentropy loss used"
+    ],
+    "reproduction_steps": [
+      "Run HGBC (HistGradientBoostingClassifier) with categorical_crossentropy loss on a binary classification dataset.",
+      "Observe that it runs without error but produces incorrect behavior."
+    ],
+    "expected": [
+      "Either generalize to handle binary classification correctly or raise an explicit error message when binary classification is used with categorical_crossentropy."
+    ],
+    "actual": [
+      "HGBC with categorical_crossentropy fails silently on binary classification (producing incorrect or unexpected results without warning)."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "HGBC",
+      "categorical_crossentropy"
+    ],
+    "input_conditions": [
+      "binary classification task",
+      "categorical_crossentropy loss used"
+    ],
+    "reproduction_steps": [
+      "Run HGBC (HistGradientBoostingClassifier) with categorical_crossentropy loss on a binary classification dataset.",
+      "Observe that it runs without error but produces incorrect behavior."
+    ],
+    "expected": [
+      "Either generalize to handle binary classification correctly or raise an explicit error message when binary classification is used with categorical_crossentropy."
+    ],
+    "actual": [
+      "HGBC with categorical_crossentropy fails silently on binary classification (producing incorrect or unexpected results without warning)."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"HGBC\", \"categorical_crossentropy\"],\n\"input_conditions\": [\"binary classification task\", \"categorical_crossentropy loss used\"],\n\"expected\": \"Either generalize to handle binary classification correctly or raise an explicit error message when binary classification is used with categorical_crossentropy.\",\n\"actual\": \"HGBC with categorical_crossentropy fails silently on binary classification (producing incorrect or unexpected results without warning).\",\n\"reproduction_steps\": [\"Run HGBC (HistGradientBoostingClassifier) with categorical_crossentropy loss on a binary classification dataset.\", \"Observe that it runs without error but produces incorrect behavior.\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"HGBC\", \"categorical_crossentropy\"],\n\"input_conditions\": [\"binary classification task\", \"categorical_crossentropy loss used\"],\n\"expected\": \"Either generalize to handle binary classification correctly or raise an explicit error message when binary classification is used with categorical_crossentropy.\",\n\"actual\": \"HGBC with categorical_crossentropy fails silently on binary classification (producing incorrect or unexpected results without warning).\",\n\"reproduction_steps\": [\"Run HGBC (HistGradientBoostingClassifier) with categorical_crossentropy loss on a binary classification dataset.\", \"Observe that it runs without error but produces incorrect behavior.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

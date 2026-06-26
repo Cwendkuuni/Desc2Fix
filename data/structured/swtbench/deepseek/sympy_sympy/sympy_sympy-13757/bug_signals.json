@@ -1,0 +1,57 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sympy__sympy-13757",
+  "project": null,
+  "repo": "sympy/sympy",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Poly",
+      "*"
+    ],
+    "input_conditions": [
+      "expression on the left side of multiplication",
+      "multiplying expression by Poly"
+    ],
+    "reproduction_steps": [
+      "Define an expression",
+      "Create a Poly object",
+      "Multiply expression by Poly: expression * Poly(...)",
+      "Observe that the multiplication is not evaluated"
+    ],
+    "expected": [
+      "multiplication should evaluate correctly"
+    ],
+    "actual": [
+      "multiplication does not evaluate when the expression is on the left side"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Poly",
+      "*"
+    ],
+    "input_conditions": [
+      "expression on the left side of multiplication",
+      "multiplying expression by Poly"
+    ],
+    "reproduction_steps": [
+      "Define an expression",
+      "Create a Poly object",
+      "Multiply expression by Poly: expression * Poly(...)",
+      "Observe that the multiplication is not evaluated"
+    ],
+    "expected": [
+      "multiplication should evaluate correctly"
+    ],
+    "actual": [
+      "multiplication does not evaluate when the expression is on the left side"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Poly\", \"*\"],\n\"input_conditions\": [\"expression on the left side of multiplication\", \"multiplying expression by Poly\"],\n\"expected\": \"multiplication should evaluate correctly\",\n\"actual\": \"multiplication does not evaluate when the expression is on the left side\",\n\"reproduction_steps\": [\n    \"Define an expression\",\n    \"Create a Poly object\",\n    \"Multiply expression by Poly: expression * Poly(...)\",\n    \"Observe that the multiplication is not evaluated\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"Poly\", \"*\"],\n\"input_conditions\": [\"expression on the left side of multiplication\", \"multiplying expression by Poly\"],\n\"expected\": \"multiplication should evaluate correctly\",\n\"actual\": \"multiplication does not evaluate when the expression is on the left side\",\n\"reproduction_steps\": [\n    \"Define an expression\",\n    \"Create a Poly object\",\n    \"Multiply expression by Poly: expression * Poly(...)\",\n    \"Observe that the multiplication is not evaluated\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

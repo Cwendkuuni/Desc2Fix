@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "matplotlib__matplotlib-13959",
+  "project": null,
+  "repo": "matplotlib/matplotlib",
+  "signals": {
+    "exception": [
+      "ValueError"
+    ],
+    "api_involved": [
+      "scatter"
+    ],
+    "input_conditions": [
+      "x and y can have any shape and are flattened as long as they have the same size",
+      "c must match either the shape of x/y or just the size, but not an arbitrary shape with the same size"
+    ],
+    "reproduction_steps": [
+      "Call scatter() with x and y having different shapes but the same size, and c having a shape that differs from both but same number of elements.",
+      "Observe that scatter() raises a ValueError claiming 'c' argument has 12 elements, which is not acceptable for use with 'x' with size 12, 'y' with size 12."
+    ],
+    "expected": [
+      "Parameter c should be acceptable if it has the same shape as x and y after flattening, or at least if it has the same number of elements."
+    ],
+    "actual": [
+      "scatter() rejects c if its shape does not match x/y's shape even if the total number of elements is the same."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "ValueError"
+    ],
+    "api_involved": [
+      "scatter"
+    ],
+    "input_conditions": [
+      "x and y can have any shape and are flattened as long as they have the same size",
+      "c must match either the shape of x/y or just the size, but not an arbitrary shape with the same size"
+    ],
+    "reproduction_steps": [
+      "Call scatter() with x and y having different shapes but the same size, and c having a shape that differs from both but same number of elements.",
+      "Observe that scatter() raises a ValueError claiming 'c' argument has 12 elements, which is not acceptable for use with 'x' with size 12, 'y' with size 12."
+    ],
+    "expected": [
+      "Parameter c should be acceptable if it has the same shape as x and y after flattening, or at least if it has the same number of elements."
+    ],
+    "actual": [
+      "scatter() rejects c if its shape does not match x/y's shape even if the total number of elements is the same."
+    ]
+  },
+  "raw_response": "{\n\"exception\": \"ValueError\",\n\"api_involved\": [\"scatter\"],\n\"input_conditions\": [\"x and y can have any shape and are flattened as long as they have the same size\", \"c must match either the shape of x/y or just the size, but not an arbitrary shape with the same size\"],\n\"expected\": \"Parameter c should be acceptable if it has the same shape as x and y after flattening, or at least if it has the same number of elements.\",\n\"actual\": \"scatter() rejects c if its shape does not match x/y's shape even if the total number of elements is the same.\",\n\"reproduction_steps\": [\"Call scatter() with x and y having different shapes but the same size, and c having a shape that differs from both but same number of elements.\", \"Observe that scatter() raises a ValueError claiming 'c' argument has 12 elements, which is not acceptable for use with 'x' with size 12, 'y' with size 12.\"]\n}",
+  "llm_response": "{\n\"exception\": \"ValueError\",\n\"api_involved\": [\"scatter\"],\n\"input_conditions\": [\"x and y can have any shape and are flattened as long as they have the same size\", \"c must match either the shape of x/y or just the size, but not an arbitrary shape with the same size\"],\n\"expected\": \"Parameter c should be acceptable if it has the same shape as x and y after flattening, or at least if it has the same number of elements.\",\n\"actual\": \"scatter() rejects c if its shape does not match x/y's shape even if the total number of elements is the same.\",\n\"reproduction_steps\": [\"Call scatter() with x and y having different shapes but the same size, and c having a shape that differs from both but same number of elements.\", \"Observe that scatter() raises a ValueError claiming 'c' argument has 12 elements, which is not acceptable for use with 'x' with size 12, 'y' with size 12.\"]\n}",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

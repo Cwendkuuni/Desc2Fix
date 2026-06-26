@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-14241",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "QuerySet.values()",
+      "values_list()",
+      "union()"
+    ],
+    "input_conditions": [
+      "combined querysets",
+      "ordered by unannotated columns"
+    ],
+    "reproduction_steps": [
+      "Create a queryset using Celebrity.objects.all()",
+      "Create a queryset using ReservedName.objects.all()",
+      "Combine the two querysets with union()",
+      "Attempt to retrieve the values list with values_list('name').first()"
+    ],
+    "expected": [
+      "The query should execute without crashing and return the correct result."
+    ],
+    "actual": [
+      "Django 3.2 crashes when executing the query."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "QuerySet.values()",
+      "values_list()",
+      "union()"
+    ],
+    "input_conditions": [
+      "combined querysets",
+      "ordered by unannotated columns"
+    ],
+    "reproduction_steps": [
+      "Create a queryset using Celebrity.objects.all()",
+      "Create a queryset using ReservedName.objects.all()",
+      "Combine the two querysets with union()",
+      "Attempt to retrieve the values list with values_list('name').first()"
+    ],
+    "expected": [
+      "The query should execute without crashing and return the correct result."
+    ],
+    "actual": [
+      "Django 3.2 crashes when executing the query."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"QuerySet.values()\", \"values_list()\", \"union()\"],\n  \"input_conditions\": [\"combined querysets\", \"ordered by unannotated columns\"],\n  \"expected\": \"The query should execute without crashing and return the correct result.\",\n  \"actual\": \"Django 3.2 crashes when executing the query.\",\n  \"reproduction_steps\": [\n    \"Create a queryset using Celebrity.objects.all()\",\n    \"Create a queryset using ReservedName.objects.all()\",\n    \"Combine the two querysets with union()\",\n    \"Attempt to retrieve the values list with values_list('name').first()\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"QuerySet.values()\", \"values_list()\", \"union()\"],\n  \"input_conditions\": [\"combined querysets\", \"ordered by unannotated columns\"],\n  \"expected\": \"The query should execute without crashing and return the correct result.\",\n  \"actual\": \"Django 3.2 crashes when executing the query.\",\n  \"reproduction_steps\": [\n    \"Create a queryset using Celebrity.objects.all()\",\n    \"Create a queryset using ReservedName.objects.all()\",\n    \"Combine the two querysets with union()\",\n    \"Attempt to retrieve the values list with values_list('name').first()\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "JxPath-22",
+  "project": "JxPath",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "endless loop when requesting .asPath()"
+    ],
+    "api_involved": [
+      "org.apache.commons.jxpath.ri.NamespaceResolver.getPrefix",
+      "org.apache.commons.jxpath.ri.model.dom.DOMNodePointer.asPath"
+    ],
+    "input_conditions": [
+      "Node with no namespace",
+      "Request .asPath() on 'test' node"
+    ],
+    "reproduction_steps": [
+      "Create XML node structure with namespaces as given in sample",
+      "Request .asPath() on the 'test' node"
+    ],
+    "expected": [
+      "Should not enter an endless loop and produce correct xpath"
+    ],
+    "actual": [
+      "Loops endlessly and creates wrong xpath '//b:fo/null:test'"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "endless loop when requesting .asPath()"
+    ],
+    "api_involved": [
+      "org.apache.commons.jxpath.ri.NamespaceResolver.getPrefix",
+      "org.apache.commons.jxpath.ri.model.dom.DOMNodePointer.asPath"
+    ],
+    "input_conditions": [
+      "Node with no namespace",
+      "Request .asPath() on 'test' node"
+    ],
+    "reproduction_steps": [
+      "Create XML node structure with namespaces as given in sample",
+      "Request .asPath() on the 'test' node"
+    ],
+    "expected": [
+      "Should not enter an endless loop and produce correct xpath"
+    ],
+    "actual": [
+      "Loops endlessly and creates wrong xpath '//b:fo/null:test'"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"endless loop when requesting .asPath()\",\n  \"api_involved\": [\n    \"org.apache.commons.jxpath.ri.NamespaceResolver.getPrefix\",\n    \"org.apache.commons.jxpath.ri.model.dom.DOMNodePointer.asPath\"\n  ],\n  \"input_conditions\": [\n    \"Node with no namespace\",\n    \"Request .asPath() on 'test' node\"\n  ],\n  \"expected\": \"Should not enter an endless loop and produce correct xpath\",\n  \"actual\": \"Loops endlessly and creates wrong xpath '//b:fo/null:test'\",\n  \"reproduction_steps\": [\n    \"Create XML node structure with namespaces as given in sample\",\n    \"Request .asPath() on the 'test' node\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"endless loop when requesting .asPath()\",\n  \"api_involved\": [\n    \"org.apache.commons.jxpath.ri.NamespaceResolver.getPrefix\",\n    \"org.apache.commons.jxpath.ri.model.dom.DOMNodePointer.asPath\"\n  ],\n  \"input_conditions\": [\n    \"Node with no namespace\",\n    \"Request .asPath() on 'test' node\"\n  ],\n  \"expected\": \"Should not enter an endless loop and produce correct xpath\",\n  \"actual\": \"Loops endlessly and creates wrong xpath '//b:fo/null:test'\",\n  \"reproduction_steps\": [\n    \"Create XML node structure with namespaces as given in sample\",\n    \"Request .asPath() on the 'test' node\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

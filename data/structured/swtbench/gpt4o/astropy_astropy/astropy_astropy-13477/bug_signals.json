@@ -1,0 +1,61 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "astropy__astropy-13477",
+  "project": null,
+  "repo": "astropy/astropy",
+  "signals": {
+    "exception": [
+      "TypeError: Tried to do is_equivalent_frame on something that isn't a frame"
+    ],
+    "api_involved": [
+      "astropy.coordinates.BaseCoordinateFrame.__eq__",
+      "astropy.coordinates.BaseCoordinateFrame.is_equivalent_frame"
+    ],
+    "input_conditions": [
+      "Frame with data",
+      "SkyCoord with same data"
+    ],
+    "reproduction_steps": [
+      "import from astropy.coordinates import SkyCoord, ICRS",
+      "create frame with ICRS('0d', '0d')",
+      "create coord with SkyCoord(frame)",
+      "compare frame == coord"
+    ],
+    "expected": [
+      "Compare to true / false depending on data."
+    ],
+    "actual": [
+      "Exception"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "TypeError: Tried to do is_equivalent_frame on something that isn't a frame"
+    ],
+    "api_involved": [
+      "astropy.coordinates.BaseCoordinateFrame.__eq__",
+      "astropy.coordinates.BaseCoordinateFrame.is_equivalent_frame"
+    ],
+    "input_conditions": [
+      "Frame with data",
+      "SkyCoord with same data"
+    ],
+    "reproduction_steps": [
+      "import from astropy.coordinates import SkyCoord, ICRS",
+      "create frame with ICRS('0d', '0d')",
+      "create coord with SkyCoord(frame)",
+      "compare frame == coord"
+    ],
+    "expected": [
+      "Compare to true / false depending on data."
+    ],
+    "actual": [
+      "Exception"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"TypeError: Tried to do is_equivalent_frame on something that isn't a frame\",\n  \"api_involved\": [\"astropy.coordinates.BaseCoordinateFrame.__eq__\", \"astropy.coordinates.BaseCoordinateFrame.is_equivalent_frame\"],\n  \"input_conditions\": [\"Frame with data\", \"SkyCoord with same data\"],\n  \"expected\": \"Compare to true / false depending on data.\",\n  \"actual\": \"Exception\",\n  \"reproduction_steps\": [\n    \"import from astropy.coordinates import SkyCoord, ICRS\",\n    \"create frame with ICRS('0d', '0d')\",\n    \"create coord with SkyCoord(frame)\",\n    \"compare frame == coord\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"TypeError: Tried to do is_equivalent_frame on something that isn't a frame\",\n  \"api_involved\": [\"astropy.coordinates.BaseCoordinateFrame.__eq__\", \"astropy.coordinates.BaseCoordinateFrame.is_equivalent_frame\"],\n  \"input_conditions\": [\"Frame with data\", \"SkyCoord with same data\"],\n  \"expected\": \"Compare to true / false depending on data.\",\n  \"actual\": \"Exception\",\n  \"reproduction_steps\": [\n    \"import from astropy.coordinates import SkyCoord, ICRS\",\n    \"create frame with ICRS('0d', '0d')\",\n    \"create coord with SkyCoord(frame)\",\n    \"compare frame == coord\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

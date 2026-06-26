@@ -1,0 +1,18 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "expected_instances": 10,
+  "valid_files": 10,
+  "missing_files": 0,
+  "invalid_files": 0,
+  "non_empty_counts": {
+    "exception": 5,
+    "api_involved": 8,
+    "input_conditions": 9,
+    "reproduction_steps": 9,
+    "expected": 10,
+    "actual": 10
+  },
+  "missing_examples": [],
+  "invalid_examples": []
+}

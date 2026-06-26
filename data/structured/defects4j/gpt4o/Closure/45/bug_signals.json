@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-45",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "Array.push",
+      "RemoveUnusedVariables"
+    ],
+    "input_conditions": [
+      "Current online version",
+      "simple and advanced mode",
+      "command line compiler"
+    ],
+    "reproduction_steps": [
+      "Open online closure-compiler",
+      "Input code: function f() { var a = [], b; a.push(b = []); b[0] = 1; return a; }",
+      "Press [Compile]"
+    ],
+    "expected": [
+      "The assignment used within Array.push should be preserved."
+    ],
+    "actual": [
+      "The assignment is removed, leading to incorrect function output."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "Array.push",
+      "RemoveUnusedVariables"
+    ],
+    "input_conditions": [
+      "Current online version",
+      "simple and advanced mode",
+      "command line compiler"
+    ],
+    "reproduction_steps": [
+      "Open online closure-compiler",
+      "Input code: function f() { var a = [], b; a.push(b = []); b[0] = 1; return a; }",
+      "Press [Compile]"
+    ],
+    "expected": [
+      "The assignment used within Array.push should be preserved."
+    ],
+    "actual": [
+      "The assignment is removed, leading to incorrect function output."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"Array.push\", \"RemoveUnusedVariables\"],\n  \"input_conditions\": [\"Current online version\", \"simple and advanced mode\", \"command line compiler\"],\n  \"expected\": \"The assignment used within Array.push should be preserved.\",\n  \"actual\": \"The assignment is removed, leading to incorrect function output.\",\n  \"reproduction_steps\": [\n    \"Open online closure-compiler\",\n    \"Input code: function f() { var a = [], b; a.push(b = []); b[0] = 1; return a; }\",\n    \"Press [Compile]\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": null,\n  \"api_involved\": [\"Array.push\", \"RemoveUnusedVariables\"],\n  \"input_conditions\": [\"Current online version\", \"simple and advanced mode\", \"command line compiler\"],\n  \"expected\": \"The assignment used within Array.push should be preserved.\",\n  \"actual\": \"The assignment is removed, leading to incorrect function output.\",\n  \"reproduction_steps\": [\n    \"Open online closure-compiler\",\n    \"Input code: function f() { var a = [], b; a.push(b = []); b[0] = 1; return a; }\",\n    \"Press [Compile]\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

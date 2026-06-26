@@ -1,0 +1,57 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Cli-9",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "MissingOptionException.getMessage()"
+    ],
+    "api_involved": [
+      "Options.addOption",
+      "Parser.checkRequiredOptions"
+    ],
+    "input_conditions": [
+      "use CLI 1.1",
+      "missing required options"
+    ],
+    "reproduction_steps": [
+      "Use CLI 1.1",
+      "Invoke a command without the required options"
+    ],
+    "expected": [
+      "Missing required options: format, source, properties"
+    ],
+    "actual": [
+      "Missing required options: formatsourceproperties"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "MissingOptionException.getMessage()"
+    ],
+    "api_involved": [
+      "Options.addOption",
+      "Parser.checkRequiredOptions"
+    ],
+    "input_conditions": [
+      "use CLI 1.1",
+      "missing required options"
+    ],
+    "reproduction_steps": [
+      "Use CLI 1.1",
+      "Invoke a command without the required options"
+    ],
+    "expected": [
+      "Missing required options: format, source, properties"
+    ],
+    "actual": [
+      "Missing required options: formatsourceproperties"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"MissingOptionException.getMessage()\",\n  \"api_involved\": [\"Options.addOption\", \"Parser.checkRequiredOptions\"],\n  \"input_conditions\": [\"use CLI 1.1\", \"missing required options\"],\n  \"expected\": \"Missing required options: format, source, properties\",\n  \"actual\": \"Missing required options: formatsourceproperties\",\n  \"reproduction_steps\": [\n    \"Use CLI 1.1\",\n    \"Invoke a command without the required options\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"MissingOptionException.getMessage()\",\n  \"api_involved\": [\"Options.addOption\", \"Parser.checkRequiredOptions\"],\n  \"input_conditions\": [\"use CLI 1.1\", \"missing required options\"],\n  \"expected\": \"Missing required options: format, source, properties\",\n  \"actual\": \"Missing required options: formatsourceproperties\",\n  \"reproduction_steps\": [\n    \"Use CLI 1.1\",\n    \"Invoke a command without the required options\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

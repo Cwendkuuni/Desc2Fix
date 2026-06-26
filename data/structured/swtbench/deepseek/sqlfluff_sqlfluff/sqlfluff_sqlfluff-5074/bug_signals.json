@@ -1,0 +1,59 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sqlfluff__sqlfluff-5074",
+  "project": null,
+  "repo": "sqlfluff/sqlfluff",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "sqlfluff lint",
+      "sqlfluff fix"
+    ],
+    "input_conditions": [
+      "--ignore linting flag used",
+      "--processes flag set to different values (e.g., 1 vs more)",
+      "file with overly long line causing a lint violation"
+    ],
+    "reproduction_steps": [
+      "Create a file with an overly long line (large default value causing a lint violation).",
+      "Run 'sqlfluff lint --ignore linting <file>' with default (multi-process) setting; observe exit code and output.",
+      "Run 'sqlfluff lint --ignore linting --processes 1 <file>'; observe exit code and output.",
+      "Compare exit codes and outputs between the two runs; they differ."
+    ],
+    "expected": [
+      "Same exit code regardless of --processes flag value; exit code should be either 0 or 1 (as per docs), not other values."
+    ],
+    "actual": [
+      "Output and exit code differ depending on --processes flag value; exit code other than 0 or 1 is observed."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "sqlfluff lint",
+      "sqlfluff fix"
+    ],
+    "input_conditions": [
+      "--ignore linting flag used",
+      "--processes flag set to different values (e.g., 1 vs more)",
+      "file with overly long line causing a lint violation"
+    ],
+    "reproduction_steps": [
+      "Create a file with an overly long line (large default value causing a lint violation).",
+      "Run 'sqlfluff lint --ignore linting <file>' with default (multi-process) setting; observe exit code and output.",
+      "Run 'sqlfluff lint --ignore linting --processes 1 <file>'; observe exit code and output.",
+      "Compare exit codes and outputs between the two runs; they differ."
+    ],
+    "expected": [
+      "Same exit code regardless of --processes flag value; exit code should be either 0 or 1 (as per docs), not other values."
+    ],
+    "actual": [
+      "Output and exit code differ depending on --processes flag value; exit code other than 0 or 1 is observed."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"sqlfluff lint\", \"sqlfluff fix\"],\n\"input_conditions\": [\"--ignore linting flag used\", \"--processes flag set to different values (e.g., 1 vs more)\", \"file with overly long line causing a lint violation\"],\n\"expected\": \"Same exit code regardless of --processes flag value; exit code should be either 0 or 1 (as per docs), not other values.\",\n\"actual\": \"Output and exit code differ depending on --processes flag value; exit code other than 0 or 1 is observed.\",\n\"reproduction_steps\": [\n\"Create a file with an overly long line (large default value causing a lint violation).\",\n\"Run 'sqlfluff lint --ignore linting <file>' with default (multi-process) setting; observe exit code and output.\",\n\"Run 'sqlfluff lint --ignore linting --processes 1 <file>'; observe exit code and output.\",\n\"Compare exit codes and outputs between the two runs; they differ.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"sqlfluff lint\", \"sqlfluff fix\"],\n\"input_conditions\": [\"--ignore linting flag used\", \"--processes flag set to different values (e.g., 1 vs more)\", \"file with overly long line causing a lint violation\"],\n\"expected\": \"Same exit code regardless of --processes flag value; exit code should be either 0 or 1 (as per docs), not other values.\",\n\"actual\": \"Output and exit code differ depending on --processes flag value; exit code other than 0 or 1 is observed.\",\n\"reproduction_steps\": [\n\"Create a file with an overly long line (large default value causing a lint violation).\",\n\"Run 'sqlfluff lint --ignore linting <file>' with default (multi-process) setting; observe exit code and output.\",\n\"Run 'sqlfluff lint --ignore linting --processes 1 <file>'; observe exit code and output.\",\n\"Compare exit codes and outputs between the two runs; they differ.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

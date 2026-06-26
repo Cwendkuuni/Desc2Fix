@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "pydata__xarray-5731",
+  "project": null,
+  "repo": "pydata/xarray",
+  "signals": {
+    "exception": [
+      "Dask error"
+    ],
+    "api_involved": [
+      "xarray.corr"
+    ],
+    "input_conditions": [
+      "Dask is not installed in the environment"
+    ],
+    "reproduction_steps": [
+      "Ensure dask is not installed in the environment",
+      "Create two xarray DataArrays",
+      "Call xarray.corr on the two DataArrays"
+    ],
+    "expected": [
+      "Obtain the correlation values without dask interfering (as it should be optional)"
+    ],
+    "actual": [
+      "An error related to Dask occurs when calling xarray.corr on two DataArrays"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Dask error"
+    ],
+    "api_involved": [
+      "xarray.corr"
+    ],
+    "input_conditions": [
+      "Dask is not installed in the environment"
+    ],
+    "reproduction_steps": [
+      "Ensure dask is not installed in the environment",
+      "Create two xarray DataArrays",
+      "Call xarray.corr on the two DataArrays"
+    ],
+    "expected": [
+      "Obtain the correlation values without dask interfering (as it should be optional)"
+    ],
+    "actual": [
+      "An error related to Dask occurs when calling xarray.corr on two DataArrays"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"Dask error\",\n\"api_involved\": [\"xarray.corr\"],\n\"input_conditions\": [\"Dask is not installed in the environment\"],\n\"expected\": \"Obtain the correlation values without dask interfering (as it should be optional)\",\n\"actual\": \"An error related to Dask occurs when calling xarray.corr on two DataArrays\",\n\"reproduction_steps\": [\n\"Ensure dask is not installed in the environment\",\n\"Create two xarray DataArrays\",\n\"Call xarray.corr on the two DataArrays\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"Dask error\",\n\"api_involved\": [\"xarray.corr\"],\n\"input_conditions\": [\"Dask is not installed in the environment\"],\n\"expected\": \"Obtain the correlation values without dask interfering (as it should be optional)\",\n\"actual\": \"An error related to Dask occurs when calling xarray.corr on two DataArrays\",\n\"reproduction_steps\": [\n\"Ensure dask is not installed in the environment\",\n\"Create two xarray DataArrays\",\n\"Call xarray.corr on the two DataArrays\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,19 @@
+{
+  "instances": 10,
+  "with_report_text": 10,
+  "with_patch_text": 10,
+  "avg_rouge_l": 0.051222,
+  "avg_jaccard": 0.076181,
+  "avg_identifier_jaccard": 0.052802,
+  "avg_pos_overlap": 0.683333,
+  "avg_structured_macro_jaccard": 0.02536,
+  "avg_structured_all_jaccard": 0.076181,
+  "avg_sbert": 0.403971,
+  "avg_codebert": 0.888786,
+  "avg_openai_embedding": 0.413682,
+  "dataset": "swtbench",
+  "scenario": "structured",
+  "model": "deepseek",
+  "artifact_pair": "report_patch",
+  "patch_view": "add"
+}

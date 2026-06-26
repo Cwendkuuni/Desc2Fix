@@ -1,0 +1,49 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "pvlib__pvlib-python-1719",
+  "project": null,
+  "repo": "pvlib/pvlib-python",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "single diode model functions"
+    ],
+    "input_conditions": [
+      "parameters are in different order across functions"
+    ],
+    "reproduction_steps": [
+      "Attempt to pass a set of single diode parameters to multiple functions using *args.",
+      "Observe that the parameter order differs, causing issues."
+    ],
+    "expected": [
+      "Parameters should be grouped and reordered to match a consistent order across functions, making it easier to pass them using *args."
+    ],
+    "actual": [
+      "Parameters are in different order across functions, making it difficult to pass them using *args."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "single diode model functions"
+    ],
+    "input_conditions": [
+      "parameters are in different order across functions"
+    ],
+    "reproduction_steps": [
+      "Attempt to pass a set of single diode parameters to multiple functions using *args.",
+      "Observe that the parameter order differs, causing issues."
+    ],
+    "expected": [
+      "Parameters should be grouped and reordered to match a consistent order across functions, making it easier to pass them using *args."
+    ],
+    "actual": [
+      "Parameters are in different order across functions, making it difficult to pass them using *args."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"single diode model functions\"],\n\"input_conditions\": [\"parameters are in different order across functions\"],\n\"expected\": \"Parameters should be grouped and reordered to match a consistent order across functions, making it easier to pass them using *args.\",\n\"actual\": \"Parameters are in different order across functions, making it difficult to pass them using *args.\",\n\"reproduction_steps\": [\"Attempt to pass a set of single diode parameters to multiple functions using *args.\", \"Observe that the parameter order differs, causing issues.\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"single diode model functions\"],\n\"input_conditions\": [\"parameters are in different order across functions\"],\n\"expected\": \"Parameters should be grouped and reordered to match a consistent order across functions, making it easier to pass them using *args.\",\n\"actual\": \"Parameters are in different order across functions, making it difficult to pass them using *args.\",\n\"reproduction_steps\": [\"Attempt to pass a set of single diode parameters to multiple functions using *args.\", \"Observe that the parameter order differs, causing issues.\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

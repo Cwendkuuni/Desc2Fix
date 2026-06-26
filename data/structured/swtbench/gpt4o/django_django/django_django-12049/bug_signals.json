@@ -1,0 +1,63 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "django__django-12049",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [
+      "django.db.utils.OperationalError: (1050, \"Table 'city' already exists\")"
+    ],
+    "api_involved": [
+      "django/db/migrations/executor.py",
+      "self.connection.introspection.get_table_description",
+      "python3 manage.py migrate"
+    ],
+    "input_conditions": [
+      "case-insensitive collation",
+      "--lower-case-table-names=0' option"
+    ],
+    "reproduction_steps": [
+      "Set up database with case-insensitive collation.",
+      "Run Django migration with a field name using camel casing.",
+      "Execute python3 manage.py migrate --database my_DB --fake-initial my_first_app.",
+      "Encounter error due to case-sensitive comparison."
+    ],
+    "expected": [
+      "Django migration should fail gracefully or correctly recognize existing columns with case insensitivity in migration detection."
+    ],
+    "actual": [
+      "OperationalError is raised indicating the table 'city' already exists due to case-sensitive comparison."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "django.db.utils.OperationalError: (1050, \"Table 'city' already exists\")"
+    ],
+    "api_involved": [
+      "django/db/migrations/executor.py",
+      "self.connection.introspection.get_table_description",
+      "python3 manage.py migrate"
+    ],
+    "input_conditions": [
+      "case-insensitive collation",
+      "--lower-case-table-names=0' option"
+    ],
+    "reproduction_steps": [
+      "Set up database with case-insensitive collation.",
+      "Run Django migration with a field name using camel casing.",
+      "Execute python3 manage.py migrate --database my_DB --fake-initial my_first_app.",
+      "Encounter error due to case-sensitive comparison."
+    ],
+    "expected": [
+      "Django migration should fail gracefully or correctly recognize existing columns with case insensitivity in migration detection."
+    ],
+    "actual": [
+      "OperationalError is raised indicating the table 'city' already exists due to case-sensitive comparison."
+    ]
+  },
+  "raw_response": "```json\n{\n  \"exception\": \"django.db.utils.OperationalError: (1050, \\\"Table 'city' already exists\\\")\",\n  \"api_involved\": [\"django/db/migrations/executor.py\", \"self.connection.introspection.get_table_description\", \"python3 manage.py migrate\"],\n  \"input_conditions\": [\"case-insensitive collation\", \"--lower-case-table-names=0' option\"],\n  \"expected\": \"Django migration should fail gracefully or correctly recognize existing columns with case insensitivity in migration detection.\",\n  \"actual\": \"OperationalError is raised indicating the table 'city' already exists due to case-sensitive comparison.\",\n  \"reproduction_steps\": [\n    \"Set up database with case-insensitive collation.\",\n    \"Run Django migration with a field name using camel casing.\",\n    \"Execute python3 manage.py migrate --database my_DB --fake-initial my_first_app.\",\n    \"Encounter error due to case-sensitive comparison.\"\n  ]\n}\n```",
+  "llm_response": "```json\n{\n  \"exception\": \"django.db.utils.OperationalError: (1050, \\\"Table 'city' already exists\\\")\",\n  \"api_involved\": [\"django/db/migrations/executor.py\", \"self.connection.introspection.get_table_description\", \"python3 manage.py migrate\"],\n  \"input_conditions\": [\"case-insensitive collation\", \"--lower-case-table-names=0' option\"],\n  \"expected\": \"Django migration should fail gracefully or correctly recognize existing columns with case insensitivity in migration detection.\",\n  \"actual\": \"OperationalError is raised indicating the table 'city' already exists due to case-sensitive comparison.\",\n  \"reproduction_steps\": [\n    \"Set up database with case-insensitive collation.\",\n    \"Run Django migration with a field name using camel casing.\",\n    \"Execute python3 manage.py migrate --database my_DB --fake-initial my_first_app.\",\n    \"Encounter error due to case-sensitive comparison.\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,53 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "sphinx-doc__sphinx-8269",
+  "project": null,
+  "repo": "sphinx-doc/sphinx",
+  "signals": {
+    "exception": [
+      "HTTP error (e.g., 404, 500)"
+    ],
+    "api_involved": [
+      "Linkcheck"
+    ],
+    "input_conditions": [
+      "Server replies with an error status code (e.g., 404, 500)"
+    ],
+    "reproduction_steps": [
+      "Run the Linkcheck command on a link that returns an HTTP error (e.g., 404, 500)",
+      "Observe that the output says 'Anchor not found' instead of reporting the actual HTTP error"
+    ],
+    "expected": [
+      "Linkcheck should report HTTP errors (like 404, 500) instead of 'Anchor not found'"
+    ],
+    "actual": [
+      "Linkcheck reports 'Anchor not found' even when the server returned an HTTP error status code"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "HTTP error (e.g., 404, 500)"
+    ],
+    "api_involved": [
+      "Linkcheck"
+    ],
+    "input_conditions": [
+      "Server replies with an error status code (e.g., 404, 500)"
+    ],
+    "reproduction_steps": [
+      "Run the Linkcheck command on a link that returns an HTTP error (e.g., 404, 500)",
+      "Observe that the output says 'Anchor not found' instead of reporting the actual HTTP error"
+    ],
+    "expected": [
+      "Linkcheck should report HTTP errors (like 404, 500) instead of 'Anchor not found'"
+    ],
+    "actual": [
+      "Linkcheck reports 'Anchor not found' even when the server returned an HTTP error status code"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"HTTP error (e.g., 404, 500)\",\n\"api_involved\": [\"Linkcheck\"],\n\"input_conditions\": [\"Server replies with an error status code (e.g., 404, 500)\"],\n\"expected\": \"Linkcheck should report HTTP errors (like 404, 500) instead of 'Anchor not found'\",\n\"actual\": \"Linkcheck reports 'Anchor not found' even when the server returned an HTTP error status code\",\n\"reproduction_steps\": [\"Run the Linkcheck command on a link that returns an HTTP error (e.g., 404, 500)\", \"Observe that the output says 'Anchor not found' instead of reporting the actual HTTP error\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"HTTP error (e.g., 404, 500)\",\n\"api_involved\": [\"Linkcheck\"],\n\"input_conditions\": [\"Server replies with an error status code (e.g., 404, 500)\"],\n\"expected\": \"Linkcheck should report HTTP errors (like 404, 500) instead of 'Anchor not found'\",\n\"actual\": \"Linkcheck reports 'Anchor not found' even when the server returned an HTTP error status code\",\n\"reproduction_steps\": [\"Run the Linkcheck command on a link that returns an HTTP error (e.g., 404, 500)\", \"Observe that the output says 'Anchor not found' instead of reporting the actual HTTP error\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,82 @@
+models:
+  gpt4o:
+    display_name: "GPT-4o"
+    provider: "openai"
+    model_name: "gpt-4o"
+    api_key_env: "OPENAI_API_KEY"
+    base_url: null
+    enabled: true
+    max_total_tokens: 128000
+    reserved_response_tokens: 16000
+    temperature: 1.0
+    top_p: 1.0
+    tokenizer: "gpt-4o"
+
+  deepseek:
+    display_name: "DeepSeek-Chat"
+    provider: "openai_compatible"
+    model_name: "deepseek-chat"
+    api_key_env: "DEEPSEEK_API_KEY"
+    base_url: "https://api.deepseek.com/v1"
+    enabled: true
+    max_total_tokens: 64000
+    reserved_response_tokens: 8000
+    temperature: 1.0
+    top_p: 1.0
+    tokenizer: "cl100k_base"
+
+
+# models:
+#   gpt4o:
+#     display_name: "GPT-4o"
+#     provider: "openai"
+#     model_name: "gpt-4o"
+#     api_key_env: "OPENAI_API_KEY"
+#     base_url: null
+#     enabled: true
+#     max_total_tokens: 128000
+#     reserved_response_tokens: 16000
+#     temperature: 1.0
+#     top_p: 1.0
+#     tokenizer: "gpt-4o"
+
+#   deepseek:
+#     display_name: "DeepSeek-Chat"
+#     provider: "openai_compatible"
+#     model_name: "deepseek-chat"
+#     api_key_env: "DEEPSEEK_API_KEY"
+#     base_url: "https://api.deepseek.com/v1"
+#     enabled: true
+#     max_total_tokens: 64000
+#     reserved_response_tokens: 8000
+#     temperature: 1.0
+#     top_p: 1.0
+#     tokenizer: "cl100k_base"
+
+  # Example for future extension
+  # qwen:
+  #   display_name: "Qwen"
+  #   provider: "openai_compatible"
+  #   model_name: "qwen-plus"
+  #   api_key_env: "QWEN_API_KEY"
+  #   base_url: "https://dashscope-intl.aliyuncs.com/compatible-mode/v1"
+  #   enabled: false
+  #   max_total_tokens: 128000
+  #   reserved_response_tokens: 16000
+  #   temperature: 1.0
+  #   top_p: 1.0
+  #   tokenizer: "cl100k_base"
+
+embeddings:
+  sbert:
+    model_name: "sentence-transformers/paraphrase-mpnet-base-v2"
+    device: "auto"
+
+  codebert:
+    model_name: "microsoft/codebert-base"
+    device: "auto"
+
+  openai:
+    provider: "openai"
+    model_name: "text-embedding-3-small"
+    api_key_env: "OPENAI_API_KEY"

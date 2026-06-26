@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-150",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "Type checker misses annotations on functions defined within functions"
+    ],
+    "api_involved": [
+      "ns.a"
+    ],
+    "input_conditions": [
+      "--warning_level VERBOSE",
+      "ns.a defined within an anonymous function"
+    ],
+    "reproduction_steps": [
+      "Compile code with --warning_level VERBOSE: var ns = {}; (function() { ns.a = function(b) {} })(); function d() { ns.a(); ns.a(123); }",
+      "Observe that warning is emitted for calling ns.a with 0 parameters, not for type error"
+    ],
+    "expected": [
+      "Type checker emits warnings for type mismatches according to annotations"
+    ],
+    "actual": [
+      "Type checker does not emit warning for type errors when ns.a is defined within an anonymous function"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Type checker misses annotations on functions defined within functions"
+    ],
+    "api_involved": [
+      "ns.a"
+    ],
+    "input_conditions": [
+      "--warning_level VERBOSE",
+      "ns.a defined within an anonymous function"
+    ],
+    "reproduction_steps": [
+      "Compile code with --warning_level VERBOSE: var ns = {}; (function() { ns.a = function(b) {} })(); function d() { ns.a(); ns.a(123); }",
+      "Observe that warning is emitted for calling ns.a with 0 parameters, not for type error"
+    ],
+    "expected": [
+      "Type checker emits warnings for type mismatches according to annotations"
+    ],
+    "actual": [
+      "Type checker does not emit warning for type errors when ns.a is defined within an anonymous function"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"Type checker misses annotations on functions defined within functions\",\n  \"api_involved\": [\"ns.a\"],\n  \"input_conditions\": [\"--warning_level VERBOSE\", \"ns.a defined within an anonymous function\"],\n  \"expected\": \"Type checker emits warnings for type mismatches according to annotations\",\n  \"actual\": \"Type checker does not emit warning for type errors when ns.a is defined within an anonymous function\",\n  \"reproduction_steps\": [\n    \"Compile code with --warning_level VERBOSE: var ns = {}; (function() { ns.a = function(b) {} })(); function d() { ns.a(); ns.a(123); }\",\n    \"Observe that warning is emitted for calling ns.a with 0 parameters, not for type error\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"Type checker misses annotations on functions defined within functions\",\n  \"api_involved\": [\"ns.a\"],\n  \"input_conditions\": [\"--warning_level VERBOSE\", \"ns.a defined within an anonymous function\"],\n  \"expected\": \"Type checker emits warnings for type mismatches according to annotations\",\n  \"actual\": \"Type checker does not emit warning for type errors when ns.a is defined within an anonymous function\",\n  \"reproduction_steps\": [\n    \"Compile code with --warning_level VERBOSE: var ns = {}; (function() { ns.a = function(b) {} })(); function d() { ns.a(); ns.a(123); }\",\n    \"Observe that warning is emitted for calling ns.a with 0 parameters, not for type error\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

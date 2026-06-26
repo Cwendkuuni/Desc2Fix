@@ -1,0 +1,17 @@
+{
+  "rq": "rq3",
+  "dataset": "swtbench",
+  "scenario": "raw",
+  "model": "gpt4o",
+  "patch_view": "add",
+  "instances": 99,
+  "written": 99,
+  "skipped": 0,
+  "errors": 0,
+  "scores_path": "/home/e113/Documents/FROM-DESCRIPTION-TO-FIX/For_GitHub/Desc2Fix/Desc2Fix/results/experiments/llm_judges/rq3/swtbench/raw/gpt4o/add/scores.jsonl",
+  "errors_path": "/home/e113/Documents/FROM-DESCRIPTION-TO-FIX/For_GitHub/Desc2Fix/Desc2Fix/results/experiments/llm_judges/rq3/swtbench/raw/gpt4o/add/errors.jsonl",
+  "prompt_path": "prompts/report_patch_alignment/raw_prompt.txt",
+  "reserved_response_tokens": 4000,
+  "temperature": 1.0,
+  "top_p": 1.0
+}

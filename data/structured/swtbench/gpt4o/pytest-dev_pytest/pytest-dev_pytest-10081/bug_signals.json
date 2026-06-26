@@ -1,0 +1,55 @@
+{
+  "dataset": "swtbench",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "pytest-dev__pytest-10081",
+  "project": null,
+  "repo": "pytest-dev/pytest",
+  "signals": {
+    "exception": [
+      "tearDown executed"
+    ],
+    "api_involved": [
+      "unittest.TestCase.tearDown",
+      "pytest"
+    ],
+    "input_conditions": [
+      "--pdb flag",
+      "classes marked with decorator"
+    ],
+    "reproduction_steps": [
+      "Run pytest with --pdb flag on classes with decorators at class level"
+    ],
+    "expected": [
+      "Test case should be skipped without running tearDown"
+    ],
+    "actual": [
+      "tearDown executed for classes"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "tearDown executed"
+    ],
+    "api_involved": [
+      "unittest.TestCase.tearDown",
+      "pytest"
+    ],
+    "input_conditions": [
+      "--pdb flag",
+      "classes marked with decorator"
+    ],
+    "reproduction_steps": [
+      "Run pytest with --pdb flag on classes with decorators at class level"
+    ],
+    "expected": [
+      "Test case should be skipped without running tearDown"
+    ],
+    "actual": [
+      "tearDown executed for classes"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"tearDown executed\",\n  \"api_involved\": [\"unittest.TestCase.tearDown\", \"pytest\"],\n  \"input_conditions\": [\"--pdb flag\", \"classes marked with decorator\"],\n  \"expected\": \"Test case should be skipped without running tearDown\",\n  \"actual\": \"tearDown executed for classes\",\n  \"reproduction_steps\": [\"Run pytest with --pdb flag on classes with decorators at class level\"]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"tearDown executed\",\n  \"api_involved\": [\"unittest.TestCase.tearDown\", \"pytest\"],\n  \"input_conditions\": [\"--pdb flag\", \"classes marked with decorator\"],\n  \"expected\": \"Test case should be skipped without running tearDown\",\n  \"actual\": \"tearDown executed for classes\",\n  \"reproduction_steps\": [\"Run pytest with --pdb flag on classes with decorators at class level\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "gpt4o",
+  "model_name": "gpt-4o",
+  "instance_id": "Closure-138",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "JSC_DETERMINISTIC_TEST: condition always evaluates to false"
+    ],
+    "api_involved": [
+      "ClosureCompiler"
+    ],
+    "input_conditions": [
+      "compilation level ADVANCED_OPTIMIZATIONS"
+    ],
+    "reproduction_steps": [
+      "Compile code with ClosureCompiler",
+      "Set compilation level to ADVANCED_OPTIMIZATIONS",
+      "Use the provided JavaScript code"
+    ],
+    "expected": [
+      "Code should be compiled without warnings"
+    ],
+    "actual": [
+      "Code produced a warning"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "JSC_DETERMINISTIC_TEST: condition always evaluates to false"
+    ],
+    "api_involved": [
+      "ClosureCompiler"
+    ],
+    "input_conditions": [
+      "compilation level ADVANCED_OPTIMIZATIONS"
+    ],
+    "reproduction_steps": [
+      "Compile code with ClosureCompiler",
+      "Set compilation level to ADVANCED_OPTIMIZATIONS",
+      "Use the provided JavaScript code"
+    ],
+    "expected": [
+      "Code should be compiled without warnings"
+    ],
+    "actual": [
+      "Code produced a warning"
+    ]
+  },
+  "raw_response": "```\n{\n  \"exception\": \"JSC_DETERMINISTIC_TEST: condition always evaluates to false\",\n  \"api_involved\": [\"ClosureCompiler\"],\n  \"input_conditions\": [\"compilation level ADVANCED_OPTIMIZATIONS\"],\n  \"expected\": \"Code should be compiled without warnings\",\n  \"actual\": \"Code produced a warning\",\n  \"reproduction_steps\": [\n    \"Compile code with ClosureCompiler\",\n    \"Set compilation level to ADVANCED_OPTIMIZATIONS\",\n    \"Use the provided JavaScript code\"\n  ]\n}\n```",
+  "llm_response": "```\n{\n  \"exception\": \"JSC_DETERMINISTIC_TEST: condition always evaluates to false\",\n  \"api_involved\": [\"ClosureCompiler\"],\n  \"input_conditions\": [\"compilation level ADVANCED_OPTIMIZATIONS\"],\n  \"expected\": \"Code should be compiled without warnings\",\n  \"actual\": \"Code produced a warning\",\n  \"reproduction_steps\": [\n    \"Compile code with ClosureCompiler\",\n    \"Set compilation level to ADVANCED_OPTIMIZATIONS\",\n    \"Use the provided JavaScript code\"\n  ]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

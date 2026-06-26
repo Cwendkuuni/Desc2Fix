@@ -1,0 +1,61 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Closure-14",
+  "project": "Closure",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "Missing return statement. Function expected to return boolean."
+    ],
+    "api_involved": [
+      "alert"
+    ],
+    "input_conditions": [
+      "function fb with parameter a",
+      "a > 0"
+    ],
+    "reproduction_steps": [
+      "Define function fb with return type boolean annotation",
+      "Inside function, include a try-finally block",
+      "In try block, call alert(a), then conditionally return false if a > 0",
+      "After try-finally, add a return true statement",
+      "Compile the code"
+    ],
+    "expected": [
+      "Compile without warning"
+    ],
+    "actual": [
+      "Compile with 'Missing return statement' warning"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "Missing return statement. Function expected to return boolean."
+    ],
+    "api_involved": [
+      "alert"
+    ],
+    "input_conditions": [
+      "function fb with parameter a",
+      "a > 0"
+    ],
+    "reproduction_steps": [
+      "Define function fb with return type boolean annotation",
+      "Inside function, include a try-finally block",
+      "In try block, call alert(a), then conditionally return false if a > 0",
+      "After try-finally, add a return true statement",
+      "Compile the code"
+    ],
+    "expected": [
+      "Compile without warning"
+    ],
+    "actual": [
+      "Compile with 'Missing return statement' warning"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"Missing return statement. Function expected to return boolean.\",\n\"api_involved\": [\"alert\"],\n\"input_conditions\": [\"function fb with parameter a\", \"a > 0\"],\n\"expected\": \"Compile without warning\",\n\"actual\": \"Compile with 'Missing return statement' warning\",\n\"reproduction_steps\": [\n    \"Define function fb with return type boolean annotation\",\n    \"Inside function, include a try-finally block\",\n    \"In try block, call alert(a), then conditionally return false if a > 0\",\n    \"After try-finally, add a return true statement\",\n    \"Compile the code\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"Missing return statement. Function expected to return boolean.\",\n\"api_involved\": [\"alert\"],\n\"input_conditions\": [\"function fb with parameter a\", \"a > 0\"],\n\"expected\": \"Compile without warning\",\n\"actual\": \"Compile with 'Missing return statement' warning\",\n\"reproduction_steps\": [\n    \"Define function fb with return type boolean annotation\",\n    \"Inside function, include a try-finally block\",\n    \"In try block, call alert(a), then conditionally return false if a > 0\",\n    \"After try-finally, add a return true statement\",\n    \"Compile the code\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

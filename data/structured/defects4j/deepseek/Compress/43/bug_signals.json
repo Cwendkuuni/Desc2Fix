@@ -1,0 +1,69 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Compress-43",
+  "project": "Compress",
+  "repo": null,
+  "signals": {
+    "exception": [
+      "null"
+    ],
+    "api_involved": [
+      "ZipArchiveOutputStream",
+      "BufferedOutputStream",
+      "putShort",
+      "versionNeededToExtract"
+    ],
+    "input_conditions": [
+      "Zip archive creation using ZipArchiveOutputStream with BufferedOutputStream",
+      "Use of Deflate compression",
+      "phased is true or false",
+      "zip64Mode settings"
+    ],
+    "reproduction_steps": [
+      "Construct ZipArchiveOutputStream using BufferedOutputStream (no random access)",
+      "Add entries with Deflate compression",
+      "Write zip archive",
+      "Compare `version needed to extract` in local file header vs central directory"
+    ],
+    "expected": [
+      "The `version needed to extract` field in the local file header and central directory should match, considering data descriptors and DEFLATE compression."
+    ],
+    "actual": [
+      "The `version needed to extract` field differs between local file header and central directory; local header calculation omits data descriptor requirement, while central directory includes it."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [
+      "null"
+    ],
+    "api_involved": [
+      "ZipArchiveOutputStream",
+      "BufferedOutputStream",
+      "putShort",
+      "versionNeededToExtract"
+    ],
+    "input_conditions": [
+      "Zip archive creation using ZipArchiveOutputStream with BufferedOutputStream",
+      "Use of Deflate compression",
+      "phased is true or false",
+      "zip64Mode settings"
+    ],
+    "reproduction_steps": [
+      "Construct ZipArchiveOutputStream using BufferedOutputStream (no random access)",
+      "Add entries with Deflate compression",
+      "Write zip archive",
+      "Compare `version needed to extract` in local file header vs central directory"
+    ],
+    "expected": [
+      "The `version needed to extract` field in the local file header and central directory should match, considering data descriptors and DEFLATE compression."
+    ],
+    "actual": [
+      "The `version needed to extract` field differs between local file header and central directory; local header calculation omits data descriptor requirement, while central directory includes it."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": \"null\",\n\"api_involved\": [\"ZipArchiveOutputStream\", \"BufferedOutputStream\", \"putShort\", \"versionNeededToExtract\"],\n\"input_conditions\": [\"Zip archive creation using ZipArchiveOutputStream with BufferedOutputStream\", \"Use of Deflate compression\", \"phased is true or false\", \"zip64Mode settings\"],\n\"expected\": \"The `version needed to extract` field in the local file header and central directory should match, considering data descriptors and DEFLATE compression.\",\n\"actual\": \"The `version needed to extract` field differs between local file header and central directory; local header calculation omits data descriptor requirement, while central directory includes it.\",\n\"reproduction_steps\": [\"Construct ZipArchiveOutputStream using BufferedOutputStream (no random access)\", \"Add entries with Deflate compression\", \"Write zip archive\", \"Compare `version needed to extract` in local file header vs central directory\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": \"null\",\n\"api_involved\": [\"ZipArchiveOutputStream\", \"BufferedOutputStream\", \"putShort\", \"versionNeededToExtract\"],\n\"input_conditions\": [\"Zip archive creation using ZipArchiveOutputStream with BufferedOutputStream\", \"Use of Deflate compression\", \"phased is true or false\", \"zip64Mode settings\"],\n\"expected\": \"The `version needed to extract` field in the local file header and central directory should match, considering data descriptors and DEFLATE compression.\",\n\"actual\": \"The `version needed to extract` field differs between local file header and central directory; local header calculation omits data descriptor requirement, while central directory includes it.\",\n\"reproduction_steps\": [\"Construct ZipArchiveOutputStream using BufferedOutputStream (no random access)\", \"Add entries with Deflate compression\", \"Write zip archive\", \"Compare `version needed to extract` in local file header vs central directory\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

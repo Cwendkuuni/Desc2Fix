@@ -1,0 +1,47 @@
+{
+  "dataset": "swtbench",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "django__django-16311",
+  "project": null,
+  "repo": "django/django",
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "gzip compression",
+      "CSRF masking"
+    ],
+    "input_conditions": [
+      "HTTP responses with gzip compression enabled",
+      "presence of secrets in compressed response body"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Django should mitigate the BREACH attack by implementing 'Heal The Breach' mitigation, injecting random bytes into the gzip filename field to add randomness to compressed responses, with sensible defaults, without requiring users to disable gzip."
+    ],
+    "actual": [
+      "Previously, Django recommended users to disable gzip to mitigate BREACH; CSRF masking was implemented but the BREACH attack remained a concern for gzip-compressed responses."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "gzip compression",
+      "CSRF masking"
+    ],
+    "input_conditions": [
+      "HTTP responses with gzip compression enabled",
+      "presence of secrets in compressed response body"
+    ],
+    "reproduction_steps": [],
+    "expected": [
+      "Django should mitigate the BREACH attack by implementing 'Heal The Breach' mitigation, injecting random bytes into the gzip filename field to add randomness to compressed responses, with sensible defaults, without requiring users to disable gzip."
+    ],
+    "actual": [
+      "Previously, Django recommended users to disable gzip to mitigate BREACH; CSRF masking was implemented but the BREACH attack remained a concern for gzip-compressed responses."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"gzip compression\", \"CSRF masking\"],\n\"input_conditions\": [\"HTTP responses with gzip compression enabled\", \"presence of secrets in compressed response body\"],\n\"expected\": \"Django should mitigate the BREACH attack by implementing 'Heal The Breach' mitigation, injecting random bytes into the gzip filename field to add randomness to compressed responses, with sensible defaults, without requiring users to disable gzip.\",\n\"actual\": \"Previously, Django recommended users to disable gzip to mitigate BREACH; CSRF masking was implemented but the BREACH attack remained a concern for gzip-compressed responses.\",\n\"reproduction_steps\": null\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"gzip compression\", \"CSRF masking\"],\n\"input_conditions\": [\"HTTP responses with gzip compression enabled\", \"presence of secrets in compressed response body\"],\n\"expected\": \"Django should mitigate the BREACH attack by implementing 'Heal The Breach' mitigation, injecting random bytes into the gzip filename field to add randomness to compressed responses, with sensible defaults, without requiring users to disable gzip.\",\n\"actual\": \"Previously, Django recommended users to disable gzip to mitigate BREACH; CSRF masking was implemented but the BREACH attack remained a concern for gzip-compressed responses.\",\n\"reproduction_steps\": null\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

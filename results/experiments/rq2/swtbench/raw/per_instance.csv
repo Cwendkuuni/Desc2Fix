@@ -1,0 +1,11 @@
+dataset,instance_id,project,repo,scenario,artifact_pair,has_report_text,has_test_text,a_chars,b_chars,a_tokens,b_tokens,a_identifiers,b_identifiers,rouge_l,jaccard,identifier_jaccard,pos_overlap,sbert,codebert,openai_embedding,model
+swtbench,sqlfluff__sqlfluff-4764,,sqlfluff/sqlfluff,raw,report_test,True,True,578,11531,121,2217,107,830,0.017964,0.064,0.042553,0.5,0.460214,0.901202,0.438975,none
+swtbench,sqlfluff__sqlfluff-2336,,sqlfluff/sqlfluff,raw,report_test,True,True,531,6631,105,1800,79,594,0.027297,0.078947,0.044944,0.75,0.501053,0.916065,0.391929,none
+swtbench,sqlfluff__sqlfluff-5074,,sqlfluff/sqlfluff,raw,report_test,True,True,1199,13382,289,2598,193,1026,0.042951,0.110145,0.073394,1.0,0.595483,0.933319,0.477212,none
+swtbench,sqlfluff__sqlfluff-2849,,sqlfluff/sqlfluff,raw,report_test,True,True,1490,9225,313,2113,196,792,0.051937,0.100529,0.065217,1.0,0.702874,0.989041,0.57354,none
+swtbench,sqlfluff__sqlfluff-884,,sqlfluff/sqlfluff,raw,report_test,True,True,346,4396,63,790,44,312,0.021102,0.059259,0.034188,0.75,0.478066,0.913279,0.424191,none
+swtbench,sqlfluff__sqlfluff-4151,,sqlfluff/sqlfluff,raw,report_test,True,True,1659,10341,420,1907,252,741,0.058444,0.093023,0.042194,1.0,0.573484,0.967634,0.48196,none
+swtbench,sqlfluff__sqlfluff-3700,,sqlfluff/sqlfluff,raw,report_test,True,True,736,10515,183,3229,129,1295,0.026964,0.098592,0.068421,1.0,0.628526,0.9522,0.414061,none
+swtbench,sqlfluff__sqlfluff-3608,,sqlfluff/sqlfluff,raw,report_test,True,True,1664,9785,407,1872,278,704,0.045634,0.04811,0.011278,0.75,0.601726,0.952278,0.513191,none
+swtbench,sqlfluff__sqlfluff-3904,,sqlfluff/sqlfluff,raw,report_test,True,True,767,11998,194,2409,126,904,0.026124,0.090909,0.053004,0.75,0.553276,0.953999,0.450618,none
+swtbench,sqlfluff__sqlfluff-2907,,sqlfluff/sqlfluff,raw,report_test,True,True,1471,4259,317,906,188,368,0.085037,0.092511,0.045685,1.0,0.619368,0.970083,0.593819,none

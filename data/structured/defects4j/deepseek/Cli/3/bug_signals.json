@@ -1,0 +1,59 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Cli-3",
+  "project": "Cli",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "PosixParser.parse",
+      "Option",
+      "parsedLine.hasOption",
+      "parsedLine.getOptionValue"
+    ],
+    "input_conditions": [
+      "Option defined with short name 't' and long name 'target' (both expecting a value)",
+      "Command line arguments containing '-target opt'"
+    ],
+    "reproduction_steps": [
+      "Define an Option with short name 't' and long name 'target', both taking a value.",
+      "Use PosixParser to parse the command line: '-target opt'.",
+      "Check the value retrieved for the option: it prints 'arget' instead of 'opt'."
+    ],
+    "expected": [
+      "Parsing '-target opt' using PosixParser should treat '-target' as the long option and return 'opt' as its value."
+    ],
+    "actual": [
+      "PosixParser incorrectly interprets '-target opt' as short option '-t' with value 'arget', resulting in the value 'arget' instead of 'opt'."
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "PosixParser.parse",
+      "Option",
+      "parsedLine.hasOption",
+      "parsedLine.getOptionValue"
+    ],
+    "input_conditions": [
+      "Option defined with short name 't' and long name 'target' (both expecting a value)",
+      "Command line arguments containing '-target opt'"
+    ],
+    "reproduction_steps": [
+      "Define an Option with short name 't' and long name 'target', both taking a value.",
+      "Use PosixParser to parse the command line: '-target opt'.",
+      "Check the value retrieved for the option: it prints 'arget' instead of 'opt'."
+    ],
+    "expected": [
+      "Parsing '-target opt' using PosixParser should treat '-target' as the long option and return 'opt' as its value."
+    ],
+    "actual": [
+      "PosixParser incorrectly interprets '-target opt' as short option '-t' with value 'arget', resulting in the value 'arget' instead of 'opt'."
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"PosixParser.parse\", \"Option\", \"parsedLine.hasOption\", \"parsedLine.getOptionValue\"],\n\"input_conditions\": [\"Option defined with short name 't' and long name 'target' (both expecting a value)\", \"Command line arguments containing '-target opt'\"],\n\"expected\": \"Parsing '-target opt' using PosixParser should treat '-target' as the long option and return 'opt' as its value.\",\n\"actual\": \"PosixParser incorrectly interprets '-target opt' as short option '-t' with value 'arget', resulting in the value 'arget' instead of 'opt'.\",\n\"reproduction_steps\": [\n\"Define an Option with short name 't' and long name 'target', both taking a value.\",\n\"Use PosixParser to parse the command line: '-target opt'.\",\n\"Check the value retrieved for the option: it prints 'arget' instead of 'opt'.\"\n]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"PosixParser.parse\", \"Option\", \"parsedLine.hasOption\", \"parsedLine.getOptionValue\"],\n\"input_conditions\": [\"Option defined with short name 't' and long name 'target' (both expecting a value)\", \"Command line arguments containing '-target opt'\"],\n\"expected\": \"Parsing '-target opt' using PosixParser should treat '-target' as the long option and return 'opt' as its value.\",\n\"actual\": \"PosixParser incorrectly interprets '-target opt' as short option '-t' with value 'arget', resulting in the value 'arget' instead of 'opt'.\",\n\"reproduction_steps\": [\n\"Define an Option with short name 't' and long name 'target', both taking a value.\",\n\"Use PosixParser to parse the command line: '-target opt'.\",\n\"Check the value retrieved for the option: it prints 'arget' instead of 'opt'.\"\n]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}

@@ -1,0 +1,55 @@
+{
+  "dataset": "defects4j",
+  "model": "deepseek",
+  "model_name": "deepseek-chat",
+  "instance_id": "Math-10",
+  "project": "Math",
+  "repo": null,
+  "signals": {
+    "exception": [],
+    "api_involved": [
+      "DerivativeStructure.atan2",
+      "Math.atan2",
+      "FastMath.atan2"
+    ],
+    "input_conditions": [
+      "x = +/-0",
+      "y = +/-0"
+    ],
+    "reproduction_steps": [
+      "Call DerivativeStructure.atan2 with y = +/-0 and x = +/-0",
+      "Observe that result is NaN instead of the expected value from Math.atan2/FastMath.atan2"
+    ],
+    "expected": [
+      "Same values as Math.atan2 and FastMath.atan2 for special cases of +/-0 for x and y"
+    ],
+    "actual": [
+      "Returns NaN for the value in all four special cases"
+    ]
+  },
+  "extracted_signals": {
+    "exception": [],
+    "api_involved": [
+      "DerivativeStructure.atan2",
+      "Math.atan2",
+      "FastMath.atan2"
+    ],
+    "input_conditions": [
+      "x = +/-0",
+      "y = +/-0"
+    ],
+    "reproduction_steps": [
+      "Call DerivativeStructure.atan2 with y = +/-0 and x = +/-0",
+      "Observe that result is NaN instead of the expected value from Math.atan2/FastMath.atan2"
+    ],
+    "expected": [
+      "Same values as Math.atan2 and FastMath.atan2 for special cases of +/-0 for x and y"
+    ],
+    "actual": [
+      "Returns NaN for the value in all four special cases"
+    ]
+  },
+  "raw_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"DerivativeStructure.atan2\", \"Math.atan2\", \"FastMath.atan2\"],\n\"input_conditions\": [\"x = +/-0\", \"y = +/-0\"],\n\"expected\": \"Same values as Math.atan2 and FastMath.atan2 for special cases of +/-0 for x and y\",\n\"actual\": \"Returns NaN for the value in all four special cases\",\n\"reproduction_steps\": [\"Call DerivativeStructure.atan2 with y = +/-0 and x = +/-0\", \"Observe that result is NaN instead of the expected value from Math.atan2/FastMath.atan2\"]\n}\n```",
+  "llm_response": "```json\n{\n\"exception\": null,\n\"api_involved\": [\"DerivativeStructure.atan2\", \"Math.atan2\", \"FastMath.atan2\"],\n\"input_conditions\": [\"x = +/-0\", \"y = +/-0\"],\n\"expected\": \"Same values as Math.atan2 and FastMath.atan2 for special cases of +/-0 for x and y\",\n\"actual\": \"Returns NaN for the value in all four special cases\",\n\"reproduction_steps\": [\"Call DerivativeStructure.atan2 with y = +/-0 and x = +/-0\", \"Observe that result is NaN instead of the expected value from Math.atan2/FastMath.atan2\"]\n}\n```",
+  "prompt_path": "prompts/extraction/structured_bug_signal_extraction.txt"
+}
